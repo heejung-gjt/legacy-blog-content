@@ -1,43 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-01-10T22:55:28+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develope</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">Django - 예외처리</title><link href="https://heejung-gjt.github.io/django-08-exception" rel="alternate" type="text/html" title="Django - 예외처리" /><published>2021-01-10T11:30:00+09:00</published><updated>2021-01-10T11:30:00+09:00</updated><id>https://heejung-gjt.github.io/django-08-exception</id><content type="html" xml:base="https://heejung-gjt.github.io/django-08-exception">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;  &lt;/span&gt;--&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./django-05-template&quot;&gt;Django - Template Extending&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./django-04-form&quot;&gt;Django - form 활용하기 &lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./django-08-exception&quot;&gt;Django - 예외처리 &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-<feed xmlns="http://www.w3.org/2005/Atom" >
-  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="https://heejung-gjt.github.io/author/jung/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-01-11T00:06:10+09:00</updated>
-  <id>https://heejung-gjt.github.io/author/jung/feed.xml</id>
+&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
 
-  
-  
-  
+&lt;p&gt;✔ 예외처리&lt;/p&gt;
 
-  
-    <title type="html">Studying  Develope | </title>
-  
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-  
-    <subtitle>개발 공부하는 블로그</subtitle>
-  
+&lt;h3 id=&quot;예외처리&quot;&gt;예외처리&lt;/h3&gt;
+&lt;p&gt;사용자가 없는 id pwd 를 입력할때처럼 예외적인 상황으로 발생하는 error 를 예외처리 해줌으로써 정상적인 종료가 가능하다. try ~ except ~ finally 구문을 사용한다&lt;/p&gt;
 
-  
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h3 id=&quot;-login-예외처리-해주기&quot;&gt;📌 login 예외처리 해주기&lt;/h3&gt;
+    &lt;p&gt;사용자 없는 id,pwd 입력했을경우 예외처리 해준다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-  
+&lt;ol&gt;
+  &lt;li&gt;try: fcuser = Fcuser.objects.get(username=username) : model fcuser에 없는 username일 경우 except로 이동&lt;/li&gt;
+  &lt;li&gt;except Fcuser.DoesNotExist: self.add_error(‘username’,’ID가 없습니다’) return  : 에러 문장 출력후 return 해준다 ( 더이상 코드 진행 x)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;fcuserformspy&quot;&gt;fcuser/forms.py&lt;/h5&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LoginForm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;forms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;fcuser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fcuser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fcuser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DoesNotExist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'username'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ID가 없습니다'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;check_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fcuser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+         &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Password를 틀렸습니다'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fcuser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h3 id=&quot;-board-예외처리-해주기&quot;&gt;📌 board 예외처리 해주기&lt;/h3&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;게시글이 없는 url을 입력했을 경우를 예외처리 해준다&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;from django.http import Http404 : 내용을 찾을수 없을때 내는 페이지 404에러 페이지&lt;/li&gt;
+    &lt;li&gt;except Board.DoesNotExist: raise Http404(‘게시글을 찾을 수 없습니다’)  : 없는 pk 이면, 즉 게시글이면 http404 에러페이지가 출력된다&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&quot;boardviewspy&quot;&gt;board/views.py&lt;/h5&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;board_detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;board&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Board&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Board&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DoesNotExist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Http404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'게시글을 찾을 수 없습니다'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     
-      
-    
-  
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'board_detail.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'board'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-  
-  
+&lt;p&gt;로그인을 하지 않은 작성자가 글을 작성하지 못하게 예외처리 해준다&lt;/p&gt;
 
-  
-    <entry>
-      <title type="html">Django (5) -Django 게시판 만들기</title>
-      <link href="https://heejung-gjt.github.io/django-07-board" rel="alternate" type="text/html" title="Django (5) -Django 게시판 만들기" />
-      <published>2021-01-10T11:30:00+09:00</published>
-      <updated>2021-01-10T11:30:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/django-07-board</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/django-07-board">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Tutorial &lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;if not request.session.get(‘user’): : 만약 session에 username이 없는 경우에 조건문을 처리해준다&lt;/li&gt;
+    &lt;li&gt;return redirect(‘/fcuser/login/’)  : login 페이지로 redirect 된다&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&quot;boardviewspy-1&quot;&gt;board/views.py&lt;/h5&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;board_write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'user'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redirect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/fcuser/login/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html">Django - Template Extending Django - form 활용하기 Django - 예외처리</summary></entry><entry><title type="html">Django (5) -Django 게시판 만들기</title><link href="https://heejung-gjt.github.io/django-07-board" rel="alternate" type="text/html" title="Django (5) -Django 게시판 만들기" /><published>2021-01-10T11:30:00+09:00</published><updated>2021-01-10T11:30:00+09:00</updated><id>https://heejung-gjt.github.io/django-07-board</id><content type="html" xml:base="https://heejung-gjt.github.io/django-07-board">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Tutorial &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./django-01-install&quot;&gt;Django(1) - Django Installation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./django-02-MTV&quot;&gt;Django(2) - MTV code pattern&lt;/a&gt;&lt;/li&gt;
@@ -287,161 +334,7 @@
 
 &lt;p&gt;아래의 이미지처럼 작성한 내용을 읽기 모드로  볼 수 있다&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/104116786-27395780-535f-11eb-8111-a4ece37775f8.PNG&quot; alt=&quot;board&quot; /&gt;&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="django" />
-      
-
-      
-        <summary type="html">Django Tutorial Django(1) - Django Installation Django(2) - MTV code pattern Django(3) - Django Structure Django(4) - login 페이지 만들기 Django(5) - 게시판 페이지 만들기</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Django - 예외처리</title>
-      <link href="https://heejung-gjt.github.io/django-08-exception" rel="alternate" type="text/html" title="Django - 예외처리" />
-      <published>2021-01-10T11:30:00+09:00</published>
-      <updated>2021-01-10T11:30:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/django-08-exception</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/django-08-exception">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;  &lt;/span&gt;--&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./django-05-template&quot;&gt;Django - Template Extending&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./django-04-form&quot;&gt;Django - form 활용하기 &lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./django-08-exception&quot;&gt;Django - 예외처리 &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
-
-&lt;p&gt;✔ 예외처리&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;예외처리&quot;&gt;예외처리&lt;/h3&gt;
-&lt;p&gt;사용자가 없는 id pwd 를 입력할때처럼 예외적인 상황으로 발생하는 error 를 예외처리 해줌으로써 정상적인 종료가 가능하다. try ~ except ~ finally 구문을 사용한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;-login-예외처리-해주기&quot;&gt;📌 login 예외처리 해주기&lt;/h3&gt;
-    &lt;p&gt;사용자 없는 id,pwd 입력했을경우 예외처리 해준다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;try: fcuser = Fcuser.objects.get(username=username) : model fcuser에 없는 username일 경우 except로 이동&lt;/li&gt;
-  &lt;li&gt;except Fcuser.DoesNotExist: self.add_error(‘username’,’ID가 없습니다’) return  : 에러 문장 출력후 return 해준다 ( 더이상 코드 진행 x)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h5 id=&quot;fcuserformspy&quot;&gt;fcuser/forms.py&lt;/h5&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LoginForm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;forms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-     &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-         &lt;span class=&quot;n&quot;&gt;fcuser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fcuser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-     &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fcuser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DoesNotExist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-         &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'username'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ID가 없습니다'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;check_password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fcuser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-         &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Password를 틀렸습니다'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-     &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-         &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fcuser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;-board-예외처리-해주기&quot;&gt;📌 board 예외처리 해주기&lt;/h3&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;게시글이 없는 url을 입력했을 경우를 예외처리 해준다&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;from django.http import Http404 : 내용을 찾을수 없을때 내는 페이지 404에러 페이지&lt;/li&gt;
-    &lt;li&gt;except Board.DoesNotExist: raise Http404(‘게시글을 찾을 수 없습니다’)  : 없는 pk 이면, 즉 게시글이면 http404 에러페이지가 출력된다&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;h5 id=&quot;boardviewspy&quot;&gt;board/views.py&lt;/h5&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;board_detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;board&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Board&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        
-    &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Board&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DoesNotExist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Http404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'게시글을 찾을 수 없습니다'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'board_detail.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'board'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;로그인을 하지 않은 작성자가 글을 작성하지 못하게 예외처리 해준다&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;if not request.session.get(‘user’): : 만약 session에 username이 없는 경우에 조건문을 처리해준다&lt;/li&gt;
-    &lt;li&gt;return redirect(‘/fcuser/login/’)  : login 페이지로 redirect 된다&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;h5 id=&quot;boardviewspy-1&quot;&gt;board/views.py&lt;/h5&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;board_write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'user'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redirect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/fcuser/login/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="django" />
-      
-
-      
-        <summary type="html">Django - Template Extending Django - form 활용하기 Django - 예외처리</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Django (3) -Django Structure</title>
-      <link href="https://heejung-gjt.github.io/django-06-structure" rel="alternate" type="text/html" title="Django (3) -Django Structure" />
-      <published>2021-01-09T11:30:00+09:00</published>
-      <updated>2021-01-09T11:30:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/django-06-structure</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/django-06-structure">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Tutorial &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/104116786-27395780-535f-11eb-8111-a4ece37775f8.PNG&quot; alt=&quot;board&quot; /&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html">Django Tutorial Django(1) - Django Installation Django(2) - MTV code pattern Django(3) - Django Structure Django(4) - login 페이지 만들기 Django(5) - 게시판 페이지 만들기</summary></entry><entry><title type="html">Django (3) -Django Structure</title><link href="https://heejung-gjt.github.io/django-06-structure" rel="alternate" type="text/html" title="Django (3) -Django Structure" /><published>2021-01-09T11:30:00+09:00</published><updated>2021-01-09T11:30:00+09:00</updated><id>https://heejung-gjt.github.io/django-06-structure</id><content type="html" xml:base="https://heejung-gjt.github.io/django-06-structure">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Tutorial &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./django-01-install&quot;&gt;Django(1) - Django Installation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./django-02-MTV&quot;&gt;Django(2) - MTV code pattern&lt;/a&gt;&lt;/li&gt;
@@ -606,41 +499,7 @@ python manage.py runserver &lt;span class=&quot;c&quot;&gt;# 개발 서버 실�
 &lt;p&gt;(참고01)[https://livetodaykono.tistory.com/41] &lt;br /&gt;
  (참고02)[https://developer.mozilla.org/ko/docs/Learn/Server-side/Django/skeleton_website] &lt;br /&gt;
  (참고03)[https://velog.io/@ikswary/django-%EA%B5%AC%EC%A1%B0] &lt;br /&gt;
- (참고04)[https://docs.djangoproject.com/ko/3.1/intro/tutorial01/]&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="django" />
-      
-
-      
-        <summary type="html">Django Tutorial Django(1) - Django Installation Django(2) - MTV code pattern Django(3) - Django Structure Django(4) - login 페이지 만들기 Django(5) - 게시판 페이지 만들기</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Django - Template 확장하기</title>
-      <link href="https://heejung-gjt.github.io/django-05-template" rel="alternate" type="text/html" title="Django - Template 확장하기" />
-      <published>2021-01-09T11:30:00+09:00</published>
-      <updated>2021-01-09T11:30:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/django-05-template</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/django-05-template">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;  &lt;/span&gt;--&gt;
+ (참고04)[https://docs.djangoproject.com/ko/3.1/intro/tutorial01/]&lt;/p&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html">Django Tutorial Django(1) - Django Installation Django(2) - MTV code pattern Django(3) - Django Structure Django(4) - login 페이지 만들기 Django(5) - 게시판 페이지 만들기</summary></entry><entry><title type="html">Django - Template 확장하기</title><link href="https://heejung-gjt.github.io/django-05-template" rel="alternate" type="text/html" title="Django - Template 확장하기" /><published>2021-01-09T11:30:00+09:00</published><updated>2021-01-09T11:30:00+09:00</updated><id>https://heejung-gjt.github.io/django-05-template</id><content type="html" xml:base="https://heejung-gjt.github.io/django-05-template">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;  &lt;/span&gt;--&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./django-05-template&quot;&gt;Django - Template Extending&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./django-04-form&quot;&gt;Django - form 활용하기 &lt;/a&gt;&lt;/li&gt;
@@ -744,41 +603,7 @@ form에는 username과 password의 field가 있으므로 반복문을 돌릴 경
 
 &lt;p&gt;&lt;a href=&quot;https://heejung-gjt.github.io/django-03-login&quot;&gt;field.errors 로 id나 pwd가 유효한 값인지 아닌지 출력해주는 문장은 MTV 생성에 View 부분을 참고하자 &amp;lt;click📌&amp;gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;forms.py에서 설정한대로 화면에 구현이 된것을 볼 수 있다 !&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="django" />
-      
-
-      
-        <summary type="html">Django - Template Extending Django - form 활용하기 Django - 예외처리 목차</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Django - form 활용하기</title>
-      <link href="https://heejung-gjt.github.io/django-04-form" rel="alternate" type="text/html" title="Django - form 활용하기" />
-      <published>2021-01-09T11:30:00+09:00</published>
-      <updated>2021-01-09T11:30:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/django-04-form</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/django-04-form">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;  &lt;/span&gt;--&gt;
+&lt;p&gt;forms.py에서 설정한대로 화면에 구현이 된것을 볼 수 있다 !&lt;/p&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html">Django - Template Extending Django - form 활용하기 Django - 예외처리 목차</summary></entry><entry><title type="html">Django - form 활용하기</title><link href="https://heejung-gjt.github.io/django-04-form" rel="alternate" type="text/html" title="Django - form 활용하기" /><published>2021-01-09T11:30:00+09:00</published><updated>2021-01-09T11:30:00+09:00</updated><id>https://heejung-gjt.github.io/django-04-form</id><content type="html" xml:base="https://heejung-gjt.github.io/django-04-form">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;  &lt;/span&gt;--&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./django-05-template&quot;&gt;Django - Template Extending&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./django-04-form&quot;&gt;Django - form 활용하기 &lt;/a&gt;&lt;/li&gt;
@@ -943,41 +768,7 @@ form안에서 쓰이는 속성들에 대해서 먼저 알아보자&lt;/p&gt;
 
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'login.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'form'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="django" />
-      
-
-      
-        <summary type="html">Django - Template Extending Django - form 활용하기 Django - 예외처리</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Django (1) - Installation</title>
-      <link href="https://heejung-gjt.github.io/django-01-install" rel="alternate" type="text/html" title="Django (1) - Installation" />
-      <published>2021-01-03T16:00:00+09:00</published>
-      <updated>2021-01-03T16:00:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/django-01-install</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/django-01-install">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Tutorial &lt;/span&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html">Django - Template Extending Django - form 활용하기 Django - 예외처리</summary></entry><entry><title type="html">Django (1) - Installation</title><link href="https://heejung-gjt.github.io/django-01-install" rel="alternate" type="text/html" title="Django (1) - Installation" /><published>2021-01-03T16:00:00+09:00</published><updated>2021-01-03T16:00:00+09:00</updated><id>https://heejung-gjt.github.io/django-01-install</id><content type="html" xml:base="https://heejung-gjt.github.io/django-01-install">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Tutorial &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./django-01-install&quot;&gt;Django(1) - Django Installation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./django-02-MTV&quot;&gt;Django(2) - MTV code pattern&lt;/a&gt;&lt;/li&gt;
@@ -1034,41 +825,7 @@ django-admin 명령어를 통해서 프로젝트와 app을 생성한다. 생성�
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/103471082-c2aa5580-4dbe-11eb-8a15-48de2b48b445.PNG&quot; alt=&quot;runserver&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;위의 화면이 뜨면 제대로 install 된것 🙌
-&lt;br /&gt;&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="django" />
-      
-
-      
-        <summary type="html">Django Tutorial Django(1) - Django Installation Django(2) - MTV code pattern Django(3) - Django Structure Django(4) - login 페이지 만들기 Django(5) - 게시판 페이지 만들기</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Django (2) - MTV code pattern</title>
-      <link href="https://heejung-gjt.github.io/django-02-MTV" rel="alternate" type="text/html" title="Django (2) - MTV code pattern" />
-      <published>2021-01-03T15:47:00+09:00</published>
-      <updated>2021-01-03T15:47:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/django-02-MTV</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/django-02-MTV">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Tutorial &lt;/span&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html">Django Tutorial Django(1) - Django Installation Django(2) - MTV code pattern Django(3) - Django Structure Django(4) - login 페이지 만들기 Django(5) - 게시판 페이지 만들기</summary></entry><entry><title type="html">Django (2) - MTV code pattern</title><link href="https://heejung-gjt.github.io/django-02-MTV" rel="alternate" type="text/html" title="Django (2) - MTV code pattern" /><published>2021-01-03T15:47:00+09:00</published><updated>2021-01-03T15:47:00+09:00</updated><id>https://heejung-gjt.github.io/django-02-MTV</id><content type="html" xml:base="https://heejung-gjt.github.io/django-02-MTV">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Tutorial &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./django-01-install&quot;&gt;Django(1) - Django Installation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./django-02-MTV&quot;&gt;Django(2) - MTV code pattern&lt;/a&gt;&lt;/li&gt;
@@ -1289,41 +1046,7 @@ POST 방식은 body에 데이터를 숨겨진 상태로 전송해주는 방식�
         &lt;span class=&quot;n&quot;&gt;verbose_name_plural&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'사용자'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/103474790-a8866c80-4dea-11eb-8bf8-27029d1a3d49.PNG&quot; alt=&quot;커스ㅓ&quot; /&gt;&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="django" />
-      
-
-      
-        <summary type="html">Django Tutorial Django(1) - Django Installation Django(2) - MTV code pattern Django(3) - Django Structure Django(4) - login 페이지 만들기 Django(5) - 게시판 페이지 만들기</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Django (4) - login 페이지 만들기</title>
-      <link href="https://heejung-gjt.github.io/django-03-login" rel="alternate" type="text/html" title="Django (4) - login 페이지 만들기" />
-      <published>2021-01-03T15:30:00+09:00</published>
-      <updated>2021-01-03T15:30:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/django-03-login</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/django-03-login">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Tutorial &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/103474790-a8866c80-4dea-11eb-8bf8-27029d1a3d49.PNG&quot; alt=&quot;커스ㅓ&quot; /&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html">Django Tutorial Django(1) - Django Installation Django(2) - MTV code pattern Django(3) - Django Structure Django(4) - login 페이지 만들기 Django(5) - 게시판 페이지 만들기</summary></entry><entry><title type="html">Django (4) - login 페이지 만들기</title><link href="https://heejung-gjt.github.io/django-03-login" rel="alternate" type="text/html" title="Django (4) - login 페이지 만들기" /><published>2021-01-03T15:30:00+09:00</published><updated>2021-01-03T15:30:00+09:00</updated><id>https://heejung-gjt.github.io/django-03-login</id><content type="html" xml:base="https://heejung-gjt.github.io/django-03-login">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Tutorial &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./django-01-install&quot;&gt;Django(1) - Django Installation&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./django-02-MTV&quot;&gt;Django(2) - MTV code pattern&lt;/a&gt;&lt;/li&gt;
@@ -1436,41 +1159,7 @@ POST 방식은 body에 데이터를 숨겨진 상태로 전송해주는 방식�
 &lt;span class=&quot;n&quot;&gt;urlpatterns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'login/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;views&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; 
 &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="django" />
-      
-
-      
-        <summary type="html">Django Tutorial Django(1) - Django Installation Django(2) - MTV code pattern Django(3) - Django Structure Django(4) - login 페이지 만들기 Django(5) - 게시판 페이지 만들기</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">git (1) - Tutorial</title>
-      <link href="https://heejung-gjt.github.io/git-01" rel="alternate" type="text/html" title="git (1) - Tutorial" />
-      <published>2021-01-03T14:47:00+09:00</published>
-      <updated>2021-01-03T14:47:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/git-01</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/git-01">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;git 강좌 순서 &lt;/span&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html">Django Tutorial Django(1) - Django Installation Django(2) - MTV code pattern Django(3) - Django Structure Django(4) - login 페이지 만들기 Django(5) - 게시판 페이지 만들기</summary></entry><entry><title type="html">git (1) - Tutorial</title><link href="https://heejung-gjt.github.io/git-01" rel="alternate" type="text/html" title="git (1) - Tutorial" /><published>2021-01-03T14:47:00+09:00</published><updated>2021-01-03T14:47:00+09:00</updated><id>https://heejung-gjt.github.io/git-01</id><content type="html" xml:base="https://heejung-gjt.github.io/git-01">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;git 강좌 순서 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./git-01&quot;&gt;git(1) - Git Tutorial&lt;/a&gt;&lt;/li&gt;
 
@@ -1692,41 +1381,7 @@ bd7bd28 Add About page
 9186a41 Add LoginService module
 1563681 Initialise project
 
-&lt;/code&gt;&lt;/pre&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="git" />
-      
-
-      
-        <summary type="html">git 강좌 순서 git(1) - Git Tutorial</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">JavaScript(3) - Function</title>
-      <link href="https://heejung-gjt.github.io/js-03" rel="alternate" type="text/html" title="JavaScript(3) - Function" />
-      <published>2020-12-31T16:18:00+09:00</published>
-      <updated>2020-12-31T16:18:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/js-03</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/js-03">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;JavaScript  Tutorial &lt;/span&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>jung</name></author><category term="git" /><summary type="html">git 강좌 순서 git(1) - Git Tutorial</summary></entry><entry><title type="html">JavaScript(3) - Function</title><link href="https://heejung-gjt.github.io/js-03" rel="alternate" type="text/html" title="JavaScript(3) - Function" /><published>2020-12-31T16:18:00+09:00</published><updated>2020-12-31T16:18:00+09:00</updated><id>https://heejung-gjt.github.io/js-03</id><content type="html" xml:base="https://heejung-gjt.github.io/js-03">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;JavaScript  Tutorial &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./js-01-function&quot;&gt;JavaScript(1) - 함수1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./js-02&quot;&gt;JavaScript(2) - 함수2&lt;/a&gt;&lt;/li&gt;
@@ -1810,32 +1465,4 @@ checkbox인 input의 배열을 순차적으로 new_list에 push , 즉 저장한�
       &lt;span class=&quot;nx&quot;&gt;new_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="JS" />
-      
-
-      
-        <summary type="html">JavaScript Tutorial JavaScript(1) - 함수1 JavaScript(2) - 함수2 JavaScript(3) - 함수3</summary>
-      
-
-      
-      
-    </entry>
-  
-</feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="JS" /><summary type="html">JavaScript Tutorial JavaScript(1) - 함수1 JavaScript(2) - 함수2 JavaScript(3) - 함수3</summary></entry></feed>
