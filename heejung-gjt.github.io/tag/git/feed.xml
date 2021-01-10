@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="https://heejung-gjt.github.io/tag/git/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-01-10T22:55:28+09:00</updated>
+  <id>https://heejung-gjt.github.io/tag/git/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">Studying  Develope | </title>
+  
+
+  
+    <subtitle>개발 공부하는 블로그</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">git (1) - Tutorial</title>
+      <link href="https://heejung-gjt.github.io/git-01" rel="alternate" type="text/html" title="git (1) - Tutorial" />
+      <published>2021-01-03T14:47:00+09:00</published>
+      <updated>2021-01-03T14:47:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/git-01</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/git-01">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;git 강좌 순서 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./git-01&quot;&gt;git(1) - Git Tutorial&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;-git-tutorial&quot;&gt;🗝 Git Tutorial&lt;/h2&gt;
+
+&lt;h3 id=&quot;목차&quot;&gt;목차&lt;/h3&gt;
+
+&lt;p&gt;✔ Set Up&lt;/p&gt;
+
+&lt;p&gt;✔ Git의 WorkFlow&lt;/p&gt;
+
+&lt;p&gt;✔ Git의 기본 명령어&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;set-up&quot;&gt;Set Up&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;사용한 터미널 : cmder&lt;/p&gt;
+
+&lt;h3 id=&quot;사용자-정보&quot;&gt;📌사용자 정보&lt;/h3&gt;
+&lt;p&gt;git을 사용할 때 가장 먼저 해야 하는 것은 사용자 이름과 이메일 주소를 설정하는 것이다. git은 커밋할때마다 이 정보를 사용한다. 한 번 커밋한 이후에는 정보를 변경할 수 없으니 주의하자. –global 옵션으로 설정하는 것은 딱 한번만 설정 해주면 된다.   만약 프로젝트마다 다른 이름과 이메일을 사용하고 싶다면 –global을 빼고 작성해주면 된다&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;λ git config --global user.name &quot;YourName&quot;
+λ git config --global user.email &quot;YourEmail&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;편집기&quot;&gt;📌편집기&lt;/h3&gt;
+&lt;p&gt;편집기는 VScode로 열 수 있게 설정해준다. 이때 Windows 사용자들은 VS Code를 설치할때 PATH에 추가하기를 선택해준다. 
+–wait옵션을 주는 이유는 vscode를 터미널에서 열었을때 편집이 끝나 해당 편집기가 닫힐때까지 대기하도록 해준다.
+-e를 실행하면 vscode를 편집기로 사용할 수 있다&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;λ git config --global core.editor &quot;code --wait&quot;
+λ git config --global -e
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;crlf-설정하기&quot;&gt;📌CRLF 설정하기&lt;/h3&gt;
+&lt;p&gt;OS마다 에디터에서 새로운 줄바꿈을 할 때 들어가는 문자열이 각각 다르기 때문에 (window는 text\r\n, mac은 text\n) autocrlf를 설정해주어 이를 해결해준다&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;λ git config --global core.autocrlf true #for Windows
+λ git config --global core.autocrlf input #for Mac
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;설정값-확인&quot;&gt;📌설정값 확인&lt;/h3&gt;
+&lt;p&gt;–list 옵션을 통해 지금까지 설정한 값들을 볼 수 있다&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;λ git config --list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git의-workflow&quot;&gt;Git의 WorkFlow&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;git은 3가지의 공간으로 나뉜다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/103476617-cfe53580-4dfa-11eb-829f-592ff960c6b8.PNG&quot; alt=&quot;git 이미지&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;working directory 는 프로젝트의 파일들을 수정하는 작업을 한다
+    &lt;blockquote&gt;
+      &lt;p&gt;working directory에 있는 파일은 Untracked과 tracked 두가지로 나뉜다
+tracked 파일은 Unmodified(수정하지 않음)와 Modified(수정함) 그리고 Staged(커밋으로 저장소에 기록할) 상태 중 하나이다. 
+untracked 파일은 그 외 모든 파일을 말한다&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;staging area 는 히스토리에 저장할 준비가 되어있는 파일들을 옮겨놓는 공간이다&lt;/li&gt;
+  &lt;li&gt;.git directory(Repository)는 버전의 히스토리를 가지고 있는 공간이다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-ex01-git안에--first_gittxt-second_gittxt이-존재한다&quot;&gt;📑 EX01) git안에  first_git.txt, second_git.txt이 존재한다&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;
+✔ __1. git status로 확인 결과 아무것도 commit된 것이 없고 모든 파일은 untracked 파일이다__
+
+λ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use &quot;git add &amp;lt;file&amp;gt;...&quot; to include in what will be committed)
+        first_git.txt
+        second_git.txt
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+
+✔ __2. git add first_git.txt로 파일 하나를 add해준다__
+
+λ git add first_git.txt
+
+
+__3. first_git 파일은 커밋이 가능한 staging area에 들어가 있고 second_git 파일은 여전히 untracked 이다__
+
+λ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use &quot;git rm --cached &amp;lt;file&amp;gt;...&quot; to unstage)
+        new file:   first_git.txt
+
+Untracked files:
+  (use &quot;git add &amp;lt;file&amp;gt;...&quot; to include in what will be committed)
+        second_git.txt
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-ex02-first_gittxt는-staging-area-공간에-있고--second_gittxt는-untracked-파일이다&quot;&gt;📑 EX02) first_git.txt는 staging area 공간에 있고 , second_git.txt는 untracked 파일이다&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;
+✔ __1. git commit으로 first_git.txt를 repository 공간으로 이동시켰다__
+
+λ git commit
+[master (root-commit) fe11377] This is First Commit File !
+ 1 file changed, 1 insertion(+)
+ create mode 100644 first_git.txt
+
+✔ __2. git log로 확인 결과 한개의 commit이 된 것을 볼 수 있다__
+
+λ git log
+commit fe11377c487ae9eccfd802aba21ba31b176e35bd (HEAD -&amp;gt; master)
+Author: heejung &amp;lt;dkfkffkf115@naver.com&amp;gt;
+Date:   Sun Jan 3 20:02:43 2021 +0900
+
+    This is First Commit File !
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;git의-기본-명령어&quot;&gt;Git의 기본 명령어&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;git-init&quot;&gt;git init&lt;/h4&gt;
+&lt;p&gt;init명령어는 .git이라는 하위 디렉토리를 만들어준다. 해당 디렉토리에는 git에 관한 필요한 파일들이 들어있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;git-add&quot;&gt;git add&lt;/h4&gt;
+&lt;p&gt;add명령어로 파일들을 staging area에 추가해준다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git add &amp;lt;fileName&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;add 뒤에 .을 붙이면 모든 파일을 add 하겠다는 명령어이다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git add .
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;git-commit&quot;&gt;git commit&lt;/h4&gt;
+&lt;p&gt;commit 명령어로 파일들을 git directory에 추가해준다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git commit -m &quot;&amp;lt;fileDescription&amp;gt;&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;git-status&quot;&gt;git status&lt;/h4&gt;
+&lt;p&gt;status 명령어로 파일의 상태를 확인한다. 해당된 파일이 add가 된 상태인지 commit이 된 상태인지 알 수 있다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git status
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;ignore&quot;&gt;ignore&lt;/h4&gt;
+&lt;p&gt;commit 하고 싶지 않은 파일들은 해당 폴더를 만들어 넣는다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ echo *.log &amp;gt; .gitignore  #모든 .log 파일을 ignore폴더에 넣는다
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;git-diff&quot;&gt;git diff&lt;/h4&gt;
+&lt;p&gt;working directory에 있는 파일들을 비교할 수 있다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;λ git diff
+diff --git a/third_git.txt b/third_git.txt
+index e69de29..f2aa86d 100644
+--- a/third_git.txt   #이전버전 third_git과 
++++ b/third_git.txt   #현재버전 third_git을 비교한다는 뜻
+@@ -0,0 +1 @@         #이전 버전의 0번째부터 현재버전 0~1번째줄을 비교해보라는 뜻
++hello                #hello라는 문자가 추가 되었다는 뜻
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&quot;git-diff-staged&quot;&gt;git diff –staged&lt;/h4&gt;
+&lt;p&gt;staging area에 있는 파일들을 비교할 수 있다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;λ git diff
+diff --git a/third_git.txt b/third_git.txt
+index e69de29..f2aa86d 100644
+--- a/third_git.txt   #이전버전 third_git과 
++++ b/third_git.txt   #현재버전 third_git을 비교한다는 뜻
+@@ -0,0 +1 @@         #이전 버전의 0번째부터 현재버전 0~1번째줄을 비교해보라는 뜻
++hello                #hello라는 문자가 추가 되었다는 뜻
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;git-rm&quot;&gt;git rm&lt;/h4&gt;
+&lt;p&gt;rm이 아니라 git rm을 사용하면 delete된 결과가 바로 staging area에 포함이 된다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;λ git rm &amp;lt;삭제할 파일&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;git-log-oneline&quot;&gt;git log –oneline&lt;/h4&gt;
+&lt;p&gt;해당 옵션을 사용하면 간단하게 commit된 파일들을 볼 수 있다. commit 된 파일들의 해쉬코드와 commit 메시지를 볼 수 있다
+ –reverse를 붙이면 commit 가자 오래된 순부터 볼 수 있다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;λ git log --oneline
+d643a6e (HEAD -&amp;gt; master) Update Welcome page  
+b8e485f Add light theme
+bd7bd28 Add About page
+328708d Add Welcome page
+0ad2dbb Add UserRepository module
+9186a41 Add LoginService module
+1563681 Initialise project
+
+&lt;/code&gt;&lt;/pre&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="git" />
+      
+
+      
+        <summary type="html">git 강좌 순서 git(1) - Git Tutorial</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>
