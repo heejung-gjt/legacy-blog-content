@@ -4,6 +4,7 @@
 
 
     <!-- Document Settings -->
+    <!-- Document Settings -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -146,10 +147,10 @@ into the {body} of the default.hbs template -->
     <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
     <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
-<!--   all posts 안함
-    <li class="nav-archive" role="menuitem">
-        <a href="/archive.html">All Posts</a>
-    </li>-->
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
 </ul>
         
     </div>
@@ -179,7 +180,7 @@ into the {body} of the default.hbs template -->
             <header class="post-full-header">
 
               <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime=" 3 January 2021"> 3 January 2021</time>
+                    <time class="post-full-meta-date" datetime="2021-01-03">2021-01-03</time>
                     
                         <span class="date-divider">/</span>
                         
@@ -209,6 +210,7 @@ into the {body} of the default.hbs template -->
     <li><a href="./django-06-structure">Django(3) - Django Structure </a></li>
     <li><a href="./django-03-login">Django(4) - login 페이지 만들기 </a></li>
     <li><a href="./django-07-board">Django(5) - 게시판 페이지 만들기 </a></li>
+    
 </ul>
 
 <!--    <li class="content content01">1. MTV란</li>-->
@@ -335,33 +337,22 @@ POST 방식은 body에 데이터를 숨겨진 상태로 전송해주는 방식�
 <p>생성한 id와 pwd로 로그인하면 위의 이미지 처럼 관리자 페이지가 뜨는 것을 볼 수 있다 ( /admin 붙이기 )
 <br /><br /></p>
 
-<h3 id="2admin-페이지-커스터마이징-하기">2.admin 페이지 커스터마이징 하기</h3>
+<h3 id="2adminpy-수정하기">2.admin.py 수정하기</h3>
 
-<p>📌  <strong>models.py에서 만든 모델을 admin에 등록해준다.</strong></p>
+<p>📌  <strong>list_display 수정과 register</strong></p>
 
-<p>admin.py에서 models.py에서 만든 데이터 User을 import 해준 후 admin사이트에 등록해준다</p>
+<ul>
+  <li>list_display 
+해당 아이템을 추가하면 admin페이지의 table column에 추가한 값들의 정보가 뜨게 된다.</li>
+</ul>
 
-<p><br /></p>
-
-<blockquote>
-  <p>models.py</p>
-</blockquote>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
-
-<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">username</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
-                                <span class="n">verbose_name</span><span class="o">=</span><span class="s">'사용자명'</span><span class="p">)</span>
-    <span class="n">password</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
-                                <span class="n">verbose_name</span><span class="o">=</span><span class="s">'비밀번호'</span><span class="p">)</span>
-    <span class="n">registered_dttm</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-                                            <span class="n">verbose_name</span><span class="o">=</span><span class="s">'등록시간'</span><span class="p">)</span>
-
-    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
-        <span class="n">db_table</span> <span class="o">=</span> <span class="s">'campus_user'</span>
-   
-</code></pre></div></div>
-<p><br /></p>
+<ol>
+  <li>모델에서 생성된 User 클래스를 import 한다.</li>
+  <li>admin이라는 ModelAdmin을 상속받아서 UserAdmin이라는 클래스를 생성한다</li>
+  <li>이 클래스는 관리자가 관리할 수 있는 model이다.</li>
+  <li>admin.site.register(User, UserAdmin) : User 테이블을 관리자 페이지로 등록을 하는데</li>
+  <li>UserAdmin에서 정의한 방식대로 관리가 된다는 소리이다</li>
+</ol>
 
 <blockquote>
   <p>admin.py</p>
@@ -371,7 +362,7 @@ POST 방식은 body에 데이터를 숨겨진 상태로 전송해주는 방식�
 <span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">User</span>
 
 <span class="k">class</span> <span class="nc">UserAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
-    <span class="k">pass</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">[</span><span class="s">''</span><span class="p">,</span><span class="s">''</span><span class="p">,]</span>
 
 <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">UserAdmin</span><span class="p">)</span>
 </code></pre></div></div>

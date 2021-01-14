@@ -4,6 +4,7 @@
 
 
     <!-- Document Settings -->
+    <!-- Document Settings -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -51,7 +52,7 @@
     <meta property="og:site_name" content="Studying  Develope" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Django - form 활용하기" />
-    <meta property="og:description" content="Django - Template Extending Django - form 활용하기 Django - 예외처리 목차 ✔ form이란 ✔ form 선언하기 ✔ form안의 값 유효성 검증하기 form이란 form은 입력에 대한 처리를 할수 있는 역할을 해주는데 장고에 있는 form을 사용할 수 있다. 사용자로부터 정보를 수집하여 서버에 제출하는데 해당 값들에 대한 유효성 검증, 데이터 처리하는 로직등" />
+    <meta property="og:description" content="Django - Template Extending Django - form 활용하기 Django - 예외처리 목차 ✔ form이란 ✔ form 선언하기 ✔ form안의 값 유효성 검증하기 form이란 form은 입력에 대한 처리를 할수 있는 역할을 해주는데 장고에 있는 form을 사용할 수 있으며 model 클래스와 유사하게 정의한다. 사용자로부터 정보를 수집하여 서버에 제출하는데 해당 값들에 대한 유효성" />
     <meta property="og:url" content="https://heejung-gjt.github.io/django-04-form" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -61,7 +62,7 @@
     <meta property="article:tag" content="Django" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Django - form 활용하기" />
-    <meta name="twitter:description" content="Django - Template Extending Django - form 활용하기 Django - 예외처리 목차 ✔ form이란 ✔ form 선언하기 ✔ form안의 값 유효성 검증하기 form이란 form은 입력에 대한 처리를 할수 있는 역할을 해주는데 장고에 있는 form을 사용할 수 있다. 사용자로부터 정보를 수집하여 서버에 제출하는데 해당 값들에 대한 유효성 검증, 데이터 처리하는 로직등" />
+    <meta name="twitter:description" content="Django - Template Extending Django - form 활용하기 Django - 예외처리 목차 ✔ form이란 ✔ form 선언하기 ✔ form안의 값 유효성 검증하기 form이란 form은 입력에 대한 처리를 할수 있는 역할을 해주는데 장고에 있는 form을 사용할 수 있으며 model 클래스와 유사하게 정의한다. 사용자로부터 정보를 수집하여 서버에 제출하는데 해당 값들에 대한 유효성" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -93,7 +94,7 @@
         "@type": "WebPage",
         "@id": "https://heejung-gjt.github.io/django-04-form"
     },
-    "description": "Django - Template Extending Django - form 활용하기 Django - 예외처리 목차 ✔ form이란 ✔ form 선언하기 ✔ form안의 값 유효성 검증하기 form이란 form은 입력에 대한 처리를 할수 있는 역할을 해주는데 장고에 있는 form을 사용할 수 있다. 사용자로부터 정보를 수집하여 서버에 제출하는데 해당 값들에 대한 유효성 검증, 데이터 처리하는 로직등"
+    "description": "Django - Template Extending Django - form 활용하기 Django - 예외처리 목차 ✔ form이란 ✔ form 선언하기 ✔ form안의 값 유효성 검증하기 form이란 form은 입력에 대한 처리를 할수 있는 역할을 해주는데 장고에 있는 form을 사용할 수 있으며 model 클래스와 유사하게 정의한다. 사용자로부터 정보를 수집하여 서버에 제출하는데 해당 값들에 대한 유효성"
 }
     </script>
 
@@ -146,10 +147,10 @@ into the {body} of the default.hbs template -->
     <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
     <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
-<!--   all posts 안함
-    <li class="nav-archive" role="menuitem">
-        <a href="/archive.html">All Posts</a>
-    </li>-->
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
 </ul>
         
     </div>
@@ -179,7 +180,7 @@ into the {body} of the default.hbs template -->
             <header class="post-full-header">
 
               <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime=" 9 January 2021"> 9 January 2021</time>
+                    <time class="post-full-meta-date" datetime="2021-01-09">2021-01-09</time>
                     
                         <span class="date-divider">/</span>
                         
@@ -222,8 +223,9 @@ into the {body} of the default.hbs template -->
 
 <h2 id="form이란">form이란</h2>
 
-<p>form은 입력에 대한 처리를 할수 있는 역할을 해주는데 장고에 있는 form을 사용할 수 있다. 사용자로부터 정보를 수집하여 서버에 제출하는데  해당 값들에 대한 유효성 검증, 데이터 처리하는 로직등 복잡함을 단순화 시켜주고 자동화 기능을 제공해준다  . <br />
-form안에서 쓰이는 속성들에 대해서 먼저 알아보자</p>
+<p>form은 입력에 대한 처리를 할수 있는 역할을 해주는데 장고에 있는 form을 사용할 수 있으며 model 클래스와 유사하게 정의한다.
+사용자로부터 정보를 수집하여 서버에 제출하는데 해당 값들에 대한 유효성 검증, 데이터 처리하는 로직등 복잡함을 단순화 시켜주고 자동화 기능을 제공해준다 . <br />
+html에 있는 form에 쓰이는 속성들에 대해서 먼저 알아보자</p>
 
 <ul>
   <li>type 속성 : 어떤 종류의 위젯이 표시될지 정의한다. text, password, sumbit 등 어떤 동작을 하는지에 따라 다르다</li>

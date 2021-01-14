@@ -4,6 +4,7 @@
 
 
     <!-- Document Settings -->
+    <!-- Document Settings -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -44,46 +45,30 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="개발 공부하는 블로그" />
     <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://heejung-gjt.github.io/html-02" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/django-12-metaclass" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develope" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="HTML&CSS - (2)" />
-    <meta property="og:description" content="
-HTML&amp;CSS 강좌 순서 
-
-    HTML&amp;CSS -(1) - 효율적인 마크업
-    HTML&amp;CSS -(2) - 마크업을 위해선
-
-
-두번째 HTML &amp;CSS 에 관한 글입니다
-" />
-    <meta property="og:url" content="https://heejung-gjt.github.io/html-02" />
-    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/html-css-cover.png" />
+    <meta property="og:title" content="Django - Meta Class" />
+    <meta property="og:description" content="meta class는 model안에서 작성이 되며 DB 테이블 이름, 또는 읽기 좋은 name으로 지정해 줄 수 있다 db_table : DB 테이블의 이름을 원하는것으로 바꾸어준다 verbose_name : 사용자가 읽기 쉬운 name으로 바꾸어주는 옵션으로 admin화면에서 해당 name으로 표시된다 verbose_name_plural : 영어는 기본적으로 복수형에 s가 붙는다. 하지만 한국어에는 단/복수를 굳이 구별하지 않아도 되기 때문에" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/django-12-metaclass" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2020-09-28T19:18:00+09:00" />
-    <meta property="article:modified_time" content="2020-09-28T19:18:00+09:00" />
-    <meta property="article:tag" content="Html" />
+    <meta property="article:published_time" content="2021-01-11T10:07:04+09:00" />
+    <meta property="article:modified_time" content="2021-01-11T10:07:04+09:00" />
+    <meta property="article:tag" content="Django" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="HTML&CSS - (2)" />
-    <meta name="twitter:description" content="
-HTML&amp;CSS 강좌 순서 
-
-    HTML&amp;CSS -(1) - 효율적인 마크업
-    HTML&amp;CSS -(2) - 마크업을 위해선
-
-
-두번째 HTML &amp;CSS 에 관한 글입니다
-" />
+    <meta name="twitter:title" content="Django - Meta Class" />
+    <meta name="twitter:description" content="meta class는 model안에서 작성이 되며 DB 테이블 이름, 또는 읽기 좋은 name으로 지정해 줄 수 있다 db_table : DB 테이블의 이름을 원하는것으로 바꾸어준다 verbose_name : 사용자가 읽기 쉬운 name으로 바꾸어주는 옵션으로 admin화면에서 해당 name으로 표시된다 verbose_name_plural : 영어는 기본적으로 복수형에 s가 붙는다. 하지만 한국어에는 단/복수를 굳이 구별하지 않아도 되기 때문에" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
-    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/html-css-cover.png" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Studying  Develope" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Html" />
+    <meta name="twitter:data2" content="Django" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -98,26 +83,18 @@ HTML&amp;CSS 강좌 순서
         "name": "Studying  Develope",
         "logo": "https://heejung-gjt.github.io/"
     },
-    "url": "https://heejung-gjt.github.io/html-02",
+    "url": "https://heejung-gjt.github.io/django-12-metaclass",
     "image": {
         "@type": "ImageObject",
-        "url": "https://heejung-gjt.github.io/assets/built/images/html-css-cover.png",
+        "url": "https://heejung-gjt.github.io/assets/built/images/django.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://heejung-gjt.github.io/html-02"
+        "@id": "https://heejung-gjt.github.io/django-12-metaclass"
     },
-    "description": "
-HTML&amp;CSS 강좌 순서 
-
-    HTML&amp;CSS -(1) - 효율적인 마크업
-    HTML&amp;CSS -(2) - 마크업을 위해선
-
-
-두번째 HTML &amp;CSS 에 관한 글입니다
-"
+    "description": "meta class는 model안에서 작성이 되며 DB 테이블 이름, 또는 읽기 좋은 name으로 지정해 줄 수 있다 db_table : DB 테이블의 이름을 원하는것으로 바꾸어준다 verbose_name : 사용자가 읽기 쉬운 name으로 바꾸어주는 옵션으로 admin화면에서 해당 name으로 표시된다 verbose_name_plural : 영어는 기본적으로 복수형에 s가 붙는다. 하지만 한국어에는 단/복수를 굳이 구별하지 않아도 되기 때문에"
 }
     </script>
 
@@ -130,7 +107,7 @@ HTML&amp;CSS 강좌 순서
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="HTML&CSS - (2)" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Django - Meta Class" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -170,10 +147,10 @@ into the {body} of the default.hbs template -->
     <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
     <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
-<!--   all posts 안함
-    <li class="nav-archive" role="menuitem">
-        <a href="/archive.html">All Posts</a>
-    </li>-->
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
 </ul>
         
     </div>
@@ -198,27 +175,27 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-html post tag-python ">
+        <article class="post-full  tag-django post tag-django ">
 
             <header class="post-full-header">
 
               <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="28 September 2020">28 September 2020</time>
+                    <time class="post-full-meta-date" datetime="2021-01-11">2021-01-11</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/html/'>HTML</a>
+                               <a href='/tag/django/'>DJANGO</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">HTML&CSS - (2)</h1>
+                <h1 class="post-full-title">Django - Meta Class</h1>
             </header>
 
 <!--  
             
-            <figure class="post-full-image" style="background-image: url(/assets/built/images/html-css-cover.png)">
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/django.png)">
             </figure>
             
 -->
@@ -226,13 +203,68 @@ into the {body} of the default.hbs template -->
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     
-<p><span class="table-of-contents-list">HTML&amp;CSS 강좌 순서 </span></p>
-<ul class="table-of-contents-list">
-    <li><a href="./html-01">HTML&amp;CSS -(1) - 효율적인 마크업</a></li>
-    <li><a href="./html-02">HTML&amp;CSS -(2) - 마크업을 위해선</a></li>
+<h3 id="meta-class는-model안에서-작성이-되며-db-테이블-이름-또는-읽기-좋은-name으로-지정해-줄-수-있다">meta class는 model안에서 작성이 되며 DB 테이블 이름, 또는 읽기 좋은 name으로 지정해 줄 수 있다</h3>
+
+<ul>
+  <li>
+    <p>db_table : DB 테이블의 이름을 원하는것으로 바꾸어준다</p>
+  </li>
+  <li>
+    <p>verbose_name : 사용자가 읽기 쉬운 name으로 바꾸어주는 옵션으로 admin화면에서 해당 name으로 표시된다</p>
+  </li>
+  <li>
+    <p>verbose_name_plural : 영어는 기본적으로 복수형에 s가 붙는다. 하지만 한국어에는 단/복수를 굳이 구별하지 않아도 되기
+때문에 verbose_name과 동일하게 짓는다</p>
+  </li>
 </ul>
 
-<p>두번째 HTML &amp;CSS 에 관한 글입니다</p>
+<h3 id="meta-class는-필드-선언-아래에-한-줄-띈-곳에-위치한다">meta class는 필드 선언 아래에 한 줄 띈 곳에 위치한다</h3>
+
+<h2 id="foreignkey">ForeignKey</h2>
+<p>ForeignKey는 1:n 관계를 말한다. 예를 들어보자면 <code class="highlighter-rouge">주문 - 사용자</code>를 생각해 볼 수 있다. 한명의 사용자가
+여러개의 주문을 할 수 있게 되므로 foreignkey를 만족한다. foreignkey를 사용할때는 on_delete값을 꼭 설정해주어야 한다 <br />
+<br /></p>
+
+<h3 id="on_delete-설정">on_delete 설정</h3>
+<p>1:N에서 1인쪽의 데이터가 삭제되었을 경우 N의 데이터를 어떻게 처리할 것인지에 대한 옵션이다</p>
+
+<ul>
+  <li>
+    <p><strong>CASCADE</strong> <br />
+1:N에서 1과 연결되는 모든 N들의 데이터를 삭제한다</p>
+  </li>
+  <li>
+    <p><strong>PROTECT</strong> <br />
+1:N에서 1이 삭제되지 않도록 막아준다</p>
+  </li>
+  <li>
+    <p><strong>SET_NULL</strong> <br />
+1:N에서 1이 삭제될때 연결되는 N들의 데이터값을 NULL로 바꾼다 단, null=True일때만 가능하다</p>
+  </li>
+  <li>
+    <p><strong>SET_DEFAULT</strong> <br />
+1:N에서 1이 삭제될때 N들의 데이터값을 default값으로 바꾼다 단, default값이 존재할때만 가능하다</p>
+  </li>
+  <li>
+    <p><strong>SET</strong> <br />
+1:N에서 1이 삭제될때 N의 데이터값을 대체할 값이나 함수로 지정해준다</p>
+  </li>
+  <li>
+    <p><strong>DO_NOTHING</strong> <br />
+1:N에서 1이 삭제되도 아무것도 하지 않는다. 오류가 발생할 수 있다</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="ex">(EX)</h3>
+<p>①  user앱 안에 있는 User model을 사용하여 user가 삭제되면 user와 연결된 모든 model이 연쇄적으로 삭제되게 설정하였다  <br />
+② product앱 안에 있는 Product model을 사용하여 product가 삭제되면 연결된 모든 model이 연쇄적으로 삭제되게
+설정하였다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s">'user.User'</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s">'사용자'</span><span class="p">)</span>  <span class="o">-</span> <span class="err">①</span>
+<span class="n">product</span> <span class="o">=</span> <span class="n">modles</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s">'product.Product'</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s">'상품'</span><span class="p">)</span> <span class="o">-</span> <span class="err">②</span>
+</code></pre></div></div>
 
                 </div>
             </section>
