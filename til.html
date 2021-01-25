@@ -45,94 +45,30 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="개발 공부하는 블로그" />
     <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://heejung-gjt.github.io/django-15-decorator" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/til" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develope" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="django의 decorator" />
-    <meta property="og:description" content="
-django의 Decorator란
-
-
-  
-    user/decorators.py 파일을 생성한다
-  
-
-
-def login_required(function):
-  def wrap():
-    print('login_required')
-    return function()
-  return wrap
-
-
-
-
-  
-    order/views.py에 있는 OrderList 클래스에 데코레이터를 지정을 한다
-    장고에서 데코레이터를 사용할 수 있도록 import해준다
-  
-
-
-from django.utils.decorators import method_decorator
-from user.decorators import login_required
-
-@method_decorator(login_required, name='dispatch')
-class OrderList(ListView):
-.
-.
-
-" />
-    <meta property="og:url" content="https://heejung-gjt.github.io/django-15-decorator" />
-    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
+    <meta property="og:title" content="TIL - 반복문, 조건문 (for, while)" />
+    <meta property="og:description" content="👉 0125 TIL for문 while문 정리하기 실습 문제 풀이 (다시한번 정리하기) 삼항연산자 (Ternary operators) print(&lt;'참인 경우 값'&gt; if &lt;조건&gt; else &lt;'거짓인 경우 값'&gt;) print('이부분은 True' if True else '이부분은 False') Conditional Expression (조건 표현식) 가독성이 떨어지는 단점이 있다 Conditional Statement (조건문) 조건 표현식에 비해 줄은 더 길어지지만 가독성이 좋다 Conditional" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/til" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-01-15T10:00:04+09:00" />
-    <meta property="article:modified_time" content="2021-01-15T10:00:04+09:00" />
-    <meta property="article:tag" content="Django" />
+    <meta property="article:published_time" content="2021-01-25T10:00:04+09:00" />
+    <meta property="article:modified_time" content="2021-01-25T10:00:04+09:00" />
+    <meta property="article:tag" content="Til" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="django의 decorator" />
-    <meta name="twitter:description" content="
-django의 Decorator란
-
-
-  
-    user/decorators.py 파일을 생성한다
-  
-
-
-def login_required(function):
-  def wrap():
-    print('login_required')
-    return function()
-  return wrap
-
-
-
-
-  
-    order/views.py에 있는 OrderList 클래스에 데코레이터를 지정을 한다
-    장고에서 데코레이터를 사용할 수 있도록 import해준다
-  
-
-
-from django.utils.decorators import method_decorator
-from user.decorators import login_required
-
-@method_decorator(login_required, name='dispatch')
-class OrderList(ListView):
-.
-.
-
-" />
+    <meta name="twitter:title" content="TIL - 반복문, 조건문 (for, while)" />
+    <meta name="twitter:description" content="👉 0125 TIL for문 while문 정리하기 실습 문제 풀이 (다시한번 정리하기) 삼항연산자 (Ternary operators) print(&lt;'참인 경우 값'&gt; if &lt;조건&gt; else &lt;'거짓인 경우 값'&gt;) print('이부분은 True' if True else '이부분은 False') Conditional Expression (조건 표현식) 가독성이 떨어지는 단점이 있다 Conditional Statement (조건문) 조건 표현식에 비해 줄은 더 길어지지만 가독성이 좋다 Conditional" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
-    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Studying  Develope" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Django" />
+    <meta name="twitter:data2" content="Til" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -147,50 +83,18 @@ class OrderList(ListView):
         "name": "Studying  Develope",
         "logo": "https://heejung-gjt.github.io/"
     },
-    "url": "https://heejung-gjt.github.io/django-15-decorator",
+    "url": "https://heejung-gjt.github.io/til",
     "image": {
         "@type": "ImageObject",
-        "url": "https://heejung-gjt.github.io/assets/built/images/django.png",
+        "url": "https://heejung-gjt.github.io/assets/built/images/python-cover.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://heejung-gjt.github.io/django-15-decorator"
+        "@id": "https://heejung-gjt.github.io/til"
     },
-    "description": "
-django의 Decorator란
-
-
-  
-    user/decorators.py 파일을 생성한다
-  
-
-
-def login_required(function):
-  def wrap():
-    print('login_required')
-    return function()
-  return wrap
-
-
-
-
-  
-    order/views.py에 있는 OrderList 클래스에 데코레이터를 지정을 한다
-    장고에서 데코레이터를 사용할 수 있도록 import해준다
-  
-
-
-from django.utils.decorators import method_decorator
-from user.decorators import login_required
-
-@method_decorator(login_required, name='dispatch')
-class OrderList(ListView):
-.
-.
-
-"
+    "description": "👉 0125 TIL for문 while문 정리하기 실습 문제 풀이 (다시한번 정리하기) 삼항연산자 (Ternary operators) print(&lt;'참인 경우 값'&gt; if &lt;조건&gt; else &lt;'거짓인 경우 값'&gt;) print('이부분은 True' if True else '이부분은 False') Conditional Expression (조건 표현식) 가독성이 떨어지는 단점이 있다 Conditional Statement (조건문) 조건 표현식에 비해 줄은 더 길어지지만 가독성이 좋다 Conditional"
 }
     </script>
 
@@ -203,7 +107,7 @@ class OrderList(ListView):
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="django의 decorator" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="TIL - 반복문, 조건문 (for, while)" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -272,27 +176,27 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-django post tag-django ">
+        <article class="post-full  tag-til post tag-til ">
 
             <header class="post-full-header">
 
               <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="2021-01-15">2021-01-15</time>
+                    <time class="post-full-meta-date" datetime="2021-01-25">2021-01-25</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/django/'>DJANGO</a>
+                               <a href='/tag/til/'>TIL</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">django의 decorator</h1>
+                <h1 class="post-full-title">TIL - 반복문, 조건문 (for, while)</h1>
             </header>
 
 <!--  
             
-            <figure class="post-full-image" style="background-image: url(/assets/built/images/django.png)">
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/python-cover.png)">
             </figure>
             
 -->
@@ -300,36 +204,69 @@ into the {body} of the default.hbs template -->
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     
-<h3 id="django의-decorator란">django의 Decorator란</h3>
+<h2 id="-0125-til">👉 0125 TIL</h2>
 
-<ul>
-  <li>
-    <h3 id="userdecoratorspy-파일을-생성한다">user/decorators.py 파일을 생성한다</h3>
-  </li>
-</ul>
+<p>for문 while문 정리하기 <br />
+실습 문제 풀이 (다시한번 정리하기)</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">login_required</span><span class="p">(</span><span class="n">function</span><span class="p">):</span>
-  <span class="k">def</span> <span class="nf">wrap</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">'login_required'</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">function</span><span class="p">()</span>
-  <span class="k">return</span> <span class="n">wrap</span>
+<p><br /></p>
+
+<h3 id="삼항연산자-ternary-operators">삼항연산자 (Ternary operators)</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="o">&lt;</span><span class="s">'참인 경우 값'</span><span class="o">&gt;</span> <span class="k">if</span> <span class="o">&lt;</span><span class="err">조건</span><span class="o">&gt;</span> <span class="k">else</span> <span class="o">&lt;</span><span class="s">'거짓인 경우 값'</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'이부분은 True'</span> <span class="k">if</span> <span class="bp">True</span> <span class="k">else</span> <span class="s">'이부분은 False'</span><span class="p">)</span>
 </code></pre></div></div>
 <p><br /></p>
 
+<h3 id="conditional-expression-조건-표현식">Conditional Expression (조건 표현식)</h3>
+<p>가독성이 떨어지는 단점이 있다</p>
+<h3 id="conditional-statement-조건문">Conditional Statement (조건문)</h3>
+<p>조건 표현식에 비해 줄은 더 길어지지만 가독성이 좋다  <br />
+<br /></p>
+
 <ul>
-  <li>
-    <h4 id="orderviewspy에-있는-orderlist-클래스에-데코레이터를-지정을-한다">order/views.py에 있는 OrderList 클래스에 데코레이터를 지정을 한다</h4>
-    <p>장고에서 데코레이터를 사용할 수 있도록 import해준다</p>
-  </li>
+  <li><strong>Conditional Expressions in Conditional Expressions</strong>  <br />
+#1과 #2는 같은 코드이다</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.utils.decorators</span> <span class="kn">import</span> <span class="n">method_decorator</span>
-<span class="kn">from</span> <span class="nn">user.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="k">if</span> <span class="s">'condition'</span> <span class="k">else</span> <span class="n">b</span> <span class="k">if</span> <span class="s">'condition'</span> <span class="k">else</span> <span class="n">c</span>  <span class="c">#1</span>
 
-<span class="nd">@method_decorator</span><span class="p">(</span><span class="n">login_required</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'dispatch'</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">OrderList</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
-<span class="o">.</span>
-<span class="o">.</span>
+<span class="k">if</span> <span class="s">'condition'</span><span class="p">:</span>   <span class="c">#2</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">a</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s">'condition'</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">c</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="for-while문">for, while문</h3>
+
+<h4 id="for문으로-110-사이의-합을-구해보자">for문으로 1~10 사이의 합을 구해보자</h4>
+<h4 id="110-사이의-합계를-구하는-것이므로-명시적으로-나타내기-위해-101로-표현해주자">1~10 사이의 합계를 구하는 것이므로 명시적으로 나타내기 위해 10+1로 표현해주자</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">sum</span><span class="o">+=</span><span class="n">i</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="for문으로-110사이의-합을-구할때-시간-복잡도를-계산하여-코드를-작성하는-자세가-필요하다">for문으로 1~10사이의 합을 구할때 시간 복잡도를 계산하여 코드를 작성하는 자세가 필요하다</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">print</span><span class="p">(</span><span class="n">number</span><span class="o">*</span><span class="p">(</span><span class="n">number</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="while문으로-110-사이의-합을-구해보자">while문으로 1~10 사이의 합을 구해보자</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="p">:</span>
+    <span class="nb">sum</span><span class="o">+=</span><span class="n">i</span>
+    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
 </code></pre></div></div>
 
                 </div>
