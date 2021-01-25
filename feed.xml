@@ -1,4 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-01-25T22:28:39+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develope</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">헷갈리는 python method 정리 (eval, map, get, any…)</title><link href="https://heejung-gjt.github.io/python-method" rel="alternate" type="text/html" title="헷갈리는 python method 정리 (eval, map, get, any...)" /><published>2021-01-25T10:00:04+09:00</published><updated>2021-01-25T10:00:04+09:00</updated><id>https://heejung-gjt.github.io/python-method</id><content type="html" xml:base="https://heejung-gjt.github.io/python-method">&lt;h3 id=&quot;eval-함수&quot;&gt;eval 함수&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-01-25T21:46:15+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develope</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">TIL - 반복문, 조건문 (for, while)</title><link href="https://heejung-gjt.github.io/django-15-decorator" rel="alternate" type="text/html" title="TIL - 반복문, 조건문 (for, while)" /><published>2021-01-25T10:00:04+09:00</published><updated>2021-01-25T10:00:04+09:00</updated><id>https://heejung-gjt.github.io/django-15-decorator</id><content type="html" xml:base="https://heejung-gjt.github.io/django-15-decorator">&lt;h2 id=&quot;-0125-til&quot;&gt;👉 0125 TIL&lt;/h2&gt;
+
+&lt;p&gt;for문 while문 정리하기 &lt;br /&gt;
+실습 문제 풀이 (다시한번 정리하기)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;삼항연산자-ternary-operators&quot;&gt;삼항연산자 (Ternary operators)&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'참인 경우 값'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;조건&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'거짓인 경우 값'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'이부분은 True'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'이부분은 False'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;conditional-expression-조건-표현식&quot;&gt;Conditional Expression (조건 표현식)&lt;/h3&gt;
+&lt;p&gt;가독성이 떨어지는 단점이 있다&lt;/p&gt;
+&lt;h3 id=&quot;conditional-statement-조건문&quot;&gt;Conditional Statement (조건문)&lt;/h3&gt;
+&lt;p&gt;조건 표현식에 비해 줄은 더 길어지지만 가독성이 좋다  &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Conditional Expressions in Conditional Expressions&lt;/strong&gt;  &lt;br /&gt;
+#1과 #2는 같은 코드이다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'condition'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'condition'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#1&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'condition'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#2&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'condition'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;for-while문&quot;&gt;for, while문&lt;/h3&gt;
+
+&lt;h4 id=&quot;for문으로-110-사이의-합을-구해보자&quot;&gt;for문으로 1~10 사이의 합을 구해보자&lt;/h4&gt;
+&lt;h4 id=&quot;110-사이의-합계를-구하는-것이므로-명시적으로-나타내기-위해-101로-표현해주자&quot;&gt;1~10 사이의 합계를 구하는 것이므로 명시적으로 나타내기 위해 10+1로 표현해주자&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;for문으로-110사이의-합을-구할때-시간-복잡도를-계산하여-코드를-작성하는-자세가-필요하다&quot;&gt;for문으로 1~10사이의 합을 구할때 시간 복잡도를 계산하여 코드를 작성하는 자세가 필요하다&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;while문으로-110-사이의-합을-구해보자&quot;&gt;while문으로 1~10 사이의 합을 구해보자&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">헷갈리는 python method 정리 (eval, map, get, any…)</title><link href="https://heejung-gjt.github.io/python-method" rel="alternate" type="text/html" title="헷갈리는 python method 정리 (eval, map, get, any...)" /><published>2021-01-25T10:00:04+09:00</published><updated>2021-01-25T10:00:04+09:00</updated><id>https://heejung-gjt.github.io/python-method</id><content type="html" xml:base="https://heejung-gjt.github.io/python-method">&lt;h3 id=&quot;eval-함수&quot;&gt;eval 함수&lt;/h3&gt;
 &lt;p&gt;eval 함수는 expression 인자에 문자열을 넣으면 해당 값을 그대로 실행해 결과를 출력해준다. 즉, 자료형 판단을 알아서 한 뒤 type을 바꾸어주는 함수이다.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'5*5'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 값 : 25&lt;/span&gt;
@@ -411,144 +474,4 @@ sql로 매핑되어 queryset이라는 자료 형태로 넘어오게 된다&lt;/p
 &lt;h4 id=&quot;stdobjectsexclude--안에-해당하는-조건을-제외하고-값을-불러온다&quot;&gt;std.objects.exclude() : ()안에 해당하는 조건을 제외하고 값을 불러온다&lt;/h4&gt;
 &lt;blockquote&gt;
   &lt;p&gt;exclude(naem=”jane”) : 이름이 jane인 값만 제외하고 불러온다&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html"></summary></entry><entry><title type="html">Django - 게시판 페이징하기</title><link href="https://heejung-gjt.github.io/django-09-paging" rel="alternate" type="text/html" title="Django - 게시판 페이징하기" /><published>2021-01-11T10:07:04+09:00</published><updated>2021-01-11T10:07:04+09:00</updated><id>https://heejung-gjt.github.io/django-09-paging</id><content type="html" xml:base="https://heejung-gjt.github.io/django-09-paging">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Tutorial &lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./django-09-paging&quot;&gt;Django - 게시판 paging하기 &lt;/a&gt;&lt;/li&gt;
-
-
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
-
-&lt;p&gt;✔ 모든 게시물 가져오는 방법 알아보기 - DB조회 queryset&lt;/p&gt;
-
-&lt;p&gt;✔ 게시판 페이징이란&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;database-조회하는-방법-click&quot;&gt;&lt;a href=&quot;http://127.0.0.1:4000/django-10-queryset&quot;&gt;DataBase 조회하는 방법 [click]&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;게시판 paging처리를 하기 위해서는 작성된 게시글의 모든 object의 개수를 가져와야 하는데 이때 queryset이 사용된다&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;board_all = Board.objects.all().order_by('-id')&lt;/code&gt; 이 코드가 이해가지 않으면 먼저 공부하자&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;페이징이란&quot;&gt;페이징이란&lt;/h2&gt;
-&lt;p&gt;한 화면에 표시할 게시물이 많으면 스크롤바를 내려야 하는 불편함이 생김으로 이를 개선하기 위해 페이지를 원하는 개수로 나누어 추가하는 것이다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;페이징-처리를-할-template에-출력될-위치를-정해-작성한다&quot;&gt;📌페이징 처리를 할 template에 출력될 위치를 정해 작성한다&lt;/h3&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;boardboard_listhtml-bootstrap-사용&quot;&gt;board/board_list.html (bootstrap 사용)&lt;/h5&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row mt-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pagination justify-content-center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-link&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;이전으로&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-item active&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-link&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;다음으로&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/104140945-7d59d980-53f7-11eb-952f-900bd2f14a67.PNG&quot; alt=&quot;페이징&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;viewspy에-django에서-제공하는-paginator을-사용한다&quot;&gt;📌views.py에 django에서 제공하는 paginator을 사용한다&lt;/h3&gt;
-    &lt;p&gt;paginator는 페이지당 몇개의 글을 화면에 보여줄것인지 도와주는 모듈이다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;① 작성한 게시글 객체를 모두 가져와 board_all 변수에 저장한다&lt;/p&gt;
-
-&lt;p&gt;② import한 Paginator을 사용한다. Paginator(페이지로 분할될 객체 , 한 페이지에 담길 객체의 수)를 받고 있다 즉,
-Board에 있는 모든 객체를 한페이지에 2개씩 출력하겠다는 이야기이다&lt;/p&gt;
-
-&lt;p&gt;③ request는 사용자가 보낸 모든 정보를 담고 있으며 GET방식으로 정보를 받아온 데이터를 가리킨다. 해당 데이터를
-딕셔너리의 get으로 (key값으로 value값 찾는 함수) page의 value값을 정수형으로 받아온다 즉 page의 첫번째 페이지에 있는 
-값들을 화면에 출력하게 된다&lt;/p&gt;
-
-&lt;p&gt;④ get_page 메소드가 page의 값을 받아 해당 페이지를 화면에 출력해준다&lt;/p&gt;
-
-&lt;h5 id=&quot;boardviewspy&quot;&gt;board/views.py&lt;/h5&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.core.paginator&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Paginator&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;board_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;board_all&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Board&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;order_by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;ⓛ&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;paginator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Paginator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;board_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;②&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;page&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'page'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;③&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;boards&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paginator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;④&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'board_list.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'boards'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;boards&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;필요한 정보들은 모두 board_list 템플릿으로 전달하였다 (페이지 값)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;template에-페이징한-글-출력하기&quot;&gt;📌template에 페이징한 글 출력하기&lt;/h3&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;① &lt;code class=&quot;highlighter-rouge&quot;&gt;{% if boards.has_previous %}&lt;/code&gt; : 이전 페이지가 존재하는지의 여부를 확인하기 위하여 조건문을 작성한다&lt;/p&gt;
-
-&lt;p&gt;② &lt;code class=&quot;highlighter-rouge&quot;&gt;href=&quot;?p={{ boards.previous_page_number }}&lt;/code&gt; : 만약 이전 페이지가 존재하면 버튼을 눌렀을때 이전페이지로 url을 이동시킨다&lt;/p&gt;
-
-&lt;p&gt;③ &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ boards.number }} / {{ boards.paginator.num_pages }}&lt;/code&gt; : 현재 페이지수 / 전체 페이지수&lt;/p&gt;
-
-&lt;h5 id=&quot;boardboard_listhtml&quot;&gt;board/board_list.html&lt;/h5&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% raw %}
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row mt-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;col-12&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pagination justify-content-center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                {% if boards.has_previous %} - ①
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-link&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;?p={{ boards.previous_page_number }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;이전으로&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; - ②
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-                {% else %}
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-item disabled&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-link&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;이전으로&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;  # 존재하지 않으면 href=&quot;#&quot;처리를 해준다
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-                {% endif %}
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-item active&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-link&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ boards.number }} / {{ boards.paginator.num_pages }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; - ③
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-                {% if boards.has_next %} - ④
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-link&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;?p={{ boards.next_page_number }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;다음으로&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; - ⑤
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-                {% else %}
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;page-link disabled&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;다음으로&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-                {% endif %}
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;버튼 클릭시 2개씩 게시글이 화면에 보여지는 것을 볼 수 있다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/104151140-8e1e4580-541f-11eb-8987-fd45ade53223.PNG&quot; alt=&quot;페이징 게시판&quot; /&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html">Django Tutorial Django - 게시판 paging하기</summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html"></summary></entry></feed>
