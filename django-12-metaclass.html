@@ -220,52 +220,6 @@ into the {body} of the default.hbs template -->
 
 <h3 id="meta-class는-필드-선언-아래에-한-줄-띈-곳에-위치한다">meta class는 필드 선언 아래에 한 줄 띈 곳에 위치한다</h3>
 
-<h2 id="foreignkey">ForeignKey</h2>
-<p>ForeignKey는 1:n 관계를 말한다. 예를 들어보자면 <code class="highlighter-rouge">주문 - 사용자</code>를 생각해 볼 수 있다. 한명의 사용자가
-여러개의 주문을 할 수 있게 되므로 foreignkey를 만족한다. foreignkey를 사용할때는 on_delete값을 꼭 설정해주어야 한다 <br />
-<br /></p>
-
-<h3 id="on_delete-설정">on_delete 설정</h3>
-<p>1:N에서 1인쪽의 데이터가 삭제되었을 경우 N의 데이터를 어떻게 처리할 것인지에 대한 옵션이다</p>
-
-<ul>
-  <li>
-    <p><strong>CASCADE</strong> <br />
-1:N에서 1과 연결되는 모든 N들의 데이터를 삭제한다</p>
-  </li>
-  <li>
-    <p><strong>PROTECT</strong> <br />
-1:N에서 1이 삭제되지 않도록 막아준다</p>
-  </li>
-  <li>
-    <p><strong>SET_NULL</strong> <br />
-1:N에서 1이 삭제될때 연결되는 N들의 데이터값을 NULL로 바꾼다 단, null=True일때만 가능하다</p>
-  </li>
-  <li>
-    <p><strong>SET_DEFAULT</strong> <br />
-1:N에서 1이 삭제될때 N들의 데이터값을 default값으로 바꾼다 단, default값이 존재할때만 가능하다</p>
-  </li>
-  <li>
-    <p><strong>SET</strong> <br />
-1:N에서 1이 삭제될때 N의 데이터값을 대체할 값이나 함수로 지정해준다</p>
-  </li>
-  <li>
-    <p><strong>DO_NOTHING</strong> <br />
-1:N에서 1이 삭제되도 아무것도 하지 않는다. 오류가 발생할 수 있다</p>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h3 id="ex">(EX)</h3>
-<p>①  user앱 안에 있는 User model을 사용하여 user가 삭제되면 user와 연결된 모든 model이 연쇄적으로 삭제되게 설정하였다  <br />
-② product앱 안에 있는 Product model을 사용하여 product가 삭제되면 연결된 모든 model이 연쇄적으로 삭제되게
-설정하였다</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s">'user.User'</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s">'사용자'</span><span class="p">)</span>  <span class="o">-</span> <span class="err">①</span>
-<span class="n">product</span> <span class="o">=</span> <span class="n">modles</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s">'product.Product'</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s">'상품'</span><span class="p">)</span> <span class="o">-</span> <span class="err">②</span>
-</code></pre></div></div>
-
                 </div>
             </section>
     </div>
