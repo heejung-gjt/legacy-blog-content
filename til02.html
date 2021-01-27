@@ -52,7 +52,7 @@
     <meta property="og:site_name" content="Studying  Develope" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="TIL - 몬티홀 구현, Ethiopian Multiplication" />
-    <meta property="og:description" content="👉 0126 TIL Ethiopian Multiplication 실습 num1, num2 = map(int,input().split()) result = num1*num2 list_ = [] while num1 &gt;= 1: if num1 % 2 != 0 : list_.append(num2) # 홀수일 경우 리스트에 추가 num1 //= 2 num2 *= 2 print(f'두 수의 곱 : {result}') print(f'ethiopian multiplication 계산결과 : {sum(list_)}') #홀수일때" />
+    <meta property="og:description" content="👉 0126 TIL Ethiopian Multiplication example input : 14 5 exmaple output : 70 풀어야 할 목표 14 5 -&gt; 70 7 10 keep 3 20 keep 1 40 keep (10 + 20 +50) -&gt; 70 코드구현 num1, num2 = map(int,input().split()) result = 0 while num1 &gt; 0: if num1" />
     <meta property="og:url" content="https://heejung-gjt.github.io/til02" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -62,7 +62,7 @@
     <meta property="article:tag" content="Til" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="TIL - 몬티홀 구현, Ethiopian Multiplication" />
-    <meta name="twitter:description" content="👉 0126 TIL Ethiopian Multiplication 실습 num1, num2 = map(int,input().split()) result = num1*num2 list_ = [] while num1 &gt;= 1: if num1 % 2 != 0 : list_.append(num2) # 홀수일 경우 리스트에 추가 num1 //= 2 num2 *= 2 print(f'두 수의 곱 : {result}') print(f'ethiopian multiplication 계산결과 : {sum(list_)}') #홀수일때" />
+    <meta name="twitter:description" content="👉 0126 TIL Ethiopian Multiplication example input : 14 5 exmaple output : 70 풀어야 할 목표 14 5 -&gt; 70 7 10 keep 3 20 keep 1 40 keep (10 + 20 +50) -&gt; 70 코드구현 num1, num2 = map(int,input().split()) result = 0 while num1 &gt; 0: if num1" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -94,7 +94,7 @@
         "@type": "WebPage",
         "@id": "https://heejung-gjt.github.io/til02"
     },
-    "description": "👉 0126 TIL Ethiopian Multiplication 실습 num1, num2 = map(int,input().split()) result = num1*num2 list_ = [] while num1 &gt;= 1: if num1 % 2 != 0 : list_.append(num2) # 홀수일 경우 리스트에 추가 num1 //= 2 num2 *= 2 print(f'두 수의 곱 : {result}') print(f'ethiopian multiplication 계산결과 : {sum(list_)}') #홀수일때"
+    "description": "👉 0126 TIL Ethiopian Multiplication example input : 14 5 exmaple output : 70 풀어야 할 목표 14 5 -&gt; 70 7 10 keep 3 20 keep 1 40 keep (10 + 20 +50) -&gt; 70 코드구현 num1, num2 = map(int,input().split()) result = 0 while num1 &gt; 0: if num1"
 }
     </script>
 
@@ -176,7 +176,7 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-til post tag-til ">
+        <article class="post-full  tag-til post tag-til02 ">
 
             <header class="post-full-header">
 
@@ -208,50 +208,83 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<h3 id="ethiopian-multiplication-실습">Ethiopian Multiplication 실습</h3>
+<h3 id="ethiopian--multiplication">Ethiopian  Multiplication</h3>
 
+<ul>
+  <li>example input : 14 5</li>
+  <li>exmaple output : 70</li>
+</ul>
+
+<h4 id="풀어야-할-목표">풀어야 할 목표</h4>
+<p><strong>14 5 -&gt; 70</strong> <br />
+<strong>7 10 keep</strong>  <br />
+<strong>3 20 keep</strong>  <br />
+<strong>1 40 keep</strong>  <br />
+<strong>(10 + 20 +50) -&gt; 70</strong></p>
+
+<hr />
+
+<p><strong>코드구현</strong></p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">num1</span><span class="o">*</span><span class="n">num2</span>
-<span class="n">list_</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">while</span> <span class="n">num1</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">num1</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">:</span>
-        <span class="n">list_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span>  <span class="c"># 홀수일 경우 리스트에 추가      </span>
+<span class="k">while</span> <span class="n">num1</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num1</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c">#num1의 짝수를 찾는다</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'pass {num1} {num2}'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">num2</span> <span class="c"># 짝수일 경우 result에 누적으로 더해준다 </span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'keep {num1} {num2}'</span><span class="p">)</span>    
     <span class="n">num1</span> <span class="o">//=</span> <span class="mi">2</span> 
     <span class="n">num2</span> <span class="o">*=</span> <span class="mi">2</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'두 수의 곱 : {result}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'ethiopian multiplication 계산결과 : {sum(list_)}'</span><span class="p">)</span>  <span class="c">#홀수일때 곱해졌던 num2값의 합계</span>
+    
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c">#홀수일때 곱해졌던 num2 합계</span>
 </code></pre></div></div>
 <p><br /></p>
 
-<h3 id="몬티홀-실습">몬티홀 실습</h3>
+<h3 id="monty-hall-simulation">Monty Hall Simulation</h3>
+
+<h3 id="몬티홀-정리">몬티홀 정리</h3>
+
+<p><strong>1. 문3개를 설정한다  doors = [0,0,1]. 이때 1을 차라고 설정을 하겠다</strong></p>
+
+<p><strong>2. 3개의 문에 1의 위치(차 위치)를 랜덤으로 배치하기 위해서 shuffle 함수를 이용해준다. random.shuffle(doors)</strong></p>
+
+<p><strong>3. 사용자가 3개의 문 중 한개를 랜덤으로 뽑는다. 이때 랜덤으로 뽑는 2가지 방법이 존재한다.</strong>  <br />
+   <strong>(1) 이미 문을 랜덤하게 섞기 때문에   (2번에서) pop을 이용하여 맨 마지막 인덱스를 뽑아준다</strong>  <br />
+   <strong>(2) 문을 랜덤하게 뽑을 수 있는 random.choice(doors) 를 이용하여 뽑아준다</strong></p>
+
+<p><strong>4. 사회자가 문안에 있는 0을 하나 뽑아준다.이때 remove는 지정한 숫자가 리스트에 여러개 있는 경우에 가장 앞에 있는 중복되는 숫자 하나만 삭제한다. 즉, 0이 여러개여도 한개만 삭제된다는 것을 알 수 있다.</strong></p>
+
+<p><strong>5. 이후 사용자가 문을 바꾸었을때 바꾸지 않았을때를 조건문으로 처리해준다</strong> <br />
+<strong>if문을 사용하여 사용자가 처음 선택했던 숫자가 1일 경우에는(차) 바꾸지 않는 것이 이득이므로 바꾸지 않았을때의 변수 stay에 +1를 누적해준다</strong> <br />
+<strong>만약 처음 선택했던 숫자가 1이 아닌 경우(염소)에는 바꾸는 경우가 더 이득이기 때문에 바꿨을때의변수 switch에 +1를 누적해준다</strong></p>
+
+<p><strong>6. 그후 %를 구해준다. 만약 10000번 반복하였다면  바꾸지 않았을때의 확률 (stay/trial)이며 바꾸었을때의 확률 (switch/trial)이다</strong></p>
+
+<hr />
+
+<p><strong>코드 구현</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">no_change</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">change</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">door</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100000</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    
-    <span class="n">car</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">door</span><span class="p">[</span><span class="n">car</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">door</span><span class="p">[</span><span class="n">user</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span>
-    <span class="n">select</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c">#바꿀것인지 판단</span>
-    
-    <span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="n">select</span><span class="p">:</span>
-        <span class="n">no_change</span> <span class="o">+=</span><span class="mi">1</span>
+<span class="n">stay</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">switch</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">trial</span> <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trial</span><span class="p">):</span>
+    <span class="n">doors</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">doors</span><span class="p">)</span>
+
+    <span class="n">users_choice</span> <span class="o">=</span> <span class="n">doors</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="n">doors</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">users_choice</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">stay</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">change</span><span class="o">+=</span><span class="mi">1</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'바꾸었을때 확률: {change/(no_change+change)}'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'바꾸지 않았을때 확률 : {no_change/(change+no_change)}'</span><span class="p">)</span>
-
+        <span class="n">switch</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'stay : {stay/trial}, switch{switch/trial}'</span><span class="p">)</span>
 </code></pre></div></div>
-<p>몬티홀 문제 이해가지 않는다.. 매우 헷갈린다  <br />
-코드 수정하기 , 슈도코드 작성해보기 <br />
-<br /></p>
 
                 </div>
             </section>
