@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/author/jung/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-01-27T22:36:46+09:00</updated>
+  <updated>2021-01-28T10:59:55+09:00</updated>
   <id>https://heejung-gjt.github.io/author/jung/feed.xml</id>
 
   
@@ -30,6 +30,147 @@
   
   
 
+  
+    <entry>
+      <title type="html">python CodeUp 100제</title>
+      <link href="https://heejung-gjt.github.io/algorithm-codeup" rel="alternate" type="text/html" title="python CodeUp 100제" />
+      <published>2021-01-27T14:47:00+09:00</published>
+      <updated>2021-01-27T14:47:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/algorithm-codeup</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/algorithm-codeup">&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./python-algorithm-codeup&quot;&gt;CodeUp 기초100제&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./python-algorithm-hackerrank&quot;&gt;HackerRank&lt;/a&gt;&lt;/li&gt;
+    &lt;!--    &lt;li&gt;&lt;a href=&quot;./python-algorithm&quot;&gt;class=&quot;content04 content&quot;&gt;Hacker Rank&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;codeup-100제&quot;&gt;&lt;a href=&quot;https://codeup.kr/problemsetsol.php?psid=23&quot;&gt;CodeUp 100제&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h4 id=&quot;-1001번--1025번-git-블로그-참고&quot;&gt;&lt;a href=&quot;&quot;&gt;👉 1001번 ~ 1025번 git 블로그 참고&lt;/a&gt;&lt;/h4&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="algorithm" />
+      
+
+      
+        <summary type="html">CodeUp 기초100제 HackerRank</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">리눅스 기본 명령어</title>
+      <link href="https://heejung-gjt.github.io/linux" rel="alternate" type="text/html" title="리눅스 기본 명령어" />
+      <published>2021-01-27T14:47:00+09:00</published>
+      <updated>2021-01-27T14:47:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/linux</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/linux">&lt;h3 id=&quot;-linux-명령어-정리&quot;&gt;👉 Linux 명령어 정리&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;디렉토리-목록-확인&quot;&gt;디렉토리 목록 확인&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;ls&lt;/li&gt;
+  &lt;li&gt;ls -al : 숨겨진 파일까지 확인할 수 있다  &lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;디렉토리-생성&quot;&gt;디렉토리 생성&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;mkdir &lt;디렉토리명&gt;&lt;/디렉토리명&gt;&lt;/li&gt;
+  &lt;li&gt;mkdir -p &amp;lt;디렉토리명/…&amp;gt; : 여러 디렉토리를 생성할 수 있다 &lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;디렉토리-이동&quot;&gt;디렉토리 이동&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;cd &lt;디렉토리명&gt;&lt;/디렉토리명&gt;&lt;/li&gt;
+  &lt;li&gt;cd .. : 부모 디렉토리로 이동한다 &lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;디렉토리-삭제&quot;&gt;디렉토리 삭제&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;rm -r &lt;디렉토리명&gt;&lt;/디렉토리명&gt;&lt;/li&gt;
+  &lt;li&gt;rmdir &lt;디렉토리명&gt; : 비어있는 디렉토리를 삭제한다   
+&lt;br /&gt;&lt;/디렉토리명&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;파일-생성&quot;&gt;파일 생성&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;touch &lt;파일명&gt;   
+&lt;br /&gt;&lt;/파일명&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;파일-이동&quot;&gt;파일 이동&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;mv &lt;파일이름&gt; &lt;이동할 폴더나=&quot;&quot; 파일이름=&quot;&quot;&gt;    
+&lt;br /&gt;&lt;/이동할&gt;&lt;/파일이름&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;파일-이름변경&quot;&gt;파일 이름변경&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;mv &lt;파일이름&gt; &lt;바꿀 파일이름=&quot;&quot;&gt;   
+&lt;br /&gt;&lt;/바꿀&gt;&lt;/파일이름&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;파일-삭제&quot;&gt;파일 삭제&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;rm &lt;파일이름&gt;   
+&lt;br /&gt;&lt;/파일이름&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;파일-내용보기&quot;&gt;파일 내용보기&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;cat &lt;파일이름&gt;   
+&lt;br /&gt;&lt;/파일이름&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;명령창-내용-삭제&quot;&gt;명령창 내용 삭제&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;clear &lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="linux" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">TIL - Parameter, Argument, *args, **kwargs</title>
@@ -257,6 +398,103 @@ locale:seoul
     </entry>
   
     <entry>
+      <title type="html">TIL - 반복문, 조건문 (for, while)</title>
+      <link href="https://heejung-gjt.github.io/til" rel="alternate" type="text/html" title="TIL - 반복문, 조건문 (for, while)" />
+      <published>2021-01-25T10:00:04+09:00</published>
+      <updated>2021-01-25T10:00:04+09:00</updated>
+      <id>https://heejung-gjt.github.io/til</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til">&lt;h2 id=&quot;-0125-til&quot;&gt;👉 0125 TIL&lt;/h2&gt;
+
+&lt;p&gt;for문 while문 정리하기 &lt;br /&gt;
+실습 문제 풀이 (다시한번 정리하기)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;삼항연산자-ternary-operators&quot;&gt;삼항연산자 (Ternary operators)&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'참인 경우 값'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;조건&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'거짓인 경우 값'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'이부분은 True'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'이부분은 False'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;conditional-expression-조건-표현식&quot;&gt;Conditional Expression (조건 표현식)&lt;/h3&gt;
+&lt;p&gt;가독성이 떨어지는 단점이 있다&lt;/p&gt;
+&lt;h3 id=&quot;conditional-statement-조건문&quot;&gt;Conditional Statement (조건문)&lt;/h3&gt;
+&lt;p&gt;조건 표현식에 비해 줄은 더 길어지지만 가독성이 좋다  &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Conditional Expressions in Conditional Expressions&lt;/strong&gt;  &lt;br /&gt;
+#1과 #2는 같은 코드이다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'condition'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'condition'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#1&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'condition'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#2&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'condition'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;for-while문&quot;&gt;for, while문&lt;/h3&gt;
+
+&lt;h4 id=&quot;for문으로-110-사이의-합을-구해보자&quot;&gt;for문으로 1~10 사이의 합을 구해보자&lt;/h4&gt;
+&lt;h4 id=&quot;110-사이의-합계를-구하는-것이므로-명시적으로-나타내기-위해-101로-표현해주자&quot;&gt;1~10 사이의 합계를 구하는 것이므로 명시적으로 나타내기 위해 10+1로 표현해주자&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;for문으로-110사이의-합을-구할때-시간-복잡도를-계산하여-코드를-작성하는-자세가-필요하다&quot;&gt;for문으로 1~10사이의 합을 구할때 시간 복잡도를 계산하여 코드를 작성하는 자세가 필요하다&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;while문으로-110-사이의-합을-구해보자&quot;&gt;while문으로 1~10 사이의 합을 구해보자&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">헷갈리는 python method 정리 (eval, map, get, any…)</title>
       <link href="https://heejung-gjt.github.io/python-method" rel="alternate" type="text/html" title="헷갈리는 python method 정리 (eval, map, get, any...)" />
       <published>2021-01-25T10:00:04+09:00</published>
@@ -344,7 +582,7 @@ locale:seoul
       <content type="html" xml:base="https://heejung-gjt.github.io/python-algorithm-hackerrank">&lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./python-algorithm-codeup&quot;&gt;CodeUp 기초100제&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./python-algorithm-hackerrank&quot;&gt;HackerRank&lt;/a&gt;&lt;/li&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./python-algorithm&quot;&gt;class=&quot;content04 content&quot;&gt;Hacker Rank&lt;/a&gt;&lt;/li&gt;--&gt;
+    &lt;!--    &lt;li&gt;&lt;a href=&quot;./python-algorithm&quot;&gt;class=&quot;content04 content&quot;&gt;Hacker Rank&lt;/a&gt;&lt;/li&gt;--&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;hackerrank&quot;&gt;&lt;a href=&quot;https://www.hackerrank.com/domains/python?filters%5Bstatus%5D%5B%5D=unsolved&amp;amp;filters%5Bstatus%5D%5B%5D=solved&amp;amp;badge_type=python&quot;&gt;HackerRank&lt;/a&gt;&lt;/h3&gt;
@@ -462,150 +700,11 @@ Weird        &lt;br /&gt;
       
 
       
-        <category term="Python" />
+        <category term="algorithm" />
       
 
       
         <summary type="html">CodeUp 기초100제 HackerRank</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">python 알고리즘 (CodeUp 기초 100제)</title>
-      <link href="https://heejung-gjt.github.io/python-algorithm-codeup" rel="alternate" type="text/html" title="python 알고리즘 (CodeUp 기초 100제)" />
-      <published>2021-01-25T10:00:04+09:00</published>
-      <updated>2021-01-25T10:00:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/python-algorithm-codeup</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/python-algorithm-codeup">&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./python-algorithm-codeup&quot;&gt;CodeUp 기초100제&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./python-algorithm-hackerrank&quot;&gt;HackerRank&lt;/a&gt;&lt;/li&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./python-algorithm&quot;&gt;class=&quot;content04 content&quot;&gt;Hacker Rank&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;codeup-100제&quot;&gt;&lt;a href=&quot;https://codeup.kr/problemsetsol.php?psid=23&quot;&gt;CodeUp 100제&lt;/a&gt;&lt;/h3&gt;
-
-&lt;h4 id=&quot;-1001번--1025번-git-블로그-참고&quot;&gt;&lt;a href=&quot;&quot;&gt;👉 1001번 ~ 1025번 git 블로그 참고&lt;/a&gt;&lt;/h4&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="Python" />
-      
-
-      
-        <summary type="html">CodeUp 기초100제 HackerRank</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">TIL - 반복문, 조건문 (for, while)</title>
-      <link href="https://heejung-gjt.github.io/til" rel="alternate" type="text/html" title="TIL - 반복문, 조건문 (for, while)" />
-      <published>2021-01-25T10:00:04+09:00</published>
-      <updated>2021-01-25T10:00:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/til</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til">&lt;h2 id=&quot;-0125-til&quot;&gt;👉 0125 TIL&lt;/h2&gt;
-
-&lt;p&gt;for문 while문 정리하기 &lt;br /&gt;
-실습 문제 풀이 (다시한번 정리하기)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;삼항연산자-ternary-operators&quot;&gt;삼항연산자 (Ternary operators)&lt;/h3&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'참인 경우 값'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;조건&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'거짓인 경우 값'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'이부분은 True'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'이부분은 False'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;conditional-expression-조건-표현식&quot;&gt;Conditional Expression (조건 표현식)&lt;/h3&gt;
-&lt;p&gt;가독성이 떨어지는 단점이 있다&lt;/p&gt;
-&lt;h3 id=&quot;conditional-statement-조건문&quot;&gt;Conditional Statement (조건문)&lt;/h3&gt;
-&lt;p&gt;조건 표현식에 비해 줄은 더 길어지지만 가독성이 좋다  &lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Conditional Expressions in Conditional Expressions&lt;/strong&gt;  &lt;br /&gt;
-#1과 #2는 같은 코드이다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'condition'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'condition'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#1&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'condition'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#2&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'condition'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;for-while문&quot;&gt;for, while문&lt;/h3&gt;
-
-&lt;h4 id=&quot;for문으로-110-사이의-합을-구해보자&quot;&gt;for문으로 1~10 사이의 합을 구해보자&lt;/h4&gt;
-&lt;h4 id=&quot;110-사이의-합계를-구하는-것이므로-명시적으로-나타내기-위해-101로-표현해주자&quot;&gt;1~10 사이의 합계를 구하는 것이므로 명시적으로 나타내기 위해 10+1로 표현해주자&lt;/h4&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;for문으로-110사이의-합을-구할때-시간-복잡도를-계산하여-코드를-작성하는-자세가-필요하다&quot;&gt;for문으로 1~10사이의 합을 구할때 시간 복잡도를 계산하여 코드를 작성하는 자세가 필요하다&lt;/h4&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;while문으로-110-사이의-합을-구해보자&quot;&gt;while문으로 1~10 사이의 합을 구해보자&lt;/h4&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
       
 
       
@@ -824,86 +923,6 @@ FormView :&lt;/li&gt;
 ListView : &lt;br /&gt;
 DetailView :&lt;/li&gt;
 &lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="django" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Django - model ForeignKeyField</title>
-      <link href="https://heejung-gjt.github.io/django-11-foreinkey" rel="alternate" type="text/html" title="Django - model ForeignKeyField" />
-      <published>2021-01-11T10:07:04+09:00</published>
-      <updated>2021-01-11T10:07:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/django-11-foreinkey</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/django-11-foreinkey">&lt;p&gt;model을 설계할때 생기는 모델 간의 관계를 1:1, 1:N, N:N으로 정의 할 수 있다&lt;/p&gt;
-
-&lt;h2 id=&quot;foreignkey&quot;&gt;ForeignKey&lt;/h2&gt;
-&lt;p&gt;ForeignKey는 1:n 관계를 말한다. 예를 들어보자면 &lt;code class=&quot;highlighter-rouge&quot;&gt;주문 - 사용자&lt;/code&gt;를 생각해 볼 수 있다. 한명의 사용자가
-여러개의 주문을 할 수 있게 되므로 foreignkey를 만족한다. foreignkey를 사용할때는 on_delete값을 꼭 설정해주어야 한다 &lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;on_delete-설정&quot;&gt;on_delete 설정&lt;/h3&gt;
-&lt;p&gt;1:N에서 1인쪽의 데이터가 삭제되었을 경우 N의 데이터를 어떻게 처리할 것인지에 대한 옵션이다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;CASCADE&lt;/strong&gt; &lt;br /&gt;
-1:N에서 1과 연결되는 모든 N들의 데이터를 삭제한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;PROTECT&lt;/strong&gt; &lt;br /&gt;
-1:N에서 1이 삭제되지 않도록 막아준다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;SET_NULL&lt;/strong&gt; &lt;br /&gt;
-1:N에서 1이 삭제될때 연결되는 N들의 데이터값을 NULL로 바꾼다 단, null=True일때만 가능하다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;SET_DEFAULT&lt;/strong&gt; &lt;br /&gt;
-1:N에서 1이 삭제될때 N들의 데이터값을 default값으로 바꾼다 단, default값이 존재할때만 가능하다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;SET&lt;/strong&gt; &lt;br /&gt;
-1:N에서 1이 삭제될때 N의 데이터값을 대체할 값이나 함수로 지정해준다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;DO_NOTHING&lt;/strong&gt; &lt;br /&gt;
-1:N에서 1이 삭제되도 아무것도 하지 않는다. 오류가 발생할 수 있다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;ex&quot;&gt;(EX)&lt;/h3&gt;
-&lt;p&gt;①  user앱 안에 있는 User model을 사용하여 user가 삭제되면 user와 연결된 모든 model이 연쇄적으로 삭제되게 설정하였다  &lt;br /&gt;
-② product앱 안에 있는 Product model을 사용하여 product가 삭제되면 연결된 모든 model이 연쇄적으로 삭제되게
-설정하였다&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ForeignKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'user.User'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on_delete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CASCADE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verbose_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'사용자'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;①&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;product&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;modles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ForeignKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'product.Product'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on_delete&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CASCADE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verbose_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'상품'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;②&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
 
       
       

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="https://heejung-gjt.github.io/tag/linux/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-01-28T10:59:55+09:00</updated>
+  <id>https://heejung-gjt.github.io/tag/linux/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">Studying  Develope | </title>
+  
+
+  
+    <subtitle>개발 공부하는 블로그</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">리눅스 기본 명령어</title>
+      <link href="https://heejung-gjt.github.io/linux" rel="alternate" type="text/html" title="리눅스 기본 명령어" />
+      <published>2021-01-27T14:47:00+09:00</published>
+      <updated>2021-01-27T14:47:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/linux</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/linux">&lt;h3 id=&quot;-linux-명령어-정리&quot;&gt;👉 Linux 명령어 정리&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;디렉토리-목록-확인&quot;&gt;디렉토리 목록 확인&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;ls&lt;/li&gt;
+  &lt;li&gt;ls -al : 숨겨진 파일까지 확인할 수 있다  &lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;디렉토리-생성&quot;&gt;디렉토리 생성&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;mkdir &lt;디렉토리명&gt;&lt;/디렉토리명&gt;&lt;/li&gt;
+  &lt;li&gt;mkdir -p &amp;lt;디렉토리명/…&amp;gt; : 여러 디렉토리를 생성할 수 있다 &lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;디렉토리-이동&quot;&gt;디렉토리 이동&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;cd &lt;디렉토리명&gt;&lt;/디렉토리명&gt;&lt;/li&gt;
+  &lt;li&gt;cd .. : 부모 디렉토리로 이동한다 &lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;디렉토리-삭제&quot;&gt;디렉토리 삭제&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;rm -r &lt;디렉토리명&gt;&lt;/디렉토리명&gt;&lt;/li&gt;
+  &lt;li&gt;rmdir &lt;디렉토리명&gt; : 비어있는 디렉토리를 삭제한다   
+&lt;br /&gt;&lt;/디렉토리명&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;파일-생성&quot;&gt;파일 생성&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;touch &lt;파일명&gt;   
+&lt;br /&gt;&lt;/파일명&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;파일-이동&quot;&gt;파일 이동&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;mv &lt;파일이름&gt; &lt;이동할 폴더나=&quot;&quot; 파일이름=&quot;&quot;&gt;    
+&lt;br /&gt;&lt;/이동할&gt;&lt;/파일이름&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;파일-이름변경&quot;&gt;파일 이름변경&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;mv &lt;파일이름&gt; &lt;바꿀 파일이름=&quot;&quot;&gt;   
+&lt;br /&gt;&lt;/바꿀&gt;&lt;/파일이름&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;파일-삭제&quot;&gt;파일 삭제&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;rm &lt;파일이름&gt;   
+&lt;br /&gt;&lt;/파일이름&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;파일-내용보기&quot;&gt;파일 내용보기&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;cat &lt;파일이름&gt;   
+&lt;br /&gt;&lt;/파일이름&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;명령창-내용-삭제&quot;&gt;명령창 내용 삭제&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;clear &lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="linux" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>
