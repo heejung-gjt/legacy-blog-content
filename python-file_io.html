@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/python-file_io" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Studying  Develope" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="python File O/I (get()함수와, setdefault()함수 이용해 실습하기)" />
+    <meta property="og:description" content="👉 file I/O 파일 입출력은 파일을 읽거나 쓸때 쓰는 방법이다. 주로(w, r, a) 3가지의 경우가 쓰인다 f = open('./&lt;파일위치&gt;','&lt;모드&gt;',encoding='utf-8') w (쓰기모드) : 파일에 내용을 쓸때 사용한다 """ numbers.txt파일이 없다면 생성된 후 hello가 쓰인다 """ f = open('./numbers.txt','w',encoding='utf-8') f.write('hello') f.close() 파일을 쓰거나 읽었을땐 항상 해당 파일을 닫아주는 close()를 함께 써주어야 한다" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/python-file_io" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-02-02T13:40:00+09:00" />
+    <meta property="article:modified_time" content="2021-02-02T13:40:00+09:00" />
+    <meta property="article:tag" content="Python" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="python File O/I (get()함수와, setdefault()함수 이용해 실습하기)" />
+    <meta name="twitter:description" content="👉 file I/O 파일 입출력은 파일을 읽거나 쓸때 쓰는 방법이다. 주로(w, r, a) 3가지의 경우가 쓰인다 f = open('./&lt;파일위치&gt;','&lt;모드&gt;',encoding='utf-8') w (쓰기모드) : 파일에 내용을 쓸때 사용한다 """ numbers.txt파일이 없다면 생성된 후 hello가 쓰인다 """ f = open('./numbers.txt','w',encoding='utf-8') f.write('hello') f.close() 파일을 쓰거나 읽었을땐 항상 해당 파일을 닫아주는 close()를 함께 써주어야 한다" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Studying  Develope" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Studying  Develope",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/python-file_io",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/python-cover.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/python-file_io"
+    },
+    "description": "👉 file I/O 파일 입출력은 파일을 읽거나 쓸때 쓰는 방법이다. 주로(w, r, a) 3가지의 경우가 쓰인다 f = open('./&lt;파일위치&gt;','&lt;모드&gt;',encoding='utf-8') w (쓰기모드) : 파일에 내용을 쓸때 사용한다 """ numbers.txt파일이 없다면 생성된 후 hello가 쓰인다 """ f = open('./numbers.txt','w',encoding='utf-8') f.write('hello') f.close() 파일을 쓰거나 읽었을땐 항상 해당 파일을 닫아주는 close()를 함께 써주어야 한다"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="python File O/I (get()함수와, setdefault()함수 이용해 실습하기)" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">Studying  Develope</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-02-02">2021-02-02</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/python/'>PYTHON</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">python File O/I (get()함수와, setdefault()함수 이용해 실습하기)</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/python-cover.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    
+<h3 id="-file-io">👉 file I/O</h3>
+
+<p>파일 입출력은 파일을 읽거나 쓸때 쓰는 방법이다. 주로(w, r, a) 3가지의 경우가 쓰인다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./&lt;파일위치&gt;'</span><span class="p">,</span><span class="s">'&lt;모드&gt;'</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">)</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="w-쓰기모드--파일에-내용을-쓸때-사용한다">w (쓰기모드) : 파일에 내용을 쓸때 사용한다</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+numbers.txt파일이 없다면 생성된 후 hello가 쓰인다
+"""</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./numbers.txt'</span><span class="p">,</span><span class="s">'w'</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'hello'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></div>
+<p>파일을 쓰거나 읽었을땐 항상 해당 파일을 닫아주는 close()를 함께 써주어야 한다
+<br /></p>
+
+<h4 id="r-읽기모드--파일을-읽기만-할때-사용한다">r (읽기모드) : 파일을 읽기만 할때 사용한다</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+numbers.txt파일을 한줄을 읽어온다. 내용이 없으면 none을 반환한다
+"""</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./numbers.txt'</span><span class="p">,</span><span class="s">'r'</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c"># readline()으로 출력시 : hello</span>
+<span class="c"># readlines()으로 출력시 : ['hello']</span>
+</code></pre></div></div>
+<p>읽기모드에선 readline()과 realines()함수를 사용한다 
+readline()은 한 줄만을 읽어와서 변수에 담는다 <br />
+readlines()은 파일의 모든 라인을 읽어와 리스트로 리턴한다
+<br /></p>
+
+<h4 id="a-추가모드--파일의-마지막에-새로운-내용을-추가-시킬때-사용한다">a (추가모드) : 파일의 마지막에 새로운 내용을 추가 시킬때 사용한다</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+numbers.txt파일 마지막에 '추가내용'이라는 내용이 추가된다
+"""</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./numbers.txt'</span><span class="p">,</span><span class="s">'a'</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'추가내용'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="with와-함께-쓰기">with와 함께 쓰기</h4>
+<p>파일 입출력에서 파일을 open했다면 마직막에 close를 해주어야 한다. with를 사용하면 close를 해주지 않아도되는 편리함이 있다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+with로 numbers.txt파일을 읽기 형식으로 열어 f라는 명칭으로 지정하였다. readline()함수를 사용하여 한줄을 출력한다 
+"""</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./numbers.txt'</span><span class="p">,</span><span class="s">'r'</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-실습01">✔ 실습01</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+&lt;쓰기모드&gt;
+numbers.txt파일에 hello라는 문자열을 10번 쓰이도록 작성하였다
+"""</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./numbers.txt'</span><span class="p">,</span><span class="s">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'hello</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+<span class="o">----------------------------------------</span>
+
+<span class="s">"""
+&lt;읽기모드&gt;
+numbers.txt 파일의 내용을 읽기모드로 모든 줄의 내용을 출력하였다. readlines()로 읽었기 때문에 모든 내용은 리스트안에 담겨져 출력된다
+
+출력결과 :
+['hello</span><span class="se">\n</span><span class="s">', 'hello</span><span class="se">\n</span><span class="s">', 'hello</span><span class="se">\n</span><span class="s">', 'hello</span><span class="se">\n</span><span class="s">', 'hello</span><span class="se">\n</span><span class="s">', 'hello</span><span class="se">\n</span><span class="s">', 'hello</span><span class="se">\n</span><span class="s">', 'hello</span><span class="se">\n</span><span class="s">', 'hello</span><span class="se">\n</span><span class="s">', 'hello</span><span class="se">\n</span><span class="s">']
+"""</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./numbers.txt'</span><span class="p">,</span><span class="s">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span> 
+<span class="o">-----------------------------------------</span>
+
+<span class="s">"""
+한줄에 한단어씩 출력하기 위해 for문을 사용하였고
+개행문자를 없애기 위해 replace함수를 사용했다 
+
+출력결과 :
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+"""</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./numbers.txt'</span><span class="p">,</span><span class="s">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">text_list</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text_list</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">))</span>
+<span class="o">-----------------------------------------</span>
+
+<span class="s">"""
+&lt;추가모드&gt;
+numbers.txt 파일 뒤에 1~10까지의 정수를 붙여 출력하였다
+
+출력결과:
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+"""</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./numbers.txt'</span><span class="p">,</span><span class="s">'a'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="s">'{i}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span> 
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./numbers.txt'</span><span class="p">,</span><span class="s">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">))</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-실습02">✔ 실습02</h4>
+<p>dictionary get 함수를 이용하여 글자수는 key값에 ,똑같은 글자수에 해당하는 값을 카운트한 값은  value값에 넣어 출력한다</p>
+
+<ol>
+  <li>가장 먼저 파일을 읽어오는데 개행문자는 제거한 리스트형태로 가지고 온다</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./a_word_list.txt'</span><span class="p">,</span><span class="s">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">txt_list</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">a_word_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">txt_list</span> <span class="p">]</span>
+<span class="n">a_word_list</span>
+
+<span class="s">"""
+결과값
+['aback',
+ 'abacus',
+ 'abandon',
+ 'abandoned',
+ 'abandonment',
+ 'abashed',
+ 'abate',
+ 'abbey',
+ 'abbr.',
+ 'abbreviate',
+ 'abbreviation',
+ 'ABC',
+ .
+ .
+ ]
+"""</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<ol>
+  <li>딕셔너리의 get함수를 이요하여 key를 이용해 value의 값을 불러온다. 이때 해당 값이 없다면 값을 지정해놓은 default값을 가져간다</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">len_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">a_word_list</span><span class="p">:</span>
+    <span class="n">len_dict</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)]</span> <span class="o">=</span> <span class="n">len_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">len</span><span class="p">((</span><span class="n">word</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>  
+<span class="c"># 해당 수가 존재한다면 존재하는 value값에 +1을 해주고 해당 수가 존재하지 않는다면 0을 반환하는데 +1을 해준다</span>
+<span class="s">"""
+결과값
+{5: 67,
+ 6: 80,
+ 7: 85,
+ 9: 89,
+ 11: 47,
+ 10: 86,
+.
+.
+ }
+"""</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-실습03">✔ 실습03</h4>
+<p>dictionary setdefault 함수를 이용하여 글자수는 key값에 ,똑같은 글자수에 해당하는 단어는 value값에 리스트 형태로 넣어 출력한다</p>
+
+<p>setdefault : 이 함수는 딕셔너리에 키-값 쌍을 추가해준다. <code class="highlighter-rouge">setdefault(키, 기본값)</code>처럼 키와 기본값을 지정하여 값에 기본값을 저장 한 뒤 해당 값을 딕셔너리에 반환한다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+dict_ 빈 딕셔너리에  키-값쌍을 추가는데  키값에는 문자열의 길이를 추가하고 value값에는 빈문자열을 추가해준다. 이때 append를 사용하여  빈 리스트 형태인 value값에 key값에 저장한 문자열을 추가한다
+"""</span>
+<span class="n">dict_</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">dict_setdefault</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s">'cat'</span><span class="p">),[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'cat'</span><span class="p">)</span>
+<span class="c"># 결과값 : {3: ['cat']}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>실습02 에 a_word_list 들어 있는 모든 문자들을 딕셔너리에 setdefault를 이용하여 실습03과 같이 실습해보자</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+a_word_list안에 들어있는 문자열을 하나씩 꺼내어 setdefault함수를 이용하여 key값과 value값을 출력해준다 
+
+결과값:
+{5: ['aback',
+  'abate',
+  'abbey',
+  'abbr.',
+  'amiss',
+  'among'],
+ 6: ['abacus',
+  'abduct',
+  'abject',
+  'ablaze',
+  'amends',
+  'amidst',
+  'amoeba',
+  'amoral',
+  'amount',
+  'ampere'],
+ 7: ['abandon',
+  'abashed',
+  'abdomen',
+  .
+  .
+  
+"""</span>
+<span class="n">filtered_dict</span><span class="o">=</span><span class="p">{}</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">a_word_list</span><span class="p">:</span>
+    <span class="n">filtered_dict</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">),[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="n">filtered_dict</span>
+</code></pre></div></div>
+
+                </div>
+            </section>
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">Studying  Develope</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Studying  Develope</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
