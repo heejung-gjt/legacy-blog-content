@@ -8,9 +8,66 @@
     
       
       <item>
-        <title>python File O/I (get()함수와, setdefault()함수 이용해 실습하기)</title>
+        <title>python Regular Expressions(정규표현식이란?)</title>
         
           <description>
+&lt;h2 id=&quot;regular-expressions&quot;&gt;Regular Expressions&lt;/h2&gt;
+&lt;p&gt;정규 표현식은 특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 형식언어이다. python은 re모듈로 정규표현식 사용이 가능한다&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 03 Feb 2021 13:40:00 +0900</pubDate>
+        <link>
+        https://heejung-gjt.github.io/python-regular-expression</link>
+        <guid isPermaLink="true">https://heejung-gjt.github.io/python-regular-expression</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>python lambda function (람다함수란?)</title>
+        
+          <description>
+&lt;h2 id=&quot;-lambda-함수&quot;&gt;👉 lambda 함수&lt;/h2&gt;
+&lt;p&gt;람다 함수는 함수를 보다 간편하게 작성해주며 사용된 후 버려지는 함수이다. &lt;strong&gt;함수가 생성되는 곳에서만 필요하고&lt;/strong&gt; 정의를 해서 쓰는 것이 아닌 필요한 곳에 사용 후 버려진다.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 03 Feb 2021 13:40:00 +0900</pubDate>
+        <link>
+        https://heejung-gjt.github.io/python-lambda</link>
+        <guid isPermaLink="true">https://heejung-gjt.github.io/python-lambda</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>python csv와 json 이용하여 데이터 인코딩, 디코딩하기</title>
+        
+          <description>
+&lt;h2 id=&quot;-csv와-json&quot;&gt;👉 csv와 json&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 03 Feb 2021 13:40:00 +0900</pubDate>
+        <link>
+        https://heejung-gjt.github.io/python-csv-json</link>
+        <guid isPermaLink="true">https://heejung-gjt.github.io/python-csv-json</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>python File I/O (get()함수와, setdefault()함수 이용해 실습하기)</title>
+        
+          <description>
+&lt;h3 id=&quot;-file-io&quot;&gt;👉 file I/O&lt;/h3&gt;
+&lt;p&gt;파일 입출력은 파일을 읽거나 쓸때 쓰는 방법이다. 주로(w, r, a) 3가지의 경우가 쓰인다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./&amp;lt;파일위치&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;lt;모드&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 </description>
         
         <pubDate>Tue, 02 Feb 2021 13:40:00 +0900</pubDate>
@@ -53,6 +110,13 @@
         <title>List Comprehension 과 Dictionary Comprehension</title>
         
           <description>
+&lt;h2 id=&quot;-list-comprehension&quot;&gt;📌 List Comprehension&lt;/h2&gt;
+&lt;p&gt;리스트 컴프리헨션은 반복되거나 특정한 조건을 만족하는 리스트를 쉽게 만들어 내기 위한 방법이다  &lt;br /&gt;
+다음은 기본적인 구조이다. 결과 값을 가장 먼저 작성하고 for 다음으로 조건을 작성해준다. in 다음에는 반복가능한 개체가 출력된다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iterable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 </description>
         
         <pubDate>Mon, 01 Feb 2021 10:00:04 +0900</pubDate>
@@ -264,6 +328,9 @@
         <title>헷갈리는 python 함수 정리 (eval, map, get, any...)</title>
         
           <description>
+&lt;h3 id=&quot;-eval-함수&quot;&gt;✔ eval 함수&lt;/h3&gt;
+&lt;p&gt;eval 함수는 expression 인자에 문자열을 넣으면 해당 값을 그대로 실행해 결과를 출력해준다. 즉, 자료형 판단을 알아서 한 뒤 type을 바꾸어주는 함수이다.&lt;/p&gt;
+
 </description>
         
         <pubDate>Mon, 25 Jan 2021 10:00:04 +0900</pubDate>

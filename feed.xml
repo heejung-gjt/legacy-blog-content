@@ -1,5 +1,581 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-02-02T21:55:45+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develope</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">python File O/I (get()함수와, setdefault()함수 이용해 실습하기)</title><link href="https://heejung-gjt.github.io/python-file_io" rel="alternate" type="text/html" title="python File O/I (get()함수와, setdefault()함수 이용해 실습하기)" /><published>2021-02-02T13:40:00+09:00</published><updated>2021-02-02T13:40:00+09:00</updated><id>https://heejung-gjt.github.io/python-file_io</id><content type="html" xml:base="https://heejung-gjt.github.io/python-file_io">&lt;h3 id=&quot;-file-io&quot;&gt;👉 file I/O&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-02-03T18:21:11+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develope</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">python Regular Expressions(정규표현식이란?)</title><link href="https://heejung-gjt.github.io/python-regular-expression" rel="alternate" type="text/html" title="python Regular Expressions(정규표현식이란?)" /><published>2021-02-03T13:40:00+09:00</published><updated>2021-02-03T13:40:00+09:00</updated><id>https://heejung-gjt.github.io/python-regular%20expression</id><content type="html" xml:base="https://heejung-gjt.github.io/python-regular-expression">&lt;h2 id=&quot;regular-expressions&quot;&gt;Regular Expressions&lt;/h2&gt;
+&lt;p&gt;정규 표현식은 특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 형식언어이다. python은 re모듈로 정규표현식 사용이 가능한다&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-meta-characters메타문자&quot;&gt;👉 Meta Characters(메타문자)&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;-dot--개행문자n을-제외한-모든-문자를-의미한다&quot;&gt;✔ Dot(&lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt;) : 개행문자(\n)을 제외한 모든 문자를 의미한다&lt;/h4&gt;
+&lt;p&gt;a와p사이엔 모든 문자와 매치된다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pple&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# a + 모든문자 + pple  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;EX)   &lt;br /&gt;
+ a0ple   &lt;br /&gt;
+ adple&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-repetition--앞-문자의-반복을-의미한다&quot;&gt;✔ Repetition(&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;) : 앞 문자의 반복을 의미한다&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; 앞에 있는 문자 p는 0개 ~무한대 반복이 가능하다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;le&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 앞문자 p의 무한반복 가능&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;EX)      &lt;br /&gt;
+ale     &lt;br /&gt;
+aple      &lt;br /&gt;
+apppple&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-repetition--앞-문자의-반복을-의미한다-1&quot;&gt;✔ Repetition(&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;) : 앞 문자의 반복을 의미한다&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; 앞에 있는 문자 p는 1개 ~무한대 반복이 가능하다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;le&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 앞문자 p의 무한반복 가능, 하나 이상은 써야한다&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;EX)      &lt;br /&gt;
+aple   &lt;br /&gt;
+apple    &lt;br /&gt;
+apppppple&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-caret--정의한-문자열-패턴으로-시작함을-의미한다&quot;&gt;✔ Caret(&lt;code class=&quot;highlighter-rouge&quot;&gt;^&lt;/code&gt;) : 정의한 문자열 패턴으로 시작함을 의미한다&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;^&lt;/code&gt; 는 문자열의 처음을 의미한다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pen&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 문자열의 처음은 pen으로 시작되야 매치된다&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;EX)   &lt;br /&gt;
+penpineapple   &lt;br /&gt;
+pencil&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-dollar-sign--정의한-문자열-패턴으로-끝남을-의미한다&quot;&gt;✔ Dollar sign(&lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt;) : 정의한 문자열 패턴으로 끝남을 의미한다&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt; 는 문자열의 처음을 의미한다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;pen&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 문자열의 끝은 pen으로 끝나야 매치된다&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;EX)    &lt;br /&gt;
+applepen  &lt;br /&gt;
+nicepen&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-question-mark--앞-문자의-존재유무를-의미한다&quot;&gt;✔ Question mark(&lt;code class=&quot;highlighter-rouge&quot;&gt;?&lt;/code&gt;) : 앞 문자의 존재유무를 의미한다&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;pen&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cil&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 앞문자 n이 있는지 없는지 2가지에 매치된다&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;EX)      &lt;br /&gt;
+pencil  &lt;br /&gt;
+pecil&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-curly-bracketsmn&quot;&gt;✔ Curly brackets(&lt;code class=&quot;highlighter-rouge&quot;&gt;{m,n}&lt;/code&gt;)&lt;/h4&gt;
+&lt;p&gt;반복횟수를 정의할때 사용한다. 중괄호 안의 숫자(m,n)은 반복횟수를 정의하며 , 정확히 일치할 경우 1개의 숫자를 , 범위를 정의할 경우 2개의 숫자를 사용한다. {3,}인 경우 반복 횟수는 3이상를 의미하고 {,3}인 경우 반복 회숫는 3이하를 의미한다   &lt;br /&gt;
+&lt;strong&gt;{m}&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;na&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# ba + (na)반드시 2번 반복 == banana&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;{m,n}&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;na&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# ba + (na)0~2회 반복 == ba, bana, banana&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;EX)      &lt;br /&gt;
+pencil   &lt;br /&gt;
+pecil&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-square-brackets&quot;&gt;✔ Square brackets(&lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt;)&lt;/h4&gt;
+&lt;p&gt;문자 클래스를 의미한다. 대괄호 사이에 나열한 문자 중 하나의 값과 일치할 경우를 의미한다. 즉 “ [] 사이의 문자들과 매치 “ 라는 의미이다. 해당 문자 클래스와 함께 쓰이는 메타문자는 &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;^&lt;/code&gt;이다&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; : 두 문자 사이의 범위를 뜻한다&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;^&lt;/code&gt; : 부정을 의미한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Za&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# 대문자와 소문자 알파벳 전체 중 하나의 문자   &lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# a,b,c,d,e,f,g 와 0,1,2,3,4,5 중 하나의 문자 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;^&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# 숫자가 아닌 문자&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Za&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# 알파벳이 아닌 모든 문자&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;EX)      &lt;br /&gt;
+[a,b,c] : a매치, before 매치   &lt;br /&gt;
+[0-4]  : 43매치, 0934매치, 987매치X(0,1,2,4 중 매치되는 것이 없기 때문)  &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;자주 사용되는 문자 클래스&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;\d - 숫자와 매치, [0-9]와 동일한 표현식이다.&lt;/li&gt;
+  &lt;li&gt;\D - 숫자가 아닌 것과 매치, [^0-9]와 동일한 표현식이다.&lt;/li&gt;
+  &lt;li&gt;\w - 문자+숫자(alphanumeric)와 매치, [a-zA-Z0-9_]와 동일한 표현식이다.&lt;/li&gt;
+  &lt;li&gt;\W - 문자+숫자(alphanumeric)가 아닌 문자와 매치, [^a-zA-Z0-9_]와 동일한 표현식이다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;*&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;-parentheses&quot;&gt;✔ Parentheses(&lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt;)&lt;/h4&gt;
+&lt;p&gt;소괄호 안의 문자열의 그룹을 의미한다. 문자열 패턴의 반복을 검사하고 싶을 때 사용한다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# apple이 한개 이상 들어가야 매치된다 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;EX)     &lt;br /&gt;
+penapple  &lt;br /&gt;
+penappleappleapplepen&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-vertical-bar&quot;&gt;✔ Vertical bar(&lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt;)&lt;/h4&gt;
+&lt;p&gt;|의 좌우 중 하나의 값과 일치하는 경우를 의미한다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apple&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apqle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# 두 문자열 중 하나와 일치해야 매치된다 &lt;/span&gt;
+ 
+&lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;le&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# q또는 p 둘 중 하나의 값과 일치해야 매치된다&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;EX)    &lt;br /&gt;
+apple or apqle &lt;br /&gt;
+apqle or apple&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-backslach&quot;&gt;✔ Backslach(&lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt;)&lt;/h4&gt;
+&lt;p&gt;정규표현식을 만들때 메타문자가 메타문자가 아닌 그 문자 그대로 사용하게 하기 위해 사용한다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;www&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;co&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kr&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# . 이 메타문자로 인식 될 수 있다&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;www&lt;/span&gt;\&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;google&lt;/span&gt;\&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;co&lt;/span&gt;\&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kr&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 앞에 \을 넣어 문자 그대로 사용 될 수 있게 한다&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;EX)          &lt;br /&gt;
+apple or apqle       &lt;br /&gt;
+apqle or apple&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-match&quot;&gt;✔ match()&lt;/h4&gt;
+&lt;p&gt;match는 문자열을 처음부터 정규식과 매치가 되는지 조사해주는 메서드이다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;match 객체의 메서드&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;group() : 매치된 문자열을 돌려준다&lt;/li&gt;
+  &lt;li&gt;start() : 매치된 문자열의 시작 위치를 돌려준다&lt;/li&gt;
+  &lt;li&gt;end() : 매치된 문자열의 끝 위치를 돌려준다&lt;/li&gt;
+  &lt;li&gt;span() : 매치된 문자열의 (시작, 끝)에 해당하는 튜플을 돌려준다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;re&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'penpineapple'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'applepen'&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'^pen'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# a문자열이 pen으로 시작하는지&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'^pen'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# b문자열이 pen으로 시작하는지&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# &amp;lt;re.Match object; span=(0, 3), match='pen'&amp;gt;, 0~2까지 pen으로 매치됨을 보여준다&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# None  매치되지 않으므로 none을 출력한다&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# pen&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# 0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;# 3&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#(0,3)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()]&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# pen&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;match 실습예제&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;r'^.*(pen)$&lt;/code&gt; : 문자열이 pen으로 끝나고 앞에 시작은 모든 문자가 와도 되는데 문자의 개수는 0~무한개로 올 수 있다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'penpineapple'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'applepen'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'pen'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;r'^.*(pen)$'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+결과
+
+a  # 매치되지 않는다, pen으로 문자가 끝나지 않기 때문이다
+
+b  # &amp;lt;re.Match object; span=(0, 8), match='applepen'&amp;gt;
+
+c  # &amp;lt;re.Match object; span=(0, 3), match='pen'&amp;gt;
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;매치를 사용할때는 compile을 항상 먼저 해준다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Do compile first!!!&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;apples&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'p'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'le'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;apple_finder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;r'^ap{2}le$'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#complie먼저 !&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apples&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# match되는 문자열 찾기&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apple_finder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;gmail의-username-만드는-규칙&quot;&gt;gmail의 username 만드는 규칙&lt;/h4&gt;
+&lt;p&gt;username에 올 수 있는 문자열 지정 : alphabet, number, -, +
+A-Z ,a-z, 0-9, -, + 의 문자열이 4개이상 32개 이하로 조합되서 username을 만드는 규칙이다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;r'[A-Za-z0-9\-\+]{4,32}@gmail\.com&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="Python" /><summary type="html">Regular Expressions 정규 표현식은 특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 형식언어이다. python은 re모듈로 정규표현식 사용이 가능한다</summary></entry><entry><title type="html">python lambda function (람다함수란?)</title><link href="https://heejung-gjt.github.io/python-lambda" rel="alternate" type="text/html" title="python lambda function (람다함수란?)" /><published>2021-02-03T13:40:00+09:00</published><updated>2021-02-03T13:40:00+09:00</updated><id>https://heejung-gjt.github.io/python-lambda</id><content type="html" xml:base="https://heejung-gjt.github.io/python-lambda">&lt;h2 id=&quot;-lambda-함수&quot;&gt;👉 lambda 함수&lt;/h2&gt;
+&lt;p&gt;람다 함수는 함수를 보다 간편하게 작성해주며 사용된 후 버려지는 함수이다. &lt;strong&gt;함수가 생성되는 곳에서만 필요하고&lt;/strong&gt; 정의를 해서 쓰는 것이 아닌 필요한 곳에 사용 후 버려진다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_next_integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;get_next_integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 결과 11&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;다음 함수를 lambda를 이용하여 작성해본다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# 매개변수 a를 하나받고 a에 1을 더해서 값을 반환한다&lt;/span&gt;
+ &lt;span class=&quot;c&quot;&gt;# 결과 11&lt;/span&gt;
+
+ &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;c&quot;&gt;# 결과 22&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;lambda함수-map과-함께-쓰기&quot;&gt;lambda함수 map()과 함께 쓰기&lt;/h3&gt;
+&lt;p&gt;map은 두개의 인수를 가지고 있다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;함수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;반복가능한&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;객체&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tuple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-실습01&quot;&gt;✔ 실습01&lt;/h3&gt;
+&lt;p&gt;정수 1-10 리스트의 각 값이  1씩 증가하는 코드&lt;/p&gt;
+
+&lt;p&gt;1.리스트컴프리헨션을 이용하여 작성&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;number_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;number_list&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 결과 :[2, 3, 4, 5, 6, 7, 8, 9, 10, 11]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;2.리스트컴프리헨션 + map()을 이용하여 작성&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;number_sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number_sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 결과 :[2, 3, 4, 5, 6, 7, 8, 9, 10, 11]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;3.lamda함수를 이용하여 작성&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 결과 :[2, 3, 4, 5, 6, 7, 8, 9, 10, 11]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;-실습02&quot;&gt;✔ 실습02&lt;/h3&gt;
+&lt;p&gt;정수 1-10 리스트의 각 값이 제곱으로 증가하는 코드&lt;/p&gt;
+
+&lt;p&gt;1.for문과 함수를 이용하여 작성&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_squared&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;get_squared&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 결과 :[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;2.map()을 이용하여 작성&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_squared&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_squared&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 결과 :[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;3.lamda함수를 이용하여 작성&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 결과 :[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="Python" /><summary type="html">👉 lambda 함수 람다 함수는 함수를 보다 간편하게 작성해주며 사용된 후 버려지는 함수이다. 함수가 생성되는 곳에서만 필요하고 정의를 해서 쓰는 것이 아닌 필요한 곳에 사용 후 버려진다.</summary></entry><entry><title type="html">python csv와 json 이용하여 데이터 인코딩, 디코딩하기</title><link href="https://heejung-gjt.github.io/python-csv-json" rel="alternate" type="text/html" title="python csv와 json 이용하여 데이터 인코딩, 디코딩하기" /><published>2021-02-03T13:40:00+09:00</published><updated>2021-02-03T13:40:00+09:00</updated><id>https://heejung-gjt.github.io/python-csv-json</id><content type="html" xml:base="https://heejung-gjt.github.io/python-csv-json">&lt;h2 id=&quot;-csv와-json&quot;&gt;👉 csv와 json&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-csv&quot;&gt;✔ CSV&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;csv는 csv 형식의 표 형식 데이터를 읽고 쓰는 클래스를 구현한다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;customer.csv가 파일객체이면 newline=’‘로 열려야 한다. csv 파일에서 읽은 각 행(row)은 문자열 리스트로 반환된다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;csv&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./customers.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;csv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customer_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+결과
+['CustomerID', 'CustomerName', 'ContactName', 'Address', 'City', 'PostalCode', 'Country']
+['1', 'Alfreds Futterkiste', 'Maria Anders', 'Obere Str. 57', 'Berlin', '12209', 'Germany']
+['2', 'Ana Trujillo Emparedados y helados', 'Ana Trujillo', 'Avda. de la Constitución 2222', 'México D.F.', '05021', 'Mexico']
+['3', 'Antonio Moreno Taquería', 'Antonio Moreno', 'Mataderos 2312', 'México D.F.', '05023', 'Mexico']
+.
+.
+&quot;&quot;&quot;&lt;/span&gt;        
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-json&quot;&gt;✔ JSON&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;json은 다른 플랫폼으로 생성한 데이터를 전송하기 위해서 json 자료형태로 바꾸는 과정이다.전송하고 싶은 데이터를 dictionary 형태로 생성한 후 dump를 이용하여 자료를 인코딩 한다.
+받은 json 데이터를 python에서 사용하기 위해 load를 이용하여 자료를 디코딩한다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;dump (dict -&amp;gt; str) python객체를 json 데이터로 쓰기&lt;/li&gt;
+    &lt;li&gt;load (str -&amp;gt; dict) json 데이터를 python 객체로 읽기&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;실습01&quot;&gt;실습01&lt;/h3&gt;
+&lt;p&gt;(dump와 load이용해 dict 데이터 인코딩 디코딩하기)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.실습을 위해서 딕셔너리 형태의 data를 생성한다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'users'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'KD Hong'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'locale'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Seoul, KR'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'John Doe'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'locale'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'New York, US'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'name'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Jane Doe'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'locale'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'London, UK'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+결과
+{'users': [{'name': 'KD Hong', 'locale': 'Seoul, KR'}, {'name': 'John Doe', 'locale': 'New York, US'}, {'name': 'Jane Doe', 'locale': 'London, UK'}]} 
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.생성한 dict 자료를 json 데이터로 변경하기 위해 dump를 이용하여 users.json 파일에 작성한 dict자료를 넣는다&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;json&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'users.json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'w'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+결과 : 새로운 json파일인 users.json이 생성된다   
+{&quot;users&quot;: [{&quot;name&quot;: &quot;KD Hong&quot;, &quot;locale&quot;: &quot;Seoul, KR&quot;}, {&quot;name&quot;: &quot;John Doe&quot;, &quot;locale&quot;: &quot;New York, US&quot;}, {&quot;name&quot;: &quot;Jane Doe&quot;, &quot;locale&quot;: &quot;London, UK&quot;}]}
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3.json 데이터를 load를 이용하여 python객체로 읽어온다&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'users.json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dse_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+결과
+{'users': [{'name': 'KD Hong', 'locale': 'Seoul, KR'}, {'name': 'John Doe', 'locale': 'New York, US'}, {'name': 'Jane Doe', 'locale': 'London, UK'}]}
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;실습02&quot;&gt;실습02&lt;/h3&gt;
+&lt;p&gt;(customer.csv파일을 인코딩하여 json 파일로 변환하기)
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. csv파일 customer.csv파일을 읽기 형식으로 가지고 오는데  리스트 컴프리헨션을 이용하여 리스트 형태로 읽어온다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;csv&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./customers.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;    customer = csv.reader(f)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;    customer_list = [i for i in customer]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;결과&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;-------------------&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;csv&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;파일&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-------------------&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'CustomerID'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'CustomerName'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'ContactName'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Address'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'City'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'PostalCode'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Country'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Alfreds Futterkiste'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Maria Anders'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Obere Str. 57'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Berlin'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'12209'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Germany'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Ana Trujillo Emparedados y helados'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Ana Trujillo'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Avda. de la Constitución 2222'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'México D.F.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'05021'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Mexico'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Antonio Moreno Taquería'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Antonio Moreno'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Mataderos 2312'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'México D.F.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'05023'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;'Mexico'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.읽어온 리스트 형태의 데이터에서 데이터 정보가 아닌 0번째 데이터를 제외한 모든 데이터를 딕셔너리 형태로 바꾼다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;users&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'users'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[]}&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# customers 데이터를 담을 dict 정의&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customer&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 데이터 정보가 아닌(column name) 0번째를 제외한 고객 데이터&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;user_dict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# 한명의 정보를 담을 dict 정의&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;customer_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# enumerate를 이용하여 column name을 이용해 index와 key를 생성한다&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;user_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;column&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;고객데이터&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'users'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# 완성된 고객 데이터 dict 를  users['users']에 추가&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./customers.json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'w'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#customers.json 데이터 생성&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+결과
+새로운 customers.json 파일이 생성되고 json파일로 인코딩된 customer 데이터가 들어간다
+
+-------------------customer.json 파일-------------------
+&quot;users&quot;: [{&quot;CustomerID&quot;: &quot;1&quot;, &quot;CustomerName&quot;: &quot;Alfreds Futterkiste&quot;, &quot;ContactName&quot;: &quot;Maria Anders&quot;, &quot;Address&quot;: &quot;Obere Str. 57&quot;, &quot;City&quot;: &quot;Berlin&quot;, &quot;PostalCode&quot;: &quot;12209&quot;, &quot;Country&quot;: &quot;Germany&quot;}, {&quot;CustomerID&quot;: &quot;2&quot;, &quot;CustomerName&quot;: &quot;Ana Trujillo Emparedados y helados&quot;, &quot;ContactName&quot;: &quot;Ana Trujillo&quot;, &quot;Address&quot;: &quot;Avda. de la Constituci&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u00f3&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;n 2222&quot;, &quot;City&quot;: &quot;M&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u00e9&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;xico D.F.&quot;, &quot;PostalCode&quot;: &quot;05021&quot;, &quot;Country&quot;: &quot;Mexico&quot;}, {&quot;CustomerID&quot;: &quot;3&quot;, &quot;CustomerName&quot;: &quot;Antonio Moreno Taquer&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u00ed&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;a&quot;, &quot;ContactName&quot;: &quot;Antonio Moreno&quot;, &quot;Address&quot;: &quot;Mataderos 2312&quot;, &quot;City&quot;: &quot;M&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u00e9&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;xico D.F.&quot;, 
+.
+.
+
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;for index, key in enumerate(customer_list[0]):  &lt;br /&gt;
+        user_dict[key] = row[index]&lt;/p&gt;
+
+&lt;p&gt;enumerate를 이용하여 column name을 이용해 index와 key를 생성한다 : column name 인 key값 CustomerID를 새로운 dict 인 user_dict의 키값으로 지정하고  이에 해당되는 index값 1을 이용해 고객의 데이터 리스트인 row, 즉 첫번째 리스트의 인덱스 1번에 있는 값 1을  value값으로 지정하여 고객 각각의 정보를 user_dict에 넣는다&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;실습03&quot;&gt;실습03&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.data.go.kr/data/15007386/fileData.do&quot;&gt;👉 해당공공데이터 csv 파일 json 파일로 converting 하기&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;공공데이터포털 사이트에 있는 파이들은 대부분 cp949로 다운이 되어지므로 우분투에서 사용시
+리눅스 시스템에서 파일 인코딩을 확인하고 utf-8로 바꾸어준다&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h4 id=&quot;1파일-인코딩-확인--file--bi-&quot;&gt;1.파일 인코딩 확인 : file -bi &lt;파일명&gt;&lt;/파일명&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;2파일-인코딩-변환--iconv--c--f---t----&quot;&gt;2.파일 인코딩 변환 : iconv -c -f &lt;기존 인코딩명=&quot;&quot;&gt; -t &lt;변경할 인코딩명=&quot;&quot;&gt; &lt;파일명&gt; &amp;gt; &lt;새로 적용할=&quot;&quot; 파일명=&quot;&quot;&gt;&lt;/새로&gt;&lt;/파일명&gt;&lt;/변경할&gt;&lt;/기존&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;1.csv파일 리스트 형태로 열기&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;csv&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./aa.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;people_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;csv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;people_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;people_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;people_list&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+결과
+[['구별',
+  '동',
+  '인구수_합계',
+  '인구수_남',
+  '인구수_여',
+  '19세 이상_계',
+  '19세 이상_남',
+  '19세 이상_여',
+  '65세 이상_계',
+  '65세 이상_남자',
+  '65세 이상_여자',
+  '세대수',
+  '재외국민'],
+ ['수정구',
+  '신흥1동         ',
+  '13511',
+  '7107',
+  '6404',
+  '12381',
+  '6519',
+  '5862',
+  '2567',
+  '1073',
+  '1494',
+  '7898',
+  '9'],
+  .
+  .
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.해당 데이터 딕셔너리 형태로 변환하기&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;json&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;people&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'people'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[]}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;people_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;people_dict&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;people_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;people_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;people&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'people'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;people_dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;people&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./people_num.json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'w'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'cp949'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;people&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+결과
+{'people': [{'구별': '수정구', '동': '신흥1동         ', '인구수_합계': '13511', '인구수_남': '7107', '인구수_여': '6404', '19세 이상_계': '12381', '19세 이상_남': '6519', '19세 이상_여': '5862', '65세 이상_계': '2567', '65세 이상_남자': '1073', '65세 이상_여자': '1494', '세대수': '7898', '재외국민': '9'}, {'구별': '수정구', '동': '신흥2동         ', '인구수_합계': '20239', '인구수_남': '9911', '인구수_여': '10328', '19세 이상_계': '17042', '19세 이상_남': '8328', '19세 이상_여': '8714', '65세 이상_계': '2686', '65세 이상_남자': '1277', '65세 이상_여자': '1409', '세대수': '7693', '재외국민': '22'}, {'구별': '수정구', '동': '신흥3동         ', '인구수_합계': '11309', '인구수_남': '5893', '인구수_여': '5416', '19세 이상_계': '10318', '19세 이상_남': '5377', '19세 이상_여': '4941', '65세 이상_계': '2020', '65세 이상_남자': '878', '65세 이상_여자': '1142', '세대수': '6450', '재외국민': '9'}, {'구별': '수정구', '동': '태평1동         ', '인구수_합계': '15566', '인구수_남': '7
+.
+.  
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. load로 json 가져오기&lt;/strong&gt;  &lt;br /&gt;
+(구, 동, 인구수_남 데이터 가져오기)&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'people_num.json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;des_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;des_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'people'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'구: {} 동: {} man: {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'구별'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'동'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'인구수_남'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+결과
+구: 수정구 동: 신흥1동 man: 7107
+구: 수정구 동: 신흥2동 man: 9911
+구: 수정구 동: 신흥3동 man: 5893
+구: 수정구 동: 태평1동 man: 7960
+구: 수정구 동: 태평2동 man: 7853
+구: 수정구 동: 태평3동 man: 6956
+구: 수정구 동: 태평4동 man: 6830
+구: 수정구 동: 수진1동 man: 6552
+구: 수정구 동: 수진2동 man: 8125
+구: 수정구 동: 단대동 man: 7843
+구: 수정구 동: 산성동 man: 5179
+구: 수정구 동: 양지동 man: 4932
+구: 수정구 동: 복정동 man: 6107
+구: 수정구 동: 위례동 man: 22343
+구: 수정구 동: 신촌동 man: 2549
+.
+.
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="Python" /><summary type="html">👉 csv와 json</summary></entry><entry><title type="html">python File I/O (get()함수와, setdefault()함수 이용해 실습하기)</title><link href="https://heejung-gjt.github.io/python-file_io" rel="alternate" type="text/html" title="python File I/O (get()함수와, setdefault()함수 이용해 실습하기)" /><published>2021-02-02T13:40:00+09:00</published><updated>2021-02-02T13:40:00+09:00</updated><id>https://heejung-gjt.github.io/python-file_io</id><content type="html" xml:base="https://heejung-gjt.github.io/python-file_io">&lt;h3 id=&quot;-file-io&quot;&gt;👉 file I/O&lt;/h3&gt;
 &lt;p&gt;파일 입출력은 파일을 읽거나 쓸때 쓰는 방법이다. 주로(w, r, a) 3가지의 경우가 쓰인다&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'./&amp;lt;파일위치&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&amp;lt;모드&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -236,7 +812,7 @@ a_word_list안에 들어있는 문자열을 하나씩 꺼내어 setdefault함수
 &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a_word_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;filtered_dict&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setdefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),[])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;filtered_dict&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="Python" /><summary type="html"></summary></entry><entry><title type="html">210202-TIL</title><link href="https://heejung-gjt.github.io/til07" rel="alternate" type="text/html" title="210202-TIL" /><published>2021-02-02T12:00:04+09:00</published><updated>2021-02-02T12:00:04+09:00</updated><id>https://heejung-gjt.github.io/til07</id><content type="html" xml:base="https://heejung-gjt.github.io/til07">&lt;h2 id=&quot;--오늘-배운-내용&quot;&gt;👉  오늘 배운 내용&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="Python" /><summary type="html">👉 file I/O 파일 입출력은 파일을 읽거나 쓸때 쓰는 방법이다. 주로(w, r, a) 3가지의 경우가 쓰인다 f = open('./&amp;lt;파일위치&amp;gt;','&amp;lt;모드&amp;gt;',encoding='utf-8')</summary></entry><entry><title type="html">210202-TIL</title><link href="https://heejung-gjt.github.io/til07" rel="alternate" type="text/html" title="210202-TIL" /><published>2021-02-02T12:00:04+09:00</published><updated>2021-02-02T12:00:04+09:00</updated><id>https://heejung-gjt.github.io/til07</id><content type="html" xml:base="https://heejung-gjt.github.io/til07">&lt;h2 id=&quot;--오늘-배운-내용&quot;&gt;👉  오늘 배운 내용&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -298,8 +874,6 @@ a_word_list안에 들어있는 문자열을 하나씩 꺼내어 setdefault함수
     &lt;h4 id=&quot;weekly-2번-리펙토링&quot;&gt;weekly 2번 리펙토링&lt;/h4&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">List Comprehension 과 Dictionary Comprehension</title><link href="https://heejung-gjt.github.io/python-comprehension" rel="alternate" type="text/html" title="List Comprehension 과 Dictionary Comprehension" /><published>2021-02-01T10:00:04+09:00</published><updated>2021-02-01T10:00:04+09:00</updated><id>https://heejung-gjt.github.io/python-comprehension</id><content type="html" xml:base="https://heejung-gjt.github.io/python-comprehension">&lt;h2 id=&quot;-list-comprehension&quot;&gt;📌 List Comprehension&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;p&gt;리스트 컴프리헨션은 반복되거나 특정한 조건을 만족하는 리스트를 쉽게 만들어 내기 위한 방법이다  &lt;br /&gt;
 다음은 기본적인 구조이다. 결과 값을 가장 먼저 작성하고 for 다음으로 조건을 작성해준다. in 다음에는 반복가능한 개체가 출력된다&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iterable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -462,7 +1036,7 @@ number_dict에 있는 딕셔너리 value값 중 3보다 작은값은 v**2 값을
 &lt;span class=&quot;n&quot;&gt;new_number_dict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number_dict&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()}&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;new_number_dict&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="Python" /><summary type="html"></summary></entry><entry><title type="html">210131-TIL</title><link href="https://heejung-gjt.github.io/til05" rel="alternate" type="text/html" title="210131-TIL" /><published>2021-01-31T12:00:04+09:00</published><updated>2021-01-31T12:00:04+09:00</updated><id>https://heejung-gjt.github.io/til05</id><content type="html" xml:base="https://heejung-gjt.github.io/til05">&lt;h2 id=&quot;--오늘-배운-내용&quot;&gt;👉  오늘 배운 내용&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="Python" /><summary type="html">📌 List Comprehension 리스트 컴프리헨션은 반복되거나 특정한 조건을 만족하는 리스트를 쉽게 만들어 내기 위한 방법이다 다음은 기본적인 구조이다. 결과 값을 가장 먼저 작성하고 for 다음으로 조건을 작성해준다. in 다음에는 반복가능한 개체가 출력된다 &amp;lt;result&amp;gt; for &amp;lt;element&amp;gt; in &amp;lt;iterable&amp;gt;</summary></entry><entry><title type="html">210131-TIL</title><link href="https://heejung-gjt.github.io/til05" rel="alternate" type="text/html" title="210131-TIL" /><published>2021-01-31T12:00:04+09:00</published><updated>2021-01-31T12:00:04+09:00</updated><id>https://heejung-gjt.github.io/til05</id><content type="html" xml:base="https://heejung-gjt.github.io/til05">&lt;h2 id=&quot;--오늘-배운-내용&quot;&gt;👉  오늘 배운 내용&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -696,300 +1270,4 @@ feat: numguess v1.0.0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;-8-github에서-확인해-잘-올라갔으면-끝-&quot;&gt;📌 8. github에서 확인해 잘 올라갔으면 끝 !&lt;/h4&gt;</content><author><name>jung</name></author><category term="git" /><summary type="html"></summary></entry><entry><title type="html">Fork and Merge로 동료와 협업해보기 - 실습</title><link href="https://heejung-gjt.github.io/git-collaborate" rel="alternate" type="text/html" title="Fork and Merge로 동료와 협업해보기 - 실습" /><published>2021-01-30T11:47:00+09:00</published><updated>2021-01-30T11:47:00+09:00</updated><id>https://heejung-gjt.github.io/git-collaborate</id><content type="html" xml:base="https://heejung-gjt.github.io/git-collaborate">&lt;h3 id=&quot;-fork-and-merge로-동료와-협업---실습으로-알아보기&quot;&gt;👉 Fork and Merge로 동료와 협업 - 실습으로 알아보기&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;PM(팀장)&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;github에서 새로운 repo를 생성하고 내 컴에 clone 한다.&lt;/li&gt;
-  &lt;li&gt;git flow init 후 develop에서 numguess.py를 만들고 add, commit, push&lt;/li&gt;
-  &lt;li&gt;팀원에게 알린다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;DEV(팀원)&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;알림 받은 후, 방문하여 fork 한다. fork한 나의 repo를 내 컴에 clone한다.&lt;/li&gt;
-  &lt;li&gt;팀장 repo에 방문하여 issue를 생성한다.&lt;/li&gt;
-  &lt;li&gt;git flow init 후, dev -&amp;gt; feature/{MYFEATURE} 브랜칭 하여 작업한다. &lt;br /&gt;
-(commit 시 발급한 issue 번호 매기기)&lt;/li&gt;
-  &lt;li&gt;feature finish 후 나의 develop으로 push 한다.&lt;/li&gt;
-  &lt;li&gt;create pull request 하고 팀장에게 알린다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;PM&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;pull request를 리뷰한다.&lt;/li&gt;
-  &lt;li&gt;수정할 것을 지시한다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;DEV&lt;/strong&gt; 6. 수정사항을 반영하여 다시 add,commit,push&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;PM&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;merge한다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;DEV&lt;/strong&gt; 7. PM repo 업데이트 발생시 PM의 develop을 pull한다.&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;-pm&quot;&gt;👉 PM&lt;/h3&gt;
-
-&lt;h4 id=&quot;1-pm-github에-fork-and-merge-repo를-생성한-후-clone해준다&quot;&gt;1. pm github에 &lt;code class=&quot;highlighter-rouge&quot;&gt;fork-and-merge&lt;/code&gt; repo를 생성한 후 clone해준다&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git clone &amp;lt;url명&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;2-git-flow-init으로--develop-브랜치를-생성한-후-해당-브랜치-내에서-numguesspy파일을-생성하여-add-commit을-해준다&quot;&gt;2. git flow init으로  develop 브랜치를 생성한 후 해당 브랜치 내에서 numguess.py파일을 생성하여 add, commit을 해준다&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git flow init
-
-$ git branch #develop 생성되었는지 확인
-* develop
-  master
-
-$ touch numguess.py
-$ vi numguess.py # 팀원이 해야할 일 기록
-$ git add numguess.py
-$ git commit  
-$ git push -u origin develop# master는 이미 remote와 로컬이 연결되어 있으므로 -u를 해주지 않아도 되지만 develop 브랜치는 생성된 후 처음 push를 하기 때문에    
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;3-팀원에게-알린다&quot;&gt;3. 팀원에게 알린다&lt;/h4&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;dev&quot;&gt;DEV&lt;/h4&gt;
-
-&lt;h4 id=&quot;1-pm-의-git에-방문하여-해당-repo-fork한-후-clone-해준다&quot;&gt;1. PM 의 git에 방문하여 해당 repo fork한 후 clone 해준다.&lt;/h4&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;해당 repo로 이동 -&amp;gt; 오른쪽 상단에 fork click&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git clone &amp;lt;fork한 dev의 url&amp;gt;
-$ cd &amp;lt;clone명&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;2-dev가-pm-의-repo에서-issue를-만든다&quot;&gt;2. dev가 pm 의 repo에서 issue를 만든다&lt;/h4&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;3-git-flow-init-후-dev---featuremyfeature-브랜칭-하여-작업한다&quot;&gt;3. git flow init 후, dev -&amp;gt; feature/{MYFEATURE} 브랜칭 하여 작업한다.&lt;/h4&gt;
-&lt;h5 id=&quot;commit-시-발급한-issue-번호-매기기&quot;&gt;(commit 시 발급한 issue 번호 매기기)&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git flow init # develop 브랜치로 들어오면 pm이 작성한 numguess.py 가 있다
-$ git flow feature start &amp;lt;feature/브랜치명&amp;gt;
-$ vi numguess.py # 내용을 수정한다
-$ git add numguess.py
-$ git commit (commit 시 발급한 issue번호를 매겨준다) # solved: #n
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;4-feature-finish-후-dev의-develop으로-push-한다&quot;&gt;4. feature finish 후 dev의 develop으로 push 한다.&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git flow feature finish &amp;lt;feature/브랜치명&amp;gt;  # 기능 개발이 끝난 경우
-$ git push origin develop
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;5-create-pull-request-하고-팀장에게-알린다&quot;&gt;5. create pull request 하고 팀장에게 알린다.&lt;/h4&gt;
-&lt;p&gt;pm의 repo로 돌아가 develop 브랜치에서 pull request를 눌러준다
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;6-이때-conflict이-발생-할-수-있다-이유는-이미-pm이-다른-내용을-merge했기-때문이다&quot;&gt;6. 이때 conflict이 발생 할 수 있다. 이유는 이미 pm이 다른 내용을 merge했기 때문이다.&lt;/h4&gt;
-&lt;h5 id=&quot;다시-자신의-로컬로-돌아가-7번을-수행보자-conflict이-발생한다&quot;&gt;다시 자신의 로컬로 돌아가 7번을 수행보자 &lt;code class=&quot;highlighter-rouge&quot;&gt;CONFLICT이 발생한다&lt;/code&gt;&lt;/h5&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;.
-.
-.
-CONFLICT (content): Merge conflict in zero-to-number.py
-Automatic merge failed; fix conflicts and then commit the result.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;이제 다시 vi로 conflct 나는 파일로 들어가 변경해준다  &lt;br /&gt;
-그 후 add , commit 을 차례대로 해준뒤 &lt;code class=&quot;highlighter-rouge&quot;&gt;git push origin develop&lt;/code&gt;으로 다시 push해주고 pull request해주면  끝 ! 👍&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;pm&quot;&gt;PM&lt;/h3&gt;
-
-&lt;h4 id=&quot;4-pull-request를-리뷰한다&quot;&gt;4. pull request를 리뷰한다.&lt;/h4&gt;
-&lt;h4 id=&quot;5-수정할-것을-지시한다&quot;&gt;5. 수정할 것을 지시한다.&lt;/h4&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;dev-1&quot;&gt;DEV&lt;/h3&gt;
-
-&lt;h4 id=&quot;6-수정사항을-반영하여-다시-addcommitpush&quot;&gt;6. 수정사항을 반영하여 다시 add,commit,push&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ vi numguess.py # 수정사항 변경
-$ git add numguess.py
-$ git commit
-$ git push origin develop
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;pm-1&quot;&gt;PM&lt;/h3&gt;
-&lt;h4 id=&quot;6-merge-버튼을-눌러준다&quot;&gt;6. &lt;code class=&quot;highlighter-rouge&quot;&gt;merge 버튼을 눌러준다&lt;/code&gt;&lt;/h4&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;dev-2&quot;&gt;DEV&lt;/h3&gt;
-
-&lt;h4 id=&quot;7-pm-repo-업데이트-발생시-pm의-develop을-pull한다&quot;&gt;7. PM repo 업데이트 발생시 PM의 develop을 pull한다.&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git remote -v # 자신의 remote인지 확인
-$ git remote add pmorigin &amp;lt;pm의 url명&amp;gt;
-$ git pull pmorigin develop # pm의 변경된 내용 pull
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;pm-2&quot;&gt;PM&lt;/h3&gt;
-
-&lt;h4 id=&quot;6-자신의-로컬도-변경해준다&quot;&gt;6. 자신의 로컬도 변경해준다&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;$ git pull origin develop
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>jung</name></author><category term="git" /><summary type="html"></summary></entry><entry><title type="html">git branch로 checkout, merge 하기</title><link href="https://heejung-gjt.github.io/git-branch" rel="alternate" type="text/html" title="git branch로 checkout, merge 하기" /><published>2021-01-30T11:00:00+09:00</published><updated>2021-01-30T11:00:00+09:00</updated><id>https://heejung-gjt.github.io/git-branch</id><content type="html" xml:base="https://heejung-gjt.github.io/git-branch">&lt;h2 id=&quot;-git-branch로-checkout-merge-하기------branch생성-후-main의-변화가-없을때&quot;&gt;📌 git branch로 checkout, merge 하기   -  branch생성 후 main의 변화가 없을때&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-git-branch-명령어로-현재-존재-하는-branch와-위치하고-있는-branch를-볼-수-있다&quot;&gt;✔ git branch 명령어로 현재 존재 하는 branch와 위치하고 있는 branch를 볼 수 있다&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-main에-위치한-상황에서-python-파일을-하나-생성한-후-addcommit을-차례대로-해준다&quot;&gt;✔ main에 위치한 상황에서 python 파일을 하나 생성한 후 add,commit을 차례대로 해준다&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;touch numguess.py
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add numguess.py
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;vi 편집기에서 작성&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;main에 numguess.py 파일이 commit된 상태로 존재하는 것을 볼 수 있다. 해당 파일을 새로운 branch를 생성해 편집해보자&lt;/p&gt;
-
-&lt;h4 id=&quot;-새로운-branch를-생성-한-후-해당-branch로-전환&quot;&gt;✔ 새로운 branch를 생성 한 후 해당 branch로 전환&lt;/h4&gt;
-&lt;p&gt;(git branch로 잘 전환되었는지 확인하자)&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;branch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iteration&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#브랜치 생성&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iteration&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 브랜치 전환&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-해당-브랜치에서-numguesspy의-내용을-편집한-후-add-commit을-차례대로-해준다&quot;&gt;✔ 해당 브랜치에서 numguess.py의 내용을 편집한 후 add, commit을 차례대로 해준다&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vi numguess.py
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;vi 편집기에서 작성&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-수정된-numguesspy파일을-main과-병합하기-위해-merge-옵션을-사용한다-merge가-끝난-후에는-생성했던-branch를-지워주자&quot;&gt;✔ 수정된 numguess.py파일을 main과 병합하기 위해 merge 옵션을 사용한다. merge가 끝난 후에는 생성했던 branch를 지워주자&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout main  &lt;span class=&quot;c&quot;&gt;# main으로 이동 후 병합&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge numguess.py
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch &lt;span class=&quot;nt&quot;&gt;-D&lt;/span&gt; iteration
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-main에-있는-numguesspy를-확인해보면-iteration-브랜치에서-편집한-내용이-들어가-있는-것을-볼-수-있다&quot;&gt;✔ main에 있는 numguess.py를 확인해보면 iteration 브랜치에서 편집한 내용이 들어가 있는 것을 볼 수 있다&lt;/h4&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;위의 방법은 main에서 branch를 생성한 후 main의 내용에 변화가 없을때 merge할 수 있는 방법이다.  &lt;br /&gt;
-branch를 만든 후에 main의 변화가 있을땐 merge하는 과정에서 conflict, 즉 충돌이 일어나게 된다&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;-branch생성-후-main의-변화가-있을때-conflict-해결하여-merge하기&quot;&gt;📌 branch생성 후 main의 변화가 있을때 Conflict 해결하여 merge하기&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-새로운-branch를-생성한-후-해당-브랜치로-들어간다&quot;&gt;✔ 새로운 branch를 생성한 후 해당 브랜치로 들어간다&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch discard
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout discard
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-discrad-브랜치에서-numguesspy-파일을-수정한-후-add-commit을-해준다&quot;&gt;✔ discrad 브랜치에서 numguess.py 파일을 수정한 후 add, commit을 해준다&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vi numguess.py
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add numguess.py
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-그-뒤-충돌을-일부러-내기-위해-main으로-돌아와-merge전-numguesspy의-내용을-수정-후-add-commit을-해준다&quot;&gt;✔ 그 뒤 충돌을 일부러 내기 위해 main으로 돌아와 merge전 numguess.py의 내용을 수정 후 add, commit을 해준다&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout main
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vi numguess.py
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add numguess.py
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-main에서-discard와-merge를-하면-충돌이-발생하게-된다&quot;&gt;✔ main에서 discard와 merge를 하면 충돌이 발생하게 된다&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git merge discard
-
-Auto-merging numguess.py
-CONFLICT &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;content&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;: Merge conflict &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;numguess.py
-Automatic merge failed&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; fix conflicts and &lt;span class=&quot;k&quot;&gt;then &lt;/span&gt;commit the result.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-numguesspy를-편집기를-통해-들어오면-아래와-같이-내용이-추가되어-있는-것을-볼-수-있다&quot;&gt;✔ numguess.py를 편집기를 통해 들어오면 아래와 같이 내용이 추가되어 있는 것을 볼 수 있다&lt;/h4&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HEAD&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;guess&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;=======&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;guess&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;guess&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'OK BYEBYE SEE YOU LATER.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ANSWER : {num1}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'YOUR ANSWER : {guess}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;discard&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;guess&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'NOPE !'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'GAME OVER'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD&lt;/code&gt;     &lt;br /&gt;
-&amp;lt; main에서 작성한 numgguess.py 내용 &amp;gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-=========```&quot;&gt;```&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; discard```   
-&amp;lt;branch discard에서 작성한 numguess.py 내용&amp;gt;      
-
-병합을 위해서 위의 두가지의 코드를 적절히 조합하여 수정, 삭제 등 변경해주면된다. (단 ! 위의 코드에 생성되있는 ===, &amp;lt;&amp;lt;&amp;lt; 기호들은 지워준다)    
-#### ✔ 적절히 수정한 후 저장 후  실행이 잘 되는지 확인한 후 (```python3 numguess.py```) add,commit을 해준다    
-
-#### ✔ 만들었던 branch는 깔끔하게 지워준다
-```bash
-git branch -D discard
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;github에  들어가  insights -&amp;gt; network를 확인해보면 아래의 이미지처럼 branch가 병합된 것을 볼 수 있다 🙌&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/77425963/106344584-f3ae7500-62ed-11eb-9304-265a1194c5f5.png&quot; alt=&quot;merge&quot; /&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="git" /><summary type="html"></summary></entry><entry><title type="html">210130-TIL</title><link href="https://heejung-gjt.github.io/til04" rel="alternate" type="text/html" title="210130-TIL" /><published>2021-01-30T10:00:04+09:00</published><updated>2021-01-30T10:00:04+09:00</updated><id>https://heejung-gjt.github.io/til04</id><content type="html" xml:base="https://heejung-gjt.github.io/til04">&lt;h2 id=&quot;--오늘-배운-내용&quot;&gt;👉  오늘 배운 내용&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-git-flow이용해서-merge하기&quot;&gt;✔ git flow이용해서 merge하기&lt;/h4&gt;
-&lt;h4 id=&quot;-조원들과-fork-and-merge-함께-실습하기&quot;&gt;✔ 조원들과 fork and merge 함께 실습하기&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;오늘 배운  flow 로 merge하는 법을 이용하서 총 4명의 조원들과 실습을 해보았다&lt;/p&gt;
-
-&lt;p&gt;PM이 repo를 파면 나머지 팀원들이 해당 repo를 fork해서 clone한 뒤 각자 flow init을 하여 feature branch에서 기능을 추가한 뒤 
-pull request 하여 PM에게 피드백을 받았다. &lt;br /&gt;
-만약 conflict가 나면 자신의 로컬에서 해당 내용을 수정한 뒤 다시 request 하는 방식으로 진행하였다 &lt;br /&gt;
-굉장히 ,,, 굉장히 헷갈린다,,, 😂&lt;/p&gt;
-
-&lt;h4 id=&quot;실습과정은-여기에-기록해-놓았다-click&quot;&gt;&lt;a href=&quot;http://127.0.0.1:4000/git-collaborate&quot;&gt;실습과정은 여기에 기록해 놓았다 click&lt;/a&gt;&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;--해야-할-일&quot;&gt;🌟  해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;pull-request-시-발생하는-conflict-해결-과정-다시해보기&quot;&gt;pull request 시 발생하는 conflict 해결 과정 다시해보기&lt;/h4&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry></feed>
+&lt;h4 id=&quot;-8-github에서-확인해-잘-올라갔으면-끝-&quot;&gt;📌 8. github에서 확인해 잘 올라갔으면 끝 !&lt;/h4&gt;</content><author><name>jung</name></author><category term="git" /><summary type="html"></summary></entry></feed>
