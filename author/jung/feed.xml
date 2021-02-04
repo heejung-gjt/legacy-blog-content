@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/author/jung/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-02-03T18:21:11+09:00</updated>
+  <updated>2021-02-04T22:15:24+09:00</updated>
   <id>https://heejung-gjt.github.io/author/jung/feed.xml</id>
 
   
@@ -30,6 +30,102 @@
   
   
 
+  
+    <entry>
+      <title type="html">210204-TIL</title>
+      <link href="https://heejung-gjt.github.io/til09" rel="alternate" type="text/html" title="210204-TIL" />
+      <published>2021-02-04T12:00:04+09:00</published>
+      <updated>2021-02-04T12:00:04+09:00</updated>
+      <id>https://heejung-gjt.github.io/til09</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til09">&lt;h2 id=&quot;--오늘-복습-내용&quot;&gt;👉  오늘 복습 내용&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;weekly 2번 리펙토링 ✔&lt;/li&gt;
+  &lt;li&gt;hacker rank 5문제 풀이 ✔&lt;/li&gt;
+  &lt;li&gt;python 컴퓨터 구조 ✔&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;weekly문제는 지금까지 배운 내용을 잘 이해하고 있으면 풀 수 있는 문제였다. 처음 문제를 풀었을때 무려 40줄이나
+나왔었다… 리펙토링(?) 결과 20줄까지 줄여지는 문제였다. 문제는 너어어어어무 오래걸린다…
+진짜 저 한 문제 수정하는데 왜 이렇게 많은 시간이 걸릴까.. !! 도대체 왜 ㅜㅜ&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;--해야-할-일&quot;&gt;🌟  해야 할 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2/7까지 python 1회차-8회차 복습 (HackerRank, 과제 전부 정리)&lt;/li&gt;
+  &lt;li&gt;2/7까지 codeup 93-100문제 정리&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">python 메모리 구조</title>
+      <link href="https://heejung-gjt.github.io/git-01" rel="alternate" type="text/html" title="python 메모리 구조" />
+      <published>2021-02-03T14:47:00+09:00</published>
+      <updated>2021-02-03T14:47:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/git-01</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/git-01">&lt;h2 id=&quot;메모리-구조&quot;&gt;메모리 구조&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/106748166-2a76e900-6668-11eb-9af2-02414110e8f0.PNG&quot; alt=&quot;memory&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="computer science" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">python lambda function (람다함수란?)</title>
@@ -576,12 +672,9 @@ pecil&lt;/p&gt;
   &lt;li&gt;\D - 숫자가 아닌 것과 매치, [^0-9]와 동일한 표현식이다.&lt;/li&gt;
   &lt;li&gt;\w - 문자+숫자(alphanumeric)와 매치, [a-zA-Z0-9_]와 동일한 표현식이다.&lt;/li&gt;
   &lt;li&gt;\W - 문자+숫자(alphanumeric)가 아닌 문자와 매치, [^a-zA-Z0-9_]와 동일한 표현식이다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;ul&gt;
-      &lt;li&gt;*&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;-parentheses&quot;&gt;✔ Parentheses(&lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt;)&lt;/h4&gt;
 &lt;p&gt;소괄호 안의 문자열의 그룹을 의미한다. 문자열 패턴의 반복을 검사하고 싶을 때 사용한다&lt;/p&gt;
@@ -704,6 +797,67 @@ A-Z ,a-z, 0-9, -, + 의 문자열이 4개이상 32개 이하로 조합되서 use
 
       
         <summary type="html">Regular Expressions 정규 표현식은 특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 형식언어이다. python은 re모듈로 정규표현식 사용이 가능한다</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">210203-TIL</title>
+      <link href="https://heejung-gjt.github.io/til08" rel="alternate" type="text/html" title="210203-TIL" />
+      <published>2021-02-03T12:00:04+09:00</published>
+      <updated>2021-02-03T12:00:04+09:00</updated>
+      <id>https://heejung-gjt.github.io/til08</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til08">&lt;h2 id=&quot;--오늘-복습-내용&quot;&gt;👉  오늘 복습 내용&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;0201--0202-python-복습-제대로-&quot;&gt;02/01 ~ 02/02 python 복습 제대로 ✔&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;regular-expressions-정규표현식-&quot;&gt;Regular Expressions 정규표현식 ✔&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;csv-json-이용해-데이터-처리-&quot;&gt;csv, json 이용해 데이터 처리 ✔&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;map과-lambda함수의-사용-&quot;&gt;map과 lambda함수의 사용 ✔&lt;/h4&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;정규표현식 굉장히 헷갈린다. 람다함수를 활용해서 문제를 풀 수 있는 날이 올까 궁금하다.^^ 벌써 한달이
+지났는데 왜 문제푸는 실력은 그대로인 것 같지😒&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;--해야-할-일&quot;&gt;🌟  해야 할 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2월 계획 세우기&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
       
 
       
@@ -991,9 +1145,9 @@ a_word_list안에 들어있는 문자열을 하나씩 꺼내어 setdefault함수
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;-regular-expressions-match-meta-characters&quot;&gt;✔ Regular Expressions (match, meta characters)&lt;/h4&gt;
-&lt;h4 id=&quot;-lambda-함수&quot;&gt;✔ lambda 함수&lt;/h4&gt;
-&lt;h4 id=&quot;-map과-lambda함수의-사용&quot;&gt;✔ map과 lambda함수의 사용&lt;/h4&gt;
+&lt;h4 id=&quot;-regular-expressions-match-meta-characters-정리내용&quot;&gt;✔ Regular Expressions (match, meta characters) &lt;a href=&quot;https://heejung-gjt.github.io/python-regular-expression&quot;&gt;(👉정리내용)&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;-lambda-함수-정리내용&quot;&gt;✔ lambda 함수 &lt;a href=&quot;https://heejung-gjt.github.io/python-lambda&quot;&gt;(👉정리내용)&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;-map과-lambda함수의-사용-정리내용&quot;&gt;✔ map과 lambda함수의 사용 &lt;a href=&quot;https://heejung-gjt.github.io/python-lambda&quot;&gt;(👉정리내용)&lt;/a&gt;&lt;/h4&gt;
 
 &lt;hr /&gt;
 &lt;p&gt;확실히 초반에 배우는 내용보다 복잡하고 생각해야 하는 부분이 많이 생겼다.
@@ -1005,13 +1159,13 @@ a_word_list안에 들어있는 문자열을 하나씩 꺼내어 setdefault함수
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;h4 id=&quot;0201--0202-python-복습-제대로&quot;&gt;02/01 ~ 02/02 python 복습 제대로&lt;/h4&gt;
+    &lt;h4 id=&quot;0201--0202-python-복습-제대로&quot;&gt;~&lt;del&gt;02/01 ~ 02/02 python 복습 제대로&lt;/del&gt;~&lt;/h4&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;h4 id=&quot;hacker-rank-5문제-풀이&quot;&gt;hacker rank 5문제 풀이&lt;/h4&gt;
+    &lt;h4 id=&quot;hacker-rank-5문제-풀이&quot;&gt;~&lt;del&gt;hacker rank 5문제 풀이&lt;/del&gt;~&lt;/h4&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;h4 id=&quot;csv-json-이용해-데이터-처리&quot;&gt;csv, json 이용해 데이터 처리&lt;/h4&gt;
+    &lt;h4 id=&quot;csv-json-이용해-데이터-처리&quot;&gt;~&lt;del&gt;csv, json 이용해 데이터 처리&lt;/del&gt;~&lt;/h4&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;h4 id=&quot;python-컴퓨터-구조-공부하기&quot;&gt;python 컴퓨터 구조 공부하기&lt;/h4&gt;
@@ -1057,7 +1211,7 @@ a_word_list안에 들어있는 문자열을 하나씩 꺼내어 setdefault함수
 &lt;h4 id=&quot;-codeup-python으로-81-93-풀이&quot;&gt;✔ codeup python으로 [81-93] 풀이&lt;/h4&gt;
 &lt;h4 id=&quot;-list-comprehension과-dictionary-comprehension--정리내용&quot;&gt;✔ list comprehension과 dictionary comprehension  &lt;a href=&quot;https://heejung-gjt.github.io/python-comprehension&quot;&gt;(👉정리내용)&lt;/a&gt;&lt;/h4&gt;
 &lt;h4 id=&quot;-file-io-정리내용&quot;&gt;✔ file I/O &lt;a href=&quot;https://heejung-gjt.github.io/python-file_io&quot;&gt;(👉정리내용)&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id=&quot;-csv와-json&quot;&gt;✔ CSV와 JSON&lt;/h4&gt;
+&lt;h4 id=&quot;-csv와-json-정리내용&quot;&gt;✔ CSV와 JSON &lt;a href=&quot;https://heejung-gjt.github.io/python-csv-json&quot;&gt;(👉정리내용)&lt;/a&gt;&lt;/h4&gt;
 
 &lt;hr /&gt;
 &lt;p&gt;오늘 가장 많은 내용을 배운것 같다. 그만큼 한번에 머리에 들어오는게 쉽지 않다,, 한번씩 공부 했던 내용들이였는데
@@ -1071,7 +1225,7 @@ a_word_list안에 들어있는 문자열을 하나씩 꺼내어 setdefault함수
     &lt;h4 id=&quot;file-io-복습&quot;&gt;&lt;del&gt;file I/O 복습&lt;/del&gt;&lt;/h4&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;h4 id=&quot;csv와-json-복습&quot;&gt;CSV와 JSON 복습&lt;/h4&gt;
+    &lt;h4 id=&quot;csv와-json-복습&quot;&gt;~&lt;del&gt;CSV와 JSON 복습&lt;/del&gt;~&lt;/h4&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;h4 id=&quot;codeup-94-100-풀기&quot;&gt;codeup 94-100 풀기&lt;/h4&gt;
@@ -1080,7 +1234,7 @@ a_word_list안에 들어있는 문자열을 하나씩 꺼내어 setdefault함수
     &lt;h4 id=&quot;codeup-블로그-정리&quot;&gt;codeup 블로그 정리&lt;/h4&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;h4 id=&quot;weekly-2번-리펙토링&quot;&gt;weekly 2번 리펙토링&lt;/h4&gt;
+    &lt;h4 id=&quot;weekly-2번-리펙토링&quot;&gt;~&lt;del&gt;weekly 2번 리펙토링&lt;/del&gt;~&lt;/h4&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content>
 
@@ -1301,342 +1455,6 @@ number_dict에 있는 딕셔너리 value값 중 3보다 작은값은 v**2 값을
 
       
         <summary type="html">📌 List Comprehension 리스트 컴프리헨션은 반복되거나 특정한 조건을 만족하는 리스트를 쉽게 만들어 내기 위한 방법이다 다음은 기본적인 구조이다. 결과 값을 가장 먼저 작성하고 for 다음으로 조건을 작성해준다. in 다음에는 반복가능한 개체가 출력된다 &amp;lt;result&amp;gt; for &amp;lt;element&amp;gt; in &amp;lt;iterable&amp;gt;</summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">210131-TIL</title>
-      <link href="https://heejung-gjt.github.io/til05" rel="alternate" type="text/html" title="210131-TIL" />
-      <published>2021-01-31T12:00:04+09:00</published>
-      <updated>2021-01-31T12:00:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/til05</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til05">&lt;h2 id=&quot;--오늘-배운-내용&quot;&gt;👉  오늘 배운 내용&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-codeup-python으로-61-80-풀이&quot;&gt;✔ codeup python으로 [61-80] 풀이&lt;/h4&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;역시 주말이라 그런지,,, 공부가 매우 안된다,, 😂 그래도 조금이라도 문제를
-  풀어서 다행이다,,^^ 벌써 2월이다. 요즘 시간이 달별로 너무 
-  빨리 지나가는 것 같아서 좀 무섭다 흑 &lt;br /&gt;
-  2월 목표 : 알고리즘 기초 다지기, 코테유형 문제 진입하기&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;--해야-할-일&quot;&gt;🌟  해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;git-블로그-정리-다시하기&quot;&gt;git 블로그 정리 다시하기&lt;/h4&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;python-배운내용-복습-함수-메서드-위주로&quot;&gt;python 배운내용 복습 (함수, 메서드 위주로)&lt;/h4&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;codeup-81-100-풀기&quot;&gt;codeup 81-100 풀기&lt;/h4&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">git flow 이용해서 merge하기</title>
-      <link href="https://heejung-gjt.github.io/git-flow" rel="alternate" type="text/html" title="git flow 이용해서 merge하기" />
-      <published>2021-01-30T13:47:00+09:00</published>
-      <updated>2021-01-30T13:47:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/git-flow</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/git-flow">&lt;h3 id=&quot;git-flow-이용하기&quot;&gt;git flow 이용하기&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-installation&quot;&gt;✔ installation&lt;/h4&gt;
-
-&lt;p&gt;ubuntu 설치방법 (사용자 환경마다 설치 방법 다름)
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get install git-flow
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-git-flow-init-은-새로운-기능의-개발을-develop-브랜치에서-시작하기-위한-명령어이다-해당-명령어를-작성하면-develop라는-branch가-생성되며-해당-branch로-이동하게-된다&quot;&gt;✔ git flow init 은 새로운 기능의 개발을 develop 브랜치에서 시작하기 위한 명령어이다. 해당 명령어를 작성하면 develop라는 branch가 생성되며 해당 branch로 이동하게 된다.&lt;/h4&gt;
-&lt;p&gt;(몇몇 질문은 기본값으로 설정하자. enter를 쳐서 넘어가면 된다)&lt;/p&gt;
-
-&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git flow init
-
-Which branch should be used &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;bringing forth production releases?
-   - main
-Branch name &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;production releases: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;main] 
-Branch name &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;next release&quot;&lt;/span&gt; development: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;develop] 
-
-How to name your supporting branch prefixes?
-Feature branches? &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;feature/] 
-Bugfix branches? &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;bugfix/] 
-&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch
-
-&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; develop
-  main
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-새-기능의-개발을-시작하기-위해서-develop에-기반한-새-기능-브랜치를-생성하고-해당-브랜치로-전환한다&quot;&gt;✔ 새 기능의 개발을 시작하기 위해서 develop에 기반한 새 기능 브랜치를 생성하고 해당 브랜치로 전환한다&lt;/h4&gt;
-&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git flow feature start &amp;lt;브랜치명&amp;gt;
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch
-
-develop
-&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; feature/add-hint &lt;span class=&quot;c&quot;&gt;# 브랜치 생성됨&lt;/span&gt;
-main
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-해당-브랜치에서-numguesspy의-기능등을-수정한-후-add-commit을-차례대로-해준다&quot;&gt;✔ 해당 브랜치에서 numguess.py의 기능등을 수정한 후 add, commit을 차례대로 해준다&lt;/h4&gt;
-&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vi numguess.py
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add numguess.py
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-numguesspy의-기능-개발이-완료되었다면&quot;&gt;✔ numguess.py의 기능 개발이 완료되었다면&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;feature/add-hint 브랜치를  develop 브랜치에 병합한다&lt;/li&gt;
-  &lt;li&gt;기능 브랜치를 feature/add-hint 브랜치를 삭제한다&lt;/li&gt;
-  &lt;li&gt;develop 브랜치로 전환한다&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;아래의 명령어가 1~3번의 모든것을 수행한다&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git flow feature finish add-hint
-
-Switched to branch &lt;span class=&quot;s1&quot;&gt;'develop'&lt;/span&gt;
-Updating cb25953..9eede5f
-Fast-forward
- numguess.py | 9 ++++++---
- 1 file changed, 6 insertions&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;+&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, 3 deletions&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;-&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-Deleted branch feature/add-hint &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;was 9eede5f&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-
-Summary of actions:
-- The feature branch &lt;span class=&quot;s1&quot;&gt;'feature/add-hint'&lt;/span&gt; was merged into &lt;span class=&quot;s1&quot;&gt;'develop'&lt;/span&gt;
-- Feature branch &lt;span class=&quot;s1&quot;&gt;'feature/add-hint'&lt;/span&gt; has been locally deleted
-- You are now on branch &lt;span class=&quot;s1&quot;&gt;'develop'&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch
-
-&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; develop
-  main
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-수정한-numguesspy-를-출시하기-위해-릴리스를-시작한다&quot;&gt;✔ 수정한 numguess.py 를 출시하기 위해 릴리스를 시작한다.&lt;/h4&gt;
-&lt;p&gt;develop 브랜치로부터 release브랜치를 생성한다&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git flow release start v.1.0.0.210130001
-
-Switched to a new branch &lt;span class=&quot;s1&quot;&gt;'release/v.1.0.0.210130001'&lt;/span&gt;
-
-Summary of actions:
-- A new branch &lt;span class=&quot;s1&quot;&gt;'release/v.1.0.0.210130001'&lt;/span&gt; was created, based on &lt;span class=&quot;s1&quot;&gt;'develop'&lt;/span&gt;
-- You are now on branch &lt;span class=&quot;s1&quot;&gt;'release/v.1.0.0.210130001'&lt;/span&gt;
-
-Follow-up actions:
-- Bump the version number now!
-- Start committing last-minute fixes &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;preparing your release
-- When &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;, run:
-     git flow release finish &lt;span class=&quot;s1&quot;&gt;'v.1.0.0.210130001'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-릴리스를-완료해주면-된다-이때-vi창이-3번-뜨게-된다&quot;&gt;✔ 릴리스를 완료해주면 된다. 이때 vi창이 3번 뜨게 된다.&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;release브랜치를 main브랜치에 병합을 한다는 vi창  (저장)&lt;/li&gt;
-  &lt;li&gt;릴리스를 릴리스 이름으로 태그 (작성 후 저장)&lt;/li&gt;
-  &lt;li&gt;릴리스를 develop 브랜치로 재병합 (저장)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;release 브랜치는 자동으로 삭제된다&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git flow release finish &lt;span class=&quot;s1&quot;&gt;'v.1.0.0.210130001'&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 첫번째 vi창&lt;/span&gt;
-Merge branch &lt;span class=&quot;s1&quot;&gt;'release/v.1.0.0.210130001'&lt;/span&gt; into main
-&lt;span class=&quot;c&quot;&gt;# Please enter a commit message to explain why this merge is necessary,&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# especially if it merges an updated upstream into a topic branch.&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Lines starting with '#' will be ignored, and an empty message aborts&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# the commit.&lt;/span&gt;
-~              
-
-&lt;span class=&quot;c&quot;&gt;# 두번째 vi창&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Write a message for tag:&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#   v.1.0.0.210130001&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Lines starting with '#' will be ignored.&lt;/span&gt;
-~         
-
-&lt;span class=&quot;c&quot;&gt;# 세번째 vi창&lt;/span&gt;
-Merge tag &lt;span class=&quot;s1&quot;&gt;'v.1.0.0.210130001'&lt;/span&gt; into develop
-
-feat: numguess v1.0.0
-&lt;span class=&quot;c&quot;&gt;# Please enter a commit message to explain why this merge is necessary,&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# especially if it merges an updated upstream into a topic branch.&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Lines starting with '#' will be ignored, and an empty message aborts&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# the commit.&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-develop-브랜치와-main을-각각-push를-해서-리모트에-업로드-해준다&quot;&gt;✔ develop 브랜치와 main을 각각 push를 해서 리모트에 업로드 해준다&lt;/h4&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push origin develop
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git checkout main
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push origin main
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(파란선부터 시작) 아래의 이미지처럼 merge된 것을 볼 수 있다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/77425963/106345983-f792c500-62f6-11eb-82e4-42891484c344.png&quot; alt=&quot;merge&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;-정리&quot;&gt;⭐ 정리&lt;/h3&gt;
-
-&lt;h4 id=&quot;명령어&quot;&gt;명령어&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;feature : 특정 기능을 개발하거나 수정할때 사용하는 브랜치 (자동으로 생성, 삭제)&lt;/li&gt;
-  &lt;li&gt;release : 수정한 기능을 배포할때 사용하는 브랜치 (버전네이밍 짓는 방법 알아보기)&lt;/li&gt;
-  &lt;li&gt;git flow feature start &lt;branch-name&gt; : 기능 개발 시작&lt;/branch-name&gt;&lt;/li&gt;
-  &lt;li&gt;git flow release start &lt;branch-name&gt; : 기능 배포 시작&lt;/branch-name&gt;&lt;/li&gt;
-  &lt;li&gt;git flow feature finish &lt;branch-name&gt; : 기능 개발 완료 (develop 에 feature 브랜치 병합후 feature 브랜치 삭제)&lt;/branch-name&gt;&lt;/li&gt;
-  &lt;li&gt;git flow release finish &lt;version-name&gt; : 기능 배포 완료 (main에 release 병합후 release 브랜치 삭제)&lt;/version-name&gt;&lt;/li&gt;
-  &lt;li&gt;프로젝트에 적용 : develop 와 main에 push 해준다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hotfix는 나중에=&quot;&quot; 알아보자=&quot;&quot;&gt;  
-&lt;/hotfix는&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="git" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">git init 사용하지 않고 clone 사용해 git 연결하기</title>
-      <link href="https://heejung-gjt.github.io/git-create" rel="alternate" type="text/html" title="git init 사용하지 않고 clone 사용해 git 연결하기" />
-      <published>2021-01-30T12:47:00+09:00</published>
-      <updated>2021-01-30T12:47:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/git-create</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/git-create">&lt;h2 id=&quot;-git에-작성-내용-업로드하기&quot;&gt;👉 git에 작성 내용 업로드하기&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-1-github페이지에서-새로운-repository를-생성한다&quot;&gt;📌 1. github페이지에서 새로운 repository를 생성한다&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;여기서 만약 README.md를 생성했다면 4번-7번은 생략해준다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-2-로컬로-돌아와-저장할-폴더를-지정한-곳에-clone--해준다--클론-주소---github---생성한-repo---code-클릭---https-url을-복사-후-붙여넣기&quot;&gt;📌 2. 로컬로 돌아와 저장할 폴더를 지정한 곳에 clone  해준다.  (클론 주소 :  github -&amp;gt; 생성한 repo -&amp;gt; code 클릭 -&amp;gt; https url을 복사 후 붙여넣기)&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git clone &amp;lt;url주소&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-3-해당-폴더에-github의--repo이름으로-폴더가-생성된다-해당-로컬과-repo가-연결되었다&quot;&gt;📌 3. 해당 폴더에 github의  repo이름으로 폴더가 생성된다. (해당 로컬과 repo가 연결되었다)&lt;/h4&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-4-readmemd파일이-없다면-touch-readmemd를-해준다&quot;&gt;📌 4. README.md파일이 없다면 &lt;code class=&quot;highlighter-rouge&quot;&gt;touch README.md&lt;/code&gt;를 해준다&lt;/h4&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;touch README.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-5-git-add-후-git-commit을-해준다&quot;&gt;📌 5. git add 후 git commit을 해준다&lt;/h4&gt;
-&lt;p&gt;(이때 git commit -m ““은 삼가해준다. 직접 편집기 들어가 변경후 저장 선호)&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git add README.md
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-6-main으로-branch를-연결해준다&quot;&gt;📌 6. main으로 branch를 연결해준다&lt;/h4&gt;
-&lt;p&gt;(만약 바로 push를 해준다면 master로 연결됨)&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git branch &lt;span class=&quot;nt&quot;&gt;-M&lt;/span&gt; main
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-7-해당-내용을-main에-push해준다&quot;&gt;📌 7. 해당 내용을 main에 push해준다&lt;/h4&gt;
-&lt;p&gt;(처음 push를 해줄땐 -u를 써준다)&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; origin main 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;-8-github에서-확인해-잘-올라갔으면-끝-&quot;&gt;📌 8. github에서 확인해 잘 올라갔으면 끝 !&lt;/h4&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="git" />
-      
-
-      
-        <summary type="html"></summary>
       
 
       
