@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-02-04T22:15:24+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develope</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">210204-TIL</title><link href="https://heejung-gjt.github.io/til09" rel="alternate" type="text/html" title="210204-TIL" /><published>2021-02-04T12:00:04+09:00</published><updated>2021-02-04T12:00:04+09:00</updated><id>https://heejung-gjt.github.io/til09</id><content type="html" xml:base="https://heejung-gjt.github.io/til09">&lt;h2 id=&quot;--오늘-복습-내용&quot;&gt;👉  오늘 복습 내용&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-02-04T23:18:53+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develope</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">python 메모리 구조</title><link href="https://heejung-gjt.github.io/cs-memory" rel="alternate" type="text/html" title="python 메모리 구조" /><published>2021-02-04T14:47:00+09:00</published><updated>2021-02-04T14:47:00+09:00</updated><id>https://heejung-gjt.github.io/cs-memory</id><content type="html" xml:base="https://heejung-gjt.github.io/cs-memory">&lt;h3 id=&quot;-효율적으로-코드를-작성하기-위해서는-메모리에-대한-이해가-중요하다-효율적으로-코드를-작성한다--메모리를-효율적으로-활용한다--데이터-빠르게-처리-가능하다&quot;&gt;👉 효율적으로 코드를 작성하기 위해서는 메모리에 대한 이해가 중요하다. &lt;strong&gt;효율적으로 코드를 작성한다 == 메모리를 효율적으로 활용한다 == 데이터 빠르게 처리 가능하다&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;메모리-영역&quot;&gt;메모리 영역&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/106748166-2a76e900-6668-11eb-9af2-02414110e8f0.PNG&quot; alt=&quot;memory&quot; /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-파이썬-메모리의-구조는-코드영역-데이터영역-스택영역-힙영역으로-나누어져-있다&quot;&gt;1. 파이썬 메모리의 구조는 코드영역, 데이터영역, 스택영역, 힙영역으로 나누어져 있다.&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;코드 영역  : 현재 실행할 프로그램의 코드가 저장되는 영역이다. 프로그램이 실행-종료되어도 메모리에 남아있다.&lt;/li&gt;
+  &lt;li&gt;데이터 영역 : 프로그램의 전역변수와, 정적변수, 문자열과 상수가 저장되는 영역이다. 프로그램이 실행-종료되어도 메모리에 남아있다.&lt;/li&gt;
+  &lt;li&gt;스택 영역 : 지역변수와 매개변수가 저장되는 영역이다. 함수가 호출되면 함께 할당이 되어지고 함수의 실행이 끝나면 소멸되어진다.&lt;/li&gt;
+  &lt;li&gt;힙 영역 : 사용자가 직접 관리할 수 있는 영역이다. 메모리 공간이 필요에 따라 동적으로 할당/해제 된다. 대표적으로 람다함수가 저장되는 영역이다. &lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-파이썬-코드를-보고-영역을-구분해보자&quot;&gt;2. 파이썬 코드를 보고 영역을 구분해보자&lt;/h3&gt;
+
+&lt;p&gt;1번은 코드 전체에서 사용할 수 있는 전역 변수로 데이터 영역에 할당되며 프로그램에 종료되어도 메모리에 남아있는다.
+2번은 함수이므로 사용자가 해당 함수를 호출하면 스택에 할당된다. 함수안에 있는 3번 지역변수
+number는 함수가 호출되면 스택에 할당되었다가 함수가 종료되면 자동으로 소멸된다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'num : {num}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h5 id=&quot;-앞으로-공부하면서-더-많은-내용을-채울-예정이다---&quot;&gt;( 앞으로 공부하면서 더 많은 내용을 채울 예정이다 :-) )&lt;/h5&gt;</content><author><name>jung</name></author><category term="computer science" /><summary type="html">👉 효율적으로 코드를 작성하기 위해서는 메모리에 대한 이해가 중요하다. 효율적으로 코드를 작성한다 == 메모리를 효율적으로 활용한다 == 데이터 빠르게 처리 가능하다</summary></entry><entry><title type="html">210204-TIL</title><link href="https://heejung-gjt.github.io/til09" rel="alternate" type="text/html" title="210204-TIL" /><published>2021-02-04T12:00:04+09:00</published><updated>2021-02-04T12:00:04+09:00</updated><id>https://heejung-gjt.github.io/til09</id><content type="html" xml:base="https://heejung-gjt.github.io/til09">&lt;h2 id=&quot;--오늘-복습-내용&quot;&gt;👉  오늘 복습 내용&lt;/h2&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
@@ -19,14 +51,8 @@
 &lt;ul&gt;
   &lt;li&gt;2/7까지 python 1회차-8회차 복습 (HackerRank, 과제 전부 정리)&lt;/li&gt;
   &lt;li&gt;2/7까지 codeup 93-100문제 정리&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">python 메모리 구조</title><link href="https://heejung-gjt.github.io/git-01" rel="alternate" type="text/html" title="python 메모리 구조" /><published>2021-02-03T14:47:00+09:00</published><updated>2021-02-03T14:47:00+09:00</updated><id>https://heejung-gjt.github.io/git-01</id><content type="html" xml:base="https://heejung-gjt.github.io/git-01">&lt;h2 id=&quot;메모리-구조&quot;&gt;메모리 구조&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/106748166-2a76e900-6668-11eb-9af2-02414110e8f0.PNG&quot; alt=&quot;memory&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>jung</name></author><category term="computer science" /><summary type="html"></summary></entry><entry><title type="html">python Regular Expressions(정규표현식이란?)</title><link href="https://heejung-gjt.github.io/python-regular-expression" rel="alternate" type="text/html" title="python Regular Expressions(정규표현식이란?)" /><published>2021-02-03T13:40:00+09:00</published><updated>2021-02-03T13:40:00+09:00</updated><id>https://heejung-gjt.github.io/python-regular%20expression</id><content type="html" xml:base="https://heejung-gjt.github.io/python-regular-expression">&lt;h2 id=&quot;regular-expressions&quot;&gt;Regular Expressions&lt;/h2&gt;
+  &lt;li&gt;python PEP 8 - style guide for python code 내용 읽기(정리)&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">python Regular Expressions(정규표현식이란?)</title><link href="https://heejung-gjt.github.io/python-regular-expression" rel="alternate" type="text/html" title="python Regular Expressions(정규표현식이란?)" /><published>2021-02-03T13:40:00+09:00</published><updated>2021-02-03T13:40:00+09:00</updated><id>https://heejung-gjt.github.io/python-regular%20expression</id><content type="html" xml:base="https://heejung-gjt.github.io/python-regular-expression">&lt;h2 id=&quot;regular-expressions&quot;&gt;Regular Expressions&lt;/h2&gt;
 &lt;p&gt;정규 표현식은 특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 형식언어이다. python은 re모듈로 정규표현식 사용이 가능한다&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -891,7 +917,7 @@ a_word_list안에 들어있는 문자열을 하나씩 꺼내어 setdefault함수
     &lt;h4 id=&quot;csv-json-이용해-데이터-처리&quot;&gt;~&lt;del&gt;csv, json 이용해 데이터 처리&lt;/del&gt;~&lt;/h4&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;h4 id=&quot;python-컴퓨터-구조-공부하기&quot;&gt;python 컴퓨터 구조 공부하기&lt;/h4&gt;
+    &lt;h4 id=&quot;python-컴퓨터-구조-공부하기-보충&quot;&gt;~&lt;del&gt;python 컴퓨터 구조 공부하기&lt;/del&gt;~ (보충)&lt;/h4&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">210201-TIL</title><link href="https://heejung-gjt.github.io/til06" rel="alternate" type="text/html" title="210201-TIL" /><published>2021-02-01T12:00:04+09:00</published><updated>2021-02-01T12:00:04+09:00</updated><id>https://heejung-gjt.github.io/til06</id><content type="html" xml:base="https://heejung-gjt.github.io/til06">&lt;h2 id=&quot;--오늘-배운-내용&quot;&gt;👉  오늘 배운 내용&lt;/h2&gt;
 
