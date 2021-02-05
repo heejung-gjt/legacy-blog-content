@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/computer-science/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-02-04T23:18:53+09:00</updated>
+  <updated>2021-02-05T21:41:25+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/computer-science/feed.xml</id>
 
   
@@ -12,7 +12,7 @@
   
 
   
-    <title type="html">Studying  Develope | </title>
+    <title type="html">Studying  Develop | </title>
   
 
   
@@ -30,6 +30,74 @@
   
   
 
+  
+    <entry>
+      <title type="html">스택과 큐, 힙의 차이점</title>
+      <link href="https://heejung-gjt.github.io/structure" rel="alternate" type="text/html" title="스택과 큐, 힙의 차이점" />
+      <published>2021-02-04T19:00:00+09:00</published>
+      <updated>2021-02-04T19:00:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/structure</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/structure">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;자료구조 정리 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 힙의 차이점&lt;/a&gt;&lt;/li&gt;
+
+
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;(정리중..)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;스택이란-&quot;&gt;스택이란 ?&lt;/h3&gt;
+&lt;p&gt;스택은 스택은 후입선출(LIFO) 자료구조로 가장 최근에 들어간 자료가 가장 먼저 꺼내지는 구조이다. &lt;br /&gt;
+(메모리 영역 스택 - 함수가 호출되면 스택에 저장되어 있는 함수 매개변수, 지역변수가 할당되어지고 호출이 끝나면 지역변수는 소멸된다.
+함수는 이전 함수로 돌아가는데 해당 함수의 바로 이전 함수로 돌아간다.)&lt;/p&gt;
+
+&lt;h3 id=&quot;스택연산&quot;&gt;스택연산&lt;/h3&gt;
+&lt;p&gt;pop() - 가장 위에 있는 데이터 제거 &lt;br /&gt;
+push(item) - item을 스택의 가장 위에 추가 &lt;br /&gt;
+isEmpty() - 스택이 비워있는지 확인  &lt;br /&gt;
+isFull() - 스택이 차있는지 확인&lt;/p&gt;
+
+&lt;h3 id=&quot;스택의-구현&quot;&gt;스택의 구현&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;스택은 매우 빠른 액세스가 가능하고 변수를 명시적으로 할당, 해제 할 필요하가 없다.
+변수의 크기가 정해져 있어 조정할 수 없다&lt;/p&gt;
+
+&lt;h3 id=&quot;힙이란-&quot;&gt;힙이란 ?&lt;/h3&gt;
+
+&lt;p&gt;힙은 선입선출(FIFO) 자료구조로 프로그램이 실행되면서 동적으로 메모리를 할당하여 사용되는 영역이다. 컴퓨터 기억장소에서 일부분이
+프로그램에 할당, 회수가 반복된다. 힙에 메모리를 할당하려면 malloc()을 이나 new연산자를
+사용해야 한다.  &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;힙은 변수를 전역적으로 액세스 할 수 있다. 메모리 크기는 제한이 없지만 상대적으로 느린 액세스&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="computer science" />
+      
+
+      
+        <summary type="html">자료구조 정리 스택과 힙의 차이점 (정리중..)</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">python 메모리 구조</title>
