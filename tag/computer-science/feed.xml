@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/computer-science/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-02-05T21:41:25+09:00</updated>
+  <updated>2021-02-06T23:16:45+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/computer-science/feed.xml</id>
 
   
@@ -32,46 +32,138 @@
 
   
     <entry>
-      <title type="html">스택과 큐, 힙의 차이점</title>
-      <link href="https://heejung-gjt.github.io/structure" rel="alternate" type="text/html" title="스택과 큐, 힙의 차이점" />
+      <title type="html">스택과 큐의 특징</title>
+      <link href="https://heejung-gjt.github.io/structure" rel="alternate" type="text/html" title="스택과 큐의 특징" />
       <published>2021-02-04T19:00:00+09:00</published>
       <updated>2021-02-04T19:00:00+09:00</updated>
       <id>https://heejung-gjt.github.io/structure</id>
       <content type="html" xml:base="https://heejung-gjt.github.io/structure">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;자료구조 정리 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 힙의 차이점&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;
 
 
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;(정리중..)&lt;/strong&gt;&lt;/p&gt;
+&lt;h5 id=&quot;컴퓨터-사이언스-부트캠프-with-파이썬을-공부하면서-정리한-내용들입니다-&quot;&gt;컴퓨터 사이언스 부트캠프 with 파이썬을 공부하면서 정리한 내용들입니다 :)&lt;/h5&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;스택이란-&quot;&gt;스택이란 ?&lt;/h3&gt;
-&lt;p&gt;스택은 스택은 후입선출(LIFO) 자료구조로 가장 최근에 들어간 자료가 가장 먼저 꺼내지는 구조이다. &lt;br /&gt;
-(메모리 영역 스택 - 함수가 호출되면 스택에 저장되어 있는 함수 매개변수, 지역변수가 할당되어지고 호출이 끝나면 지역변수는 소멸된다.
-함수는 이전 함수로 돌아가는데 해당 함수의 바로 이전 함수로 돌아간다.)&lt;/p&gt;
-
-&lt;h3 id=&quot;스택연산&quot;&gt;스택연산&lt;/h3&gt;
-&lt;p&gt;pop() - 가장 위에 있는 데이터 제거 &lt;br /&gt;
-push(item) - item을 스택의 가장 위에 추가 &lt;br /&gt;
-isEmpty() - 스택이 비워있는지 확인  &lt;br /&gt;
-isFull() - 스택이 차있는지 확인&lt;/p&gt;
-
-&lt;h3 id=&quot;스택의-구현&quot;&gt;스택의 구현&lt;/h3&gt;
+&lt;p&gt;스택은 후입선출(LIFO) 자료구조로 데이터를 추가할 때 맨 위에 추가하고 데이터를 꺼낼때 맨 위에 있는
+ 데이터를 꺼내는 방식이다. 즉 가장 최근에 들어간 자료가 가장 먼저 꺼내지는 구조이다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;스택은 매우 빠른 액세스가 가능하고 변수를 명시적으로 할당, 해제 할 필요하가 없다.
-변수의 크기가 정해져 있어 조정할 수 없다&lt;/p&gt;
+&lt;h3 id=&quot;스택의-동작&quot;&gt;스택의 동작&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/107119454-fea76d80-68ca-11eb-9430-743b88841a13.PNG&quot; alt=&quot;stack&quot; /&gt;
+&lt;strong&gt;push&lt;/strong&gt; : 데이터를 삽입하는 동작이다  &lt;br /&gt;
+&lt;strong&gt;pop&lt;/strong&gt; : 스탣의 맨 위에 있는 데이터를 삭제하면서 반환하는 동작이다&lt;/p&gt;
 
-&lt;h3 id=&quot;힙이란-&quot;&gt;힙이란 ?&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;힙은 선입선출(FIFO) 자료구조로 프로그램이 실행되면서 동적으로 메모리를 할당하여 사용되는 영역이다. 컴퓨터 기억장소에서 일부분이
-프로그램에 할당, 회수가 반복된다. 힙에 메모리를 할당하려면 malloc()을 이나 new연산자를
-사용해야 한다.  &lt;br /&gt;
+&lt;h3 id=&quot;스택의-구현&quot;&gt;스택의 구현&lt;/h3&gt;
+&lt;p&gt;push(data) - data를 스택의 맨 위에 추가한다 &lt;br /&gt;
+pop() - 스택에서 가장 위에 있는 데이터 제거한다  &lt;br /&gt;
+isEmpty() - 스택이 비워있는지 확인한다  &lt;br /&gt;
+isFull() - 스택이 차있는지 확인한다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'push : '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;peek&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'pop :  '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+결과
+push :  1 push :  2 push :  3 push :  4 push :  5 
+
+pop :   5 pop :   4 pop :   3 pop :   2 pop :   1 
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;1,2,3,4,5의 순서로 데이터를 넣었기 때문에 5,4,3,2,1순으로 데이터가 pop되는 것을 볼 수 있다&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;큐란-&quot;&gt;큐란 ?&lt;/h3&gt;
+&lt;p&gt;큐는 선입선출(FIFO)자료구조로 제일 먼저 들어온 데이터가 가장 먼저 나가고 가장 늦게 들어온 데이터가
+가장 늦게 나가는 구조이다.  &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;힙은 변수를 전역적으로 액세스 할 수 있다. 메모리 크기는 제한이 없지만 상대적으로 느린 액세스&lt;/p&gt;</content>
+&lt;h3 id=&quot;큐의-동작&quot;&gt;큐의 동작&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/107120281-12090780-68d0-11eb-9bdc-65f68b96121c.png&quot; alt=&quot;큐&quot; /&gt;
+인큐(enqueuer) : 데이터를 삽입하는 것 &lt;br /&gt;
+디큐(dequeuer) : 데이터를 꺼내는 것  &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;큐의-구현&quot;&gt;큐의 구현&lt;/h3&gt;
+&lt;p&gt;스택처럼 리스트를 이용하여 큐를 구현한다. 인큐는 append() 이용, 디큐는 pop()을 이용하였다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;enqueue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'push : '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        
+        
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dequeue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;peek&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enqueue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enqueue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enqueue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enqueue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enqueue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'pop :  '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dequeue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+결과
+push :  1 push :  2 push :  3 push :  4 push :  5 
+
+pop :   1 pop :   2 pop :   3 pop :   4 pop :   5 
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;데이터가 1,2,3,4,5 순으로 인큐했으르모 디큐할때는 먼저 들어온 1부터 차례대로 pop되는 것을 볼 수 있다&lt;/p&gt;
+
+&lt;hr /&gt;</content>
 
       
       
@@ -92,7 +184,7 @@ isFull() - 스택이 차있는지 확인&lt;/p&gt;
       
 
       
-        <summary type="html">자료구조 정리 스택과 힙의 차이점 (정리중..)</summary>
+        <summary type="html">자료구조 정리 스택과 큐의 특징 컴퓨터 사이언스 부트캠프 with 파이썬을 공부하면서 정리한 내용들입니다 :)</summary>
       
 
       
@@ -105,23 +197,28 @@ isFull() - 스택이 차있는지 확인&lt;/p&gt;
       <published>2021-02-04T14:47:00+09:00</published>
       <updated>2021-02-04T14:47:00+09:00</updated>
       <id>https://heejung-gjt.github.io/cs-memory</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/cs-memory">&lt;h3 id=&quot;-효율적으로-코드를-작성하기-위해서는-메모리에-대한-이해가-중요하다-효율적으로-코드를-작성한다--메모리를-효율적으로-활용한다--데이터-빠르게-처리-가능하다&quot;&gt;👉 효율적으로 코드를 작성하기 위해서는 메모리에 대한 이해가 중요하다. &lt;strong&gt;효율적으로 코드를 작성한다 == 메모리를 효율적으로 활용한다 == 데이터 빠르게 처리 가능하다&lt;/strong&gt;&lt;/h3&gt;
+      <content type="html" xml:base="https://heejung-gjt.github.io/cs-memory">&lt;h5 id=&quot;컴퓨터-사이언스-부트캠프-with-파이썬을-공부하면서-정리한-내용들입니다-&quot;&gt;컴퓨터 사이언스 부트캠프 with 파이썬을 공부하면서 정리한 내용들입니다 :)&lt;/h5&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;메모리-영역&quot;&gt;메모리 영역&lt;/h2&gt;
+&lt;h4 id=&quot;효율적으로-코드를-작성하기-위해서는-메모리에-대한-이해가-중요하다-효율적으로-코드를-작성한다--메모리를-효율적으로-활용한다--데이터-빠르게-처리-가능하다&quot;&gt;&lt;strong&gt;효율적으로 코드를 작성하기 위해서는 메모리에 대한 이해가 중요하다. 효율적으로 코드를 작성한다 == 메모리를 효율적으로 활용한다 == 데이터 빠르게 처리 가능하다&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;👉 메모리 영역&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/106748166-2a76e900-6668-11eb-9af2-02414110e8f0.PNG&quot; alt=&quot;memory&quot; /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;1-파이썬-메모리의-구조는-코드영역-데이터영역-스택영역-힙영역으로-나누어져-있다&quot;&gt;1. 파이썬 메모리의 구조는 코드영역, 데이터영역, 스택영역, 힙영역으로 나누어져 있다.&lt;/h3&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;코드 영역  : 현재 실행할 프로그램의 코드가 저장되는 영역이다. 프로그램이 실행-종료되어도 메모리에 남아있다.&lt;/li&gt;
-  &lt;li&gt;데이터 영역 : 프로그램의 전역변수와, 정적변수, 문자열과 상수가 저장되는 영역이다. 프로그램이 실행-종료되어도 메모리에 남아있다.&lt;/li&gt;
-  &lt;li&gt;스택 영역 : 지역변수와 매개변수가 저장되는 영역이다. 함수가 호출되면 함께 할당이 되어지고 함수의 실행이 끝나면 소멸되어진다.&lt;/li&gt;
-  &lt;li&gt;힙 영역 : 사용자가 직접 관리할 수 있는 영역이다. 메모리 공간이 필요에 따라 동적으로 할당/해제 된다. 대표적으로 람다함수가 저장되는 영역이다. &lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;코드 영역&lt;/strong&gt;  : 현재 실행할 프로그램의 코드가 저장되는 영역이다. 프로그램이 실행-종료되어도 메모리에 남아있다. 프로세스가 실행되면 가상 주소 공간의 코드 
+세그먼트에 올라간다.         &lt;br /&gt;
+&lt;strong&gt;데이터 영역&lt;/strong&gt; : 프로그램의 전역변수와, 정적변수, 문자열과 상수가 저장되는 영역이다.전역변수는 프로세스가 실행될때 데이터 영역에 올라가고 프로세스가 종료될때 소멸한다. 즉 프로그램이 실행되는 동안 계속 존재한다      &lt;br /&gt;
+&lt;strong&gt;스택 영역&lt;/strong&gt; : 지역변수와 매개변수가 저장되는 영역이다. 함수가 호출되면 함께 할당이 되어지고 함수의 실행이 끝나면 소멸되어진다. 
+함수 실행 도중 다른 함수를 호출하면 다시 호출된 함수의 스택 프레임이 호출한 함수의 스택 프레임 위에 쌓이기 때문에 스택이 늘어난다. 스택의 크기가 늘어나다
+최대 크기를 넘기면 스택 오버플로 오류가 발생한다     &lt;br /&gt;
+&lt;strong&gt;힙 영역&lt;/strong&gt; : 사용자가 직접 관리할 수 있는 영역이다. 메모리 공간이 필요에 따라 동적으로 할당/해제 된다. 대표적으로 람다함수가 저장되는 영역이다.
+힙 영역에 할당한 메모리를 해제하지 않으면 한 메모리에 계속 남아있는 메모리 누수가 발생할 수 있다. free함수로 할당된 메모리를 해제해야 한다 &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;2-파이썬-코드를-보고-영역을-구분해보자&quot;&gt;2. 파이썬 코드를 보고 영역을 구분해보자&lt;/h3&gt;
 
@@ -136,8 +233,7 @@ number는 함수가 호출되면 스택에 할당되었다가 함수가 종료�
 
 &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'num : {num}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h5 id=&quot;-앞으로-공부하면서-더-많은-내용을-채울-예정이다---&quot;&gt;( 앞으로 공부하면서 더 많은 내용을 채울 예정이다 :-) )&lt;/h5&gt;</content>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
 
       
       
@@ -158,7 +254,7 @@ number는 함수가 호출되면 스택에 할당되었다가 함수가 종료�
       
 
       
-        <summary type="html">👉 효율적으로 코드를 작성하기 위해서는 메모리에 대한 이해가 중요하다. 효율적으로 코드를 작성한다 == 메모리를 효율적으로 활용한다 == 데이터 빠르게 처리 가능하다</summary>
+        <summary type="html">컴퓨터 사이언스 부트캠프 with 파이썬을 공부하면서 정리한 내용들입니다 :)</summary>
       
 
       
