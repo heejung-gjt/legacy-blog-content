@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/algorithm-codeup01" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Studying  Develop" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="(CodeUp 100제 with python) 1001번 - 1010번" />
+    <meta property="og:description" content="codeup[1001-1010] codeup[1011-1020] codeup[1021-1030] codeup[1031-1040] codeup[1091-1099] 👉 1001 : [기초-출력] 출력하기 01 [문제설명] C/C++언어에서 가장 기본적인 명령이 출력문이다. printf()를 이용해 다음 단어를 출력하시오. Hello [입력] 입력없음 [출력] Hello [출력예시] Hello [풀이] print('Hello') 👉 1002 : [기초-출력] 출력하기 02 [문제설명] 이번에는 공백()을 포함한 문장을 출력한다. 다음 문장을 출력해보자. Hello World (대소문자에 주의한다.)" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/algorithm-codeup01" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/char.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-01-27T14:47:00+09:00" />
+    <meta property="article:modified_time" content="2021-01-27T14:47:00+09:00" />
+    <meta property="article:tag" content="Algorithm" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="(CodeUp 100제 with python) 1001번 - 1010번" />
+    <meta name="twitter:description" content="codeup[1001-1010] codeup[1011-1020] codeup[1021-1030] codeup[1031-1040] codeup[1091-1099] 👉 1001 : [기초-출력] 출력하기 01 [문제설명] C/C++언어에서 가장 기본적인 명령이 출력문이다. printf()를 이용해 다음 단어를 출력하시오. Hello [입력] 입력없음 [출력] Hello [출력예시] Hello [풀이] print('Hello') 👉 1002 : [기초-출력] 출력하기 02 [문제설명] 이번에는 공백()을 포함한 문장을 출력한다. 다음 문장을 출력해보자. Hello World (대소문자에 주의한다.)" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/char.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Studying  Develop" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Algorithm" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Studying  Develop",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/algorithm-codeup01",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/char.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/algorithm-codeup01"
+    },
+    "description": "codeup[1001-1010] codeup[1011-1020] codeup[1021-1030] codeup[1031-1040] codeup[1091-1099] 👉 1001 : [기초-출력] 출력하기 01 [문제설명] C/C++언어에서 가장 기본적인 명령이 출력문이다. printf()를 이용해 다음 단어를 출력하시오. Hello [입력] 입력없음 [출력] Hello [출력예시] Hello [풀이] print('Hello') 👉 1002 : [기초-출력] 출력하기 02 [문제설명] 이번에는 공백()을 포함한 문장을 출력한다. 다음 문장을 출력해보자. Hello World (대소문자에 주의한다.)"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="(CodeUp 100제 with python) 1001번 - 1010번" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">Studying  Develop</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/computer-science/">computer science</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-algorithm post tag-algorithm ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-01-27">2021-01-27</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/algorithm/'>ALGORITHM</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">(CodeUp 100제 with python) 1001번 - 1010번</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/char.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <ul class="table-of-contents-list">
+    <li><a href="./algorithm-codeup01">codeup[1001-1010]</a></li>
+    <li><a href="./algorithm-codeup11">codeup[1011-1020]</a></li>
+    <li><a href="./algorithm-codeup21">codeup[1021-1030]</a></li>
+    <li><a href="./algorithm-codeup31">codeup[1031-1040]</a></li>
+    <li><a href="./algorithm-codeup91">codeup[1091-1099]</a></li>
+
+</ul>
+
+<h2 id="-1001--기초-출력-출력하기-01">👉 1001 : [기초-출력] 출력하기 01</h2>
+
+<p><br /></p>
+
+<h3 id="문제설명">[문제설명]</h3>
+<p>C/C++언어에서 가장 기본적인 명령이 출력문이다. <br />
+printf()를 이용해 다음 단어를 출력하시오.</p>
+
+<p>Hello</p>
+
+<p><br /></p>
+
+<h3 id="입력">[입력]</h3>
+<p>입력없음</p>
+
+<p><br /></p>
+
+<h3 id="출력">[출력]</h3>
+<p>Hello</p>
+
+<p><br /></p>
+
+<h3 id="출력예시">[출력예시]</h3>
+<p>Hello</p>
+
+<p><br /></p>
+
+<h3 id="풀이">[풀이]</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'Hello'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="-1002--기초-출력-출력하기-02">👉 1002 : [기초-출력] 출력하기 02</h2>
+
+<p><br /></p>
+
+<h3 id="문제설명-1">[문제설명]</h3>
+<p>이번에는 공백()을 포함한 문장을 출력한다.
+다음 문장을 출력해보자.</p>
+
+<p>Hello World
+(대소문자에 주의한다.)</p>
+
+<p><br /></p>
+
+<h3 id="입력-1">[입력]</h3>
+<p>입력없음</p>
+
+<p><br /></p>
+
+<h3 id="출력-1">[출력]</h3>
+<p>Hello World</p>
+
+<p><br /></p>
+
+<h3 id="출력예시-1">[출력예시]</h3>
+<p>Hello World</p>
+
+<p><br /></p>
+
+<h3 id="풀이-1">[풀이]</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'Hello World'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="-1003--기초-출력-출력하기-03">👉 1003 : [기초-출력] 출력하기 03</h2>
+
+<p><br /></p>
+
+<h3 id="문제설명-2">[문제설명]</h3>
+<p>이번에는 줄을 바꿔 출력하는 출력문을 연습해보자.
+다음과 같이 줄을 바꿔 출력해야 한다.</p>
+
+<p>Hello
+World
+(두 줄에 걸쳐 줄을 바꿔 출력)</p>
+
+<p><br /></p>
+
+<h3 id="입력-2">[입력]</h3>
+<p>입력없음</p>
+
+<p><br /></p>
+
+<h3 id="출력-2">[출력]</h3>
+<p>Hello   <br />
+World</p>
+
+<p><br /></p>
+
+<h3 id="출력예시-2">[출력예시]</h3>
+<p>Hello   <br />
+World</p>
+
+<p><br /></p>
+
+<h3 id="풀이-2">[풀이]</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'Hello</span><span class="se">\n</span><span class="s">World'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="-1004--기초-출력-출력하기-04">👉 1004 : [기초-출력] 출력하기 04</h2>
+
+<p><br /></p>
+
+<h3 id="문제설명-3">[문제설명]</h3>
+<p>이번에는 작은 따옴표(single quotation mark)가 들어있는
+특수한 형태의 출력문에 대한 연습을 해보자.</p>
+
+<p>다음 문장을 출력하시오.</p>
+
+<p>‘Hello’</p>
+
+<p><br /></p>
+
+<h3 id="입력-3">[입력]</h3>
+<p>입력없음</p>
+
+<p><br /></p>
+
+<h3 id="출력-3">[출력]</h3>
+<p>‘Hello’</p>
+
+<p><br /></p>
+
+<h3 id="출력예시-3">[출력예시]</h3>
+<p>‘Hello’</p>
+
+<p><br /></p>
+
+<h3 id="풀이-3">[풀이]</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"'Hello'"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="-1005--기초-출력-출력하기-05">👉 1005 : [기초-출력] 출력하기 05</h2>
+
+<p><br /></p>
+
+<h3 id="문제설명-4">[문제설명]</h3>
+<p>이번에는 큰따옴표(double quotation mark)가 포함된 출력문을 연습해보자.</p>
+
+<p>다음 문장을 출력하시오.</p>
+
+<p>“Hello World”
+(단, 큰따옴표도 함께 출력한다.)</p>
+
+<p><br /></p>
+
+<h3 id="입력-4">[입력]</h3>
+<p>입력없음</p>
+
+<p><br /></p>
+
+<h3 id="출력-4">[출력]</h3>
+<p>“Hello World”</p>
+
+<p><br /></p>
+
+<h3 id="출력예시-4">[출력예시]</h3>
+<p>“Hello World”</p>
+
+<p><br /></p>
+
+<h3 id="풀이-4">[풀이]</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'"Hello World"'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="-1006--기초-출력-출력하기-06">👉 1006 : [기초-출력] 출력하기 06</h2>
+
+<p><br /></p>
+
+<h3 id="문제설명-5">[문제설명]</h3>
+<p>이번에는 특수문자 출력에 도전하자!!</p>
+
+<p>다음 문장을 출력하시오.</p>
+
+<p>”!@#$%^&amp;*()”
+(단, 큰따옴표도 함께 출력한다.)</p>
+
+<p><br /></p>
+
+<h3 id="입력-5">[입력]</h3>
+<p>입력없음</p>
+
+<p><br /></p>
+
+<h3 id="출력-5">[출력]</h3>
+<p>”!@#$%^&amp;*()”</p>
+
+<p><br /></p>
+
+<h3 id="출력예시-5">[출력예시]</h3>
+<p>”!@#$%^&amp;*()”</p>
+
+<p><br /></p>
+
+<h3 id="풀이-5">[풀이]</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'"!@#$</span><span class="si">%</span><span class="s">^&amp;*()"'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="-1007--기초-출력-출력하기-07">👉 1007 : [기초-출력] 출력하기 07</h2>
+
+<p><br /></p>
+
+<h3 id="문제설명-6">[문제설명]</h3>
+<p>윈도우 운영체제의 파일 경로를 출력하는 연습을 해보자.</p>
+
+<p>파일 경로에는 특수문자들이 포함된다.</p>
+
+<p>다음 경로를 출력하시오.</p>
+
+<p>“C:\Download\hello.cpp”
+(단, 큰따옴표도 함께 출력한다.)</p>
+
+<p>참고
+printf( ) 함수로 백슬래시 문자 \ 를 출력하기 위해서는 \ 로 출력해야 한다.</p>
+
+<p>예시
+printf(“\”);</p>
+
+<p><br /></p>
+
+<h3 id="입력-6">[입력]</h3>
+<p>입력없음</p>
+
+<p><br /></p>
+
+<h3 id="출력-6">[출력]</h3>
+<p>“C:\Download\hello.cpp”</p>
+
+<p><br /></p>
+
+<h3 id="출력예시-6">[출력예시]</h3>
+<p>“C:\Download\hello.cpp”</p>
+
+<p><br /></p>
+
+<h3 id="풀이-6">[풀이]</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'"C:</span><span class="err">\</span><span class="s">Downlad</span><span class="err">\</span><span class="s">hello.cpp"'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="-1008--기초-출력-출력하기-08">👉 1008 : [기초-출력] 출력하기 08</h2>
+
+<p><br /></p>
+
+<h3 id="문제설명-7">[문제설명]</h3>
+<p>이번에는 특수문자를 출력하는 연습을 해보자.</p>
+
+<p>키보드로 입력할 수 없는 다음 모양을 출력해보자.
+(** 참고 : 운영체제의 문자 시스템에 따라 아래와 같은 모양이 출력되지 않을 수 있다.)</p>
+
+<p>┌┬┐   <br />
+├┼┤   <br />
+└┴┘</p>
+
+<p>참고
+다음과 같은 유니코드로 특수문자를 표현한다고 하자.
+(운영체제 또는 컴파일러에 따라 사용되는 문자의 코드표가 다르다.)</p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/107135495-91352480-693e-11eb-892a-43f20c6820a5.png" alt="유니코드" /></p>
+
+<p>윈도우에서는 “ㅂ+한자” 키를 누르면 선문자를 입력할 수 있다.
+선문자를 이용하면 일반적인 텍스트 모드화면(메모장 등)에서도 표를 그릴 수 있다.</p>
+
+<p><br /></p>
+
+<h3 id="입력-7">[입력]</h3>
+<p>입력없음</p>
+
+<p><br /></p>
+
+<h3 id="출력-7">[출력]</h3>
+<p>┌┬┐  <br />
+├┼┤   <br />
+└┴┘</p>
+
+<p><br /></p>
+
+<h3 id="출력예시-7">[출력예시]</h3>
+<p>┌┬┐   <br />
+├┼┤  <br />
+└┴┘</p>
+
+<p><br /></p>
+
+<h3 id="풀이-7">[풀이]</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\u250C\u252C\u2510\n\u251C\u253C\u2524\n\u2514\u2534\u2518</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="풀이해설">[풀이해설]</h3>
+<p>유니코드 특수문자를 출력하는 방법 알아두자. <br />
+표를 참고하여 원하는 기호를 기준으로 열과 행을 읽어주면 된다. 
+이때 유니코드 문자라는 것을 지칭할때는 해당 문자열 앞에  <code class="highlighter-rouge">\u</code>를 함께 붙여준다. <strong>ex) print(‘\u250C’)</strong></p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="-1010--기초-입출력-정수-1개-입력받아-그대로-출력하기">👉 1010 : [기초-입출력] 정수 1개 입력받아 그대로 출력하기</h2>
+
+<p><br /></p>
+
+<h3 id="문제설명-8">[문제설명]</h3>
+<p>정수형(int)으로 변수를 선언하고, 변수에 정수값을 저장한 후
+변수에 저장되어 있는 값을 그대로 출력해보자.</p>
+
+<p><br /></p>
+
+<h3 id="입력-8">[입력]</h3>
+<p>정수 1개가 입력된다.</p>
+
+<p><br /></p>
+
+<h3 id="입력예시">[입력예시]</h3>
+<p>15</p>
+
+<p><br /></p>
+
+<h3 id="출력예시-8">[출력예시]</h3>
+<p>15</p>
+
+<p><br /></p>
+
+<h3 id="풀이-8">[풀이]</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+                </div>
+            </section>
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">Studying  Develop</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Studying  Develop</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
