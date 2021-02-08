@@ -45,70 +45,30 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="개발 공부하는 블로그" />
     <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://heejung-gjt.github.io/algorithm-codeup31" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/python-scope" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="(CodeUp 100제 with python) 1031번 - 1040번" />
-    <meta property="og:description" content="
-    codeup[1001-1010]
-    codeup[1011-1020]
-    codeup[1021-1030]
-    codeup[1031-1040]
-    codeup[1041-1050]
-    codeup[1051-1060]
-    codeup[1061-1070]
-    codeup[1071-1080]
-    codeup[1081-1090]
-    codeup[1091-1099]
-
-
-
-👉 1001 ~ 1025 풀이 보러가기
-👉 1026 ~ 1050 풀이 보러가기
-👉 1051 ~ 1080 풀이 보러가기
-
-
-
-" />
-    <meta property="og:url" content="https://heejung-gjt.github.io/algorithm-codeup31" />
-    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/char.png" />
+    <meta property="og:title" content="(python) Scope의 global, local, nonlocal" />
+    <meta property="og:description" content="Scope(유효범위) 스코프란 변수에 접근할 수 있는 범위이다.Local Scope에서 선언되는 변수는 바깥 Scope에서 사용 불가능하다. Global Scope는 어디서든 접근이 가능하다. 우선순위는 Local Scope &gt; Global Scope로 같은변수가 각각에 존재할때 local 안에 있는 변수가 출력이 된다 전역변수 num_print함수에서 바깥에 전역변수 num이라는 변수를 지정을 하였다. num은 함수내에서도 사용가능하며 바깥에서도 가능하다. 즉 코드 전체에서" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/python-scope" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-01-27T13:20:00+09:00" />
-    <meta property="article:modified_time" content="2021-01-27T13:20:00+09:00" />
-    <meta property="article:tag" content="Algorithm" />
+    <meta property="article:published_time" content="2021-02-07T21:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-02-07T21:00:00+09:00" />
+    <meta property="article:tag" content="Python" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="(CodeUp 100제 with python) 1031번 - 1040번" />
-    <meta name="twitter:description" content="
-    codeup[1001-1010]
-    codeup[1011-1020]
-    codeup[1021-1030]
-    codeup[1031-1040]
-    codeup[1041-1050]
-    codeup[1051-1060]
-    codeup[1061-1070]
-    codeup[1071-1080]
-    codeup[1081-1090]
-    codeup[1091-1099]
-
-
-
-👉 1001 ~ 1025 풀이 보러가기
-👉 1026 ~ 1050 풀이 보러가기
-👉 1051 ~ 1080 풀이 보러가기
-
-
-
-" />
+    <meta name="twitter:title" content="(python) Scope의 global, local, nonlocal" />
+    <meta name="twitter:description" content="Scope(유효범위) 스코프란 변수에 접근할 수 있는 범위이다.Local Scope에서 선언되는 변수는 바깥 Scope에서 사용 불가능하다. Global Scope는 어디서든 접근이 가능하다. 우선순위는 Local Scope &gt; Global Scope로 같은변수가 각각에 존재할때 local 안에 있는 변수가 출력이 된다 전역변수 num_print함수에서 바깥에 전역변수 num이라는 변수를 지정을 하였다. num은 함수내에서도 사용가능하며 바깥에서도 가능하다. 즉 코드 전체에서" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
-    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/char.png" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Studying  Develop" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Algorithm" />
+    <meta name="twitter:data2" content="Python" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -123,38 +83,18 @@
         "name": "Studying  Develop",
         "logo": "https://heejung-gjt.github.io/"
     },
-    "url": "https://heejung-gjt.github.io/algorithm-codeup31",
+    "url": "https://heejung-gjt.github.io/python-scope",
     "image": {
         "@type": "ImageObject",
-        "url": "https://heejung-gjt.github.io/assets/built/images/char.png",
+        "url": "https://heejung-gjt.github.io/assets/built/images/python-cover.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://heejung-gjt.github.io/algorithm-codeup31"
+        "@id": "https://heejung-gjt.github.io/python-scope"
     },
-    "description": "
-    codeup[1001-1010]
-    codeup[1011-1020]
-    codeup[1021-1030]
-    codeup[1031-1040]
-    codeup[1041-1050]
-    codeup[1051-1060]
-    codeup[1061-1070]
-    codeup[1071-1080]
-    codeup[1081-1090]
-    codeup[1091-1099]
-
-
-
-👉 1001 ~ 1025 풀이 보러가기
-👉 1026 ~ 1050 풀이 보러가기
-👉 1051 ~ 1080 풀이 보러가기
-
-
-
-"
+    "description": "Scope(유효범위) 스코프란 변수에 접근할 수 있는 범위이다.Local Scope에서 선언되는 변수는 바깥 Scope에서 사용 불가능하다. Global Scope는 어디서든 접근이 가능하다. 우선순위는 Local Scope &gt; Global Scope로 같은변수가 각각에 존재할때 local 안에 있는 변수가 출력이 된다 전역변수 num_print함수에서 바깥에 전역변수 num이라는 변수를 지정을 하였다. num은 함수내에서도 사용가능하며 바깥에서도 가능하다. 즉 코드 전체에서"
 }
     </script>
 
@@ -167,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="(CodeUp 100제 with python) 1031번 - 1040번" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="(python) Scope의 global, local, nonlocal" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -240,53 +180,102 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-algorithm post tag-algorithm ">
+        <article class="post-full  tag-python post ">
 
             <header class="post-full-header">
 
               <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="2021-01-27">2021-01-27</time>
+                    <time class="post-full-meta-date" datetime="2021-02-07">2021-02-07</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/algorithm/'>ALGORITHM</a>
+                               <a href='/tag/python/'>PYTHON</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">(CodeUp 100제 with python) 1031번 - 1040번</h1>
+                <h1 class="post-full-title">(python) Scope의 global, local, nonlocal</h1>
             </header>
 
 <!--  
             
-            <figure class="post-full-image" style="background-image: url(/assets/built/images/char.png)">
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/python-cover.png)">
             </figure>
             
 -->
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <ul class="table-of-contents-list">
-    <li><a href="./algorithm-codeup01">codeup[1001-1010]</a></li>
-    <li><a href="./algorithm-codeup11">codeup[1011-1020]</a></li>
-    <li><a href="./algorithm-codeup21">codeup[1021-1030]</a></li>
-    <li><a href="./algorithm-codeup31">codeup[1031-1040]</a></li>
-    <li><a href="./algorithm-codeup41">codeup[1041-1050]</a></li>
-    <li><a href="./algorithm-codeup51">codeup[1051-1060]</a></li>
-    <li><a href="./algorithm-codeup61">codeup[1061-1070]</a></li>
-    <li><a href="./algorithm-codeup71">codeup[1071-1080]</a></li>
-    <li><a href="./algorithm-codeup81">codeup[1081-1090]</a></li>
-    <li><a href="./algorithm-codeup91">codeup[1091-1099]</a></li>
-
-</ul>
-
-<h4 id="-1001--1025-풀이-보러가기"><a href="https://github.com/heejung-gjt/Python-Algorithm/blob/master/CodeUp%20100%EC%A0%9C/%5B1001-1025%5D.ipynb">👉 1001 ~ 1025 풀이 보러가기</a></h4>
-<h4 id="-1026--1050-풀이-보러가기"><a href="https://github.com/heejung-gjt/Python-Algorithm/blob/master/CodeUp%20100%EC%A0%9C/%5B1026-1050%5D.ipynb">👉 1026 ~ 1050 풀이 보러가기</a></h4>
-<h4 id="-1051--1080-풀이-보러가기"><a href="https://github.com/heejung-gjt/Python-Algorithm/blob/master/CodeUp%20100%EC%A0%9C/%5B1051-1080%5D.ipynb">👉 1051 ~ 1080 풀이 보러가기</a></h4>
+                    
+<h3 id="scope유효범위">Scope(유효범위)</h3>
+<p>스코프란 변수에 접근할 수 있는 범위이다.Local Scope에서 선언되는 변수는 바깥 Scope에서 사용 불가능하다.
+Global Scope는 어디서든 접근이 가능하다. 우선순위는 Local Scope &gt; Global Scope로 같은변수가 각각에 존재할때 
+local 안에 있는 변수가 출력이 된다</p>
 
 <p><br /></p>
 
+<h3 id="전역변수">전역변수</h3>
+<p>num_print함수에서 바깥에 전역변수 num이라는 변수를 지정을 하였다.
+num은 함수내에서도 사용가능하며 바깥에서도 가능하다. 즉 코드 전체에서 접근할 수 있다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">def</span> <span class="nf">num_print</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>  <span class="c"># 전역변수 10 출력</span>
+
+<span class="n">num_print</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>  <span class="c"># 전역변수 10 출력</span>
+<span class="c"># 답 : 10</span>
+<span class="c">#      10</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="함수-안에서-전역변수-변경하기">함수 안에서 전역변수 변경하기</h3>
+<p>num_print 함수안에서 num의 값을 20으로 변경하였지만 함수를 빠져나오면 num의 값이 10으로
+출력되는 것을 볼 수 있다. num_print함수 안에 있는 변수 num은 지역변수이므로 전역변수인 num의 값을 변경 할 수 없다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">def</span> <span class="nf">num_print</span><span class="p">():</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>  <span class="c"># 20 출력</span>
+
+<span class="n">num_print</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>  <span class="c"># 전역변수 10 출력</span>
+<span class="c"># 답 : 20</span>
+<span class="c">#      10</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="global로-전역변수-사용하기">global로 전역변수 사용하기</h3>
+<p>함수 num_print에서 global를 사용하면 전역변수 num =10 을 사용한다. 따라서
+num = 20 으로 변경되는 것은 전역변수가 변경되는 것과 같으므로 20이 출력된다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">def</span> <span class="nf">num_print</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>  <span class="c"># 20 출력</span>
+
+<span class="n">num_print</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>  <span class="c"># 전역변수 10 출력</span>
+<span class="c"># 답 : 20</span>
+<span class="c">#      20</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="nolocal사용하기">nolocal사용하기</h3>
+<p>nonlocal은 현재 함수의 지역변수가 지역 변수가 아니라는뜻이다. 
+즉 바깥쪽 함수의 지역변수를 사용한다.
+따라서 함수B에서 함수A의 지역변수 num을 변경할 수있다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">A</span><span class="p">():</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">def</span> <span class="nf">B</span><span class="p">():</span>
+        <span class="n">nonlocal</span> <span class="n">num</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">B</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="n">A</span><span class="p">()</span>
+<span class="c"># 답 : 100</span>
+</code></pre></div></div>
 
                 </div>
             </section>

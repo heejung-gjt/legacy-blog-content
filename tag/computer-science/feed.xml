@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/computer-science/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-02-07T22:15:23+09:00</updated>
+  <updated>2021-02-08T15:57:08+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/computer-science/feed.xml</id>
 
   
@@ -32,6 +32,96 @@
 
   
     <entry>
+      <title type="html">힙의 특징</title>
+      <link href="https://heejung-gjt.github.io/heap" rel="alternate" type="text/html" title="힙의 특징" />
+      <published>2021-02-07T19:30:00+09:00</published>
+      <updated>2021-02-07T19:30:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/heap</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/heap">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;자료구조 정리 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;힙이란-&quot;&gt;힙이란 ?&lt;/h3&gt;
+&lt;p&gt;힙은 최댓값 및 최솟값을 찾아내는 연산을 빠르게 하기 위해 고안된 완전 이진트리를 기본으로
+한 자료구조이며 우선순위 큐를 위해 만들어진 자료구조이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;힙-종류&quot;&gt;힙 종류&lt;/h3&gt;
+&lt;p&gt;최대 힙과 최소 힙이 있다&lt;/p&gt;
+
+&lt;p&gt;최대힙 : 부모 노드의 키값이 자식 노드의 키값보다 크거나 같은 완전 이진트리 &lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/107149471-1864b580-699c-11eb-99d0-22f78493e0b4.PNG&quot; alt=&quot;max&quot; /&gt;
+최소힙 : 부모 노드의 키값이 자식 노드의 키값보다 작거나 같은 완전 이진트리 &lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/107149473-1ac70f80-699c-11eb-986a-e66f8ba55faa.PNG&quot; alt=&quot;min&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;힙의-구현&quot;&gt;힙의 구현&lt;/h3&gt;
+&lt;p&gt;힙을 저장하는 표준적인 자료구조는  ‘배열’ 이다 &lt;br /&gt;
+쉬운 구현을 위해서 0을 인덱스값으로 사용하지 않는다 &lt;br /&gt;
+특정 위치의 노드 번호는 새로운 노드가 추가되어도 변하지 않는다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;힙의-활용&quot;&gt;힙의 활용&lt;/h3&gt;
+&lt;p&gt;코딩 테스트 문제에서 최솟값 또는 최댓값을 계속해서 호출해야 하는 상황인 경우 Heap 구조를 이용하여 구현하면
+시간측면에서 굉장히 효율적인 구현이 가능하다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;힙의-삽입&quot;&gt;힙의 삽입&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;힙에 새로운 요소가 들어오면 크기 상관없이 새로운 노드를 힙의 마지막 노드에 삽입한다&lt;/li&gt;
+  &lt;li&gt;새로운 노드와 그의 부모 노드와 값을 비교하여 교환한다. 값이 크다면 부모노드와 교환, 작다면 그대로 유지한다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 코드 작성중..&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;힙의-삭제&quot;&gt;힙의 삭제&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;최대 힙에서 최대값은 루트 노드이므로 루트 노드가 삭제된다. 
+최대 힙에서 삭제는 최대값을 삭제하는 것이다&lt;/li&gt;
+  &lt;li&gt;삭제된 루트 노드에는 힙의 마지막 노드를 가져온다&lt;/li&gt;
+  &lt;li&gt;그 후 힙을 재구성한다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 코드 작성중..&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="computer science" />
+      
+
+      
+        <summary type="html">자료구조 정리 스택과 큐의 특징 힙의 특징</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">스택과 큐의 특징</title>
       <link href="https://heejung-gjt.github.io/structure" rel="alternate" type="text/html" title="스택과 큐의 특징" />
       <published>2021-02-04T19:00:00+09:00</published>
@@ -40,8 +130,7 @@
       <content type="html" xml:base="https://heejung-gjt.github.io/structure">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;자료구조 정리 &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;
-
-
+    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;컴퓨터-사이언스-부트캠프-with-파이썬을-공부하면서-정리한-내용들입니다-&quot;&gt;컴퓨터 사이언스 부트캠프 with 파이썬을 공부하면서 정리한 내용들입니다 :)&lt;/h5&gt;
@@ -184,7 +273,7 @@ pop :   1 pop :   2 pop :   3 pop :   4 pop :   5
       
 
       
-        <summary type="html">자료구조 정리 스택과 큐의 특징 컴퓨터 사이언스 부트캠프 with 파이썬을 공부하면서 정리한 내용들입니다 :)</summary>
+        <summary type="html">자료구조 정리 스택과 큐의 특징 힙의 특징 컴퓨터 사이언스 부트캠프 with 파이썬을 공부하면서 정리한 내용들입니다 :)</summary>
       
 
       
