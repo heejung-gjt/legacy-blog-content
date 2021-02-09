@@ -264,7 +264,19 @@ into the {body} of the default.hbs template -->
 n = 3 일경우 다음과 같이 쌍을 이루어 보인다 <br />
 phoneBook = {(sam,99912222),(tom,11122222),(harry,1299933)}</p>
 <h3 id="code">[Code]</h3>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">작성중입니다</span><span class="o">..</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">phoneBook</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">,</span><span class="n">number</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">phoneBook</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">=</span><span class="n">number</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">user_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">user_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">phoneBook</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Not found'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{user_name}={phoneBook[user_name]}'</span><span class="p">)</span>
 </code></pre></div></div>
 
                 </div>
