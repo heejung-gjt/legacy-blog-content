@@ -311,7 +311,8 @@ user_card[0]에 11인지 아닌지를 먼저 판단한 후 맞을경우 user_car
 
 <h3 id="-코드로-구현하기">👉 코드로 구현하기</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#pop() 이용해서 card_deck 뽑는 방식</span>
+<span class="kn">import</span> <span class="nn">random</span>
 
 
 <span class="k">def</span> <span class="nf">init</span><span class="p">():</span>  <span class="c"># 40개의 3번 셔플한 랜덤한 카드덱 생성하기</span>
@@ -334,12 +335,8 @@ user_card[0]에 11인지 아닌지를 먼저 판단한 후 맞을경우 user_car
 <span class="k">def</span> <span class="nf">game_start</span><span class="p">():</span> <span class="c">#게임 시작. 딜러와 사용자 오픈하는 카드 1장씩 부여</span>
     <span class="n">user_card</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">dealar_card</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">first_player_card</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
-    <span class="n">first_dealar_card</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
-    <span class="n">card_deck</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">first_player_card</span><span class="p">)</span>
-    <span class="n">card_deck</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">first_dealar_card</span><span class="p">)</span>             
-    <span class="n">user_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">first_player_card</span><span class="p">)</span>
-    <span class="n">dealar_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">first_dealar_card</span><span class="p">)</span>
+    <span class="n">user_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">card_deck</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+    <span class="n">dealar_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">card_deck</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
     <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">30</span><span class="p">,</span><span class="s">'FIRST TURN'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">30</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>    
     <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'USER Card : {user_card}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'DEALAR Card : {dealar_card}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
@@ -347,10 +344,7 @@ user_card[0]에 11인지 아닌지를 먼저 판단한 후 맞을경우 user_car
 
 
 <span class="k">def</span> <span class="nf">first_user_turn</span><span class="p">(</span><span class="n">user_card</span><span class="p">,</span><span class="n">card_deck</span><span class="p">):</span> <span class="c"># 사용자 먼저 게임 시작, 덱에서 랜덤한 숫자 하나 전달</span>
-    <span class="n">user_pop_card</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
-    <span class="n">user_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">user_pop_card</span><span class="p">)</span>
-    <span class="n">card_deck</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">user_pop_card</span><span class="p">)</span>
-    
+    <span class="n">user_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">card_deck</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
     <span class="k">if</span> <span class="n">user_card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>  <span class="c"># 처음값 11, 합계 20초과시 11-&gt;1로 변경</span>
         <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">user_card</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
             <span class="n">user_card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
@@ -366,16 +360,13 @@ user_card[0]에 11인지 아닌지를 먼저 판단한 후 맞을경우 user_car
 
 
 <span class="k">def</span> <span class="nf">user_turn</span><span class="p">(</span><span class="n">user_card</span><span class="p">,</span><span class="n">card_deck</span><span class="p">):</span> <span class="c"># 사용자 turn</span>
-    <span class="n">user_pop_card</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
-    <span class="n">user_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">user_pop_card</span><span class="p">)</span>
-    <span class="n">card_deck</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">user_pop_card</span><span class="p">)</span>
+    <span class="n">user_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">card_deck</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
     <span class="n">card_deck</span> <span class="o">=</span> <span class="n">remain_card</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s">'*'</span><span class="o">*</span><span class="mi">32</span><span class="p">,</span><span class="s">'USER TURN'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">32</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="s">'Receive a one Card..</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'User_Card : {user_card}'</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">user_card</span><span class="p">,</span><span class="n">card_deck</span> 
 
-    
     
 <span class="k">def</span> <span class="nf">dealar_turn</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">,</span> <span class="n">card_deck</span><span class="p">):</span> <span class="c"># 딜러 turn</span>
     <span class="k">if</span> <span class="n">dealar_card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>  <span class="c"># 처음값 11, 합계 20초과시 11-&gt;1로 변경</span>
@@ -384,12 +375,9 @@ user_card[0]에 11인지 아닌지를 먼저 판단한 후 맞을경우 user_car
             
     <span class="k">while</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">17</span> <span class="p">:</span>
         <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Dealar Receiving a Card..</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-        <span class="n">dealar_pop_card</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
-        <span class="n">dealar_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dealar_pop_card</span><span class="p">)</span>
-        <span class="n">card_deck</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">dealar_pop_card</span><span class="p">)</span>
+        <span class="n">dealar_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">card_deck</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
         <span class="n">card_deck</span> <span class="o">=</span> <span class="n">remain_card</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Total Dealar Card : {sum(dealar_card)}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-    
     <span class="k">return</span> <span class="n">dealar_card</span><span class="p">,</span> <span class="n">card_deck</span>
 
 
@@ -438,6 +426,7 @@ user_card[0]에 11인지 아닌지를 먼저 판단한 후 맞을경우 user_car
         <span class="n">card_num</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
         <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'카드 shuffle 완료 {len(card_num)}'</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">card_num</span>
+
 </code></pre></div></div>
 
 <p><br /></p>
