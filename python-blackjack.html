@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/python-blackjack" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Studying  Develop" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BlackJack 게임 Procedural Programming 구현" />
+    <meta property="og:description" content="👉 게임규칙 블랙잭 코드는 Procedural Pradigm으로 작성되어야 한다. 카드 덱 구성은 2~11 까지 정수형 숫자로 표현되며, 문양은 생략한다. 덱은 2~11까지의 숫자에 대한 카드가 4장씩 총 40장으로 이루어져 있다. 11 카드는 Ace이며, 1또는 11의 숫자값을 가진다. 11로 시작하여 사용자나 딜러의 숫자 카드의 합이 21을 초과할 경우, 1로 치환될 수 있다. 게임참여자는" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/python-blackjack" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-02-14T12:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-02-14T12:00:00+09:00" />
+    <meta property="article:tag" content="Python" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BlackJack 게임 Procedural Programming 구현" />
+    <meta name="twitter:description" content="👉 게임규칙 블랙잭 코드는 Procedural Pradigm으로 작성되어야 한다. 카드 덱 구성은 2~11 까지 정수형 숫자로 표현되며, 문양은 생략한다. 덱은 2~11까지의 숫자에 대한 카드가 4장씩 총 40장으로 이루어져 있다. 11 카드는 Ace이며, 1또는 11의 숫자값을 가진다. 11로 시작하여 사용자나 딜러의 숫자 카드의 합이 21을 초과할 경우, 1로 치환될 수 있다. 게임참여자는" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Studying  Develop" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Python" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Studying  Develop",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/python-blackjack",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/python-cover.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/python-blackjack"
+    },
+    "description": "👉 게임규칙 블랙잭 코드는 Procedural Pradigm으로 작성되어야 한다. 카드 덱 구성은 2~11 까지 정수형 숫자로 표현되며, 문양은 생략한다. 덱은 2~11까지의 숫자에 대한 카드가 4장씩 총 40장으로 이루어져 있다. 11 카드는 Ace이며, 1또는 11의 숫자값을 가진다. 11로 시작하여 사용자나 딜러의 숫자 카드의 합이 21을 초과할 경우, 1로 치환될 수 있다. 게임참여자는"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="BlackJack 게임 Procedural Programming 구현" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">Studying  Develop</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/computer-science/">computer science</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-python post ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-02-14">2021-02-14</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/python/'>PYTHON</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">BlackJack 게임 Procedural Programming 구현</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/python-cover.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    
+<h3 id="--게임규칙">👉  게임규칙</h3>
+
+<ol>
+  <li>
+    <p>블랙잭 코드는 Procedural Pradigm으로 작성되어야 한다.</p>
+  </li>
+  <li>
+    <p>카드 덱 구성은 2~11 까지 정수형 숫자로 표현되며, 문양은 생략한다.</p>
+  </li>
+  <li>
+    <p>덱은 2~11까지의 숫자에 대한 카드가 4장씩 총 40장으로 이루어져 있다.</p>
+  </li>
+  <li>
+    <p>11 카드는 Ace이며, 1또는 11의 숫자값을 가진다. 11로 시작하여 사용자나 딜러의 숫자 카드의 합이 21을 초과할 경우, 1로 치환될 수 있다.</p>
+  </li>
+  <li>
+    <p>게임참여자는 뱅크(딜러)와 사용자(유저)로 이루어져 있다.</p>
+  </li>
+  <li>
+    <p>프로그램이 시작되면 카드 셔플을 3회 진행하며, 유저가 원할 경우 한 번 더 셔플할 수 있다.</p>
+  </li>
+  <li>
+    <p>카드 셔플이 완료된 후에는 그 순서가 고정되며, 덱에 남아있는 카드가 10장 아래일 경우 덱을 초기화 하여 다시 셔플절차를 수행한다.</p>
+  </li>
+  <li>
+    <p>게임이 시작되면 뱅크와 사용자가 1장씩 카드를 받게 되며, 이 카드는 오픈되어 전달된다.(출력하여야 한다.)</p>
+  </li>
+  <li>
+    <p>사용자가 먼저 게임을 치르며, 게임은 숫자의 조합이 21과 일치하거나 21을 넘지않는 가장 가까운 사람이 승리한다.</p>
+  </li>
+  <li>
+    <p>사용자는 게임이 시작되면 덱에서 숫자를 하나 전달받는다. 오픈카드 부터 받은 순서대로 표현하며, 정렬은 하지 않는다.</p>
+  </li>
+  <li>
+    <p>사용자에게 카드를 더 받을지 멈출지를 물어보아야하며, 만약 받은 카드의 숫자 합이 21을 초과할 경우 사용자의 턴은 종료되며, 딜러가 21을 초과하지 않는 한 이길 수 없다.</p>
+  </li>
+  <li>
+    <p>사용자가 처음 받은 카드가 10, 11 일 경우, 블랙잭으로 딜러의 결과와 관계없이 게임을 승리한다.</p>
+  </li>
+  <li>
+    <p>사용자의 턴이 끝난 후 딜러의 턴이 시작되며, 숫자의 합이 16을 넘을 때까지 카드를 받아야 한다.</p>
+  </li>
+  <li>
+    <p>사용자가 21을 넘긴 후 딜러도 21을 넘긴 경우, 게임은 비긴 것으로 처리한다.</p>
+  </li>
+  <li>
+    <p>사용자와 딜러 모두 21을 넘기지 않은 경우, 21에 가장 가까운 객체가 승리한다.</p>
+  </li>
+  <li>
+    <p>이 프로그램은 CLI로 동작해야 한다.</p>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="-preudocode">👉 PreudoCode</h3>
+
+<ol>
+  <li>
+    <p>카드 덱 구성은 2-11 범위의 총 40장으로 이루어져 있다. for문을 이용해 정수 2-11을 각각 4개씩 배열(card_deck)에 넣는다.</p>
+  </li>
+  <li>
+    <p>랜덤하지 않은 배열(card_deck) 랜덤하게 3번 섞는다. for문으로 범위를 3으로 정해 3번동안 shuffle()을 이용해 섞어준다.</p>
+  </li>
+  <li>
+    <p>사용자가 한번의 셔플을 정할 수 있으므로 y/n으로 입력값을 받아 y인 경우 shuffle()이용해 한번 더 섞어준다.</p>
+  </li>
+  <li>
+    <p>카드셔플 완료후 딜러와 사용자 각각 카드덱에서 랜덤한 숫자값 하나씩 받아 오픈한다. 딜러(delar_card)와 사용자(user_card)의 배열을 새로 생성해 카드덱에서
+랜덤하게 뽑은 값은 append 해주고 card_deck 배열에는 해당 값을 remove 해준다.</p>
+  </li>
+  <li>
+    <p>사용자의 turn이 먼저이며, 덱에서 랜덤한 숫자를 하나 전달받는다. 전달받은 값 사용자의 배열인(user_card)에 차례대로 append해준다.   <br />
+이때 사용자의 값에서 첫번째 숫자가 11인 경우 , 2개의 합이 21을 넘는경우 11을 -&gt;1 로 변경한다. if문을 이용해
+user_card[0]에 11인지 아닌지를 먼저 판단한 후 맞을경우 user_card[0]=1로 바꾸어준다.</p>
+  </li>
+  <li>
+    <p>사용자가 카드를 더 받을지(hit) 멈출지(stay)를 물어본 후 새롭게 받는 경우 user_card의 값이 21을 넘지않는지 판단 후 넘지않는 경우 
+사용자가 랜덤한 카드덱을 뽑아 자신의 배열(user_card)에 넣는다. 이때 user_card의 합이 21 초과인 경우
+딜러의 turn으로 넘어가게 되며, 딜러의 값에 크기에 따라 무승부,승자, 패자가 결정된다.</p>
+  </li>
+  <li>
+    <p>딜러의 턴으로 넘어온 후 딜러는 카드의 합계가 16을 넘을때까지 카드를 받아야한다. while문으로 dealar_card의 합계가 16을 넘지 않는동안 
+반복해서 card_deck 의 랜덤한 숫자값을 하나씩 뽑아온다.</p>
+  </li>
+  <li>
+    <p>딜러의 카드 합계 16을 넘게되면 유저의 카드값과 비교한다. 이미 앞에서 유저의 카드값이 21을 초과하였기때문에 딜러의 카드합계가 21을 초과해야지만 
+무승부가 된다. 만약 21을 초과하지 않으면 딜러가 우승자가 된다.</p>
+  </li>
+  <li>
+    <p>만약 유저가 멈추는 것을 선택한다면 딜러의 턴으로 바로 넘어가게 된다. 딜러는 7번을 반복하고 딜러의 카드합이 16을 넘기게 되면
+유저의 카드합계와 딜러의 카드합계를 비교하여 21에 가장 가까운 사람이 승리하게 된다.</p>
+  </li>
+  <li>
+    <p>card_deck이 감소할때마다 카드덱 수를 카운트하여 10보다 작아지는경우 셔플절차를 수행한다. card_deck를 len()을 이용하여
+길이를 카운트하여 해당 길이가 10보다 작은경우 1~2번을 수행한다.</p>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="-코드로-구현하기">👉 코드로 구현하기</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span>
+
+
+<span class="k">def</span> <span class="nf">init</span><span class="p">():</span>  <span class="c"># 40개의 3번 셔플한 랜덤한 카드덱 생성하기</span>
+    <span class="n">card_deck</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">11</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'*'</span><span class="o">*</span><span class="mi">25</span><span class="p">,</span><span class="s">'BLACK JACK GAME START'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">25</span><span class="p">,</span>
+          <span class="s">'</span><span class="se">\n\n</span><span class="s">Card Deck Shuffling..</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">card_deck</span> 
+
+
+<span class="k">def</span> <span class="nf">user_choose_shuffle</span><span class="p">(</span><span class="n">card_deck</span><span class="p">):</span> <span class="c"># 사용자가 원할 경우 한번더 셔플</span>
+        <span class="n">card_shuffle</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'Complete card deck shuffle ! [one more? : y/n]:'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">card_shuffle</span> <span class="o">==</span><span class="s">'y'</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">--- Card Deck Shuffle ---'</span><span class="p">)</span>
+            <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">card_deck</span>    
+            
+        
+<span class="k">def</span> <span class="nf">game_start</span><span class="p">():</span> <span class="c">#게임 시작. 딜러와 사용자 오픈하는 카드 1장씩 부여</span>
+    <span class="n">user_card</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">dealar_card</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">first_player_card</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
+    <span class="n">first_dealar_card</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
+    <span class="n">card_deck</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">first_player_card</span><span class="p">)</span>
+    <span class="n">card_deck</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">first_dealar_card</span><span class="p">)</span>             
+    <span class="n">user_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">first_player_card</span><span class="p">)</span>
+    <span class="n">dealar_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">first_dealar_card</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">30</span><span class="p">,</span><span class="s">'FIRST TURN'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">30</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>    
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'USER Card : {user_card}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'DEALAR Card : {dealar_card}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">user_card</span><span class="p">,</span> <span class="n">dealar_card</span>
+
+
+<span class="k">def</span> <span class="nf">first_user_turn</span><span class="p">(</span><span class="n">user_card</span><span class="p">,</span><span class="n">card_deck</span><span class="p">):</span> <span class="c"># 사용자 먼저 게임 시작, 덱에서 랜덤한 숫자 하나 전달</span>
+    <span class="n">user_pop_card</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
+    <span class="n">user_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">user_pop_card</span><span class="p">)</span>
+    <span class="n">card_deck</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">user_pop_card</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">user_card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>  <span class="c"># 처음값 11, 합계 20초과시 11-&gt;1로 변경</span>
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">user_card</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="n">user_card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+            
+    <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">user_card</span><span class="p">)</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>  
+        <span class="k">print</span><span class="p">(</span><span class="s">'🌟BLACKJACK🌟 USER WIN !'</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">28</span><span class="p">,</span><span class="s">'FIRST USER TURN'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">28</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Receive a one Card..</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'USER Card : {user_card}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">user_card</span><span class="p">,</span> <span class="n">card_deck</span>
+
+
+<span class="k">def</span> <span class="nf">user_turn</span><span class="p">(</span><span class="n">user_card</span><span class="p">,</span><span class="n">card_deck</span><span class="p">):</span> <span class="c"># 사용자 turn</span>
+    <span class="n">user_pop_card</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
+    <span class="n">user_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">user_pop_card</span><span class="p">)</span>
+    <span class="n">card_deck</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">user_pop_card</span><span class="p">)</span>
+    <span class="n">card_deck</span> <span class="o">=</span> <span class="n">remain_card</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'*'</span><span class="o">*</span><span class="mi">32</span><span class="p">,</span><span class="s">'USER TURN'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">32</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Receive a one Card..</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'User_Card : {user_card}'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">user_card</span><span class="p">,</span><span class="n">card_deck</span> 
+
+    
+    
+<span class="k">def</span> <span class="nf">dealar_turn</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">,</span> <span class="n">card_deck</span><span class="p">):</span> <span class="c"># 딜러 turn</span>
+    <span class="k">if</span> <span class="n">dealar_card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>  <span class="c"># 처음값 11, 합계 20초과시 11-&gt;1로 변경</span>
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="n">dealar_card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+            
+    <span class="k">while</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">17</span> <span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Dealar Receiving a Card..</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+        <span class="n">dealar_pop_card</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
+        <span class="n">dealar_card</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dealar_pop_card</span><span class="p">)</span>
+        <span class="n">card_deck</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">dealar_pop_card</span><span class="p">)</span>
+        <span class="n">card_deck</span> <span class="o">=</span> <span class="n">remain_card</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Total Dealar Card : {sum(dealar_card)}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">dealar_card</span><span class="p">,</span> <span class="n">card_deck</span>
+
+
+<span class="k">def</span> <span class="nf">ask_user</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">,</span><span class="n">user_card</span><span class="p">,</span> <span class="n">card_deck</span><span class="p">):</span> <span class="c"># ask hit or stay </span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">29</span><span class="p">,</span><span class="s">'HIT ? ASK USER'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">29</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'One more card? [y/n] :'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="s">'n'</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">--- STAY ---'</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'*'</span><span class="o">*</span><span class="mi">31</span><span class="p">,</span><span class="s">'DEALAR TURN'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">31</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span> 
+            <span class="n">dealar_card</span><span class="p">,</span> <span class="n">card_deck</span> <span class="o">=</span> <span class="n">dealar_turn</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">,</span> <span class="n">card_deck</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'&gt;&gt;&gt;&gt;&gt;TOTAL USER CARD SUM : {sum(user_card)}'</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'&gt;&gt;&gt;&gt;&gt;TOTAL DEALAR CARD SUM {sum(dealar_card)}</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>            
+            <span class="n">diff_card_sum</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">,</span> <span class="n">user_card</span><span class="p">)</span>
+            <span class="k">break</span>
+            
+        <span class="k">elif</span> <span class="n">answer</span> <span class="o">==</span> <span class="s">'y'</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">--- hit ---'</span><span class="p">)</span>
+            <span class="n">user_card</span><span class="p">,</span> <span class="n">card_deck</span> <span class="o">=</span> <span class="n">user_turn</span><span class="p">(</span><span class="n">user_card</span><span class="p">,</span> <span class="n">card_deck</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">user_card</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">--- Total card exceeds 21 ---</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">'*'</span><span class="o">*</span><span class="mi">31</span><span class="p">,</span><span class="s">'DEALAR TURN'</span><span class="p">,</span><span class="s">'*'</span><span class="o">*</span><span class="mi">31</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span> 
+                <span class="n">dealar_card</span><span class="p">,</span> <span class="n">card_deck</span> <span class="o">=</span> <span class="n">dealar_turn</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">,</span> <span class="n">card_deck</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">'DEAD HEAT ❗'</span><span class="p">)</span>  
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">print</span><span class="p">(</span><span class="s">'🤣DEALAR WIN🤣'</span><span class="p">)</span>
+                <span class="k">break</span>
+                
+
+<span class="k">def</span> <span class="nf">diff_card_sum</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">,</span> <span class="n">user_card</span><span class="p">):</span> <span class="c"># 유저와 딜러 카드합계 diff</span>
+<span class="c">#     print(f'유저 카드 합계{sum(user_card)}')</span>
+<span class="c">#     print(f'딜러 카드 합계{sum(dealar_card)}')</span>
+    <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'🌟USER WIN🌟'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">sum</span><span class="p">(</span><span class="n">user_card</span><span class="p">):</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'🤣DEALAR WIN🤣'</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'🌟USER WIN🌟'</span><span class="p">)</span>
+
+            
+<span class="k">def</span> <span class="nf">remain_card</span><span class="p">(</span><span class="n">card_num</span><span class="p">):</span>  <span class="c"># 카드덱 수 10장 아래일 경우 카드덱 셔플절차 수행</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">card_num</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'남은 Card Deck 수 : {card_num}, 10장 이하.. 카드 shuffle 필요'</span><span class="p">)</span>
+        <span class="n">card_num</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'카드 shuffle 완료 {len(card_num)}'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">card_num</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="-코드-결과-출력">👉 코드 결과 출력</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">card_deck</span> <span class="o">=</span> <span class="n">init</span><span class="p">()</span>
+<span class="n">card_deck</span> <span class="o">=</span> <span class="n">user_choose_shuffle</span><span class="p">(</span><span class="n">card_deck</span><span class="p">)</span>
+<span class="n">user_card</span><span class="p">,</span> <span class="n">dealar_card</span> <span class="o">=</span> <span class="n">game_start</span><span class="p">()</span>
+<span class="n">user_card</span><span class="p">,</span> <span class="n">card_deck</span> <span class="o">=</span> <span class="n">first_user_turn</span><span class="p">(</span><span class="n">user_card</span><span class="p">,</span> <span class="n">card_deck</span><span class="p">)</span>
+<span class="n">ask_user</span><span class="p">(</span><span class="n">dealar_card</span><span class="p">,</span><span class="n">user_card</span><span class="p">,</span> <span class="n">card_deck</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>결과 출력</strong> :</p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/107872725-8f93cf80-6eef-11eb-8213-2064602bdbb3.PNG" alt="blackjack" /></p>
+
+                </div>
+            </section>
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">Studying  Develop</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Studying  Develop</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
