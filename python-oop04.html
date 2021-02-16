@@ -51,7 +51,7 @@
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="python OOP 알아보기 part4. class method, static method, Polymorphism, Abstract Base class" />
+    <meta property="og:title" content="python OOP 알아보기 part4. class method, static method, Abstract Base class, Polymorphism" />
     <meta property="og:description" content="** 목차 ** ✔ class method ✔ static method ✔ Abstract Base class ✔ Polymorphism 👉 class method 이에 앞서 클래스에 아무런 데코레이터가 없이 메서드가 선언되어지면 해당 메서드는 인스턴스 메서드로 첫번째 매개변수 self에 클래스의 인스턴스가 넘어오게 된다 클래스 메서드는 @classmethod 데코레이터를 사용해서 클래스 메서드로 정의를 한다. 이때 클래스 메서드는 첫번째" />
     <meta property="og:url" content="https://heejung-gjt.github.io/python-oop04" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
@@ -61,7 +61,7 @@
     <meta property="article:modified_time" content="2021-02-13T18:00:00+09:00" />
     <meta property="article:tag" content="Python" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="python OOP 알아보기 part4. class method, static method, Polymorphism, Abstract Base class" />
+    <meta name="twitter:title" content="python OOP 알아보기 part4. class method, static method, Abstract Base class, Polymorphism" />
     <meta name="twitter:description" content="** 목차 ** ✔ class method ✔ static method ✔ Abstract Base class ✔ Polymorphism 👉 class method 이에 앞서 클래스에 아무런 데코레이터가 없이 메서드가 선언되어지면 해당 메서드는 인스턴스 메서드로 첫번째 매개변수 self에 클래스의 인스턴스가 넘어오게 된다 클래스 메서드는 @classmethod 데코레이터를 사용해서 클래스 메서드로 정의를 한다. 이때 클래스 메서드는 첫번째" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
@@ -107,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="python OOP 알아보기 part4. class method, static method, Polymorphism, Abstract Base class" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="python OOP 알아보기 part4. class method, static method, Abstract Base class, Polymorphism" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -195,7 +195,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">python OOP 알아보기 part4. class method, static method, Polymorphism, Abstract Base class</h1>
+                <h1 class="post-full-title">python OOP 알아보기 part4. class method, static method, Abstract Base class, Polymorphism</h1>
             </header>
 
 <!--  
@@ -319,9 +319,118 @@ into the {body} of the default.hbs template -->
 </code></pre></div></div>
 <p><br /></p>
 
-<p>.
-.
-.</p>
+<h3 id="-abstract-base-class">👉 Abstract Base class</h3>
+<p><strong>추상클래스는 메서드의 목록만 가진 클래스이며 상속받는 클래스에서 메서드 구현을 강제하기 위해
+사용한다</strong></p>
+
+<p>추상클래스를 만들기 위해서는 <code class="highlighter-rouge">from abc import *</code>를 임포트해야 한다.</p>
+
+<p>클래스의 괄호안에 (metaclass=ABCMeta)를 지정해야한다.</p>
+
+<p>메서드 작성시에는 위에 데코레이터 @abstractmethod를 붙여서 추상 메서드로 지정한다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">AbstractClass</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+    <span class="nd">@abstractemthod</span>
+    <span class="k">def</span> <span class="nf">method_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">code</span><span class="o">...</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>예를 들어보자 <br />
+StudentBase라는 추상 class를 만들고 해당 클래스를 상속받는 학생 class를 만든다.
+학생 class에서 추상메서드인 go_to_school을 구현하지 않아 아래의 코드는 에러가 발생한다. 추상클래스에서
+정의한 메서드는 추상 클래스를 상속받은 클래스에서 모두 구현해야만 한다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">StudentBase</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">study</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">go_to_school</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">StudentBase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">study</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'공부하기'</span><span class="p">)</span>
+
+ 
+<span class="n">james</span> <span class="o">=</span> <span class="n">Student</span><span class="p">()</span>
+<span class="n">james</span><span class="o">.</span><span class="n">study</span><span class="p">()</span>
+
+</code></pre></div></div>
+<p><br /></p>
+
+<p>go_to_school() 메서드도 함께 구현한 학생 class</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="o">*</span>
+ 
+<span class="k">class</span> <span class="nc">StudentBase</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">study</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+ 
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">go_to_school</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+ 
+<span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">StudentBase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">study</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'공부하기'</span><span class="p">)</span>
+ 
+    <span class="k">def</span> <span class="nf">go_to_school</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'학교가기'</span><span class="p">)</span>
+ 
+<span class="n">james</span> <span class="o">=</span> <span class="n">Student</span><span class="p">()</span>
+<span class="n">james</span><span class="o">.</span><span class="n">study</span><span class="p">()</span>
+<span class="n">james</span><span class="o">.</span><span class="n">go_to_school</span><span class="p">()</span>
+
+<span class="s">"""
+결과 :
+
+공부하기
+학교가기
+"""</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="추상-메서드는-빈-메서드로-생성">추상 메서드는 빈 메서드로 생성</h3>
+<p>추상 클래스는 인스턴스로 만들 수 없기 때문에 pass를 넣어서 빈 메서드로 만든다. 추상 클래스는
+오로지 상속에만 사용되고 파생 클래스에서 반드시 구현해야 할 메서드를 정해 줄때 사용한다. <br />
+<br /></p>
+
+<h3 id="-polymorphism">👉 Polymorphism</h3>
+
+<p><strong>다형성은 자녀와 부모 클래스를 다룰때 중요한 개념이며 다양한 형태를 취하는 능력을 의미한다. <br />
+파이썬의 다형성은 오버라이딩과 메서드 오버로딩을 사용하여 구현한다</strong></p>
+
+<p>같은 모양의 코드가 다른 동작을 하는 것을 말한다.</p>
+
+<p>다형성은 코드의 양을 줄이고 객체 타입을 하나의 타입으로 관리가 가능해 유지보수에 좋다.</p>
+
+<p>아래의 코드는 다형성의 예로 get_ap 메서드로 이름이 같지만 다른 동작이 출력되는 것을 볼 수 있다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SmartPhone</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">get_ap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Application Proccessor'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">IPhone</span><span class="p">(</span><span class="n">SmartPhone</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_ap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'A series'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Galaxy</span><span class="p">(</span><span class="n">SmartPhone</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_ap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Exynos'</span><span class="p">)</span>
+
+
+<span class="n">iphone</span> <span class="o">=</span> <span class="n">IPhone</span><span class="p">()</span>
+<span class="n">iphone</span><span class="o">.</span><span class="n">get_ap</span><span class="p">()</span>  <span class="c"># A series</span>
+<span class="n">galaxy</span> <span class="o">=</span> <span class="n">Galaxy</span><span class="p">()</span>
+<span class="n">galaxy</span><span class="o">.</span><span class="n">get_ap</span><span class="p">()</span>  <span class="c"># Exynos</span>
+
+
+</code></pre></div></div>
 
 <h4 id="-oop-part1-보러가기"><a href="http://127.0.0.1:4000/python-oop01">🌟 oop part1 보러가기</a></h4>
 <h4 id="-oop-part2-보러가기"><a href="http://127.0.0.1:4000/python-oop02">🌟 oop part2 보러가기</a></h4>
