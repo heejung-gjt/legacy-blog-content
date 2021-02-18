@@ -145,6 +145,7 @@ into the {body} of the default.hbs template -->
     <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/data-science/">data science</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
     <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
@@ -365,12 +366,31 @@ execution time: 2.384185791015625e-07sec
     
     
 <span class="n">inner</span><span class="p">(</span><span class="s">'heejung'</span><span class="p">,</span><span class="s">'pyton'</span><span class="p">)</span>
+
+<span class="c"># 결과 : &lt;h1&gt;&lt;em&gt; Hi heejung. You might be loved with pyton &lt;/em&gt;&lt;/h1&gt;</span>
 </code></pre></div></div>
 <p><br /></p>
 
-<p>Advanced problem: Decorator 하나로 html 태그 이름을 지정할 수 있도록 위의 코드를 수정해보자</p>
+<p><strong>Advanced problem: Decorator 하나로 html 태그 이름을 지정할 수 있도록 위의 코드를 수정해보자</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">진행중</span><span class="o">.....</span>
+<p>return을 이용해서 값을 반환해주는 것이 이 코드에서는 더 적합한것 같다. print를 return으로 변경하였으며
+데코레이터 하나를 이용하기 위해서 h1_em_par이라는 데코레이터 파라미터에 값을 2개 넣어서 호출하였다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">h1_em_par</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span><span class="n">em</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">h1_em</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">one</span><span class="p">,</span><span class="n">two</span><span class="p">):</span>
+             <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'&lt;{h1}&gt;&lt;{em}&gt; {func(one,two)} &lt;/{em}&gt;&lt;/{h1}&gt;'</span><span class="p">)</span> <span class="c"># 함수가 호출되면 return해주지 않고 바로 출력한다.</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">h1_em</span>
+
+<span class="nd">@h1_em_par</span><span class="p">(</span><span class="s">'h1'</span><span class="p">,</span><span class="s">'em'</span><span class="p">)</span> <span class="c"># 데코레이터의 파라미터에 값 넣기</span>
+<span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">lang</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="s">'Hi {name}. You might be loved with {lang}'</span>
+    
+    
+<span class="n">inner</span><span class="p">(</span><span class="s">'heejung'</span><span class="p">,</span><span class="s">'pyton'</span><span class="p">)</span>  <span class="c"># 해당 함수가 데코레이터 함수 안에서 print되므로 호출하면 값이 출력된다</span>
+
+<span class="c"># 결과 : &lt;h1&gt;&lt;em&gt; Hi heejung. You might be loved with pyton &lt;/em&gt;&lt;/h1&gt;</span>
 </code></pre></div></div>
 <p><br /></p>
 

@@ -52,7 +52,7 @@
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="(HackerRank Day11 with python) 2D Arrays" />
-    <meta property="og:description" content="HackerRank Day01 HackerRank Day02 HackerRank Day03 HackerRank Day04 HackerRank Day05 HackerRank Day06 HackerRank Day07 HackerRank Day08 HackerRank Day09 HackerRank Day10 HackerRank Day12 👉 2D Arrays [Task] [Sample Input] 1 1 1 0 0 0 0 1 0 0 0 0 1 1 1 0 0 0 0 0 2 4" />
+    <meta property="og:description" content="HackerRank Day01 HackerRank Day02 HackerRank Day03 HackerRank Day04 HackerRank Day05 HackerRank Day06 HackerRank Day07 HackerRank Day08 HackerRank Day09 HackerRank Day10 HackerRank Day12 👉 2D Arrays [Task] A의 모래시계를 A의 그래픽 표현에서의 패턴에 해당하는 인덱스가 있는 값의 하위집합으로 정의한다. 즉, 모래시계 모양에는 값들이 들어가 있다. 위의 Context에 있는 6*6 배열에서 최대" />
     <meta property="og:url" content="https://heejung-gjt.github.io/python-hackerrank-11" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/char.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -62,7 +62,7 @@
     <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="(HackerRank Day11 with python) 2D Arrays" />
-    <meta name="twitter:description" content="HackerRank Day01 HackerRank Day02 HackerRank Day03 HackerRank Day04 HackerRank Day05 HackerRank Day06 HackerRank Day07 HackerRank Day08 HackerRank Day09 HackerRank Day10 HackerRank Day12 👉 2D Arrays [Task] [Sample Input] 1 1 1 0 0 0 0 1 0 0 0 0 1 1 1 0 0 0 0 0 2 4" />
+    <meta name="twitter:description" content="HackerRank Day01 HackerRank Day02 HackerRank Day03 HackerRank Day04 HackerRank Day05 HackerRank Day06 HackerRank Day07 HackerRank Day08 HackerRank Day09 HackerRank Day10 HackerRank Day12 👉 2D Arrays [Task] A의 모래시계를 A의 그래픽 표현에서의 패턴에 해당하는 인덱스가 있는 값의 하위집합으로 정의한다. 즉, 모래시계 모양에는 값들이 들어가 있다. 위의 Context에 있는 6*6 배열에서 최대" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/char.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -94,7 +94,7 @@
         "@type": "WebPage",
         "@id": "https://heejung-gjt.github.io/python-hackerrank-11"
     },
-    "description": "HackerRank Day01 HackerRank Day02 HackerRank Day03 HackerRank Day04 HackerRank Day05 HackerRank Day06 HackerRank Day07 HackerRank Day08 HackerRank Day09 HackerRank Day10 HackerRank Day12 👉 2D Arrays [Task] [Sample Input] 1 1 1 0 0 0 0 1 0 0 0 0 1 1 1 0 0 0 0 0 2 4"
+    "description": "HackerRank Day01 HackerRank Day02 HackerRank Day03 HackerRank Day04 HackerRank Day05 HackerRank Day06 HackerRank Day07 HackerRank Day08 HackerRank Day09 HackerRank Day10 HackerRank Day12 👉 2D Arrays [Task] A의 모래시계를 A의 그래픽 표현에서의 패턴에 해당하는 인덱스가 있는 값의 하위집합으로 정의한다. 즉, 모래시계 모양에는 값들이 들어가 있다. 위의 Context에 있는 6*6 배열에서 최대"
 }
     </script>
 
@@ -145,6 +145,7 @@ into the {body} of the default.hbs template -->
     <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/data-science/">data science</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
     <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
@@ -226,9 +227,13 @@ into the {body} of the default.hbs template -->
 <p><br /></p>
 
 <h3 id="task">[Task]</h3>
-<p><img src="https://user-images.githubusercontent.com/64240637/107900081-6886dd80-6f83-11eb-9888-503cafd7aebf.PNG" alt="task" /></p>
+<p><img src="https://user-images.githubusercontent.com/64240637/107900081-6886dd80-6f83-11eb-9888-503cafd7aebf.PNG" alt="task" />
+A의 모래시계를 A의 그래픽 표현에서의 패턴에 해당하는 인덱스가 있는 값의 하위집합으로 정의한다. 즉, 모래시계 모양에는 값들이
+들어가 있다.   <br />
+위의 Context에 있는 6*6 배열에서 최대 모래시계 합계는 왼쪽 상단 모서리에 있는 모래시계의 합 7이다.</p>
 
-<p><br /></p>
+<p><strong>A의 모든 모래시계에 대한 모래시계 합계를 계산한 다음 최대 모래시계 합계를 프린트해준다.</strong> <br />
+<br /></p>
 
 <h3 id="sample-input">[Sample Input]</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
@@ -271,37 +276,12 @@ into the {body} of the default.hbs template -->
 <p><br /></p>
 
 <h3 id="mycode">[MyCode]</h3>
-<p>TestCase는 성공 &gt; 만약 1,2,5의 배열값들의 차이를 구한다면 [1,2],[1,5],[2,2],[2,5],[5,2],[5,5]의
-값들의 차이인 [1,4,0,3,3,0]이 구해진다. 이 중 최대값을 구하면 되므로 해당 문제에서는 상관이 없지만 실제 나오지 않는 
-0의값이 나오는것을 볼 수 있다. 또한 for문을 여러번써야 하므로 시간복잡도가 커진다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Difference</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__elements</span> <span class="o">=</span> <span class="n">a</span>
-
-	<span class="c"># Add your code here</span>
-    <span class="k">def</span> <span class="nf">computeDifference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__elements</span><span class="p">)):</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__elements</span><span class="p">)):</span>
-                <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__elements</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">__elements</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">maximumDifference</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>    
-<span class="c"># End of Difference class</span>
-
-<span class="n">_</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">' '</span><span class="p">)]</span>
-
-<span class="n">d</span> <span class="o">=</span> <span class="n">Difference</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">d</span><span class="o">.</span><span class="n">computeDifference</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">maximumDifference</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 </code></pre></div></div>
 <p><br /></p>
 
 <h3 id="othercode">[OtherCode]</h3>
-<p>아래의 코드를 보면 한줄로 해당 문제를 해결할 수 있는 것을 볼 수 있다. 각 배열안의 max값과 min값을 구해
-두값의 차이를 abs함수를 이용해 절대값으로 나타내주면 최대값을 구 할 수 있다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">computeDifference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">maximumDifference</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__elements</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__elements</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 </code></pre></div></div>
 
                 </div>

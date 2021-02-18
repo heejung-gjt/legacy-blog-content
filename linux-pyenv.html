@@ -145,6 +145,7 @@ into the {body} of the default.hbs template -->
     <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/data-science/">data science</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
     <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
     <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
@@ -232,8 +233,8 @@ into the {body} of the default.hbs template -->
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi ./bashrc
 
 <span class="nt">---bashrc---</span>
-<span class="nb">echo</span> <span class="s1">'export PYENV_ROOT="$HOME/.pyenv"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
-<span class="nb">echo</span> <span class="s1">'export PATH="$PYENV_ROOT/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">export </span><span class="nv">PYENV_ROOT</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.pyenv"</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PYENV_ROOT</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
 <span class="nt">------------</span>
 
 </code></pre></div></div>
@@ -288,7 +289,8 @@ Some useful pyenv commands are:
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi ./bashrc
 
 <span class="nt">---bashrc---</span>
-<span class="nb">echo</span> <span class="s1">'eval "$(pyenv virtualenv-init -)"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>pyenv init -<span class="k">)</span><span class="s2">"</span>
+<span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>pyenv virtualenv-init -<span class="k">)</span><span class="s2">"</span>
 <span class="nt">------------</span>
 </code></pre></div></div>
 <p><br /></p>
