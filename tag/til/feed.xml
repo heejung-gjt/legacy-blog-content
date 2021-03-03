@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/til/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-02-26T20:17:34+09:00</updated>
+  <updated>2021-03-03T20:47:01+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/til/feed.xml</id>
 
   
@@ -30,6 +30,384 @@
   
   
 
+  
+    <entry>
+      <title type="html">210303-TIL</title>
+      <link href="https://heejung-gjt.github.io/til26" rel="alternate" type="text/html" title="210303-TIL" />
+      <published>2021-03-03T16:00:04+09:00</published>
+      <updated>2021-03-03T16:00:04+09:00</updated>
+      <id>https://heejung-gjt.github.io/til26</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til26">&lt;h2 id=&quot;--오늘-공부한-내용&quot;&gt;👉  오늘 공부한 내용&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;:focus 줄 수 있는 태그&lt;/li&gt;
+  &lt;li&gt;transition의 역할&lt;/li&gt;
+  &lt;li&gt;box-sizing과 content-box&lt;/li&gt;
+  &lt;li&gt;속성값이 0일때 단위생략 가능할까 ?&lt;/li&gt;
+  &lt;li&gt;box-shadow를 이용해서 outline 커스터마이징하기&lt;/li&gt;
+  &lt;li&gt;indent 트릭&lt;/li&gt;
+  &lt;li&gt;left,top의 px과 %의 이동&lt;/li&gt;
+  &lt;li&gt;인용부호 q, blockquote&lt;/li&gt;
+  &lt;li&gt;a링크의 역할 [웹주소, 이메일, 전화]&lt;/li&gt;
+  &lt;li&gt;벡터와 비트맵의 차이&lt;/li&gt;
+  &lt;li&gt;noopener, noreferer 속성&lt;/li&gt;
+  &lt;li&gt;Grid&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;실습&quot;&gt;[실습]&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;관련사이트 컨텐츠 구현하기 (overflow:hidden과 hover 이용하기)&lt;/li&gt;
+  &lt;li&gt;인기사이트 컨텐츠 구현하기(sprite 패턴 이용하기, 가상요소 선택자 이용해 순위 구현하기, ol 이용하기)&lt;/li&gt;
+  &lt;li&gt;슬로건 구현하기(q태그 이용하기, IR기법 이용하기)&lt;/li&gt;
+  &lt;li&gt;grid로 footer 구현하기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;정리내용-보러가기&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/blob/master/html_css/0302-html%EC%A0%95%EB%A6%AC.md&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;--오늘-실습한-내용&quot;&gt;👉  오늘 실습한 내용&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-0304-해야-할-일&quot;&gt;🌟 0304 해야 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;실습내용 다시구현해보기&lt;/li&gt;
+  &lt;li&gt;배운 내용 정리하기&lt;/li&gt;
+  &lt;li&gt;백준 알고리즘 1문제 풀이&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">210302-TIL</title>
+      <link href="https://heejung-gjt.github.io/til25" rel="alternate" type="text/html" title="210302-TIL" />
+      <published>2021-03-02T16:00:04+09:00</published>
+      <updated>2021-03-02T16:00:04+09:00</updated>
+      <id>https://heejung-gjt.github.io/til25</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til25">&lt;h2 id=&quot;--오늘-공부한-내용&quot;&gt;👉  오늘 공부한 내용&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;figure와 figcaption (alt의 생략)&lt;/li&gt;
+  &lt;li&gt;title과 aria-labelledby&lt;/li&gt;
+  &lt;li&gt;css사용시 global 속성 지정(:root)&lt;/li&gt;
+  &lt;li&gt;img를 span이나 div안에 묶어서 지정해 주는 이유&lt;/li&gt;
+  &lt;li&gt;웹 렌더링 순서와 과정&lt;/li&gt;
+  &lt;li&gt;hsla() 함수&lt;/li&gt;
+  &lt;li&gt;reset.css와 normalize css 차이점&lt;/li&gt;
+  &lt;li&gt;IR기법&lt;/li&gt;
+  &lt;li&gt;aria-label 이용하는 이유&lt;/li&gt;
+  &lt;li&gt;sprite pattern&lt;/li&gt;
+  &lt;li&gt;padding 트릭&lt;/li&gt;
+  &lt;li&gt;strong, em 태그&lt;/li&gt;
+  &lt;li&gt;alt와 title의 작성&lt;/li&gt;
+  &lt;li&gt;aria-label과 a11y-hidden의 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;정리내용-보러가기&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/blob/master/html_css/0302-html%EC%A0%95%EB%A6%AC.md&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;--오늘-실습한-내용&quot;&gt;👉  오늘 실습한 내용&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/heejung-gjt/HTML5-CSS3/tree/master/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%20%EA%B5%AC%ED%98%84/%EC%83%88%EC%86%8C%EC%8B%9D%20%EB%A7%88%ED%81%AC%EC%97%85%20%EB%B0%8F%20%EB%94%94%EC%9E%90%EC%9D%B8&quot;&gt;뉴스 컨텐츠 마크업, css 실습 (position으로 레이아웃 배치,figure이용하기, 마크업 변경후 float와 flex 이용해보기)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/heejung-gjt/HTML5-CSS3/tree/master/%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%20%EA%B5%AC%ED%98%84/%EC%8B%A0%EA%B7%9C%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%20%EB%B0%8F%20%EA%B4%80%EB%A0%A8%20%EC%82%AC%EC%9D%B4%ED%8A%B8%20%EB%A7%88%ED%81%AC%EC%97%85%20%EB%B0%8F%20%EB%94%94%EC%9E%90%EC%9D%B8&quot;&gt;신규 이벤트 컨텐츠 마크업 실습(IR기법이용하기, sprite 패턴 이용하기)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-0303-해야-할-일&quot;&gt;🌟 0303 해야 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;~&lt;del&gt;실습내용 다시구현해보기&lt;/del&gt;~&lt;/li&gt;
+  &lt;li&gt;~&lt;del&gt;배운 내용 정리하기&lt;/del&gt;~&lt;/li&gt;
+  &lt;li&gt;~&lt;del&gt;백준 알고리즘 1문제 풀이&lt;/del&gt;~&lt;/li&gt;
+  &lt;li&gt;python oop 공부하기&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">210301-TIL</title>
+      <link href="https://heejung-gjt.github.io/til24" rel="alternate" type="text/html" title="210301-TIL" />
+      <published>2021-03-01T16:00:04+09:00</published>
+      <updated>2021-03-01T16:00:04+09:00</updated>
+      <id>https://heejung-gjt.github.io/til24</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til24">&lt;h2 id=&quot;--오늘-공부한-내용&quot;&gt;👉  오늘 공부한 내용&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;css의 구체성(id, class, element의 우선순위)&lt;/li&gt;
+  &lt;li&gt;!important의 우선순위 제어&lt;/li&gt;
+  &lt;li&gt;구조 선택자 (nth-child, nth-of-type)&lt;/li&gt;
+  &lt;li&gt;form 요소 (fieldset, legend, label 등의 역할)&lt;/li&gt;
+  &lt;li&gt;암묵적인 아웃라인이란 ?&lt;/li&gt;
+  &lt;li&gt;css 설계시 user agent stylesheet (EX-margin default값) 주의&lt;/li&gt;
+  &lt;li&gt;text-indent 들여쓰기, 음수값으로 내어쓰기 속성&lt;/li&gt;
+  &lt;li&gt;background: url(./) 와 background-image:url(./) 차이 정확하게 구분하기
+    &lt;h4 id=&quot;정리내용-보러가기&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/blob/master/html_css/0225-html%EC%A0%95%EB%A6%AC.md&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;dl,dt,dd의 사용&lt;/li&gt;
+  &lt;li&gt;css &amp;gt;의 의미&lt;/li&gt;
+  &lt;li&gt;text-align과 vertical align의 차이점&lt;/li&gt;
+  &lt;li&gt;margin:auto는 가능, padding:auto는 불가능 (margin:auto의 역할)&lt;/li&gt;
+  &lt;li&gt;이미지 해상도 조절하지 않고 쓸 수 있는 SVG&lt;/li&gt;
+  &lt;li&gt;flex-grow:1이 쓰이는 곳은 ?&lt;/li&gt;
+  &lt;li&gt;text-overflow 역할 (라인 말줄임을 위한 3가지 속성)
+    &lt;h4 id=&quot;정리내용-보러가기-1&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/blob/master/html_css/0226-html%EC%A0%95%EB%A6%AC.md&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;naver 모바일 구현하기 + 데스크탑 수정
+    &lt;h4 id=&quot;정리내용-보러가기-2&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/HTML5-CSS3/tree/master/naver_form%20%EA%B5%AC%ED%98%84&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-0302-해야-할-일&quot;&gt;🌟 0302 해야 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;오늘 실습내용 다시구현해보기&lt;/li&gt;
+  &lt;li&gt;오늘 배운 내용 정리하기&lt;/li&gt;
+  &lt;li&gt;백준 알고리즘 1문제 풀이&lt;/li&gt;
+  &lt;li&gt;python oop 공부하기&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">210228-TIL</title>
+      <link href="https://heejung-gjt.github.io/til23" rel="alternate" type="text/html" title="210228-TIL" />
+      <published>2021-02-28T16:00:04+09:00</published>
+      <updated>2021-02-28T16:00:04+09:00</updated>
+      <id>https://heejung-gjt.github.io/til23</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til23">&lt;h2 id=&quot;--오늘-공부한-내용&quot;&gt;👉  오늘 공부한 내용&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;role의 역할(a링크를 button처럼 쓸 수 있을까 ?)&lt;/li&gt;
+  &lt;li&gt;box-shadow와 text-shadow&lt;/li&gt;
+  &lt;li&gt;white-space의 역할&lt;/li&gt;
+  &lt;li&gt;애니메이션 @keyframes&lt;/li&gt;
+  &lt;li&gt;after과 before로 배경이미지 교차 편집하기&lt;/li&gt;
+  &lt;li&gt;배경이미지와 태그이미지 (이미지 배치 순서)&lt;/li&gt;
+  &lt;li&gt;웹 표준을 위한 마크업 - 숨김콘텐츠&lt;/li&gt;
+  &lt;li&gt;hover와 focus&lt;/li&gt;
+  &lt;li&gt;padding,margin 부여되는 값 순서&lt;/li&gt;
+  &lt;li&gt;line-height&lt;/li&gt;
+  &lt;li&gt;암묵적 outline과 명시적 outline&lt;/li&gt;
+  &lt;li&gt;block속성으로 생기는 스크롤바&lt;/li&gt;
+  &lt;li&gt;HTML/CSS 실습&lt;/li&gt;
+  &lt;li&gt;메인메뉴 구현해보기(float, flex)
+    &lt;h4 id=&quot;정리내용-보러가기&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/blob/master/html_css/0224-html%EC%A0%95%EB%A6%AC.md&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;naver 데스크탑 구현하기
+    &lt;h4 id=&quot;정리내용-보러가기-1&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/HTML5-CSS3/tree/master/naver_form%20%EA%B5%AC%ED%98%84&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-0301-해야-할-일&quot;&gt;🌟 0301 해야 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;~&lt;del&gt;0225 ~ 0226 html-css 정리하기&lt;/del&gt;~&lt;/li&gt;
+  &lt;li&gt;~&lt;del&gt;figma naver 폼 모바일 구현하기&lt;/del&gt;~&lt;/li&gt;
+  &lt;li&gt;~&lt;del&gt;실습 0225 복습하기&lt;/del&gt;~&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">210227-TIL</title>
+      <link href="https://heejung-gjt.github.io/til22" rel="alternate" type="text/html" title="210227-TIL" />
+      <published>2021-02-27T16:00:04+09:00</published>
+      <updated>2021-02-27T16:00:04+09:00</updated>
+      <id>https://heejung-gjt.github.io/til22</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til22">&lt;h2 id=&quot;--오늘-공부한-내용&quot;&gt;👉  오늘 공부한 내용&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DOCTYPE(DTD)&lt;/li&gt;
+  &lt;li&gt;HTML/CSS 코드 작성 규칙&lt;/li&gt;
+  &lt;li&gt;HTML/CSS 설계과정&lt;/li&gt;
+  &lt;li&gt;HTML 작성시 기호 사용해서 구현&lt;/li&gt;
+  &lt;li&gt;CSS 사이즈 단위 (px, em, rem, vh, vw)&lt;/li&gt;
+  &lt;li&gt;SEO(검색엔진 최적화)&lt;/li&gt;
+  &lt;li&gt;웹 접근성&lt;/li&gt;
+  &lt;li&gt;float 속성 정리&lt;/li&gt;
+  &lt;li&gt;단축키&lt;/li&gt;
+  &lt;li&gt;이중 float 씌어서 박스 위치 변경하기(예정)
+    &lt;h4 id=&quot;정리내용-보러가기&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/blob/master/html_css/0222-html%EC%A0%95%EB%A6%AC.md&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;BFC&lt;/li&gt;
+  &lt;li&gt;가상요소 선택자 (::after, ::before)&lt;/li&gt;
+  &lt;li&gt;flex 속성&lt;/li&gt;
+  &lt;li&gt;logo와 a링크 style 구현하기 (flex로 구현해보기,inline-block으로 구현해보기)&lt;/li&gt;
+  &lt;li&gt;display (inline, block, inline-block)&lt;/li&gt;
+  &lt;li&gt;aria-hidden의 역할&lt;/li&gt;
+  &lt;li&gt;position (absolute, relative)&lt;/li&gt;
+  &lt;li&gt;FLEXBOX FROGGY GAME 으로 flex 연습하기
+    &lt;h4 id=&quot;정리내용-보러가기-1&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/blob/master/html_css/0223-html%EC%A0%95%EB%A6%AC.md&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;-0228-해야-할-일&quot;&gt;🌟 0228 해야 할 일&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;0224 ~ html-css 정리하기&lt;/li&gt;
+  &lt;li&gt;figma naver 폼 모바일,데스크탑 구현하기&lt;/li&gt;
+  &lt;li&gt;실습 0223~0224 복습하기&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">210226-TIL</title>
@@ -66,11 +444,12 @@
 
 &lt;h2 id=&quot;-0227-해야-할-일&quot;&gt;🌟 0227 해야 할 일&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;0222 ~ 0223 html-css정리하기 (블로그 업로드하기)&lt;/li&gt;
-  &lt;li&gt;figma naver 폼 모바일,데스크탑 구현하기&lt;/li&gt;
+  &lt;li&gt;~&lt;del&gt;0222 ~ 0223 html-css정리하기&lt;/del&gt;~&lt;/li&gt;
+  &lt;li&gt;~&lt;del&gt;figma naver 폼 모바일,데스크탑 구현하기&lt;/del&gt;~&lt;/li&gt;
   &lt;li&gt;백준 알고리즘 1문제 (이론 정리하기 - 그리디)&lt;/li&gt;
   &lt;li&gt;블로그 알고리즘 정리하기(해결 문제들 업로드하기)&lt;/li&gt;
   &lt;li&gt;python oop 과제 진행하기(oop강의 듣기 + 전철 클래스 설계 생각해보기)&lt;/li&gt;
+  &lt;li&gt;~&lt;del&gt;html weekly test 풀기&lt;/del&gt;~&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
@@ -313,325 +692,6 @@
 &lt;ul&gt;
   &lt;li&gt;hackerrank 알고리즘 풀기&lt;/li&gt;
   &lt;li&gt;class 설계연습하기 (지하철, blackjack 외 여러개 구현해보기)&lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">210213-TIL</title>
-      <link href="https://heejung-gjt.github.io/til16" rel="alternate" type="text/html" title="210213-TIL" />
-      <published>2021-02-13T13:00:04+09:00</published>
-      <updated>2021-02-13T13:00:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/til16</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til16">&lt;h2 id=&quot;--오늘-공부한-내용&quot;&gt;👉  오늘 공부한 내용&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;hackerrank 지금까지 푼 문제 정리 ✔&lt;/li&gt;
-  &lt;li&gt;헷갈리는 python 함수들 정리 ✔&lt;/li&gt;
-  &lt;li&gt;hackerrank d-13 문제 ✔&lt;/li&gt;
-  &lt;li&gt;인스턴스 메서드, 클래스 메서드, 정적 메서드  ✔&lt;/li&gt;
-  &lt;li&gt;블랙잭 게임 절차지향으로 구현 (진행중..)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;--214--218-목표량&quot;&gt;👉  2/14 ~ 2/18 목표량&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;hackerrank 17문제 풀이&lt;/li&gt;
-  &lt;li&gt;함수, 객체지향 프로그래밍, 클래스 실습&lt;/li&gt;
-  &lt;li&gt;python 백준 알고리즘 진입&lt;/li&gt;
-  &lt;li&gt;배운내용 복습 ~2회독&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;--해야-할-일&quot;&gt;🌟  해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;oop 남은 부분 복습하기 + [컴퓨터 사이언스 부트캠프 with python]&lt;/li&gt;
-  &lt;li&gt;블랙잭 게임 구현하기&lt;/li&gt;
-  &lt;li&gt;hackerrank 알고리즘 풀기&lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">210211-TIL</title>
-      <link href="https://heejung-gjt.github.io/til15" rel="alternate" type="text/html" title="210211-TIL" />
-      <published>2021-02-11T20:00:04+09:00</published>
-      <updated>2021-02-11T20:00:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/til15</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til15">&lt;h2 id=&quot;--오늘-공부한-내용&quot;&gt;👉  오늘 공부한 내용&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;call by object reference ✔&lt;/li&gt;
-  &lt;li&gt;Hide Information ✔&lt;/li&gt;
-  &lt;li&gt;Inheritance ✔&lt;/li&gt;
-  &lt;li&gt;Override ✔&lt;/li&gt;
-  &lt;li&gt;is-A 와 has-A ✔&lt;/li&gt;
-  &lt;li&gt;composition과 Aggregation의 차이점 ✔&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://heejung-gjt.github.io/python-oop02&quot;&gt;정보은닉 , call by object reference 내용 보기&lt;/a&gt;     &lt;br /&gt;
-&lt;a href=&quot;https://heejung-gjt.github.io/python-oop03&quot;&gt;inheritance관련 내용 보기&lt;/a&gt; 
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;클래스.. 진짜 계속해서 읽어보고 적용해보고 눈에 익혀야겠다. 한번에 이해가는 내용이 아닌것 같아서 조금은 힘겨웠지만 그래도 최소한 새로운것을
-배웠고 이해를 했다는것에 뿌듯했다 !&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;--해야-할-일&quot;&gt;🌟  해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;~&lt;del&gt;oop 남은 부분 복습하기&lt;/del&gt;~&lt;/li&gt;
-  &lt;li&gt;~&lt;del&gt;hacker rank 1문제 이상 풀기&lt;/del&gt;~&lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">210210-TIL</title>
-      <link href="https://heejung-gjt.github.io/til14" rel="alternate" type="text/html" title="210210-TIL" />
-      <published>2021-02-10T20:00:04+09:00</published>
-      <updated>2021-02-10T20:00:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/til14</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til14">&lt;h2 id=&quot;--오늘-배운-내용&quot;&gt;👉  오늘 배운 내용&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;class변수와 instance변수의 차이와 코드 비교 실습&lt;/li&gt;
-  &lt;li&gt;클래스에서 뮤터블한 객체 올바르게 쓰는 방법&lt;/li&gt;
-  &lt;li&gt;call by object reference&lt;/li&gt;
-  &lt;li&gt;Hide Information&lt;/li&gt;
-  &lt;li&gt;Inheritance&lt;/li&gt;
-  &lt;li&gt;Override&lt;/li&gt;
-  &lt;li&gt;is-A 와 has-A&lt;/li&gt;
-  &lt;li&gt;composition과 Aggregation의 차이점&lt;/li&gt;
-  &lt;li&gt;인스턴스 메서드, 클래스 메서드, 정적 메서드&lt;/li&gt;
-  &lt;li&gt;다형성&lt;/li&gt;
-  &lt;li&gt;Abstract Base Class&lt;/li&gt;
-  &lt;li&gt;각각에 대한 코드 실습 &lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;--오늘-공부한-내용&quot;&gt;👉  오늘 공부한 내용&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;재귀함수 복습 + hackerrank09 풀이 ✔&lt;/li&gt;
-  &lt;li&gt;hackerrank08 풀이 ✔&lt;/li&gt;
-  &lt;li&gt;class변수와 instance변수의 차이와 코드 비교 실습  ✔&lt;/li&gt;
-  &lt;li&gt;클래스에서 뮤터블한 객체 올바르게 쓰는 방법 ✔&lt;/li&gt;
-  &lt;li&gt;oop 기본 개념 복습 ✔&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;클래스에 대한 기본개념과 설계하는 연습을 많이 해야겠다.  &lt;br /&gt;
-설 연휴동안의 과제 잊지않고 미리미리하기. 블랙잭 게임 방식 알아보기&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;--해야-할-일&quot;&gt;🌟  해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;~&lt;del&gt;oop 클래스개념 공부&lt;/del&gt;~&lt;/li&gt;
-  &lt;li&gt;~&lt;del&gt;파이썬 과제 hackerank 3문제 풀기&lt;/del&gt;~&lt;/li&gt;
-  &lt;li&gt;~&lt;del&gt;hackerrankD-30 function 관련문제 1문제 이상 풀기&lt;/del&gt;~&lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">210209-TIL</title>
-      <link href="https://heejung-gjt.github.io/til13" rel="alternate" type="text/html" title="210209-TIL" />
-      <published>2021-02-09T18:00:04+09:00</published>
-      <updated>2021-02-09T18:00:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/til13</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til13">&lt;h2 id=&quot;--오늘-공부-내용&quot;&gt;👉  오늘 공부 내용&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;hacker rank 3문제 풀이 ✔&lt;/li&gt;
-  &lt;li&gt;전철 시스템 클래스화 실습하기 ✔&lt;/li&gt;
-  &lt;li&gt;hacker rank 벡터-class 관련 문제 풀이 ✔&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;앞으로 class 공부를 하면서 전철 시스템 클래스화를 좀 더 업그레이드 시켜볼 생각이다&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;--해야-할-일&quot;&gt;🌟  해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;lambda, list comprehension, map, filter 이용해서 문제 풀기&lt;/li&gt;
-  &lt;li&gt;~&lt;del&gt;hacker rank 2문제 이상 풀기&lt;/del&gt;~&lt;/li&gt;
-  &lt;li&gt;~&lt;del&gt;oop 클래스개념 정확히 알기&lt;/del&gt;~ (반복중요 !)&lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">210207-TIL</title>
-      <link href="https://heejung-gjt.github.io/til12" rel="alternate" type="text/html" title="210207-TIL" />
-      <published>2021-02-07T19:00:04+09:00</published>
-      <updated>2021-02-07T19:00:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/til12</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til12">&lt;h2 id=&quot;--오늘-공부-내용&quot;&gt;👉  오늘 공부 내용&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;codeup 01~20 ,91~97 보충 ✔&lt;/li&gt;
-  &lt;li&gt;hacker rank 2문제 풀이 ✔&lt;/li&gt;
-  &lt;li&gt;복습하면서 블로그 정리 ✔&lt;/li&gt;
-  &lt;li&gt;oop개념 공부 ✔&lt;/li&gt;
-  &lt;li&gt;python 기술면접 1문제 정리  ✔&lt;/li&gt;
-  &lt;li&gt;cs 공부 ✔&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;파이썬 수업 끝나기 전까지 목표는 python문제 최대한 많이 풀어보는 것이다.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;hackerrank d-30문제 끝내기   &lt;br /&gt;
-2.python 기술면접 정리하기&lt;/li&gt;
-  &lt;li&gt;함수, oop 개념 확실하기 알아놓기&lt;/li&gt;
-  &lt;li&gt;백준 or 프로그래머스 진입하기&lt;/li&gt;
-  &lt;li&gt;자료구조, cpu, 메모리 공부하기
-    &lt;hr /&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;--해야-할-일&quot;&gt;🌟  해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;lambda, list comprehension, map, filter 이용해서 문제 풀기 &lt;br /&gt;
--~&lt;del&gt;hacker rank 5문제 이상 풀기&lt;/del&gt;~&lt;/li&gt;
-  &lt;li&gt;~&lt;del&gt;codeup 마지막 정리&lt;/del&gt;~&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
