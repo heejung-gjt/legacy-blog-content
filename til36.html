@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/til36" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Studying  Develop" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="210414-TIL(크롬 개발자도구, api스크래핑)" />
+    <meta property="og:description" content="크롤링과 크롬 개발자 도구 리눅스에서 열기 ctrl+shift+i 또는 오른쪽 클릭 후 inspect 종류 Elements : HTML/CSS코드를 분석할 수 있고 실시간으로 수정하여 변경해볼 수 있다 Console : 주로 자바스크립트를 작성 한 후 디버깅 할때 사용된다. 에러가 발생하는 경우 콘솔창에서 에러를 띄어준다. 새로고침을 누를 경우 콘솔에 떠있던 코드들이 리셋되므로 이를 방지하기 위해" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/til36" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/til.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-04-14T16:00:04+09:00" />
+    <meta property="article:modified_time" content="2021-04-14T16:00:04+09:00" />
+    <meta property="article:tag" content="Til" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="210414-TIL(크롬 개발자도구, api스크래핑)" />
+    <meta name="twitter:description" content="크롤링과 크롬 개발자 도구 리눅스에서 열기 ctrl+shift+i 또는 오른쪽 클릭 후 inspect 종류 Elements : HTML/CSS코드를 분석할 수 있고 실시간으로 수정하여 변경해볼 수 있다 Console : 주로 자바스크립트를 작성 한 후 디버깅 할때 사용된다. 에러가 발생하는 경우 콘솔창에서 에러를 띄어준다. 새로고침을 누를 경우 콘솔에 떠있던 코드들이 리셋되므로 이를 방지하기 위해" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/til.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Studying  Develop" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Til" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Studying  Develop",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/til36",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/til.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/til36"
+    },
+    "description": "크롤링과 크롬 개발자 도구 리눅스에서 열기 ctrl+shift+i 또는 오른쪽 클릭 후 inspect 종류 Elements : HTML/CSS코드를 분석할 수 있고 실시간으로 수정하여 변경해볼 수 있다 Console : 주로 자바스크립트를 작성 한 후 디버깅 할때 사용된다. 에러가 발생하는 경우 콘솔창에서 에러를 띄어준다. 새로고침을 누를 경우 콘솔에 떠있던 코드들이 리셋되므로 이를 방지하기 위해"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="210414-TIL(크롬 개발자도구, api스크래핑)" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">Studying  Develop</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/data-science/">data science</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/computer-science/">computer science</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-til post tag ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-04-14">2021-04-14</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/til/'>TIL</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">210414-TIL(크롬 개발자도구, api스크래핑)</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/til.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    
+<h2 id="크롤링과-크롬-개발자-도구">크롤링과 크롬 개발자 도구</h2>
+<p><code class="highlighter-rouge">리눅스에서 열기</code></p>
+
+<p>ctrl+shift+i 또는 오른쪽 클릭 후 inspect</p>
+
+<h4 id="종류">종류</h4>
+
+<p>Elements : HTML/CSS코드를 분석할 수 있고 실시간으로 수정하여 변경해볼 수 있다</p>
+
+<p>Console : 주로 자바스크립트를 작성 한 후 디버깅 할때 사용된다. 에러가 발생하는 경우 콘솔창에서 에러를 띄어준다. 새로고침을 누를 경우 콘솔에 떠있던 코드들이 리셋되므로 이를 방지하기 위해 상단에 preservel log를 체크해준다</p>
+
+<p>Network : 서버와의 통신 내역을 보여주는 도구이다. 웹이 받아오는 모든 정보들이 기록된다. 브라우저와 서버사이 요청과 응답을 볼 수 있다</p>
+
+<blockquote>
+  <p>Headers</p>
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>headers탭에는 general, response headers, requst headers 내용을 볼 수 있다.
+general : 전체 요청과 응답에 대한 요약 내용을 볼 수 있다. 어떤 서버로 어떠한 요청을 보내었는지 성공적으로 응답되었는지를 알 수 있으며 ip주소와 포트번호를 볼 수 있다
+</code></pre></div>  </div>
+  <p>Application : 브라우저의 저장소에 담긴 데이터들을 확인할때 쓰인다. 주로 cookie, local/session storage가 사용된다</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="cookie와-session">Cookie와 Session</h2>
+<p>cookie는 서버에 다시 요청할 필요없이 관리해야 할 정보가 있을때 브라우저에 쿠키를 저장해둔다. (ex. 브라우저에 저장, 로그인을 한 후 브라우저를 종료했다가 다시 켜도 그대로 로그인이 유지된다)</p>
+
+<p>session은 사용자가 접속하고 접속을 종료할때까지의 단위를 기준으로 관리한다.</p>
+
+<p><br /></p>
+
+<h2 id="api-스크래핑">api 스크래핑</h2>
+<p>html을 스크래핑 하는 경우 자바스크립트는 브라우저에서 실행이 되어 requests로 html을 가져오고 bs4로 파싱하는 과정에서 자바스크립트로 가져온 데이터를 스크래핑하는 것이 어려운 문제가 생긴다. 이를 해결하기 위해 <code class="highlighter-rouge">api 스크래핑</code>을 사용한다</p>
+
+<p>api 스크래핑은 실제로 웹이 동작하는 방식을 이용해 요청을 우리서버에 대신 보내는 작업이다. 자바스크립트는 웹 브라우저에서 동작하기 때문에 이러한 방식으로 자바스크립트의 방해를 받지 않고 크롤링 할 수 있다</p>
+
+<ul>
+  <li>
+    <p>개발자도구 network 탭을 활용한다. network의 실제 request를 보내는 행위를 카피하여 response를 얻어낸다</p>
+  </li>
+  <li>
+    <p>cURL 카피를 활용하여 파이썬으로 변환해준다
+<a href="https://curl.trillworks.com/">파이썬 변환사이트</a></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="기본적인-크롤링-방법">기본적인 크롤링 방법</h2>
+<p>항상 기본적으로 시작은 원하는 페이지의 정보를 가져온 후 bs4로 원하는 정보를 크롤링 하기 위해 soup객체를 만들어준다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://naver.com'</span><span class="p">)</span> <span class="c"># 원하는 페이지의 모든 정보를 가져온다</span>
+<span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="c"># 200번대 나오면 성공적으로 가져온것</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span> <span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s">'html.parser'</span><span class="p">)</span> <span class="c"># 가져온 정보를 바탕으로 soup객체로 만들어준다</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="기본적인-api-스크래핑">기본적인 api 스크래핑</h2>
+<p>다양한 방법이 있겠지만 여기서는 network에서 cURL를 카피해와 python언어로 변환 후 사용한다. parms의 code나 page를 추가하여 다른영화에 대한 여러 페이지의 정보를 가져올 수 있다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s">'authority'</span><span class="p">:</span> <span class="s">'movie.naver.com'</span><span class="p">,</span>
+<span class="s">'sec-ch-ua'</span><span class="p">:</span> <span class="s">'"Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99"'</span><span class="p">,</span>
+<span class="s">'sec-ch-ua-mobile'</span><span class="p">:</span> <span class="s">'?0'</span><span class="p">,</span>
+<span class="s">'upgrade-insecure-requests'</span><span class="p">:</span> <span class="s">'1'</span><span class="p">,</span>
+<span class="s">'user-agent'</span><span class="p">:</span> <span class="s">'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36'</span><span class="p">,</span>
+<span class="s">'accept'</span><span class="p">:</span> <span class="s">'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'</span><span class="p">,</span>
+<span class="s">'sec-fetch-site'</span><span class="p">:</span> <span class="s">'same-origin'</span><span class="p">,</span>
+<span class="s">'sec-fetch-mode'</span><span class="p">:</span> <span class="s">'navigate'</span><span class="p">,</span>
+<span class="s">'sec-fetch-dest'</span><span class="p">:</span> <span class="s">'iframe'</span><span class="p">,</span>
+<span class="s">'referer'</span><span class="p">:</span> <span class="s">'https://movie.naver.com/movie/bi/mi/point.nhn?code=159074'</span><span class="p">,</span>
+<span class="s">'accept-language'</span><span class="p">:</span> <span class="s">'en-US,en;q=0.9'</span><span class="p">,</span>
+<span class="s">'cookie'</span><span class="p">:</span> <span class="s">'NNB=3JCMUCIGPIHWA; NRTK=ag#all_gr#1_ma#-2_si#0_en#0_sp#0; nx_ssl=2; _ga=GA1.2.393846793.1616636970; ASID=77cfc44000000178bf57799d00000048; notSupportBrowserAlert=true; NM_THUMB_PROMOTION_BLOCK=Y; page_uid=hciG+wprvhGssFU15XhssssstfR-288006; nid_inf=554244723; NID_JKL=49KD4mjBAqVIgn1Abh9zmNAPcDcuWhTczhrh7uok0JE=; BMR=; csrf_token=8426c3ba-d894-4b38-a4a5-d414b2b4a7a8'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
+<span class="p">(</span><span class="s">'code'</span><span class="p">,</span> <span class="s">'159074'</span><span class="p">),</span>
+<span class="p">(</span><span class="s">'type'</span><span class="p">,</span> <span class="s">'after'</span><span class="p">),</span>
+<span class="p">(</span><span class="s">'isActualPointWriteExecute'</span><span class="p">,</span> <span class="s">'false'</span><span class="p">),</span>
+<span class="p">(</span><span class="s">'isMileageSubscriptionAlready'</span><span class="p">,</span> <span class="s">'false'</span><span class="p">),</span>
+<span class="p">(</span><span class="s">'isMileageSubscriptionReject'</span><span class="p">,</span> <span class="s">'false'</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://movie.naver.com/movie/bi/mi/pointWriteFormList.nhn'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s">'html.parser'</span><span class="p">)</span> <span class="c"># 가져온 정보를 바탕으로 soup객체로 만들어준다</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="api-스크래핑---실습--네이버-영화-평점-스크래핑"><code class="highlighter-rouge">api 스크래핑 - 실습 : 네이버 영화 평점 스크래핑</code></h2>
+
+<p>위에서 가져온 response와 soup를 이용해 원하는 평점 태그를 찾아 스크래핑해준 후 딕셔너리로 정보를 넣는 실습이다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ul</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s">'body &gt; div &gt; div &gt; div.score_result &gt; ul'</span><span class="p">)</span>
+<span class="n">lis</span> <span class="o">=</span> <span class="n">ul</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s">'body &gt; div &gt; div &gt; div.score_result &gt; ul &gt; li'</span><span class="p">)</span>
+<span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">movie_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">li</span> <span class="ow">in</span> <span class="n">lis</span><span class="p">:</span>
+<span class="n">rate</span> <span class="o">=</span> <span class="n">li</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s">'div.star_score &gt; em'</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="n">span</span> <span class="o">=</span> <span class="n">li</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="n">f</span><span class="s">'#_filtered_ment_{num}'</span><span class="p">)</span>
+<span class="n">comment</span> <span class="o">=</span> <span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">span</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s">'span._unfold_ment'</span><span class="p">):</span> <span class="c"># 만약 내용이 길어 문장을 클릭해야 하는 경우, 즉 span안에 span이 있는경우</span>
+<span class="n">comment</span> <span class="o">=</span> <span class="n">span</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s">'span &gt; a'</span><span class="p">)[</span><span class="s">'data-src'</span><span class="p">]</span> <span class="c"># 이런 예외적인 경우는 직접 개발자도구로 찍어서 살펴보아야 한다</span>
+<span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">movie_date</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s">'rate'</span><span class="p">:</span> <span class="n">rate</span><span class="p">,</span>
+<span class="s">'comment'</span><span class="p">:</span> <span class="n">comment</span>
+<span class="p">}</span>
+<span class="n">movie_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie_date</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">movie_list</span><span class="p">)</span>
+</code></pre></div></div>
+
+                </div>
+            </section>
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">Studying  Develop</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Studying  Develop</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
