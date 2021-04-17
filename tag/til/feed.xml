@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/til/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-04-15T00:40:06+09:00</updated>
+  <updated>2021-04-17T21:06:06+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/til/feed.xml</id>
 
   
@@ -30,6 +30,356 @@
   
   
 
+  
+    <entry>
+      <title type="html">210415-TIL(알고리즘 - 배열, 연결리스트, 스택)</title>
+      <link href="https://heejung-gjt.github.io/til37" rel="alternate" type="text/html" title="210415-TIL(알고리즘 - 배열, 연결리스트, 스택)" />
+      <published>2021-04-15T16:00:04+09:00</published>
+      <updated>2021-04-15T16:00:04+09:00</updated>
+      <id>https://heejung-gjt.github.io/til37</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til37">&lt;h2 id=&quot;배열arrays-과-리스트list&quot;&gt;배열(Arrays) 과 리스트(List)&lt;/h2&gt;
+
+&lt;h4 id=&quot;배열이란&quot;&gt;배열이란&lt;/h4&gt;
+
+&lt;p&gt;같은 종류의 데이터를 효율적으로 관리하고 순차적으로 저장하여 처리하기 위해 사용하는 자료구조이다&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;배열-특징&quot;&gt;배열 특징&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;생성될때 크기가 정해진다(정적할당)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;인덱스를 활용하여 자료에 빠르게 접근이 가능하다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;배열의 모든 아이템들은 똑같은 사이즈를 갖는다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;아이템이 메모리상에 연속적으로 위치해 있다
+&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;배열-장점&quot;&gt;배열 장점&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;인덱스로 아이템에 빠르게 접근이 가능하다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;아이템의 메모리주소가 연속적이므로 메모리 관리가 편하다  &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;배열-단점&quot;&gt;배열 단점&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;배열의 길이는 생성될때 정해지기 때문에 변경할 수 없으며 배열의 크기를 변경하고 싶을때마다 새로운 배열을 만들어야 한다(데이터 추가, 삭제 불편)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;요소를 삭제하면 배열에 빈 틈이 생겨 메모리가 낭비된다 (실제로는 요소삭제가 불가능)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;리스트란&quot;&gt;리스트란&lt;/h4&gt;
+
+&lt;p&gt;파이썬에서 사용되는 자료구조로 배열과 비슷한 기능을 하지만 배열 자료구조와는 다르며 고수준의 기능을 포함한다. 
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;리스트-특징&quot;&gt;리스트 특징&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;생성되는 아이템이 불연속적으로 메모리 공간을 차지한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;포인터를 통해 데이터에 접근한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;인덱스는 단순히 아이템이 몇번째 데이터인가를 의미한다&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;리스트-장점&quot;&gt;리스트 장점&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;포인터를 통해 데이터에 접근하기 때문에 데이터 삭제,삽입이 용이하다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;생성될때 크기가 정해져 있지 않기 때문에(동적할당) 메모리 재사용이 편리하다  &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;리스트-단점&quot;&gt;리스트 단점&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;리스트는 데이터에 직접적인 접근이 불가능하고 몇번째인지 처음부터 찾아야 하므로 검색 성능이 좋지 않다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;array-list-implementation&quot;&gt;Array List implementation&lt;/h2&gt;
+
+&lt;h3 id=&quot;구현-조건&quot;&gt;구현 조건&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;class와 array.array를 이용하여 Array List를 구현한다.
+    &lt;ul&gt;
+      &lt;li&gt;데이터의 타입은 l(signed long)으로 한다.&lt;/li&gt;
+      &lt;li&gt;array.array 객체의 메소드는 아래 메소드만을 사용한다.
+        &lt;ul&gt;
+          &lt;li&gt;arr&lt;a href=&quot;인덱스로 접근&quot;&gt;ind&lt;/a&gt;, arr&lt;a href=&quot;슬라이싱&quot;&gt;ind:&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;array.array의 용량(capacity)은 고정되어 있다고 가정한다.
+    &lt;ul&gt;
+      &lt;li&gt;배열의 크기가 부족할 때 마다 2배 길이의 array.array를 새로 생성한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;다음과 같은 리스트 ADT의 연산자를 구현해야 한다.
+    &lt;ul&gt;
+      &lt;li&gt;비어있는 리스트를 생성하는 생성자&lt;/li&gt;
+      &lt;li&gt;리스트가 비어있는지 확인하는 연산자&lt;/li&gt;
+      &lt;li&gt;리스트의 앞에 개체를 삽입(prepending)하는 연산자&lt;/li&gt;
+      &lt;li&gt;리스트의 뒤에 개체를 삽입(appending)하는 연산자&lt;/li&gt;
+      &lt;li&gt;리스트의 첫 머리(head)를 결정하는 연산자&lt;/li&gt;
+      &lt;li&gt;주어진 인덱스에 해당하는 요소에 접근하는 연산자&lt;/li&gt;
+      &lt;li&gt;주어진 인덱스에 새로운 요소를 삽입하는 연산자&lt;/li&gt;
+      &lt;li&gt;주어진 인덱스에 해당하는 요소를 제거하는 연산자&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/blob/master/Algorithm/Array_practice/array.py&quot;&gt;실습보러가기&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;선형탐색순차탐색&quot;&gt;선형탐색(순차탐색)&lt;/h2&gt;
+&lt;p&gt;순서대로 비교하면서 찾는다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;linear_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;이진탐색&quot;&gt;이진탐색&lt;/h2&gt;
+&lt;p&gt;이미 정렬되어 있는 경우만 적용되는 탐색기법으로 반씩 쪼개어 비교하면서 찾는다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;binary_arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;middle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;middle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;middle&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;middle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;middle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;middle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;연결리스트&quot;&gt;연결리스트&lt;/h2&gt;
+&lt;p&gt;데이터와 다음 노드의 주소를 담고 있는 노드들이 한줄로 연결되어 있는 방식의 자료구조&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;연결리스트는 데이터 원소들을 순서를 지어 늘어놓는다는 점에서 배열과 비슷한점이 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;연결리스트는 각 원소들을 줄줄이 엮어서 관리하는 방식이다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;연결리스트는 원소들이 링크라고 부르는 고리로 연결되어 있기 때문에 데이터를 삭제하거나 삽입하는것이 배열보다 쉽다(시간이 빠르다)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;자료의 순서는 정해져있으나 메모리상 연속성이 보장되지 않는다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;장점&quot;&gt;장점&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;데이터 삽입이 간단하다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;항목 생성 후 포인터 값만 변경해주면 된다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;단점&quot;&gt;단점&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;선형 배열에 비해 데이터 구조 표현에 소요되는 저장공간, 즉 메모리 소요가 크다. 데이터를 연결하는 링크도 메모리에 저장되어 있어야 하므로 메모리 요구량이 크다는 단점이 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;순차적으로 탐색되기 때문에 원하는 데이터를 찾기까지 더 오랜 시간이 걸리는 단점이 있다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;자료구조-모습&quot;&gt;자료구조 모습&lt;/h4&gt;
+
+&lt;p&gt;연결리스트는 데이터를 노드의 형태로 저장한다. 노드에는 데이터와 다음 노드를 가르키는 포인터를 담은 구조로 이루어져 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;단뱡향-연결-리스트singly-linked-list-구현&quot;&gt;단뱡향 연결 리스트(Singly linked list) 구현&lt;/h2&gt;
+
+&lt;p&gt;그림과 같이 연결리스트는 각 노드에 자료공간과 한개의 포인터 공간이 있고 각 노드의 포인터는 다음 노드를 가리키는 역할을 한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/114816078-665dc580-9df2-11eb-9640-d03f2bb2e279.png&quot; alt=&quot;연결리스트&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;스택stack&quot;&gt;스택(stack)&lt;/h2&gt;
+&lt;p&gt;자료를 보관할 수 있는 (선형)구조이다. 데이터를 넣을때는(push)한 쪽 끝에서 밀어 넣어야 하고 꺼낼 때에는 같은 쪽에서 뽑아 꺼내야 하는(pop) 후입선출 자료구조이다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;스택에서-발생하는-오류&quot;&gt;스택에서 발생하는 오류&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;비어있는 스택에서 데이터 원소를 꺼내려 할때 생기는 오류 : 스택 언더플로우&lt;/li&gt;
+  &lt;li&gt;꽉 차있는 스택에 데이터 원소를 넣으려 할때 생기는 오류 : 스택 오버플로우&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;스택의-추상적-자료구조-구현&quot;&gt;스택의 추상적 자료구조 구현&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;배열을 이용하여 구현 : python 리스트와 메서드를 이용
+    &lt;blockquote&gt;
+      &lt;p&gt;size() : 현재 스택에 들어있는 데이터 원소의 수를 구한다   &lt;br /&gt;
+isEmpty() : 현재 스택이 비어 있는지를 판단   &lt;br /&gt;
+push(x) : 데이터 원소 x를 스택에 추가  &lt;br /&gt;
+pop() : 스택의 맨 위에 저장된 데이터 원소를 제거    &lt;br /&gt;
+peek() : 스택의 맨 위에 저장된 데이터 원소를 반환(제거x)&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ArrayStack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#빈 스택을 초기화한다&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isEmpty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#스택이 비어 있는지 판단&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#bool탕입을 리턴해준다 &lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;peek&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 스택의 맨위에 있는 값 반환&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;연결리스트를 이용하여 구현 : 양방향 연결 리스트를 이용(이후에 해보기)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;스택의-응용---수식의-후위-표기법&quot;&gt;스택의 응용 - 수식의 후위 표기법&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;중위 표기법&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(A + B) * (C + D)&lt;/code&gt;  : 연산자가 피연산자들의 사이에 위치한다&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;후위 표기법&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AB+CD+*&lt;/code&gt; : 연산자가 피연산자들의 뒤에 위치한다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;스택을 이용해 중위 표현식을 후위 표현식으로 바꾸는 실습을 해보자&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;알고리즘의 설계
+    &lt;ul&gt;
+      &lt;li&gt;연산자의 우선순위 설정
+        &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;prec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'*'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'+'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'-'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'('&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;중위 표현식을 왼쪽부터 한 글자씩 읽어서 피연산자이면 그냥 출력한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;’(‘이면 스택에 push, ‘)’이면 ‘(‘이 나올때까지 스택에서 pop, 출력한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;연산자이면 스택에서 이보다 높거나 같은 우선순위을 것들은 pop해주고 출력한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;그 후 이 연산자는 스택에 push한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;스택에 남아 있는 연산자는 모두 pop하고 출력한다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">210414-TIL(크롬 개발자도구, api스크래핑)</title>
@@ -911,66 +1261,6 @@ client는 서비스를 요청하는 프로그램이고 server는 클라이언트
   &lt;li&gt;js 9,10,11예습&lt;/li&gt;
   &lt;li&gt;~&lt;del&gt;js 복습&lt;/del&gt;~&lt;/li&gt;
   &lt;li&gt;사이트 리팩토링하기&lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">210304-TIL</title>
-      <link href="https://heejung-gjt.github.io/til27" rel="alternate" type="text/html" title="210304-TIL" />
-      <published>2021-03-04T16:00:04+09:00</published>
-      <updated>2021-03-04T16:00:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/til27</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til27">&lt;h2 id=&quot;--오늘-공부한-내용&quot;&gt;👉  오늘 공부한 내용&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Open Graph와 Twitter Card&lt;/li&gt;
-  &lt;li&gt;RWD와 AWD&lt;/li&gt;
-  &lt;li&gt;RWD를 위한 폰트 단위&lt;/li&gt;
-  &lt;li&gt;미디어쿼리(Media Query)&lt;/li&gt;
-  &lt;li&gt;RWD에서의 이미지 스타일링&lt;/li&gt;
-  &lt;li&gt;레티나 대응(예정중)&lt;/li&gt;
-  &lt;li&gt;backdrop-filter&lt;/li&gt;
-  &lt;li&gt;calc() 함수&lt;/li&gt;
-  &lt;li&gt;div.name과 div .name&lt;/li&gt;
-  &lt;li&gt;SMACSS, BEM, OOCSS&lt;/li&gt;
-  &lt;li&gt;RWD 설계시 reposive하게 주고 싶은 태그의 class에만 따로 네이밍&lt;/li&gt;
-  &lt;li&gt;상태디자인&lt;/li&gt;
-  &lt;li&gt;aria-passed&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;정리내용-보러가기&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/blob/master/HTML-CSS/0304-html%20%EC%A0%95%EB%A6%AC.md&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;--오늘-실습한-내용&quot;&gt;👉  오늘 실습한 내용&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;이디야 음료페이지 반응형 구현하기(RWD설계)&lt;/li&gt;
 &lt;/ul&gt;</content>
 
       
