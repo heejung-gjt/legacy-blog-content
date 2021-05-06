@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/cookie" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Studying  Develop" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cookie, Session, Cache란" />
+    <meta property="og:description" content="stateful(스테이트풀) 과 stateless(스테이트리스) 무상태 프로토콜(stateless protocol) HTTP의 특징 중 하나가 비연결성이기 때문에 이로 인해 서버는 클라이언트를 식별할 수 없다. 즉 HTTP 통신의 원칙은 stateless이다. 이전 요청과도 무관한 각각의 요청을 독립적인 트랜잭션으로 취급하는 통신 프로토콜이다. 이로인해 서버는 요청이 들어올 때마다 매번 새로운 인증을 해야하는 번거러움이 발생한다. 상태 프로토콜(stateful) 이로인해 HTTP 통신을" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/cookie" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/computer03.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-05-06T14:40:00+09:00" />
+    <meta property="article:modified_time" content="2021-05-06T14:40:00+09:00" />
+    <meta property="article:tag" content="Computer Science" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cookie, Session, Cache란" />
+    <meta name="twitter:description" content="stateful(스테이트풀) 과 stateless(스테이트리스) 무상태 프로토콜(stateless protocol) HTTP의 특징 중 하나가 비연결성이기 때문에 이로 인해 서버는 클라이언트를 식별할 수 없다. 즉 HTTP 통신의 원칙은 stateless이다. 이전 요청과도 무관한 각각의 요청을 독립적인 트랜잭션으로 취급하는 통신 프로토콜이다. 이로인해 서버는 요청이 들어올 때마다 매번 새로운 인증을 해야하는 번거러움이 발생한다. 상태 프로토콜(stateful) 이로인해 HTTP 통신을" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/computer03.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Studying  Develop" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Computer Science" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Studying  Develop",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/cookie",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/computer03.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/cookie"
+    },
+    "description": "stateful(스테이트풀) 과 stateless(스테이트리스) 무상태 프로토콜(stateless protocol) HTTP의 특징 중 하나가 비연결성이기 때문에 이로 인해 서버는 클라이언트를 식별할 수 없다. 즉 HTTP 통신의 원칙은 stateless이다. 이전 요청과도 무관한 각각의 요청을 독립적인 트랜잭션으로 취급하는 통신 프로토콜이다. 이로인해 서버는 요청이 들어올 때마다 매번 새로운 인증을 해야하는 번거러움이 발생한다. 상태 프로토콜(stateful) 이로인해 HTTP 통신을"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="Cookie, Session, Cache란" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">Studying  Develop</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/data-science/">data science</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/computer-science/">computer science</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-computer-science post tag computer-science ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-05-06">2021-05-06</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/computer-science/'>COMPUTER SCIENCE</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">Cookie, Session, Cache란</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/computer03.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <!--<span class="table-of-contents-list">Network 정리 </span>-->
+<!--<ul class="table-of-contents-list">-->
+<!--    <li><a href="./structure">스택과 큐의 특징</a></li>-->
+<!--    <li><a href="./heap">힙의 특징</a></li>-->
+<!--</ul>-->
+
+<h3 id="stateful스테이트풀-과-stateless스테이트리스">stateful(스테이트풀) 과 stateless(스테이트리스)</h3>
+
+<p><br /></p>
+
+<h4 id="무상태-프로토콜stateless-protocol">무상태 프로토콜(stateless protocol)</h4>
+<p>HTTP의 특징 중 하나가 비연결성이기 때문에 이로 인해 서버는 클라이언트를 식별할 수 없다. 즉 HTTP 통신의 원칙은 stateless이다. 이전 요청과도 무관한 각각의 요청을 독립적인 트랜잭션으로 취급하는 통신 프로토콜이다. 이로인해 서버는 요청이 들어올 때마다 매번 새로운 인증을 해야하는 번거러움이 발생한다.</p>
+
+<h4 id="상태-프로토콜stateful">상태 프로토콜(stateful)</h4>
+<p>이로인해 HTTP 통신을 stateful을 가능하게 만들어 번거로움을 해결해 줄 수 있다. 상태정보를 어디에 저장하는지에 따라 2개로 나뉘는데  <strong>쿠키</strong> 와 <strong>세션</strong> 이 있다.</p>
+
+<h3 id="쿠키">쿠키</h3>
+<p>브라우저에 의해 클라이언트측에 저장되어 서버는 클라이언트가 무엇을 요청했는지 기억하지 못하지만 클라이언트가 저장되어 있는 데이터를 불러와 서버에 요청한다.   <br />
+<strong>ex) 쇼핑몰 사이트에 로그인 하지 않고 장바구니에 상품을 등록해놓은 후 나갔다가 다시 들어와도 상품이 여전히 등록될 수 있게 하는 역할을 해준다</strong></p>
+
+<p>쿠키는 통신될때 HTTP헤더에 저장되는 텍스트 파일이다.</p>
+
+<p><strong>쿠키 주고받는 과정</strong></p>
+
+<blockquote>
+  <p>처음 클라이언트가 서버에 요청을 할때 서버의 쿠키를 가지고 있지 않다</p>
+</blockquote>
+
+<blockquote>
+  <p>서버에서 request의 헤더에 쿠키가 포함되어 있는지 확인 후 통신의 상태(id,pwd등)을 저장한 쿠키를 response한다.</p>
+</blockquote>
+
+<blockquote>
+  <p>클라이언트의 브라우저가 받은 쿠키를 보존한다</p>
+</blockquote>
+
+<blockquote>
+  <p>다음 클라이언트가 서버에 요청할때 HTTP헤더에 쿠키를 함께 실어 서버에 request한다.</p>
+</blockquote>
+
+<blockquote>
+  <p>서버는 받은 쿠키로 클라이언트를 판별한다</p>
+</blockquote>
+
+<p><strong>(이때 쿠키는 최대 400개의 쿠키를 저장할 수 있고 몇몇개의 제약 조건이 존재한다)</strong></p>
+
+<p><strong>쿠키의 단점</strong> <br />
+쿠키는 사용자의 데이터가 컴퓨터에 저장되기 때문에 보안적인 문제가 발생한다</p>
+
+<h3 id="세션">세션</h3>
+
+<p>서버측에 저장되어 클라이언트가 무엇을 요청하는지 저장되어 있어 요청에 대한 응답을 실행한다. 세션은 이용한 다수의 HTTP통신을 하나의 묶음으로 세션관리라고 말하며 세션관리에는 <strong>세션ID</strong> , <strong>세션</strong> 이 하나의 짝으로 취급된다. 이때 세션ID가 클라이언트에 보내지고(주로 쿠키를 이용해 전달) 세션ID가 관련된 서버의 세션과 관련을 짓기때문에 쿠키만을 이용한 방식보다는 보안적인 측면에서는 좋다.</p>
+
+<p><strong>세션의 단점</strong> <br />
+다수의 서버를 이용하는 경우 로그인한 시점에서 사용이 끝날때까지 한가지의 서버만을 이용하게 하던지 서버에 저장되는 세션 정보를 전부 다 동기화 해야 한다.</p>
+
+<h3 id="캐시">캐시</h3>
+<p>캐시는 웹페이지 리소스 파일들의 임시 저장소로 같은 웹페이지를 접속할때 페이지 로딩 속도를 개선해주는 역할을 한다. 
+ex) 종종 변경되어야 하는 데이터가 업데이트 되지 않을때가 있다면 캐시가 이유일 수 있다. (캐시는 서버의 캐시클라우드라는 저장공간에 사용자의 의지와 상관없이 자동 저장되기 때문이다) 웹개발시 css가 업데이트 되지 않는 원인 중 하나가 된다.</p>
+
+<hr />
+<p>Q1. 다수의 서버를 이용한다는 것은 무엇을 의미하는가</p>
+
+<p>Q2. 쿠키 헤더에 존재하는 도메인과 경로는 무엇을 말하는가
+A2. HTTP 프로토콜의 쿠키헤더에는 <code class="highlighter-rouge">Set-Cookie: name=value [; expires=date] [; path=path] [; domain=domain] [; secure]</code>리소스들이 존재한다</p>
+<ul>
+  <li>
+    <p>expires : 쿠키의 만료일 문자열이다. 쿠키의 유효한 날자가 날짜 형식으로 써져있다.</p>
+  </li>
+  <li>
+    <p>domain : 현재 쿠키가 어떤 서버로 전송되어져야 하는지를 지정할 수 있는 속성이다. 속성을 지정하지 않을경우에는 생성된 서버로만 전송된다</p>
+  </li>
+</ul>
+
+
+                </div>
+            </section>
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">Studying  Develop</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Studying  Develop</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>

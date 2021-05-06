@@ -1,4 +1,172 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-04-21T21:39:00+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">210421-TIL</title><link href="https://heejung-gjt.github.io/til40" rel="alternate" type="text/html" title="210421-TIL" /><published>2021-04-21T16:00:04+09:00</published><updated>2021-04-21T16:00:04+09:00</updated><id>https://heejung-gjt.github.io/til40</id><content type="html" xml:base="https://heejung-gjt.github.io/til40">&lt;h2 id=&quot;-공부한-내용&quot;&gt;👉 공부한 내용&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-05-06T21:59:47+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">Cookie, Session, Cache란</title><link href="https://heejung-gjt.github.io/cookie" rel="alternate" type="text/html" title="Cookie, Session, Cache란" /><published>2021-05-06T14:40:00+09:00</published><updated>2021-05-06T14:40:00+09:00</updated><id>https://heejung-gjt.github.io/cookie</id><content type="html" xml:base="https://heejung-gjt.github.io/cookie">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Network 정리 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;h3 id=&quot;stateful스테이트풀-과-stateless스테이트리스&quot;&gt;stateful(스테이트풀) 과 stateless(스테이트리스)&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;무상태-프로토콜stateless-protocol&quot;&gt;무상태 프로토콜(stateless protocol)&lt;/h4&gt;
+&lt;p&gt;HTTP의 특징 중 하나가 비연결성이기 때문에 이로 인해 서버는 클라이언트를 식별할 수 없다. 즉 HTTP 통신의 원칙은 stateless이다. 이전 요청과도 무관한 각각의 요청을 독립적인 트랜잭션으로 취급하는 통신 프로토콜이다. 이로인해 서버는 요청이 들어올 때마다 매번 새로운 인증을 해야하는 번거러움이 발생한다.&lt;/p&gt;
+
+&lt;h4 id=&quot;상태-프로토콜stateful&quot;&gt;상태 프로토콜(stateful)&lt;/h4&gt;
+&lt;p&gt;이로인해 HTTP 통신을 stateful을 가능하게 만들어 번거로움을 해결해 줄 수 있다. 상태정보를 어디에 저장하는지에 따라 2개로 나뉘는데  &lt;strong&gt;쿠키&lt;/strong&gt; 와 &lt;strong&gt;세션&lt;/strong&gt; 이 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;쿠키&quot;&gt;쿠키&lt;/h3&gt;
+&lt;p&gt;브라우저에 의해 클라이언트측에 저장되어 서버는 클라이언트가 무엇을 요청했는지 기억하지 못하지만 클라이언트가 저장되어 있는 데이터를 불러와 서버에 요청한다.   &lt;br /&gt;
+&lt;strong&gt;ex) 쇼핑몰 사이트에 로그인 하지 않고 장바구니에 상품을 등록해놓은 후 나갔다가 다시 들어와도 상품이 여전히 등록될 수 있게 하는 역할을 해준다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;쿠키는 통신될때 HTTP헤더에 저장되는 텍스트 파일이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;쿠키 주고받는 과정&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;처음 클라이언트가 서버에 요청을 할때 서버의 쿠키를 가지고 있지 않다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;서버에서 request의 헤더에 쿠키가 포함되어 있는지 확인 후 통신의 상태(id,pwd등)을 저장한 쿠키를 response한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;클라이언트의 브라우저가 받은 쿠키를 보존한다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;다음 클라이언트가 서버에 요청할때 HTTP헤더에 쿠키를 함께 실어 서버에 request한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;서버는 받은 쿠키로 클라이언트를 판별한다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;(이때 쿠키는 최대 400개의 쿠키를 저장할 수 있고 몇몇개의 제약 조건이 존재한다)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;쿠키의 단점&lt;/strong&gt; &lt;br /&gt;
+쿠키는 사용자의 데이터가 컴퓨터에 저장되기 때문에 보안적인 문제가 발생한다&lt;/p&gt;
+
+&lt;h3 id=&quot;세션&quot;&gt;세션&lt;/h3&gt;
+
+&lt;p&gt;서버측에 저장되어 클라이언트가 무엇을 요청하는지 저장되어 있어 요청에 대한 응답을 실행한다. 세션은 이용한 다수의 HTTP통신을 하나의 묶음으로 세션관리라고 말하며 세션관리에는 &lt;strong&gt;세션ID&lt;/strong&gt; , &lt;strong&gt;세션&lt;/strong&gt; 이 하나의 짝으로 취급된다. 이때 세션ID가 클라이언트에 보내지고(주로 쿠키를 이용해 전달) 세션ID가 관련된 서버의 세션과 관련을 짓기때문에 쿠키만을 이용한 방식보다는 보안적인 측면에서는 좋다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;세션의 단점&lt;/strong&gt; &lt;br /&gt;
+다수의 서버를 이용하는 경우 로그인한 시점에서 사용이 끝날때까지 한가지의 서버만을 이용하게 하던지 서버에 저장되는 세션 정보를 전부 다 동기화 해야 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;캐시&quot;&gt;캐시&lt;/h3&gt;
+&lt;p&gt;캐시는 웹페이지 리소스 파일들의 임시 저장소로 같은 웹페이지를 접속할때 페이지 로딩 속도를 개선해주는 역할을 한다. 
+ex) 종종 변경되어야 하는 데이터가 업데이트 되지 않을때가 있다면 캐시가 이유일 수 있다. (캐시는 서버의 캐시클라우드라는 저장공간에 사용자의 의지와 상관없이 자동 저장되기 때문이다) 웹개발시 css가 업데이트 되지 않는 원인 중 하나가 된다.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Q1. 다수의 서버를 이용한다는 것은 무엇을 의미하는가&lt;/p&gt;
+
+&lt;p&gt;Q2. 쿠키 헤더에 존재하는 도메인과 경로는 무엇을 말하는가
+A2. HTTP 프로토콜의 쿠키헤더에는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Set-Cookie: name=value [; expires=date] [; path=path] [; domain=domain] [; secure]&lt;/code&gt;리소스들이 존재한다&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;expires : 쿠키의 만료일 문자열이다. 쿠키의 유효한 날자가 날짜 형식으로 써져있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;domain : 현재 쿠키가 어떤 서버로 전송되어져야 하는지를 지정할 수 있는 속성이다. 속성을 지정하지 않을경우에는 생성된 서버로만 전송된다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>jung</name></author><category term="computer science" /><summary type="html"></summary></entry><entry><title type="html">HTTP 와 HTTPS</title><link href="https://heejung-gjt.github.io/https" rel="alternate" type="text/html" title="HTTP 와 HTTPS" /><published>2021-05-06T14:30:00+09:00</published><updated>2021-05-06T14:30:00+09:00</updated><id>https://heejung-gjt.github.io/https</id><content type="html" xml:base="https://heejung-gjt.github.io/https">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Network 정리 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;h3 id=&quot;http&quot;&gt;HTTP&lt;/h3&gt;
+&lt;p&gt;HTTP는 클라이언트와 서버를 통신해주는 프로토콜이다. 풀어서 서버와 클라이언트 사이에서 이루어지는 요청/응답이다. HTTP는 통신이 암호화 되지 않는 상태로 되기때문에 보안에 취약한 문제점이 있다. 이를 개선한 HTTPS가 등장하였다&lt;/p&gt;
+
+&lt;h3 id=&quot;httpshypertext-transfer-protocol-secure&quot;&gt;HTTPS(Hypertext Transfer Protocol Secure)&lt;/h3&gt;
+&lt;p&gt;클라이언트와 서버간의 안전한 통신을 위해 암호화하여 전송한다.
+HTTPS는 클라이언트와 서버간의 통신을 제 3자인 CA가 인증을 해준다.SSL 디지털 인증서를 기준으로 클라이언트가 접속한 서버가 맞는지 확인해준다.&lt;/p&gt;
+
+&lt;h3 id=&quot;ssl인증서&quot;&gt;SSL인증서&lt;/h3&gt;
+&lt;p&gt;클라이언트와 서버간의 통신을 제3자인 CA가 보증해주는 전자화된 문서이다. SSL은 암호화된 데이터를 전송하기 위해서 공개키와 대칭키를 혼합해서 사용한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;인증서의 내용&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;서비스의 정보(인증서를 발급한 CA, 서비스의 도메인)&lt;/strong&gt;&lt;br /&gt;
+클라이너트가 접속한 서버가 클라이언트가 의도한 서버가 맞는지에 대한 내용을 담고 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;서버측 공개키(공개키의 내용, 공개키의 암호화 방법)&lt;/strong&gt; &lt;br /&gt;
+서버와 통신을 할때 사용할 공개키와 그 공개키의 암호화 방법들의 정보를 담고 있다. 서버의 공개키와 같은 정보는 서비스가 CA로부터 인증서를 구입할때 제출해야 한다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;인증서의 목표&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;클라이언트가 접속한 서버가 신뢰할 수 있는 서버인지 판단해준다&lt;/li&gt;
+  &lt;li&gt;SSL 통신에 사용되는 공개키를 클라이언트에게 전달한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cacertificate-authority&quot;&gt;CA(Certificate Authority)&lt;/h3&gt;
+&lt;p&gt;SSL인증서를 기준으로 클라이언트가 서버가 의도한 서버가 맞는지 확인하는 역할을 한다. 이때 이 역할을 하는 공인된 기업을 CA라고 부른다. &lt;strong&gt;SSL을 통해서 암호화된 통신을 제공하려는 서비스는 CA를 통해서 인증서를 구입해야 한다&lt;/strong&gt;   &lt;br /&gt;
+인증서를 이해하기 위해서 꼭 알아야 하는것이 CA의 리스트이다. 브라우저는 내부적으로 CA의 리스트를 미리 파악하고 있다. 브라우저가 미리 파악하고 있는 CA의 리스트에 포함되어야만 공인된 CA가 될 수 있다. CA의 리스트와 함께 각 CA의 공개키를 브라우저는 이미 알고 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;ssltls-handshake&quot;&gt;SSL/TLS Handshake&lt;/h3&gt;
+&lt;p&gt;HTTPS는 SSL/TLS 전송기술을 사용한다. TLS는 SSL의 개선버전으로 최신 인증서는 TLS를 사용하지만 SSL인증서라고 불린다. 즉 같은 말이라고 생각하면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;handshake 과정을 보기 전에 먼저 필요한 암호화 방식을 살펴본다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;대칭키-암호화-방식&quot;&gt;대칭키 암호화 방식&lt;/h3&gt;
+&lt;p&gt;대칭키 암호화 방식은 하나의 키로 데이터를 암호화/복호화를 하는 방식이다.  &lt;br /&gt;
+a가 문자가 써져있는 평문을 b에게 보낼때 a,b가 공통적으로 가지고 있는 키로 암호화하여 b에게 암호화된 암호문을 전송한다. 암호문을 받은 b는 공통적으로 가지고 있는 키로 암호문을 복호화하여 실제 내용을 볼 수 있다. 이때 사용되는 키를 &lt;strong&gt;대칭키&lt;/strong&gt; 라고 부르며 이 방식을 대칭키 암호화 방식이라고 부른다.  &lt;br /&gt;
+하지만 만약 둘 중 한명이 키를 도난,분실하면 다른 누군가가 복호화하여 볼 수 있는 단점이 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/117237085-21fb9d80-ae65-11eb-8886-751781a4e618.png&quot; alt=&quot;대칭키&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;공개키-암호화-방식&quot;&gt;공개키 암호화 방식&lt;/h3&gt;
+&lt;p&gt;공개키 암호화 방식은 대칭키와 달리 &lt;strong&gt;공개키&lt;/strong&gt; 와 &lt;strong&gt;개인키&lt;/strong&gt; 를 한쌍으로 묶어 암호화와 복호화에 사용한다. 보통 공개키로 평문을 암호화하여 전송하고 개인키로 암호문을 복호화한다. b가 a에게 데이터를 전달받고 싶을때 b가 먼저 개인키와 공개키를 생성한후 공개키를 a에게 전달한다. 이 후 b의 공개키를 받은 a는 평문을 b의 공개키로 암호화하여 b에게 전달한다. b는 전달받은 암호문을 자신의 개인키로 복호화한다.&lt;/p&gt;
+
+&lt;p&gt;공개키는 누구에게나 공개될 수 있는 키이다. 하지만 개인키는 자기자신만이 가지고 있으므로 공개키로 암호화된 문서를 복호화하기 위해서는 개인키를 소지하고 있는 사람만이 볼 수 있다. 그렇게 때문에 개인키는 안전하게 보관되어야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/117237629-4f951680-ae66-11eb-8d92-017db7dec12f.png&quot; alt=&quot;공개키&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ssltls-handshake-동작-과정&quot;&gt;SSL/TLS Handshake 동작 과정&lt;/h3&gt;
+&lt;p&gt;SSL방식을 이용해 통신을 하는 브라우저와 서버는 Handshake를 하는데 이때 SSL인증서를 주고 받는다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/117244784-a73a7e80-ae74-11eb-8d9d-693bdc6f45cc.png&quot; alt=&quot;핸드세이크&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;먼저 클라이언트가 요청을 보낼 서버가 원하는 서버가 맞는지를 확인하기 위해 client hello단계에서 &lt;strong&gt;브라우저가 지원하는 암호화 방식 모음(cipher suite)&lt;/strong&gt; 과 &lt;strong&gt;랜덤한 난수&lt;/strong&gt; 등을 보낸다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;클라이언트의 요청을 받은 서버는 server hello단계에서 브라우저가 보낸 암호화 방식 중 하나를 선택해 &lt;strong&gt;서버의 공개키 와 CA의 개인키로 암호화되어 발급된 SSL인증서&lt;/strong&gt;, &lt;strong&gt;랜덤한 난수&lt;/strong&gt;, &lt;strong&gt;클라이언트 인증서 요청&lt;/strong&gt; 등을 보낸다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;서버의 데이터를 받은 클라이언트는 서버에서 보낸 SSL인증서가 자신의 CA리스트에 있는 공개키로 복호화 되는지를 확인한 후 복호화가 되면 정상적인 서버에서 온 응답이라는 걸 인식한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;클라이언트는 그후 데이터를 안전하게 주고받을수 있게 자신이 생성한 랜덤한 난수와 서버의 난수를 사용해 premaster secret을 만들어 서버의 공개키로 암호화 하여 서버로 전송한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;서버는 자신의 개인키로 클라이언트가 보낸 premaster secret값을 복호화 하여 master secret값으로 저장한다. 이를 이용해 session key를 생성하고 이 세션키는 대칭키 암호화해 사용이 된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SSL handshake가 정상적으로 완료되고 이제 웹 상에서 데이터를 대칭키를 이용해 암호화 복호화를 하며 HTTPS 프로토콜을 통해 주고받는다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Q1. HTTPS는 Stateful인가 Stateless인가. handshake과정은 매번 발생하는 것인가?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://opentutorials.org/course/228/4894&quot;&gt;referance- 생활코딩&lt;/a&gt;
+&lt;a href=&quot;https://blog.naver.com/PostView.nhn?blogId=sehyunfa&amp;amp;logNo=221812730631&amp;amp;categoryNo=19&amp;amp;parentCategoryNo=0&amp;amp;viewDate=&amp;amp;currentPage=1&amp;amp;postListTopCurrentPage=1&amp;amp;from=postView&quot;&gt;referance- blog&lt;/a&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="computer science" /><summary type="html"></summary></entry><entry><title type="html">210421-TIL</title><link href="https://heejung-gjt.github.io/til40" rel="alternate" type="text/html" title="210421-TIL" /><published>2021-04-21T16:00:04+09:00</published><updated>2021-04-21T16:00:04+09:00</updated><id>https://heejung-gjt.github.io/til40</id><content type="html" xml:base="https://heejung-gjt.github.io/til40">&lt;h2 id=&quot;-공부한-내용&quot;&gt;👉 공부한 내용&lt;/h2&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;-백준-알고리즘--1문제---문자열&quot;&gt;✔ 백준 알고리즘  1문제 - 문자열&lt;/h4&gt;
@@ -979,71 +1147,4 @@ client는 서비스를 요청하는 프로그램이고 server는 클라이언트
   &lt;li&gt;~&lt;del&gt;js 복습/예습&lt;/del&gt;~&lt;/li&gt;
   &lt;li&gt;html/css (nav,aboutme) 리펙토링&lt;/li&gt;
   &lt;li&gt;알고리즘 기초 (3문제 이상)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">210315-TIL</title><link href="https://heejung-gjt.github.io/til32" rel="alternate" type="text/html" title="210315-TIL" /><published>2021-03-15T14:00:04+09:00</published><updated>2021-03-15T14:00:04+09:00</updated><id>https://heejung-gjt.github.io/til32</id><content type="html" xml:base="https://heejung-gjt.github.io/til32">&lt;h2 id=&quot;--오늘-공부한-내용&quot;&gt;👉  오늘 공부한 내용&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;함수&lt;/li&gt;
-  &lt;li&gt;함수정의&lt;/li&gt;
-  &lt;li&gt;함수 네이밍&lt;/li&gt;
-  &lt;li&gt;함수 선언문&lt;/li&gt;
-  &lt;li&gt;함수 표현식&lt;/li&gt;
-  &lt;li&gt;함수 리터럴&lt;/li&gt;
-  &lt;li&gt;함수 호이스팅&lt;/li&gt;
-  &lt;li&gt;일반객체와 함수객체&lt;/li&gt;
-  &lt;li&gt;파라미터와 알규먼트&lt;/li&gt;
-  &lt;li&gt;arguments 객체&lt;/li&gt;
-  &lt;li&gt;가변인자 함수&lt;/li&gt;
-  &lt;li&gt;참조에 의한 전달&lt;/li&gt;
-  &lt;li&gt;즉시 실행 함수&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;정리내용-보러가기&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/blob/master/javascript/day4.md&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-0316-해야-할-일&quot;&gt;🌟 0316 해야 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;~&lt;del&gt;js 복습/예습&lt;/del&gt;~&lt;/li&gt;
-  &lt;li&gt;~&lt;del&gt;html/css 스타벅스 마크업&lt;/del&gt;~&lt;/li&gt;
-  &lt;li&gt;html/css (nav,aboutme) 리펙토링&lt;/li&gt;
-  &lt;li&gt;알고리즘 기초 (3문제 이상)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">210314-TIL</title><link href="https://heejung-gjt.github.io/til31" rel="alternate" type="text/html" title="210314-TIL" /><published>2021-03-14T12:00:04+09:00</published><updated>2021-03-14T12:00:04+09:00</updated><id>https://heejung-gjt.github.io/til31</id><content type="html" xml:base="https://heejung-gjt.github.io/til31">&lt;h2 id=&quot;--오늘-공부한-내용&quot;&gt;👉  오늘 공부한 내용&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;논리연산자(&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&amp;amp;&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;||&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;객체&lt;/li&gt;
-  &lt;li&gt;this의 역할
-    &lt;ul&gt;
-      &lt;li&gt;프로퍼티&lt;/li&gt;
-      &lt;li&gt;프로퍼티 네이밍&lt;/li&gt;
-      &lt;li&gt;프로퍼티 접근 2가지&lt;/li&gt;
-      &lt;li&gt;프로퍼티 값 갱신과 이유&lt;/li&gt;
-      &lt;li&gt;객체 리터럴&lt;/li&gt;
-      &lt;li&gt;메서드&lt;/li&gt;
-      &lt;li&gt;프로퍼티 축약표현(중요)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;원시타입과 객체타입&lt;/li&gt;
-  &lt;li&gt;가비지 콜렉터&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;정리내용-보러가기&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/blob/master/javascript/day03.md&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;--실습---문제풀이&quot;&gt;👉  실습 - 문제풀이&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;자바스크립트 제어문 20문제&lt;/li&gt;
-  &lt;li&gt;html/css(header,nav) 리펙토링&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;실습-보러가기&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/tree/master/javascript/day2-exercise&quot;&gt;실습 보러가기&lt;/a&gt;&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-0315-해야-할-일&quot;&gt;🌟 0315 해야 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;js 복습&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry></feed>
