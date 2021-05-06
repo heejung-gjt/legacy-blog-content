@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/author/jung/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-05-06T21:59:47+09:00</updated>
+  <updated>2021-05-06T22:15:32+09:00</updated>
   <id>https://heejung-gjt.github.io/author/jung/feed.xml</id>
 
   
@@ -149,14 +149,71 @@ A2. HTTP 프로토콜의 쿠키헤더에는 &lt;code class=&quot;highlighter-rou
 &lt;!--    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
 &lt;!--&lt;/ul&gt;--&gt;
 
+&lt;h2 id=&quot;웹이-동작하는-방식&quot;&gt;웹이 동작하는 방식&lt;/h2&gt;
+&lt;p&gt;클라이언트가 요청을 보내면 서버가 해당 요청을 받아 응답해준다
+client는 서비스를 요청하는 프로그램이고 server는 클라이언트의 요청에 대한 응답을 주는 프로그램이다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;프로토콜&quot;&gt;프로토콜&lt;/h2&gt;
+&lt;p&gt;컴퓨터나 네트워크 장비가 서로 통신하기 위해 미리 정해놓은 약속,규약이다
+사람과 사람이 서로 통신할때 이해할수 있는 공통된 언어를 사용하는 것처럼 컴퓨터와 컴퓨터 사이에도 서로 이해할 수 있는 공통된 언어를 사용하는데 이것을 프로토콜이라고 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h3 id=&quot;http&quot;&gt;HTTP&lt;/h3&gt;
 &lt;p&gt;HTTP는 클라이언트와 서버를 통신해주는 프로토콜이다. 풀어서 서버와 클라이언트 사이에서 이루어지는 요청/응답이다. HTTP는 통신이 암호화 되지 않는 상태로 되기때문에 보안에 취약한 문제점이 있다. 이를 개선한 HTTPS가 등장하였다&lt;/p&gt;
 
-&lt;h3 id=&quot;httpshypertext-transfer-protocol-secure&quot;&gt;HTTPS(Hypertext Transfer Protocol Secure)&lt;/h3&gt;
+&lt;h2 id=&quot;httpshypertext-transfer-protocol-secure&quot;&gt;HTTPS(Hypertext Transfer Protocol Secure)&lt;/h2&gt;
 &lt;p&gt;클라이언트와 서버간의 안전한 통신을 위해 암호화하여 전송한다.
 HTTPS는 클라이언트와 서버간의 통신을 제 3자인 CA가 인증을 해준다.SSL 디지털 인증서를 기준으로 클라이언트가 접속한 서버가 맞는지 확인해준다.&lt;/p&gt;
 
-&lt;h3 id=&quot;ssl인증서&quot;&gt;SSL인증서&lt;/h3&gt;
+&lt;h2 id=&quot;http-프로토콜&quot;&gt;HTTP 프로토콜&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;인터넷 통신을 위해 사용되는 프로토콜이다&lt;/li&gt;
+  &lt;li&gt;HTTP프로토콜은 인터넷상에서 데이터를 주고 받기 위한 서버/클라이언트 모델을 따르는 프로토콜이다&lt;/li&gt;
+  &lt;li&gt;HTTP프로토콜은 HTML문서와 같은 리소스들을 가져올 수 있도록 해준다&lt;/li&gt;
+  &lt;li&gt;HTTP는 서버/클라이언트 모델이다&lt;/li&gt;
+  &lt;li&gt;HTTP는 기본적으로 평문 데이터 전송을 원칙으로 하기 때문에 프라이버시가 오가는 서비스에서 사용하기는 어려움이 있다(HTTPS사용)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;http-request-method&quot;&gt;HTTP Request Method&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;GET : URL에 해당하는 자료의 전송을 요청, 클라이언트가 GET을 보내면 서버에서 그 주소에 해당하는 응답을 보내준다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;POST : 서버가 처리할 수 있는 자료를 전송, 예를 들면 로그인할때 클라이언트가 폼에 아이디와 비밀번호를 입력하면 로그인 될 수 있게 해당되는 자료를 서버에서 처리한 후 결과를 전송해준다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;PUT : 해당 URL에 자료를 저장&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DELETE : 해당 URL의 자료를 삭제&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;http-status-code&quot;&gt;HTTP Status Code&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/Status&quot;&gt;mdn참고하기&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;200번대&lt;/li&gt;
+  &lt;li&gt;300번대&lt;/li&gt;
+  &lt;li&gt;400번대&lt;/li&gt;
+  &lt;li&gt;500번대&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;url&quot;&gt;URL&lt;/h2&gt;
+&lt;p&gt;URL은 서버에 자원(데이터)를 요청하기 위한 주소이다. URL은 URI의 상위개념으로 네트워크 상에서 자원 위치를 알려주기 위한 규약이다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ssl인증서&quot;&gt;SSL인증서&lt;/h2&gt;
 &lt;p&gt;클라이언트와 서버간의 통신을 제3자인 CA가 보증해주는 전자화된 문서이다. SSL은 암호화된 데이터를 전송하기 위해서 공개키와 대칭키를 혼합해서 사용한다.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;인증서의 내용&lt;/strong&gt;&lt;/p&gt;
@@ -177,18 +234,18 @@ HTTPS는 클라이언트와 서버간의 통신을 제 3자인 CA가 인증을 �
   &lt;li&gt;SSL 통신에 사용되는 공개키를 클라이언트에게 전달한다&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;cacertificate-authority&quot;&gt;CA(Certificate Authority)&lt;/h3&gt;
+&lt;h2 id=&quot;cacertificate-authority&quot;&gt;CA(Certificate Authority)&lt;/h2&gt;
 &lt;p&gt;SSL인증서를 기준으로 클라이언트가 서버가 의도한 서버가 맞는지 확인하는 역할을 한다. 이때 이 역할을 하는 공인된 기업을 CA라고 부른다. &lt;strong&gt;SSL을 통해서 암호화된 통신을 제공하려는 서비스는 CA를 통해서 인증서를 구입해야 한다&lt;/strong&gt;   &lt;br /&gt;
 인증서를 이해하기 위해서 꼭 알아야 하는것이 CA의 리스트이다. 브라우저는 내부적으로 CA의 리스트를 미리 파악하고 있다. 브라우저가 미리 파악하고 있는 CA의 리스트에 포함되어야만 공인된 CA가 될 수 있다. CA의 리스트와 함께 각 CA의 공개키를 브라우저는 이미 알고 있다.&lt;/p&gt;
 
-&lt;h3 id=&quot;ssltls-handshake&quot;&gt;SSL/TLS Handshake&lt;/h3&gt;
+&lt;h2 id=&quot;ssltls-handshake&quot;&gt;SSL/TLS Handshake&lt;/h2&gt;
 &lt;p&gt;HTTPS는 SSL/TLS 전송기술을 사용한다. TLS는 SSL의 개선버전으로 최신 인증서는 TLS를 사용하지만 SSL인증서라고 불린다. 즉 같은 말이라고 생각하면 된다.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;handshake 과정을 보기 전에 먼저 필요한 암호화 방식을 살펴본다&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;대칭키-암호화-방식&quot;&gt;대칭키 암호화 방식&lt;/h3&gt;
+&lt;h2 id=&quot;대칭키-암호화-방식&quot;&gt;대칭키 암호화 방식&lt;/h2&gt;
 &lt;p&gt;대칭키 암호화 방식은 하나의 키로 데이터를 암호화/복호화를 하는 방식이다.  &lt;br /&gt;
 a가 문자가 써져있는 평문을 b에게 보낼때 a,b가 공통적으로 가지고 있는 키로 암호화하여 b에게 암호화된 암호문을 전송한다. 암호문을 받은 b는 공통적으로 가지고 있는 키로 암호문을 복호화하여 실제 내용을 볼 수 있다. 이때 사용되는 키를 &lt;strong&gt;대칭키&lt;/strong&gt; 라고 부르며 이 방식을 대칭키 암호화 방식이라고 부른다.  &lt;br /&gt;
 하지만 만약 둘 중 한명이 키를 도난,분실하면 다른 누군가가 복호화하여 볼 수 있는 단점이 있다.&lt;/p&gt;
@@ -197,7 +254,7 @@ a가 문자가 써져있는 평문을 b에게 보낼때 a,b가 공통적으로 �
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;공개키-암호화-방식&quot;&gt;공개키 암호화 방식&lt;/h3&gt;
+&lt;h2 id=&quot;공개키-암호화-방식&quot;&gt;공개키 암호화 방식&lt;/h2&gt;
 &lt;p&gt;공개키 암호화 방식은 대칭키와 달리 &lt;strong&gt;공개키&lt;/strong&gt; 와 &lt;strong&gt;개인키&lt;/strong&gt; 를 한쌍으로 묶어 암호화와 복호화에 사용한다. 보통 공개키로 평문을 암호화하여 전송하고 개인키로 암호문을 복호화한다. b가 a에게 데이터를 전달받고 싶을때 b가 먼저 개인키와 공개키를 생성한후 공개키를 a에게 전달한다. 이 후 b의 공개키를 받은 a는 평문을 b의 공개키로 암호화하여 b에게 전달한다. b는 전달받은 암호문을 자신의 개인키로 복호화한다.&lt;/p&gt;
 
 &lt;p&gt;공개키는 누구에게나 공개될 수 있는 키이다. 하지만 개인키는 자기자신만이 가지고 있으므로 공개키로 암호화된 문서를 복호화하기 위해서는 개인키를 소지하고 있는 사람만이 볼 수 있다. 그렇게 때문에 개인키는 안전하게 보관되어야 한다.&lt;/p&gt;
@@ -206,7 +263,7 @@ a가 문자가 써져있는 평문을 b에게 보낼때 a,b가 공통적으로 �
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;ssltls-handshake-동작-과정&quot;&gt;SSL/TLS Handshake 동작 과정&lt;/h3&gt;
+&lt;h2 id=&quot;ssltls-handshake-동작-과정&quot;&gt;SSL/TLS Handshake 동작 과정&lt;/h2&gt;
 &lt;p&gt;SSL방식을 이용해 통신을 하는 브라우저와 서버는 Handshake를 하는데 이때 SSL인증서를 주고 받는다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/117244784-a73a7e80-ae74-11eb-8d9d-693bdc6f45cc.png&quot; alt=&quot;핸드세이크&quot; /&gt;&lt;/p&gt;
@@ -257,6 +314,230 @@ a가 문자가 써져있는 평문을 b에게 보낼때 a,b가 공통적으로 �
 
       
         <category term="computer science" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">virtualenv 가상환경에서 네이버 영화 제목,코드 스크래핑하기</title>
+      <link href="https://heejung-gjt.github.io/movie-scraping" rel="alternate" type="text/html" title="virtualenv 가상환경에서 네이버 영화 제목,코드 스크래핑하기" />
+      <published>2021-05-06T12:00:00+09:00</published>
+      <updated>2021-05-06T12:00:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/movie-scraping</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/movie-scraping">&lt;h2 id=&quot;가상환경virtual-environment&quot;&gt;가상환경(Virtual Environment)&lt;/h2&gt;
+&lt;p&gt;내 컴퓨터 내에 특정 공간에서만 사용하도록 만드는 제한된 공간을 만드는 것으로 컴퓨터 내의 독립된 환경을 만들어 로컬 전역에 설치하지 않아도 패키지를 사용할 수 있다.
+사용하는 이유는 내 컴퓨터에 설치되어있는 버전에 방해받지 않고 개발 환경을 맞출 수 있다는 장점이 있다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;virtualenv-설치&quot;&gt;virtualenv 설치&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pip3 install virtualenv&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir testproject&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd testproject&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;virtualenv venv&lt;/code&gt; : venv(=컨벤션)의 가상환경 설정&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;source venv/bin/activate&lt;/code&gt; : venv 가상환경 실행&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pip install requests&lt;/code&gt; : 원하는 패키지 설치&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pip freeze&amp;gt;requirements.txt&lt;/code&gt; : 패키지들의 버전이 명시된 txt 파일 생성됨&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pip install -r requirements.txt&lt;/code&gt; : 명세를 기준으로 패키지들을 설치&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;web-scraping-실습해보기&quot;&gt;Web Scraping 실습해보기&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-네이버-뉴스-제목-링크-스크래핑&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1. 네이버 뉴스 제목, 링크 스크래핑&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;-&amp;gt; find사용한 실습&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bs4&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://search.naver.com/search.naver?where=nexearch&amp;amp;sm=top_hty&amp;amp;fbm=1&amp;amp;ie=utf8&amp;amp;query=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EC&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;BD&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%94%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EB&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A1&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%9&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EB&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%82%98&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status_code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'html.parser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ul'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'class'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'list_news'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# ul이 배열이 아니므로 ul안에 있는 li를 요소로 가지고 오는 배열을 find_all을 통해 가져온 후 lis에 넣어준다 그럼 lis를 for문을 돌려 print할 수 있다&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;lis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'li'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'class'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bx'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'news_tit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'class'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'news_tit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'class'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'news_tit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'href'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;-&amp;gt; find_all사용한 실습&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bs4&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numsum&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'https://search.naver.com/search.naver?&amp;amp;where=news&amp;amp;query=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EC&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;BD&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%94%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EB&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A1&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%9&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EB&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%82%98&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;amp;sm=tab_pge&amp;amp;sort=0&amp;amp;photo=0&amp;amp;field=0&amp;amp;reporter_article=&amp;amp;pd=0&amp;amp;ds=&amp;amp;de=&amp;amp;docid=&amp;amp;nso=so:r,p:all,a:all&amp;amp;mynews=0&amp;amp;cluster_rank=48&amp;amp;start={numsum}&amp;amp;refresh_start=0'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'html.parser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;raws&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'news_tit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;raw&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;raws&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'title: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'title'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'link: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'href'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1-네이버-영화-제목코드-스크래핑&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1. 네이버 영화 제목,코드 스크래핑&lt;/code&gt;&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bs4&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://movie.naver.com/movie/running/current.nhn'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'html.parser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#content &amp;gt; div.article &amp;gt; div:nth-child(1) &amp;gt; div.lst_wrap &amp;gt; ul'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;lis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#content &amp;gt; div.article &amp;gt; div:nth-child(1) &amp;gt; div.lst_wrap &amp;gt; ul &amp;gt; li'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# print(lis)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#content &amp;gt; div.article &amp;gt; div &amp;gt; div.lst_wrap &amp;gt; ul &amp;gt; li &amp;gt; dl &amp;gt; dt &amp;gt; a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# print('제목 : ',a.text, '코드 : ',a['href'][-6:])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'href'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]))))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bs4&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://movie.naver.com/movie/running/current.nhn'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'html.parser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#content &amp;gt; div.article &amp;gt; div:nth-child(1) &amp;gt; div.lst_wrap &amp;gt; ul'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;lis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#content &amp;gt; div.article &amp;gt; div:nth-child(1) &amp;gt; div.lst_wrap &amp;gt; ul &amp;gt; li'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# print(lis)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#content &amp;gt; div.article &amp;gt; div &amp;gt; div.lst_wrap &amp;gt; ul &amp;gt; li &amp;gt; dl &amp;gt; dt &amp;gt; a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# print('제목 : ',a.text, '코드 : ',a['href'][-6:])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'href'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])))))&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# print(code, a.text)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# print(code)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# for i in code:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# url = f'https://movie.naver.com/movie/bi/mi/point.nhn?code={i}'&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# data = requests.get(url)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# soup = BeautifulSoup(data.text, 'html.parser')&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# ul = soup.select_one('body &amp;gt; div &amp;gt; div &amp;gt; div.score_result &amp;gt; ul')&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# print(ul)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://movie.naver.com/movie/bi/mi/point.nhn?code=196051'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'html.parser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'body &amp;gt; div &amp;gt; div &amp;gt; div.score_result &amp;gt; ul'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="data science" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">Linux 기본 명령어 정리</title>
+      <link href="https://heejung-gjt.github.io/linux-command" rel="alternate" type="text/html" title="Linux 기본 명령어 정리" />
+      <published>2021-05-06T11:20:00+09:00</published>
+      <updated>2021-05-06T11:20:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/linux-command</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/linux-command">&lt;h2 id=&quot;cli&quot;&gt;CLI&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;기본적인 명령어&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;ls&lt;/li&gt;
+  &lt;li&gt;cd&lt;/li&gt;
+  &lt;li&gt;mkdir&lt;/li&gt;
+  &lt;li&gt;open&lt;/li&gt;
+  &lt;li&gt;pwd&lt;/li&gt;
+  &lt;li&gt;rm&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;기초 명령어&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;cp : 복사 &lt;code class=&quot;highlighter-rouge&quot;&gt;cp -r dir1 dir2&lt;/code&gt; dir1안의 모든 내용을 dir2로 복사&lt;/li&gt;
+  &lt;li&gt;mv : 이동 &lt;code class=&quot;highlighter-rouge&quot;&gt;mv dir1 dir2&lt;/code&gt; dir1안의 모든 내용을 dir2로 이동&lt;/li&gt;
+  &lt;li&gt;ln : 하드링크, 소프트링크 생성 (정확히는…)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; : 와일드카드로 모든 문자 가리킴&lt;/li&gt;
+  &lt;li&gt;less : 파일 내용을 보여준다&lt;/li&gt;
+  &lt;li&gt;which(현재저장되어 있는 위치)&lt;/li&gt;
+  &lt;li&gt;man(설명서)&lt;/li&gt;
+  &lt;li&gt;alias(별칭 설정)
+&lt;code class=&quot;highlighter-rouge&quot;&gt;alias django = 'cd/home/Desktop/django'&lt;/code&gt; .bashrc에 삽입후 source .bashrc로 업데이트&lt;/li&gt;
+  &lt;li&gt;type&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;리다이렉션 명령어&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;ls -i /usr/bin&amp;gt;ls-out.txt : usr/bin 텍스트 내용을 out.txt에 전부 저장&lt;/li&gt;
+  &lt;li&gt;cat :&lt;code class=&quot;highlighter-rouge&quot;&gt;cat&amp;gt;파일명&lt;/code&gt; 입력받은 결과 지정한 파일로 복사&lt;/li&gt;
+  &lt;li&gt;sort : 정렬&lt;/li&gt;
+  &lt;li&gt;uniq : 중복제거&lt;/li&gt;
+  &lt;li&gt;wc : 라인수 출력 (-l)&lt;/li&gt;
+  &lt;li&gt;grep : 패턴에 일치하는 문자 출력&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt; : 필터사용이 가능 , 여러 명령어 동시 사용 가능&lt;/li&gt;
+  &lt;li&gt;head/tail&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;경로&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;절대경로 : 루트디렉토리에서 원하는 디렉토기까지의 경로&lt;/li&gt;
+  &lt;li&gt;상대경로 : 현재 작업 디렉토리가 시작점이 된다&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="linux" />
       
 
       
@@ -962,38 +1243,28 @@ peek() : 스택의 맨 위에 저장된 데이터 원소를 반환(제거x)&lt;/
     </entry>
   
     <entry>
-      <title type="html">210414-TIL(크롬 개발자도구, api스크래핑)</title>
-      <link href="https://heejung-gjt.github.io/til36" rel="alternate" type="text/html" title="210414-TIL(크롬 개발자도구, api스크래핑)" />
-      <published>2021-04-14T16:00:04+09:00</published>
-      <updated>2021-04-14T16:00:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/til36</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til36">&lt;h2 id=&quot;크롤링과-크롬-개발자-도구&quot;&gt;크롤링과 크롬 개발자 도구&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;리눅스에서 열기&lt;/code&gt;&lt;/p&gt;
+      <title type="html">api 스크래핑으로 영화관 평점 가져오기</title>
+      <link href="https://heejung-gjt.github.io/api-scrapping" rel="alternate" type="text/html" title="api 스크래핑으로 영화관 평점 가져오기" />
+      <published>2021-04-10T11:00:00+09:00</published>
+      <updated>2021-04-10T11:00:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/api-scrapping</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/api-scrapping">&lt;h2 id=&quot;크롤링과-크롬-개발자-도구&quot;&gt;크롤링과 크롬 개발자 도구&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;리눅스에서 열기&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;ctrl+shift+i 또는 오른쪽 클릭 후 inspect&lt;/p&gt;
 
 &lt;h4 id=&quot;종류&quot;&gt;종류&lt;/h4&gt;
 
-&lt;p&gt;Elements : HTML/CSS코드를 분석할 수 있고 실시간으로 수정하여 변경해볼 수 있다&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Elements&lt;/strong&gt; : HTML/CSS코드를 분석할 수 있고 실시간으로 수정하여 변경해볼 수 있다&lt;/p&gt;
 
-&lt;p&gt;Console : 주로 자바스크립트를 작성 한 후 디버깅 할때 사용된다. 에러가 발생하는 경우 콘솔창에서 에러를 띄어준다. 새로고침을 누를 경우 콘솔에 떠있던 코드들이 리셋되므로 이를 방지하기 위해 상단에 preservel log를 체크해준다&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Console&lt;/strong&gt; : 주로 자바스크립트를 작성 한 후 디버깅 할때 사용된다. 에러가 발생하는 경우 콘솔창에서 에러를 띄어준다. 새로고침을 누를 경우 콘솔에 떠있던 코드들이 리셋되므로 이를 방지하기 위해 상단에 preservel log를 체크해준다&lt;/p&gt;
 
-&lt;p&gt;Network : 서버와의 통신 내역을 보여주는 도구이다. 웹이 받아오는 모든 정보들이 기록된다. 브라우저와 서버사이 요청과 응답을 볼 수 있다&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Network&lt;/strong&gt; : 서버와의 통신 내역을 보여주는 도구이다. 웹이 받아오는 모든 정보들이 기록된다. 브라우저와 서버사이 요청과 응답을 볼 수 있다&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Headers&lt;/p&gt;
-  &lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;headers탭에는 general, response headers, requst headers 내용을 볼 수 있다.
-general : 전체 요청과 응답에 대한 요약 내용을 볼 수 있다. 어떤 서버로 어떠한 요청을 보내었는지 성공적으로 응답되었는지를 알 수 있으며 ip주소와 포트번호를 볼 수 있다
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
-  &lt;p&gt;Application : 브라우저의 저장소에 담긴 데이터들을 확인할때 쓰인다. 주로 cookie, local/session storage가 사용된다&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;cookie와-session&quot;&gt;Cookie와 Session&lt;/h2&gt;
-&lt;p&gt;cookie는 서버에 다시 요청할 필요없이 관리해야 할 정보가 있을때 브라우저에 쿠키를 저장해둔다. (ex. 브라우저에 저장, 로그인을 한 후 브라우저를 종료했다가 다시 켜도 그대로 로그인이 유지된다)&lt;/p&gt;
-
-&lt;p&gt;session은 사용자가 접속하고 접속을 종료할때까지의 단위를 기준으로 관리한다.&lt;/p&gt;
+&lt;h4 id=&quot;headers&quot;&gt;Headers&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;headers탭에는 general, response headers, requst headers 내용을 볼 수 있다.&lt;/strong&gt; &lt;br /&gt;
+&lt;strong&gt;general&lt;/strong&gt; : 전체 요청과 응답에 대한 요약 내용을 볼 수 있다. 어떤 서버로 어떠한 요청을 보내었는지 성공적으로 응답되었는지를 알 수 있으며 ip주소와 포트번호를 볼 수 있다  &lt;br /&gt;
+&lt;strong&gt;Application&lt;/strong&gt; : 브라우저의 저장소에 담긴 데이터들을 확인할때 쓰인다. 주로 cookie, local/session storage가 사용된다&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -1007,7 +1278,7 @@ general : 전체 요청과 응답에 대한 요약 내용을 볼 수 있다. 어
     &lt;p&gt;개발자도구 network 탭을 활용한다. network의 실제 request를 보내는 행위를 카피하여 response를 얻어낸다&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;cURL 카피를 활용하여 파이썬으로 변환해준다
+    &lt;p&gt;cURL 카피를 활용하여 파이썬으로 변환해준다    &lt;br /&gt;
 &lt;a href=&quot;https://curl.trillworks.com/&quot;&gt;파이썬 변환사이트&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -1099,258 +1370,7 @@ general : 전체 요청과 응답에 대한 요약 내용을 볼 수 있다. 어
       
 
       
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">210413-TIL (웹동작 방식, CLI, 스크래핑 실습)</title>
-      <link href="https://heejung-gjt.github.io/til35" rel="alternate" type="text/html" title="210413-TIL (웹동작 방식, CLI, 스크래핑 실습)" />
-      <published>2021-04-13T16:00:04+09:00</published>
-      <updated>2021-04-13T16:00:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/til35</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til35">&lt;h2 id=&quot;웹이-동작하는-방식&quot;&gt;웹이 동작하는 방식&lt;/h2&gt;
-&lt;p&gt;클라이언트가 요청을 보내면 서버가 해당 요청을 받아 응답해준다
-client는 서비스를 요청하는 프로그램이고 server는 클라이언트의 요청에 대한 응답을 주는 프로그램이다&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;프로토콜&quot;&gt;프로토콜&lt;/h2&gt;
-&lt;p&gt;컴퓨터나 네트워크 장비가 서로 통신하기 위해 미리 정해놓은 약속,규약이다
-사람과 사람이 서로 통신할때 이해할수 있는 공통된 언어를 사용하는 것처럼 컴퓨터와 컴퓨터 사이에도 서로 이해할 수 있는 공통된 언어를 사용하는데 이것을 프로토콜이라고 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;http-프로토콜&quot;&gt;HTTP 프로토콜&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;인터넷 통신을 위해 사용되는 프로토콜이다&lt;/li&gt;
-  &lt;li&gt;HTTP프로토콜은 인터넷상에서 데이터를 주고 받기 위한 서버/클라이언트 모델을 따르는 프로토콜이다&lt;/li&gt;
-  &lt;li&gt;HTTP프로토콜은 HTML문서와 같은 리소스들을 가져올 수 있도록 해준다&lt;/li&gt;
-  &lt;li&gt;HTTP는 서버/클라이언트 모델이다&lt;/li&gt;
-  &lt;li&gt;HTTP는 기본적으로 평문 데이터 전송을 원칙으로 하기 때문에 프라이버시가 오가는 서비스에서 사용하기는 어려움이 있다(HTTPS사용)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;http-request-method&quot;&gt;HTTP Request Method&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;GET : URL에 해당하는 자료의 전송을 요청, 클라이언트가 GET을 보내면 서버에서 그 주소에 해당하는 응답을 보내준다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;POST : 서버가 처리할 수 있는 자료를 전송, 예를 들면 로그인할때 클라이언트가 폼에 아이디와 비밀번호를 입력하면 로그인 될 수 있게 해당되는 자료를 서버에서 처리한 후 결과를 전송해준다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;PUT : 해당 URL에 자료를 저장&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;DELETE : 해당 URL의 자료를 삭제&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;http-status-code&quot;&gt;HTTP Status Code&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/Status&quot;&gt;mdn참고하기&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;200번대&lt;/li&gt;
-  &lt;li&gt;300번대&lt;/li&gt;
-  &lt;li&gt;400번대&lt;/li&gt;
-  &lt;li&gt;500번대&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;url&quot;&gt;URL&lt;/h2&gt;
-&lt;p&gt;URL은 서버에 자원(데이터)를 요청하기 위한 주소이다. URL은 URI의 상위개념으로 네트워크 상에서 자원 위치를 알려주기 위한 규약이다&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;cli&quot;&gt;CLI&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;기본적인 명령어&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;ls&lt;/li&gt;
-  &lt;li&gt;cd&lt;/li&gt;
-  &lt;li&gt;mkdir&lt;/li&gt;
-  &lt;li&gt;open&lt;/li&gt;
-  &lt;li&gt;pwd&lt;/li&gt;
-  &lt;li&gt;rm&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;기초 명령어&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;cp : 복사 &lt;code class=&quot;highlighter-rouge&quot;&gt;cp -r dir1 dir2&lt;/code&gt; dir1안의 모든 내용을 dir2로 복사&lt;/li&gt;
-  &lt;li&gt;mv : 이동 &lt;code class=&quot;highlighter-rouge&quot;&gt;mv dir1 dir2&lt;/code&gt; dir1안의 모든 내용을 dir2로 이동&lt;/li&gt;
-  &lt;li&gt;ln : 하드링크, 소프트링크 생성 (정확히는…)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; : 와일드카드로 모든 문자 가리킴&lt;/li&gt;
-  &lt;li&gt;less : 파일 내용을 보여준다&lt;/li&gt;
-  &lt;li&gt;which(현재저장되어 있는 위치)&lt;/li&gt;
-  &lt;li&gt;man(설명서)&lt;/li&gt;
-  &lt;li&gt;alias(별칭 설정)
-&lt;code class=&quot;highlighter-rouge&quot;&gt;alias django = 'cd/home/Desktop/django'&lt;/code&gt; .bashrc에 삽입후 source .bashrc로 업데이트&lt;/li&gt;
-  &lt;li&gt;type&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;리다이렉션 명령어&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;ls -i /usr/bin&amp;gt;ls-out.txt : usr/bin 텍스트 내용을 out.txt에 전부 저장&lt;/li&gt;
-  &lt;li&gt;cat :&lt;code class=&quot;highlighter-rouge&quot;&gt;cat&amp;gt;파일명&lt;/code&gt; 입력받은 결과 지정한 파일로 복사&lt;/li&gt;
-  &lt;li&gt;sort : 정렬&lt;/li&gt;
-  &lt;li&gt;uniq : 중복제거&lt;/li&gt;
-  &lt;li&gt;wc : 라인수 출력 (-l)&lt;/li&gt;
-  &lt;li&gt;grep : 패턴에 일치하는 문자 출력&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt; : 필터사용이 가능 , 여러 명령어 동시 사용 가능&lt;/li&gt;
-  &lt;li&gt;head/tail&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;경로&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;절대경로 : 루트디렉토리에서 원하는 디렉토기까지의 경로&lt;/li&gt;
-  &lt;li&gt;상대경로 : 현재 작업 디렉토리가 시작점이 된다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;가상환경virtual-environment&quot;&gt;가상환경(Virtual Environment)&lt;/h2&gt;
-&lt;p&gt;내 컴퓨터 내에 특정 공간에서만 사용하도록 만드는 제한된 공간을 만드는 것으로 컴퓨터 내의 독립된 환경을 만들어 로컬 전역에 설치하지 않아도 패키지를 사용할 수 있다.
-사용하는 이유는 내 컴퓨터에 설치되어있는 버전에 방해받지 않고 개발 환경을 맞출 수 있다는 장점이 있다&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;virtualenv-설치&quot;&gt;virtualenv 설치&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pip3 install virtualenv&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir testproject&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd testproject&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;virtualenv venv&lt;/code&gt; : venv(=컨벤션)의 가상환경 설정&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;source venv/bin/activate&lt;/code&gt; : venv 가상환경 실행&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pip install requests&lt;/code&gt; : 원하는 패키지 설치&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pip freeze&amp;gt;requirements.txt&lt;/code&gt; : 패키지들의 버전이 명시된 txt 파일 생성됨&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pip install -r requirements.txt&lt;/code&gt; : 명세를 기준으로 패키지들을 설치&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;web-scraping-실습해보기&quot;&gt;Web Scraping 실습해보기&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-네이버-뉴스-제목-링크-스크래핑&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1. 네이버 뉴스 제목, 링크 스크래핑&lt;/code&gt;&lt;/h3&gt;
-
-&lt;p&gt;-&amp;gt; find사용한 실습&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bs4&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://search.naver.com/search.naver?where=nexearch&amp;amp;sm=top_hty&amp;amp;fbm=1&amp;amp;ie=utf8&amp;amp;query=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EC&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;BD&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%94%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EB&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A1&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%9&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EB&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%82%98&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status_code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'html.parser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ul'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'class'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'list_news'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# ul이 배열이 아니므로 ul안에 있는 li를 요소로 가지고 오는 배열을 find_all을 통해 가져온 후 lis에 넣어준다 그럼 lis를 for문을 돌려 print할 수 있다&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;lis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'li'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'class'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bx'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'news_tit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'class'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'news_tit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'class'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'news_tit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'href'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;-&amp;gt; find_all사용한 실습&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bs4&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numsum&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'https://search.naver.com/search.naver?&amp;amp;where=news&amp;amp;query=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EC&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;BD&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%94%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EB&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A1&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%9&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;EB&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%82%98&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;amp;sm=tab_pge&amp;amp;sort=0&amp;amp;photo=0&amp;amp;field=0&amp;amp;reporter_article=&amp;amp;pd=0&amp;amp;ds=&amp;amp;de=&amp;amp;docid=&amp;amp;nso=so:r,p:all,a:all&amp;amp;mynews=0&amp;amp;cluster_rank=48&amp;amp;start={numsum}&amp;amp;refresh_start=0'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'html.parser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;raws&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;class_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'news_tit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;raw&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;raws&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'title: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'title'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'link: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'href'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;1-네이버-영화-제목코드-스크래핑&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1. 네이버 영화 제목,코드 스크래핑&lt;/code&gt;&lt;/h3&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bs4&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://movie.naver.com/movie/running/current.nhn'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'html.parser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#content &amp;gt; div.article &amp;gt; div:nth-child(1) &amp;gt; div.lst_wrap &amp;gt; ul'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;lis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#content &amp;gt; div.article &amp;gt; div:nth-child(1) &amp;gt; div.lst_wrap &amp;gt; ul &amp;gt; li'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# print(lis)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#content &amp;gt; div.article &amp;gt; div &amp;gt; div.lst_wrap &amp;gt; ul &amp;gt; li &amp;gt; dl &amp;gt; dt &amp;gt; a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# print('제목 : ',a.text, '코드 : ',a['href'][-6:])&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'href'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]))))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bs4&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://movie.naver.com/movie/running/current.nhn'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'html.parser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#content &amp;gt; div.article &amp;gt; div:nth-child(1) &amp;gt; div.lst_wrap &amp;gt; ul'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;lis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#content &amp;gt; div.article &amp;gt; div:nth-child(1) &amp;gt; div.lst_wrap &amp;gt; ul &amp;gt; li'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# print(lis)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'#content &amp;gt; div.article &amp;gt; div &amp;gt; div.lst_wrap &amp;gt; ul &amp;gt; li &amp;gt; dl &amp;gt; dt &amp;gt; a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# print('제목 : ',a.text, '코드 : ',a['href'][-6:])&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'href'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])))))&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# print(code, a.text)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# print(code)&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# for i in code:&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# url = f'https://movie.naver.com/movie/bi/mi/point.nhn?code={i}'&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# data = requests.get(url)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# soup = BeautifulSoup(data.text, 'html.parser')&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# ul = soup.select_one('body &amp;gt; div &amp;gt; div &amp;gt; div.score_result &amp;gt; ul')&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# print(ul)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://movie.naver.com/movie/bi/mi/point.nhn?code=196051'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BeautifulSoup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'html.parser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;soup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'body &amp;gt; div &amp;gt; div &amp;gt; div.score_result &amp;gt; ul'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
+        <category term="data science" />
       
 
       
@@ -1401,89 +1421,6 @@ client는 서비스를 요청하는 프로그램이고 server는 클라이언트
   &lt;li&gt;Array.isArray&lt;/li&gt;
   &lt;li&gt;리터럴로 생성&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-0318-해야-할-일&quot;&gt;🌟 0318 해야 할 일&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;~&lt;del&gt;js 복습/예습&lt;/del&gt;~&lt;/li&gt;
-  &lt;li&gt;html/css (nav,aboutme) 리펙토링&lt;/li&gt;
-  &lt;li&gt;알고리즘 기초 (3문제 이상)&lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">210316-TIL</title>
-      <link href="https://heejung-gjt.github.io/til33" rel="alternate" type="text/html" title="210316-TIL" />
-      <published>2021-03-16T14:00:04+09:00</published>
-      <updated>2021-03-16T14:00:04+09:00</updated>
-      <id>https://heejung-gjt.github.io/til33</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til33">&lt;h2 id=&quot;--오늘-공부한-내용&quot;&gt;👉  오늘 공부한 내용&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;중첩함수&lt;/li&gt;
-  &lt;li&gt;콜백함수
-    &lt;ul&gt;
-      &lt;li&gt;고차함수&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;순수함수와 비순수함수&lt;/li&gt;
-  &lt;li&gt;스코프
-    &lt;ul&gt;
-      &lt;li&gt;전역코드&lt;/li&gt;
-      &lt;li&gt;함수코드&lt;/li&gt;
-      &lt;li&gt;스코프 체인 과정&lt;/li&gt;
-      &lt;li&gt;함수레벨 스코프&lt;/li&gt;
-      &lt;li&gt;렉시컬 스코프&lt;/li&gt;
-      &lt;li&gt;전역변수&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;let과 const
-    &lt;ul&gt;
-      &lt;li&gt;var의 단점&lt;/li&gt;
-      &lt;li&gt;let,const 장점&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;변수와 상수&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;정리내용-보러가기&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/TIL/blob/master/javascript/day4.md&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;-실습---마크업&quot;&gt;🌟 실습 - 마크업&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;html/css 스타벅스 마크업&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;정리내용-보러가기-1&quot;&gt;&lt;a href=&quot;https://github.com/heejung-gjt/HTML5-CSS3/tree/master/%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4%20%EB%A9%94%EC%9D%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%A7%88%ED%81%AC%EC%97%85&quot;&gt;정리내용 보러가기&lt;/a&gt;&lt;/h4&gt;
 
 &lt;hr /&gt;
 

@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/linux/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-05-06T21:59:47+09:00</updated>
+  <updated>2021-05-06T22:15:32+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/linux/feed.xml</id>
 
   
@@ -30,6 +30,84 @@
   
   
 
+  
+    <entry>
+      <title type="html">Linux 기본 명령어 정리</title>
+      <link href="https://heejung-gjt.github.io/linux-command" rel="alternate" type="text/html" title="Linux 기본 명령어 정리" />
+      <published>2021-05-06T11:20:00+09:00</published>
+      <updated>2021-05-06T11:20:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/linux-command</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/linux-command">&lt;h2 id=&quot;cli&quot;&gt;CLI&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;기본적인 명령어&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;ls&lt;/li&gt;
+  &lt;li&gt;cd&lt;/li&gt;
+  &lt;li&gt;mkdir&lt;/li&gt;
+  &lt;li&gt;open&lt;/li&gt;
+  &lt;li&gt;pwd&lt;/li&gt;
+  &lt;li&gt;rm&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;기초 명령어&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;cp : 복사 &lt;code class=&quot;highlighter-rouge&quot;&gt;cp -r dir1 dir2&lt;/code&gt; dir1안의 모든 내용을 dir2로 복사&lt;/li&gt;
+  &lt;li&gt;mv : 이동 &lt;code class=&quot;highlighter-rouge&quot;&gt;mv dir1 dir2&lt;/code&gt; dir1안의 모든 내용을 dir2로 이동&lt;/li&gt;
+  &lt;li&gt;ln : 하드링크, 소프트링크 생성 (정확히는…)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; : 와일드카드로 모든 문자 가리킴&lt;/li&gt;
+  &lt;li&gt;less : 파일 내용을 보여준다&lt;/li&gt;
+  &lt;li&gt;which(현재저장되어 있는 위치)&lt;/li&gt;
+  &lt;li&gt;man(설명서)&lt;/li&gt;
+  &lt;li&gt;alias(별칭 설정)
+&lt;code class=&quot;highlighter-rouge&quot;&gt;alias django = 'cd/home/Desktop/django'&lt;/code&gt; .bashrc에 삽입후 source .bashrc로 업데이트&lt;/li&gt;
+  &lt;li&gt;type&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;리다이렉션 명령어&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;ls -i /usr/bin&amp;gt;ls-out.txt : usr/bin 텍스트 내용을 out.txt에 전부 저장&lt;/li&gt;
+  &lt;li&gt;cat :&lt;code class=&quot;highlighter-rouge&quot;&gt;cat&amp;gt;파일명&lt;/code&gt; 입력받은 결과 지정한 파일로 복사&lt;/li&gt;
+  &lt;li&gt;sort : 정렬&lt;/li&gt;
+  &lt;li&gt;uniq : 중복제거&lt;/li&gt;
+  &lt;li&gt;wc : 라인수 출력 (-l)&lt;/li&gt;
+  &lt;li&gt;grep : 패턴에 일치하는 문자 출력&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt; : 필터사용이 가능 , 여러 명령어 동시 사용 가능&lt;/li&gt;
+  &lt;li&gt;head/tail&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;경로&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;절대경로 : 루트디렉토리에서 원하는 디렉토기까지의 경로&lt;/li&gt;
+  &lt;li&gt;상대경로 : 현재 작업 디렉토리가 시작점이 된다&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="linux" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">우분투에 poetry설치 후 장고 사용을 위한 가상환경 구축하기</title>
