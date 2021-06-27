@@ -452,10 +452,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: none;
 
 }
-.post-card-excer
 
 .post-card-meta {
-    padding: 0 25px 25px;
+    padding: 0 25px;
 }
 
 .author-profile-image {
@@ -465,6 +464,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     border-radius: 100%;
 
     object-fit: cover;
+}
+
+.author-profile-image{
+    display: none;
 }
 
 .post-card-author {
