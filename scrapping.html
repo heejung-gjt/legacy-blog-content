@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/scrapping" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Studying  Develop" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="(Django) 스크래핑한 데이터 장고 DB에 넣기" />
+    <meta property="og:description" content="가장 먼저 할 일은 장고를 세팅해주는 것이다 :-) 가상환경을 만들어준다 : virtualenv venv 장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django 적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping settings.py에 설치한 앱을 적어야 하는 것 잊지말자 1. 데이터 스크래핑하는 로직 py 만들기 가장 먼저" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/scrapping" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-06-28T15:30:00+09:00" />
+    <meta property="article:modified_time" content="2021-06-28T15:30:00+09:00" />
+    <meta property="article:tag" content="Django" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="(Django) 스크래핑한 데이터 장고 DB에 넣기" />
+    <meta name="twitter:description" content="가장 먼저 할 일은 장고를 세팅해주는 것이다 :-) 가상환경을 만들어준다 : virtualenv venv 장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django 적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping settings.py에 설치한 앱을 적어야 하는 것 잊지말자 1. 데이터 스크래핑하는 로직 py 만들기 가장 먼저" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Studying  Develop" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Django" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Studying  Develop",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/scrapping",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/django.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/scrapping"
+    },
+    "description": "가장 먼저 할 일은 장고를 세팅해주는 것이다 :-) 가상환경을 만들어준다 : virtualenv venv 장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django 적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping settings.py에 설치한 앱을 적어야 하는 것 잊지말자 1. 데이터 스크래핑하는 로직 py 만들기 가장 먼저"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="(Django) 스크래핑한 데이터 장고 DB에 넣기" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">Studying  Develop</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/network/">Network</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/os/">OS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/database/">DataBase</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/aws/">AWS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-django post tag django ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-06-28">2021-06-28</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/django/'>DJANGO</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">(Django) 스크래핑한 데이터 장고 DB에 넣기</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/django.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    
+<h4 id="가장-먼저-할-일은-장고를-세팅해주는-것이다--">가장 먼저 할 일은 장고를 세팅해주는 것이다 :-)</h4>
+<blockquote>
+  <ul>
+    <li>
+      <p>가상환경을 만들어준다 : virtualenv venv</p>
+    </li>
+    <li>
+      <p>장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django</p>
+    </li>
+    <li>
+      <p>적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping</p>
+    </li>
+    <li>
+      <p>settings.py에 설치한 앱을 적어야 하는 것 잊지말자</p>
+    </li>
+  </ul>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="1-데이터-스크래핑하는-로직-py-만들기">1. 데이터 스크래핑하는 로직 py 만들기</h3>
+
+<p>가장 먼저 데이터를 스크래핑해서 딕셔너리 형태로 가져오는 로직을 장고의 <strong>manage.py의 위치와 동일하게 만든다.</strong> 아래의 로직은 인사이트 기사를 스크래핑해오는 로직이다.
+길고 복작해보이지만 사실 꽤나 간단한 로직들이다..^^ <strong>여기서 중요한건 아래의 로직보다는 원하는 데이터를 스크래핑해서 딕셔너리에 담는것이 중요하다</strong>  <br />
+<a href="https://github.com/heejung-gjt/DataAnalysis/blob/master/scrapping_django_practice_1/insight_parser.py">코드 전체 보러가기</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># ./insight_parser.py</span>
+
+<span class="n">insight_news_info</span> <span class="o">=</span> <span class="p">[]</span>
+    
+<span class="c"># Dict형태로 변환 함수</span>
+<span class="k">def</span> <span class="nf">dict_infor</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">context</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="k">return</span> <span class="n">context</span>
+
+<span class="k">def</span> <span class="nf">parse_insight</span><span class="p">():</span>
+    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span> <span class="c"># 뉴스 number</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="c"># 데이터 스크래핑해오는 과정....</span>
+            
+    <span class="n">insight_news_info</span> <span class="o">=</span> <span class="n">dict_infor</span><span class="p">(</span>
+        <span class="n">press</span><span class="o">=</span><span class="n">press</span><span class="p">,</span>
+        <span class="n">news_code</span><span class="o">=</span><span class="n">code</span><span class="p">,</span> 
+        <span class="n">news_category</span><span class="o">=</span><span class="n">news_category</span><span class="p">,</span> 
+        <span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">,</span> 
+        <span class="n">preview_img</span><span class="o">=</span><span class="n">preview_img</span><span class="p">,</span> 
+        <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> 
+        <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+        <span class="n">img</span><span class="o">=</span><span class="n">image_url_list</span><span class="p">,</span><span class="n">ref</span><span class="o">=</span><span class="n">link</span> 
+        <span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">insight_news_info</span> <span class="c"># 모든 데이터가 담긴 딕셔너리 data</span>
+    <span class="k">return</span> <span class="n">data</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="2-1번에서-만든-py파일을-modelspy와-연동해준다-장고-환경-불러오기">2. 1번에서 만든 py파일을 models.py와 연동해준다. (장고 환경 불러오기)</h3>
+<p>연동하기 위한 로직은 아래와 같다.  <br />
+이렇게 로직이 추가되면 해당 파일을 python으로 실행시켜도 manage.py를 통해 장고를 실행시킨것 같이 
+작동한다. 그렇기 때문에 insight_parser.py에서 create되는 model이 정상적으로 장고 db에 들어가진다.</p>
+
+<blockquote>
+  <ol>
+    <li>
+      <p>파이썬이 실행될때 DJANGO_SETTINGS_MODULE이라는 환경 변수에 현재 프로젝트의 settings.py 경로를 등록한다
+이때 <strong>앱네임.settings로 작성해야 한다</strong></p>
+    </li>
+    <li>
+      <p>장고를 import해서 장고 프로젝트를 사용할 수 있게 한다</p>
+    </li>
+  </ol>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># ./insight_parser.py</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">"DJANGO_SETTINGS_MODULE"</span><span class="p">,</span> <span class="s">"scrapping.settings"</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="kn">import</span> <span class="nn">django</span> <span class="o">-</span> <span class="mi">2</span>
+
+<span class="n">django</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">scrapping.models</span> <span class="kn">import</span> <span class="n">Article</span> 
+
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="3-장고-orm으로-데이터-db에-저장하기">3. 장고 orm으로 데이터 db에 저장하기</h3>
+<p>if <strong>name</strong>==’<strong>main</strong>’: 이 코드를 작성해야 python에서 직접 실행할 경우에만 아래의 코드들이 동작된다.
+코드를 살펴보면 Article을 create하는 걸 볼 수 있다. <code class="highlighter-rouge">python insight_parser.py</code>의 명령어로
+파일을 실행시킨다. 아무런 에러가 나지 않으면 성공 -!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ./insight_parser.py</span>
+
+<span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s">'__main__'</span><span class="p">:</span>
+
+<span class="n">news_dict</span> <span class="o">=</span> <span class="n">parse_insight</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">news_dict</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">press</span><span class="o">=</span><span class="n">Press</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'press'</span><span class="p">])</span><span class="o">.</span><span class="n">first</span><span class="p">(),</span>
+        <span class="n">category</span><span class="o">=</span><span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'news_category'</span><span class="p">])</span><span class="o">.</span><span class="n">first</span><span class="p">(),</span>
+        <span class="n">code</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'news_code'</span><span class="p">],</span>
+        <span class="n">date</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'date'</span><span class="p">],</span>
+        <span class="n">preview_img</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'preview_img'</span><span class="p">],</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'title'</span><span class="p">],</span>
+        <span class="n">img</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'img'</span><span class="p">],</span>
+        <span class="n">content</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'content'</span><span class="p">],</span>
+        <span class="n">ref</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'ref'</span><span class="p">]</span>
+        <span class="p">)</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="-model-작성에-어려움이-있는-경우">👏 model 작성에 어려움이 있는 경우</h3>
+<p>아직 모델링 설계에 경험이 부족하다. 모델링 설계가 어렵다면 남들이 짜놓은 코드를 많이보자. 그리고 직접 왜 그렇게 짰는지에
+대해 고민하고 스스로 짜는 시간을 가진다면 최소한 돌아가는데 문제는 없는 모델을 짤 수 있을 것이다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+  <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+
+<span class="k">class</span> <span class="nc">Press</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+  <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>     
+
+  <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+
+<span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+  <span class="n">press</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Press</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s">'article'</span><span class="p">)</span>
+  <span class="n">category</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Category</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s">'article'</span><span class="p">)</span>
+  <span class="n">code</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+  <span class="n">date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+  <span class="n">preview_img</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+  <span class="n">img</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+  <span class="n">content</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+  <span class="n">ref</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">URLField</span><span class="p">()</span> 
+  
+  <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span>
+</code></pre></div></div>
+
+                </div>
+            </section>
+        
+        <div id="post-disqus" class="container">
+            <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://heejung-gjt-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+        
+
+
+
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">Studying  Develop</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Studying  Develop</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+    <script id="dsq-count-scr" src="//heejung-gjt-github-io.disqus.com/count.js" async></script>
+</body>
+</html>

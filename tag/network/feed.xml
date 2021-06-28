@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/network/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-06-28T08:57:05+09:00</updated>
+  <updated>2021-06-29T00:10:11+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/network/feed.xml</id>
 
   
@@ -32,6 +32,52 @@
 
   
     <entry>
+      <title type="html">(네트워크) 웹의 기본 동작 방식(작성중…)</title>
+      <link href="https://heejung-gjt.github.io/web" rel="alternate" type="text/html" title="(네트워크) 웹의 기본 동작 방식(작성중...)" />
+      <published>2021-06-28T16:30:00+09:00</published>
+      <updated>2021-06-28T16:30:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/web</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/web">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Network 정리 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/123659425-a23eed80-d86d-11eb-9cb0-26e4fa411e60.png&quot; alt=&quot;network&quot; width=&quot;500&quot; height=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;웹이-동작하는-방식&quot;&gt;웹이 동작하는 방식&lt;/h2&gt;
+&lt;p&gt;클라이언트가 요청을 보내면 서버가 해당 요청을 받아 응답해준다
+client는 서비스를 요청하는 프로그램이고 server는 클라이언트의 요청에 대한 응답을 주는 프로그램이다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="network" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">HTTP 와 HTTPS</title>
       <link href="https://heejung-gjt.github.io/https" rel="alternate" type="text/html" title="HTTP 와 HTTPS" />
       <published>2021-05-06T14:30:00+09:00</published>
@@ -42,12 +88,6 @@
 &lt;!--    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
 &lt;!--    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
 &lt;!--&lt;/ul&gt;--&gt;
-
-&lt;h2 id=&quot;웹이-동작하는-방식&quot;&gt;웹이 동작하는 방식&lt;/h2&gt;
-&lt;p&gt;클라이언트가 요청을 보내면 서버가 해당 요청을 받아 응답해준다
-client는 서비스를 요청하는 프로그램이고 server는 클라이언트의 요청에 대한 응답을 주는 프로그램이다&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;프로토콜&quot;&gt;프로토콜&lt;/h2&gt;
 &lt;p&gt;컴퓨터나 네트워크 장비가 서로 통신하기 위해 미리 정해놓은 약속,규약이다
