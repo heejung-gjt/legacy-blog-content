@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-06-29T00:10:11+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">(네트워크) 웹의 기본 동작 방식(작성중…)</title><link href="https://heejung-gjt.github.io/web" rel="alternate" type="text/html" title="(네트워크) 웹의 기본 동작 방식(작성중...)" /><published>2021-06-28T16:30:00+09:00</published><updated>2021-06-28T16:30:00+09:00</updated><id>https://heejung-gjt.github.io/web</id><content type="html" xml:base="https://heejung-gjt.github.io/web">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Network 정리 &lt;/span&gt;--&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-06-29T09:46:32+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">0629 TIL</title><link href="https://heejung-gjt.github.io/til4" rel="alternate" type="text/html" title="0629 TIL" /><published>2021-06-28T20:00:00+09:00</published><updated>2021-06-28T20:00:00+09:00</updated><id>https://heejung-gjt.github.io/til4</id><content type="html" xml:base="https://heejung-gjt.github.io/til4">&lt;h2 id=&quot;210629-계획&quot;&gt;210629 계획&lt;/h2&gt;
+
+&lt;hr /&gt;
+&lt;h4 id=&quot;am-0820-&quot;&gt;AM 08:20 ~&lt;/h4&gt;
+
+&lt;p&gt;생각보다 강연 들을 시간이 없어서 놀랐다.. 할 게 넘쳐난다,,^^ 즐겁게 해야지
+오후에 학원 가니까 버스안에서 들어볼 예정이다. 웹 동작방식을 마저 공부해서 
+블로그에 업로드하고 채팅구현을 이어서 해 볼 예정이다. 7월 둘째주까지는 프로젝트 진행에 중점을 두고 
+공부를 할 예정이다&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;channels를-이용한-채팅-구현해보기&quot;&gt;channels를 이용한 채팅 구현해보기&lt;/h4&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;이어서 블로그 업로드하기&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;오늘-들을-특강osdb-정리하기&quot;&gt;오늘 들을 특강(OS/DB) 정리하기&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;postgresql-설치후-장고와-연동해서-스크래핑-프로젝트-진행해보기&quot;&gt;postgresql 설치후 장고와 연동해서 스크래핑 프로젝트 진행해보기&lt;/h4&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;postgresql 블로그 업로드하기&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;네트워크-웹-동작-방식-블로그에-업로드하기-작성중&quot;&gt;네트워크 웹 동작 방식 블로그에 업로드하기 (작성중….)&lt;/h4&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">(네트워크) 웹의 기본 동작 방식(작성중…)</title><link href="https://heejung-gjt.github.io/web" rel="alternate" type="text/html" title="(네트워크) 웹의 기본 동작 방식(작성중...)" /><published>2021-06-28T16:30:00+09:00</published><updated>2021-06-28T16:30:00+09:00</updated><id>https://heejung-gjt.github.io/web</id><content type="html" xml:base="https://heejung-gjt.github.io/web">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Network 정리 &lt;/span&gt;--&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
 &lt;!--    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
 &lt;!--    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
@@ -252,7 +287,14 @@ SYN_SENT 상태가 된다&lt;/li&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">(Django) ajax를 이용한 댓글과 재댓글 구현하기 - 2</title><link href="https://heejung-gjt.github.io/comment_2" rel="alternate" type="text/html" title="(Django) ajax를 이용한 댓글과 재댓글 구현하기 - 2" /><published>2021-06-27T15:30:00+09:00</published><updated>2021-06-27T15:30:00+09:00</updated><id>https://heejung-gjt.github.io/comment_2</id><content type="html" xml:base="https://heejung-gjt.github.io/comment_2">&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-am-1230&quot;&gt;~ AM 12:30&lt;/h4&gt;
+&lt;p&gt;오랜만에 파이썬 공부하니까 어렵다.. 역시 모든 꾸준히 해야 되는 것 같다..😂
+내일은 OS/DB 관련 특강을 들으러 가는데 물어볼거 정리해서 가야겠다.&lt;/p&gt;
+
+&lt;p&gt;장고는 진짜 편한것 같기는 하다. 근데 진짜 아는만큼 보인다고 모를때 마냥 어려웠는데 
+알고보니까 정말 간단하게 구현할 수 있는게 생각보다 많아서 놀라웠다. 장고,, 생각보다 더 매력적인건 인정 !&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">(Django) ajax를 이용한 댓글과 재댓글 구현하기 - 2</title><link href="https://heejung-gjt.github.io/comment_2" rel="alternate" type="text/html" title="(Django) ajax를 이용한 댓글과 재댓글 구현하기 - 2" /><published>2021-06-27T15:30:00+09:00</published><updated>2021-06-27T15:30:00+09:00</updated><id>https://heejung-gjt.github.io/comment_2</id><content type="html" xml:base="https://heejung-gjt.github.io/comment_2">&lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./comment&quot;&gt;(Django) ajax를 이용한 댓글과 재댓글 구현하기 - 1 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -917,151 +959,4 @@ context를 함수에서 작성한 후 리턴해주었다.&lt;/li&gt;
 
 &lt;h2 id=&quot;-조급해하지-말자&quot;&gt;⁎ 조급해하지 말자&lt;/h2&gt;
 &lt;p&gt;위기다 난 마음이 급해질수록 더 격렬하게 아무것도 하기 싫다.. 지금 처해진 상황이 힘이 나지 않는다. 자존감이 낮아진것도 문제라면 문제다. 슬퍼하던 기뻐하던 
-시간은 간다. 조급함을 조금 내려놓고 싶다.. 그래 코딩이나 하러가자..^^&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">HTTP 와 HTTPS</title><link href="https://heejung-gjt.github.io/https" rel="alternate" type="text/html" title="HTTP 와 HTTPS" /><published>2021-05-06T14:30:00+09:00</published><updated>2021-05-06T14:30:00+09:00</updated><id>https://heejung-gjt.github.io/https</id><content type="html" xml:base="https://heejung-gjt.github.io/https">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Network 정리 &lt;/span&gt;--&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;h2 id=&quot;프로토콜&quot;&gt;프로토콜&lt;/h2&gt;
-&lt;p&gt;컴퓨터나 네트워크 장비가 서로 통신하기 위해 미리 정해놓은 약속,규약이다
-사람과 사람이 서로 통신할때 이해할수 있는 공통된 언어를 사용하는 것처럼 컴퓨터와 컴퓨터 사이에도 서로 이해할 수 있는 공통된 언어를 사용하는데 이것을 프로토콜이라고 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;http&quot;&gt;HTTP&lt;/h3&gt;
-&lt;p&gt;HTTP는 클라이언트와 서버를 통신해주는 프로토콜이다. 풀어서 서버와 클라이언트 사이에서 이루어지는 요청/응답이다. HTTP는 통신이 암호화 되지 않는 상태로 되기때문에 보안에 취약한 문제점이 있다. 이를 개선한 HTTPS가 등장하였다&lt;/p&gt;
-
-&lt;h2 id=&quot;httpshypertext-transfer-protocol-secure&quot;&gt;HTTPS(Hypertext Transfer Protocol Secure)&lt;/h2&gt;
-&lt;p&gt;클라이언트와 서버간의 안전한 통신을 위해 암호화하여 전송한다.
-HTTPS는 클라이언트와 서버간의 통신을 제 3자인 CA가 인증을 해준다.SSL 디지털 인증서를 기준으로 클라이언트가 접속한 서버가 맞는지 확인해준다.&lt;/p&gt;
-
-&lt;h2 id=&quot;http-프로토콜&quot;&gt;HTTP 프로토콜&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;인터넷 통신을 위해 사용되는 프로토콜이다&lt;/li&gt;
-  &lt;li&gt;HTTP프로토콜은 인터넷상에서 데이터를 주고 받기 위한 서버/클라이언트 모델을 따르는 프로토콜이다&lt;/li&gt;
-  &lt;li&gt;HTTP프로토콜은 HTML문서와 같은 리소스들을 가져올 수 있도록 해준다&lt;/li&gt;
-  &lt;li&gt;HTTP는 서버/클라이언트 모델이다&lt;/li&gt;
-  &lt;li&gt;HTTP는 기본적으로 평문 데이터 전송을 원칙으로 하기 때문에 프라이버시가 오가는 서비스에서 사용하기는 어려움이 있다(HTTPS사용)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;http-request-method&quot;&gt;HTTP Request Method&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;GET : URL에 해당하는 자료의 전송을 요청, 클라이언트가 GET을 보내면 서버에서 그 주소에 해당하는 응답을 보내준다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;POST : 서버가 처리할 수 있는 자료를 전송, 예를 들면 로그인할때 클라이언트가 폼에 아이디와 비밀번호를 입력하면 로그인 될 수 있게 해당되는 자료를 서버에서 처리한 후 결과를 전송해준다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;PUT : 해당 URL에 자료를 저장&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;DELETE : 해당 URL의 자료를 삭제&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;http-status-code&quot;&gt;HTTP Status Code&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/HTTP/Status&quot;&gt;mdn참고하기&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;200번대&lt;/li&gt;
-  &lt;li&gt;300번대&lt;/li&gt;
-  &lt;li&gt;400번대&lt;/li&gt;
-  &lt;li&gt;500번대&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;url&quot;&gt;URL&lt;/h2&gt;
-&lt;p&gt;URL은 서버에 자원(데이터)를 요청하기 위한 주소이다. URL은 URI의 상위개념으로 네트워크 상에서 자원 위치를 알려주기 위한 규약이다&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;ssl인증서&quot;&gt;SSL인증서&lt;/h2&gt;
-&lt;p&gt;클라이언트와 서버간의 통신을 제3자인 CA가 보증해주는 전자화된 문서이다. SSL은 암호화된 데이터를 전송하기 위해서 공개키와 대칭키를 혼합해서 사용한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;인증서의 내용&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;서비스의 정보(인증서를 발급한 CA, 서비스의 도메인)&lt;/strong&gt;&lt;br /&gt;
-클라이너트가 접속한 서버가 클라이언트가 의도한 서버가 맞는지에 대한 내용을 담고 있다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;서버측 공개키(공개키의 내용, 공개키의 암호화 방법)&lt;/strong&gt; &lt;br /&gt;
-서버와 통신을 할때 사용할 공개키와 그 공개키의 암호화 방법들의 정보를 담고 있다. 서버의 공개키와 같은 정보는 서비스가 CA로부터 인증서를 구입할때 제출해야 한다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;인증서의 목표&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;클라이언트가 접속한 서버가 신뢰할 수 있는 서버인지 판단해준다&lt;/li&gt;
-  &lt;li&gt;SSL 통신에 사용되는 공개키를 클라이언트에게 전달한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;cacertificate-authority&quot;&gt;CA(Certificate Authority)&lt;/h2&gt;
-&lt;p&gt;SSL인증서를 기준으로 클라이언트가 서버가 의도한 서버가 맞는지 확인하는 역할을 한다. 이때 이 역할을 하는 공인된 기업을 CA라고 부른다. &lt;strong&gt;SSL을 통해서 암호화된 통신을 제공하려는 서비스는 CA를 통해서 인증서를 구입해야 한다&lt;/strong&gt;   &lt;br /&gt;
-인증서를 이해하기 위해서 꼭 알아야 하는것이 CA의 리스트이다. 브라우저는 내부적으로 CA의 리스트를 미리 파악하고 있다. 브라우저가 미리 파악하고 있는 CA의 리스트에 포함되어야만 공인된 CA가 될 수 있다. CA의 리스트와 함께 각 CA의 공개키를 브라우저는 이미 알고 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;ssltls-handshake&quot;&gt;SSL/TLS Handshake&lt;/h2&gt;
-&lt;p&gt;HTTPS는 SSL/TLS 전송기술을 사용한다. TLS는 SSL의 개선버전으로 최신 인증서는 TLS를 사용하지만 SSL인증서라고 불린다. 즉 같은 말이라고 생각하면 된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;handshake 과정을 보기 전에 먼저 필요한 암호화 방식을 살펴본다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;대칭키-암호화-방식&quot;&gt;대칭키 암호화 방식&lt;/h2&gt;
-&lt;p&gt;대칭키 암호화 방식은 하나의 키로 데이터를 암호화/복호화를 하는 방식이다.  &lt;br /&gt;
-a가 문자가 써져있는 평문을 b에게 보낼때 a,b가 공통적으로 가지고 있는 키로 암호화하여 b에게 암호화된 암호문을 전송한다. 암호문을 받은 b는 공통적으로 가지고 있는 키로 암호문을 복호화하여 실제 내용을 볼 수 있다. 이때 사용되는 키를 &lt;strong&gt;대칭키&lt;/strong&gt; 라고 부르며 이 방식을 대칭키 암호화 방식이라고 부른다.  &lt;br /&gt;
-하지만 만약 둘 중 한명이 키를 도난,분실하면 다른 누군가가 복호화하여 볼 수 있는 단점이 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/117237085-21fb9d80-ae65-11eb-8886-751781a4e618.png&quot; alt=&quot;대칭키&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;공개키-암호화-방식&quot;&gt;공개키 암호화 방식&lt;/h2&gt;
-&lt;p&gt;공개키 암호화 방식은 대칭키와 달리 &lt;strong&gt;공개키&lt;/strong&gt; 와 &lt;strong&gt;개인키&lt;/strong&gt; 를 한쌍으로 묶어 암호화와 복호화에 사용한다. 보통 공개키로 평문을 암호화하여 전송하고 개인키로 암호문을 복호화한다. b가 a에게 데이터를 전달받고 싶을때 b가 먼저 개인키와 공개키를 생성한후 공개키를 a에게 전달한다. 이 후 b의 공개키를 받은 a는 평문을 b의 공개키로 암호화하여 b에게 전달한다. b는 전달받은 암호문을 자신의 개인키로 복호화한다.&lt;/p&gt;
-
-&lt;p&gt;공개키는 누구에게나 공개될 수 있는 키이다. 하지만 개인키는 자기자신만이 가지고 있으므로 공개키로 암호화된 문서를 복호화하기 위해서는 개인키를 소지하고 있는 사람만이 볼 수 있다. 그렇게 때문에 개인키는 안전하게 보관되어야 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/117237629-4f951680-ae66-11eb-8d92-017db7dec12f.png&quot; alt=&quot;공개키&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;ssltls-handshake-동작-과정&quot;&gt;SSL/TLS Handshake 동작 과정&lt;/h2&gt;
-&lt;p&gt;SSL방식을 이용해 통신을 하는 브라우저와 서버는 Handshake를 하는데 이때 SSL인증서를 주고 받는다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/117244784-a73a7e80-ae74-11eb-8d9d-693bdc6f45cc.png&quot; alt=&quot;핸드세이크&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;먼저 클라이언트가 요청을 보낼 서버가 원하는 서버가 맞는지를 확인하기 위해 client hello단계에서 &lt;strong&gt;브라우저가 지원하는 암호화 방식 모음(cipher suite)&lt;/strong&gt; 과 &lt;strong&gt;랜덤한 난수&lt;/strong&gt; 등을 보낸다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;클라이언트의 요청을 받은 서버는 server hello단계에서 브라우저가 보낸 암호화 방식 중 하나를 선택해 &lt;strong&gt;서버의 공개키 와 CA의 개인키로 암호화되어 발급된 SSL인증서&lt;/strong&gt;, &lt;strong&gt;랜덤한 난수&lt;/strong&gt;, &lt;strong&gt;클라이언트 인증서 요청&lt;/strong&gt; 등을 보낸다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;서버의 데이터를 받은 클라이언트는 서버에서 보낸 SSL인증서가 자신의 CA리스트에 있는 공개키로 복호화 되는지를 확인한 후 복호화가 되면 정상적인 서버에서 온 응답이라는 걸 인식한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;클라이언트는 그후 데이터를 안전하게 주고받을수 있게 자신이 생성한 랜덤한 난수와 서버의 난수를 사용해 premaster secret을 만들어 서버의 공개키로 암호화 하여 서버로 전송한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;서버는 자신의 개인키로 클라이언트가 보낸 premaster secret값을 복호화 하여 master secret값으로 저장한다. 이를 이용해 session key를 생성하고 이 세션키는 대칭키 암호화해 사용이 된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SSL handshake가 정상적으로 완료되고 이제 웹 상에서 데이터를 대칭키를 이용해 암호화 복호화를 하며 HTTPS 프로토콜을 통해 주고받는다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;Q1. HTTPS는 Stateful인가 Stateless인가. handshake과정은 매번 발생하는 것인가?&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://opentutorials.org/course/228/4894&quot;&gt;referance- 생활코딩&lt;/a&gt;
-&lt;a href=&quot;https://blog.naver.com/PostView.nhn?blogId=sehyunfa&amp;amp;logNo=221812730631&amp;amp;categoryNo=19&amp;amp;parentCategoryNo=0&amp;amp;viewDate=&amp;amp;currentPage=1&amp;amp;postListTopCurrentPage=1&amp;amp;from=postView&quot;&gt;referance- blog&lt;/a&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="network" /><summary type="html"></summary></entry></feed>
+시간은 간다. 조급함을 조금 내려놓고 싶다.. 그래 코딩이나 하러가자..^^&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry></feed>
