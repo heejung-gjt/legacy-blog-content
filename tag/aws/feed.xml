@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/aws/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-06-30T21:35:32+09:00</updated>
+  <updated>2021-07-02T09:23:28+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/aws/feed.xml</id>
 
   
@@ -30,6 +30,303 @@
   
   
 
+  
+    <entry>
+      <title type="html">(django) AWS EC2 리전이란</title>
+      <link href="https://heejung-gjt.github.io/aws2" rel="alternate" type="text/html" title="(django) AWS EC2 리전이란" />
+      <published>2021-06-30T14:00:00+09:00</published>
+      <updated>2021-06-30T14:00:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/aws2</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/aws2">&lt;hr /&gt;
+
+&lt;h3 id=&quot;aws-ec2elastic-compute-cloud란&quot;&gt;AWS EC2(Elastic Compute Cloud)란?&lt;/h3&gt;
+&lt;p&gt;EC2는 아마존 웹 서비스의 여러 서비스 중 가장 먼저 생겨난 서비스 중 하나로 독립된 컴퓨터 한대를 임대해서 
+사용할 수 있다는 의미이다. 쉽게 말해 우리가 쓰는 컴퓨터와 같은 역할을 하는 컴퓨터를 한대 빌려주는 것이라고 생각하면 된다. 
+이때 해당 컴퓨터에 사용자가 선호하는 OS를 설치하고 웹 서비스(DB)를 위한 프로그램을 설치하면 된다.&lt;/p&gt;
+
+&lt;p&gt;AWS에서 인터넷을 통해서 해당 컴퓨터에 접속할 수 있는 URL을 제공하는데 해당 URL을 통해 웹서비스를 할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;서버로 쓸 수 있는 환경을 클라우드로 제공하는 웹 서비스이다.&lt;/li&gt;
+  &lt;li&gt;우리가 흔히 쓰는 컴퓨터와 같다고 생각하면 된다.&lt;/li&gt;
+  &lt;li&gt;aws에서 제공되는 서비스 중 웹서버 역할을 할 수 있는 서비스는  EC2 밖에 없다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;클라우드-서비스-유형에는-무엇이-있는가&quot;&gt;클라우드 서비스 유형에는 무엇이 있는가?&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;iaas인프라-서비스--데이터-저장공간--서버&quot;&gt;IaaS(인프라 서비스) = 데이터 저장공간 + 서버&lt;/h4&gt;
+    &lt;p&gt;서버와 스토리지, 네트워크 장비등의 it 인프라 장비를 빌려주는 서비스로 이용자가 직접 데이터센터를 구축할 필요없이 클라우드 환경에서 필요한 인프라를 빌려와 운영체제를 설치하고 애플리케이션을 설치한 다음 원하는 서비스를 운영한다.예를 들자면 넷플릭스는 aws의 iaas 서비스를 이용하여 운영하는 서비스이다.
+  ex) amazon web service, microsoft azure, google compute engine&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;paas플랫폼-서비스--데이터-저장공간--서버--플랫폼&quot;&gt;PaaS(플랫폼 서비스) = 데이터 저장공간 + 서버 + 플랫폼&lt;/h4&gt;
+    &lt;p&gt;소프트웨어 서비스를 개발할 때 필요한 플랫폼을 제공하는 서비스로 사용자는 필요한 서비스를 선택해 애플리케이션을 개발한다. 개발자가 소프트웨어를 개발할때 필요한 API를 제공하여 개발자가 좀 더 편하게 앱을 개발 할 수 있게 돕는다.
+  ex) google app engine&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;saas소프트웨어-서비스--데이터-저장공간--서버--소프트웨어&quot;&gt;Saas(소프트웨어 서비스) = 데이터 저장공간 + 서버 + 소프트웨어&lt;/h4&gt;
+    &lt;p&gt;지메일이나 드롭박스 ,네이버 클라우드처럼 소프트웨어를 웹에서 쓸 수 있는 서비스로 지메일을 예를 들어본다면 이메일을 보내고 받는 과정에서 따로 소프트웨어를 설치하지 않고 웹사이트에 들어가 주소를 입력하고 보내면 끝난다. 이처럼 모든 서비스가 클라우드에서 이루어져 pc에 따로 설치하지 않아도 웹에서 소프트웨어를 빌려 쓸 수 있다.
+  ex) google app, dropbox&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;클라우드-컴퓨팅이란&quot;&gt;클라우드 컴퓨팅이란?&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;사용자의 직접적인 활발한 관리 없이 데이터 스토리지와 시스템 리소스를 필요시 바로 제공하는 것을 말한다. 데이터 정보를 자신의 컴퓨터가 아닌 클라우드에 연결된 다른 컴퓨터(휴대폰, TV, 노트북 등등)로 처리하는 기술을 말한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;awsamazon-web-service란&quot;&gt;AWS(Amazon Web Service)란&lt;/h3&gt;
+&lt;p&gt;AWS는 아마존에서 개발한 클라우드 컴퓨팅 플랫폼으로 클라우드 컴퓨팅을 통해 웹사이트를 관리하는데 필요한 많은 기능을 제공해준다. 웹사이트를 운영하는데 필요한 서버나 DB, 스토리지등을 제공하는 등 개발자가 사용 가능한 기능을 제공하는 플랫폼을 제공하며 PaaS이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;iamidentity-and-access-management이란&quot;&gt;IAM(Identity and Access Management)이란&lt;/h3&gt;
+&lt;p&gt;AWS 리소스에 대한 안전한 접근제어를 제공하는 서비스로 IAM을 사용하여 리소스를 사용하도록 인증 및 권한 부여된 대상을 제어한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;s3simple-storage-service란&quot;&gt;S3(Simple Storage Service)란&lt;/h3&gt;
+&lt;p&gt;인터넷 스토리지 서비스로 웹에서 언제 어디서나 원하는 양의 데이터를 저장하고 검색할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;객체(Object)
+s3에 데이터(이미지, 동영상, 파일)가 저장되는 기본 단위는 객체로 파일과 메타데이터로 이루어져 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;h4 id=&quot;객체의-구성요소&quot;&gt;객체의 구성요소&lt;/h4&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;key : 파일명&lt;/li&gt;
+    &lt;li&gt;value : 파일에 대한 데이터&lt;/li&gt;
+    &lt;li&gt;메타데이터 : 데이터의 데이터라는 뜻이며 언제 파일이 업로드 되었는지, owner, 수정등에 대한 데이터이다&lt;/li&gt;
+    &lt;li&gt;cors: 리전을 무시하고 한 버킷의 파일을 다른 버킷에서 접근할 수 있도록 한다&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;버킷(Bucket)  &lt;br /&gt;
+s3에서 생성할 수 있는 최상위 디렉토리의 개념으로 버킷의 이름은 유일해야 하며 계정별로 100개까지 생성이 가능하고 버킷에 저장할 수 있는 객체의 수는 무제한이다. 버킷별로 접근제어 설정이 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Key : 버킷 내에서 객체를 찾기 위해 사용되는 고유 식별자이다. 보통 디렉터리+파일명으로 이름이 지어진다. 업로드 할 이미지의 네임이 동일할 수 있음을 고려하여 date를 추가해 네임을 지을 수 도 있다.&lt;/li&gt;
+    &lt;li&gt;Region : 버킷 생성시 버킷의 위치를 지정할 수 있다. 버킷의 위치를 어디에 지정하느냐에 따라서 지연 시간의 최적화나 비용의 최소화등이 결정된다.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;aws에서-제공하는-s3-스토리지-서비스를-사용하여-이미지를-서버에-업로드-시켜보자&quot;&gt;AWS에서 제공하는 S3 스토리지 서비스를 사용하여 이미지를 서버에 업로드 시켜보자&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;IAM 사용자 추가하기&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;AWS S3 Bucket 생성하기&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;IAM 등을 설정하는 방법은 다양하니까 자신의 상황에 맞게 설정에 대한 내용을 찾아보고 설정해주면 될 것 같다. 나는 연습용으로 서버에 이미지를 올리는 것을 목적으로 구축하였기 때문에 퍼블릭으로 설정하되 익명의 사용자에 대한 권한을 readonly로 주어 제한시켜 사용하였다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;IAM과 S3를 설정하는 방법을 간단하게 설명하겠다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-가장먼저-필요한-것은-회원가입이다-해외에서-결제가-가능한-카드를-준비해서-회원가입시-적어주면된다-회원가입은-어렵지-않으니-회원가입을-따라서-천천히-한다&quot;&gt;1. 가장먼저 필요한 것은 회원가입이다. 해외에서 결제가 가능한 카드를 준비해서 회원가입시 적어주면된다. 회원가입은 어렵지 않으니 회원가입을 따라서 천천히 한다.&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-검색창에-iam을-입력후-사용자-추가를-눌러준-후-아래와-같이-입력해준다-이때-34번-단계는-설정-필요없이-넘어가-주면-된다-주의할점은-5단계에서-csv파일은-꼭-저장해야-한다-나중에-장고에서-설정할때-필요한-아이들이므로-저장해준다-해당-페이지에서만-제공해주므로-이것만-주의해서-설정해주자&quot;&gt;2. 검색창에 iam을 입력후 사용자 추가를 눌러준 후 아래와 같이 입력해준다. 이때 3,4번 단계는 설정 필요없이 넘어가 주면 된다. 주의할점은 &lt;code class=&quot;highlighter-rouge&quot;&gt;5단계에서 csv파일은 꼭! 저장해야 한다. 나중에 장고에서 설정할때 필요한 아이들이므로 저장해준다. 해당 페이지에서만 제공해주므로 이것만 주의해서 설정해주자&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/123533444-a3c6c380-d750-11eb-8ec4-2aff9d65dd48.png&quot; alt=&quot;1&quot; /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/123533446-a5908700-d750-11eb-8601-0faaca106d74.png&quot; alt=&quot;2&quot; /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/123533449-a7f2e100-d750-11eb-85d7-f941ab7f720d.png&quot; alt=&quot;5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;3-버킷을-만들어준다-검색창에-s3를-검색후-버킷만들기를-눌러준후-아래와-같이-입력해준다-이때-주의할점은-버킷은-앞에서-말했듯이-아이디처럼-고유한-이름이어야-한다-나는-연습용으로-만드는-것이기-때문에-모든-퍼블릭-액세스-차단-버튼을-해제해-설정하였다&quot;&gt;3. 버킷을 만들어준다. 검색창에 s3를 검색후 버킷만들기를 눌러준후 아래와 같이 입력해준다. 이때 주의할점은 버킷은 앞에서 말했듯이 아이디처럼 고유한 이름이어야 한다. 나는 연습용으로 만드는 것이기 때문에 모든 퍼블릭 액세스 차단 버튼을 해제해 설정하였다.&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/123533540-5139d700-d751-11eb-8c90-dca50187816d.png&quot; alt=&quot;b1&quot; /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/123533541-526b0400-d751-11eb-9099-da2d45c4e82c.png&quot; alt=&quot;b2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;4-이후-익명의-사용자에-대한-권한을-제어하기-위해-만들어진-버킷에서-권한을-선택해-버킷-정책을-편집해준다-이때-아래의-내용을-넣어주면-되는데-여기서-주의할점은-resource부분에-버킷의-네임을-내가-설정한-네임으로-넣어주어야-한다-스펠링이-틀리면-오류가-발생하니-바로-위에-있는-네임을-복사해서-사용해주자&quot;&gt;4. 이후 익명의 사용자에 대한 권한을 제어하기 위해 만들어진 버킷에서 권한을 선택해 버킷 정책을 편집해준다. 이때 아래의 내용을 넣어주면 되는데 여기서 주의할점은 &lt;code class=&quot;highlighter-rouge&quot;&gt;Resource부분에 버킷의 네임을 내가 설정한 네임으로 넣어주어야 한다. 스펠링이 틀리면 오류가 발생하니 바로 위에 있는 네임을 복사해서 사용해주자&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;아래에 보이는 이미지에 있는 내용을 버킷정책에 넣어주면 된다. 해당 내용이 있는 링크는 &lt;a href=&quot;https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-use-case-2&quot;&gt;여기를 누르면 된다&lt;/a&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/123533639-eb9a1a80-d751-11eb-8f5a-27a24f8e865f.png&quot; alt=&quot;b4&quot; /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/123533637-e6d56680-d751-11eb-9f5d-6925570fe361.png&quot; alt=&quot;b6'&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;5-이제-사전-설정은-끝이-났다-이제-장고에서-이미지를-업로드-했을때-서버에-저장될-수-있도록-설정해주면-된다&quot;&gt;5. 이제 사전 설정은 끝이 났다. 이제 장고에서 이미지를 업로드 했을때 서버에 저장될 수 있도록 설정해주면 된다.&lt;/h4&gt;
+
+&lt;h4 id=&quot;장고-설정&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;장고 설정&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;4단계정도로 나누어 설정을 해주었다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;visual studio에서 가상환경을 구축한 후 project와 app을 만들어준다.&lt;/li&gt;
+  &lt;li&gt;나의 저장공간인 S3에 이미지 파일을 저장하기 위한 사전 설정을 해준다 (settings.py, .env등)&lt;/li&gt;
+  &lt;li&gt;이미지는 장고 DB에서도 저장되어야 하기 때문에 이미지를 저장할 model을 만들어준다.&lt;/li&gt;
+  &lt;li&gt;index 템플릿을 만들어 이곳에서 form으로 image를 post요청으로 보내고 view에서 s3의 스토리지에 저장하는 로직을 작성한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-가장-먼저-config라는-프로젝트와-s3라는-앱을-만든-후--pip-install-django-environ-pip-install-boto3-touch-gitignore을-설치한다&quot;&gt;1. 가장 먼저 config라는 프로젝트와 s3라는 앱을 만든 후  &lt;code class=&quot;highlighter-rouge&quot;&gt;pip install django-environ&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;pip install boto3&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;touch .gitignore&lt;/code&gt;을 설치한다&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;django-environ : settings.py에서 .env파일에 있는 것을 environ을 통해 읽어온다. .env에는 s3 access를 위한 secret key를 넣어준다(사전에 저장해 놓은 csv내용들) 그리고 이를 gitignore 파일에 추가한다. 그리고 이들을 불러와 쓸때 environ을 통해 사용하면 된다&lt;/li&gt;
+  &lt;li&gt;boto3 : s3를 사용하기 위한 모듈이다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-config에-env파일을-만들어-다운받았던-csv내용을-내용에-맞게-적어주면-된다-env파일은-gitignore에-추가해주는-것을-잊지말자-&quot;&gt;2. config에 .env파일을 만들어 다운받았던 csv내용을 내용에 맞게 적어주면 된다. .env파일은 gitignore에 추가해주는 것을 잊지말자 !&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;AWS_ACCESS_KEY_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Csv 참고&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;AWS_SECRET_ACCESS_KEY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Csv 참고&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;AWS_STORAGE_BUCKET_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;설정한 버킷 이름&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;3-settingspy에서-env에-있는-내용을-environ을-통해-읽어온다&quot;&gt;3. settings.py에서 .env에 있는 내용을 environ을 통해 읽어온다&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# settings.py&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;environ&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;environ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;environ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;AWS_ACCESS_KEY_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'AWS_ACCESS_KEY_ID'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;AWS_SECRET_ACCESS_KEY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'AWS_SECRET_ACCESS_KEY'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;AWS_STORAGE_BUCKET_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'AWS_STORAGE_BUCKET_NAME'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;AWS_S3_REGION_NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ap-northeast-2'&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 버킷 생성할때 지정한 region을 작성한다&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;AWS_S3_FILE_OVERWRITE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 기본적인 오버라이트 설정 false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;4-이미지를-저장할-model을-만들어준다-media폴더를-사용할때는-imagefield를-사용하였지만-s3에-저장할땐-url을-저장해서-나중에-화면에-이미지를-불러올때-src에-저장한-url을-통해-불러온다&quot;&gt;4. 이미지를 저장할 model을 만들어준다. media폴더를 사용할때는 ImageField를 사용하였지만 S3에 저장할땐 url을 저장해서 나중에 화면에 이미지를 불러올때 src에 저장한 url을 통해 불러온다&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CharField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 이미지의 타이틀, 필수는 아니다&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TextField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 이미지 url, 길수도 있으므로 TextField로 설정&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;5-이미지를-업로드하고-불러올-수-있는-index-템플릿을-작성한다&quot;&gt;5. 이미지를 업로드하고 불러올 수 있는 index 템플릿을 작성한다&lt;/h4&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 
+ {% for post in posts %} # view에서 등록한 post를 전부 보여준다
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;img&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{post.url}}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{post.title}}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% endfor %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;action=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{% url 'index' %}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;POST&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;enctype=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;multipart/form-data&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% csrf_token %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;img&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file name/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;post&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;6-form에서-url이-index인-곳으로-post요청을-보내므로-이에-맞게-url을-지정해준다config에서-url을-설정하던-app에서-url을-작성하던-이건-자유다-참고로-나는-config에서-app을-include받아-사용했다&quot;&gt;6. form에서 url이 index인 곳으로 post요청을 보내므로 이에 맞게 url을 지정해준다(config에서 url을 설정하던 app에서 url을 작성하던 이건 자유다. 참고로 나는 config에서 app을 include받아 사용했다)&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;7-이제-view를-작성해보자&quot;&gt;7. 이제 view를 작성해보자&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;boto3&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;boto3.session&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Session&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;config.settings&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AWS_ACCESS_KEY_ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AWS_S3_REGION_NAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AWS_SECRET_ACCESS_KEY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AWS_STORAGE_BUCKET_NAME&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'POST'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# 들어온 요청에서 이미지를 꺼낸다&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FILES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'img'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;session&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;                    &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;aws_access_key_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AWS_ACCESS_KEY_ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;aws_secret_access_key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AWS_SECRET_ACCESS_KEY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;region_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AWS_S3_REGION_NAME&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;s3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'s3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;           &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Y&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;H&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;S'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;img_object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bucket&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AWS_STORAGE_BUCKET_NAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;put_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;Body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;s3_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://django-s3-practices.s3.ap-northeast-2.amazonaws.com/&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Post&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;                  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;POST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'title'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s3_url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redirect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'index'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;posts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Post&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'index.html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'posts'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;posts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;form에서 등록한 이미지의 데이터를 file 변수에 넣는다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;session을 생성해준다. 이때 3가지는 settings.py에서 import하여 사용한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;만들어진 세션을 통해 나의 s3에 접근한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;만들어지는 이미지의 파일명 중복을 피하기 위해 생성되는 시간을 url에 함께 넣어준다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;put_object 메서드로 s3 버킷에 파일을 key와 body로 담는다. 이때 key에는 파일 이름과 생성시간이 들어간다. body에는 생성된 file이 들어간다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;나의 버킷주소를 s3_url에 넣어준다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;생성되는 post를 등록할때 url에 버킷의 url과 버킷에 들어간 key값을 넣어준다. 해당 url은 실제 템플릿에 있는 img src에 들어갈 url로 버킷에 있는 key에 접근하여 해당되는 파일에 접근하는 방식이 된다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 모델과 s3 스토리지에 업로드하는 이미지가 잘 등록되는지 확인해보자 :-)&lt;/p&gt;
+
+&lt;p&gt;👏 &lt;strong&gt;다음번엔 이를 이용해 프로필 이미지 등록과 여러 제품 이미지 등록에 대한 부분을 다룰 예정이다&lt;/strong&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="aws" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">(django) AWS 이용해 이미지 S3 스토리지에 업로드하기</title>

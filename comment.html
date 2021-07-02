@@ -257,13 +257,14 @@ into the {body} of the default.hbs template -->
 </blockquote>
 
 <p><strong>우선 나는 service layer를 사용하여 코드를 분리한다. 코드를 어떻게 나누는지에 대해 간단하게 설명을 하겠다.</strong></p>
-
 <blockquote>
-  <ul>
-    <li>view의 역할 : 받은 데이터를 dto형식에 넣어준 후 service에게 데이터가 들어간 dto를 전달한다. 이후 결과값을 리턴받아 해당 템플릿에 뿌려준다</li>
-    <li>service의 역할 : dto형식으로 온 데이터를 상황에 맞게 가공한다(create, update, delete, filter..등등, 데이터베이스에 접근되어 지는 작업)</li>
-    <li>utils의 역할 : 공통적으로 쓰이는 로직을 함수로 만들어 utils에서 가져와 사용한다</li>
-  </ul>
+
+  <p><code class="highlighter-rouge">역할</code>  <br />
+ <strong>view의 역할</strong> : 받은 데이터를 dto형식에 넣어준 후 service에게 데이터가 들어간 dto를 전달한다. 이후 결과값을 리턴받아 해당 템플릿에 뿌려준다</p>
+
+  <p><strong>service의 역할</strong> : dto형식으로 온 데이터를 상황에 맞게 가공한다(create, update, delete, filter..등등, 데이터베이스에 접근되어 지는 작업)</p>
+
+  <p><strong>utils의 역할</strong> : 공통적으로 쓰이는 로직을 함수로 만들어 utils에서 가져와 사용한다</p>
 </blockquote>
 
 <h3 id="1-가장-먼저-comment에-필요한-데이터의-타입을-정한-dto를-작성한다"><strong><code class="highlighter-rouge">1. 가장 먼저 comment에 필요한 데이터의 타입을 정한 dto를 작성한다</code></strong></h3>

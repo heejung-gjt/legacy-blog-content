@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/django/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-06-30T21:35:32+09:00</updated>
+  <updated>2021-07-02T09:23:28+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/django/feed.xml</id>
 
   
@@ -38,21 +38,17 @@
       <updated>2021-06-28T15:30:00+09:00</updated>
       <id>https://heejung-gjt.github.io/scrapping</id>
       <content type="html" xml:base="https://heejung-gjt.github.io/scrapping">&lt;h4 id=&quot;가장-먼저-할-일은-장고를-세팅해주는-것이다--&quot;&gt;가장 먼저 할 일은 장고를 세팅해주는 것이다 :-)&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;django settings&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;
-      &lt;p&gt;가상환경을 만들어준다 : virtualenv venv&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;p&gt;settings.py에 설치한 앱을 적어야 하는 것 잊지말자&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
+
+  &lt;p&gt;가상환경을 만들어준다 : virtualenv venv&lt;/p&gt;
+
+  &lt;p&gt;장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django&lt;/p&gt;
+
+  &lt;p&gt;적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping&lt;/p&gt;
+
+  &lt;p&gt;settings.py에 설치한 앱을 적어야 하는 것 잊지말자&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -531,13 +527,14 @@ SYN_SENT 상태가 된다&lt;/li&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;우선 나는 service layer를 사용하여 코드를 분리한다. 코드를 어떻게 나누는지에 대해 간단하게 설명을 하겠다.&lt;/strong&gt;&lt;/p&gt;
-
 &lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;view의 역할 : 받은 데이터를 dto형식에 넣어준 후 service에게 데이터가 들어간 dto를 전달한다. 이후 결과값을 리턴받아 해당 템플릿에 뿌려준다&lt;/li&gt;
-    &lt;li&gt;service의 역할 : dto형식으로 온 데이터를 상황에 맞게 가공한다(create, update, delete, filter..등등, 데이터베이스에 접근되어 지는 작업)&lt;/li&gt;
-    &lt;li&gt;utils의 역할 : 공통적으로 쓰이는 로직을 함수로 만들어 utils에서 가져와 사용한다&lt;/li&gt;
-  &lt;/ul&gt;
+
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;역할&lt;/code&gt;  &lt;br /&gt;
+ &lt;strong&gt;view의 역할&lt;/strong&gt; : 받은 데이터를 dto형식에 넣어준 후 service에게 데이터가 들어간 dto를 전달한다. 이후 결과값을 리턴받아 해당 템플릿에 뿌려준다&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;service의 역할&lt;/strong&gt; : dto형식으로 온 데이터를 상황에 맞게 가공한다(create, update, delete, filter..등등, 데이터베이스에 접근되어 지는 작업)&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;utils의 역할&lt;/strong&gt; : 공통적으로 쓰이는 로직을 함수로 만들어 utils에서 가져와 사용한다&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;1-가장-먼저-comment에-필요한-데이터의-타입을-정한-dto를-작성한다&quot;&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1. 가장 먼저 comment에 필요한 데이터의 타입을 정한 dto를 작성한다&lt;/code&gt;&lt;/strong&gt;&lt;/h3&gt;

@@ -52,7 +52,7 @@
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="(Django) 스크래핑한 데이터 장고 DB에 넣기" />
-    <meta property="og:description" content="가장 먼저 할 일은 장고를 세팅해주는 것이다 :-) 가상환경을 만들어준다 : virtualenv venv 장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django 적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping settings.py에 설치한 앱을 적어야 하는 것 잊지말자 1. 데이터 스크래핑하는 로직 py 만들기 가장 먼저" />
+    <meta property="og:description" content="가장 먼저 할 일은 장고를 세팅해주는 것이다 :-) django settings 가상환경을 만들어준다 : virtualenv venv 장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django 적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping settings.py에 설치한 앱을 적어야 하는 것 잊지말자 1. 데이터 스크래핑하는 로직 py 만들기" />
     <meta property="og:url" content="https://heejung-gjt.github.io/scrapping" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -62,7 +62,7 @@
     <meta property="article:tag" content="Django" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="(Django) 스크래핑한 데이터 장고 DB에 넣기" />
-    <meta name="twitter:description" content="가장 먼저 할 일은 장고를 세팅해주는 것이다 :-) 가상환경을 만들어준다 : virtualenv venv 장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django 적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping settings.py에 설치한 앱을 적어야 하는 것 잊지말자 1. 데이터 스크래핑하는 로직 py 만들기 가장 먼저" />
+    <meta name="twitter:description" content="가장 먼저 할 일은 장고를 세팅해주는 것이다 :-) django settings 가상환경을 만들어준다 : virtualenv venv 장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django 적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping settings.py에 설치한 앱을 적어야 하는 것 잊지말자 1. 데이터 스크래핑하는 로직 py 만들기" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -94,7 +94,7 @@
         "@type": "WebPage",
         "@id": "https://heejung-gjt.github.io/scrapping"
     },
-    "description": "가장 먼저 할 일은 장고를 세팅해주는 것이다 :-) 가상환경을 만들어준다 : virtualenv venv 장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django 적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping settings.py에 설치한 앱을 적어야 하는 것 잊지말자 1. 데이터 스크래핑하는 로직 py 만들기 가장 먼저"
+    "description": "가장 먼저 할 일은 장고를 세팅해주는 것이다 :-) django settings 가상환경을 만들어준다 : virtualenv venv 장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django 적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping settings.py에 설치한 앱을 적어야 하는 것 잊지말자 1. 데이터 스크래핑하는 로직 py 만들기"
 }
     </script>
 
@@ -212,21 +212,17 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     
 <h4 id="가장-먼저-할-일은-장고를-세팅해주는-것이다--">가장 먼저 할 일은 장고를 세팅해주는 것이다 :-)</h4>
+
+<p><strong><code class="highlighter-rouge">django settings</code></strong></p>
 <blockquote>
-  <ul>
-    <li>
-      <p>가상환경을 만들어준다 : virtualenv venv</p>
-    </li>
-    <li>
-      <p>장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django</p>
-    </li>
-    <li>
-      <p>적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping</p>
-    </li>
-    <li>
-      <p>settings.py에 설치한 앱을 적어야 하는 것 잊지말자</p>
-    </li>
-  </ul>
+
+  <p>가상환경을 만들어준다 : virtualenv venv</p>
+
+  <p>장고를 install 한다(가상환경 안에서 설치해야한다!) : pip install django</p>
+
+  <p>적절한 네임으로 프로젝트와 앱을 만들어준다 : django-admin startproject config ./ django-admin startapp scrapping</p>
+
+  <p>settings.py에 설치한 앱을 적어야 하는 것 잊지말자</p>
 </blockquote>
 
 <p><br /></p>
