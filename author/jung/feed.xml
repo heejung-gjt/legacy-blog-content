@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/author/jung/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-07-03T07:06:09+09:00</updated>
+  <updated>2021-07-03T19:46:17+09:00</updated>
   <id>https://heejung-gjt.github.io/author/jung/feed.xml</id>
 
   
@@ -30,6 +30,143 @@
   
   
 
+  
+    <entry>
+      <title type="html">reset을 이용한 git add, commit, push 되돌리기</title>
+      <link href="https://heejung-gjt.github.io/git" rel="alternate" type="text/html" title="reset을 이용한 git add, commit, push 되돌리기" />
+      <published>2021-07-03T15:00:00+09:00</published>
+      <updated>2021-07-03T15:00:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/git</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/git">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;git 강좌 순서 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./git-01&quot;&gt;git(1) - Git Tutorial&lt;/a&gt;&lt;/li&gt;--&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;p&gt;git을 통해 프로젝트를 진행하다보면 보안문제로 인해 올리지 말아야 할 것을 실수로 올려 push까지 해버리는 경우가 있다. 
+이럴때마다 일일이 구글링하면 해결하다보니 오랜 시간이 걸리는 것은 물론이고 진짜 돌이킬수 없는 강을 건너버리는 경우도 종종 있다.   &lt;br /&gt;
+제대로 정리해서 깔끔하게 되돌리기를 성공해보자&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;git-add-commit-push-되돌리기&quot;&gt;git add, commit, push 되돌리기&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;1-git-add-되돌리기&quot;&gt;1. git add 되돌리기&lt;/h4&gt;
+
+&lt;p&gt;add하기 전으로 돌아가고 싶다면 reset명령어를 쓰면 된다&lt;/p&gt;
+
+&lt;p&gt;아래의 이미지처럼 unstaged가 파일은 변경되었지만 아무런 명령을 받지 않은 상태이다.
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124350699-23610080-dc31-11eb-99a3-2d9ba8ed53bc.PNG&quot; alt=&quot;git add 하기전&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;git add를 입력하면 아래의 이미지처럼 파일이 staged가 되는 것을 볼 수 있다.
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124350700-23f99700-dc31-11eb-9ff7-e09eae20deab.PNG&quot; alt=&quot;git 한 후&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이때 해결방법은 &lt;code class=&quot;highlighter-rouge&quot;&gt;reset&lt;/code&gt;명령어이다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;특정-파일의-add-되돌리는-명령어&quot;&gt;특정 파일의 add 되돌리는 명령어&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt; git reset HEAD ex1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;add된-파일-모두-되돌리는-명령어&quot;&gt;add된 파일 모두 되돌리는 명령어&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;2-git-commit-되돌리기&quot;&gt;2. git commit 되돌리기&lt;/h4&gt;
+
+&lt;p&gt;commit을 취소하기 위해서는 git log를 통해서 취소할 commit을 정확히 확인해준다&lt;/p&gt;
+
+&lt;p&gt;저장할 파일을 3, 4 ,5 로 commit 메세지를 작성할 예정이였으나 5가아닌 3으로 커밋이 저장되어 아래의 이미지처럼 저장이 된 상태이다.
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124351249-404b0300-dc34-11eb-858e-67bf39fcc755.PNG&quot; alt=&quot;commit 되돌리기 전&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이때 커밋 메세지만 변경할 예정이기 때문에 reset의 &lt;code class=&quot;highlighter-rouge&quot;&gt;--soft&lt;/code&gt;명령어를 사용하여 add만 한 상태로 되돌린다.
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124351247-3fb26c80-dc34-11eb-85cf-e21c6468eaa9.PNG&quot; alt=&quot;reset&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;commit된-파일을-add된-상태로-되돌리는-명령어&quot;&gt;commit된 파일을 add된 상태로 되돌리는 명령어&lt;/h3&gt;
+&lt;p&gt;한단계만 되돌리면 되기때문에 HEAD뒤에 ^을 붙여준다. 이때 왜그런지는 모르겠으나 More?이라는 질문이 뜨는데 이때 그냥 바로 전 단계라는 의미로
+^을 입력해주면 된다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset --soft HEAD^
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;commit된-파일을-unstaged된-상태로-되돌리는-명렁어&quot;&gt;commit된 파일을 unstaged된 상태로 되돌리는 명렁어&lt;/h3&gt;
+&lt;p&gt;그러니까 commit된 파일을 add도 되지 않은 맨 처음 상태로 되돌리는 명령어이다. 그리고 해당명령어는 디폴트 명령어이기 때무에
+&lt;code class=&quot;highlighter-rouge&quot;&gt;git reset HEAD^&lt;/code&gt;명령어와 똑같다&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset --mixed HEAD^
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;commit-된-파일을-n-단계로-되돌리고-싶을때-사용하는-명령어&quot;&gt;commit 된 파일을 n 단계로 되돌리고 싶을때 사용하는 명령어&lt;/h3&gt;
+&lt;p&gt;만약 2단계전으로 돌리고 싶다면 HEAD뒤에 ~2를 붙여주면 된다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset HEAD~2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;commit된-파일을-아예-unstaged-상태로-디렉터리에서-삭제할때-사용하는-명령어&quot;&gt;commit된 파일을 아예 unstaged 상태로 디렉터리에서 삭제할때 사용하는 명령어&lt;/h3&gt;
+&lt;p&gt;만약 git에서 main 브랜치로 이동하고 싶은데 unstaged에 변경된 파일이 있으면 브랜치로 이동할 수 없다. 이럴땐 stash 명령어 아니면
+아래의 명령어를 써주자&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git --hard HEAD^
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;push된-파일-되돌리기&quot;&gt;push된 파일 되돌리기&lt;/h3&gt;
+&lt;p&gt;가장 고생했던 부분이다. 실제로 장고 시크릿키가 올라가서 되돌리기를 쓰다가 명령어 하나의 잘못으로 레포를 다시 판 기억이 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;이 명령어는 내 local에 있는 파일의 내용들을 remote에 강제로 덮어쓰기 하는 명령어이기 때문에 주의해서 remote가 덮어쓰기 되어져도
+괜찮은지 생각해보고 써주자&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;나는 commit id를 쓰는것을 선호한다. git log나 나의 리모트에 있는 commit id를 가져와서 입력하면 해당 commit이 된 시점으로 되돌아간다.
+그렇기 때문에 이후에 commit된 내용들은 remote와 local 두군데에서 전부 사라지게 된다.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset [commit id]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 되돌려지기 되었다면 remote에서 commit의 기록을 지우기 위해 commit을 다시 해준 후 git push origin &lt;branch name=&quot;&quot;&gt; -f로 강제 덮어쓰기 해준다&lt;/branch&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git push origin &amp;lt;branch name&amp;gt; -f 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이때 진짜 주의해야 할 것은 &lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt;명령어이다. 이 명령어는 강제로 실행해주기 때문에 이후에는 돌이킬수 없다. 차라리 안전하게 코드를 백업시키고 써주자&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="git" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">0703 TIL</title>
@@ -953,83 +1090,6 @@ SYN_SENT 상태가 된다&lt;/li&gt;
 
       
         <category term="django" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">0628 TIL</title>
-      <link href="https://heejung-gjt.github.io/til3" rel="alternate" type="text/html" title="0628 TIL" />
-      <published>2021-06-28T10:00:00+09:00</published>
-      <updated>2021-06-28T10:00:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/til3</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til3">&lt;h2 id=&quot;210628-일-계획&quot;&gt;210628 (일) 계획&lt;/h2&gt;
-
-&lt;hr /&gt;
-&lt;h4 id=&quot;am-0850-&quot;&gt;AM 08:50 ~&lt;/h4&gt;
-
-&lt;p&gt;파이썬 oop 실습과  channels를 이용한 채팅구현, 메인 프로젝트 모델링에 대해 공부를 할 예정이다. 시간내서 어제 듣지 못한 강연 또한 
-들어볼 예정이다&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;파이썬-class-구현-강의--실습-진행중--재귀관련-하노이탑-강의-들음&quot;&gt;파이썬 class 구현, 강의 + 실습 (진행중….) =&amp;gt; ~&lt;del&gt;재귀관련, 하노이탑 강의 들음&lt;/del&gt;~&lt;/h4&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;재귀함수, 함수형 , class형으로 구현해보기&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;메인-프로젝트-모델링-설계-장고와-연동해보기&quot;&gt;~&lt;del&gt;메인 프로젝트 모델링 설계, 장고와 연동해보기&lt;/del&gt;~&lt;/h4&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;스크래핑-데이터-장고-db-연동-부분-블로그-업로드&quot;&gt;~&lt;del&gt;스크래핑 데이터 장고 db 연동 부분 블로그 업로드&lt;/del&gt;~&lt;/h4&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;channels를-이용한-채팅-구현해보기&quot;&gt;~&lt;del&gt;channels를 이용한 채팅 구현해보기&lt;/del&gt;~&lt;/h4&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;6/30까지 구현해보기, ~&lt;del&gt;소켓통신에 대한 공부하기(웹소켓이란)&lt;/del&gt;~&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;네트워크-웹-동작-방식-블로그에-업로드하기-작성중&quot;&gt;네트워크 웹 동작 방식 블로그에 업로드하기 (작성중….)&lt;/h4&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;-am-1230&quot;&gt;~ AM 12:30&lt;/h4&gt;
-&lt;p&gt;오랜만에 파이썬 공부하니까 어렵다.. 역시 모든 꾸준히 해야 되는 것 같다..😂
-내일은 OS/DB 관련 특강을 들으러 가는데 물어볼거 정리해서 가야겠다.&lt;/p&gt;
-
-&lt;p&gt;장고는 진짜 편한것 같기는 하다. 근데 진짜 아는만큼 보인다고 모를때 마냥 어려웠는데 
-알고보니까 정말 간단하게 구현할 수 있는게 생각보다 많아서 놀라웠다. 장고,, 생각보다 더 매력적인건 인정 !&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
       
 
       
