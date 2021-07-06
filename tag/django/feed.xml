@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/django/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-07-06T09:13:47+09:00</updated>
+  <updated>2021-07-06T16:26:33+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/django/feed.xml</id>
 
   
@@ -30,6 +30,153 @@
   
   
 
+  
+    <entry>
+      <title type="html">(Django) 프로젝트(3) - 2. 모델링하기</title>
+      <link href="https://heejung-gjt.github.io/pro2" rel="alternate" type="text/html" title="(Django) 프로젝트(3) - 2. 모델링하기" />
+      <published>2021-07-06T10:05:00+09:00</published>
+      <updated>2021-07-06T10:05:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/pro2</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/pro2">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Project -3 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./pro1&quot;&gt;개발과정 기록&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./pro2&quot;&gt;모델링 - MySQL 연동&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;210705--210708예정-모델링-구현&quot;&gt;210705 ~ 210708(예정) 모델링 구현&lt;/h3&gt;
+
+&lt;p&gt;기존에 항상 써왔던 장고에서 제공해주는 sqlite3 대신 mysql을 연동시킬 예정이다. mysql에 대한 지식이 부족해 
+각자 따로 공부할 시간이 필요하다. 현재 mysql workbench로 ERD를 작성한 상황이다. 기본 지식을 공부한 후 장고와
+mysql을 연동시킬 예정이다.&lt;/p&gt;
+
+&lt;h4 id=&quot;진행할-사전-공부&quot;&gt;진행할 사전 공부&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;mysql 설계 및 구축&lt;/p&gt;
+
+  &lt;p&gt;django와 연동시키는 방법&lt;/p&gt;
+
+  &lt;p&gt;데이터 mysql table에 저장하기&lt;/p&gt;
+
+  &lt;p&gt;mysql과 django의 관계&lt;/p&gt;
+
+  &lt;p&gt;mysql과 aws의 관계&lt;/p&gt;
+
+  &lt;p&gt;mysql의 기본적인 쿼리문&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;구현된-erd-모델링&quot;&gt;구현된 ERD 모델링&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124545239-a79aca00-de63-11eb-8443-42e183d8c16c.png&quot; alt=&quot;neonews_db&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;질문-사항&quot;&gt;질문 사항&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;기사 스크래핑 후 기사의 출처인 portal과 원본 언론사 press를 따로 table로 빼는것이 좋은가?&lt;/p&gt;
+
+  &lt;p&gt;기사의 세부사항을 스크래핑할때 세부사항 페이지와 똑같은 태그 순서로 어떻게 커스터마이징해서 화면에 보여줄수 있을까 ?&lt;/p&gt;
+
+  &lt;p&gt;user의 세부 추가 사항을 입력받을때 user의 관심 카테고리와 키워드 table을 따로 빼는가 좋은가?&lt;/p&gt;
+
+  &lt;p&gt;user앱과 social앱, news앱중 category와 keyword table을 어디에 넣은게 적절할까?&lt;/p&gt;
+
+  &lt;p&gt;user와 category,keyword가 n:n일때 article의 category와 keyword가 각각 category, keyword table과 1:n으로 엮인다. 이렇게 엮는 것이 적절한 행위일까?&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="django" />
+      
+
+      
+        <summary type="html">Django Project -3 개발과정 기록 모델링 - MySQL 연동</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">(Django) 프로젝트(3) - 1. 개발과정 기록</title>
+      <link href="https://heejung-gjt.github.io/pro1" rel="alternate" type="text/html" title="(Django) 프로젝트(3) - 1. 개발과정 기록" />
+      <published>2021-07-06T10:00:00+09:00</published>
+      <updated>2021-07-06T10:00:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/pro1</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/pro1">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Project -3 &lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./pro1&quot;&gt;개발과정 기록&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./pro2&quot;&gt;모델링 - MySQL 연동&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;210627--프로젝트-시작&quot;&gt;210627 ~ 프로젝트 시작&lt;/h3&gt;
+&lt;p&gt;나에게 있어 3번째 프로젝트이며 2번째 팀플이다. 프로젝트 진행에 맞춰 블로그에 업로드 할 예정이다. :-)&lt;/p&gt;
+
+&lt;h4 id=&quot;github-link-httpsgithubcomneo-newsneo-news&quot;&gt;github link: &lt;a href=&quot;https://github.com/Neo-News/Neo-News&quot;&gt;https://github.com/Neo-News/Neo-News&lt;/a&gt;&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;프로젝트-진행-목표&quot;&gt;프로젝트 진행 목표&lt;/h3&gt;
+
+&lt;h4 id=&quot;1차-목표--프론트--백엔드-구현-완성--0718-예정&quot;&gt;1차 목표 : 프론트 &amp;amp; 백엔드 구현 완성 (~ 07.18 예정)&lt;/h4&gt;
+&lt;h4 id=&quot;2차-목표--aws-배포--0720-예정&quot;&gt;2차 목표 : AWS 배포 (~ 07.20 예정)&lt;/h4&gt;
+&lt;h4 id=&quot;3차-목표--사용자-피드백-받은-후-유지보수-진행--0801-예정&quot;&gt;3차 목표 : 사용자 피드백 받은 후 유지보수 진행 (~ 08.01 예정)&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;진행-단계&quot;&gt;진행 단계&lt;/h3&gt;
+
+&lt;h4 id=&quot;1-프로젝트-주제-정하기-0627---0701&quot;&gt;1. 프로젝트 주제 정하기 (06.27 - 07.01)&lt;/h4&gt;
+&lt;h4 id=&quot;2-요구사항-명세-작성-구현할-기능-작성-프로토타입-작성-0701---0703&quot;&gt;2. 요구사항 명세 작성, 구현할 기능 작성, 프로토타입 작성 (07.01 - 07.03)&lt;/h4&gt;
+&lt;h4 id=&quot;4-대략적인-모델-erd구현-앱-구조-작성-0702--&quot;&gt;4. 대략적인 모델, ERD구현, 앱 구조 작성 (07.02 ~ )&lt;/h4&gt;
+&lt;h4 id=&quot;5-장고-프로젝트-개발환경-구축-0702&quot;&gt;5. 장고 프로젝트 개발환경 구축 (07.02)&lt;/h4&gt;
+&lt;h4 id=&quot;6-프로젝트-front-구현-0702---0704&quot;&gt;6. 프로젝트 front 구현 (07.02 - 07.04)&lt;/h4&gt;
+&lt;h4 id=&quot;7-모델작성---mysql연동-0705--진행중&quot;&gt;7. 모델작성 - MYSQL연동 (07.05 ~ 진행중….)&lt;/h4&gt;
+&lt;hr /&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="django" />
+      
+
+      
+        <summary type="html">Django Project -3 개발과정 기록 모델링 - MySQL 연동</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">(Django) 스크래핑한 데이터 장고 DB에 넣기</title>
