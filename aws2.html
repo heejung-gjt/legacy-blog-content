@@ -51,7 +51,7 @@
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="(django) AWS EC2 리전이란" />
+    <meta property="og:title" content="AWS EC2 리전이란" />
     <meta property="og:description" content="AWS EC2(Elastic Compute Cloud)란? EC2는 아마존 웹 서비스의 여러 서비스 중 가장 먼저 생겨난 서비스 중 하나로 독립된 컴퓨터 한대를 임대해서 사용할 수 있다는 의미이다. 쉽게 말해 우리가 쓰는 컴퓨터와 같은 역할을 하는 컴퓨터를 한대 빌려주는 것이라고 생각하면 된다. 이때 해당 컴퓨터에 사용자가 선호하는 OS를 설치하고 웹 서비스(DB)를 위한 프로그램을" />
     <meta property="og:url" content="https://heejung-gjt.github.io/aws2" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/aws.png" />
@@ -61,7 +61,7 @@
     <meta property="article:modified_time" content="2021-06-30T14:00:00+09:00" />
     <meta property="article:tag" content="Aws" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="(django) AWS EC2 리전이란" />
+    <meta name="twitter:title" content="AWS EC2 리전이란" />
     <meta name="twitter:description" content="AWS EC2(Elastic Compute Cloud)란? EC2는 아마존 웹 서비스의 여러 서비스 중 가장 먼저 생겨난 서비스 중 하나로 독립된 컴퓨터 한대를 임대해서 사용할 수 있다는 의미이다. 쉽게 말해 우리가 쓰는 컴퓨터와 같은 역할을 하는 컴퓨터를 한대 빌려주는 것이라고 생각하면 된다. 이때 해당 컴퓨터에 사용자가 선호하는 OS를 설치하고 웹 서비스(DB)를 위한 프로그램을" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/aws.png" />
@@ -107,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="(django) AWS EC2 리전이란" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="AWS EC2 리전이란" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -198,7 +198,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">(django) AWS EC2 리전이란</h1>
+                <h1 class="post-full-title">AWS EC2 리전이란</h1>
             </header>
 
 <!--  
@@ -249,232 +249,6 @@ into the {body} of the default.hbs template -->
 </ul>
 
 <hr />
-
-<h3 id="클라우드-컴퓨팅이란">클라우드 컴퓨팅이란?</h3>
-<ul>
-  <li>사용자의 직접적인 활발한 관리 없이 데이터 스토리지와 시스템 리소스를 필요시 바로 제공하는 것을 말한다. 데이터 정보를 자신의 컴퓨터가 아닌 클라우드에 연결된 다른 컴퓨터(휴대폰, TV, 노트북 등등)로 처리하는 기술을 말한다.</li>
-</ul>
-
-<hr />
-
-<h3 id="awsamazon-web-service란">AWS(Amazon Web Service)란</h3>
-<p>AWS는 아마존에서 개발한 클라우드 컴퓨팅 플랫폼으로 클라우드 컴퓨팅을 통해 웹사이트를 관리하는데 필요한 많은 기능을 제공해준다. 웹사이트를 운영하는데 필요한 서버나 DB, 스토리지등을 제공하는 등 개발자가 사용 가능한 기능을 제공하는 플랫폼을 제공하며 PaaS이다.</p>
-
-<hr />
-
-<h3 id="iamidentity-and-access-management이란">IAM(Identity and Access Management)이란</h3>
-<p>AWS 리소스에 대한 안전한 접근제어를 제공하는 서비스로 IAM을 사용하여 리소스를 사용하도록 인증 및 권한 부여된 대상을 제어한다.</p>
-
-<h3 id="s3simple-storage-service란">S3(Simple Storage Service)란</h3>
-<p>인터넷 스토리지 서비스로 웹에서 언제 어디서나 원하는 양의 데이터를 저장하고 검색할 수 있다.</p>
-
-<ul>
-  <li>객체(Object)
-s3에 데이터(이미지, 동영상, 파일)가 저장되는 기본 단위는 객체로 파일과 메타데이터로 이루어져 있다.</li>
-</ul>
-
-<blockquote>
-  <h4 id="객체의-구성요소">객체의 구성요소</h4>
-
-  <ul>
-    <li>key : 파일명</li>
-    <li>value : 파일에 대한 데이터</li>
-    <li>메타데이터 : 데이터의 데이터라는 뜻이며 언제 파일이 업로드 되었는지, owner, 수정등에 대한 데이터이다</li>
-    <li>cors: 리전을 무시하고 한 버킷의 파일을 다른 버킷에서 접근할 수 있도록 한다</li>
-  </ul>
-</blockquote>
-
-<ul>
-  <li>버킷(Bucket)  <br />
-s3에서 생성할 수 있는 최상위 디렉토리의 개념으로 버킷의 이름은 유일해야 하며 계정별로 100개까지 생성이 가능하고 버킷에 저장할 수 있는 객체의 수는 무제한이다. 버킷별로 접근제어 설정이 가능하다.</li>
-</ul>
-
-<blockquote>
-  <ul>
-    <li>Key : 버킷 내에서 객체를 찾기 위해 사용되는 고유 식별자이다. 보통 디렉터리+파일명으로 이름이 지어진다. 업로드 할 이미지의 네임이 동일할 수 있음을 고려하여 date를 추가해 네임을 지을 수 도 있다.</li>
-    <li>Region : 버킷 생성시 버킷의 위치를 지정할 수 있다. 버킷의 위치를 어디에 지정하느냐에 따라서 지연 시간의 최적화나 비용의 최소화등이 결정된다.</li>
-  </ul>
-</blockquote>
-
-<p><br /></p>
-
-<hr />
-
-<h3 id="aws에서-제공하는-s3-스토리지-서비스를-사용하여-이미지를-서버에-업로드-시켜보자">AWS에서 제공하는 S3 스토리지 서비스를 사용하여 이미지를 서버에 업로드 시켜보자</h3>
-<ul>
-  <li>
-    <p>IAM 사용자 추가하기</p>
-  </li>
-  <li>
-    <p>AWS S3 Bucket 생성하기</p>
-  </li>
-</ul>
-
-<blockquote>
-  <p>IAM 등을 설정하는 방법은 다양하니까 자신의 상황에 맞게 설정에 대한 내용을 찾아보고 설정해주면 될 것 같다. 나는 연습용으로 서버에 이미지를 올리는 것을 목적으로 구축하였기 때문에 퍼블릭으로 설정하되 익명의 사용자에 대한 권한을 readonly로 주어 제한시켜 사용하였다</p>
-</blockquote>
-
-<ul>
-  <li>IAM과 S3를 설정하는 방법을 간단하게 설명하겠다</li>
-</ul>
-
-<h4 id="1-가장먼저-필요한-것은-회원가입이다-해외에서-결제가-가능한-카드를-준비해서-회원가입시-적어주면된다-회원가입은-어렵지-않으니-회원가입을-따라서-천천히-한다">1. 가장먼저 필요한 것은 회원가입이다. 해외에서 결제가 가능한 카드를 준비해서 회원가입시 적어주면된다. 회원가입은 어렵지 않으니 회원가입을 따라서 천천히 한다.</h4>
-
-<p><br /></p>
-
-<h4 id="2-검색창에-iam을-입력후-사용자-추가를-눌러준-후-아래와-같이-입력해준다-이때-34번-단계는-설정-필요없이-넘어가-주면-된다-주의할점은-5단계에서-csv파일은-꼭-저장해야-한다-나중에-장고에서-설정할때-필요한-아이들이므로-저장해준다-해당-페이지에서만-제공해주므로-이것만-주의해서-설정해주자">2. 검색창에 iam을 입력후 사용자 추가를 눌러준 후 아래와 같이 입력해준다. 이때 3,4번 단계는 설정 필요없이 넘어가 주면 된다. 주의할점은 <code class="highlighter-rouge">5단계에서 csv파일은 꼭! 저장해야 한다. 나중에 장고에서 설정할때 필요한 아이들이므로 저장해준다. 해당 페이지에서만 제공해주므로 이것만 주의해서 설정해주자</code></h4>
-<p><img src="https://user-images.githubusercontent.com/64240637/123533444-a3c6c380-d750-11eb-8ec4-2aff9d65dd48.png" alt="1" />
-<img src="https://user-images.githubusercontent.com/64240637/123533446-a5908700-d750-11eb-8601-0faaca106d74.png" alt="2" />
-<img src="https://user-images.githubusercontent.com/64240637/123533449-a7f2e100-d750-11eb-85d7-f941ab7f720d.png" alt="5" /></p>
-
-<p><br /></p>
-
-<h4 id="3-버킷을-만들어준다-검색창에-s3를-검색후-버킷만들기를-눌러준후-아래와-같이-입력해준다-이때-주의할점은-버킷은-앞에서-말했듯이-아이디처럼-고유한-이름이어야-한다-나는-연습용으로-만드는-것이기-때문에-모든-퍼블릭-액세스-차단-버튼을-해제해-설정하였다">3. 버킷을 만들어준다. 검색창에 s3를 검색후 버킷만들기를 눌러준후 아래와 같이 입력해준다. 이때 주의할점은 버킷은 앞에서 말했듯이 아이디처럼 고유한 이름이어야 한다. 나는 연습용으로 만드는 것이기 때문에 모든 퍼블릭 액세스 차단 버튼을 해제해 설정하였다.</h4>
-<p><img src="https://user-images.githubusercontent.com/64240637/123533540-5139d700-d751-11eb-8c90-dca50187816d.png" alt="b1" />
-<img src="https://user-images.githubusercontent.com/64240637/123533541-526b0400-d751-11eb-9099-da2d45c4e82c.png" alt="b2" /></p>
-
-<p><br /></p>
-
-<h4 id="4-이후-익명의-사용자에-대한-권한을-제어하기-위해-만들어진-버킷에서-권한을-선택해-버킷-정책을-편집해준다-이때-아래의-내용을-넣어주면-되는데-여기서-주의할점은-resource부분에-버킷의-네임을-내가-설정한-네임으로-넣어주어야-한다-스펠링이-틀리면-오류가-발생하니-바로-위에-있는-네임을-복사해서-사용해주자">4. 이후 익명의 사용자에 대한 권한을 제어하기 위해 만들어진 버킷에서 권한을 선택해 버킷 정책을 편집해준다. 이때 아래의 내용을 넣어주면 되는데 여기서 주의할점은 <code class="highlighter-rouge">Resource부분에 버킷의 네임을 내가 설정한 네임으로 넣어주어야 한다. 스펠링이 틀리면 오류가 발생하니 바로 위에 있는 네임을 복사해서 사용해주자</code></h4>
-<p>아래에 보이는 이미지에 있는 내용을 버킷정책에 넣어주면 된다. 해당 내용이 있는 링크는 <a href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-use-case-2">여기를 누르면 된다</a>
-<img src="https://user-images.githubusercontent.com/64240637/123533639-eb9a1a80-d751-11eb-8f5a-27a24f8e865f.png" alt="b4" />
-<img src="https://user-images.githubusercontent.com/64240637/123533637-e6d56680-d751-11eb-9f5d-6925570fe361.png" alt="b6'" /></p>
-
-<p><br /></p>
-
-<h4 id="5-이제-사전-설정은-끝이-났다-이제-장고에서-이미지를-업로드-했을때-서버에-저장될-수-있도록-설정해주면-된다">5. 이제 사전 설정은 끝이 났다. 이제 장고에서 이미지를 업로드 했을때 서버에 저장될 수 있도록 설정해주면 된다.</h4>
-
-<h4 id="장고-설정"><code class="highlighter-rouge">장고 설정</code></h4>
-<p>4단계정도로 나누어 설정을 해주었다.</p>
-
-<ul>
-  <li>visual studio에서 가상환경을 구축한 후 project와 app을 만들어준다.</li>
-  <li>나의 저장공간인 S3에 이미지 파일을 저장하기 위한 사전 설정을 해준다 (settings.py, .env등)</li>
-  <li>이미지는 장고 DB에서도 저장되어야 하기 때문에 이미지를 저장할 model을 만들어준다.</li>
-  <li>index 템플릿을 만들어 이곳에서 form으로 image를 post요청으로 보내고 view에서 s3의 스토리지에 저장하는 로직을 작성한다.</li>
-</ul>
-
-<hr />
-
-<h4 id="1-가장-먼저-config라는-프로젝트와-s3라는-앱을-만든-후--pip-install-django-environ-pip-install-boto3-touch-gitignore을-설치한다">1. 가장 먼저 config라는 프로젝트와 s3라는 앱을 만든 후  <code class="highlighter-rouge">pip install django-environ</code>, <code class="highlighter-rouge">pip install boto3</code>, <code class="highlighter-rouge">touch .gitignore</code>을 설치한다</h4>
-<ul>
-  <li>django-environ : settings.py에서 .env파일에 있는 것을 environ을 통해 읽어온다. .env에는 s3 access를 위한 secret key를 넣어준다(사전에 저장해 놓은 csv내용들) 그리고 이를 gitignore 파일에 추가한다. 그리고 이들을 불러와 쓸때 environ을 통해 사용하면 된다</li>
-  <li>boto3 : s3를 사용하기 위한 모듈이다</li>
-</ul>
-
-<p><br /></p>
-
-<h4 id="2-config에-env파일을-만들어-다운받았던-csv내용을-내용에-맞게-적어주면-된다-env파일은-gitignore에-추가해주는-것을-잊지말자-">2. config에 .env파일을 만들어 다운받았던 csv내용을 내용에 맞게 적어주면 된다. .env파일은 gitignore에 추가해주는 것을 잊지말자 !</h4>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">AWS_ACCESS_KEY_ID</span><span class="o">=</span><span class="s">"Csv 참고"</span>
-<span class="n">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="s">"Csv 참고"</span>
-<span class="n">AWS_STORAGE_BUCKET_NAME</span><span class="o">=</span><span class="s">"설정한 버킷 이름"</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h4 id="3-settingspy에서-env에-있는-내용을-environ을-통해-읽어온다">3. settings.py에서 .env에 있는 내용을 environ을 통해 읽어온다</h4>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># settings.py</span>
-<span class="kn">import</span> <span class="nn">environ</span>
-<span class="n">env</span> <span class="o">=</span> <span class="n">environ</span><span class="o">.</span><span class="n">Env</span><span class="p">()</span>
-<span class="n">environ</span><span class="o">.</span><span class="n">Env</span><span class="o">.</span><span class="n">read_env</span><span class="p">()</span>
-<span class="n">AWS_ACCESS_KEY_ID</span><span class="o">=</span><span class="n">env</span><span class="p">(</span><span class="s">'AWS_ACCESS_KEY_ID'</span><span class="p">)</span>
-<span class="n">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="n">env</span><span class="p">(</span><span class="s">'AWS_SECRET_ACCESS_KEY'</span><span class="p">)</span>
-<span class="n">AWS_STORAGE_BUCKET_NAME</span><span class="o">=</span><span class="n">env</span><span class="p">(</span><span class="s">'AWS_STORAGE_BUCKET_NAME'</span><span class="p">)</span>
-<span class="n">AWS_S3_REGION_NAME</span><span class="o">=</span><span class="s">'ap-northeast-2'</span> <span class="c"># 버킷 생성할때 지정한 region을 작성한다</span>
-<span class="n">AWS_S3_FILE_OVERWRITE</span><span class="o">=</span><span class="bp">False</span> <span class="c"># 기본적인 오버라이트 설정 false</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h4 id="4-이미지를-저장할-model을-만들어준다-media폴더를-사용할때는-imagefield를-사용하였지만-s3에-저장할땐-url을-저장해서-나중에-화면에-이미지를-불러올때-src에-저장한-url을-통해-불러온다">4. 이미지를 저장할 model을 만들어준다. media폴더를 사용할때는 ImageField를 사용하였지만 S3에 저장할땐 url을 저장해서 나중에 화면에 이미지를 불러올때 src에 저장한 url을 통해 불러온다</h4>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-  <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span> <span class="c"># 이미지의 타이틀, 필수는 아니다</span>
-  <span class="n">url</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span> <span class="c"># 이미지 url, 길수도 있으므로 TextField로 설정</span>
-  <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h4 id="5-이미지를-업로드하고-불러올-수-있는-index-템플릿을-작성한다">5. 이미지를 업로드하고 불러올 수 있는 index 템플릿을 작성한다</h4>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
- {% for post in posts %} # view에서 등록한 post를 전부 보여준다
-  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"img"</span> <span class="na">src=</span><span class="s">"{{post.url}}"</span> <span class="na">alt=</span><span class="s">"{{post.title}}"</span><span class="nt">&gt;</span>
-  {% endfor %}
-  <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"{% url 'index' %}"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="nt">&gt;</span>
-  {% csrf_token %}
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">name=</span><span class="s">"img"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">placeholder=</span><span class="s">"file name/"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>post<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
-
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h4 id="6-form에서-url이-index인-곳으로-post요청을-보내므로-이에-맞게-url을-지정해준다config에서-url을-설정하던-app에서-url을-작성하던-이건-자유다-참고로-나는-config에서-app을-include받아-사용했다">6. form에서 url이 index인 곳으로 post요청을 보내므로 이에 맞게 url을 지정해준다(config에서 url을 설정하던 app에서 url을 작성하던 이건 자유다. 참고로 나는 config에서 app을 include받아 사용했다)</h4>
-
-<p><br /></p>
-
-<h4 id="7-이제-view를-작성해보자">7. 이제 view를 작성해보자</h4>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">boto3</span>
-<span class="kn">from</span> <span class="nn">boto3.session</span> <span class="kn">import</span> <span class="n">Session</span>
-<span class="kn">from</span> <span class="nn">config.settings</span> <span class="kn">import</span> <span class="n">AWS_ACCESS_KEY_ID</span><span class="p">,</span> <span class="n">AWS_S3_REGION_NAME</span><span class="p">,</span> <span class="n">AWS_SECRET_ACCESS_KEY</span><span class="p">,</span> <span class="n">AWS_STORAGE_BUCKET_NAME</span>
-<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-  <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
-    <span class="c"># 들어온 요청에서 이미지를 꺼낸다</span>
-    <span class="nb">file</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">FILES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'img'</span><span class="p">)</span>       <span class="o">-</span> <span class="mi">1</span>
-    <span class="n">session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">(</span>                    <span class="o">-</span> <span class="mi">2</span>
-      <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">AWS_ACCESS_KEY_ID</span><span class="p">,</span>
-      <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">AWS_SECRET_ACCESS_KEY</span><span class="p">,</span>
-      <span class="n">region_name</span><span class="o">=</span><span class="n">AWS_S3_REGION_NAME</span>
-    <span class="p">)</span>
-    <span class="n">s3</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">resource</span><span class="p">(</span><span class="s">'s3'</span><span class="p">)</span>           <span class="o">-</span> <span class="mi">3</span>
-    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">Y</span><span class="si">%</span><span class="s">H</span><span class="si">%</span><span class="s">M</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span>
-    <span class="n">img_object</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">Bucket</span><span class="p">(</span><span class="n">AWS_STORAGE_BUCKET_NAME</span><span class="p">)</span><span class="o">.</span><span class="n">put_object</span><span class="p">(</span>  <span class="o">-</span> <span class="mi">5</span>
-      <span class="n">Key</span> <span class="o">=</span> <span class="n">now</span><span class="o">+</span><span class="nb">file</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-      <span class="n">Body</span> <span class="o">=</span> <span class="nb">file</span>
-    <span class="p">)</span>
-    <span class="n">s3_url</span> <span class="o">=</span> <span class="s">"https://django-s3-practices.s3.ap-northeast-2.amazonaws.com/"</span> <span class="o">-</span> <span class="mi">6</span>
-    <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>                  <span class="o">-</span> <span class="mi">7</span>
-      <span class="n">title</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s">'title'</span><span class="p">],</span>
-      <span class="n">url</span> <span class="o">=</span> <span class="n">s3_url</span><span class="o">+</span><span class="n">now</span><span class="o">+</span><span class="nb">file</span><span class="o">.</span><span class="n">name</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">'index'</span><span class="p">)</span>
-  <span class="n">posts</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>
-  <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'index.html'</span><span class="p">,{</span><span class="s">'posts'</span><span class="p">:</span><span class="n">posts</span><span class="p">})</span>
-</code></pre></div></div>
-
-<ol>
-  <li>
-    <p>form에서 등록한 이미지의 데이터를 file 변수에 넣는다</p>
-  </li>
-  <li>
-    <p>session을 생성해준다. 이때 3가지는 settings.py에서 import하여 사용한다</p>
-  </li>
-  <li>
-    <p>만들어진 세션을 통해 나의 s3에 접근한다.</p>
-  </li>
-  <li>
-    <p>만들어지는 이미지의 파일명 중복을 피하기 위해 생성되는 시간을 url에 함께 넣어준다</p>
-  </li>
-  <li>
-    <p>put_object 메서드로 s3 버킷에 파일을 key와 body로 담는다. 이때 key에는 파일 이름과 생성시간이 들어간다. body에는 생성된 file이 들어간다</p>
-  </li>
-  <li>
-    <p>나의 버킷주소를 s3_url에 넣어준다</p>
-  </li>
-  <li>
-    <p>생성되는 post를 등록할때 url에 버킷의 url과 버킷에 들어간 key값을 넣어준다. 해당 url은 실제 템플릿에 있는 img src에 들어갈 url로 버킷에 있는 key에 접근하여 해당되는 파일에 접근하는 방식이 된다.</p>
-  </li>
-</ol>
-
-<p><br /></p>
-
-<p>이제 모델과 s3 스토리지에 업로드하는 이미지가 잘 등록되는지 확인해보자 :-)</p>
-
-<p>👏 <strong>다음번엔 이를 이용해 프로필 이미지 등록과 여러 제품 이미지 등록에 대한 부분을 다룰 예정이다</strong></p>
 
                 </div>
             </section>

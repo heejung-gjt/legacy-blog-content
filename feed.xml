@@ -1,30 +1,305 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-07-06T23:52:57+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">(MYSQL) AWS EC2 서버에 MYSQL 구축하기(작성중…)</title><link href="https://heejung-gjt.github.io/db1" rel="alternate" type="text/html" title="(MYSQL) AWS EC2 서버에 MYSQL 구축하기(작성중...)" /><published>2021-07-06T20:30:00+09:00</published><updated>2021-07-06T20:30:00+09:00</updated><id>https://heejung-gjt.github.io/db1</id><content type="html" xml:base="https://heejung-gjt.github.io/db1">&lt;p&gt;AWS에서 EC2로 서버를 생성하여 우분투 OS를 설치하고 그 위에 MYSQL를 구축하는 과정입니다. 가장 먼저 AWS 사이트에 접속후
-검색창에 EC2를 입력한 후 인스턴스 생성하기를 누른다&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-07-07T12:15:55+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">(MYSQL) Django에 MYSQL연동하기(진행중)</title><link href="https://heejung-gjt.github.io/db1" rel="alternate" type="text/html" title="(MYSQL) Django에 MYSQL연동하기(진행중)" /><published>2021-07-06T20:59:00+09:00</published><updated>2021-07-06T20:59:00+09:00</updated><id>https://heejung-gjt.github.io/db1</id><content type="html" xml:base="https://heejung-gjt.github.io/db1">&lt;h4 id=&quot;aws-ec2에-구축된-mysql로-장고와-연동시키는-과정이다&quot;&gt;AWS EC2에 구축된 MYSQL로 장고와 연동시키는 과정이다&lt;/h4&gt;</content><author><name>jung</name></author><category term="database" /><summary type="html"></summary></entry><entry><title type="html">0707 TIL</title><link href="https://heejung-gjt.github.io/til12" rel="alternate" type="text/html" title="0707 TIL" /><published>2021-07-06T20:55:00+09:00</published><updated>2021-07-06T20:55:00+09:00</updated><id>https://heejung-gjt.github.io/til12</id><content type="html" xml:base="https://heejung-gjt.github.io/til12">&lt;h2 id=&quot;210707-계획&quot;&gt;210707 계획&lt;/h2&gt;
+
+&lt;hr /&gt;
+&lt;h4 id=&quot;pm-1000-&quot;&gt;PM 10:00 ~&lt;/h4&gt;
+
+&lt;p&gt;요즘 좀 늦게 자다 보니까 확실히 아침에 늦게 눈이 떠진다. 이 정확한 몸같으니라고…  &lt;br /&gt;
+오늘은 장고와 MYSQL 연동하는 법과 MYSQL에 데이터 저장되는지 확인까지 먼저 정리를 하려고 한다. 그 뒤 
+어제 공부했던 파이썬 정리를 간단히 한 뒤 강의를 이어서 들을 예정이다. 오늘 매지메서드를 마저 다 듣고 시퀀스 부분을 나 갈 예정이다 &lt;br /&gt;
+SQL과 장고를 연동시켜 간단한 TO DO LIST CRUD와 좋아요(ManyToMany 해결법)기능을 구현해 볼 예정이다.&lt;/p&gt;
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;1-가장먼저-ami를-선택한다&quot;&gt;1. 가장먼저 AMI를 선택한다&lt;/h4&gt;
-&lt;p&gt;AMI는 인스턴스를 시작할때 이 서버에서 필요한 SW 구성이 포함된 템플릿이다. 나는 Ubuntu 18.04 os를 선택하였다. 20.04를 선택해도 상관없다.&lt;/p&gt;
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;h4 id=&quot;--ec2-인스턴스와-mysql-마저-정리하기&quot;&gt;- EC2 인스턴스와 MYSQL 마저 정리하기&lt;/h4&gt;
+&lt;h4 id=&quot;--장고와-mysql-연동시켜-데이터-저장해보기&quot;&gt;- 장고와 MYSQL 연동시켜 데이터 저장해보기&lt;/h4&gt;
+&lt;h4 id=&quot;--python-매직-메서드-블로그에-정리하기&quot;&gt;- python 매직 메서드 블로그에 정리하기&lt;/h4&gt;
+&lt;h4 id=&quot;--python-매직-메서드--시퀀스-강의-듣고-정리하기&quot;&gt;- python 매직 메서드 + 시퀀스 강의 듣고 정리하기&lt;/h4&gt;
+&lt;h4 id=&quot;--장고와-mysql로-to-do-list-crud--좋아요-기능-구현해보기&quot;&gt;- 장고와 MYSQL로 to do list CRUD + 좋아요 기능 구현해보기&lt;/h4&gt;
+
+&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">0706 TIL</title><link href="https://heejung-gjt.github.io/til11" rel="alternate" type="text/html" title="0706 TIL" /><published>2021-07-06T20:50:00+09:00</published><updated>2021-07-06T20:50:00+09:00</updated><id>https://heejung-gjt.github.io/til11</id><content type="html" xml:base="https://heejung-gjt.github.io/til11">&lt;h2 id=&quot;210706-계획&quot;&gt;210706 계획&lt;/h2&gt;
+
+&lt;hr /&gt;
+&lt;h4 id=&quot;pm-900-&quot;&gt;PM 9:00 ~&lt;/h4&gt;
+
+&lt;p&gt;오전에 어제 공부했던 python 클래스 부분을 블로그에 정리할 예정이다. 이어서 매직 메서드 강의를 듣고 공부할 예정이며
+파이썬의 기본 코딩 컨벤션에 관한 책을 읽을 예정이다. mysql 기본 쿼리에 대한 강의를 듣고 실제로 모델링 한 데이터베이스에 데이터를
+넣는 실습을 해볼 예정이다.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;h4 id=&quot;--python-클래스-부분-블로그에-정리하기&quot;&gt;- &lt;del&gt;python 클래스 부분 블로그에 정리하기&lt;/del&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;--매직-메서드-강의-듣고-정리하기&quot;&gt;- &lt;del&gt;매직 메서드 강의 듣고 정리하기&lt;/del&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;--aws-ec2-서버에-mysql-구축해보기--블로그-정리하기&quot;&gt;- &lt;del&gt;AWS EC2 서버에 MYSQL 구축해보기 + 블로그 정리하기&lt;/del&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;--django에-mysql-연동시킨후-데이터-넣어보는-실습하기&quot;&gt;- &lt;del&gt;Django에 mysql 연동시킨후 데이터 넣어보는 실습하기&lt;/del&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;--nn-프로젝트-모델링-취합하기&quot;&gt;- &lt;del&gt;NN 프로젝트 모델링 취합하기&lt;/del&gt;&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-am-1200&quot;&gt;~ AM 12:00&lt;/h4&gt;
+
+&lt;p&gt;하루가 굉장히 짧다&lt;/p&gt;
+
+&lt;p&gt;오늘 하루도 수고했다 -! 💨&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">AWS EC2 서버에 MYSQL 구축하기</title><link href="https://heejung-gjt.github.io/aws3" rel="alternate" type="text/html" title="AWS EC2 서버에 MYSQL 구축하기" /><published>2021-07-06T20:32:00+09:00</published><updated>2021-07-06T20:32:00+09:00</updated><id>https://heejung-gjt.github.io/aws3</id><content type="html" xml:base="https://heejung-gjt.github.io/aws3">&lt;p&gt;AWS에서 EC2 인스턴스라는 물리적인 서버를 만든 후 이 안에 우분투 OS(메모리, 하드디스크, cpu의 자원을 관리하는 역할)를 설치하고 우분투 안에  MYSQL를 구축하는 과정입니다. 가장 먼저 AWS 사이트에 접속후
+검색창에 EC2를 입력한 후 인스턴스 생성하기를 누른다&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ubuntu 20.4 환경에서 실습 진행&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;h3 id=&quot;진행-순서&quot;&gt;진행 순서&lt;/h3&gt;
+  &lt;p&gt;AWS에서 EC2 인스턴스 생성하기&lt;/p&gt;
+
+  &lt;p&gt;로컬 터미널에서 생성한 서버로 접속하기&lt;/p&gt;
+
+  &lt;p&gt;접속한 서버에 MYSQL 구축하기&lt;/p&gt;
+
+  &lt;p&gt;설치한 workbench에 생성한 서버와 연결한 후 2가지 방법으로 db의 샘플 데이터 보내기&lt;br /&gt;
+(client에서 인터넷망을 통해 mysql서버에 접속하기)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;1-가장먼저-ami를-선택한다&quot;&gt;1. 가장먼저 AMI를 선택한다&lt;/h3&gt;
+&lt;p&gt;AMI는 인스턴스를 시작할때 이 서버에서 필요한 SW 구성이 포함된 템플릿이다. 나는 Ubuntu 18.04 os를 선택하였다. 20.04를 선택해도 상관없다.  &lt;br /&gt;
+AMI의 역할 중 하나는 &lt;strong&gt;EC2 인스턴스를 생성하는 이미지 역할이다.&lt;/strong&gt; 쉽게 말해 컴퓨터에 있는 프로그램들의 이미지와 같은 역할을 한다.   &lt;br /&gt;
+또다른 역할 중 하나는 &lt;strong&gt;다른 계정에 똑같은 AMI를 생성하고 싶을때 해당 AMI를 복사해서 새로운 서버에 다시 올려서 사용되는 역할을 한다.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124610242-4bf42f00-deab-11eb-90b3-906df9d41e08.png&quot; alt=&quot;ec2-1&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;2-인스턴스-유형을-선택해준다&quot;&gt;2. 인스턴스 유형을 선택해준다.&lt;/h4&gt;
+&lt;h3 id=&quot;2-인스턴스-유형을-선택해준다&quot;&gt;2. 인스턴스 유형을 선택해준다.&lt;/h3&gt;
 &lt;p&gt;이때 &lt;code class=&quot;highlighter-rouge&quot;&gt;프리티어 사용 가능&lt;/code&gt;이라고 써져 있는 인스턴스를 선택해준다
 &lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124610309-5ca4a500-deab-11eb-83dd-83404ce2b6a6.png&quot; alt=&quot;ec2-2&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;3-35단계는-특별히-설정할게-없어서-건너-띄어주었다-6단계인-보안-그룹-구성에서는-설정해주어야-할-것-들이-여러개-있다&quot;&gt;3. 3~5단계는 특별히 설정할게 없어서 건너 띄어주었다. 6단계인 보안 그룹 구성에서는 설정해주어야 할 것 들이 여러개 있다&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124610327-5f9f9580-deab-11eb-9c96-ebcb6b6bf164.png&quot; alt=&quot;ec2-3&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;4-7단계-인스턴스-시작-검토에서-시작하기를-누르면-새-키-페어-생성창이-화면처럼-뜨게-된다&quot;&gt;4. 7단계 인스턴스 시작 검토에서 시작하기를 누르면 새 키 페어 생성창이 화면처럼 뜨게 된다.&lt;/h4&gt;
-&lt;p&gt;그럼 해당 키 페어의 이름을 작성해주면 된다. 나는 진행할 프로젝트의 앞 단어들을 따서 지어주었다. 이후 키 페어 다운로드를 눌러서 다운받아준다. 이 파일을
-나중에 db를 구현할때 ….
-&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124610337-60d0c280-deab-11eb-8a2c-835c384485aa.png&quot; alt=&quot;ec2-4&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
+&lt;h3 id=&quot;3-35단계는-특별히-설정할게-없어서-건너-띄어주었다-6단계인-보안-그룹-구성에서는-설정해주어야-할-것-들이-여러개-있다&quot;&gt;3. 3~5단계는 특별히 설정할게 없어서 건너 띄어주었다. 6단계인 보안 그룹 구성에서는 설정해주어야 할 것 들이 여러개 있다&lt;/h3&gt;
+&lt;p&gt;이 단계에서는 포트를 설정해주어야 한다. 필수는 아니지만 컨벤션하게 설정되는 포트들을 작성한다. 아래의 이미지처럼 총 6개의 포트를 설정해준다. 이때 보안 그룹 이름/설명은 변경할 수 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;포트의 역할&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;외부에서 인스턴스(서버)로 들어올때 인터넷 망을 통해서 들어오는데 이때 포트가 문 역할을 해준다. 포트를 열어놓지 않으면 외부에서 해당 서버에 들어올 수 없다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124610327-5f9f9580-deab-11eb-9c96-ebcb6b6bf164.png&quot; alt=&quot;ec2-3&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-7단계-인스턴스-시작-검토에서-시작하기를-누르면-새-키-페어-생성창이-화면처럼-뜨게-된다&quot;&gt;4. 7단계 인스턴스 시작 검토에서 시작하기를 누르면 새 키 페어 생성창이 화면처럼 뜨게 된다.&lt;/h3&gt;
+&lt;p&gt;그럼 해당 키 페어의 이름을 작성해주면 된다. 나는 진행할 프로젝트의 앞 단어들을 따서 지어주었다. 이후 키 페어 다운로드를 눌러서 다운받아준다. 이 파일을
+터미널을 통해 방금 만든 서버에 접속할때 키 페어 파일과 로컬에 저장된 위치를 알고 있어야 한다  &lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124610337-60d0c280-deab-11eb-8a2c-835c384485aa.png&quot; alt=&quot;ec2-4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;5-이제-ec2-서버는-구축이-완성되었다-이제-터미널을-열어-방금-만든-서버에-접속해보자&quot;&gt;5. 이제 EC2 서버는 구축이 완성되었다. 이제 터미널을 열어 방금 만든 서버에 접속해보자&lt;/h3&gt;
+
+&lt;p&gt;.ssh의 폴더을 만들어준다. 이곳에 이전에 저장해두었던 키페어 파일을 옮겨 준다. 이 과정은 컨벤션이므로 꼭 폴더
+이름을 ssh로 하지 않아도 되지만 따르길 권장한다고 한다. mv 명령어로 키페어 파일을 옮겨주면 된다. 보통 파일은 downloads 디렉터리에
+있지만 나는 파일을 옮겼기 때문에 옮긴곳의 디렉터리를 입력해주었다. 두번째의 명령어는 .ssh 폴더로 해당 파일을 옮기는 명령어이다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ssh&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Desktop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ssh&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 키페어 파일은 파일 권한 가진 사람만 읽을 수 있게 설정해줘야 ssh의 키값으로 사용이 가능하다. 파일 권한을 400으로
+바꿔준다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chmod&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ssh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pem&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 서버에 접속하기 위한 기본 설정은 끝이났다. 아래의 명령어를 통해 ec2서버에 접속해보자. 이때 서버에 접속하기 위해서는 
+퍼블릭 ip가 필요하다. 아래의 명령어와 같이 ubuntu@~를 작성하는 이유는 실제로 우분투에서 터미널에서 유저의 계정이 나오는 것처럼
+ec2인스턴스에도 기본적으로 root가 있고 그 밑에 ubuntu 이름(인스턴스의 사용자 계정)을 가지는 &lt;strong&gt;사용자 계정이라고 생각하면 된다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ssh&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ssh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ubuntu&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;생성한&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ec2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;의&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;퍼블릭&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;명령어 입력후 터미널 왼쪽에 방금 생성한 &lt;code class=&quot;highlighter-rouge&quot;&gt;ubuntu@{퍼블릭ip}&lt;/code&gt; 내용이 뜨면 접속에 성공한것 이다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ubuntu&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;퍼블릭&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이때 위에 있는 명령어는 서버에 접속하기 위해 항상 입력해야 하는 명령어이기 때문에 alias로 설정해두는게 편하다 &lt;br /&gt;
+나는 bashrc를 쓰기때문에 bashrc로 들어왔지만 .zshrc쓰는 사람은 이곳에서 설정해야 한다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bashrc&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;neo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ssh -i ~/.ssh/neo.pem ubuntu@{생성한 ec2의 퍼블릭 ip}&quot;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bashrc&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이후 neo를 입력하면 서버에 접속되는 것을 볼 수 있다.(neo는 내가 저장한 네임이다)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;6-이제-접속한-ec2서버에-mysql-서버를-구축해보자&quot;&gt;6. 이제 접속한 ec2서버에 mysql 서버를 구축해보자&lt;/h3&gt;
+&lt;p&gt;가장 먼저 apt-get를 업데이트 해주어야 한다. 뒤에 -y를 붙이는 이유는 모든 질문에 대한 답을 yes로 응답하겠다는 의미이기 때문에
+자동으로 넘어가서 편리하다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;upgrade&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;7-mysql-서버를-설치한다&quot;&gt;7. mysql 서버를 설치한다&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;8-mysql의-패스워드를-설정해준다&quot;&gt;8. mysql의 패스워드를 설정해준다&lt;/h3&gt;
+&lt;p&gt;이때 비밀번호 설정전 최초로 mysql에 접속할땐 sudo mysql로 들어간다. 이후 비밀번호가 설정되면
+&lt;code class=&quot;highlighter-rouge&quot;&gt;mysql  -u root -p&lt;/code&gt;를 입력후 비밀번호를 입력하고 접속하면 된다.&lt;/p&gt;
+
+&lt;p&gt;아래 명령문에서 SELECT로 시작하는 명령문은 실제 MYSQL에 비밀번호가 설정되어 있는지 확인하는 곳이다
+ALTER로 비밀번호를 설정한후 SELECT~로 비밀번호가 제대로 설정되었는지 확인한다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;authentication_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ALTER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'root@localhost'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IDENTIFIED&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql_native_password&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'비밀번호 입력'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;authentication_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;패스워드-수정하는-방법&quot;&gt;패스워드 수정하는 방법&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ALTER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'root'&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'localhost'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IIDENTIFIED&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{변경할 비번}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;9-mysql의-외부접속을-설정을-변경해준다&quot;&gt;9. mysql의 외부접속을 설정을 변경해준다&lt;/h3&gt;
+&lt;p&gt;bind address를 0.0.0.0으로 변경해준다. 127.0.0.1로 설정되면 로컬 호스트에서만 접근이 가능하기 때문에 외부에서 접속할 수 있도록
+변경해주어야 한다. 이때 외부에서 접속할때 pwd를 설정해주어야 한다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;etc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;conf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mysqld&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cnf&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# bind-address에 설정되어 있는 127.0.0.1 을 0.0.0.0으로 변경해준다&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;################### 외부 접속 패스워드 설정&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grant&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;privileges&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*.*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;identified&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{비밀번호 입력}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;10-설정-후-서버-재시작으로-설정-내용을-적용한다&quot;&gt;10. 설정 후 서버 재시작으로 설정 내용을 적용한다&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;systemctl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;restart&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;restart는 자동으로 종료후 시작을 해주는 명령어이다 &lt;br /&gt;
+start는 서버 시작을 해주는 명령어이다 &lt;br /&gt;
+stop은 서버 종료 해주는 명령어이다 &lt;br /&gt;
+status는 서버의 상태를 확인하는 명령어이다.(active가 떠있으면 서버가 실행중임을 의미한다)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;11-이제-workbench를-설치하여--mysql서버에-접속해보자&quot;&gt;11. 이제 workbench를 설치하여  mysql서버에 접속해보자&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;workbench 설치는 8.0.22버전으로 받아주었다.&lt;/strong&gt; 해당 버전으로 해야 workbench에서 서버를 연결할때 에러가 발생하지 않으니
+이점 유의해서 설치하도록 하자 !
+&lt;a href=&quot;https://dev.mysql.com/downloads/workbench/&quot;&gt;https://dev.mysql.com/downloads/workbench/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;설치후 workbench 에서 서버와 연결할때 username은 우분투 서버에 접속하는 것이 아니고 mysql서버에 접속하기 때문에 mysql 계정의 username을 써준다.
+이후 workbench에 text를 눌러 success가 뜨면 연결에 성공한것이다&lt;/p&gt;
+
+&lt;p&gt;그럼 이제 우리는 aws ec2 서버안에 우분투에 구축되어 있는 mysql 서버에 workbench(client)를 통해 접속해 있는 것이다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;12-이제-샘플-데이터를-로컬-서버에서-ec2서버로-파일을-보낸후-mysql에서-열어보자&quot;&gt;12. 이제 샘플 데이터를 로컬 서버에서 ec2서버로 파일을 보낸후 mysql에서 열어보자&lt;/h3&gt;
+&lt;p&gt;이때 workbench에 샘플 데이터를 가져오는 방법은 2가지가 있다. &lt;strong&gt;서버와 연결되어 있는 workbench안에서 직접 다운받는
+방법&lt;/strong&gt; 과 &lt;strong&gt;로컬서버에서 ec2서버로 직접 파일을 보내는 방법이 있다&lt;/strong&gt;  &lt;br /&gt;
+먼저 얘기하자면 로컬서버에서 ec2서버로 직접 파일을 보내는 방법이 훨씬 빠르긴 하지만 좀 더 복잡할 수 있다.&lt;/p&gt;
+
+&lt;h4 id=&quot;1-1-workbench에서-샘플데이터-추가하기&quot;&gt;1-1. workbench에서 샘플데이터 추가하기&lt;/h4&gt;
+&lt;p&gt;먼저 &lt;a href=&quot;https://dev.mysql.com/doc/index-other.html&quot;&gt;https://dev.mysql.com/doc/index-other.html&lt;/a&gt; 이곳에서 world, sakila 데이터 베이스를
+추가한다.(다른거 추가해도 된다. 주로 사용되는 샘플데이터이다)&lt;/p&gt;
+
+&lt;h4 id=&quot;1-2-workbench의-파일메뉴에서-open-sql-script를-선택한-후-worldsql-파일을-선택한다&quot;&gt;1-2. workbench의 파일메뉴에서 open SQL Script를 선택한 후 world.sql 파일을 선택한다&lt;/h4&gt;
+&lt;p&gt;world.sql 파일에 있는 쿼리문이 로드되면 쿼리 실행 아이콘(상단 번개표시)을 클릭한다. 이후 좌측 레이아웃에서
+오른쪽 마우스 클릭후 refresh all 메뉴를 선택하면 world 데이터 베이스가 나타난다.&lt;/p&gt;
+
+&lt;p&gt;sakila의 경우에는 스키마 파일과 데이터 파일이 분리되어 있다. 이땐 데이터 베이스의 구조를 만든 후에 데이터를
+입력할 수 있기 때문에 스키마 피일(sakila-schema.sql)을 실행한 후에 데이터 파일(sakila-data.sql)을 실행해준다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-1-서버에서-데이터베이스-데이터-추가하기&quot;&gt;2-1. 서버에서 데이터베이스 데이터 추가하기&lt;/h4&gt;
+&lt;p&gt;먼저 ec2 서버로 sql 파일을 전송한다. 아래의 명령어는 로컬 desktop에 sql폴더에 있는 도모든 파일을 ec2서버를
+보내는 명령어이다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ssh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Desktop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ubuntu&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;주소&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;~/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;__ 다운받은 .sql 파일들을 sql 폴더를 생성한후 sql폴더에 넣는 명령어이다__&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/*.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;데이터베이스를 생성해준다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;database&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;world&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;데이터베이스에 데이터를 추가해준다. 이때 -p바로 다음에 설정된 pwd를 입력하고 아래와 같이 작성하면 sql폴더에 있는 world.sql파일이
+생성한 world데이터베이스에 들어간다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;비밀번호&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;world&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;world&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;이렇게 해서 긴 과정이 끝이났다. 사실 처음 할때는 굉장히 복잡해보이고 어려운데 하나하나 이해하면서 구축하면 재밌다. :-)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;h4 id=&quot;q1-왜-데이터베이스를-ec2-서버안에서-구축하여-사용할까-&quot;&gt;Q1. 왜 데이터베이스를 ec2 서버안에서 구축하여 사용할까 ?&lt;/h4&gt;
-&lt;h4 id=&quot;a-알아보는-중입니다--&quot;&gt;A) 알아보는 중입니다 :-)&lt;/h4&gt;</content><author><name>jung</name></author><category term="database" /><summary type="html"></summary></entry><entry><title type="html">(Python) instance method, class method, static method</title><link href="https://heejung-gjt.github.io/python3" rel="alternate" type="text/html" title="(Python) instance method, class method, static method" /><published>2021-07-06T17:00:00+09:00</published><updated>2021-07-06T17:00:00+09:00</updated><id>https://heejung-gjt.github.io/python3</id><content type="html" xml:base="https://heejung-gjt.github.io/python3">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 목록 순서 &lt;/span&gt;--&gt;
+&lt;h4 id=&quot;a-알아보는-중입니다--&quot;&gt;A) 알아보는 중입니다 :-)&lt;/h4&gt;</content><author><name>jung</name></author><category term="aws" /><summary type="html"></summary></entry><entry><title type="html">(Python) instance method, class method, static method</title><link href="https://heejung-gjt.github.io/python3" rel="alternate" type="text/html" title="(Python) instance method, class method, static method" /><published>2021-07-06T17:00:00+09:00</published><updated>2021-07-06T17:00:00+09:00</updated><id>https://heejung-gjt.github.io/python3</id><content type="html" xml:base="https://heejung-gjt.github.io/python3">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 목록 순서 &lt;/span&gt;--&gt;
 &lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
 &lt;!--    &lt;li&gt;&lt;a href=&quot;./python-DataStructure&quot;&gt;Python 강좌(1) - 자료구조&lt;/a&gt;&lt;/li&gt;--&gt;
 &lt;!--    &lt;li class=&quot;content01 content&quot;&gt;1. 리스트&lt;/li&gt;--&gt;
@@ -622,27 +897,7 @@ mysql을 연동시킬 예정이다.&lt;/p&gt;
 &lt;h4 id=&quot;5-장고-프로젝트-개발환경-구축-0702&quot;&gt;5. 장고 프로젝트 개발환경 구축 (07.02)&lt;/h4&gt;
 &lt;h4 id=&quot;6-프로젝트-front-구현-0702---0704&quot;&gt;6. 프로젝트 front 구현 (07.02 - 07.04)&lt;/h4&gt;
 &lt;h4 id=&quot;7-모델작성---mysql연동-0705--진행중&quot;&gt;7. 모델작성 - MYSQL연동 (07.05 ~ 진행중….)&lt;/h4&gt;
-&lt;hr /&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html">Django Project -3 개발과정 기록 모델링 - MySQL 연동</summary></entry><entry><title type="html">0706 TIL</title><link href="https://heejung-gjt.github.io/til11" rel="alternate" type="text/html" title="0706 TIL" /><published>2021-07-05T20:00:00+09:00</published><updated>2021-07-05T20:00:00+09:00</updated><id>https://heejung-gjt.github.io/til11</id><content type="html" xml:base="https://heejung-gjt.github.io/til11">&lt;h2 id=&quot;210706-계획&quot;&gt;210706 계획&lt;/h2&gt;
-
-&lt;hr /&gt;
-&lt;h4 id=&quot;pm-900-&quot;&gt;PM 9:00 ~&lt;/h4&gt;
-
-&lt;p&gt;오전에 어제 공부했던 python 클래스 부분을 블로그에 정리할 예정이다. 이어서 매직 메서드 강의를 듣고 공부할 예정이며
-파이썬의 기본 코딩 컨벤션에 관한 책을 읽을 예정이다. mysql 기본 쿼리에 대한 강의를 듣고 실제로 모델링 한 데이터베이스에 데이터를
-넣는 실습을 해볼 예정이다.&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;#### python 클래스 부분 블로그에 정리하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;#### 매직 메서드 강의 듣고 정리하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;#### AWS EC2 서버에 MYSQL 구축해보기 + 블로그 정리하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;#### Django에 mysql 연동시킨후 데이터 넣어보는 실습하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;#### NN 프로젝트 모델링 취합하기&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">0705 TIL</title><link href="https://heejung-gjt.github.io/til10" rel="alternate" type="text/html" title="0705 TIL" /><published>2021-07-05T17:00:00+09:00</published><updated>2021-07-05T17:00:00+09:00</updated><id>https://heejung-gjt.github.io/til10</id><content type="html" xml:base="https://heejung-gjt.github.io/til10">&lt;h2 id=&quot;210705-계획&quot;&gt;210705 계획&lt;/h2&gt;
+&lt;hr /&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html">Django Project -3 개발과정 기록 모델링 - MySQL 연동</summary></entry><entry><title type="html">0705 TIL</title><link href="https://heejung-gjt.github.io/til10" rel="alternate" type="text/html" title="0705 TIL" /><published>2021-07-05T17:00:00+09:00</published><updated>2021-07-05T17:00:00+09:00</updated><id>https://heejung-gjt.github.io/til10</id><content type="html" xml:base="https://heejung-gjt.github.io/til10">&lt;h2 id=&quot;210705-계획&quot;&gt;210705 계획&lt;/h2&gt;
 
 &lt;hr /&gt;
 &lt;h4 id=&quot;pm-900-&quot;&gt;PM 9:00 ~&lt;/h4&gt;
@@ -677,138 +932,4 @@ mysql을 연동시킬 예정이다.&lt;/p&gt;
 
 &lt;p&gt;모델링 하는 방법이 쉽지 않다. 생각보다 고려해야 할 점이 많아서 동료와 꽤 오랜 시간 회의를 진행했다. 
 둘 다 MYSQL 을 적용시켜 구현해보고 싶다는 의견이 맞아 각자 DB를 공부하는 시간을 가지기로 했다. 해보지 않았던 언어나
-기능들을 적용시켜 보고 싶다. ❗&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">0704 TIL</title><link href="https://heejung-gjt.github.io/til9" rel="alternate" type="text/html" title="0704 TIL" /><published>2021-07-04T13:00:00+09:00</published><updated>2021-07-04T13:00:00+09:00</updated><id>https://heejung-gjt.github.io/til9</id><content type="html" xml:base="https://heejung-gjt.github.io/til9">&lt;h2 id=&quot;210704-일-계획&quot;&gt;210704 (일) 계획&lt;/h2&gt;
-
-&lt;hr /&gt;
-&lt;h4 id=&quot;pm-350-&quot;&gt;PM 3:50 ~&lt;/h4&gt;
-
-&lt;p&gt;오늘이 프로젝트 프론트 마지막이다..! 오늘은 간단한 반응형 구현과  나머지 구현 못한 부분(마이페이지)을 구현하고 AJAX써야 하는 부분을
-정리할 예정이다&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;nn프로젝트-반응형-구현하기&quot;&gt;&lt;del&gt;NN프로젝트 반응형 구현하기&lt;/del&gt;&lt;/h4&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;마이페이지-프론트-구현하기&quot;&gt;&lt;del&gt;마이페이지 프론트 구현하기&lt;/del&gt;&lt;/h4&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;ajax-사용할-부분-체크하기&quot;&gt;&lt;del&gt;ajax 사용할 부분 체크하기&lt;/del&gt;&lt;/h4&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;0705---0711-부분-계획-세우기&quot;&gt;&lt;del&gt;0705 - 0711 부분 계획 세우기&lt;/del&gt;&lt;/h4&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;pm--900&quot;&gt;PM ~ 9:00&lt;/h4&gt;
-
-&lt;p&gt;주말이라 그런지 늘어진다.. 그래도 최소한의 할일을 끝내서 뿌듯하다..! 내일은 오전부터 달릴 예정이다. -! 
-파이썬 공부를 본격적으로 다시 시작할 예정이다 😁&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">reset을 이용한 git add, commit, push 되돌리기</title><link href="https://heejung-gjt.github.io/git" rel="alternate" type="text/html" title="reset을 이용한 git add, commit, push 되돌리기" /><published>2021-07-03T15:00:00+09:00</published><updated>2021-07-03T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/git</id><content type="html" xml:base="https://heejung-gjt.github.io/git">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;git 강좌 순서 &lt;/span&gt;--&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./git-01&quot;&gt;git(1) - Git Tutorial&lt;/a&gt;&lt;/li&gt;--&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;p&gt;git을 통해 프로젝트를 진행하다보면 보안문제로 인해 올리지 말아야 할 것을 실수로 올려 push까지 해버리는 경우가 있다. 
-이럴때마다 일일이 구글링하면 해결하다보니 오랜 시간이 걸리는 것은 물론이고 진짜 돌이킬수 없는 강을 건너버리는 경우도 종종 있다.   &lt;br /&gt;
-제대로 정리해서 깔끔하게 되돌리기를 성공해보자&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;git-add-commit-push-되돌리기&quot;&gt;git add, commit, push 되돌리기&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;1-git-add-되돌리기&quot;&gt;1. git add 되돌리기&lt;/h4&gt;
-
-&lt;p&gt;add하기 전으로 돌아가고 싶다면 reset명령어를 쓰면 된다&lt;/p&gt;
-
-&lt;p&gt;아래의 이미지처럼 unstaged가 파일은 변경되었지만 아무런 명령을 받지 않은 상태이다.
-&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124350699-23610080-dc31-11eb-99a3-2d9ba8ed53bc.PNG&quot; alt=&quot;git add 하기전&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;git add를 입력하면 아래의 이미지처럼 파일이 staged가 되는 것을 볼 수 있다.
-&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124350700-23f99700-dc31-11eb-9ff7-e09eae20deab.PNG&quot; alt=&quot;git 한 후&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이때 해결방법은 &lt;code class=&quot;highlighter-rouge&quot;&gt;reset&lt;/code&gt;명령어이다&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;특정-파일의-add-되돌리는-명령어&quot;&gt;특정 파일의 add 되돌리는 명령어&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt; git reset HEAD ex1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;add된-파일-모두-되돌리는-명령어&quot;&gt;add된 파일 모두 되돌리는 명령어&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;2-git-commit-되돌리기&quot;&gt;2. git commit 되돌리기&lt;/h4&gt;
-
-&lt;p&gt;commit을 취소하기 위해서는 git log를 통해서 취소할 commit을 정확히 확인해준다&lt;/p&gt;
-
-&lt;p&gt;저장할 파일을 3, 4 ,5 로 commit 메세지를 작성할 예정이였으나 5가아닌 3으로 커밋이 저장되어 아래의 이미지처럼 저장이 된 상태이다.
-&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124351249-404b0300-dc34-11eb-858e-67bf39fcc755.PNG&quot; alt=&quot;commit 되돌리기 전&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이때 커밋 메세지만 변경할 예정이기 때문에 reset의 &lt;code class=&quot;highlighter-rouge&quot;&gt;--soft&lt;/code&gt;명령어를 사용하여 add만 한 상태로 되돌린다.
-&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124351247-3fb26c80-dc34-11eb-85cf-e21c6468eaa9.PNG&quot; alt=&quot;reset&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;commit된-파일을-add된-상태로-되돌리는-명령어&quot;&gt;commit된 파일을 add된 상태로 되돌리는 명령어&lt;/h3&gt;
-&lt;p&gt;한단계만 되돌리면 되기때문에 HEAD뒤에 ^을 붙여준다. 이때 왜그런지는 모르겠으나 More?이라는 질문이 뜨는데 이때 그냥 바로 전 단계라는 의미로
-^을 입력해주면 된다&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset --soft HEAD^
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;commit된-파일을-unstaged된-상태로-되돌리는-명렁어&quot;&gt;commit된 파일을 unstaged된 상태로 되돌리는 명렁어&lt;/h3&gt;
-&lt;p&gt;그러니까 commit된 파일을 add도 되지 않은 맨 처음 상태로 되돌리는 명령어이다. 그리고 해당명령어는 디폴트 명령어이기 때무에
-&lt;code class=&quot;highlighter-rouge&quot;&gt;git reset HEAD^&lt;/code&gt;명령어와 똑같다&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset --mixed HEAD^
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;commit-된-파일을-n-단계로-되돌리고-싶을때-사용하는-명령어&quot;&gt;commit 된 파일을 n 단계로 되돌리고 싶을때 사용하는 명령어&lt;/h3&gt;
-&lt;p&gt;만약 2단계전으로 돌리고 싶다면 HEAD뒤에 ~2를 붙여주면 된다&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset HEAD~2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;commit된-파일을-아예-unstaged-상태로-디렉터리에서-삭제할때-사용하는-명령어&quot;&gt;commit된 파일을 아예 unstaged 상태로 디렉터리에서 삭제할때 사용하는 명령어&lt;/h3&gt;
-&lt;p&gt;만약 git에서 main 브랜치로 이동하고 싶은데 unstaged에 변경된 파일이 있으면 브랜치로 이동할 수 없다. 이럴땐 stash 명령어 아니면
-아래의 명령어를 써주자&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git --hard HEAD^
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;push된-파일-되돌리기&quot;&gt;push된 파일 되돌리기&lt;/h3&gt;
-&lt;p&gt;가장 고생했던 부분이다. 실제로 장고 시크릿키가 올라가서 되돌리기를 쓰다가 명령어 하나의 잘못으로 레포를 다시 판 기억이 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;이 명령어는 내 local에 있는 파일의 내용들을 remote에 강제로 덮어쓰기 하는 명령어이기 때문에 주의해서 remote가 덮어쓰기 되어져도
-괜찮은지 생각해보고 써주자&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;나는 commit id를 쓰는것을 선호한다. git log나 나의 리모트에 있는 commit id를 가져와서 입력하면 해당 commit이 된 시점으로 되돌아간다.
-그렇기 때문에 이후에 commit된 내용들은 remote와 local 두군데에서 전부 사라지게 된다.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset [commit id]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;이후 되돌려지기 되었다면 remote에서 commit의 기록을 지우기 위해 commit을 다시 해준 후 git push origin &lt;branch name=&quot;&quot;&gt; -f로 강제 덮어쓰기 해준다&lt;/branch&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git push origin &amp;lt;branch name&amp;gt; -f 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;이때 진짜 주의해야 할 것은 &lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt;명령어이다. 이 명령어는 강제로 실행해주기 때문에 이후에는 돌이킬수 없다. 차라리 안전하게 코드를 백업시키고 써주자&lt;/p&gt;</content><author><name>jung</name></author><category term="git" /><summary type="html"></summary></entry></feed>
+기능들을 적용시켜 보고 싶다. ❗&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry></feed>

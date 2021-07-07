@@ -51,18 +51,22 @@
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="(MYSQL) AWS EC2 서버에 MYSQL 구축하기(작성중...)" />
-    <meta property="og:description" content="AWS에서 EC2로 서버를 생성하여 우분투 OS를 설치하고 그 위에 MYSQL를 구축하는 과정입니다. 가장 먼저 AWS 사이트에 접속후 검색창에 EC2를 입력한 후 인스턴스 생성하기를 누른다 1. 가장먼저 AMI를 선택한다 AMI는 인스턴스를 시작할때 이 서버에서 필요한 SW 구성이 포함된 템플릿이다. 나는 Ubuntu 18.04 os를 선택하였다. 20.04를 선택해도 상관없다. 2. 인스턴스 유형을 선택해준다." />
+    <meta property="og:title" content="(MYSQL) Django에 MYSQL연동하기(진행중)" />
+    <meta property="og:description" content="
+AWS EC2에 구축된 MYSQL로 장고와 연동시키는 과정이다
+" />
     <meta property="og:url" content="https://heejung-gjt.github.io/db1" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/mysql.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-07-06T20:30:00+09:00" />
-    <meta property="article:modified_time" content="2021-07-06T20:30:00+09:00" />
+    <meta property="article:published_time" content="2021-07-06T20:59:00+09:00" />
+    <meta property="article:modified_time" content="2021-07-06T20:59:00+09:00" />
     <meta property="article:tag" content="Database" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="(MYSQL) AWS EC2 서버에 MYSQL 구축하기(작성중...)" />
-    <meta name="twitter:description" content="AWS에서 EC2로 서버를 생성하여 우분투 OS를 설치하고 그 위에 MYSQL를 구축하는 과정입니다. 가장 먼저 AWS 사이트에 접속후 검색창에 EC2를 입력한 후 인스턴스 생성하기를 누른다 1. 가장먼저 AMI를 선택한다 AMI는 인스턴스를 시작할때 이 서버에서 필요한 SW 구성이 포함된 템플릿이다. 나는 Ubuntu 18.04 os를 선택하였다. 20.04를 선택해도 상관없다. 2. 인스턴스 유형을 선택해준다." />
+    <meta name="twitter:title" content="(MYSQL) Django에 MYSQL연동하기(진행중)" />
+    <meta name="twitter:description" content="
+AWS EC2에 구축된 MYSQL로 장고와 연동시키는 과정이다
+" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/mysql.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -94,7 +98,9 @@
         "@type": "WebPage",
         "@id": "https://heejung-gjt.github.io/db1"
     },
-    "description": "AWS에서 EC2로 서버를 생성하여 우분투 OS를 설치하고 그 위에 MYSQL를 구축하는 과정입니다. 가장 먼저 AWS 사이트에 접속후 검색창에 EC2를 입력한 후 인스턴스 생성하기를 누른다 1. 가장먼저 AMI를 선택한다 AMI는 인스턴스를 시작할때 이 서버에서 필요한 SW 구성이 포함된 템플릿이다. 나는 Ubuntu 18.04 os를 선택하였다. 20.04를 선택해도 상관없다. 2. 인스턴스 유형을 선택해준다."
+    "description": "
+AWS EC2에 구축된 MYSQL로 장고와 연동시키는 과정이다
+"
 }
     </script>
 
@@ -107,7 +113,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="(MYSQL) AWS EC2 서버에 MYSQL 구축하기(작성중...)" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="(MYSQL) Django에 MYSQL연동하기(진행중)" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -198,7 +204,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">(MYSQL) AWS EC2 서버에 MYSQL 구축하기(작성중...)</h1>
+                <h1 class="post-full-title">(MYSQL) Django에 MYSQL연동하기(진행중)</h1>
             </header>
 
 <!--  
@@ -211,33 +217,7 @@ into the {body} of the default.hbs template -->
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     
-<p>AWS에서 EC2로 서버를 생성하여 우분투 OS를 설치하고 그 위에 MYSQL를 구축하는 과정입니다. 가장 먼저 AWS 사이트에 접속후
-검색창에 EC2를 입력한 후 인스턴스 생성하기를 누른다</p>
-<hr />
-
-<h4 id="1-가장먼저-ami를-선택한다">1. 가장먼저 AMI를 선택한다</h4>
-<p>AMI는 인스턴스를 시작할때 이 서버에서 필요한 SW 구성이 포함된 템플릿이다. 나는 Ubuntu 18.04 os를 선택하였다. 20.04를 선택해도 상관없다.</p>
-
-<p><img src="https://user-images.githubusercontent.com/64240637/124610242-4bf42f00-deab-11eb-90b3-906df9d41e08.png" alt="ec2-1" /></p>
-
-<hr />
-
-<h4 id="2-인스턴스-유형을-선택해준다">2. 인스턴스 유형을 선택해준다.</h4>
-<p>이때 <code class="highlighter-rouge">프리티어 사용 가능</code>이라고 써져 있는 인스턴스를 선택해준다
-<img src="https://user-images.githubusercontent.com/64240637/124610309-5ca4a500-deab-11eb-83dd-83404ce2b6a6.png" alt="ec2-2" /></p>
-
-<h4 id="3-35단계는-특별히-설정할게-없어서-건너-띄어주었다-6단계인-보안-그룹-구성에서는-설정해주어야-할-것-들이-여러개-있다">3. 3~5단계는 특별히 설정할게 없어서 건너 띄어주었다. 6단계인 보안 그룹 구성에서는 설정해주어야 할 것 들이 여러개 있다</h4>
-<p><img src="https://user-images.githubusercontent.com/64240637/124610327-5f9f9580-deab-11eb-9c96-ebcb6b6bf164.png" alt="ec2-3" /></p>
-
-<h4 id="4-7단계-인스턴스-시작-검토에서-시작하기를-누르면-새-키-페어-생성창이-화면처럼-뜨게-된다">4. 7단계 인스턴스 시작 검토에서 시작하기를 누르면 새 키 페어 생성창이 화면처럼 뜨게 된다.</h4>
-<p>그럼 해당 키 페어의 이름을 작성해주면 된다. 나는 진행할 프로젝트의 앞 단어들을 따서 지어주었다. 이후 키 페어 다운로드를 눌러서 다운받아준다. 이 파일을
-나중에 db를 구현할때 ….
-<img src="https://user-images.githubusercontent.com/64240637/124610337-60d0c280-deab-11eb-8a2c-835c384485aa.png" alt="ec2-4" /></p>
-
-<hr />
-
-<h4 id="q1-왜-데이터베이스를-ec2-서버안에서-구축하여-사용할까-">Q1. 왜 데이터베이스를 ec2 서버안에서 구축하여 사용할까 ?</h4>
-<h4 id="a-알아보는-중입니다--">A) 알아보는 중입니다 :-)</h4>
+<h4 id="aws-ec2에-구축된-mysql로-장고와-연동시키는-과정이다">AWS EC2에 구축된 MYSQL로 장고와 연동시키는 과정이다</h4>
 
                 </div>
             </section>

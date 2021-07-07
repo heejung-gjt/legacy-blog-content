@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/database/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-07-06T23:52:57+09:00</updated>
+  <updated>2021-07-07T12:15:55+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/database/feed.xml</id>
 
   
@@ -32,38 +32,12 @@
 
   
     <entry>
-      <title type="html">(MYSQL) AWS EC2 서버에 MYSQL 구축하기(작성중…)</title>
-      <link href="https://heejung-gjt.github.io/db1" rel="alternate" type="text/html" title="(MYSQL) AWS EC2 서버에 MYSQL 구축하기(작성중...)" />
-      <published>2021-07-06T20:30:00+09:00</published>
-      <updated>2021-07-06T20:30:00+09:00</updated>
+      <title type="html">(MYSQL) Django에 MYSQL연동하기(진행중)</title>
+      <link href="https://heejung-gjt.github.io/db1" rel="alternate" type="text/html" title="(MYSQL) Django에 MYSQL연동하기(진행중)" />
+      <published>2021-07-06T20:59:00+09:00</published>
+      <updated>2021-07-06T20:59:00+09:00</updated>
       <id>https://heejung-gjt.github.io/db1</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/db1">&lt;p&gt;AWS에서 EC2로 서버를 생성하여 우분투 OS를 설치하고 그 위에 MYSQL를 구축하는 과정입니다. 가장 먼저 AWS 사이트에 접속후
-검색창에 EC2를 입력한 후 인스턴스 생성하기를 누른다&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;1-가장먼저-ami를-선택한다&quot;&gt;1. 가장먼저 AMI를 선택한다&lt;/h4&gt;
-&lt;p&gt;AMI는 인스턴스를 시작할때 이 서버에서 필요한 SW 구성이 포함된 템플릿이다. 나는 Ubuntu 18.04 os를 선택하였다. 20.04를 선택해도 상관없다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124610242-4bf42f00-deab-11eb-90b3-906df9d41e08.png&quot; alt=&quot;ec2-1&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;2-인스턴스-유형을-선택해준다&quot;&gt;2. 인스턴스 유형을 선택해준다.&lt;/h4&gt;
-&lt;p&gt;이때 &lt;code class=&quot;highlighter-rouge&quot;&gt;프리티어 사용 가능&lt;/code&gt;이라고 써져 있는 인스턴스를 선택해준다
-&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124610309-5ca4a500-deab-11eb-83dd-83404ce2b6a6.png&quot; alt=&quot;ec2-2&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;3-35단계는-특별히-설정할게-없어서-건너-띄어주었다-6단계인-보안-그룹-구성에서는-설정해주어야-할-것-들이-여러개-있다&quot;&gt;3. 3~5단계는 특별히 설정할게 없어서 건너 띄어주었다. 6단계인 보안 그룹 구성에서는 설정해주어야 할 것 들이 여러개 있다&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124610327-5f9f9580-deab-11eb-9c96-ebcb6b6bf164.png&quot; alt=&quot;ec2-3&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;4-7단계-인스턴스-시작-검토에서-시작하기를-누르면-새-키-페어-생성창이-화면처럼-뜨게-된다&quot;&gt;4. 7단계 인스턴스 시작 검토에서 시작하기를 누르면 새 키 페어 생성창이 화면처럼 뜨게 된다.&lt;/h4&gt;
-&lt;p&gt;그럼 해당 키 페어의 이름을 작성해주면 된다. 나는 진행할 프로젝트의 앞 단어들을 따서 지어주었다. 이후 키 페어 다운로드를 눌러서 다운받아준다. 이 파일을
-나중에 db를 구현할때 ….
-&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124610337-60d0c280-deab-11eb-8a2c-835c384485aa.png&quot; alt=&quot;ec2-4&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;q1-왜-데이터베이스를-ec2-서버안에서-구축하여-사용할까-&quot;&gt;Q1. 왜 데이터베이스를 ec2 서버안에서 구축하여 사용할까 ?&lt;/h4&gt;
-&lt;h4 id=&quot;a-알아보는-중입니다--&quot;&gt;A) 알아보는 중입니다 :-)&lt;/h4&gt;</content>
+      <content type="html" xml:base="https://heejung-gjt.github.io/db1">&lt;h4 id=&quot;aws-ec2에-구축된-mysql로-장고와-연동시키는-과정이다&quot;&gt;AWS EC2에 구축된 MYSQL로 장고와 연동시키는 과정이다&lt;/h4&gt;</content>
 
       
       

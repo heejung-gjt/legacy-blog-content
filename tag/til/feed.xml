@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/til/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-07-06T23:52:57+09:00</updated>
+  <updated>2021-07-07T12:15:55+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/til/feed.xml</id>
 
   
@@ -32,10 +32,63 @@
 
   
     <entry>
+      <title type="html">0707 TIL</title>
+      <link href="https://heejung-gjt.github.io/til12" rel="alternate" type="text/html" title="0707 TIL" />
+      <published>2021-07-06T20:55:00+09:00</published>
+      <updated>2021-07-06T20:55:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/til12</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til12">&lt;h2 id=&quot;210707-계획&quot;&gt;210707 계획&lt;/h2&gt;
+
+&lt;hr /&gt;
+&lt;h4 id=&quot;pm-1000-&quot;&gt;PM 10:00 ~&lt;/h4&gt;
+
+&lt;p&gt;요즘 좀 늦게 자다 보니까 확실히 아침에 늦게 눈이 떠진다. 이 정확한 몸같으니라고…  &lt;br /&gt;
+오늘은 장고와 MYSQL 연동하는 법과 MYSQL에 데이터 저장되는지 확인까지 먼저 정리를 하려고 한다. 그 뒤 
+어제 공부했던 파이썬 정리를 간단히 한 뒤 강의를 이어서 들을 예정이다. 오늘 매지메서드를 마저 다 듣고 시퀀스 부분을 나 갈 예정이다 &lt;br /&gt;
+SQL과 장고를 연동시켜 간단한 TO DO LIST CRUD와 좋아요(ManyToMany 해결법)기능을 구현해 볼 예정이다.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;h4 id=&quot;--ec2-인스턴스와-mysql-마저-정리하기&quot;&gt;- EC2 인스턴스와 MYSQL 마저 정리하기&lt;/h4&gt;
+&lt;h4 id=&quot;--장고와-mysql-연동시켜-데이터-저장해보기&quot;&gt;- 장고와 MYSQL 연동시켜 데이터 저장해보기&lt;/h4&gt;
+&lt;h4 id=&quot;--python-매직-메서드-블로그에-정리하기&quot;&gt;- python 매직 메서드 블로그에 정리하기&lt;/h4&gt;
+&lt;h4 id=&quot;--python-매직-메서드--시퀀스-강의-듣고-정리하기&quot;&gt;- python 매직 메서드 + 시퀀스 강의 듣고 정리하기&lt;/h4&gt;
+&lt;h4 id=&quot;--장고와-mysql로-to-do-list-crud--좋아요-기능-구현해보기&quot;&gt;- 장고와 MYSQL로 to do list CRUD + 좋아요 기능 구현해보기&lt;/h4&gt;
+
+&lt;hr /&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">0706 TIL</title>
       <link href="https://heejung-gjt.github.io/til11" rel="alternate" type="text/html" title="0706 TIL" />
-      <published>2021-07-05T20:00:00+09:00</published>
-      <updated>2021-07-05T20:00:00+09:00</updated>
+      <published>2021-07-06T20:50:00+09:00</published>
+      <updated>2021-07-06T20:50:00+09:00</updated>
       <id>https://heejung-gjt.github.io/til11</id>
       <content type="html" xml:base="https://heejung-gjt.github.io/til11">&lt;h2 id=&quot;210706-계획&quot;&gt;210706 계획&lt;/h2&gt;
 
@@ -49,15 +102,19 @@
 
 &lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;#### python 클래스 부분 블로그에 정리하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;#### 매직 메서드 강의 듣고 정리하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;#### AWS EC2 서버에 MYSQL 구축해보기 + 블로그 정리하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;#### Django에 mysql 연동시킨후 데이터 넣어보는 실습하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;#### NN 프로젝트 모델링 취합하기&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;--python-클래스-부분-블로그에-정리하기&quot;&gt;- &lt;del&gt;python 클래스 부분 블로그에 정리하기&lt;/del&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;--매직-메서드-강의-듣고-정리하기&quot;&gt;- &lt;del&gt;매직 메서드 강의 듣고 정리하기&lt;/del&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;--aws-ec2-서버에-mysql-구축해보기--블로그-정리하기&quot;&gt;- &lt;del&gt;AWS EC2 서버에 MYSQL 구축해보기 + 블로그 정리하기&lt;/del&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;--django에-mysql-연동시킨후-데이터-넣어보는-실습하기&quot;&gt;- &lt;del&gt;Django에 mysql 연동시킨후 데이터 넣어보는 실습하기&lt;/del&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;--nn-프로젝트-모델링-취합하기&quot;&gt;- &lt;del&gt;NN 프로젝트 모델링 취합하기&lt;/del&gt;&lt;/h4&gt;
 
-&lt;hr /&gt;</content>
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;-am-1200&quot;&gt;~ AM 12:00&lt;/h4&gt;
+
+&lt;p&gt;하루가 굉장히 짧다&lt;/p&gt;
+
+&lt;p&gt;오늘 하루도 수고했다 -! 💨&lt;/p&gt;</content>
 
       
       
@@ -590,83 +647,6 @@ aws에서 서버를 생성한후 그 위에 우분투를 깔고  mysql을 설치
 
 &lt;p&gt;장고는 진짜 편한것 같기는 하다. 근데 진짜 아는만큼 보인다고 모를때 마냥 어려웠는데 
 알고보니까 정말 간단하게 구현할 수 있는게 생각보다 많아서 놀라웠다. 장고,, 생각보다 더 매력적인건 인정 !&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">0627 TIL</title>
-      <link href="https://heejung-gjt.github.io/til2" rel="alternate" type="text/html" title="0627 TIL" />
-      <published>2021-06-27T10:00:00+09:00</published>
-      <updated>2021-06-27T10:00:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/til2</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til2">&lt;h2 id=&quot;210627-일-계획&quot;&gt;210627 (일) 계획&lt;/h2&gt;
-
-&lt;hr /&gt;
-&lt;h4 id=&quot;am-1130-&quot;&gt;AM 11:30 ~&lt;/h4&gt;
-
-&lt;p&gt;기존에 진행했던 프로젝트에서 대댓글 수정과 코드 리팩토링을 진행하고  aws를 사용해 이미지를 서버에 업로드 했던 방법에 대해
-블로그에 올릴 예정이다&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;대댓글-코드-리펙토링&quot;&gt;~&lt;del&gt;대댓글 코드 리펙토링&lt;/del&gt;~&lt;/h4&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;❓ 자바스크립트 ajax 코드 js파일로 옮기면 405 not allowed error발생함, url의 문제인듯한데
-      제이쿼리 해결방법은 많이 나와있지만 자바스크립트에 대한 해결방법은 찾아보기 힘듦, 장고에서 제공하는
-      FormView써서 해보기 &lt;strong&gt;(찾아보는중….)&lt;/strong&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;대댓글-수정-구현--진행중&quot;&gt;대댓글 수정 구현  (진행중….)&lt;/h4&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;aws-iam과-s3를-이용한-이미지-서버-업로드&quot;&gt;~&lt;del&gt;AWS IAM과 S3를 이용한 이미지 서버 업로드&lt;/del&gt;~&lt;/h4&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;❓ ~&lt;del&gt;IAM과 S3의 역할 알아보기&lt;/del&gt;~&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;대댓글-aws-관련-블로그-업로드하기&quot;&gt;~&lt;del&gt;대댓글, AWS 관련 블로그 업로드하기&lt;/del&gt;~&lt;/h4&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h4 id=&quot;개발자에-도움되는-강연-듣기-0628에-듣기&quot;&gt;개발자에 도움되는 강연 듣기 (0628에 듣기….)&lt;/h4&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=bIeqAlmNRrA&amp;amp;t=2021s&quot;&gt;우아한테크세미나 190425 TDD 리팩토링 by 자바지기 박재성님 강의 듣기&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;-pm-1100&quot;&gt;~ PM 11:00&lt;/h4&gt;
-&lt;p&gt;내일부터는 목표한 시간들 철저하게 지키는게 중요하다. 그리고 계획했던 파이썬 공부랑(OOP), 메인 프로젝트 -&amp;gt;(모델링, 장고 DB에 넣어 출력해보기),
-진행중인 프로젝트 (채팅 구현하기) 조급해하지 말고 꾸준하게 진행하자 -!! 😅&lt;/p&gt;</content>
 
       
       
