@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/user" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Studying  Develop" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="(Django) user 커스터마이징하기(UserManager, AbstractBaseUser)" />
+    <meta property="og:description" content="장고에는 기본적으로 user모델이 정의되어 있다. 기본적으로 정의 되어 있는 모델보다 더 다양한 정보를 입력받을 수 있게 하기 위해 Profile 모델을 생성해 User모델과 1:1로 묶어 구현하는 방식으로 프로젝트를 진행하다가 장고 v1.5 이후 user model을 커스텀하는 것이 일반적인 방법이 되었고 한번쯤은 user모델을 커스텀하는 방식을 정리하여 사용해보고 싶었다. 이다. 나는 AbstractBaseUser를 사용하여 user를" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/user" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-07-11T12:05:00+09:00" />
+    <meta property="article:modified_time" content="2021-07-11T12:05:00+09:00" />
+    <meta property="article:tag" content="Django" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="(Django) user 커스터마이징하기(UserManager, AbstractBaseUser)" />
+    <meta name="twitter:description" content="장고에는 기본적으로 user모델이 정의되어 있다. 기본적으로 정의 되어 있는 모델보다 더 다양한 정보를 입력받을 수 있게 하기 위해 Profile 모델을 생성해 User모델과 1:1로 묶어 구현하는 방식으로 프로젝트를 진행하다가 장고 v1.5 이후 user model을 커스텀하는 것이 일반적인 방법이 되었고 한번쯤은 user모델을 커스텀하는 방식을 정리하여 사용해보고 싶었다. 이다. 나는 AbstractBaseUser를 사용하여 user를" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Studying  Develop" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Django" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Studying  Develop",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/user",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/django.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/user"
+    },
+    "description": "장고에는 기본적으로 user모델이 정의되어 있다. 기본적으로 정의 되어 있는 모델보다 더 다양한 정보를 입력받을 수 있게 하기 위해 Profile 모델을 생성해 User모델과 1:1로 묶어 구현하는 방식으로 프로젝트를 진행하다가 장고 v1.5 이후 user model을 커스텀하는 것이 일반적인 방법이 되었고 한번쯤은 user모델을 커스텀하는 방식을 정리하여 사용해보고 싶었다. 이다. 나는 AbstractBaseUser를 사용하여 user를"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="(Django) user 커스터마이징하기(UserManager, AbstractBaseUser)" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">Studying  Develop</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/network/">Network</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/os/">OS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/database/">DataBase</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/aws/">AWS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-django post tag django ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-07-11">2021-07-11</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/django/'>DJANGO</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">(Django) user 커스터마이징하기(UserManager, AbstractBaseUser)</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/django.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    
+<p>장고에는 기본적으로 user모델이 정의되어 있다. 기본적으로 정의 되어 있는 모델보다 더 다양한 정보를 입력받을 수 있게
+하기 위해 Profile 모델을 생성해 User모델과  1:1로 묶어 구현하는 방식으로 프로젝트를 진행하다가 장고 v1.5 이후 user model을 커스텀하는 것이 일반적인
+방법이 되었고 한번쯤은 user모델을 커스텀하는 방식을 정리하여 사용해보고 싶었다. 이다. <strong>나는 AbstractBaseUser를 사용하여 user를 커스텀 할 예정이다</strong></p>
+
+<hr />
+
+<h2 id="abstractbaseuser">AbstractBaseUser</h2>
+
+<p>로그인의 아이디를 이메일 주소로 사용하도록 하거나 장고의 로그인 절차가 아닌 인증 절차를 직접 구현하고 싶을때 사용한다. 즉
+로그인 방식을 변경하고 싶을때나 원하는 필드들로 유저 모델을 구성하고 싶을때 사용하면 된다. 이때 해당 모델로 구현하기 위해서는
+BaseUserManager를 상속하는 UserManager를 함께 정의하여 일반유저와 슈퍼유저의 생성 방식을 정의해주어야 한다. 나는 사실 UserManager의 역할을 이해하는 것부터
+힘들었었다. 커스텀하는 방식이 이해가 잘 안가서 4일정도 헤맸던것 같다..(알고나니 생각보다 쉬웠다😂)</p>
+
+<hr />
+
+<h2 id="내가-구현할-user모델의-요구사항">내가 구현할 User모델의 요구사항</h2>
+<blockquote>
+
+  <p>사용자의 아이디를 이메일로 받아 후에 이메일 인증을 구현한다</p>
+
+  <p>사용자의 닉네임과 이미지의 부가 정보를 받는다</p>
+
+  <p>이메일 인증을 위해 초반에 회원가입 하는 유저의 is_active의 default값을 False로 받는다</p>
+
+  <p>슈퍼유저의 is_active와 is_superuser의 기본값은 True로 받는다</p>
+</blockquote>
+
+<hr />
+
+<h2 id="class-usermanagerbaseusermanger의-역할">class UserManager(BaseUserManger)의 역할</h2>
+<p>AbstractBaseUser를 이용해 커스텀할때 가장 먼저 UserManager를 정의해주고 나중에 User 클래스를 작성할때 object = UserMnager()를 넣어주는 모습을
+누구나 봤을 것이다. 이 부분을 이해하기 힘들었다.</p>
+
+<p>일단 UserManager는 헬퍼 클래스라고 불리며 두가지의 함수를 가지고 있다. 이 클래스는 간단하게 말해서 <strong>생성되는 사용자들을 등록해주는 역할을 한다.</strong> 일반 유저를 
+등록할때 일반 유저가 가질수 있는 권한이나 값들을 미리 메서드로 정의해두고 해당 메서드를 통해서 일반 유저가 모델에 담기게 된다. 이때 <strong>create_user</strong> 가 바로 이 메서드의 
+역할을 해준다고 생각하면 된다. 그렇다면 자연스럽게 create_superuser는 슈퍼유저를 생성할때 사용되는 메서드라는 것을 예상할 수 있을 것이다. 사실 
+이 클래스 내부에 메서드가 쓰이는 방법이 여러가지라 더 헷갈렸던 것 같다. 그 중 가장 기본적으로 사용되는 형태를 사용하였다.</p>
+
+<blockquote>
+  <p><strong>create_user</strong></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>create_superuser</strong></p>
+</blockquote>
+
+<hr />
+
+<h3 id="코드로-이해해보자">코드로 이해해보자</h3>
+<p><br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UserManager</span><span class="p">(</span><span class="n">BaseUserManager</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_create_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_fields</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">email</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'Users must have an email address'</span><span class="p">)</span>
+        
+        <span class="n">email</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">normalize_email</span><span class="p">(</span><span class="n">email</span><span class="p">)</span> <span class="c"># 이메일 주소를 소문자로 변환하는 과정을 거친뒤 저장</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_fields</span><span class="p">)</span> <span class="c"># 사용자 모델 객체를 생성</span>
+        <span class="n">user</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="c"># 패스워드를 장고에서 제공해주는 해시화 과정을 거쳐 저장 (set_password메서드 안에 make_password가 해시화를 진행해줌)</span>
+        <span class="n">user</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">using</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="p">)</span> <span class="c"># db에 사용자 정보를 저장</span>
+        <span class="k">return</span> <span class="n">user</span>
+
+    <span class="k">def</span> <span class="nf">create_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_fields</span><span class="p">):</span>
+        <span class="n">extra_fields</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">'is_superuser'</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span> <span class="c"># BaseUsrManager에 정의되어 있는 is_superuser 필드의 기본값을 False로 정의</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_user</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_fields</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">create_superuser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_fields</span><span class="p">):</span>
+        <span class="n">extra_fields</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">'is_active'</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span> <span class="c"># 슈퍼유저 생성이기 때문에 is_active등 슈퍼유저가 가져야 할 권한들의 기본값을 True로 정의</span>
+        <span class="n">extra_fields</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">'is_superuser'</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="n">extra_fields</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">'is_staff'</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_user</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_fields</span><span class="p">)</span>
+</code></pre></div></div>
+<p>위와 같은 코드를 많이 봤을거다. 커스텀할때 필요한 클래스인데 위에서 말한것처럼 유저가 생성될때 항상 UserManager 메서드를 거쳐 모델에 저장된다. 위에서는 2가지의
+함수가 있다고 했지만 코드를 보면 총 3가지의 함수가 존재한다. 나는 create_user, create_superuser 메서드를 생성하여 이에 맞게 유저의 기본값들을 각각의 메서드에서
+변경해준 뒤 _create_user 메서드로 변경한 값들을 매개변수로 넣어 리턴해주었다. 그후 _create_user가 실행되어 받은 값들을 토대로 실제 user 모델의 객체로 값들을 넣어준다. 
+위키독스에서는 2가지의 메서드를 사용하는데 차이를 보고 싶다면 링크를 눌러 확인해보자. <a href="https://wikidocs.net/10294">https://wikidocs.net/10294</a></p>
+
+<hr />
+
+<p>그럼 이제 대충 UserManager의 역할이 무엇인지 감이 왔을거다. 이제 완벽하게 이해해보자. 만약 createsuperuser로 슈퍼 유저를 생성한다고 할때 
+UserManager에서 어떤 메서드가 실행 될 것인지 생각해보자. create_superuser 메서드가 실행된다. :-) 그렇다면 어떤 데이터가 메서드의 파라미터로 들어갈지 생각해보자</p>
+
+<blockquote>
+  <p>email  <br />
+password   <br />
+**extra_fields</p>
+</blockquote>
+
+<p>이렇게 3가지의 값들이 파라미터로 들어가게 되는데 email과 password는 필수값이기 때문에 명시적으로 작성해주었다. 그렇다면 extra_fields에는 
+뭐가 들어있을까 ? 일단 각자의 알규먼트에 무엇이 들어있는지 확인하고 싶다면 <strong>for문을 돌려 확인해보는 방법이 있다</strong> (나는 이방법으로 이해했다) <br />
+다른 방법은 단순하게 User 클래스 내부에 있는 이 부분을 확인하면 된다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">USERNAME_FIELD</span> <span class="o">=</span> <span class="s">'email'</span>
+<span class="n">REQUIRED_FIELDS</span> <span class="o">=</span> <span class="p">[</span><span class="s">'nickname'</span><span class="p">]</span>
+</code></pre></div></div>
+<p>username_field는 아이디를 username으로 받을지 email로 받을지 다른 값으로 받을지 정할때 이곳에 작성해주면 된다.
+나는 email을 아이디로 쓸 예정이였기 때문에 이곳에 email을 작성해주었고 실제로 createsuperuser를 하게 되면 가장 먼저 email이 뜨게 될 것이다. 그리고 
+required_fields가 바로 아이디 ,pwd 외에 값을 받고 싶을때 작성해주는 곳이다. <strong>이 required_fields는 다른곳에는 적용되지 않고 superuser를 만들때
+나오는 값들이라고 생각하면 된다.</strong>  위처럼 쓰고 난 후 createsuperuser를 해주면 email, pwd , nickname를 입력하도록 되어 있을 것이다.</p>
+
+<hr />
+
+<p>여기서 또 알아야 할 한가지는 <code class="highlighter-rouge">extra_fields.setdefault('is_superuser', False)</code>이 setdefault 이다. 메서드 안에 작성해주면
+해당 값 또한 extra_fields에 담기게 된다는 것을 알고 있자 -!</p>
+
+<p>여기서 상속에 대한 이해가 없다면 분명 이해하기 힘든 부분들이 생길것이다. 내가 그랬다. 아래의 코드는 User 클래스 부분이다. 저기에 써진 필드들이 User가 생성될때
+모델에 들어가는 필드들이다. 이때 이곳에 명시적으로 작성을 해주었다면 UserManager에서 해당 필드들의 기본값등을 (is_staff를 생각하면 된다) 변경해서 User 모델에 넣을 수 있다.(Usermanager를 통해 user가 생성되기 때문에)
+이때 아래에는 is_superuser 필드가 존재하지 않지만 UserManager에서는 is_superuser를 setdefault를 이용해 디폴트 값을 변경해준다. 이게 가능한 이유는 is_superuser는 AbstractBaseUser내부에 정의가 되어 있기 때문이다.
+User가 AbstractBaseUser를 상속받기 때문에 필드에 작성하지 않아도 사용할 수 있는 것이다.(AbstractBaseUser를 눌러서 눈으로 확인해보면 이해가 될것이다)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">AbstractBaseUser</span><span class="p">,</span> <span class="n">PermissionsMixin</span><span class="p">,</span> <span class="n">TimeStampable</span><span class="p">,</span> <span class="n">Deleteable</span><span class="p">):</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">verbose_name</span><span class="o">=</span><span class="p">(</span><span class="s">'Profile image'</span><span class="p">),)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">verbose_name</span><span class="o">=</span><span class="p">(</span><span class="s">'Email address'</span><span class="p">),</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span><span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">,)</span>
+    <span class="n">nickname</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">verbose_name</span><span class="o">=</span><span class="p">(</span><span class="s">'Nickname'</span><span class="p">),</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">is_active</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">verbose_name</span><span class="o">=</span><span class="p">(</span><span class="s">'Is active'</span><span class="p">),</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">is_staff</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">verbose_name</span><span class="o">=</span><span class="p">(</span><span class="s">'Is staff'</span><span class="p">),</span><span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="n">objects</span> <span class="o">=</span> <span class="n">UserManager</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p>이정도면 대충이라도 감은 잡았을거라고 생각한다. (난 여기까지 이해하는데 굉장히 많은 시간이 걸렸다.) 사실 코드가 전부 비슷해서 가져다 써도 큰 문제가 되지는 않지만 
+이해하고 쓰는 코드와 이해하지 못한 코드를 쓰는 것에는 <strong>정말 엄청난 차이가 있다.</strong></p>
+
+<p>User 클래스를 통해 user가 생성이 되는데 이때 UserManger의 메서드가 유저를 모델에 넣어준다. User 클래스에 작성된 필드들과 함께 미리 상속 받은 값들의 기본값들을 변경시켜 함께 유저 필드에 넣어
+줄 수 있다.</p>
+
+<p>이 정도가 기본인 것 같다. 이후에 PermissionsMixin등을 통해 여러 권한을 주는 방식이라던지 잘 정리되어 있는 블로그를 참고 하면 분명 이해하기가 수월할 것이라고 생각한다. :-)</p>
+
+                </div>
+            </section>
+        
+        <div id="post-disqus" class="container">
+            <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://heejung-gjt-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+        
+
+
+
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">Studying  Develop</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Studying  Develop</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+    <script id="dsq-count-scr" src="//heejung-gjt-github-io.disqus.com/count.js" async></script>
+</body>
+</html>
