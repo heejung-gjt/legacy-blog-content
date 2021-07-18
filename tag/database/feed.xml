@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/database/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-07-12T09:02:29+09:00</updated>
+  <updated>2021-07-18T22:08:58+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/database/feed.xml</id>
 
   
@@ -32,12 +32,221 @@
 
   
     <entry>
-      <title type="html">(MYSQL) Django에 MYSQL연동하기(진행중)</title>
-      <link href="https://heejung-gjt.github.io/db1" rel="alternate" type="text/html" title="(MYSQL) Django에 MYSQL연동하기(진행중)" />
-      <published>2021-07-07T19:09:00+09:00</published>
-      <updated>2021-07-07T19:09:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/db1</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/db1">&lt;h4 id=&quot;aws-ec2에-구축된-mysql로-장고와-연동시키는-과정이다&quot;&gt;AWS EC2에 구축된 MYSQL로 장고와 연동시키는 과정이다&lt;/h4&gt;</content>
+      <title type="html">(MYSQL) 기본적인 명령어 정리하기</title>
+      <link href="https://heejung-gjt.github.io/db2" rel="alternate" type="text/html" title="(MYSQL) 기본적인 명령어 정리하기" />
+      <published>2021-07-13T15:09:00+09:00</published>
+      <updated>2021-07-13T15:09:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/db2</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/db2">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;장고와 mysql을 연동해서 사용할때 나는 ORM을 사용해 DB에 접근하였기 때문에 쿼리문을 알고있지 않아도 큰 문제가 되지 않았지만 최소한의 쿼리문과 명령문을 쓸 줄 알아야  편하게 DB를 조작할 수 있었다. 정말 최소한 알아야 하는 명령문을 정리하였다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;database의 명령문은 대문자와 소문자를 구별하지 않지만 대문자를 쓰는 것이 컨벤션이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;1-cli를-이용하여-db에-접속하기&quot;&gt;1. CLI를 이용하여 DB에 접속하기&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;# 비밀번호 입력후 접속
+$ mysql -u root -p
+
+# 비밀번호 함께 입력후 접속
+$ mysql -u root -p{password}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;2-database-생성하기&quot;&gt;2. database 생성하기&lt;/h4&gt;
+
+&lt;p&gt;이곳에 쓰이는 DB이름이 장고 settings  NAME에 작성되는 이름이다&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql&amp;gt; CREATE DATABASE {db이름};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;3-mysql에-접속후-바로-db까지-생성하기&quot;&gt;3. mysql에 접속후 바로 db까지 생성하기&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ mysql -u root -p{password} &amp;lt; {db이름}.sql
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;4-생성한-db-확인하기--현재-계정이-접근할-수-있는-데이터베이스&quot;&gt;4. 생성한 db 확인하기 ( 현재 계정이 접근할 수 있는 데이터베이스)&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; SHOW DATABASES;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;5-사용할-db에-접속하기&quot;&gt;5. 사용할 db에 접속하기&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; USE {db이름};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;6-접속한-db의-테이블-확인하기&quot;&gt;6. 접속한 db의 테이블 확인하기&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; SHOW TABLES;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;7-접속한-db-내부에-있는-필드-확인하기&quot;&gt;7. 접속한 db 내부에 있는 필드 확인하기&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; DESC {테이블명};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;8-테이블-필드-추가하기-row추가&quot;&gt;8. 테이블 필드 추가하기 (ROW추가)&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER TABLE {table명} ADD {추가할 필드 이름} {추가할 필드 타입};
+
+# EX) student_tb 테이블에 int 타입의 age 필드를 추가한다
+sql &amp;gt; ALTER TABLE student_tb ADD age int;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;9-테이블-필드-삭제하기&quot;&gt;9. 테이블 필드 삭제하기&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER TABLE {table명} CHANGE {수정할 필드 이름} {새로운 필드 이름} {타입};
+
+# EX) student_tb 테이블에 tel 필드 이름을 phone 필드이름으로 변경한다
+sql &amp;gt; ALTER TABLE student_tb CHANGE tel phone int;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;10-테이블-필드-삭제하기row삭제&quot;&gt;10. 테이블 필드 삭제하기(ROW삭제)&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER TABLE {table명} DROP {삭제할 필드 이름};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;11테이블-생성하기-workbench-사용추천&quot;&gt;11.테이블 생성하기 (workbench 사용추천)&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; create table {table명}(
+			필드명 타입,
+			필드명 타입
+			PRIMARY KEY(필드명)
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;12-테이블의-이름-변경하기&quot;&gt;12. 테이블의 이름 변경하기&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER TABLE student_tb RENAME teacher_tb;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;13--테이블-삭제하기&quot;&gt;13.  테이블 삭제하기&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; DROP TABLE student_tb;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;14-설정했던-db의-password-변경하기&quot;&gt;14. 설정했던 db의 password 변경하기&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER USER 'root@loaclhost' IDENTIFIED BY '{변경할 password}';
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;15-db생성시-주의-사항&quot;&gt;15. db생성시 주의 사항&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;기본 인코딩을 utf8로 설정한다 (그렇지 않으면 한글이 테이블에 들어가지 않는다)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; CREATE DATABASE {db이름} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;16-이미-생성된-데이터베이스-언어-인코딩-utf8로-변환한다&quot;&gt;16. 이미 생성된 데이터베이스 언어 인코딩 utf8로 변환한다&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER DATABASE {db이름} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;17-db의-문자세트-확인하기&quot;&gt;17. db의 문자세트 확인하기&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql &amp;gt; SHOW VARIABLES LIKE 'character_set%';
+&lt;/code&gt;&lt;/pre&gt;</content>
 
       
       

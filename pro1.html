@@ -52,7 +52,7 @@
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="(Django) 프로젝트(3) - 1. 개발과정 기록" />
-    <meta property="og:description" content="Django Project -3 개발과정 기록 모델링 - MySQL 연동 210627 ~ 프로젝트 시작 나에게 있어 3번째 프로젝트이며 2번째 팀플이다. 프로젝트 진행에 맞춰 블로그에 업로드 할 예정이다. :-) github link: https://github.com/Neo-News/Neo-News 프로젝트 진행 목표 1차 목표 : 프론트 &amp; 백엔드 구현 완성 (~ 07.18 예정) 2차 목표 : AWS 배포 (~" />
+    <meta property="og:description" content="Django Project -3 개발과정 기록 프론트 - 구현 모델링 - MySQL 연동 백엔드 - 구현 210627 ~ 프로젝트 시작 나에게 있어 3번째 프로젝트이며 2번째 팀플이다. 프로젝트 진행에 맞춰 블로그에 업로드 할 예정이다. :-) github link: https://github.com/Neo-News/Neo-News 프로젝트 진행 목표 1차 목표 : 프론트 &amp; 백엔드 구현 완성 (07.18 예정 ~07.24" />
     <meta property="og:url" content="https://heejung-gjt.github.io/pro1" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -62,7 +62,7 @@
     <meta property="article:tag" content="Django" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="(Django) 프로젝트(3) - 1. 개발과정 기록" />
-    <meta name="twitter:description" content="Django Project -3 개발과정 기록 모델링 - MySQL 연동 210627 ~ 프로젝트 시작 나에게 있어 3번째 프로젝트이며 2번째 팀플이다. 프로젝트 진행에 맞춰 블로그에 업로드 할 예정이다. :-) github link: https://github.com/Neo-News/Neo-News 프로젝트 진행 목표 1차 목표 : 프론트 &amp; 백엔드 구현 완성 (~ 07.18 예정) 2차 목표 : AWS 배포 (~" />
+    <meta name="twitter:description" content="Django Project -3 개발과정 기록 프론트 - 구현 모델링 - MySQL 연동 백엔드 - 구현 210627 ~ 프로젝트 시작 나에게 있어 3번째 프로젝트이며 2번째 팀플이다. 프로젝트 진행에 맞춰 블로그에 업로드 할 예정이다. :-) github link: https://github.com/Neo-News/Neo-News 프로젝트 진행 목표 1차 목표 : 프론트 &amp; 백엔드 구현 완성 (07.18 예정 ~07.24" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -94,7 +94,7 @@
         "@type": "WebPage",
         "@id": "https://heejung-gjt.github.io/pro1"
     },
-    "description": "Django Project -3 개발과정 기록 모델링 - MySQL 연동 210627 ~ 프로젝트 시작 나에게 있어 3번째 프로젝트이며 2번째 팀플이다. 프로젝트 진행에 맞춰 블로그에 업로드 할 예정이다. :-) github link: https://github.com/Neo-News/Neo-News 프로젝트 진행 목표 1차 목표 : 프론트 &amp; 백엔드 구현 완성 (~ 07.18 예정) 2차 목표 : AWS 배포 (~"
+    "description": "Django Project -3 개발과정 기록 프론트 - 구현 모델링 - MySQL 연동 백엔드 - 구현 210627 ~ 프로젝트 시작 나에게 있어 3번째 프로젝트이며 2번째 팀플이다. 프로젝트 진행에 맞춰 블로그에 업로드 할 예정이다. :-) github link: https://github.com/Neo-News/Neo-News 프로젝트 진행 목표 1차 목표 : 프론트 &amp; 백엔드 구현 완성 (07.18 예정 ~07.24"
 }
     </script>
 
@@ -214,7 +214,9 @@ into the {body} of the default.hbs template -->
 <p><span class="table-of-contents-list">Django Project -3 </span></p>
 <ul class="table-of-contents-list">
     <li><a href="./pro1">개발과정 기록</a></li>
-    <li><a href="./pro2">모델링 - MySQL 연동</a></li>
+    <li><a href="./pro2">프론트 - 구현</a></li>
+    <li><a href="./pro3">모델링 - MySQL 연동</a></li>
+    <li><a href="./pro4">백엔드 - 구현</a></li>
 
 </ul>
 
@@ -227,9 +229,9 @@ into the {body} of the default.hbs template -->
 
 <h3 id="프로젝트-진행-목표">프로젝트 진행 목표</h3>
 
-<h4 id="1차-목표--프론트--백엔드-구현-완성--0718-예정">1차 목표 : 프론트 &amp; 백엔드 구현 완성 (~ 07.18 예정)</h4>
-<h4 id="2차-목표--aws-배포--0720-예정">2차 목표 : AWS 배포 (~ 07.20 예정)</h4>
-<h4 id="3차-목표--사용자-피드백-받은-후-유지보수-진행--0801-예정">3차 목표 : 사용자 피드백 받은 후 유지보수 진행 (~ 08.01 예정)</h4>
+<h4 id="1차-목표--프론트--백엔드-구현-완성-0718-예정-0724-예정-">1차 목표 : 프론트 &amp; 백엔드 구현 완성 (<del>07.18 예정</del> ~07.24 예정 )</h4>
+<h4 id="2차-목표--aws-배포-0720-예정-0725예정">2차 목표 : AWS 배포 (<del>07.20 예정</del> ~07.25예정)</h4>
+<h4 id="3차-목표--사용자-피드백-받은-후-유지보수-진행-미정">3차 목표 : 사용자 피드백 받은 후 유지보수 진행 (미정)</h4>
 
 <hr />
 
@@ -237,10 +239,11 @@ into the {body} of the default.hbs template -->
 
 <h4 id="1-프로젝트-주제-정하기-0627---0701">1. 프로젝트 주제 정하기 (06.27 - 07.01)</h4>
 <h4 id="2-요구사항-명세-작성-구현할-기능-작성-프로토타입-작성-0701---0703">2. 요구사항 명세 작성, 구현할 기능 작성, 프로토타입 작성 (07.01 - 07.03)</h4>
-<h4 id="4-대략적인-모델-erd구현-앱-구조-작성-0702--">4. 대략적인 모델, ERD구현, 앱 구조 작성 (07.02 ~ )</h4>
-<h4 id="5-장고-프로젝트-개발환경-구축-0702">5. 장고 프로젝트 개발환경 구축 (07.02)</h4>
+<h4 id="4-대략적인-모델-erd구현-앱-구조-작성-0702--0704">4. 대략적인 모델, ERD구현, 앱 구조 작성 (07.02 ~ 07.04)</h4>
+<h4 id="5-장고-프로젝트-개발환경-구축-0702--0704">5. 장고 프로젝트 개발환경 구축 (07.02 ~ 07.04)</h4>
 <h4 id="6-프로젝트-front-구현-0702---0704">6. 프로젝트 front 구현 (07.02 - 07.04)</h4>
-<h4 id="7-모델작성---mysql연동-0705--진행중">7. 모델작성 - MYSQL연동 (07.05 ~ 진행중….)</h4>
+<h4 id="7-모델작성---mysql연동-0705--0709">7. 모델작성 - MYSQL연동 (07.05 ~ 07.09)</h4>
+<h4 id="8-백엔드-시작-0709--">8. 백엔드 시작 (07.09 ~ )</h4>
 <hr />
 
                 </div>
