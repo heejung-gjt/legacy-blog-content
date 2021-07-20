@@ -45,30 +45,30 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="개발 공부하는 블로그" />
     <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://heejung-gjt.github.io/til18" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/django1" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="0718 TIL" />
-    <meta property="og:description" content="210718 (일) 계획 PM 2:00 ~ 지금까지 프로젝트를 진행하면서 새롭게 안 내용들을 정리할 예정이며 현재까지 진행된 프로젝트를 정리해서 올릴 예정이다. 해야 할 일 프로젝트 진행사항 정리해서 올리기 새로운 기능들 정리해서 올리기 celery redis 관련 내용 올리기 프로젝트를 진행하느라 정신이 없었다… til 작성도 못하고 프로젝트 진행에만 몰두했던 것 같다.. 알게 된" />
-    <meta property="og:url" content="https://heejung-gjt.github.io/til18" />
-    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/til.png" />
+    <meta property="og:title" content="(Django) ajax로 받은 pk로 a태그의 url에 적용시키기" />
+    <meta property="og:description" content="제목을 이렇게나 구체적으로 적은 이유는 이걸로 굉장히 많이 해멨던 기억이 있기 때문이다 😂 보통은 pk가 있는 경우 a링크에 url을 {% url 'news:article' article.pk %} 이런식으로 써서 요청을 보낸다. 근데 여기서 문제는 ajax에서는 {% %} 안에 ${}로 자바스크립트 변수를 쓸 수 없다. 꽤 많은 시간동안 찾아보다 포기 했었는데 생각보다 간단한 해결방법이" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/django1" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-07-18T14:00:00+09:00" />
-    <meta property="article:modified_time" content="2021-07-18T14:00:00+09:00" />
-    <meta property="article:tag" content="Til" />
+    <meta property="article:published_time" content="2021-07-20T17:05:00+09:00" />
+    <meta property="article:modified_time" content="2021-07-20T17:05:00+09:00" />
+    <meta property="article:tag" content="Django" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="0718 TIL" />
-    <meta name="twitter:description" content="210718 (일) 계획 PM 2:00 ~ 지금까지 프로젝트를 진행하면서 새롭게 안 내용들을 정리할 예정이며 현재까지 진행된 프로젝트를 정리해서 올릴 예정이다. 해야 할 일 프로젝트 진행사항 정리해서 올리기 새로운 기능들 정리해서 올리기 celery redis 관련 내용 올리기 프로젝트를 진행하느라 정신이 없었다… til 작성도 못하고 프로젝트 진행에만 몰두했던 것 같다.. 알게 된" />
+    <meta name="twitter:title" content="(Django) ajax로 받은 pk로 a태그의 url에 적용시키기" />
+    <meta name="twitter:description" content="제목을 이렇게나 구체적으로 적은 이유는 이걸로 굉장히 많이 해멨던 기억이 있기 때문이다 😂 보통은 pk가 있는 경우 a링크에 url을 {% url 'news:article' article.pk %} 이런식으로 써서 요청을 보낸다. 근데 여기서 문제는 ajax에서는 {% %} 안에 ${}로 자바스크립트 변수를 쓸 수 없다. 꽤 많은 시간동안 찾아보다 포기 했었는데 생각보다 간단한 해결방법이" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
-    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/til.png" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Studying  Develop" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Til" />
+    <meta name="twitter:data2" content="Django" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -83,18 +83,18 @@
         "name": "Studying  Develop",
         "logo": "https://heejung-gjt.github.io/"
     },
-    "url": "https://heejung-gjt.github.io/til18",
+    "url": "https://heejung-gjt.github.io/django1",
     "image": {
         "@type": "ImageObject",
-        "url": "https://heejung-gjt.github.io/assets/built/images/til.png",
+        "url": "https://heejung-gjt.github.io/assets/built/images/django.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://heejung-gjt.github.io/til18"
+        "@id": "https://heejung-gjt.github.io/django1"
     },
-    "description": "210718 (일) 계획 PM 2:00 ~ 지금까지 프로젝트를 진행하면서 새롭게 안 내용들을 정리할 예정이며 현재까지 진행된 프로젝트를 정리해서 올릴 예정이다. 해야 할 일 프로젝트 진행사항 정리해서 올리기 새로운 기능들 정리해서 올리기 celery redis 관련 내용 올리기 프로젝트를 진행하느라 정신이 없었다… til 작성도 못하고 프로젝트 진행에만 몰두했던 것 같다.. 알게 된"
+    "description": "제목을 이렇게나 구체적으로 적은 이유는 이걸로 굉장히 많이 해멨던 기억이 있기 때문이다 😂 보통은 pk가 있는 경우 a링크에 url을 {% url 'news:article' article.pk %} 이런식으로 써서 요청을 보낸다. 근데 여기서 문제는 ajax에서는 {% %} 안에 ${}로 자바스크립트 변수를 쓸 수 없다. 꽤 많은 시간동안 찾아보다 포기 했었는데 생각보다 간단한 해결방법이"
 }
     </script>
 
@@ -107,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="0718 TIL" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="(Django) ajax로 받은 pk로 a태그의 url에 적용시키기" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -183,27 +183,27 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-til post tag til ">
+        <article class="post-full  tag-django post tag django ">
 
             <header class="post-full-header">
 
               <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="2021-07-18">2021-07-18</time>
+                    <time class="post-full-meta-date" datetime="2021-07-20">2021-07-20</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/til/'>TIL</a>
+                               <a href='/tag/django/'>DJANGO</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">0718 TIL</h1>
+                <h1 class="post-full-title">(Django) ajax로 받은 pk로 a태그의 url에 적용시키기</h1>
             </header>
 
 <!--  
             
-            <figure class="post-full-image" style="background-image: url(/assets/built/images/til.png)">
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/django.png)">
             </figure>
             
 -->
@@ -211,31 +211,19 @@ into the {body} of the default.hbs template -->
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     
-<h2 id="210718-일-계획">210718 (일) 계획</h2>
+<p><br /></p>
 
-<hr />
-<h4 id="pm-200-">PM 2:00 ~</h4>
+<p>제목을 이렇게나 구체적으로 적은 이유는 이걸로 굉장히 많이 해멨던 기억이 있기 때문이다 😂</p>
 
-<p>지금까지 프로젝트를 진행하면서 새롭게 안 내용들을 정리할 예정이며 현재까지 진행된 프로젝트를 정리해서 
-올릴 예정이다.</p>
+<p>보통은 pk가 있는 경우 a링크에 url을 <code class="highlighter-rouge">{% url 'news:article' article.pk %}</code> 이런식으로 써서 요청을 보낸다. 근데 여기서 
+문제는 ajax에서는 <code class="highlighter-rouge">{% %}</code> 안에 ${}로 자바스크립트 변수를 쓸 수 없다. 꽤 많은 시간동안 찾아보다 포기 했었는데
+생각보다 간단한 해결방법이 있었다..(너무 간단해서 찾아봐도 없었던 걸까…)</p>
 
-<hr />
+<p><br /></p>
 
-<h2 id="해야-할-일">해야 할 일</h2>
-
-<ul>
-  <li><del>프로젝트 진행사항 정리해서 올리기</del></li>
-  <li><del>새로운 기능들 정리해서 올리기</del></li>
-  <li><del>celery redis 관련 내용 올리기</del></li>
-</ul>
-
-<hr />
-
-<p>프로젝트를 진행하느라 정신이 없었다… til 작성도 못하고 프로젝트 진행에만 몰두했던 것 같다.. 
-알게 된 것도 생각보다 많고 생각하지 못한 부분도 많아서 생각보다 더디게 진행되었다. 그래도 느리지만 조금씩 
-진행되는 프로젝트를 보면서 욕심도 생기고 추가해보고 싶은 기능들도 생겼다. 원래는 오늘까지 백엔드를 마무리 지어야 했지만
-일주일정도 진행을 더 해야 할 것 같다  <br />
-긴 일주일이 될 것 같다 !</p>
+<p>아래처럼 url을 풀어서 작성해주자. 아래에서는 자바스크립트의 변수를 인식한다 :-)</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">'news/article/${data.pk}'</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
                 </div>
             </section>

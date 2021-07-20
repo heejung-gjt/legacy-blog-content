@@ -51,7 +51,7 @@
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="(Django) celery, redis 알아보기 - 1 (작성중...)" />
+    <meta property="og:title" content="(Django) celery, redis, beat 알아보기 - 1" />
     <meta property="og:description" content="Python Celery with Redis: 비동기 작업 큐(queue) 웹 서버가 처리하기에 무거운 연산을 ex) email.send() 그냥 서버에 넣으면 해당 로직의 처리가 끝날때까지 유저는 아무런 작업을 할 수 없다. 웹 서버의 기본적인 동작 방식은 동기적(synchronous)이기 때문이다. 이를 해결하기 위해 비동기적(asynchronous)인 작업으로 처리해준다. 비동기적 처리는 길어지는 작업이 끝나기를 기다리지 않고 유저가 다른일을 할" />
     <meta property="og:url" content="https://heejung-gjt.github.io/celery" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
@@ -61,7 +61,7 @@
     <meta property="article:modified_time" content="2021-07-16T13:05:00+09:00" />
     <meta property="article:tag" content="Django" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="(Django) celery, redis 알아보기 - 1 (작성중...)" />
+    <meta name="twitter:title" content="(Django) celery, redis, beat 알아보기 - 1" />
     <meta name="twitter:description" content="Python Celery with Redis: 비동기 작업 큐(queue) 웹 서버가 처리하기에 무거운 연산을 ex) email.send() 그냥 서버에 넣으면 해당 로직의 처리가 끝날때까지 유저는 아무런 작업을 할 수 없다. 웹 서버의 기본적인 동작 방식은 동기적(synchronous)이기 때문이다. 이를 해결하기 위해 비동기적(asynchronous)인 작업으로 처리해준다. 비동기적 처리는 길어지는 작업이 끝나기를 기다리지 않고 유저가 다른일을 할" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
@@ -107,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="(Django) celery, redis 알아보기 - 1 (작성중...)" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="(Django) celery, redis, beat 알아보기 - 1" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -198,7 +198,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">(Django) celery, redis 알아보기 - 1 (작성중...)</h1>
+                <h1 class="post-full-title">(Django) celery, redis, beat 알아보기 - 1</h1>
             </header>
 
 <!--  
@@ -221,8 +221,6 @@ into the {body} of the default.hbs template -->
 
 <p>이때 작업을 메시지 큐에 순차적으로 등록을 시켜야 작업 충돌을 방지할 수 있다. 이때 큐에 작업을 전달해주는 시스템을 브로커라고 부른다. 대표적으로 <strong>redis, rabbitMQ</strong>등이 존재한다</p>
 
-<hr />
-
 <h3 id="celery">celery</h3>
 
 <p>비동기처리가 필요한 작업을 Celery가 브로커(redis)에게 전달하면 하나 이상의 worker가 이를 처리해준다</p>
@@ -233,15 +231,17 @@ into the {body} of the default.hbs template -->
 
 <h3 id="브로커redis">브로커(Redis)</h3>
 
-<p>요청한 작업을 담아두는 큐이고 담아둔 요청을 여러개의 worker에게 적절히 분배해준다</p>
+<p>celery 작업을 하기 위해서는 브로커를 설정해야 한다. 브로커는 worker인 Celery를 사용하기 위해서 작업 요청을 받는 큐라고 할 수 있다. 이때 이곳에서 요청을 받아 Worker에게 적절히 분배하는 작업을 수행한다</p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/126358229-bc3a3f37-b4a3-4b85-acf9-2f90357a5d19.png" alt="celery (1)" /></p>
 
 <hr />
 
-<p><img src="https://user-images.githubusercontent.com/64240637/126062235-97694c69-3148-428e-b8a0-2fa9dbdd9cd2.png" alt="celery" /></p>
+<h2 id="장고에-celery와-redis-설치하기">장고에 celery와 redis 설치하기</h2>
 
-<h3 id="장고에-celery와-redis-설치하기">장고에 celery와 redis 설치하기</h3>
+<p><br /></p>
 
-<h4 id="celery와-redis-설치">celery와 redis 설치</h4>
+<h3 id="1-celery와-redis-설치">1. celery와 redis 설치</h3>
 
 <p>설치시 주의할 점은 celery는 파이썬 언어로 작성되어 있기  때문에 가상환경 위에서 pip를 이용해 설치한다
 redis는 인 메모리를 이용하기 때문에 wget으로 설치한다</p>
@@ -270,16 +270,16 @@ redis는 인 메모리를 이용하기 때문에 wget으로 설치한다</p>
 
 <span class="c"># PONG 메시지를 띄우면 설치 성공, redis-server실행해두고 redis-cli 명령어 치기</span>
 </code></pre></div></div>
-
 <p><br /></p>
 
-<p>redis redis-server creating server TCP listening socket *.6379:bind:Address already in use 에러 발생시 redis 사용되고 있는 포트 한번 죽여줘야 함. 방법은 2가지 정도로 했었음 (kill 명령어가 가장 흔한데 초반에는 해당 명령어가 잘 듣지 않음..) 둘 중 하나로 종료시킨 다음 다시 redis-server 로 박스 상자 터미널에 뜨는지 확인..</p>
+<h3 id="2-redis-redis-server-creating-server-tcp-listening-socket-6379bindaddress-already-in-use-에러-발생">2. redis redis-server creating server TCP listening socket *.6379:bind:Address already in use 에러 발생</h3>
+<p>redis 사용되고 있는 포트 한번 죽여줘야 한다. 2가지의 방법으로 시도를 했다. (kill 명령어가 가장 흔한데 초반에는 해당 명령어가 잘 듣지 않았다) 둘 중 하나로 종료시킨 다음 다시 redis-server 로 박스 상자 터미널에 뜨는지 확인한다</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 실행중인 포트 찾기</span>
 <span class="err">$</span> <span class="n">ps</span> <span class="n">aux</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">redis</span>
 <span class="s">"""
 # ex) 1013 kill 해준다
-redis 1013  0.2  0.0  49788  4596 ?        Ssl  09:06   0:44 /usr/bin/redis-server 127.0.0.1:6379
+redis 1013  0.2  0.0  49788  4596 ? Ssl  09:06   0:44 /usr/bin/redis-server 127.0.0.1:6379
 """</span>
 <span class="c"># 1. kill</span>
 <span class="err">$</span> <span class="n">kill</span> <span class="o">-</span><span class="mi">9</span> <span class="mi">1013</span>
@@ -290,9 +290,7 @@ redis 1013  0.2  0.0  49788  4596 ?        Ssl  09:06   0:44 /usr/bin/redis-serv
 
 <p><br /></p>
 
-<hr />
-
-<h4 id="장고와-연동하기">장고와 연동하기</h4>
+<h3 id="3-장고와-연동하기">3. 장고와 연동하기</h3>
 
 <p>이메일도 같이 사용할 예정이므로 email도 env로 들어가 있음.</p>
 
@@ -301,7 +299,7 @@ redis 1013  0.2  0.0  49788  4596 ?        Ssl  09:06   0:44 /usr/bin/redis-serv
 <span class="n">EMAIL_HOST</span><span class="o">=</span><span class="s">'smtp.gmail.com'</span>
 <span class="n">EMAIL_PORT</span><span class="o">=</span> <span class="mi">587</span>
 <span class="n">EMAIL_HOST_USER</span><span class="o">=</span><span class="s">'djangosmtp10@gmail.com'</span>
-<span class="n">EMAIL_HOST_PASSWORD</span><span class="o">=</span><span class="s">'{password}'</span>
+<span class="n">EMAIL_HOST_PASSWORD</span><span class="o">=</span><span class="s">'@gmlwjddl0616'</span>
 <span class="n">EMAIL_USE_TLS</span><span class="o">=</span><span class="bp">True</span>
 </code></pre></div></div>
 
@@ -324,9 +322,9 @@ redis 1013  0.2  0.0  49788  4596 ?        Ssl  09:06   0:44 /usr/bin/redis-serv
 
 <p><br /></p>
 
-<h4 id="worker-터미널에서-실행하기">worker 터미널에서 실행하기</h4>
+<h3 id="4-worker-터미널에서-실행하기">4. worker 터미널에서 실행하기</h3>
 
-<p>가상환경 venv 들어간 후 실행해야 함. 해당 터미널은 실행시켜놓고 진행해야 한다.</p>
+<p>가상환경에 들어간 후 실행해야 한다. redis는  실행시켜놓고 진행해야 한다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span> <span class="n">celery</span> <span class="o">-</span><span class="n">A</span> <span class="n">config</span> <span class="n">worker</span> <span class="o">-</span><span class="n">l</span> <span class="n">info</span>
 
@@ -350,9 +348,9 @@ redis 1013  0.2  0.0  49788  4596 ?        Ssl  09:06   0:44 /usr/bin/redis-serv
 
 <p><br /></p>
 
-<h4 id="worker-실행시킨-후-발생할-수-있는-이슈">worker 실행시킨 후 발생할 수 있는 이슈</h4>
+<h3 id="5-worker-실행시킨-후-발생할-수-있는-이슈">5. worker 실행시킨 후 발생할 수 있는 이슈</h3>
 
-<p>회원가입 했을때 아래와 같이 내용이 업데이트 되지 않고 아무런 동작을 하지 않는다면 task의 send_email의 메서드 네임을 바꾼후 redis-server을 재시작 해볼 것 -! (redis-server도 외부 접속이 허용된다는데 이는 좀 더 알아봐야 할 것 같음. 현재 테스트하는덴 문제가 없음)</p>
+<p>task의 메서드 내용등 업데이트가 바로되지 않아 아무런 동작을 하지 않는다면 redis서버까지 종료후 다시 실행시켜본다. conf파일에 들어가 포트 번호를 다르게 설정해서 다른 프로젝트와 혼동되지 않게 해주자..</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"</span><span class="err">
 </span><span class="s">[2021-07-14 00:55:02,966: INFO/MainProcess] mingle: searching for neighbors</span><span class="err">
@@ -373,12 +371,224 @@ redis 1013  0.2  0.0  49788  4596 ?        Ssl  09:06   0:44 /usr/bin/redis-serv
 
 <p><br /></p>
 
+<p>여기까지가 celery와 redis의 기본 세팅 과정이다</p>
+
+<hr />
+
 <h4 id="redis-server-외부접속-허용하기">redis-server 외부접속 허용하기</h4>
 
-<p>아직 설정하지는 않았지만 redis-server도 로컬 접속만 허용되어 있기 때문에 외부 서버에서 접속할 수 있게 해주어야 한다. 
-해당 파일을 열어 bind를 찾아 127.0.0.1을 주석처리하거나 지운 후 0.0.0.0을 추가한다. 이는 로컬에서만 가능한 접속을 외부에도 열어주는 설정이다.
-현재 굳이 설정하지 않아도 외부에서 잘 돌아감</p>
+<p>redis-server도 로컬 접속만 허용되어 있기 때문에 외부 서버에서 접속할 수 있게 해주어야 한다. 해당 파일을 열어 bind를 찾아 127.0.0.1을 주석처리하거나 지운 후 0.0.0.0을 추가한다. 이는 로컬에서만 가능한 접속을 외부에도 열어주는 설정이다.</p>
 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># redis.config</span>
+
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">redis</span><span class="o">/</span><span class="n">redis</span><span class="o">.</span><span class="n">conf</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="celery와-beat">celery와 beat</h2>
+
+<p><br /></p>
+
+<h3 id="celery-beat스케줄러">celery-beat(스케줄러)</h3>
+
+<p>주기적으로 어떠한 일을 반복적으로 해야하는 경우가 생길때 celery-beat를 사용하면 된다.  celery의 작업큐에 주기적으로 작업을 넣어주는 역할을 하는것이 beat이다.</p>
+
+<h3 id="celery-beat사용하기">celery-beat사용하기</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pip</span> <span class="n">install</span> <span class="n">django</span><span class="o">-</span><span class="n">celery</span><span class="o">-</span><span class="n">beat</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="settingspy에-스케쥴-추가">settings.py에 스케쥴 추가</h3>
+
+<p>settings.py에 추가해도 되지만 celery.py에서 app.conf.update()에 추가해주어도 된다.(이곳에서는 settings.py에 등록한다) CELERYBEAT_SCHEDULE은 딕셔너리 형태로 여러개의 스케쥴을 등록하여 사용할 수 있다</p>
+
+<p><strong>timedelta를 이용</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># settings.py</span>
+
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="s">'django_celery_beat'</span>
+<span class="p">]</span>
+
+<span class="n">CELERY_TIMEZONE</span> <span class="o">=</span> <span class="s">'Asia/Seoul'</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+
+<span class="c"># 1초에 한번씩 task써져있는 작업이 실행된다. 이곳에서는 timedelta를 사용해서</span>
+<span class="c"># 실행될 간격을 정의하였다.</span>
+<span class="n">CELERYBEAT_SCHEDULE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'every-seconds'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'task'</span><span class="p">:</span> <span class="s">'앱이름.tasks.task이름'</span><span class="p">,</span>
+        <span class="s">'schedule'</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="s">'args'</span><span class="p">:</span> <span class="p">()</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><strong>crontab</strong>을 이용</p>
+
+<p>크론탭은 특정 시간뿐만 아니라 특정한 요일같이 다양하게 시간을 정하여 작업을 배치시킬 수 있다.  timedelta와 비슷하다. schedule에 crontab을 작성하여 사용하면 된다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># settings.py</span>
+
+<span class="kn">from</span> <span class="nn">celery.schedules</span> <span class="kn">import</span> <span class="n">crontab</span>
+
+<span class="n">CELERYBEAT_SCHEDULE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'every-minutes'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'task'</span><span class="p">:</span> <span class="s">'앱이름.tasks.task이름'</span><span class="p">,</span>
+        <span class="s">'schedule'</span><span class="p">:</span> <span class="n">crontab</span><span class="p">(),</span>
+        <span class="s">'args'</span><span class="p">:</span> <span class="p">()</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="process-구동">process 구동</h3>
+
+<p>celery와  beat를 구동시켜 등록한 시간마다 작업이 수행되는지 확인한다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># celery 구동</span>
+<span class="err">$</span> <span class="n">celery</span> <span class="o">-</span><span class="n">A</span> <span class="n">config</span> <span class="n">worker</span> <span class="o">-</span><span class="n">l</span> <span class="n">info</span>
+
+<span class="c"># beat 구동</span>
+<span class="err">$</span> <span class="n">celery</span> <span class="n">beat</span> <span class="o">-</span><span class="n">A</span> <span class="n">config</span>
+
+<span class="c"># 동시에 구동</span>
+<span class="err">$</span> <span class="n">celery</span> <span class="o">-</span><span class="n">A</span> <span class="n">config</span> <span class="n">worker</span> <span class="o">-</span><span class="n">l</span> <span class="n">info</span> <span class="o">-</span><span class="n">B</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="crontab-schedules">crontab schedules</h3>
+
+<p>크론탭으로 설정할 수 있는 시간이 다양하다. 아래와 같은 명령어를 schedule에 작성해주면 된다. 더 다양하게 있으니 이는 따로 찾아보자</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">crontab</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="err">분마다</span> <span class="err">실행</span>
+
+<span class="n">crontab</span><span class="p">(</span><span class="n">minute</span><span class="o">=</span><span class="s">'*/10'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="err">매일</span> <span class="mi">10</span><span class="err">분마다</span> <span class="err">실행</span>
+
+<span class="n">crontab</span><span class="p">(</span><span class="n">minute</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">hour</span><span class="o">=</span><span class="s">'*/3'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="mi">3</span><span class="err">시간에</span> <span class="err">한번씩</span> <span class="err">실행</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<p>그럼 이제 celery의 로직들에 대해 좀 더 자세하게 알아보자.</p>
+
+<h3 id="celery-app">celery app</h3>
+
+<p>celery를 설치한 다음 가장 먼저 celery 인스턴스를 얻어야 한다. 이것을 app이라고 부르는데 이 인스턴스가 모든 작업, 예를 들면 task를 만들거나 worker를 관리하는 등 모든 작업의 시작점으로 쓰이게 된다. 따라서 다른 모듈에서 사용할 수 있도록 import 되어야 한다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">os</span><span class="p">,</span> <span class="n">django</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Celery</span>
+<span class="kn">from</span> <span class="nn">celery.schedules</span> <span class="kn">import</span> <span class="n">crontab</span>
+
+<span class="c"># 장고의 세팅 모듈을 Celery의 기본으로 사용하도록 등록한다</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s">'DJANGO_SETTINGS_MODULE'</span><span class="p">,</span> <span class="s">'config.settings'</span><span class="p">)</span>
+
+<span class="c"># celery의 첫번재 인자로 전달된 문자열은 현재 모듈의 이름으로 tasks라는 celery인스턴스를 생성한것이다</span>
+<span class="c"># 두번째 인자는 사용하려는 브로커의 url값이다</span>
+<span class="c"># 세번째 인자는 사용할 백엔드의 url을 지정한다. 백엔드는 Task의 상태와 결과를 추적하는데 이용된다. </span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Celery</span><span class="p">(</span><span class="s">'tasks'</span><span class="p">,</span> <span class="n">broker</span><span class="o">=</span><span class="s">'redis://localhost:6379/0'</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s">'redis://localhost:6379/0'</span><span class="p">)</span>
+
+<span class="c"># namespace='CELERY'는 모든 celery 관련한 configuration key가 'CELERY_'로 시작해야 함을 의미한다</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config_from_object</span><span class="p">(</span><span class="s">'django.conf:settings'</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="s">'CELERY'</span><span class="p">)</span>
+
+<span class="c"># task 모듈을 모든 등록된 장고 app config에서 load한다</span>
+<span class="n">app</span><span class="o">.</span><span class="n">autodiscover_tasks</span><span class="p">()</span>
+
+<span class="c">#</span>
+<span class="n">app</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+    <span class="n">CELERY_BROKER_URL</span> <span class="o">=</span> <span class="s">'redis://localhost:6379/0'</span><span class="p">,</span>
+    <span class="n">CELERY_ACCEPT_CONTENT</span> <span class="o">=</span> <span class="p">[</span><span class="s">'json'</span><span class="p">],</span>
+    <span class="n">CELERY_TASK_SERIALIZER</span> <span class="o">=</span> <span class="s">'json'</span><span class="p">,</span>
+    <span class="n">CELERY_TIMEZONE</span><span class="o">=</span><span class="s">'Asia/Seoul'</span><span class="p">,</span>
+    <span class="n">CELERY_ENABLE_UTC</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">CELERY_BEAT_SCHEDULER</span> <span class="o">=</span> <span class="s">'django_celery_beat.schedulers:DatabaseScheduler'</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">django</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">autodiscover_tasks</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s">'__main__'</span><span class="p">:</span>
+  <span class="n">app</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="nd">@app.task</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">debug_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Request: {0!r}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h3 id="__-init-__-설정">__ init __ 설정</h3>
+
+<p>장고가 시작할때 shared_task가 이 앱을 사용할 수 있도록 app이 항상 import되게 해준다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">.celery</span> <span class="kn">import</span> <span class="n">app</span> <span class="k">as</span> <span class="n">celery_app</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span><span class="s">'celery_app'</span><span class="p">,)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="taskspy-생성">tasks.py 생성</h3>
+
+<p>task에 쓰여지는 메서드들이 브로커에게 작업요청으로 가게되고 worker에서 실행을 시키는 로직이 된다.(무조건은 아니지만 보통 이렇게 쓰인다)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">shared_task</span>
+<span class="kn">from</span> <span class="nn">news.models</span> <span class="kn">import</span> <span class="n">Press</span><span class="p">,</span> <span class="n">Article</span><span class="p">,</span> <span class="n">Potal</span><span class="p">,</span> <span class="n">Category</span>  
+<span class="kn">from</span> <span class="nn">news.daum_scrapping</span> <span class="kn">import</span> <span class="n">parse_daum</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="nd">@shared_task</span>
+<span class="k">def</span> <span class="nf">task_scrapping</span><span class="p">():</span>
+    <span class="n">news_dict</span> <span class="o">=</span> <span class="n">parse_daum</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">news_dict</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">v</span><span class="p">[</span><span class="s">'preview_img'</span><span class="p">]:</span>
+            <span class="n">v</span><span class="p">[</span><span class="s">'preview_img'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'default.img'</span>
+        
+        <span class="k">if</span> <span class="n">Press</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'press'</span><span class="p">])</span><span class="o">.</span><span class="n">first</span><span class="p">()</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">Press</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s">'press'</span><span class="p">])</span>
+ 
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s">'title'</span><span class="p">]):</span>
+            <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+                <span class="n">press</span><span class="o">=</span><span class="n">Press</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'press'</span><span class="p">])</span><span class="o">.</span><span class="n">first</span><span class="p">(),</span>
+                <span class="n">potal</span> <span class="o">=</span> <span class="n">Potal</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'다음'</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">(),</span>
+                <span class="n">category</span><span class="o">=</span><span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'news_category'</span><span class="p">])</span><span class="o">.</span><span class="n">first</span><span class="p">(),</span>
+                <span class="n">code</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'news_code'</span><span class="p">],</span>
+                <span class="n">date</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'date'</span><span class="p">],</span>
+                <span class="n">preview_img</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'preview_img'</span><span class="p">],</span>
+                <span class="n">title</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'title'</span><span class="p">],</span>
+                <span class="n">content</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'content'</span><span class="p">],</span>
+                <span class="n">ref</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="s">'ref'</span><span class="p">],</span>
+                <span class="n">counted_at</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">created_at</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+                    <span class="p">)</span>
+    <span class="k">return</span> <span class="bp">None</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="더-알아봐야-하는-내용들">더 알아봐야 하는 내용들</h2>
+
+<ul>
+  <li>데몬으로 celery 실행시키기</li>
+  <li>celery에서 worker별로 task를 부여하는 방법<a href="https://iam.namjun.kim/celery/2018/09/09/celery-routing/">https://iam.namjun.kim/celery/2018/09/09/celery-routing/</a></li>
+</ul>
 
                 </div>
             </section>
