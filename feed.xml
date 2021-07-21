@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-07-21T01:36:30+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">0720 TIL</title><link href="https://heejung-gjt.github.io/til20" rel="alternate" type="text/html" title="0720 TIL" /><published>2021-07-20T18:00:00+09:00</published><updated>2021-07-20T18:00:00+09:00</updated><id>https://heejung-gjt.github.io/til20</id><content type="html" xml:base="https://heejung-gjt.github.io/til20">&lt;h2 id=&quot;210720-계획&quot;&gt;210720 계획&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-07-21T09:03:51+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">0721 TIL</title><link href="https://heejung-gjt.github.io/til21" rel="alternate" type="text/html" title="0721 TIL" /><published>2021-07-20T20:00:00+09:00</published><updated>2021-07-20T20:00:00+09:00</updated><id>https://heejung-gjt.github.io/til21</id><content type="html" xml:base="https://heejung-gjt.github.io/til21">&lt;h2 id=&quot;210720-계획&quot;&gt;210720 계획&lt;/h2&gt;
+
+&lt;hr /&gt;
+&lt;h4 id=&quot;am-900-&quot;&gt;AM 9:00 ~&lt;/h4&gt;
+
+&lt;p&gt;오랜만에 운동을 했다. 8시에 운동을 하고 이제 공부를 시작한다 :-) 요즘 의자에만 앉아 있다보니 체력이 약해짐을
+ 너무 잘 느끼고 있다…ㅎㅎ 오늘은 api관련해 공부를 해볼 예정이다&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;api 이론 정리하기&lt;/li&gt;
+  &lt;li&gt;채널톡 api 구현하기&lt;/li&gt;
+  &lt;li&gt;zum 스크래핑&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">0720 TIL</title><link href="https://heejung-gjt.github.io/til20" rel="alternate" type="text/html" title="0720 TIL" /><published>2021-07-20T18:00:00+09:00</published><updated>2021-07-20T18:00:00+09:00</updated><id>https://heejung-gjt.github.io/til20</id><content type="html" xml:base="https://heejung-gjt.github.io/til20">&lt;h2 id=&quot;210720-계획&quot;&gt;210720 계획&lt;/h2&gt;
 
 &lt;hr /&gt;
 &lt;h4 id=&quot;am-830-&quot;&gt;AM 8:30 ~&lt;/h4&gt;
@@ -12,11 +30,11 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;del&gt;celery-beat crontab 프로젝트에 적용하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;메인 페이지 페이징 처리하기&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;메인 페이지 페이징 처리하기&lt;/del&gt;&lt;/li&gt;
   &lt;li&gt;자바스크립트 이용해서 url 비교하기 정리&lt;/li&gt;
   &lt;li&gt;DB utf-8 변경하기 정리&lt;/li&gt;
   &lt;li&gt;장고 쿼리셋 컨프리헨션 정리&lt;/li&gt;
-  &lt;li&gt;장고 ajax에서 url의 pk 받기 정리&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;장고 ajax에서 url의 pk 받기 정리&lt;/del&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -24,8 +42,7 @@
 &lt;h4 id=&quot;-am-130&quot;&gt;~ AM 1:30&lt;/h4&gt;
 
 &lt;p&gt;celery.. 재밌다. :-) 캐시도 사용할 수 있다는데 좀 더 알아보고 더 잘 쓰고 싶은 기능이다. 기능 자체는
-어렵지 않게 쓸 수 있지만 효율적인 방법으로 써보고 싶다 ! 어느순간 사용자 입장에서 불편한점과
-개발자 입장에서 고려해야 할 점들을 찾아가며 개발을 하고있는 나를 보면서 웃음이 나왔다. 진정한 개발자.. 되고싶다 ㅋㅋ&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">(Django) ajax로 받은 pk로 a태그의 url에 적용시키기</title><link href="https://heejung-gjt.github.io/django1" rel="alternate" type="text/html" title="(Django) ajax로 받은 pk로 a태그의 url에 적용시키기" /><published>2021-07-20T17:05:00+09:00</published><updated>2021-07-20T17:05:00+09:00</updated><id>https://heejung-gjt.github.io/django1</id><content type="html" xml:base="https://heejung-gjt.github.io/django1">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+어렵지 않게 쓸 수 있지만 효율적인 방법으로 써보고 싶다 !&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">(Django) ajax로 받은 pk로 a태그의 url에 적용시키기</title><link href="https://heejung-gjt.github.io/django1" rel="alternate" type="text/html" title="(Django) ajax로 받은 pk로 a태그의 url에 적용시키기" /><published>2021-07-20T17:05:00+09:00</published><updated>2021-07-20T17:05:00+09:00</updated><id>https://heejung-gjt.github.io/django1</id><content type="html" xml:base="https://heejung-gjt.github.io/django1">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;제목을 이렇게나 구체적으로 적은 이유는 이걸로 굉장히 많이 해멨던 기억이 있기 때문이다 😂&lt;/p&gt;
 
@@ -1109,129 +1126,4 @@ sql &amp;gt; ALTER TABLE student_tb CHANGE tel phone int;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql &amp;gt; SHOW VARIABLES LIKE 'character_set%';
-&lt;/code&gt;&lt;/pre&gt;</content><author><name>jung</name></author><category term="database" /><summary type="html"></summary></entry><entry><title type="html">(Django) MySQL 연동하기</title><link href="https://heejung-gjt.github.io/sql" rel="alternate" type="text/html" title="(Django) MySQL 연동하기" /><published>2021-07-13T13:05:00+09:00</published><updated>2021-07-13T13:05:00+09:00</updated><id>https://heejung-gjt.github.io/%20sql</id><content type="html" xml:base="https://heejung-gjt.github.io/sql">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;AWS EC2에 구축된 MYSQL로 장고와 연동시키는 과정이다&lt;/p&gt;
-
-&lt;h3 id=&quot;1-mysqlclient를-장고에-설치한다&quot;&gt;1. mysqlclient를 장고에 설치한다&lt;/h3&gt;
-
-&lt;p&gt;파이썬에서 mysql서버와 통신을 할 수 있게 해주는 파이썬용 “데이터베이서 커넥터(mysqlclient)”를 설치한다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysqlclient&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;이때 주의해야 할 점은 가상환경에서 바로 설치하면 에러가 발생할 수 있다. 이럴때는 아래와 같이 apt-get로 아래 명령어로 다시 설치후 하면 된다&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libmysqlclient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysqlclient&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2-settingspt-설정변경&quot;&gt;2. settings.pt 설정변경&lt;/h3&gt;
-
-&lt;p&gt;장고의 settings에서 db에 관련된 항목을 mysql과의 연동을 위해 변경해주면 된다. 이때 나는 AWS EC2에 생성한 mysql과 연동을 하였다. (aws ec2로 db연동하는 방법은 여기를 참고해보자). 2번은 db의 이름, 3번은 mysql의 계정, 4번은 mysql의 비밀번호로 자신이 설정한 비밀번호를 여기다 작성하면 된다.&lt;/p&gt;
-
-&lt;p&gt;아래와 같은 내용은 비밀번호같이 보안에 관련한 정보가 있기 때문에 새롭게 settings를 만들어 import하거나 .env를 사용해주자. 나는 해당 내용들을 .env파일에 작성하여 그곳에서 작성해놓은 변수들을 가져다 쓰는 방식으로 해주었다&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;DATABASES&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'default'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;'ENGINE'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'django.db.backends.mysql'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;'NAME'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{DB 이름}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                       &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;'USER'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'root'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                           &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;'PASSWORD'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{PASSWORD}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                 &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;'HOST'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'localhost'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;'PORT'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'3306'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                           &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;이후에 makemigrations와 migrate를 해주면 mysql과의 연동은 끝났다 -! 이후에  mysql workbench에 들어가서 내가 작성한 테이블이 잘 들어가 있는지 확인해보자&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;env와-my_settingspy-사용해서-password-등-중요한-정보-보안하기&quot;&gt;.env와 my_settings.py 사용해서 password 등 중요한 정보 보안하기&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;1-my_settingspy-를-config-안에-생성한다&quot;&gt;1. my_settings.py 를 config 안에 생성한다.&lt;/h4&gt;
-
-&lt;p&gt;이곳에서 DATABASES를 dict형태로 정의한후 .gitginore에 해당 파일을 넣어준다&lt;/p&gt;
-
-&lt;p&gt;(초반에 settings 자체를 넣었다가 팀원과 함께 프로젝트 할때 문제가 발생하여 애를 살짝 먹었었다 ! settings도 공유할 상황이 생기니 꼭 암호화가 필요한 것들만 따로 빼주자)&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# my_settings.py&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;DATABASES&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;'default'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'ENGINE'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'django.db.backends.mysql'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;    
-        &lt;span class=&quot;s&quot;&gt;'NAME'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{DB 이름}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                      
-        &lt;span class=&quot;s&quot;&gt;'USER'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'root'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                          
-        &lt;span class=&quot;s&quot;&gt;'PASSWORD'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{PASSWORD}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                
-        &lt;span class=&quot;s&quot;&gt;'HOST'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'localhost'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                     
-        &lt;span class=&quot;s&quot;&gt;'PORT'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'3306'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                          
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# settings.py &lt;/span&gt;
-
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;my_settings&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;DATABASES&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DATABASES&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;2-env파일을-생성하여-env로-값이-저장되어-있는-변수명을-가져와-사용한다&quot;&gt;2. .env파일을 생성하여 env로 값이 저장되어 있는 변수명을 가져와 사용한다.&lt;/h4&gt;
-
-&lt;p&gt;이때 env의 명령어를 사용하기 위해  pip install django-environ을 설치한다&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# .env&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;ENGINE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'django.db.backends.mysql'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;    
-&lt;span class=&quot;n&quot;&gt;NAME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{DB 이름}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                      
-&lt;span class=&quot;n&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'root'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                          
-&lt;span class=&quot;n&quot;&gt;PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{PASSWORD}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;environ&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;my_settings&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;environ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;environ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;DATABASES&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;'default'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;'ENGINE'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ENGINE'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;    
-        &lt;span class=&quot;s&quot;&gt;'NAME'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'NAME'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;                      
-        &lt;span class=&quot;s&quot;&gt;'USER'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'USER'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;                          
-        &lt;span class=&quot;s&quot;&gt;'PASSWORD'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'PASSWORD'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;                
-        &lt;span class=&quot;s&quot;&gt;'HOST'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'localhost'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                     
-        &lt;span class=&quot;s&quot;&gt;'PORT'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'3306'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                          
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;3-나는-aws-ec2에-mysql을-생성하여-해당-db와-연결하여-썼는데-이때-더욱-간단하게-연결할-수-있다&quot;&gt;3. 나는 AWS EC2에 Mysql을 생성하여 해당 db와 연결하여 썼는데 이때 더욱 간단하게 연결할 수 있다&lt;/h4&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# .env&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;DATABASE_URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;연결한&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;서버의&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;의&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;퍼블릭&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;주소&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3306&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;연결할&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;의&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# settings.py&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;DATABASES&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;'default'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html"></summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;</content><author><name>jung</name></author><category term="database" /><summary type="html"></summary></entry></feed>
