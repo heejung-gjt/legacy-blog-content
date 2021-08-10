@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-08-09T22:29:59+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">0809 TIL</title><link href="https://heejung-gjt.github.io/til22" rel="alternate" type="text/html" title="0809 TIL" /><published>2021-08-09T14:00:00+09:00</published><updated>2021-08-09T14:00:00+09:00</updated><id>https://heejung-gjt.github.io/til22</id><content type="html" xml:base="https://heejung-gjt.github.io/til22">&lt;h2 id=&quot;210809-계획&quot;&gt;210809 계획&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-08-10T10:17:34+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">0810 TIL</title><link href="https://heejung-gjt.github.io/til23" rel="alternate" type="text/html" title="0810 TIL" /><published>2021-08-09T20:00:00+09:00</published><updated>2021-08-09T20:00:00+09:00</updated><id>https://heejung-gjt.github.io/til23</id><content type="html" xml:base="https://heejung-gjt.github.io/til23">&lt;h2 id=&quot;210810-계획&quot;&gt;210810 계획&lt;/h2&gt;
+
+&lt;hr /&gt;
+&lt;h4 id=&quot;am-1010-&quot;&gt;AM 10:10 ~&lt;/h4&gt;
+
+&lt;p&gt;6시에 기상해서 10시에 공부를 시작했다. 오전에 알고리즘을 먼저 한문제 풀어볼 예정이다.(그리디) 그 후 드디어 ! 맘잡고 세러리와 레빗큐를 
+공부 해 볼 예정이다 !&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;그리디 한문제 풀기&lt;/li&gt;
+  &lt;li&gt;알고리즘 강의 듣기 (프로그래머스)&lt;/li&gt;
+  &lt;li&gt;알고리즘 정리하기&lt;/li&gt;
+  &lt;li&gt;셀러리, 래빗엠큐 이론 + 실습&lt;/li&gt;
+  &lt;li&gt;git, 블로그 정리하기&lt;/li&gt;
+  &lt;li&gt;프로젝트 설정페이지 a링크로 변경하기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">0809 TIL</title><link href="https://heejung-gjt.github.io/til22" rel="alternate" type="text/html" title="0809 TIL" /><published>2021-08-09T14:00:00+09:00</published><updated>2021-08-09T14:00:00+09:00</updated><id>https://heejung-gjt.github.io/til22</id><content type="html" xml:base="https://heejung-gjt.github.io/til22">&lt;h2 id=&quot;210809-계획&quot;&gt;210809 계획&lt;/h2&gt;
 
 &lt;hr /&gt;
 &lt;h4 id=&quot;am-830-&quot;&gt;AM 8:30 ~&lt;/h4&gt;
@@ -855,91 +876,4 @@ redis 1013  0.2  0.0  49788  4596 ? Ssl  09:06   0:44 /usr/bin/redis-server 127.
       &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time_passed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'달 전'&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'오래 전'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="python" /><summary type="html"></summary></entry><entry><title type="html">(git) stash 사용하기</title><link href="https://heejung-gjt.github.io/git2" rel="alternate" type="text/html" title="(git) stash 사용하기" /><published>2021-07-14T12:00:00+09:00</published><updated>2021-07-14T12:00:00+09:00</updated><id>https://heejung-gjt.github.io/git2</id><content type="html" xml:base="https://heejung-gjt.github.io/git2">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;git 강좌 순서 &lt;/span&gt;--&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./git-01&quot;&gt;git(1) - Git Tutorial&lt;/a&gt;&lt;/li&gt;--&gt;
-
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;팀원과 함께 프로젝트를 진행하는 도중 이미 팀원이 push를 하게 되면서 내가 변경한 사항 때문에 pull 할 수 없을 경우 stash를 사용하면 간단하게 해결할 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;git-stash란&quot;&gt;git stash란&lt;/h2&gt;
-
-&lt;p&gt;아직 마무리되지 않은 작업을 스택이라는 임시 공간에 잠시 저장할수 있게 해주는 명령어이다. 현재 하고 있던 작업들을 임시로 저장하여 아무런 변경사항이 없는것처럼 보이게 해준다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;stash-목록-확인하기&quot;&gt;stash 목록 확인하기&lt;/h4&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stash&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;stash-적용하기&quot;&gt;stash 적용하기&lt;/h4&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ git stash apply # 가장 최근의 stash한 목록을 가져온다
-
-$ git stash apply {stash 이름}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;stash-삭제하기&quot;&gt;stash 삭제하기&lt;/h4&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ git stash drop # 가장 최근의 stash를 제거한다
-
-$ git stash drop {stash 이름}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;적용과-동시에-스택에서-stash-제거하기&quot;&gt;적용과 동시에 스택에서 stash 제거하기&lt;/h4&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ git stash pop
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;stash-되돌리기&quot;&gt;stash 되돌리기&lt;/h4&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ git stash show -p | git apply -R 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;develop-변경으로-해당-브랜치의-변경사항을-pull-받아올때-내-로컬에-있는-develop의-변경때문에-pull-되지-않을-경우&quot;&gt;develop 변경으로 해당 브랜치의 변경사항을 pull 받아올때 내 로컬에 있는 develop의 변경때문에 pull 되지 않을 경우&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;# 내 로컬
-&amp;gt; git stash
-&amp;gt; git pull origin develop
-&amp;gt; git stash pop
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;feature-branch에서-위와-같은-명령어로-진행하게-되면-feature에는-변경사항이-적용되지만-실제-develop-브랜치에서는-변경사항을-충돌사항으로-인식하기-때문에-merge해줘야-하는-상황이-온다-그-다음-다시-develop로-이동해-pull-받아야-하는-2번의-일을-해야-하기-때문에-git-flow를-쓰고-있는-상황이라면-develop-브랜치로-이동해-위의-명령어로-적용시켜준다&quot;&gt;feature branch에서 위와 같은 명령어로 진행하게 되면 feature에는 변경사항이 적용되지만 실제 develop 브랜치에서는 변경사항을 충돌사항으로 인식하기 때문에 merge해줘야 하는 상황이 온다. 그 다음 다시 develop로 이동해 pull 받아야 하는 2번의 일을 해야 하기 때문에 git flow를 쓰고 있는 상황이라면 develop 브랜치로 이동해 위의 명령어로 적용시켜준다&lt;/h4&gt;
-
-&lt;p&gt;모든 git 명령어가 그렇듯 최소한 기본적인 동작은 정확히 알고써야 한다고 생각한다. 내가 기본동작을 제대로 모른채 써서 피본적이 한두번이 아니다. stash를 쓰면서도 코드가 날라간 경험을 한 적이 있다.. 허허&lt;/p&gt;</content><author><name>jung</name></author><category term="git" /><summary type="html"></summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="python" /><summary type="html"></summary></entry></feed>
