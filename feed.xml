@@ -1,4 +1,173 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-08-13T10:12:23+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">(RabbitMQ) 알아보기</title><link href="https://heejung-gjt.github.io/celery" rel="alternate" type="text/html" title="(RabbitMQ) 알아보기" /><published>2021-08-12T20:50:00+09:00</published><updated>2021-08-12T20:50:00+09:00</updated><id>https://heejung-gjt.github.io/celery</id><content type="html" xml:base="https://heejung-gjt.github.io/celery">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="rabbitmq" /><summary type="html"></summary></entry><entry><title type="html">0813 TIL</title><link href="https://heejung-gjt.github.io/til26" rel="alternate" type="text/html" title="0813 TIL" /><published>2021-08-12T20:00:00+09:00</published><updated>2021-08-12T20:00:00+09:00</updated><id>https://heejung-gjt.github.io/til26</id><content type="html" xml:base="https://heejung-gjt.github.io/til26">&lt;h2 id=&quot;210813-계획&quot;&gt;210813 계획&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-08-16T20:38:37+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">(Python) mutable과 immutable한 자료형</title><link href="https://heejung-gjt.github.io/python6" rel="alternate" type="text/html" title="(Python) mutable과 immutable한 자료형" /><published>2021-08-16T15:00:00+09:00</published><updated>2021-08-16T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/python6</id><content type="html" xml:base="https://heejung-gjt.github.io/python6">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 목록 순서 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./python-DataStructure&quot;&gt;Python 강좌(1) - 자료구조&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content01 content&quot;&gt;1. 리스트&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content02 content&quot;&gt;2. 튜플&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content03 content&quot;&gt;3. 딕셔너리&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content04 content&quot;&gt;4. 문자열 리스트로 변환 후 딕셔너리 변환&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Function&quot;&gt;Python 강좌(2) - 함수&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-INOutput&quot;&gt;Python 강좌(3) - 입출력&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Class&quot;&gt;Python 강좌(4) - 클래스&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Exception&quot;&gt;Python 강좌(5) - 예외처리&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;!--&lt;script&gt;--&gt;
+&lt;!--    const content = document.querySelector('.content')--&gt;
+&lt;!--    const lists01 = document.querySelector('.content01');--&gt;
+&lt;!--    const lists02 = document.querySelector('.content02');--&gt;
+&lt;!--    const lists03 = document.querySelector('.content03');--&gt;
+&lt;!--    const lists04 = document.querySelector('.content04');--&gt;
+&lt;!--    lists01.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,850);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists02.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,3500);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists03.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,4700);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists04.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,8300);--&gt;
+&lt;!--    });--&gt;
+
+&lt;!--&lt;/script&gt;--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;python의 자료형은 mutable하냐 immutable하냐로 나뉜다. 즉
+변경 가능한 자료형이냐 변경 할 수 없는 자료형이냐로 나뉜다는 소리이다.&lt;/p&gt;
+
+&lt;p&gt;각각의 특징을 먼저 살펴보면,&lt;/p&gt;
+
+&lt;h2 id=&quot;mutable&quot;&gt;mutable&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;인덱스를 통해 값의 변경이 가능하다     &lt;br /&gt;
+처음 생성한 이후에 값을 변경, 추가, 삭제 할 수 있다&lt;br /&gt;
+&lt;strong&gt;list, dictionary&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;아래의 코드를 보면 x와 y의 id값은 같은것을 볼 수 있다. 값이 변경 가능한 mutable이기 때문에 
+x=y에서 x와 y는 같은 id를 바라보고 있고 y의 값이 변경되면 동시에 x의 값 또한 변경되는 것을 볼 수 있다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# ['a', 'b'] 2390704793344&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# ['a', 'b'] 2390704793344&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;immutable&quot;&gt;immutable&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;인덱스를 통해 값의 변경이 불가능하다     &lt;br /&gt;
+처음 생성한 이후에 값을 변경할 수 없다  &lt;br /&gt;
+&lt;strong&gt;int, string, tuple&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;아래의 코드를 보면 처음 x와 y는 id값이 같은 똑같은 곳을 가리킨다. 하지만 이후 y의 내부값을
+변경시키면서 x와 y의 id값이 달라진다. 즉 값의 내부값은 변경될 수 있지만 x의 값은 변경되지 않는다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b'&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# a 2390638186928&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# ab 2390705772720&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="python" /><summary type="html"></summary></entry><entry><title type="html">(Python) set과 dictionary</title><link href="https://heejung-gjt.github.io/python5" rel="alternate" type="text/html" title="(Python) set과 dictionary" /><published>2021-08-16T14:00:00+09:00</published><updated>2021-08-16T14:00:00+09:00</updated><id>https://heejung-gjt.github.io/python5</id><content type="html" xml:base="https://heejung-gjt.github.io/python5">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 목록 순서 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./python-DataStructure&quot;&gt;Python 강좌(1) - 자료구조&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content01 content&quot;&gt;1. 리스트&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content02 content&quot;&gt;2. 튜플&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content03 content&quot;&gt;3. 딕셔너리&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content04 content&quot;&gt;4. 문자열 리스트로 변환 후 딕셔너리 변환&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Function&quot;&gt;Python 강좌(2) - 함수&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-INOutput&quot;&gt;Python 강좌(3) - 입출력&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Class&quot;&gt;Python 강좌(4) - 클래스&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Exception&quot;&gt;Python 강좌(5) - 예외처리&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;!--&lt;script&gt;--&gt;
+&lt;!--    const content = document.querySelector('.content')--&gt;
+&lt;!--    const lists01 = document.querySelector('.content01');--&gt;
+&lt;!--    const lists02 = document.querySelector('.content02');--&gt;
+&lt;!--    const lists03 = document.querySelector('.content03');--&gt;
+&lt;!--    const lists04 = document.querySelector('.content04');--&gt;
+&lt;!--    lists01.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,850);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists02.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,3500);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists03.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,4700);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists04.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,8300);--&gt;
+&lt;!--    });--&gt;
+
+&lt;!--&lt;/script&gt;--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;집합-자료형-set&quot;&gt;집합 자료형 set&lt;/h2&gt;
+&lt;p&gt;집합 자료형이 가지고 있는 대표적인 특징 2가지가 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;중복을 허용하지 않는다.&lt;/strong&gt;  &lt;br /&gt;
+&lt;strong&gt;순서가 없다.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# {1, 2, 3}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;set2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;banana&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# {'n', 'b', 'a'}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;set자료형의 특징 때문에 인덱싱을 통해 값을 얻을 수 없다. set에 저장된 값에 인덱싱으로 접근하고 싶을때
+리스트나 튜플로 변환하면 된다. &lt;br /&gt;
+&lt;strong&gt;중복을 허용하지 않는 set은 중복을 제거하기 위한 필터의 역할로 사용된다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;코드로 예를 들어보자. 아래의 리스트는 &lt;strong&gt;다중 리스트&lt;/strong&gt; 이다. 다중 리스트에서 과일의 이름을 중복 없이 가져오고 싶을때 
+set을 사용하면 쉽게 가져올 수 있다. 각각의 값에 접근하고 싶을때는 &lt;strong&gt;list()&lt;/strong&gt; 를 사용하여 접근 할 수도 있다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;value_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'orange'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'banana'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'apple'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'orange'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# {'apple', 'banana', 'orange'}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# ['apple', 'banana', 'orange']&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;mutable한-자료형-set&quot;&gt;mutable한 자료형 set&lt;/h2&gt;
+&lt;p&gt;set은 mutable하다. 즉 만들어진 이후에 값들이 바뀔수 있음을 의미한다. 변경가능한 mutable은 id값은 일정하고 내부 값만 
+바뀌게 된다. 아래의 코드와 같이 x의 값이 바뀌어도 id의 값은 동일한 것을 볼 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'123'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# &amp;lt;class 'set'&amp;gt; 2390705022336 {'1', '3', '2'}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'456'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# &amp;lt;class 'set'&amp;gt; 2390705022336 {'1', '3', '456', '2'}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;set을 생성하는 과정에서 값을 포함하지 않는 빈 {} 를 입력할 경우 해당 자료형은 집합 자료형이 아닌 딕셔너리 자료형으로 생성된다.&lt;/p&gt;</content><author><name>jung</name></author><category term="python" /><summary type="html"></summary></entry><entry><title type="html">0816 TIL</title><link href="https://heejung-gjt.github.io/til27" rel="alternate" type="text/html" title="0816 TIL" /><published>2021-08-16T12:00:00+09:00</published><updated>2021-08-16T12:00:00+09:00</updated><id>https://heejung-gjt.github.io/til27</id><content type="html" xml:base="https://heejung-gjt.github.io/til27">&lt;h2 id=&quot;210816-계획&quot;&gt;210816 계획&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;am-1000-&quot;&gt;AM 10:00 ~&lt;/h4&gt;
+
+&lt;p&gt;오늘 7시에 기상해서 운동을 1시간 정도 했다. 오늘은 파이썬 시퀀스 부분을 처음부터 다시 한번 정리해서 들을 예정이다&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;해커랭커 1시간 문제 풀기&lt;/li&gt;
+  &lt;li&gt;그리디 문제 풀이&lt;/li&gt;
+  &lt;li&gt;구현 알고리즘 공부하기&lt;/li&gt;
+  &lt;li&gt;파이썬 시퀀스 강의 듣고 정리하기&lt;/li&gt;
+  &lt;li&gt;장고 정리하기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">(RabbitMQ) 알아보기</title><link href="https://heejung-gjt.github.io/celery" rel="alternate" type="text/html" title="(RabbitMQ) 알아보기" /><published>2021-08-12T20:50:00+09:00</published><updated>2021-08-12T20:50:00+09:00</updated><id>https://heejung-gjt.github.io/celery</id><content type="html" xml:base="https://heejung-gjt.github.io/celery">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="rabbitmq" /><summary type="html"></summary></entry><entry><title type="html">0813 TIL</title><link href="https://heejung-gjt.github.io/til26" rel="alternate" type="text/html" title="0813 TIL" /><published>2021-08-12T20:00:00+09:00</published><updated>2021-08-12T20:00:00+09:00</updated><id>https://heejung-gjt.github.io/til26</id><content type="html" xml:base="https://heejung-gjt.github.io/til26">&lt;h2 id=&quot;210813-계획&quot;&gt;210813 계획&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -12,12 +181,9 @@
 &lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;해커랭커 1시간 문제 풀기&lt;/li&gt;
-  &lt;li&gt;그리디 3,4문제 풀기&lt;/li&gt;
-  &lt;li&gt;구현 알고리즘 공부하기&lt;/li&gt;
-  &lt;li&gt;헷랄렸던 파이썬 문법 정리해놓기&lt;/li&gt;
-  &lt;li&gt;python 강의 듣기 (시퀀스, 일급함수-기본특징)&lt;/li&gt;
-  &lt;li&gt;파이써닉한 코드 참고해보기&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;해커랭커 1시간 문제 풀기&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;그리디 3,4문제 풀기&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;구현 알고리즘 공부하기(0816)&lt;/del&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -130,75 +296,4 @@
   &lt;li&gt;zum 스크래핑&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">0720 TIL</title><link href="https://heejung-gjt.github.io/til20" rel="alternate" type="text/html" title="0720 TIL" /><published>2021-07-20T18:00:00+09:00</published><updated>2021-07-20T18:00:00+09:00</updated><id>https://heejung-gjt.github.io/til20</id><content type="html" xml:base="https://heejung-gjt.github.io/til20">&lt;h2 id=&quot;210720-계획&quot;&gt;210720 계획&lt;/h2&gt;
-
-&lt;hr /&gt;
-&lt;h4 id=&quot;am-830-&quot;&gt;AM 8:30 ~&lt;/h4&gt;
-
-&lt;p&gt;오늘은 실제 프로젝트에 celery beat를 적용시켜보고 메인 화면에 기사 리스트들을 페이징 처리할 예정이다. 오늘 진행하면서&lt;br /&gt;
-발생한 이슈들을 정리해서 블로그에 올릴 예정이다&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;celery-beat crontab 프로젝트에 적용하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;메인 페이지 페이징 처리하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;자바스크립트 이용해서 url 비교하기 정리&lt;/li&gt;
-  &lt;li&gt;DB utf-8 변경하기 정리&lt;/li&gt;
-  &lt;li&gt;장고 쿼리셋 컨프리헨션 정리&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;장고 ajax에서 url의 pk 받기 정리&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;-am-130&quot;&gt;~ AM 1:30&lt;/h4&gt;
-
-&lt;p&gt;celery.. 재밌다. :-) 캐시도 사용할 수 있다는데 좀 더 알아보고 더 잘 쓰고 싶은 기능이다. 기능 자체는
-어렵지 않게 쓸 수 있지만 효율적인 방법으로 써보고 싶다 !&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">(Django) ajax로 받은 pk로 a태그의 url에 적용시키기</title><link href="https://heejung-gjt.github.io/django1" rel="alternate" type="text/html" title="(Django) ajax로 받은 pk로 a태그의 url에 적용시키기" /><published>2021-07-20T17:05:00+09:00</published><updated>2021-07-20T17:05:00+09:00</updated><id>https://heejung-gjt.github.io/django1</id><content type="html" xml:base="https://heejung-gjt.github.io/django1">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;제목을 이렇게나 구체적으로 적은 이유는 이걸로 굉장히 많이 해멨던 기억이 있기 때문이다 😂&lt;/p&gt;
-
-&lt;p&gt;보통은 pk가 있는 경우 a링크에 url을 &lt;code class=&quot;highlighter-rouge&quot;&gt;{% url 'news:article' article.pk %}&lt;/code&gt; 이런식으로 써서 요청을 보낸다. 근데 여기서 
-문제는 ajax에서는 &lt;code class=&quot;highlighter-rouge&quot;&gt;{% %}&lt;/code&gt; 안에 ${}로 자바스크립트 변수를 쓸 수 없다. 꽤 많은 시간동안 찾아보다 포기 했었는데
-생각보다 간단한 해결방법이 있었다..(너무 간단해서 찾아봐도 없었던 걸까…)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;아래처럼 url을 풀어서 작성해주자. 아래에서는 자바스크립트의 변수를 인식한다 :-)&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'news/article/${data.pk}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="django" /><summary type="html"></summary></entry><entry><title type="html">0719 TIL</title><link href="https://heejung-gjt.github.io/til19" rel="alternate" type="text/html" title="0719 TIL" /><published>2021-07-19T10:00:00+09:00</published><updated>2021-07-19T10:00:00+09:00</updated><id>https://heejung-gjt.github.io/til19</id><content type="html" xml:base="https://heejung-gjt.github.io/til19">&lt;h2 id=&quot;210719-계획&quot;&gt;210719 계획&lt;/h2&gt;
-
-&lt;hr /&gt;
-&lt;h4 id=&quot;am-900-&quot;&gt;AM 9:00 ~&lt;/h4&gt;
-
-&lt;p&gt;오늘은 스크래핑한 기사를 celery를 이용해 자동으로 스크래핑 될 수 있게 할 예정이고 화면 느림 속도를 개선하기 위해
-페이징 처리를 해 볼 예정이다. oauth 공부도 시작해서 내일까지는 네이버 소셜 로그인을 구현해보아야 겠다 -! 이따 점심 먹고 카페가서 즐겁게 
-코딩을 할 예정이다 ~~!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;celery이용한 스크래핑 자동화하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;메인 페이지 속도 개선 위한 페이징 처리하기&lt;/del&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;&lt;del&gt;메인페이지 -&amp;gt; View 변경예정&lt;/del&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;oAuth이용한 네이버 소셜 로그인 구현하기(진행중..)
-    &lt;blockquote&gt;
-      &lt;p&gt;이론 정리하기&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;프로젝트를 진행하느라 정신이 없었다… til 작성도 못하고 프로젝트 진행에만 몰두했던 것 같다.. 
-알게 된 것도 생각보다 많고 생각하지 못한 부분도 많아서 생각보다 더디게 진행되었다. 그래도 느리지만 조금씩 
-진행되는 프로젝트를 보면서 욕심도 생기고 추가해보고 싶은 기능들도 생겼다. 원래는 오늘까지 백엔드를 마무리 지어야 했지만
-일주일정도 진행을 더 해야 할 것 같다  &lt;br /&gt;
-긴 일주일이 될 것 같다 !&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry></feed>
+&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry></feed>

@@ -45,30 +45,30 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="개발 공부하는 블로그" />
     <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://heejung-gjt.github.io/til26" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/python6" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="0813 TIL" />
-    <meta property="og:description" content="210813 계획 AM 9:30 ~ 오늘 9시20분에 기상했다. 화들짝 놀라서 바로 책상앞에 앉았다..ㅋㅋㅋ 금요일이라 깨우지 말아달라고 한 내자신.. 반성한다.. ㅠㅠ 스스로 일어나자 -! 해야 할 일 해커랭커 1시간 문제 풀기 그리디 3,4문제 풀기 구현 알고리즘 공부하기(0816) 원래 오늘 공부할 python은 하지 못했지만 드디어 서버에서 데몬으로 셀러리를 자동화 시키는데 성공했다 !" />
-    <meta property="og:url" content="https://heejung-gjt.github.io/til26" />
-    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/til.png" />
+    <meta property="og:title" content="(Python) mutable과 immutable한 자료형" />
+    <meta property="og:description" content="python의 자료형은 mutable하냐 immutable하냐로 나뉜다. 즉 변경 가능한 자료형이냐 변경 할 수 없는 자료형이냐로 나뉜다는 소리이다. 각각의 특징을 먼저 살펴보면, mutable 인덱스를 통해 값의 변경이 가능하다 처음 생성한 이후에 값을 변경, 추가, 삭제 할 수 있다 list, dictionary 아래의 코드를 보면 x와 y의 id값은 같은것을 볼 수 있다. 값이 변경" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/python6" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-08-12T20:00:00+09:00" />
-    <meta property="article:modified_time" content="2021-08-12T20:00:00+09:00" />
-    <meta property="article:tag" content="Til" />
+    <meta property="article:published_time" content="2021-08-16T15:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-16T15:00:00+09:00" />
+    <meta property="article:tag" content="Python" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="0813 TIL" />
-    <meta name="twitter:description" content="210813 계획 AM 9:30 ~ 오늘 9시20분에 기상했다. 화들짝 놀라서 바로 책상앞에 앉았다..ㅋㅋㅋ 금요일이라 깨우지 말아달라고 한 내자신.. 반성한다.. ㅠㅠ 스스로 일어나자 -! 해야 할 일 해커랭커 1시간 문제 풀기 그리디 3,4문제 풀기 구현 알고리즘 공부하기(0816) 원래 오늘 공부할 python은 하지 못했지만 드디어 서버에서 데몬으로 셀러리를 자동화 시키는데 성공했다 !" />
+    <meta name="twitter:title" content="(Python) mutable과 immutable한 자료형" />
+    <meta name="twitter:description" content="python의 자료형은 mutable하냐 immutable하냐로 나뉜다. 즉 변경 가능한 자료형이냐 변경 할 수 없는 자료형이냐로 나뉜다는 소리이다. 각각의 특징을 먼저 살펴보면, mutable 인덱스를 통해 값의 변경이 가능하다 처음 생성한 이후에 값을 변경, 추가, 삭제 할 수 있다 list, dictionary 아래의 코드를 보면 x와 y의 id값은 같은것을 볼 수 있다. 값이 변경" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
-    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/til.png" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Studying  Develop" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Til" />
+    <meta name="twitter:data2" content="Python" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -83,18 +83,18 @@
         "name": "Studying  Develop",
         "logo": "https://heejung-gjt.github.io/"
     },
-    "url": "https://heejung-gjt.github.io/til26",
+    "url": "https://heejung-gjt.github.io/python6",
     "image": {
         "@type": "ImageObject",
-        "url": "https://heejung-gjt.github.io/assets/built/images/til.png",
+        "url": "https://heejung-gjt.github.io/assets/built/images/python-cover.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://heejung-gjt.github.io/til26"
+        "@id": "https://heejung-gjt.github.io/python6"
     },
-    "description": "210813 계획 AM 9:30 ~ 오늘 9시20분에 기상했다. 화들짝 놀라서 바로 책상앞에 앉았다..ㅋㅋㅋ 금요일이라 깨우지 말아달라고 한 내자신.. 반성한다.. ㅠㅠ 스스로 일어나자 -! 해야 할 일 해커랭커 1시간 문제 풀기 그리디 3,4문제 풀기 구현 알고리즘 공부하기(0816) 원래 오늘 공부할 python은 하지 못했지만 드디어 서버에서 데몬으로 셀러리를 자동화 시키는데 성공했다 !"
+    "description": "python의 자료형은 mutable하냐 immutable하냐로 나뉜다. 즉 변경 가능한 자료형이냐 변경 할 수 없는 자료형이냐로 나뉜다는 소리이다. 각각의 특징을 먼저 살펴보면, mutable 인덱스를 통해 값의 변경이 가능하다 처음 생성한 이후에 값을 변경, 추가, 삭제 할 수 있다 list, dictionary 아래의 코드를 보면 x와 y의 id값은 같은것을 볼 수 있다. 값이 변경"
 }
     </script>
 
@@ -107,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="0813 TIL" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="(Python) mutable과 immutable한 자료형" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -185,27 +185,27 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-til post tag til ">
+        <article class="post-full  tag-python post tag python ">
 
             <header class="post-full-header">
 
               <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="2021-08-12">2021-08-12</time>
+                    <time class="post-full-meta-date" datetime="2021-08-16">2021-08-16</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/til/'>TIL</a>
+                               <a href='/tag/python/'>PYTHON</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">0813 TIL</h1>
+                <h1 class="post-full-title">(Python) mutable과 immutable한 자료형</h1>
             </header>
 
 <!--  
             
-            <figure class="post-full-image" style="background-image: url(/assets/built/images/til.png)">
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/python-cover.png)">
             </figure>
             
 -->
@@ -213,30 +213,81 @@ into the {body} of the default.hbs template -->
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     
-<h2 id="210813-계획">210813 계획</h2>
+<!--<span class="table-of-contents-list">Python 목록 순서 </span>-->
+<!--<ul class="table-of-contents-list">-->
+<!--    <li><a href="./python-DataStructure">Python 강좌(1) - 자료구조</a></li>-->
+<!--    <li class="content01 content">1. 리스트</li>-->
+<!--    <li class="content02 content">2. 튜플</li>-->
+<!--    <li class="content03 content">3. 딕셔너리</li>-->
+<!--    <li class="content04 content">4. 문자열 리스트로 변환 후 딕셔너리 변환</li>-->
+<!--    <li ><a href="./python-Function">Python 강좌(2) - 함수</a></li>-->
+<!--    <li ><a href="./python-INOutput">Python 강좌(3) - 입출력</a></li>-->
+<!--    <li ><a href="./python-Class">Python 강좌(4) - 클래스</a></li>-->
+<!--    <li ><a href="./python-Exception">Python 강좌(5) - 예외처리</a></li>-->
+<!--</ul>-->
 
-<hr />
+<!--<script>-->
+<!--    const content = document.querySelector('.content')-->
+<!--    const lists01 = document.querySelector('.content01');-->
+<!--    const lists02 = document.querySelector('.content02');-->
+<!--    const lists03 = document.querySelector('.content03');-->
+<!--    const lists04 = document.querySelector('.content04');-->
+<!--    lists01.addEventListener('click',(event)=>{-->
+<!--        window.scrollTo(0,850);-->
+<!--    });-->
+<!--    lists02.addEventListener('click',(event)=>{-->
+<!--        window.scrollTo(0,3500);-->
+<!--    });-->
+<!--    lists03.addEventListener('click',(event)=>{-->
+<!--        window.scrollTo(0,4700);-->
+<!--    });-->
+<!--    lists04.addEventListener('click',(event)=>{-->
+<!--        window.scrollTo(0,8300);-->
+<!--    });-->
 
-<h4 id="am-930-">AM 9:30 ~</h4>
+<!--</script>-->
 
-<p>오늘 9시20분에 기상했다. 화들짝 놀라서 바로 책상앞에 앉았다..ㅋㅋㅋ 금요일이라 깨우지 말아달라고 한 내자신.. 반성한다.. ㅠㅠ 
-스스로 일어나자 -!</p>
+<p><br /></p>
 
-<hr />
+<p>python의 자료형은 mutable하냐 immutable하냐로 나뉜다. 즉
+변경 가능한 자료형이냐 변경 할 수 없는 자료형이냐로 나뉜다는 소리이다.</p>
 
-<h2 id="해야-할-일">해야 할 일</h2>
+<p>각각의 특징을 먼저 살펴보면,</p>
 
-<ul>
-  <li><del>해커랭커 1시간 문제 풀기</del></li>
-  <li><del>그리디 3,4문제 풀기</del></li>
-  <li><del>구현 알고리즘 공부하기(0816)</del></li>
-</ul>
+<h2 id="mutable">mutable</h2>
+<blockquote>
+  <p>인덱스를 통해 값의 변경이 가능하다     <br />
+처음 생성한 이후에 값을 변경, 추가, 삭제 할 수 있다<br />
+<strong>list, dictionary</strong></p>
+</blockquote>
 
-<hr />
+<p>아래의 코드를 보면 x와 y의 id값은 같은것을 볼 수 있다. 값이 변경 가능한 mutable이기 때문에 
+x=y에서 x와 y는 같은 id를 바라보고 있고 y의 값이 변경되면 동시에 x의 값 또한 변경되는 것을 볼 수 있다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'b'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c"># ['a', 'b'] 2390704793344</span>
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c"># ['a', 'b'] 2390704793344</span>
+</code></pre></div></div>
 
-<p>원래 오늘 공부할 python은 하지 못했지만 드디어 서버에서 데몬으로 셀러리를 자동화 시키는데 성공했다 ! 진짜 너무너무 뿌듯하다. ㅠㅠ 
-블로그에 한꺼번에 정리할 예정이긴 하지만 아직 이해가 많이 부족하기 때문에 시간을 가지고 자세하게 정리할 예정이다 오예~~<del>!!! 내일부터는 
-다시 계획대로 진행해야지</del>~!!</p>
+<p><br /></p>
+
+<h2 id="immutable">immutable</h2>
+<blockquote>
+  <p>인덱스를 통해 값의 변경이 불가능하다     <br />
+처음 생성한 이후에 값을 변경할 수 없다  <br />
+<strong>int, string, tuple</strong></p>
+</blockquote>
+
+<p>아래의 코드를 보면 처음 x와 y는 id값이 같은 똑같은 곳을 가리킨다. 하지만 이후 y의 내부값을
+변경시키면서 x와 y의 id값이 달라진다. 즉 값의 내부값은 변경될 수 있지만 x의 값은 변경되지 않는다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="s">'a'</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">y</span> <span class="o">+=</span> <span class="s">'b'</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c"># a 2390638186928</span>
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c"># ab 2390705772720</span>
+</code></pre></div></div>
 
                 </div>
             </section>
