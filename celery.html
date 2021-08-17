@@ -52,21 +52,17 @@
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="(RabbitMQ) 알아보기" />
-    <meta property="og:description" content="
-
-" />
+    <meta property="og:description" content="RabbitMQ RabbitMQ란 작업 메시지를 생성하고 전달하는 producer에게 메시지를 전달받아 보관하고 있다가 적절한 worker에게 분배해주는 중간다리 역할을 하는 브로커이다. AMQP라는 프로토콜을 기반으로 만들어졌다. AMQP는 클라이언트 어플리케이션과 MIDDLEWARE 브로커와의 메시지를 주고받기 위한 프로토콜(어떤 약속이나 규칙, 규약)이다 producer 작업 메시지를 생성하고 전달하는 역할을 한다. (celery) exchange exchange는 producer에게 전달받은 메시지를 적절한 큐에게 발송할때" />
     <meta property="og:url" content="https://heejung-gjt.github.io/celery" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/rabbitmq.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-08-12T20:50:00+09:00" />
-    <meta property="article:modified_time" content="2021-08-12T20:50:00+09:00" />
+    <meta property="article:published_time" content="2021-08-15T18:50:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-15T18:50:00+09:00" />
     <meta property="article:tag" content="Rabbitmq" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="(RabbitMQ) 알아보기" />
-    <meta name="twitter:description" content="
-
-" />
+    <meta name="twitter:description" content="RabbitMQ RabbitMQ란 작업 메시지를 생성하고 전달하는 producer에게 메시지를 전달받아 보관하고 있다가 적절한 worker에게 분배해주는 중간다리 역할을 하는 브로커이다. AMQP라는 프로토콜을 기반으로 만들어졌다. AMQP는 클라이언트 어플리케이션과 MIDDLEWARE 브로커와의 메시지를 주고받기 위한 프로토콜(어떤 약속이나 규칙, 규약)이다 producer 작업 메시지를 생성하고 전달하는 역할을 한다. (celery) exchange exchange는 producer에게 전달받은 메시지를 적절한 큐에게 발송할때" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/rabbitmq.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -98,9 +94,7 @@
         "@type": "WebPage",
         "@id": "https://heejung-gjt.github.io/celery"
     },
-    "description": "
-
-"
+    "description": "RabbitMQ RabbitMQ란 작업 메시지를 생성하고 전달하는 producer에게 메시지를 전달받아 보관하고 있다가 적절한 worker에게 분배해주는 중간다리 역할을 하는 브로커이다. AMQP라는 프로토콜을 기반으로 만들어졌다. AMQP는 클라이언트 어플리케이션과 MIDDLEWARE 브로커와의 메시지를 주고받기 위한 프로토콜(어떤 약속이나 규칙, 규약)이다 producer 작업 메시지를 생성하고 전달하는 역할을 한다. (celery) exchange exchange는 producer에게 전달받은 메시지를 적절한 큐에게 발송할때"
 }
     </script>
 
@@ -196,7 +190,7 @@ into the {body} of the default.hbs template -->
             <header class="post-full-header">
 
               <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="2021-08-12">2021-08-12</time>
+                    <time class="post-full-meta-date" datetime="2021-08-15">2021-08-15</time>
                     
                         <span class="date-divider">/</span>
                         
@@ -220,6 +214,60 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     
 <p><br /></p>
+<h2 id="rabbitmq">RabbitMQ</h2>
+<p>RabbitMQ란 작업 메시지를 생성하고 전달하는 producer에게 메시지를 전달받아 보관하고 있다가 적절한 worker에게 분배해주는 중간다리 역할을 하는 브로커이다.
+AMQP라는 프로토콜을 기반으로 만들어졌다. <strong>AMQP는 클라이언트 어플리케이션과 MIDDLEWARE 브로커와의 메시지를 주고받기 위한 프로토콜(어떤 약속이나 규칙, 규약)이다</strong></p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/129559357-38fe5102-a9ca-4122-b711-a09a7e9c4dbd.png" alt="rabbitmq" /></p>
+
+<blockquote>
+  <p><strong>producer</strong>  <br />
+작업 메시지를 생성하고 전달하는 역할을 한다. (celery)</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>exchange</strong> <br />
+exchange는 producer에게 전달받은 메시지를 적절한 큐에게 발송할때 이를 결정하는 역할을 한다
+producer에 의해 전달된 작업 메시지가 큐에 저장될때 직접 접근해서 전달하지 않고 exchange를 통해서 전달한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>binding</strong> <br />
+binding은 exchange에게 메시지를 보낼 규칙을 지정하는 역할을 한다. 즉 조건에 맞는 작업 메시지를 특정한 큐에게 전송하도록 설정한다. 이때 해당 exchange 타입에 맞게 설정되어야 한다.(exchange와 queue를 연결해준다)</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>consumer</strong>    <br />
+consumer는 메시지를 수신하는 역할을 한다. 큐에 직접 접근하여 메시지를 가져간다. (worker)</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="자세한-동작-흐름">자세한 동작 흐름</h3>
+<p>producer가 작업 메시지를 생성해서 전송한다 -&gt; exchange가 어떤 큐에게 보낼지 exchange의 binding이라는 규칙을 통해서 메시지를 큐에 전달한다 -&gt; binding과 연결된 큐에 메시지가 복사된다.
+exchange는 작업메시지를 어떤 큐에게 보낼지에 대해 결정을 하는데 이때 exchange는 규칙을 결정하는 여러 타입이 있다.</p>
+
+<blockquote>
+  <p><strong>Fanout</strong>   <br />
+Fanout은 exchange와 binding된 즉, exchange와 연결된 큐에게 동일한 메시지를 보낸다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Direct</strong> <br />
+Direct는 Exchange와 메시지를 보낼 큐를 직접 선택하여 binding하는데 라우팅 키를 통해서 선택한다.</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Topic</strong>  <br />
+topic은 마침표로 구분되는 단어들을 사용한다. 즉 라우팅키 문자열 내에 *, # 를 넣어서 binding을 제공해준다<br />
+<code class="highlighter-rouge">*</code> : 단어 한개를 대체함<br />
+<code class="highlighter-rouge">#</code> : 0개 이상의 단어를 대체함</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>headers</strong>  <br />
+headers 타입은 producer에서 정의된 header의 key-value쌍과 consumer측에서 정의된 key-value 쌍과 일치하면 binding된다</p>
+</blockquote>
 
                 </div>
             </section>
