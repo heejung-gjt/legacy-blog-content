@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/author/jung/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-19T09:31:42+09:00</updated>
+  <updated>2021-08-19T22:54:23+09:00</updated>
   <id>https://heejung-gjt.github.io/author/jung/feed.xml</id>
 
   
@@ -34,8 +34,8 @@
     <entry>
       <title type="html">0819 TIL</title>
       <link href="https://heejung-gjt.github.io/til30" rel="alternate" type="text/html" title="0819 TIL" />
-      <published>2021-08-18T20:30:00+09:00</published>
-      <updated>2021-08-18T20:30:00+09:00</updated>
+      <published>2021-08-19T19:30:00+09:00</published>
+      <updated>2021-08-19T19:30:00+09:00</updated>
       <id>https://heejung-gjt.github.io/til30</id>
       <content type="html" xml:base="https://heejung-gjt.github.io/til30">&lt;h2 id=&quot;210819-계획&quot;&gt;210819 계획&lt;/h2&gt;
 
@@ -51,10 +51,10 @@
 &lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;해커랭커 1시간 문제 풀기&lt;/li&gt;
-  &lt;li&gt;그리디 + 구현 + DFS/BFS 문제 풀이&lt;/li&gt;
-  &lt;li&gt;정렬 강의듣고 정리하기&lt;/li&gt;
-  &lt;li&gt;파이썬 일급함수 강의 듣고 정리하기&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;해커랭커 1시간 문제 풀기&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;정렬 + DFS/BFS 문제 풀이&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;정렬 강의듣고 정리하기&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;파이썬 일급함수 강의 듣고 정리하기&lt;/del&gt;&lt;/li&gt;
   &lt;li&gt;파이썬 토이 프로젝트 진행하기 (C언어 기반 토이 플젝 -&amp;gt; python으로 변경 예정)&lt;/li&gt;
   &lt;li&gt;배운 내용 정리 시간 가지기&lt;/li&gt;
 &lt;/ul&gt;
@@ -77,6 +77,169 @@
 
       
         <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">(Python) 클로저란 with 일급객체</title>
+      <link href="https://heejung-gjt.github.io/python7" rel="alternate" type="text/html" title="(Python) 클로저란 with 일급객체" />
+      <published>2021-08-19T19:20:00+09:00</published>
+      <updated>2021-08-19T19:20:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/python7</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/python7">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 목록 순서 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./python-DataStructure&quot;&gt;Python 강좌(1) - 자료구조&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content01 content&quot;&gt;1. 리스트&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content02 content&quot;&gt;2. 튜플&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content03 content&quot;&gt;3. 딕셔너리&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content04 content&quot;&gt;4. 문자열 리스트로 변환 후 딕셔너리 변환&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Function&quot;&gt;Python 강좌(2) - 함수&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-INOutput&quot;&gt;Python 강좌(3) - 입출력&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Class&quot;&gt;Python 강좌(4) - 클래스&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Exception&quot;&gt;Python 강좌(5) - 예외처리&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;!--&lt;script&gt;--&gt;
+&lt;!--    const content = document.querySelector('.content')--&gt;
+&lt;!--    const lists01 = document.querySelector('.content01');--&gt;
+&lt;!--    const lists02 = document.querySelector('.content02');--&gt;
+&lt;!--    const lists03 = document.querySelector('.content03');--&gt;
+&lt;!--    const lists04 = document.querySelector('.content04');--&gt;
+&lt;!--    lists01.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,850);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists02.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,3500);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists03.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,4700);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists04.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,8300);--&gt;
+&lt;!--    });--&gt;
+
+&lt;!--&lt;/script&gt;--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;클로저를 알기위해서는 파이썬의 함수 특징에 대해 알아야 한다&lt;/p&gt;
+
+&lt;h3 id=&quot;일급객체란&quot;&gt;일급객체란&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;변수 or 데이터 구조(자료구조) 안에 담을 수 있어야 한다  &lt;br /&gt;
+함수의 매개변수로 전달할 수 있어야한다   &lt;br /&gt;
+함수의 결과 반환값으로 사용될수 있어야 한다  &lt;br /&gt;
+실행시점에 초기화된다(런타임 초기화)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;파이썬에서 함수는 일급 객체의 조건을 모두 만족한다.&lt;/strong&gt; 함수를 변수에 할당할 수 있고, 인자로 전달이 가능하며, 함수의 리턴값으로도 사용될 수 있다&lt;/p&gt;
+
+&lt;h4 id=&quot;1-함수가-변수로-할당&quot;&gt;1. 함수가 변수로 할당&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;factorial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+    Factorial function -&amp;gt; n : int
+    &quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factorial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;var_func&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factorial&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 변수에 할당(함수를 변수에 할당하여 사용할 수 있다)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;var_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# &amp;lt;function factorial at 0x7fc10e385620&amp;gt; factorial함수가 할당됨을 알 수 있다&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;var_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;var_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# [1, 2, 6, 24]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-함수가-다른-함수의-매개변수로-사용&quot;&gt;2. 함수가 다른 함수의 매개변수로 사용&lt;/h4&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;factorial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+    Factorial function -&amp;gt; n : int
+    &quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factorial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;var_func&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factorial&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;var_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))))&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# var_func가 filter함수의 인자로 전달&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;3-함수가-리턴값으로-사용&quot;&gt;3. 함수가 리턴값으로 사용&lt;/h4&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;factorial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'this factorial function'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 함수값이 리턴됨&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;var_func&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factorial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;var_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;클로저closure란&quot;&gt;클로저(Closure)란&lt;/h2&gt;
+&lt;p&gt;클로저는 어떤 함수의 내부 함수가 외부 함수의 변수를 참조할때 외부 함수가 종료된 후에도 내부 함수가 외부 함수의 변수를 참조할 수 있도록 어딘가에 저장하는 함수를 말한다. 즉 외부에서 호출된 함수의 변수값, 상태(레퍼런스) 를 복사 후 어딘가 저장한 다음 접근(액세스) 가능할 수 있게 도와준다&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;함수의 내부함수&lt;/strong&gt;                &lt;br /&gt;
+&lt;strong&gt;내부 함수가 외부 함수의 변수를 참조&lt;/strong&gt;       &lt;br /&gt;
+&lt;strong&gt;외부 함수가 내부 함수를 리턴&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# closure 사용&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;closure_ex1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# free variable : 어떤 함수에서 사용되지만 그 함수 내부에서 선언되지 않은 변수, 즉 지역도 전역도 아닌 변수&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# 클로저 영역&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;series&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# free variable로 self._series의 역할을 한다.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;averager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;series&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'inner &amp;gt;&amp;gt;&amp;gt; {} / {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;series&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;series&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;series&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;series&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;averager&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 일급함수 특징중 함수의 결과 반환 가능&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;avg_closure1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;closure_ex1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;avg_closure1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# &amp;lt;function closure_ex1.&amp;lt;locals&amp;gt;.averager at 0x7f368c2078c8&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;avg_closure1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;avg_closure1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;closure_ex1함수의 역할이 끝나면 series도 소멸되어야 하지만 중첩 함수인 averager의 외부 함수인 closure_ex1의 변수 Series와 averager의 환경을 저장하는 클로저가 생성된다.
+클로저는 dir을 통해 저장된 위치 등을 알 수 있다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;avg_closure1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;avg_closure1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__code__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;avg_closure1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__code__&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;co_freevars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# ('series',) free variable 즉, 자유변수가 소멸되지 않고 저장되는 공간이다.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;avg_closure1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__closure__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell_contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 클로저가 저장 되는 경로라고 보면 된다&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="python" />
       
 
       
@@ -762,61 +925,6 @@ headers 타입은 producer에서 정의된 header의 key-value쌍과 consumer측
   &lt;li&gt;&lt;del&gt;해커랭커 1시간 문제 풀기&lt;/del&gt;&lt;/li&gt;
   &lt;li&gt;&lt;del&gt;그리디 3,4문제 풀기&lt;/del&gt;&lt;/li&gt;
   &lt;li&gt;&lt;del&gt;구현 알고리즘 공부하기(0816)&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원래 오늘 공부할 python은 하지 못했지만 드디어 서버에서 데몬으로 셀러리를 자동화 시키는데 성공했다 ! 진짜 너무너무 뿌듯하다. ㅠㅠ 
-블로그에 한꺼번에 정리할 예정이긴 하지만 아직 이해가 많이 부족하기 때문에 시간을 가지고 자세하게 정리할 예정이다 오예~~&lt;del&gt;!!! 내일부터는 
-다시 계획대로 진행해야지&lt;/del&gt;~!!&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">0812 TIL</title>
-      <link href="https://heejung-gjt.github.io/til25" rel="alternate" type="text/html" title="0812 TIL" />
-      <published>2021-08-12T18:00:00+09:00</published>
-      <updated>2021-08-12T18:00:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/til25</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til25">&lt;h2 id=&quot;210812-계획&quot;&gt;210812 계획&lt;/h2&gt;
-
-&lt;hr /&gt;
-&lt;h4 id=&quot;am-930-&quot;&gt;AM 9:30 ~&lt;/h4&gt;
-
-&lt;p&gt;6시에 기상해서 9:30분에 공부를 시작했다. 오늘은 점심을 먹고 운동 할 예정이다 :-) 너무 안했더니 또 몸이 찌뿌둥 하다..ㅎㅎㅎ&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;그리디 한문제 풀기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;셀러리, 래빗엠큐 이론 + 실습&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;celery, beat, rabbitmq 이슈 정리&lt;/del&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
