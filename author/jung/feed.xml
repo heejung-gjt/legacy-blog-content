@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/author/jung/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-19T22:54:23+09:00</updated>
+  <updated>2021-08-20T17:21:59+09:00</updated>
   <id>https://heejung-gjt.github.io/author/jung/feed.xml</id>
 
   
@@ -30,6 +30,174 @@
   
   
 
+  
+    <entry>
+      <title type="html">0820 TIL</title>
+      <link href="https://heejung-gjt.github.io/til31" rel="alternate" type="text/html" title="0820 TIL" />
+      <published>2021-08-20T13:30:00+09:00</published>
+      <updated>2021-08-20T13:30:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/til31</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til31">&lt;h2 id=&quot;210820-계획&quot;&gt;210820 계획&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;am-900---pm-300&quot;&gt;AM 9:00 ~ , PM 3:00&lt;/h4&gt;
+
+&lt;p&gt;오늘 8시에 기상해서 엄마 코로나 백신 맞는다 그래서 병원을 함께 들렸다. 오늘은 생각보다 늦게 시작할 예정이다..!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;해커랭커 1시간 문제 풀기&lt;/li&gt;
+  &lt;li&gt;이진트리 강의 듣고 정리하기&lt;/li&gt;
+  &lt;li&gt;파이썬 문법 내용 정리하기 (git til, 블로그)&lt;/li&gt;
+  &lt;li&gt;장고 감자마켓 develop&lt;/li&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;*&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">(Python) sort와 sorted</title>
+      <link href="https://heejung-gjt.github.io/python8" rel="alternate" type="text/html" title="(Python) sort와 sorted" />
+      <published>2021-08-20T10:20:00+09:00</published>
+      <updated>2021-08-20T10:20:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/python8</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/python8">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 목록 순서 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./python-DataStructure&quot;&gt;Python 강좌(1) - 자료구조&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content01 content&quot;&gt;1. 리스트&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content02 content&quot;&gt;2. 튜플&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content03 content&quot;&gt;3. 딕셔너리&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content04 content&quot;&gt;4. 문자열 리스트로 변환 후 딕셔너리 변환&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Function&quot;&gt;Python 강좌(2) - 함수&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-INOutput&quot;&gt;Python 강좌(3) - 입출력&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Class&quot;&gt;Python 강좌(4) - 클래스&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Exception&quot;&gt;Python 강좌(5) - 예외처리&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;!--&lt;script&gt;--&gt;
+&lt;!--    const content = document.querySelector('.content')--&gt;
+&lt;!--    const lists01 = document.querySelector('.content01');--&gt;
+&lt;!--    const lists02 = document.querySelector('.content02');--&gt;
+&lt;!--    const lists03 = document.querySelector('.content03');--&gt;
+&lt;!--    const lists04 = document.querySelector('.content04');--&gt;
+&lt;!--    lists01.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,850);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists02.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,3500);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists03.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,4700);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists04.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,8300);--&gt;
+&lt;!--    });--&gt;
+
+&lt;!--&lt;/script&gt;--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sort와-sorted&quot;&gt;sort와 sorted&lt;/h2&gt;
+&lt;p&gt;두개의 함수 모두 값의 정렬을 위한 함수이다&lt;/p&gt;
+
+&lt;h3 id=&quot;sort&quot;&gt;sort()&lt;/h3&gt;
+&lt;p&gt;값을 정렬후 정렬된 값을 돌려주지 않아 변수에 넣어 쓸 수 없으며 리스트형에서만 동작한다.
+내림차순 정렬 : sort(reverse=True)&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 불가능 None이 반환됨&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 내림차순 정렬&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;sorted&quot;&gt;sorted()&lt;/h3&gt;
+&lt;p&gt;sorted()함수는 값을 정렬한 후 정렬된 값들을 돌려주기 때문에 변수에 넣어 값들을 활용할 수 있으며 이터러블한 자료형에서 동작한다
+내림차순 정렬 : sorted(reverse=True)&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#가능&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;lists&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 내림차순 정렬&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;정렬한 값들의 자체를 정렬하여 출력하고 싶을땐 sort를 사용하자. 하지만 정렬한 값들을 다른 객체해 저장해 무언가를 해야한다면 sorted를 사용해주자&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;reverse&quot;&gt;reverse&lt;/h3&gt;
+&lt;p&gt;reverse의 default는 false이다. reverse=True를 매개변수로 입력하면 내림차순으로 정렬할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'b'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'c'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'d'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'f'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# ['g', 'f', 'd', 'c', 'b', 'a']&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;key&quot;&gt;key&lt;/h3&gt;
+&lt;p&gt;정렬을 목적으로 하는 함수를 값으로 넣은다. key = lambda를 이용하여 정렬할 기준을 정할 수 있다.  &lt;br /&gt;
+람다식에서 x[0]의 의미는 키 값 기준으로 정렬을 의미한다. x[1]은 값을 기준으로 정렬한다. 아래의 코드를 보면 1번째값의 인덱스를 
+기준으로 정렬하기 위해 x[1]으로 정렬하였다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'b'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'c'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'d'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'f'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# [['d', 20], ['f', 15], ['a', 10], ['b', 9], ['c', 3], ['g', 1]]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="python" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">0819 TIL</title>
@@ -787,151 +955,6 @@ set을 사용하면 쉽게 가져올 수 있다. 각각의 값에 접근하고 �
 &lt;/ul&gt;
 
 &lt;hr /&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">(RabbitMQ) 알아보기</title>
-      <link href="https://heejung-gjt.github.io/celery" rel="alternate" type="text/html" title="(RabbitMQ) 알아보기" />
-      <published>2021-08-15T18:50:00+09:00</published>
-      <updated>2021-08-15T18:50:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/celery</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/celery">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;rabbitmq&quot;&gt;RabbitMQ&lt;/h2&gt;
-&lt;p&gt;RabbitMQ란 작업 메시지를 생성하고 전달하는 producer에게 메시지를 전달받아 보관하고 있다가 적절한 worker에게 분배해주는 중간다리 역할을 하는 브로커이다.
-AMQP라는 프로토콜을 기반으로 만들어졌다. &lt;strong&gt;AMQP는 클라이언트 어플리케이션과 MIDDLEWARE 브로커와의 메시지를 주고받기 위한 프로토콜(어떤 약속이나 규칙, 규약)이다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/129559357-38fe5102-a9ca-4122-b711-a09a7e9c4dbd.png&quot; alt=&quot;rabbitmq&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;producer&lt;/strong&gt;  &lt;br /&gt;
-작업 메시지를 생성하고 전달하는 역할을 한다. (celery)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;exchange&lt;/strong&gt; &lt;br /&gt;
-exchange는 producer에게 전달받은 메시지를 적절한 큐에게 발송할때 이를 결정하는 역할을 한다
-producer에 의해 전달된 작업 메시지가 큐에 저장될때 직접 접근해서 전달하지 않고 exchange를 통해서 전달한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;binding&lt;/strong&gt; &lt;br /&gt;
-binding은 exchange에게 메시지를 보낼 규칙을 지정하는 역할을 한다. 즉 조건에 맞는 작업 메시지를 특정한 큐에게 전송하도록 설정한다. 이때 해당 exchange 타입에 맞게 설정되어야 한다.(exchange와 queue를 연결해준다)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;consumer&lt;/strong&gt;    &lt;br /&gt;
-consumer는 메시지를 수신하는 역할을 한다. 큐에 직접 접근하여 메시지를 가져간다. (worker)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;자세한-동작-흐름&quot;&gt;자세한 동작 흐름&lt;/h3&gt;
-&lt;p&gt;producer가 작업 메시지를 생성해서 전송한다 -&amp;gt; exchange가 어떤 큐에게 보낼지 exchange의 binding이라는 규칙을 통해서 메시지를 큐에 전달한다 -&amp;gt; binding과 연결된 큐에 메시지가 복사된다.
-exchange는 작업메시지를 어떤 큐에게 보낼지에 대해 결정을 하는데 이때 exchange는 규칙을 결정하는 여러 타입이 있다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Fanout&lt;/strong&gt;   &lt;br /&gt;
-Fanout은 exchange와 binding된 즉, exchange와 연결된 큐에게 동일한 메시지를 보낸다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Direct&lt;/strong&gt; &lt;br /&gt;
-Direct는 Exchange와 메시지를 보낼 큐를 직접 선택하여 binding하는데 라우팅 키를 통해서 선택한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Topic&lt;/strong&gt;  &lt;br /&gt;
-topic은 마침표로 구분되는 단어들을 사용한다. 즉 라우팅키 문자열 내에 *, # 를 넣어서 binding을 제공해준다&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; : 단어 한개를 대체함&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; : 0개 이상의 단어를 대체함&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;headers&lt;/strong&gt;  &lt;br /&gt;
-headers 타입은 producer에서 정의된 header의 key-value쌍과 consumer측에서 정의된 key-value 쌍과 일치하면 binding된다&lt;/p&gt;
-&lt;/blockquote&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="rabbitmq" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">0813 TIL</title>
-      <link href="https://heejung-gjt.github.io/til26" rel="alternate" type="text/html" title="0813 TIL" />
-      <published>2021-08-12T20:00:00+09:00</published>
-      <updated>2021-08-12T20:00:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/til26</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til26">&lt;h2 id=&quot;210813-계획&quot;&gt;210813 계획&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;am-930-&quot;&gt;AM 9:30 ~&lt;/h4&gt;
-
-&lt;p&gt;오늘 9시20분에 기상했다. 화들짝 놀라서 바로 책상앞에 앉았다..ㅋㅋㅋ 금요일이라 깨우지 말아달라고 한 내자신.. 반성한다.. ㅠㅠ 
-스스로 일어나자 -!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;해커랭커 1시간 문제 풀기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;그리디 3,4문제 풀기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;구현 알고리즘 공부하기(0816)&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;원래 오늘 공부할 python은 하지 못했지만 드디어 서버에서 데몬으로 셀러리를 자동화 시키는데 성공했다 ! 진짜 너무너무 뿌듯하다. ㅠㅠ 
-블로그에 한꺼번에 정리할 예정이긴 하지만 아직 이해가 많이 부족하기 때문에 시간을 가지고 자세하게 정리할 예정이다 오예~~&lt;del&gt;!!! 내일부터는 
-다시 계획대로 진행해야지&lt;/del&gt;~!!&lt;/p&gt;</content>
 
       
       
