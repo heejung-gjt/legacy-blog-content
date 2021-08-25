@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/algorithm1" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Studying  Develop" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="(프로그래머스 with python) 완주하지 못한 선수" />
+    <meta property="og:description" content="완주하지 못한 선수 (Level1) 처음 문제를 풀때 참여한 수를 for문을 통해 루프를 돌면서 그 중 완주한 선수가 존재하면 완주한 선수 리스트와 참여한 선수 리스트에서 해당 선수를 remove로 각각 빼내는 방법으로 접근하였다.. (동명이인을 고려해서 두개의 리스트에서 각자 빼주었다.) 다른 조건을 하나도 생각하지 못한 로직이였다. 특히 IndexError: list index out of range" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/algorithm1" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/algorithm.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-08-25T15:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-25T15:00:00+09:00" />
+    <meta property="article:tag" content="Algorithm" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="(프로그래머스 with python) 완주하지 못한 선수" />
+    <meta name="twitter:description" content="완주하지 못한 선수 (Level1) 처음 문제를 풀때 참여한 수를 for문을 통해 루프를 돌면서 그 중 완주한 선수가 존재하면 완주한 선수 리스트와 참여한 선수 리스트에서 해당 선수를 remove로 각각 빼내는 방법으로 접근하였다.. (동명이인을 고려해서 두개의 리스트에서 각자 빼주었다.) 다른 조건을 하나도 생각하지 못한 로직이였다. 특히 IndexError: list index out of range" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/algorithm.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Studying  Develop" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Algorithm" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Studying  Develop",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/algorithm1",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/algorithm.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/algorithm1"
+    },
+    "description": "완주하지 못한 선수 (Level1) 처음 문제를 풀때 참여한 수를 for문을 통해 루프를 돌면서 그 중 완주한 선수가 존재하면 완주한 선수 리스트와 참여한 선수 리스트에서 해당 선수를 remove로 각각 빼내는 방법으로 접근하였다.. (동명이인을 고려해서 두개의 리스트에서 각자 빼주었다.) 다른 조건을 하나도 생각하지 못한 로직이였다. 특히 IndexError: list index out of range"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="(프로그래머스 with python) 완주하지 못한 선수" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">Studying  Develop</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/celery/">Celery</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/rabbitmq/">RabbitMQ</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/network/">Network</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/os/">OS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/database/">DataBase</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/aws/">AWS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-algorithm post tag algorithm ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-08-25">2021-08-25</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/algorithm/'>ALGORITHM</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">(프로그래머스 with python) 완주하지 못한 선수</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/algorithm.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    
+<p><br /></p>
+
+<h2 id="완주하지-못한-선수-level1">완주하지 못한 선수 (Level1)</h2>
+
+<p>처음 문제를 풀때 참여한 수를 for문을 통해 루프를 돌면서 
+그 중 완주한 선수가 존재하면 완주한 선수 리스트와 참여한 선수 리스트에서 
+해당 선수를 remove로 각각 빼내는 방법으로 접근하였다..
+(동명이인을 고려해서 두개의 리스트에서 각자 빼주었다.) 
+다른 조건을 하나도 생각하지 못한 로직이였다. 
+특히 <code class="highlighter-rouge">IndexError: list index out of range</code> 의 에러가 왜 나는지 알 수가 없었다. remove 함수에서 에러가 있는것을 보고 for문과 remove에 대해서 찾아보았다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">participant</span><span class="p">,</span> <span class="n">completion</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">participant</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">participant</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">completion</span><span class="p">:</span>
+            <span class="n">participant</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">participant</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">completion</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">participant</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">participant</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>몇몇개의 블로그에서 <strong>for문에서 remove 쓸때 주의점</strong> 과 같이 remove의 주의점에 대해 설명을 하고 있었다.
+설명을 하자면 remove는 <strong>원본을 훼손하는 함수</strong> 이다. 코드를 보고 이해하는게 빨랐기 때문에 아래의 코드를 봐보자.</p>
+
+<p>for문을 통해 nums안의 값이 차례대로 제거되는 상황을 기대했지만 2와 4는 제거되지 않고 그대로 nums안 리스트에 남아있는것을 보았다. 
+왜그런가하니 for문은 루프를 돌때 1번째 루프에서는 0번째 원소에 접근하고 
+이후 1번째,,2번째,, 순차적으로 접근을 하게 된다. 이때 첫번째 루프가 돌때 0번째 원소인 1이 제거되고 nums=[2,3,4] 로 변경된다. <strong>0번째 인덱스에는 2가 존재하게 되는셈이다.</strong></p>
+
+<p>for문이 2번째 돌때 1번째 원소에 접근하게 되는데 이때 1번째 인덱스에는 3이 존재하게 된다. 그렇기 때문에 2는 건너뛰고 3이 제거되게 되고 nums=[2,4]가 된다. 이후 0번째 인덱스에는 2가 존재하고 1번째 인덱스에는 4가 존재하게 된다. 이후 for문이 3번째 돌때 2번째 인덱스는 없기 때문에 for문이 루프를 빠져나오게 되는 것이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'제거전 nums'</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+    <span class="n">nums</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'제거후 nums'</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+<span class="s">'''
+제거전 nums [1, 2, 3, 4]
+제거후 nums [2, 3, 4]
+제거전 nums [2, 3, 4]
+제거후 nums [2, 4]
+'''</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>이후 remove를 사용하기 위해서는 복제된 리스트를 사용해야 된다는 것을 알게되었다. 내가 아는 방법으로 복제를 한 후 다시 로직을 실행시켜보았지만 똑같은 결과가 나왔다.. 그래서 이번에는 <strong>리스트 복제</strong> 라는 키워드로 구글링을 해보았다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">numss</span> <span class="o">=</span> <span class="n">nums</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numss</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'제거전 nums'</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+    <span class="n">nums</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'제거후 nums'</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span><span class="n">python</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">numss</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span> <span class="c"># 140503555416648 140503555416648</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>다행히 나와 똑같은 생각으로 로직을 구현했다가 문제가 발생한 몇몇의 블로그글이 있었다. 위의 로직을 보면 별 문제없이 복사가 되었다고 생각했지만 정확히 말하면 <strong>numss와는 nums의 메모리 주소값을 복사한 것</strong> 이라고 한다. 즉 같은 메모리를 참조하고 있는것이다. 그렇기 때문에 둘 중 하나의 리스트가 수정이 되면 두개의 리스트 모두 수정이 된다. 결국엔 원본값을 훼손한거나 마찬가지라는 소리이다. id를 통해서 똑같은 주소를 가리키고 있다는 것을 확인해보면 된다.
+다른 메모리를 참조하는 복사를 하고 싶을때는 어떻게 하는가.. 정말 생각보다 많은 방법이 존재하고 있었다…!! (아직도 python 초보자라는것을 다시한번 느끼고 깨닫는 문제였다…)</p>
+
+<hr />
+
+<h2 id="복사하는-4가지-방법-해당부분은-넘어가도-좋다--">복사하는 4가지 방법 (해당부분은 넘어가도 좋다 -!)</h2>
+
+<blockquote>
+  <h3 id="슬라이싱">슬라이싱</h3>
+  <p>슬라이싱을 이용해 모든 변수를 정의하면 새로운 객체가 만들어진다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">[:]:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'제거전 nums'</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+    <span class="n">nums</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'제거후 nums'</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+<span class="s">'''
+제거전 nums [1, 2, 3, 4]
+제거후 nums [2, 3, 4]
+제거전 nums [2, 3, 4]
+제거후 nums [3, 4]
+제거전 nums [3, 4]
+제거후 nums [4]
+제거전 nums [4]
+제거후 nums []
+'''</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<blockquote>
+  <h3 id="list">list()</h3>
+  <p>list 함수를 이용해 복사하고자 하는 리스트 객체를 다시 선언하면 두개의 리스트는 서로 다른 메모리를 참조하게 된다</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'제거전 nums'</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+    <span class="n">nums</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'제거후 nums'</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+<span class="s">'''
+제거전 nums [1, 2, 3, 4]
+제거후 nums [2, 3, 4]
+제거전 nums [2, 3, 4]
+제거후 nums [3, 4]
+제거전 nums [3, 4]
+제거후 nums [4]
+제거전 nums [4]
+제거후 nums []
+'''</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<blockquote>
+  <h3 id="copy">copy()</h3>
+  <p>copy 함수를 이용하면 마찬가지로 다른 리스트에 복사하는 기능이기 때문에 다른 메모리를 참조하게 된다 (가독성을 따졌을때 해당 방법을 추천한다고 한다)</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="o">.</span><span class="n">copy</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'제거전 nums'</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+    <span class="n">nums</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'제거후 nums'</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+<span class="s">'''
+제거전 nums [1, 2, 3, 4]
+제거후 nums [2, 3, 4]
+제거전 nums [2, 3, 4]
+제거후 nums [3, 4]
+제거전 nums [3, 4]
+제거후 nums [4]
+제거전 nums [4]
+제거후 nums []
+'''</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<blockquote>
+  <h3 id="list-연산">list 연산</h3>
+  <p>빈 리스트에 새롭게 복사할 리스트를 더하면 새로운 리스트 객체에 nums의 요소들이 더해져 서로 다른 메모리를 참조하는 리스트로 복사가 가능하다</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">numss</span> <span class="o">=</span> <span class="p">[]</span> <span class="o">+</span> <span class="n">nums</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numss</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'제거전 nums'</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+    <span class="n">nums</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'제거후 nums'</span><span class="p">,</span><span class="n">nums</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">numss</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span>
+<span class="s">'''
+제거전 nums [1, 2, 3, 4]
+제거후 nums [2, 3, 4]
+제거전 nums [2, 3, 4]
+제거후 nums [3, 4]
+제거전 nums [3, 4]
+제거후 nums [4]
+제거전 nums [4]
+제거후 nums []
+140503555509384 140503555133064
+'''</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>이후 문제를 다시 풀어 정확성 테스트에서는 100이 나왔지만 <strong>효율성 테스트에서는 0이 나오는 결과</strong> 를 받게 되었다..
+remove함수는 list자료형에서는 시간복잡도 o(n)을 가지고 있었다..</p>
+
+<p>for문 또한 o(n)을 가지고 있었기 때문에 o(n^2)이라는 시간복잡도를 가지게 되는 로직이였다.. 최소한 o(n)으로 만들어줘야 하였다. 해당 문제를 해시를 이용해 풀라는 이유가 있었나보다.. 그래서 다시 돌아와 <strong>파이썬 해시</strong> 에 대해 찾아보았다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 효율성 테스트 x - 시간초과</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">participant</span><span class="p">,</span> <span class="n">completion</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="n">par</span> <span class="o">=</span> <span class="n">participant</span>
+    <span class="n">com</span> <span class="o">=</span> <span class="n">completion</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">participant</span><span class="p">[:]:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">completion</span><span class="p">:</span>
+            <span class="n">par</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">com</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">answer</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="해시--dict">해시 (= dict)</h2>
+<p>파이썬에서 해시 구현은 딕셔너리 구현이라고 생각하면 된다. 즉 딕셔너리를 사용하여 해당 문제를 풀어나가야 했다. 새로운 딕셔너리 변수값을 하나 지정한후 참여자를 for문을 통해 루프를 돌리면서 참여자의 이름을 키로 제공해 딕셔너리의 키값에 해당 이름이 존재하지 않으면 새롭게 데이터를 딕셔너리에 추가하였고 딕셔너리 키값에 이름이 존재하면 해당되는 값에 1을 추가해주었다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">participant</span><span class="p">,</span> <span class="n">completion</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">participant</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">answer</span><span class="p">:</span>
+            <span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">answer</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">"marina"</span><span class="p">,</span> <span class="s">"josipa"</span><span class="p">,</span> <span class="s">"nikola"</span><span class="p">,</span> <span class="s">"vinko"</span><span class="p">,</span> <span class="s">"filipa"</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s">"josipa"</span><span class="p">,</span> <span class="s">"filipa"</span><span class="p">,</span> <span class="s">"marina"</span><span class="p">,</span> <span class="s">"nikola"</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">solution</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="s">'''
+{'marina': 1, 'josipa': 1, 'nikola': 1, 'vinko': 1, 'filipa': 1}
+'''</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>이후 해야 할 일은 참여한 사람중 완주한 사람들을 빼주어야 한다. 즉 completion의 이름을 딕셔너리에서 빼주어야한다
+함수 안에 아래 로직을 추가해주었다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">completion</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">answer</span><span class="p">:</span>
+        <span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="s">'''
+{'marina': 0, 'josipa': 0, 'nikola': 0, 'vinko': 1, 'filipa': 0}
+'''</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>마지막으로 할 일은 값이 존재하는 키값을 뽑아내야 한다. 동명이인이 1명이상일 경우를 생각해 key에 대한 값이 0이상인 값들을 리스트에 담아주었다. 하지만 문제에서는 항상 한명의 값이 나오는듯 하다.. 그래서 인덱스 [0]을 붙여 나온 값을 return해주었다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">participant</span><span class="p">,</span> <span class="n">completion</span><span class="p">):</span>
+  <span class="n">answer</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">participant</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">answer</span><span class="p">:</span>
+          <span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">else</span><span class="p">:</span>
+          <span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">completion</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">answer</span><span class="p">:</span>
+          <span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">answer</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">answer</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>lambda함수를 사용하면 좀더 간단하게 return값을 추출할 수 있다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">answer</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">key</span><span class="o">=</span><span class="p">(</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">answer</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
+</code></pre></div></div>
+
+                </div>
+            </section>
+        
+        <div id="post-disqus" class="container">
+            <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://heejung-gjt-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+        
+
+
+
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">Studying  Develop</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Studying  Develop</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+    <script id="dsq-count-scr" src="//heejung-gjt-github-io.disqus.com/count.js" async></script>
+</body>
+</html>
