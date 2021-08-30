@@ -45,30 +45,30 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="개발 공부하는 블로그" />
     <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://heejung-gjt.github.io/til35" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/js1" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="0830 TIL" />
-    <meta property="og:description" content="210830 계획 AM 8:30 ~ 오늘 알고리즘 스터디가 있는 날이다. 스터디를 시작하니까 내가 푼 문제에 대해 조금 더 이해를 하고 생각을 하려는 자세를 갖는 것 같다. 오늘 진행할 스택/큐 문제에 대해 블로그에 정리를 먼저 할 예정이다. 해야 할 일 스택/큐 3문제 블로그 정리하기 정렬 2문제 풀고 정리하기 + team note에" />
-    <meta property="og:url" content="https://heejung-gjt.github.io/til35" />
-    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/til.png" />
+    <meta property="og:title" content="자바스크립트로 select의 value값 가져오기" />
+    <meta property="og:description" content="select태그에서 class네임을 써주는것을 잊지 말자 &lt;form action=""&gt; {% csrf_token %} &lt;p class="product-filter-start"&gt;Price from&lt;/p&gt; &lt;select name="product-price-start" class="product-price-start" id=""&gt; &lt;option value="0"&gt;전체금액&lt;/option&gt; &lt;option value="0"&gt;0원&lt;/option&gt; &lt;option value="1000"&gt;1000원&lt;/option&gt; &lt;option value="5000"&gt;5000원&lt;/option&gt; &lt;option value="10000"&gt;10000원&lt;/option&gt; &lt;option value="20000"&gt;20000원&lt;/option&gt; &lt;option value="50000"&gt;50000원&lt;/option&gt; &lt;/select&gt; &lt;p class="product-filter-end"&gt;Price to&lt;/p&gt; &lt;select name="product-price-end" class="product-price-end" id=""&gt; &lt;option value="10000000"&gt;전체금액&lt;/option&gt; &lt;option value="10000"&gt;10000원&lt;/option&gt; &lt;option value="20000"&gt;20000원&lt;/option&gt; &lt;option value="50000"&gt;50000원&lt;/option&gt; &lt;option value="100000"&gt;100000원&lt;/option&gt; &lt;option" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/js1" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/js-cover.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-08-30T18:50:00+09:00" />
-    <meta property="article:modified_time" content="2021-08-30T18:50:00+09:00" />
-    <meta property="article:tag" content="Til" />
+    <meta property="article:published_time" content="2021-08-30T17:55:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-30T17:55:00+09:00" />
+    <meta property="article:tag" content="Js" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="0830 TIL" />
-    <meta name="twitter:description" content="210830 계획 AM 8:30 ~ 오늘 알고리즘 스터디가 있는 날이다. 스터디를 시작하니까 내가 푼 문제에 대해 조금 더 이해를 하고 생각을 하려는 자세를 갖는 것 같다. 오늘 진행할 스택/큐 문제에 대해 블로그에 정리를 먼저 할 예정이다. 해야 할 일 스택/큐 3문제 블로그 정리하기 정렬 2문제 풀고 정리하기 + team note에" />
+    <meta name="twitter:title" content="자바스크립트로 select의 value값 가져오기" />
+    <meta name="twitter:description" content="select태그에서 class네임을 써주는것을 잊지 말자 &lt;form action=""&gt; {% csrf_token %} &lt;p class="product-filter-start"&gt;Price from&lt;/p&gt; &lt;select name="product-price-start" class="product-price-start" id=""&gt; &lt;option value="0"&gt;전체금액&lt;/option&gt; &lt;option value="0"&gt;0원&lt;/option&gt; &lt;option value="1000"&gt;1000원&lt;/option&gt; &lt;option value="5000"&gt;5000원&lt;/option&gt; &lt;option value="10000"&gt;10000원&lt;/option&gt; &lt;option value="20000"&gt;20000원&lt;/option&gt; &lt;option value="50000"&gt;50000원&lt;/option&gt; &lt;/select&gt; &lt;p class="product-filter-end"&gt;Price to&lt;/p&gt; &lt;select name="product-price-end" class="product-price-end" id=""&gt; &lt;option value="10000000"&gt;전체금액&lt;/option&gt; &lt;option value="10000"&gt;10000원&lt;/option&gt; &lt;option value="20000"&gt;20000원&lt;/option&gt; &lt;option value="50000"&gt;50000원&lt;/option&gt; &lt;option value="100000"&gt;100000원&lt;/option&gt; &lt;option" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
-    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/til.png" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/js-cover.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Studying  Develop" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Til" />
+    <meta name="twitter:data2" content="Js" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -83,18 +83,18 @@
         "name": "Studying  Develop",
         "logo": "https://heejung-gjt.github.io/"
     },
-    "url": "https://heejung-gjt.github.io/til35",
+    "url": "https://heejung-gjt.github.io/js1",
     "image": {
         "@type": "ImageObject",
-        "url": "https://heejung-gjt.github.io/assets/built/images/til.png",
+        "url": "https://heejung-gjt.github.io/assets/built/images/js-cover.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://heejung-gjt.github.io/til35"
+        "@id": "https://heejung-gjt.github.io/js1"
     },
-    "description": "210830 계획 AM 8:30 ~ 오늘 알고리즘 스터디가 있는 날이다. 스터디를 시작하니까 내가 푼 문제에 대해 조금 더 이해를 하고 생각을 하려는 자세를 갖는 것 같다. 오늘 진행할 스택/큐 문제에 대해 블로그에 정리를 먼저 할 예정이다. 해야 할 일 스택/큐 3문제 블로그 정리하기 정렬 2문제 풀고 정리하기 + team note에"
+    "description": "select태그에서 class네임을 써주는것을 잊지 말자 &lt;form action=""&gt; {% csrf_token %} &lt;p class="product-filter-start"&gt;Price from&lt;/p&gt; &lt;select name="product-price-start" class="product-price-start" id=""&gt; &lt;option value="0"&gt;전체금액&lt;/option&gt; &lt;option value="0"&gt;0원&lt;/option&gt; &lt;option value="1000"&gt;1000원&lt;/option&gt; &lt;option value="5000"&gt;5000원&lt;/option&gt; &lt;option value="10000"&gt;10000원&lt;/option&gt; &lt;option value="20000"&gt;20000원&lt;/option&gt; &lt;option value="50000"&gt;50000원&lt;/option&gt; &lt;/select&gt; &lt;p class="product-filter-end"&gt;Price to&lt;/p&gt; &lt;select name="product-price-end" class="product-price-end" id=""&gt; &lt;option value="10000000"&gt;전체금액&lt;/option&gt; &lt;option value="10000"&gt;10000원&lt;/option&gt; &lt;option value="20000"&gt;20000원&lt;/option&gt; &lt;option value="50000"&gt;50000원&lt;/option&gt; &lt;option value="100000"&gt;100000원&lt;/option&gt; &lt;option"
 }
     </script>
 
@@ -107,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="0830 TIL" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="자바스크립트로 select의 value값 가져오기" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -185,7 +185,7 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-til post tag til ">
+        <article class="post-full  tag-js post tag js ">
 
             <header class="post-full-header">
 
@@ -195,50 +195,69 @@ into the {body} of the default.hbs template -->
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/til/'>TIL</a>
+                               <a href='/tag/js/'>JS</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">0830 TIL</h1>
+                <h1 class="post-full-title">자바스크립트로 select의 value값 가져오기</h1>
             </header>
 
 <!--  
             
-            <figure class="post-full-image" style="background-image: url(/assets/built/images/til.png)">
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/js-cover.png)">
             </figure>
             
 -->
 
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    
-<h2 id="210830-계획">210830 계획</h2>
+                    <!--<span class="table-of-contents-list">Network 정리 </span>-->
+<!--<ul class="table-of-contents-list">-->
+<!--    <li><a href="./structure">스택과 큐의 특징</a></li>-->
+<!--    <li><a href="./heap">힙의 특징</a></li>-->
+<!--</ul>-->
 
-<hr />
+<p><br /></p>
 
-<h4 id="am-830-">AM 8:30 ~</h4>
+<p>select태그에서 class네임을 써주는것을 잊지 말자</p>
 
-<p>오늘 알고리즘 스터디가 있는 날이다. 스터디를 시작하니까 내가 푼 문제에 대해 조금 더 이해를 하고 생각을 하려는 
-자세를 갖는 것 같다. 오늘 진행할 스택/큐 문제에 대해 블로그에 정리를 먼저 할 예정이다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s">""</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="o">%</span> <span class="n">csrf_token</span> <span class="o">%</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="n">p</span> <span class="n">class</span><span class="o">=</span><span class="s">"product-filter-start"</span><span class="o">&gt;</span><span class="n">Price</span> <span class="k">from</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">select</span> <span class="n">name</span><span class="o">=</span><span class="s">"product-price-start"</span> <span class="n">class</span><span class="o">=</span><span class="s">"product-price-start"</span> <span class="nb">id</span><span class="o">=</span><span class="s">""</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"0"</span><span class="o">&gt;</span><span class="err">전체금액</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"0"</span><span class="o">&gt;</span><span class="mi">0</span><span class="err">원</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"1000"</span><span class="o">&gt;</span><span class="mi">1000</span><span class="err">원</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"5000"</span><span class="o">&gt;</span><span class="mi">5000</span><span class="err">원</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"10000"</span><span class="o">&gt;</span><span class="mi">10000</span><span class="err">원</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"20000"</span><span class="o">&gt;</span><span class="mi">20000</span><span class="err">원</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"50000"</span><span class="o">&gt;</span><span class="mi">50000</span><span class="err">원</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">select</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">p</span> <span class="n">class</span><span class="o">=</span><span class="s">"product-filter-end"</span><span class="o">&gt;</span><span class="n">Price</span> <span class="n">to</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">select</span> <span class="n">name</span><span class="o">=</span><span class="s">"product-price-end"</span> <span class="n">class</span><span class="o">=</span><span class="s">"product-price-end"</span> <span class="nb">id</span><span class="o">=</span><span class="s">""</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"10000000"</span><span class="o">&gt;</span><span class="err">전체금액</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"10000"</span><span class="o">&gt;</span><span class="mi">10000</span><span class="err">원</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"20000"</span><span class="o">&gt;</span><span class="mi">20000</span><span class="err">원</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"50000"</span><span class="o">&gt;</span><span class="mi">50000</span><span class="err">원</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"100000"</span><span class="o">&gt;</span><span class="mi">100000</span><span class="err">원</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">option</span> <span class="n">value</span><span class="o">=</span><span class="s">"10000000"</span><span class="o">&gt;</span><span class="mi">100000</span><span class="err">원</span> <span class="err">이상</span><span class="o">&lt;/</span><span class="n">option</span><span class="o">&gt;</span>
+      <span class="o">&lt;/</span><span class="n">select</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
 
-<hr />
 
-<h2 id="해야-할-일">해야 할 일</h2>
+</code></pre></div></div>
 
-<ul>
-  <li><del>스택/큐 3문제 블로그 정리하기</del></li>
-  <li><del>정렬 2문제 풀고 정리하기 + team note에 문법 정리</del></li>
-  <li><del>정렬 기본 1문제 풀기 + team note에 문법 정리</del></li>
-  <li><del>네트워크 (쿠키, 세션, 캐시 복습)</del></li>
-  <li><del>네트워크 OSI 7계층 정리하기</del></li>
-  <li><del>장고 filters 기능 블로그 작성</del></li>
-  <li><del>ajax, select-option js 정리하기</del></li>
-  <li>프로젝트 notion v1, v2 작성하기</li>
-</ul>
+<p><br /></p>
 
-<hr />
+<p>자바스크립트에서 selectName.options[selectName.selectedIndex].value를 사용하여 select내부에 있는 option중 선택된 value값을 가져온다</p>
 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">priceStartSelect</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s">'.product-price-start'</span><span class="p">);</span>
+    <span class="n">priceEndSelect</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s">'.product-price-end'</span><span class="p">);</span>
+    <span class="n">priceStart</span> <span class="o">=</span> <span class="n">priceStartSelect</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="n">priceStartSelect</span><span class="o">.</span><span class="n">selectedIndex</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">;</span>
+    <span class="n">priceEnd</span> <span class="o">=</span> <span class="n">priceEndSelect</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="n">priceEndSelect</span><span class="o">.</span><span class="n">selectedIndex</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">;</span>
+</code></pre></div></div>
 
                 </div>
             </section>
