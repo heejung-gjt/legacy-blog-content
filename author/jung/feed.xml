@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/author/jung/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-31T08:32:46+09:00</updated>
+  <updated>2021-09-01T08:31:34+09:00</updated>
   <id>https://heejung-gjt.github.io/author/jung/feed.xml</id>
 
   
@@ -32,10 +32,63 @@
 
   
     <entry>
+      <title type="html">0901 TIL</title>
+      <link href="https://heejung-gjt.github.io/til37" rel="alternate" type="text/html" title="0901 TIL" />
+      <published>2021-08-31T20:58:00+09:00</published>
+      <updated>2021-08-31T20:58:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/til37</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til37">&lt;h2 id=&quot;210901-계획&quot;&gt;210901 계획&lt;/h2&gt;
+
+&lt;h4 id=&quot;am-830-&quot;&gt;AM 8:30 ~&lt;/h4&gt;
+
+&lt;p&gt;어제 프로젝트에 대한 마무리를 끝냈고 2번째 프로젝트에 대한 소셜 로그인을 구현 할 예정이다&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;큐, signly linked list 구현&lt;/li&gt;
+  &lt;li&gt;스택, 큐 doubly linked list 구현&lt;/li&gt;
+  &lt;li&gt;그리디 2문제&lt;/li&gt;
+  &lt;li&gt;네트워크 tcp, udp 관련 내용 정리&lt;/li&gt;
+  &lt;li&gt;장고 oauth 공부 후 실습&lt;/li&gt;
+  &lt;li&gt;oauth 블로그 정리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">0831 TIL</title>
       <link href="https://heejung-gjt.github.io/til36" rel="alternate" type="text/html" title="0831 TIL" />
-      <published>2021-08-30T20:50:00+09:00</published>
-      <updated>2021-08-30T20:50:00+09:00</updated>
+      <published>2021-08-31T20:50:00+09:00</published>
+      <updated>2021-08-31T20:50:00+09:00</updated>
       <id>https://heejung-gjt.github.io/til36</id>
       <content type="html" xml:base="https://heejung-gjt.github.io/til36">&lt;h2 id=&quot;210831-계획&quot;&gt;210831 계획&lt;/h2&gt;
 
@@ -48,12 +101,12 @@
 &lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;스택/큐 class 구현&lt;/li&gt;
-  &lt;li&gt;알고리즘 4문제 풀이 + team note, blog정리 (4)&lt;/li&gt;
-  &lt;li&gt;네트워크 osi7계층 복습&lt;/li&gt;
-  &lt;li&gt;네트워크 tcp/ip, tcp/udp 공부하기 (2)&lt;/li&gt;
-  &lt;li&gt;파이썬 스크래핑 로직 (스레드 이용해보기) (2)&lt;/li&gt;
-  &lt;li&gt;장고 기사 프로젝트(1-7) 수정하기 (4)&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;스택/큐 class 구현&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;알고리즘 1문제 풀이(그리디)&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;스택, singly linked list 구현&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;네트워크 osi7계층 복습&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;네트워크 tcp/ip, tcp/udp 공부하기&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;장고 기사 프로젝트(1-7) 수정하기&lt;/del&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;</content>
@@ -722,83 +775,6 @@ Article 데이터의 name이 article이거나 category가 category인 데이터�
                 &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 값이 내려갔으니 더이상 for문을 돌 필요가 없다&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="algorithm" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">(프로그래머스 with python) 프린터</title>
-      <link href="https://heejung-gjt.github.io/algorithm4" rel="alternate" type="text/html" title="(프로그래머스 with python) 프린터" />
-      <published>2021-08-28T17:00:00+09:00</published>
-      <updated>2021-08-28T17:00:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/algorithm4</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/algorithm4">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;프린터-level2&quot;&gt;프린터 (Level2)&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/131271227-ad3c3e8f-0a02-485b-ae28-c1933ec34f94.png&quot; alt=&quot;프린터&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;우선순위 리스트에서 location위치에 있는 값이 몇번째로 인쇄되는지에 대한 문제이기 때문에 우선수위 값과 인덱스의 값이 함께 기억이 되야 한다는 것을 알았다. 하지만 어떤 방법으로 기억시켜야 되는지에 대해 몰라서 헤맸다..^^ &lt;strong&gt;enumerate&lt;/strong&gt; 함수를 쓰면 간단하게 해결된다..ㅎㅎ(저번주에 사용해봤는데… 정리를 해놔야겠다)&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;priority_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;priorities&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
- &lt;span class=&quot;c&quot;&gt;# [(2, 3), (3, 2)] ...&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;priority_list의 첫번째 값을 pop(0)을 이용해 빼온다 # (2, 3)&lt;/li&gt;
-    &lt;li&gt;새로운 p_list를 만들어 이곳에다 priorit_list에 담긴 값들만을 (index값 아님 주의 !) 뽑아서 리스트에 넣어준다 # [3, 2, ..]&lt;/li&gt;
-    &lt;li&gt;이후 p_list에서 max의 값을 찾아내어 1번에서 빼온 튜플에서 값과 비교를 한다&lt;/li&gt;
-    &lt;li&gt;튜플에서 빼온 값이 max값과 같거나 큰경우 우선순위가 가장 큰 값이기 때문에 튜플 자체의 값을 새로운 리스트인 new_list에 담아준다&lt;/li&gt;
-    &lt;li&gt;이후 똑같은 로직으로 new_list에 담아준다 # new_list = [(2,3), (3, 2)]&lt;/li&gt;
-    &lt;li&gt;이후에 new_list를 enumerate를 사용하여 정해져있던 location과 튜플안에 있는 인덱스값을 비교해 해당 하는 값이 몇번째로 출력이 되는지를 반환한다&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;priorities&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;priority_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;priorities&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# enumerate로 인덱스와 값을 튜플로 묶는다&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;new_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;priority_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;priority_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#(0,2) # - 1&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;priority_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;p_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;priority&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;priority&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;priority_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# - 2&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;max_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# - 3&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;priority_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# - 4, 5&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;new_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;priority_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'new_list'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 0, (0,2) - 6&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 인덱스로 비교해야 하기 때믄에&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
 
       
