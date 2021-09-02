@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="https://heejung-gjt.github.io/tag/oauth/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-09-02T23:38:28+09:00</updated>
+  <id>https://heejung-gjt.github.io/tag/oauth/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">Studying  Develop | </title>
+  
+
+  
+    <subtitle>개발 공부하는 블로그</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">OAuth2.0에 대해 알아보기(작성중…)</title>
+      <link href="https://heejung-gjt.github.io/aws1" rel="alternate" type="text/html" title="OAuth2.0에 대해 알아보기(작성중...)" />
+      <published>2021-09-01T12:00:00+09:00</published>
+      <updated>2021-09-01T12:00:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/aws1</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/aws1">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;oauth란&quot;&gt;OAuth란&lt;/h3&gt;
+
+&lt;p&gt;인터넷 사용자들이 비밀번호를 제공하지 않고 다른 웹 사이트 상의 자신들의 정보에 대해 웹사이트나 애플리케이션의 접근 권한을 부여할 수 있는 공통적인 수단으로서 사용되는, 접근 위임을 위한 개방형 표준이다. 즉 &lt;strong&gt;웹,앱 서비스에서 제한적으로 권한을 요청해 사용할 수 있는 키를 발급해주는 것을 말한다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/131677827-9c80179f-b2e0-409b-b887-84ccfdfaf4c3.png&quot; alt=&quot;oauth&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Resource Owner : 서비스를 이용하려는 사용자&lt;/li&gt;
+  &lt;li&gt;Client : 소셜 서비스와 연동시키려는 웹 서비스&lt;/li&gt;
+  &lt;li&gt;Resource Server (+ Authorization Server) : 연동하고자 하는 소셜 서비스의 서버(access token, refresh token등을 발급/재발급 해주는 역할)&lt;/li&gt;
+  &lt;li&gt;consumer secret : 서비스 제공자에서 소비자가 자신임을 인증하기 위한 키&lt;/li&gt;
+  &lt;li&gt;reqeust token : 소비자가 사용자에게 접근권한을 인증받기 위해 필요한 정보가 담겨있으며 후에 접근 토큰으로 변환된다&lt;/li&gt;
+  &lt;li&gt;access token : 인증 후에 사용자가 서비스 제공자가 아닌 소비자를 통해서 보호된 자원에 접근하기 위한 키를 포함한 값(Authorization Server로부터 발급받은 인증 토큰으로 Resource Server에 전달하여 서비스를 제공받을 수 있다)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;oauth를-쓰는-이유&quot;&gt;OAuth를 쓰는 이유&lt;/h3&gt;
+
+&lt;p&gt;애플리케이션에서 일일히 계정을 만들어 사용하게 되면 id/pwd 관리가 어렵고 개인정보 유출등 보안적으로 취약하기 때문에 이미 보안이 검증된 사이트의 API를 이용해 인증을 받아 보안적으로 안정을 유지하기 위해 사용한다&lt;/p&gt;
+
+&lt;h3 id=&quot;oauth의-과정&quot;&gt;OAuth의 과정&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/131858267-2353d465-7c82-4e1f-acd3-c1db8a302ec9.png&quot; alt=&quot;payco&quot; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;서비스를 등록하는 과정
+    &lt;ul&gt;
+      &lt;li&gt;소셜 웹 사이트에 서비스를 등록한다&lt;/li&gt;
+      &lt;li&gt;등록하는 과정에서 redirect_uri등을 미리 공유한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;토큰을 받는 과정
+    &lt;ul&gt;
+      &lt;li&gt;유저를 소셜 웹 사이트의 페이지로 이동시킨다&lt;/li&gt;
+      &lt;li&gt;소셜 웹 사이트가 유저를 웹서비스로 리다이렉트 시킨다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;토큰을 이용해 정보를 요청하는 과정&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;서비스-등록&quot;&gt;서비스 등록&lt;/h3&gt;
+&lt;p&gt;먼저 OAuth 인증을 하기 위해서는 연동하고자 하는 소셜 서비스에 OAuth인증을 사용할 애플리케이션을 등록해야 한다
+예를 들어 https://nananan.xn–com-f42mh0r1y0a url을 가지는 웹 사이트에서 카카오톡 OAuth인증을 이용해 회원가입/로그인을 하려고 할때 카카오톡 api 사이트에 들어가 사용할 웹사이트를 등록해주어야 한다. 이때 카카오톡 사이트에 미리 등록해야 할 url이 있다 바로 &lt;strong&gt;리다이렉션 url&lt;/strong&gt; 이다. 사용자가 카카오톡 인증 서버에 정보를 입력하면 카카오톡에서 정보에 대한 유효성을 검증한 후 유효한 정보라면 유저의 정보를 애플리케이션에 전송하기 위해 (애플리케이션에 유저의 정보를 전송해야 현재 로그인한 유저가 누구인지 식별이 가능하다) 미리 카카오톡 사이트에 등록한 리다이렉션 url로 데이터를 전송한다
+이때 알고있어야 하는 것은 OAuth은 단순히 정보가 유효한지에 대한 인증을 해주며 유저의 정보는 애플리케이션에서 관리한다 !&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;access-token액세스-토큰&quot;&gt;Access Token(액세스 토큰)&lt;/h3&gt;
+
+&lt;p&gt;위에서 유저의 정보를 리다이렉션 url을 통해 애플리케이션에 보내기 전 보안을 위해 OAuth에서 리다이렉션 url에 code라는 매개변수 정보를 추가하여 보낸다. 애플리케이션은 해당 Code를 얻은 후 해당 Code를 통해 유저의 카카오톡 구글 계정 정보에 접근할 수 있는 액세스 토큰을 얻게 된다. 이때 해당 액세스 토큰을 얻기 위해 카카오톡 oauth url에 code 정보를 포함하여 요청을 보낸다. (code정보 , 카카오톡에 웹 서비스 등록시 발급받은 클라이언트 id, 클라이언트 secret 정보, 동일한 리다이렉션url 정보를 포함한다)&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://kauth.kakao.com/oauth/token?grant_type=authorization_code&amp;amp;client_id={client_id}&amp;amp;redirect_uri={REDIRECT_URI}&amp;amp;code={code}&amp;amp;client_secret={client_secret}&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;reference&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://velog.io/@piecemaker/OAuth2-%EC%9D%B8%EC%A6%9D-%EB%B0%A9%EC%8B%9D%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90&quot;&gt;https://velog.io/@piecemaker/OAuth2-%EC%9D%B8%EC%A6%9D-%EB%B0%A9%EC%8B%9D%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90&lt;/a&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="oauth" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>
