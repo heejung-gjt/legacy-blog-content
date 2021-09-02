@@ -52,7 +52,7 @@
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="(Python) mutable과 immutable한 자료형" />
-    <meta property="og:description" content="python의 자료형은 mutable하냐 immutable하냐로 나뉜다. 즉 변경 가능한 자료형이냐 변경 할 수 없는 자료형이냐로 나뉜다는 소리이다. 각각의 특징을 먼저 살펴보면, mutable 인덱스를 통해 값의 변경이 가능하다 처음 생성한 이후에 값을 변경, 추가, 삭제 할 수 있다 list, dictionary 아래의 코드를 보면 x와 y의 id값은 같은것을 볼 수 있다. 값이 변경" />
+    <meta property="og:description" content="mutable과 immutable mutable(변할 수 있는) 데이터의 값을 변경 할 수 있는 자료형이다. 즉 인덱스를 통해 값의 변경이 가능 하고 처음 값을 생성한 이후에 값을 변경, 추가 삭제 할 수 있다. mutable한 자료형은 값을 변경시켜도 가리키고 있는 메모리는 동일하기 때문에 객체는 변경되지 않는다. 즉, 메모리 주소는 같다 list 타입, dict 타입," />
     <meta property="og:url" content="https://heejung-gjt.github.io/python6" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -62,7 +62,7 @@
     <meta property="article:tag" content="Python" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="(Python) mutable과 immutable한 자료형" />
-    <meta name="twitter:description" content="python의 자료형은 mutable하냐 immutable하냐로 나뉜다. 즉 변경 가능한 자료형이냐 변경 할 수 없는 자료형이냐로 나뉜다는 소리이다. 각각의 특징을 먼저 살펴보면, mutable 인덱스를 통해 값의 변경이 가능하다 처음 생성한 이후에 값을 변경, 추가, 삭제 할 수 있다 list, dictionary 아래의 코드를 보면 x와 y의 id값은 같은것을 볼 수 있다. 값이 변경" />
+    <meta name="twitter:description" content="mutable과 immutable mutable(변할 수 있는) 데이터의 값을 변경 할 수 있는 자료형이다. 즉 인덱스를 통해 값의 변경이 가능 하고 처음 값을 생성한 이후에 값을 변경, 추가 삭제 할 수 있다. mutable한 자료형은 값을 변경시켜도 가리키고 있는 메모리는 동일하기 때문에 객체는 변경되지 않는다. 즉, 메모리 주소는 같다 list 타입, dict 타입," />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/python-cover.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -94,7 +94,7 @@
         "@type": "WebPage",
         "@id": "https://heejung-gjt.github.io/python6"
     },
-    "description": "python의 자료형은 mutable하냐 immutable하냐로 나뉜다. 즉 변경 가능한 자료형이냐 변경 할 수 없는 자료형이냐로 나뉜다는 소리이다. 각각의 특징을 먼저 살펴보면, mutable 인덱스를 통해 값의 변경이 가능하다 처음 생성한 이후에 값을 변경, 추가, 삭제 할 수 있다 list, dictionary 아래의 코드를 보면 x와 y의 id값은 같은것을 볼 수 있다. 값이 변경"
+    "description": "mutable과 immutable mutable(변할 수 있는) 데이터의 값을 변경 할 수 있는 자료형이다. 즉 인덱스를 통해 값의 변경이 가능 하고 처음 값을 생성한 이후에 값을 변경, 추가 삭제 할 수 있다. mutable한 자료형은 값을 변경시켜도 가리키고 있는 메모리는 동일하기 때문에 객체는 변경되지 않는다. 즉, 메모리 주소는 같다 list 타입, dict 타입,"
 }
     </script>
 
@@ -249,45 +249,54 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<p>python의 자료형은 mutable하냐 immutable하냐로 나뉜다. 즉
-변경 가능한 자료형이냐 변경 할 수 없는 자료형이냐로 나뉜다는 소리이다.</p>
+<h2 id="mutable과-immutable">mutable과 immutable</h2>
 
-<p>각각의 특징을 먼저 살펴보면,</p>
+<p><br /></p>
 
-<h2 id="mutable">mutable</h2>
+<h3 id="mutable변할-수-있는">mutable(변할 수 있는)</h3>
+<p>데이터의 값을 변경 할 수 있는 자료형이다. 즉 <strong>인덱스를 통해 값의 변경이 가능</strong> 하고 <strong>처음 값을 생성한 이후에 값을 변경, 추가 삭제 할 수 있다.</strong> mutable한 자료형은 값을 변경시켜도 가리키고 있는 메모리는 동일하기 때문에 객체는 변경되지 않는다. 즉, <strong>메모리 주소는 같다</strong></p>
+
 <blockquote>
-  <p>인덱스를 통해 값의 변경이 가능하다     <br />
-처음 생성한 이후에 값을 변경, 추가, 삭제 할 수 있다<br />
-<strong>list, dictionary</strong></p>
+  <p><strong>list 타입, dict 타입, set타입, 바이트 배열 타입(byte array)</strong></p>
 </blockquote>
 
-<p>아래의 코드를 보면 x와 y의 id값은 같은것을 볼 수 있다. 값이 변경 가능한 mutable이기 때문에 
-x=y에서 x와 y는 같은 id를 바라보고 있고 y의 값이 변경되면 동시에 x의 값 또한 변경되는 것을 볼 수 있다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
-<span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'b'</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c"># ['a', 'b'] 2390704793344</span>
-<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c"># ['a', 'b'] 2390704793344</span>
+<p>아래의 코드를 보면 mutable한 list에 d라는 문자를 append시켜주면 <strong>ex_list 의 값은 변경이 된다</strong> 하지만 <strong>ex_list의 객체는 변경되지 않는다. 메모리가 가리키고 있는 주소는 같은 것을 볼 수 있다</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ex_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">abcd_list</span><span class="p">))</span> <span class="c"># 139692873276680</span>
+<span class="k">print</span><span class="p">(</span><span class="n">abcd_list</span><span class="p">)</span> <span class="c"># ['a', 'b', 'c']</span>
+<span class="n">ex_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'d'</span><span class="p">)</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">ex_list</span><span class="p">)</span> <span class="c"># ['a', 'b', 'c', 'd']</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ex_list</span><span class="p">))</span> <span class="c"># 139692873276680</span>
 </code></pre></div></div>
 
 <p><br /></p>
 
-<h2 id="immutable">immutable</h2>
+<h3 id="immutable변할-수-없는">immutable(변할 수 없는)</h3>
+<p>데이터의 값을 변경 할 수 없는 자료형이다. 즉 <strong>인덱스를 통해 값의 변경이 불가능하고 처음 값을 생성한 이후에 값을 변경 할 수 없다</strong></p>
+
 <blockquote>
-  <p>인덱스를 통해 값의 변경이 불가능하다     <br />
-처음 생성한 이후에 값을 변경할 수 없다  <br />
-<strong>int, string, tuple</strong></p>
+  <p><strong>숫자타입(int, float, complex), 문자열 타입, 튜플 타입, 불변세트 타입, 바이트 타입</strong></p>
 </blockquote>
 
-<p>아래의 코드를 보면 처음 x와 y는 id값이 같은 똑같은 곳을 가리킨다. 하지만 이후 y의 내부값을
-변경시키면서 x와 y의 id값이 달라진다. 즉 값의 내부값은 변경될 수 있지만 x의 값은 변경되지 않는다.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="s">'a'</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
-<span class="n">y</span> <span class="o">+=</span> <span class="s">'b'</span>
+<p>아래의 코드를 보면 ex_str에 +’e’ 를 해주어도 실제 ex_str의 값이 변경되는 것은 아니다. 객체도 변경이 되지 않는다. +’e’ 한 값을 보고 싶다면 새로운 객체값을 변수(ex_str2)에 대입해야 값이 변경된다. 즉 메모리 주소가 변경된다</p>
 
-<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c"># a 2390638186928</span>
-<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="c"># ab 2390705772720</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ex_str</span> <span class="o">=</span> <span class="s">'abcd'</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ex_str</span><span class="p">))</span> <span class="c"># 139692877839136</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ex_str</span> <span class="o">+</span> <span class="s">'e'</span><span class="p">)</span> <span class="c"># abcde // ex_str의 값 자체가 변경되지는 않는다. 즉 가비지 컬렉션의 대상이 된다</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ex_str</span><span class="p">)</span> <span class="c"># abcd</span>
+
+<span class="n">ex_str2</span> <span class="o">=</span> <span class="n">ex_str</span> <span class="o">+</span> <span class="s">'e'</span> <span class="c"># 새로운 객체값을 변수에 대입을 해야 값이 변경된다, 객체 id도 변경된다</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ex_str2</span><span class="p">)</span> <span class="c"># abcde</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ex_str2</span><span class="p">))</span> <span class="c"># 139692873526048</span>
 </code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="데이터-타입에-immutable과-mutable이-있는-이유">데이터 타입에 immutable과 mutable이 있는 이유</h3>
+<p>성능적인 이점 때문에 그렇다. mutable같은 자료형은 append같은 여러 메서드를 사용할 수 있다. 하지만 immutable은 그렇지 못하다.   <br />
+만약 변할 수 없는 데이터 타입의 값을 빈번하게 바꾸면 객체가 메모리상에서 계속 생성될 것이다. 이는 프로그램이 사용하는 메모리를 과하게 사용하는 원인이 된다. <strong>이때 변할 수 있는 데이터 타입을 사용하면 객체를 새롭게 생성하지 않아도 된다</strong> 즉 메모리 누수를 방지하면서 메모리 사용 효율을 올릴 수 있다</p>
+
 
                 </div>
             </section>
