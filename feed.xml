@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-09-07T11:15:45+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">0903 TIL</title><link href="https://heejung-gjt.github.io/til39" rel="alternate" type="text/html" title="0903 TIL" /><published>2021-09-03T20:58:00+09:00</published><updated>2021-09-03T20:58:00+09:00</updated><id>https://heejung-gjt.github.io/til39</id><content type="html" xml:base="https://heejung-gjt.github.io/til39">&lt;h2 id=&quot;210903-계획&quot;&gt;210903 계획&lt;/h2&gt;
+=======
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-09-03T22:38:18+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">0903 TIL</title><link href="https://heejung-gjt.github.io/til39" rel="alternate" type="text/html" title="0903 TIL" /><published>2021-09-03T20:58:00+09:00</published><updated>2021-09-03T20:58:00+09:00</updated><id>https://heejung-gjt.github.io/til39</id><content type="html" xml:base="https://heejung-gjt.github.io/til39">&lt;h2 id=&quot;210903-계획&quot;&gt;210903 계획&lt;/h2&gt;
+>>>>>>> a3ddc14f2c14824fbb0b1c11d481fd901f5a2af2
 
 &lt;h4 id=&quot;am-830-&quot;&gt;AM 8:30 ~&lt;/h4&gt;
 
@@ -468,7 +472,11 @@ ex3 -&amp;gt; [1, 2, 3, [4, 5, 6, 100000], [7, 1000, 9]]
   &lt;li&gt;oauth 블로그 정리&lt;/li&gt;
 &lt;/ul&gt;
 
+<<<<<<< HEAD
 &lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">OAuth2.0에 대해 알아보기</title><link href="https://heejung-gjt.github.io/oauth" rel="alternate" type="text/html" title="OAuth2.0에 대해 알아보기" /><published>2021-09-01T12:00:00+09:00</published><updated>2021-09-01T12:00:00+09:00</updated><id>https://heejung-gjt.github.io/oauth</id><content type="html" xml:base="https://heejung-gjt.github.io/oauth">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+=======
+&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">OAuth2.0에 대해 알아보기(작성중…)</title><link href="https://heejung-gjt.github.io/oauth" rel="alternate" type="text/html" title="OAuth2.0에 대해 알아보기(작성중...)" /><published>2021-09-01T12:00:00+09:00</published><updated>2021-09-01T12:00:00+09:00</updated><id>https://heejung-gjt.github.io/oauth</id><content type="html" xml:base="https://heejung-gjt.github.io/oauth">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+>>>>>>> a3ddc14f2c14824fbb0b1c11d481fd901f5a2af2
 
 &lt;h2 id=&quot;oauth란&quot;&gt;OAuth란&lt;/h2&gt;
 
@@ -571,6 +579,7 @@ ex3 -&amp;gt; [1, 2, 3, [4, 5, 6, 100000], [7, 1000, 9]]
 &lt;p&gt;resource server와 owner가 리다이렉트 할 url을 작성한다&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# urls.py&lt;/span&gt;
 
+<<<<<<< HEAD
 &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'signin/kakao/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kakao_login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'kakao_login'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'signin/kakao/callback/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kakao_login_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'kakao-callback'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -704,4 +713,6 @@ ex3 -&amp;gt; [1, 2, 3, [4, 5, 6, 100000], [7, 1000, 9]]
   &lt;li&gt;&lt;del&gt;프로젝트 notion v1, v2 작성하기&lt;/del&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+=======
+>>>>>>> a3ddc14f2c14824fbb0b1c11d481fd901f5a2af2
 &lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry></feed>
