@@ -1,4 +1,181 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-09-09T21:01:19+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">0909 TIL</title><link href="https://heejung-gjt.github.io/til42" rel="alternate" type="text/html" title="0909 TIL" /><published>2021-09-09T20:58:00+09:00</published><updated>2021-09-09T20:58:00+09:00</updated><id>https://heejung-gjt.github.io/til42</id><content type="html" xml:base="https://heejung-gjt.github.io/til42">&lt;h2 id=&quot;210909-계획&quot;&gt;210909 계획&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-09-11T20:53:12+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">(프로그래머스 with python) 11722 가장 긴 감소하는 부분 수열</title><link href="https://heejung-gjt.github.io/algorithm10" rel="alternate" type="text/html" title="(프로그래머스 with python) 11722 가장 긴 감소하는 부분 수열" /><published>2021-09-10T18:00:00+09:00</published><updated>2021-09-10T18:00:00+09:00</updated><id>https://heejung-gjt.github.io/algorithm10</id><content type="html" xml:base="https://heejung-gjt.github.io/algorithm10">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;11722-가장-긴-감소하는-부분-수열&quot;&gt;11722 가장 긴 감소하는 부분 수열&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/132938885-86509141-0347-4928-9c52-d840931494a9.png&quot; alt=&quot;11722 가장 갑소하는 부분수열&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;로직-구현-순서&quot;&gt;로직 구현 순서&lt;/h3&gt;
+
+&lt;p&gt;11055번과 거의 똑같다. 11055번은 값이 증가하는지에 대한 조건을 걸었다면 이 문제는 값이 감소하는지 비교한 후 그 중 max의 값을 찾아 업데이트 해주면 된다. arr[i]이 이전값인 arr[j]보다 작으면 아래의 로직이 실행된다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="algorithm" /><summary type="html"></summary></entry><entry><title type="html">(프로그래머스 with python) 11055 가장 큰 증가 부분 수열</title><link href="https://heejung-gjt.github.io/algorithm9" rel="alternate" type="text/html" title="(프로그래머스 with python) 11055 가장 큰 증가 부분 수열" /><published>2021-09-10T17:00:00+09:00</published><updated>2021-09-10T17:00:00+09:00</updated><id>https://heejung-gjt.github.io/algorithm9</id><content type="html" xml:base="https://heejung-gjt.github.io/algorithm9">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;11055-가장-큰-증가-부분-수열&quot;&gt;11055 가장 큰 증가 부분 수열&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/132938694-c8c766b4-b1fb-4fc9-918f-9d5237726ad9.png&quot; alt=&quot;가장큰증가부분수열&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dp_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;로직-구현-순서&quot;&gt;로직 구현 순서&lt;/h3&gt;
+
+&lt;p&gt;11053번과 굉장히 유사하다.
+다른점은 이 문제에서는 증가하는 수의 개수를 카운트하는것이 아니고 증가하는 수를 누적해서 더한값을 구하라는 문제이다.&lt;/p&gt;
+
+&lt;p&gt;그렇기 위해서는 수의 값들을 누적해서 구하면된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;dp를 초기화 할때 1이 아닌 입력받은 수들로 초기화 해준다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1, 2의 수를 가지고 있는 경우&lt;/strong&gt; dp[1] = 2의 값과 dp[0] = 1의 값을 비교한 후 dp[1]의 값이 더 큰 경우 증가하고 있기 때문에 dp[1] = 2 와 dp[0] = 1 + 2를 더한 값 중 max값을 찾아 dp[1]의 값을 업데이트 시켜주면 된다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="algorithm" /><summary type="html"></summary></entry><entry><title type="html">(프로그래머스 with python) 11053 가장 긴 증가하는 부분 수열</title><link href="https://heejung-gjt.github.io/algorithm8" rel="alternate" type="text/html" title="(프로그래머스 with python) 11053 가장 긴 증가하는 부분 수열" /><published>2021-09-10T16:00:00+09:00</published><updated>2021-09-10T16:00:00+09:00</updated><id>https://heejung-gjt.github.io/algorithm8</id><content type="html" xml:base="https://heejung-gjt.github.io/algorithm8">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;11053-가장-긴-증가하는-부분-수열&quot;&gt;11053 가장 긴 증가하는 부분 수열&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/132938185-3e8336a4-cb15-4d08-988c-e6de02afaadd.png&quot; alt=&quot;가장긴증가하는부분수열&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;n_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;로직-구현-순서&quot;&gt;로직 구현 순서&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;1.입력값 받는 로직부분도 생각을 해야한다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;dp의 리스트를 1로 초기화 한 이유는 증가하는 수열의 값을 누적해서 더해주어야 하는데 만약 0으로 초기화 되면 1,2 의 경우 1이 가지고 있는 dp의 값은 0 이기 때문에 2까지 증가하는 수열의 최댓값은 1이된다. 1로 초기화 한 경우 1의 dp값이 1이기 때문에 수열의 최댓값이 2가 될 수 있다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.그 다음값과의 관계를 살펴야 한다.&lt;/strong&gt; &lt;br /&gt;
+다음값이 더 크면 증가하는 값이기 때문에 +1을 해주어야 하기 때문이다. 현재값과 다음값을 비교하기 위해 이중 for문을 사용한다. 현재수와 다음수의 크기를 비교하기 위해 입력한 수가 들어가 있는 n_list의 현재값과 다음값을 비교한다. 이때 j의 범위를 i로 두게 되면 i=2일경우 인덱스 i=0, i=1에 존재하는 수와 비교가 된다. 이때 i=0의 수는 없는것과 마찬가지므로 전의 값과 비교할 수 있게 된다.&lt;/p&gt;
+
+&lt;p&gt;이후 현재 dp[i] = 1 의 값과 dp[j] + 1(이전값에서 +1을 해주어야한다. 조건에서 이미 증가가 된것을 알기 때문에 누적시켜주어야 한다.) 을 더한 값 중에 max값을 구해주면 된다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;(음,, 사실 max를 붙여주어야 하는지는 100% 이해하지는 못했다.. dp[j] + 1 이 무조건 클 줄 알았는데 아니다… 아시는 분…?)&lt;/p&gt;</content><author><name>jung</name></author><category term="algorithm" /><summary type="html"></summary></entry><entry><title type="html">(프로그래머스 with python) 2156 포도주 시식</title><link href="https://heejung-gjt.github.io/algorithm7" rel="alternate" type="text/html" title="(프로그래머스 with python) 2156 포도주 시식" /><published>2021-09-10T15:00:00+09:00</published><updated>2021-09-10T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/algorithm7</id><content type="html" xml:base="https://heejung-gjt.github.io/algorithm7">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2156-포도주-시식&quot;&gt;2156 포도주 시식&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/132937498-0c675878-6bd9-4e03-93c7-1a14b9f02091.png&quot; alt=&quot;포도주&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
+    
+&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;로직-구현-순서&quot;&gt;로직 구현 순서&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;입력값 받는 로직부분도 생각을 해야한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;여기서는 wine의 양이 들어가는 list(wine)와 해당 인덱스에 누적된 와인의 최댓값이 들어가는 list(dp) 2가지가 필요하다. 이 말은 즉슨 와인이 1개일때 dp[1]에는 wine 1개 양의 최댓값이 들어가야 한다.  &lt;br /&gt;
+여기서 wine리스트에 0을 미리 넣고 dp의 리스트를 0으로 초기화할때 n+1을 한 이유는 인덱스는 0부터 시작이기 때문에 리스트 1부터 실제 와인의 양이 들어가게 하기위해 0인덱스 부분을 미리 처리한 것이다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;와인의 개수가 1개일때부터 n개일때까지 하나씩 생각해본다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;와인이 한개일때는 최댓값도 와인 한개의 양 값일테니 dp[1]= wine[1]이 들어가면 된다. 2일때도 와인 2개를 모두 더한 값이 최댓값일 테니 wine[1] + wine[2]로 따로 처리해주면 된다. 3개부터는 경우의 수를 생각해야한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;와인이 3개일 경우 가장 마지막 와인인 wine[3]와인을 선택했을 경우, 선택하지 않았을 경우로 나누어진다&lt;/li&gt;
+  &lt;li&gt;와인 wine[3]을 선택했을 경우 두번째 와인을 선택한 경우와 두번째 와인을 선택하지 않았을 경우로 나누어진다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;위의 경우의 수를 코드로 옮겨적는다고 생각하면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;3번째 와인 선택하지 않았을 경우&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이럴 경우에는 2번째 와인까지 구했던 누적된 최댓값을 구하면 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;3번째 와인 선택하고 2번째 와인도 선택한 경우&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;연속으로 3개 이상 마시지 못하기 때문에 wine[3] + wine[2] 를 더하고 와인 전전값에 나왔던 최댓값을 더해준다 . wine[1]은 먹을 수 없기때문이다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;3번째 와인 선택하고 2번째 와인은 선택하지 않은 경우&lt;/code&gt;     &lt;br /&gt;
+3번째 와인을 마시고 2번째 와인을 마시지 않았기 때문에 1번째 와인까지의 최댓값을 더해주면 된다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="algorithm" /><summary type="html"></summary></entry><entry><title type="html">0909 TIL</title><link href="https://heejung-gjt.github.io/til42" rel="alternate" type="text/html" title="0909 TIL" /><published>2021-09-09T20:58:00+09:00</published><updated>2021-09-09T20:58:00+09:00</updated><id>https://heejung-gjt.github.io/til42</id><content type="html" xml:base="https://heejung-gjt.github.io/til42">&lt;h2 id=&quot;210909-계획&quot;&gt;210909 계획&lt;/h2&gt;
 
 &lt;h4 id=&quot;am-850-&quot;&gt;AM 8:50 ~&lt;/h4&gt;
 
@@ -56,7 +233,141 @@
   &lt;li&gt;&lt;del&gt;장고 프로젝트 소셜 로그인, 회원가입시 지역 입력받기(카카오 API사용하기)&lt;/del&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">0903 TIL</title><link href="https://heejung-gjt.github.io/til39" rel="alternate" type="text/html" title="0903 TIL" /><published>2021-09-03T20:58:00+09:00</published><updated>2021-09-03T20:58:00+09:00</updated><id>https://heejung-gjt.github.io/til39</id><content type="html" xml:base="https://heejung-gjt.github.io/til39">&lt;h2 id=&quot;210903-계획&quot;&gt;210903 계획&lt;/h2&gt;
+&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">Cookie, Session, Cache</title><link href="https://heejung-gjt.github.io/cookie" rel="alternate" type="text/html" title="Cookie, Session, Cache" /><published>2021-09-06T14:30:00+09:00</published><updated>2021-09-06T14:30:00+09:00</updated><id>https://heejung-gjt.github.io/cookie</id><content type="html" xml:base="https://heejung-gjt.github.io/cookie">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Network 정리 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;쿠키&quot;&gt;쿠키&lt;/h2&gt;
+&lt;p&gt;웹 사이트에 접속시 정보가 접속자 즉, 클라이언트의 로컬에 저장되는 작은 텍스트 파일이다&lt;/p&gt;
+
+&lt;p&gt;ex) 쇼핑몰 사이트에 로그인 하지 않고 장바구니에 상품을 등록해놓은 후 나갔다가 다시 들어와도 상품이 여전히 등록될 수 있게 하는 역할을 해준다&lt;/p&gt;
+
+&lt;h3 id=&quot;쿠키-동작-순서&quot;&gt;쿠키 동작 순서&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;클라이언트가 페이지를 요청한다&lt;/li&gt;
+  &lt;li&gt;웹 서버가 요청을 받은 후 쿠키를 생성한다&lt;/li&gt;
+  &lt;li&gt;생성한 쿠키에 정보를 담아서 클라이언트에게 응답할때 함께 보낸다&lt;/li&gt;
+  &lt;li&gt;쿠키를 받은 클라이언트가 다시 서버에 요청할때 함께 전송한다&lt;/li&gt;
+  &lt;li&gt;웹 서버는 업데이트할 정보가 있으면 쿠키를 업데이트하여 다시 응답과 함께 전송한다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;클라이언트가 브라우저에 자신의 정보를 담고 있기 때문에 데이터를 요청할때 쿠키를 생성하고 브라우저를 종료할때 쿠키를 삭제한다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(이때 쿠키는 최대 400개의 쿠키를 저장할 수 있고 몇몇개의 제약 조건이 존재한다)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;세션&quot;&gt;세션&lt;/h2&gt;
+&lt;p&gt;쿠키를 기반으로 하고 있지만 사용자의 정보를 브라우저에 저장하는 쿠키와는 달리 세션은 서버측에서 관리하고 있다. 일정시간동안 같은 사용자로부터 들어오는 요구를 하나의 상태로 보고 그 상태를 일정하게 유지시켜주는 기술이다.&lt;/p&gt;
+
+&lt;h4 id=&quot;세션-동작-순서&quot;&gt;세션 동작 순서&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;클라이언트가 서버로 접속을 시도한다&lt;/li&gt;
+  &lt;li&gt;서버는 접근한 클라이언트의 쿠키를 확인하여 클라이언트가 해당 세션 id를 보냈는지 확인한다&lt;/li&gt;
+  &lt;li&gt;세션 id가 존재하지 않으면 서버는 세션id를 생성해 클라이언트에게 돌려준다&lt;/li&gt;
+  &lt;li&gt;서버에서 클라이언트로 돌려준 세션id를 쿠키를 사용해 서버에 저장한다&lt;/li&gt;
+  &lt;li&gt;클라이언트는 재접속시 해당 쿠키를 서버에 보내 세션 id를 서버에 전달한다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;쿠키-vs-세션&quot;&gt;쿠키 vs 세션&lt;/h2&gt;
+
+&lt;p&gt;쿠키와 세션은 보안과 저장위치, 라이프 사이클의 차이가 있다. 쿠키는 브라우저에 저장되어 있기 때문에 서버에 접근할 필요가 없어 응답 속도가 빠른 반면에 데이터가 변질되거나 스니핑 당할 위험이 있어 보안에 취약하다. 세션은 서버에 저장되어 있기 때문에 서버의 접근이 필요하다. 그렇기에 쿠키에 비해 응답 속도가 느린 편이다. 하지만 서버에서 처리하기 때문에 비교적 보안성이 좋다.&lt;/p&gt;
+
+&lt;p&gt;쿠키와 세션 둘 다 만료시간을 정할 수 있다. 세션의 경우에는 만료시간에 상관없이 브라우저가 종료되면 정보가 삭제가 된다. 쿠키의 경우 브라우저를 종료해도 만료시간이 남아 있는 경우 정보가 삭제되지 않는다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;캐시&quot;&gt;캐시&lt;/h2&gt;
+&lt;p&gt;필요해 하는 데이터를 로컬등에 미리 저장해두어 보다 빠르게 데이터를 받아볼 수 있게 해주는 역할을 한다. (페이지 로딩 속도 개선)  &lt;br /&gt;
+캐시를 이용해 cdn같은 서비스도 할 수 있다. cdn은 컨텐츠 즉, 데이터를 배달, 딜리버리해주는 서버이다. 다른 지역에서 데이터를 요청하는 경우 지역 중간의 서버에 미리 올려놓은 데이터에 접근하게 해주어 보다 빠르게 응답을 해줄 수 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;단점      &lt;br /&gt;
+ 캐시로 인해 저장된 데이터 공간은 영구적인 메모리 공간이 아니기 때문에 데이터가 지워질 수 있다는 것을 유념해야한다. 캐시에 저장되어 있던 파일들이 업데이트가 된 경우 바로바로 업데이트 된 파일을 가져올 수 없을 수 있다는 단점이 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ex) 종종 변경되어야 하는 데이터가 업데이트 되지 않을때가 있다면 캐시가 이유일 수 있다. (캐시는 서버의 캐시클라우드라는 저장공간에 사용자의 의지와 상관없이 자동 저장되기 때문이다) 웹개발시 css가 업데이트 되지 않는 원인 중 하나가 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;session-based-auth-vs-token-based-authjwt&quot;&gt;Session based auth vs Token based auth(JWT)&lt;/h2&gt;
+&lt;p&gt;대표적으로 로그인을 할때 로그인이 유지되는 방식은 위의 2가지가 존재한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;session based auth 동작 방식&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;클라이언트가 서버에게 id, pwd를 post요청으로 보낸다&lt;/li&gt;
+    &lt;li&gt;서버에서 받은 id,pwd가 db와 일치하게 되면 클라이언트에게 알맞은 응답을 보낸다&lt;/li&gt;
+    &lt;li&gt;로그인에 성공하게 되면 서버에서 세션을 생성한다(세션id, 유저id, timeout등의 정보가 담긴다)&lt;/li&gt;
+    &lt;li&gt;클라이언트에게 쿠키안에 세션id를 담아서 보낸다&lt;/li&gt;
+    &lt;li&gt;이후 클라이언트가 요청을 보낼때 쿠키를 함께 보낸다&lt;/li&gt;
+    &lt;li&gt;세션id가 서버안에 존재하면 로그인이 되어졌을때의 페이지를 보여준다&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;session방식의-한계&quot;&gt;session방식의 한계&lt;/h4&gt;
+&lt;p&gt;해당 작업은 I/O가 상당히 높은 작업이 된다. 서버 내부에 세션을 RAM이라는 공간에 DB형식으로 저장해 놓는데 이렇게 저장이 되는 경우
+사용자가 많아지면 하나의 서버로 해결하기에는 한계가 있다&lt;/p&gt;
+
+&lt;p&gt;세션 전용 DB를 만들어 해당 DB에 세션ID를 저장해두어 사용할 수 있지만 (로드밸런싱의 단점 보완) 모든 트래픽이 DB에 몰리는 문제가 발생한다&lt;/p&gt;
+
+&lt;p&gt;DB를 분배형식으로 나누어 해결할 수 있다&lt;/p&gt;
+
+&lt;p&gt;JWT 토큰 방식을 사용하여 효율적으로 해결 할 수 도 있다&lt;/p&gt;
+
+&lt;h4 id=&quot;token-based-auth-동작-방식&quot;&gt;token based auth 동작 방식&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;클라이언트가 id와 pwd를 서버에 보내고 서버는 해당 값을 받아 인증 한 후 토큰을 발급한다&lt;/li&gt;
+  &lt;li&gt;이후 클라이언트는 요청을 할때 해당 토큰을 가지고 데이터를 요청한다&lt;/li&gt;
+  &lt;li&gt;서버에서는 해당 토큰이 맞다고 확인되면 그에 맞는 권한을 클라이언트에게 준다 (세션과는 달리 서버에서 내부적으로 세션을 관리하지 않는다)&lt;/li&gt;
+  &lt;li&gt;서버에서 토큰이 올바른지만 확인하여 권한을 할당해준다 (오로지 요청안에 들어있는 토큰만을 보고 권한을 준다)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;대표적으로 JWT 토큰이 사용된다. 
+(jwt의 포맷은 header(어떤 알고리즘으로 암호화 할것인지) - payload(data등을 넣어준다, Ex) 언제 토큰이 끝나는지 원하는 정보를 넣을 수 있다,  네트워크에 정보가 올라가기 때문에 최소한의 정보를 넣는게 좋다) - signiture(이부분만 암호화 된다.))&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Q1. 다수의 서버를 이용한다는 것은 무엇을 의미하는가&lt;/p&gt;
+
+&lt;p&gt;Q2. 쿠키 헤더에 존재하는 도메인과 경로는 무엇을 말하는가
+A2. HTTP 프로토콜의 쿠키헤더에는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Set-Cookie: name=value [; expires=date] [; path=path] [; domain=domain] [; secure]&lt;/code&gt;리소스들이 존재한다&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;expires : 쿠키의 만료일 문자열이다. 쿠키의 유효한 날자가 날짜 형식으로 써져있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;domain : 쿠키가 적용되야하는 호스트를 지정한다. 지정하지 않으면 현재 URI를 기준으로 적용된다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;호스트란 ?  &lt;br /&gt;
+네트워크에 연결되어 있는 컴퓨터들&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;호스트 설정이란 ?  &lt;br /&gt;
+도메인을 호스트의 ip에 연결하는 행위이다
+```&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;path : 쿠키 헤더를 서버에서 보내기 전에 요청된 리소스에 있어야하는 url경로를 나타낸다. 즉 path에 지정된 값과 일치하는 url요청에 대해 쿠키를 전송하도록 만드는 옵션이다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;secure : 보안 쿠키를 적용하는 옵션으로 서버에서 요청은 ssl을 사용하며 https를 상용할때만 전송할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>jung</name></author><category term="network" /><summary type="html"></summary></entry><entry><title type="html">0903 TIL</title><link href="https://heejung-gjt.github.io/til39" rel="alternate" type="text/html" title="0903 TIL" /><published>2021-09-03T20:58:00+09:00</published><updated>2021-09-03T20:58:00+09:00</updated><id>https://heejung-gjt.github.io/til39</id><content type="html" xml:base="https://heejung-gjt.github.io/til39">&lt;h2 id=&quot;210903-계획&quot;&gt;210903 계획&lt;/h2&gt;
 
 &lt;h4 id=&quot;am-830-&quot;&gt;AM 8:30 ~&lt;/h4&gt;
 
@@ -147,383 +458,4 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;해당 함수들을 사용후 print(combinations(items,2)) 와 같이 출력하면 객체가 출력되기 때문에 알맞게 데이터를 가공해서 사용하면 된다 !&lt;/p&gt;</content><author><name>jung</name></author><category term="python" /><summary type="html"></summary></entry><entry><title type="html">(프로그래머스 with python) 볼링공 고르기</title><link href="https://heejung-gjt.github.io/algorithm6" rel="alternate" type="text/html" title="(프로그래머스 with python) 볼링공 고르기" /><published>2021-09-03T15:00:00+09:00</published><updated>2021-09-03T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/algorithm6</id><content type="html" xml:base="https://heejung-gjt.github.io/algorithm6">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;볼링공-고르기&quot;&gt;볼링공 고르기&lt;/h2&gt;
-
-&lt;p&gt;“이것이 코딩 테스트다”책에 있는 “2019 SW 마에스트로 입학 테스트”에서 출제한 볼링공 고르기 문제를 풀면서 &lt;strong&gt;조합&lt;/strong&gt; 과 관련된 내용이 나왔다.  &lt;br /&gt;
-파이썬에는 순열과 조합에 관한 함수가 존재하는데  itertools에서 import 받아서 사용되는 &lt;strong&gt;permutations&lt;/strong&gt; , &lt;strong&gt;combinations&lt;/strong&gt; 이다. 처음 이 함수들을 사용하여 문제를 풀었다..&lt;/p&gt;
-
-&lt;p&gt;굉장히 비효율적인 코드이다.. 그리고 값이 커지면 제대로 된 답도 나오지 않았다.. 문제의 의도가 리스트의 처음값부터 마지막값까지 서로의 값들을 조합하여 값이 똑같은 경우를 제외한 값들만 출력을 하는거였다.&lt;/p&gt;
-
-&lt;p&gt;예를 들자면 1, 3, 1  의 무게를 가지는 공을 차례대로 조합을 하면 (1, 3), (1, 1), (3, 1)가 나오는데 이때 똑값은 값인 (1, 1)을 제외한 (1, 3), (3, 1) 을 출력해야 했다.. 주어진 값이 적을때는 효율성도 괜찮고 정확한 값이 출력되지만 조합이 되는 개수가 100개가 되고 1000개가 되면,,, 아예 돌아가지 않았고 심지어는 값도 정확하게 나오지 않았다… ^^&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 굉장히 비효율적인 코드 &lt;/span&gt;
-
-
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;itertools&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;combinations&lt;/span&gt; 
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;start_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;num_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;item_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;combinations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item_list&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;end_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'프로그램 수행 시간 : {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;순열과 조합에 대해 찾아보니 &lt;strong&gt;itertools에서 제공되는 이 함수들은 코테를 볼 때 거의 사용하지 않는다고 한다.&lt;/strong&gt; 개수가 약간 많아져도 시간복잡도가 상당하기 때문에 이 함수를 사용하는 것은 매우 비효율적일뿐 아니라 0점을 맞을 확률이 99.9%였다..&lt;/p&gt;
-
-&lt;p&gt;그렇다면 이런 조합(or순열)에 관한 문제들은 어떻게 풀어야 하는가.. 수학적 공식을 알고 있으면 좀 더 간단하고 빠르게 풀 수 있었다. 조합은 &lt;strong&gt;nCr&lt;/strong&gt; 이며 이는 &lt;strong&gt;n * (n - 1) / 2&lt;/strong&gt; 의 공식과 같다. 이 수학적 공식을 이용해보자. 아이디어는&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;두 사람이 볼링공 무게와 상관 없이 모든 볼링공을 고르는 경우의 수를 구한다&lt;/strong&gt;       &lt;br /&gt;
-&lt;strong&gt;두 사람이 고르는 볼링공의 무게가 같은 경우의 수를 구한다. (nCr의 공식을 가지고 구현한다)&lt;/strong&gt;       &lt;br /&gt;
-&lt;strong&gt;전체의 경우의 수에서 2의 경우의 수를 빼준 후 값을 출력한다&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;문제-풀이&quot;&gt;문제 풀이&lt;/h3&gt;
-&lt;h4 id=&quot;1공의-개수-n과-무게의-범위-m-공의-무게가-나열되어-있는-리스트-weight_list을-구현한다&quot;&gt;1.공의 개수 n과 무게의 범위 m, 공의 무게가 나열되어 있는 리스트 weight_list을 구현한다&lt;/h4&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;weight_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;2ncr의-공식을-변수에-선언한다&quot;&gt;2.nCr의 공식을 변수에 선언한다&lt;/h4&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;3같은-무게의-공을-고르는-경우의-수를-고른다&quot;&gt;3.같은 무게의 공을 고르는 경우의 수를 고른다.&lt;/h4&gt;
-
-&lt;p&gt;우선 무게의 범위를 기준으로 반복을 돌리면서 가장 무게가 적게 나가는 값부터 비교를 시작한다. 예를 들어 i = 2로 2의 무게를 가지는 공의 개수를 count(m)를 이용해 구해준다. 만약 똑같은 무게를 가지는 공이 2개가 존재한다면 same_ball_sum에는 2가 들어갈 것이다. 그렇다면 이후 if문의 조건에 걸리게 되고 조합의 공식을 이용하여 &lt;strong&gt;5 * (5 - 1) / 2 - 2 * (2 - 1) / 2&lt;/strong&gt; 을 계산하면 된다. 10 -1 = 9가 된다. 이후 for문을 돌면서 똑같은 처리를 해주면 same_weight에는 두 사람이 같은 무게의 공을 고를 경우의 수의 합계가 들어간다.&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;same_weight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;same_ball_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;weight_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;same_ball_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;same_weight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;same_ball_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;same_ball_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;same_weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;위의 코드는 블로그를 찾아보다 괜찮은 방법인 것 같아서 공부했었다. 책에는 아래의 코드와 같이 작성되었다. 음,, 사실 아래의 코드보다는 위의 코드가 더 이해가 잘 가는 것 같다.. 아래에서는 공의 최대 무게를 이용해 미리 리스트에 공간을 할당해주었다(공의 최대 무게 10) 이후 공의 무게가 나열되어 있는 리스트의 반복을 돌면서 각 요소값에 1씩 더해준 후 array를 업데이트 시켜주었다 (array에는 실제 공의 무게가 존재하는 요소에만 1이 더해진다) 이후에 무게를 기준으로 반복을 돌면서 무게가 i인 볼링공의 개수를 n에서 제외시켰다(A가 선택할 수 있는 개수라고 한다….) 이후 B가 선택하는 경우의 수와 곱해준후 값을 result에 담아주고 출력한다&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    
-&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="algorithm" /><summary type="html"></summary></entry><entry><title type="html">0902 TIL</title><link href="https://heejung-gjt.github.io/til38" rel="alternate" type="text/html" title="0902 TIL" /><published>2021-09-02T20:58:00+09:00</published><updated>2021-09-02T20:58:00+09:00</updated><id>https://heejung-gjt.github.io/til38</id><content type="html" xml:base="https://heejung-gjt.github.io/til38">&lt;h2 id=&quot;210902-계획&quot;&gt;210902 계획&lt;/h2&gt;
-
-&lt;h4 id=&quot;am-830-&quot;&gt;AM 8:30 ~&lt;/h4&gt;
-
-&lt;p&gt;오늘 알고리즘 스터디를 진행후 발표했던 내용들은 블로그에 정리 할 예정이다&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;알고리즘 스터디&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;네트워크 http, https 공부하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;python 파이콘 강의 듣고 정리하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;인프런 강의 듣기(스코프 관련 내용)&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;mutable, immutable, copy내용 정리하기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;oauth내용 정리하기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">(Python) 얇은 복사와 깊은 복사</title><link href="https://heejung-gjt.github.io/python10" rel="alternate" type="text/html" title="(Python) 얇은 복사와 깊은 복사" /><published>2021-09-02T17:20:00+09:00</published><updated>2021-09-02T17:20:00+09:00</updated><id>https://heejung-gjt.github.io/python10</id><content type="html" xml:base="https://heejung-gjt.github.io/python10">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 목록 순서 &lt;/span&gt;--&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./python-DataStructure&quot;&gt;Python 강좌(1) - 자료구조&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content01 content&quot;&gt;1. 리스트&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content02 content&quot;&gt;2. 튜플&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content03 content&quot;&gt;3. 딕셔너리&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content04 content&quot;&gt;4. 문자열 리스트로 변환 후 딕셔너리 변환&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Function&quot;&gt;Python 강좌(2) - 함수&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-INOutput&quot;&gt;Python 강좌(3) - 입출력&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Class&quot;&gt;Python 강좌(4) - 클래스&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Exception&quot;&gt;Python 강좌(5) - 예외처리&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;!--&lt;script&gt;--&gt;
-&lt;!--    const content = document.querySelector('.content')--&gt;
-&lt;!--    const lists01 = document.querySelector('.content01');--&gt;
-&lt;!--    const lists02 = document.querySelector('.content02');--&gt;
-&lt;!--    const lists03 = document.querySelector('.content03');--&gt;
-&lt;!--    const lists04 = document.querySelector('.content04');--&gt;
-&lt;!--    lists01.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,850);--&gt;
-&lt;!--    });--&gt;
-&lt;!--    lists02.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,3500);--&gt;
-&lt;!--    });--&gt;
-&lt;!--    lists03.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,4700);--&gt;
-&lt;!--    });--&gt;
-&lt;!--    lists04.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,8300);--&gt;
-&lt;!--    });--&gt;
-
-&lt;!--&lt;/script&gt;--&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;아래의 코드처럼 값을 대입하는 방식으로 값을 복사하게 되면 주소값도 똑같이 복사가 되게 된다. a_list와 b_list 모두 메모리가
-동일하기 때문에 둘 중 어떠한 값을 변경해도 둘 다 값이 변경되게 된다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;b_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a_list&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex1 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex1 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;b_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex1 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex1 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;b_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# list는 참조형이기 때문에  a와 b가 가리키고 있는 메모리가 같다. &lt;/span&gt;
-                   &lt;span class=&quot;c&quot;&gt;#그렇기 때문에 둘 중 하나가 변경되면 둘 다 변경된다&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex1 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex1 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-ex1 -&amp;gt; 139932265833544
-ex1 -&amp;gt; 139932265833544
-ex1 -&amp;gt; 139932265833544
-ex1 -&amp;gt; 139932265833544
-ex1 -&amp;gt; 139932265833544
-ex1 -&amp;gt; 139932265833544
-&quot;&quot;&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;얇은-복사&quot;&gt;얇은 복사&lt;/h2&gt;
-
-&lt;p&gt;데이터를 얇은 복사를 하는 경우 주소값이 달라진다. 
-즉 원본값의 주소값과 복사본의 주소값이 달라진다는 것이다. 하지만 여기서 주의해야 할 점이 있다. 리스트의 경우를 살펴보자. copy를 통해서 list를 복사한 후 각각의 id값을 보면 서로 다른 메모리를 가리키고 있는 것을 알 수 있다.&lt;/p&gt;
-
-&lt;p&gt;실제로 &lt;code class=&quot;highlighter-rouge&quot;&gt;d_list_[1] = 100&lt;/code&gt;으로 값을 변경시키면 d_list의 값만 변경되는 것을 볼 수 있다. 하지만 이후에 &lt;code class=&quot;highlighter-rouge&quot;&gt;d[3]과 d[4][1]&lt;/code&gt;의 값을 변경하면 d_list와 c_list모두 변경되는것을 볼 수 있다. 왜그런가 하니 리스트의 경우 &lt;strong&gt;리스트 안에 존재하는 또다른 리스트들의 주소값은 동일하기 때문이다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;즉, [[4,5,6],[7,8,9]] 4,5,6과 7,8,9의 원소값을 가지고 있는 리스트들의 주소값이 동일하다는 소리이다. 그렇기 때문에 저곳에 해당하는 값이 변경되면 두개의 리스트 값이 전부 바뀌게 된다. 이렇듯 가변형인 자료형에 대해서는 주의해야 한다. !&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;copy&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;c_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;d_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex2 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex2 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;d_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 가리키고 있는 메모리가 다르기 때문에 d의 원소값만 변경된다&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex2 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex2 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;d_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;d_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex2 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex2 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-ex2 -&amp;gt; 139932265833864
-ex2 -&amp;gt; 139932386600328
-ex2 -&amp;gt; [1, 2, 3, [4, 5, 6], [7, 8, 9]]
-ex2 -&amp;gt; [1, 100, 3, [4, 5, 6], [7, 8, 9]]
-ex2 -&amp;gt; [1, 2, 3, [4, 5, 6, 100000], [7, 10000, 9]]
-ex2 -&amp;gt; [1, 100, 3, [4, 5, 6, 100000], [7, 10000, 9]]
-&quot;&quot;&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;깊은-복사&quot;&gt;깊은 복사&lt;/h2&gt;
-&lt;p&gt;데이터를 깊은 복사하는 경우 주소값이 전부 완전히 달라진다. 즉 리스트 안에 리스트가 존재하더라도 모든 리스트들의 주소값이 변경되는 것이다. 아래의 코드를 살펴보자. e_list에 대해 깊은복사를 진행하였다. 이때 f_list와 e_list에는 동일한 주소값 없이 전부 다른 주소값을 할당해준다. 그렇기 때문에 서로의 변화에 영향이 없다&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;copy&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;e_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;f_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deepcopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex3 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex3 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;f_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;f_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex3 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ex3 -&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-ex3 -&amp;gt; 139932265833864
-ex3 -&amp;gt; 139932386600328
-ex3 -&amp;gt; [1, 2, 3, [4, 5, 6], [7, 8, 9]]
-ex3 -&amp;gt; [1, 2, 3, [4, 5, 6, 100000], [7, 1000, 9]]
-&quot;&quot;&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="python" /><summary type="html"></summary></entry><entry><title type="html">(Python) class, instance에서의 mutable과 immutable의 관계</title><link href="https://heejung-gjt.github.io/python9" rel="alternate" type="text/html" title="(Python) class, instance에서의 mutable과 immutable의 관계" /><published>2021-09-02T15:20:00+09:00</published><updated>2021-09-02T15:20:00+09:00</updated><id>https://heejung-gjt.github.io/python9</id><content type="html" xml:base="https://heejung-gjt.github.io/python9">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 목록 순서 &lt;/span&gt;--&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./python-DataStructure&quot;&gt;Python 강좌(1) - 자료구조&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content01 content&quot;&gt;1. 리스트&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content02 content&quot;&gt;2. 튜플&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content03 content&quot;&gt;3. 딕셔너리&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content04 content&quot;&gt;4. 문자열 리스트로 변환 후 딕셔너리 변환&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Function&quot;&gt;Python 강좌(2) - 함수&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-INOutput&quot;&gt;Python 강좌(3) - 입출력&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Class&quot;&gt;Python 강좌(4) - 클래스&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Exception&quot;&gt;Python 강좌(5) - 예외처리&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;!--&lt;script&gt;--&gt;
-&lt;!--    const content = document.querySelector('.content')--&gt;
-&lt;!--    const lists01 = document.querySelector('.content01');--&gt;
-&lt;!--    const lists02 = document.querySelector('.content02');--&gt;
-&lt;!--    const lists03 = document.querySelector('.content03');--&gt;
-&lt;!--    const lists04 = document.querySelector('.content04');--&gt;
-&lt;!--    lists01.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,850);--&gt;
-&lt;!--    });--&gt;
-&lt;!--    lists02.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,3500);--&gt;
-&lt;!--    });--&gt;
-&lt;!--    lists03.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,4700);--&gt;
-&lt;!--    });--&gt;
-&lt;!--    lists04.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,8300);--&gt;
-&lt;!--    });--&gt;
-
-&lt;!--&lt;/script&gt;--&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;파이콘의 &lt;a href=&quot;https://www.youtube.com/watch?v=su9LkSogAMc&quot;&gt;https://www.youtube.com/watch?v=su9LkSogAMc&lt;/a&gt; 강의를 듣고 정리한 내용입니다&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;hobby_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 클래스 변수 선언&lt;/span&gt;
-  
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 인스턴스 변수 선언 및 초기화&lt;/span&gt;
-    
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add_hobby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hobby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hobby_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hobby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 클래스 변수 값 변경&lt;/span&gt;
- 
- 
-&lt;span class=&quot;n&quot;&gt;std1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Kim'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;std1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_hobby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'dance'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;std1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_hobby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'swim'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hobby_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Kim ['dance', 'swim']&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;std2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Son'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hooby_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Son ['dance', 'swim']&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Q. kim과 son의 hobby에 대한 list가 똑같이 나오는 이유는 무엇일까?&lt;/p&gt;
-
-&lt;p&gt;이유는 hobby_list는 변경가능한 mutable한 자료형이기 때문에 append로 데이터를 추가할 수 있으며 추가된 데이터는 클래스 변수로 선언이 되었기 때문에 나중에 선언된 객체인 std2에도 해당 값이 존재한다. 즉 std1과 std2의 hobby_list는 같은 객체를 가리키고 있는 것이다. 위와 같은 상황이 일어나지 않게 하기 위해서는 공유가 되는 클래스 변수가 아닌 &lt;strong&gt;인스턴스 변수&lt;/strong&gt; 로 넣어주어야 한다&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;클래스-변수와-데이터-타입&quot;&gt;클래스 변수와 데이터 타입&lt;/h3&gt;
-&lt;p&gt;Q. 클래스 변수에 변할 수 없는 데이터 타입을 쓰는 경우에도 새로 변경한 값을 다른 객체가 공유할 수 있는가 ?&lt;/p&gt;
-
-&lt;p&gt;답은 공유할 수 없다 이다. 변할 수 없는 데이터 타입(immutable)의 값을 변경하게 되면 새로운 객체가 생성된다. 이 객체는 해당 변수를 가지고 있는 객체 내에서만 접근이 된다. 예를 들어 &lt;code class=&quot;highlighter-rouge&quot;&gt;new_string = std_string + 'abc'&lt;/code&gt; 다음과 같은 객체는 new_string에 할당되어지고 이 값은 new_string으로만 접근 할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;즉 클래스 변수는 인스턴스화를 하는 시점에 같은 값을 내려받을때 사용한다고 보면된다. 맨 처음 클래스에 대한 인스턴스 a1과 a2가 생성된다면 이 두개의 객체는 동일한 클래스 변수를 내려받게 된다.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;BookReader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;country&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'South Korea'&lt;/span&gt;
-  
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
-    
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;read_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'is reading in'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;country&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    
-    
-&lt;span class=&quot;n&quot;&gt;son&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BookReader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'son'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;hee&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BookReader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hee'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;son&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# son is reading in South Korea # son과 hee는 똑같은 클래스 변수를 내려받는다&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;hee&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# hee is reading in South Korea&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;son&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;country&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'U.S.A'&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# hee는 country가 바뀌지 않는다 # son의 새로운 country의 객체가 생성된다. 이제 U.S.A는 son.country로 밖에 접근할 수 없다&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;son&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# son is reading in U.S.A # son의 country에 대한 객체가 변경되었기 때문에 다음과 같은 값이 나온다   &lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;hee&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# hee is reading in South Korea&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위의 상황을 다시한번 정리하자면 son은 country를 새롭게 정의를 해주었기 때문에 immutable한 값이 변경되어 객체가 교체되었다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;올바른-클래스-변수-접근-방법&quot;&gt;올바른 클래스 변수 접근 방법&lt;/h3&gt;
-
-&lt;p&gt;1.내부용 변수 이름은 언더스코어(_) 로 시작한다        &lt;br /&gt;
-2.상수는 대문자로 표기한다   &lt;br /&gt;
-3.클래스 변수 접근은 객체(self)가 아닌 클래스 이름으로 한다&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SKBookReader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;_COUNTRY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'South Korea'&lt;/span&gt;
-  
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
-    
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;read_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'is reading in'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SKBookReader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_COUNTRY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;jung&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SKBookReader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'jung'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jung&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# jung&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;jung&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# jung is reading in South Korea&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;jung&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_COUNTRY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'U.K'&lt;/span&gt; 
-&lt;span class=&quot;n&quot;&gt;jung&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# # jung is reading in South Korea&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;위의 코드와 같이 &lt;strong&gt;SKBookReader._COUNTRY&lt;/strong&gt; 로 즉 클래스 네임으로 변수에 접근을 해야만 다른 유저가 클래스 변수값을 바꾸려고 시도해도 바뀌지 않는다. 이를 주의하자 !!!!&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;기억해야-할-것들&quot;&gt;기억해야 할 것들&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;파이썬 변수에 대입되는 객체는 데이터 타입에 따라 변할 수 있거나 변할 수 없는 성질을 갖는다    &lt;br /&gt;
-위 성질에 따라 객체 변경시 서로 다르게 동작하니 주의하여 사용해야 한다     &lt;br /&gt;
-클래스/인스턴스 변수는 서로 다른 유효범위를 갖는다. mutable여부에 따라 예상치 못하게 값이 변경될 수 있다    &lt;br /&gt;
-어떤 변수를 써야 할 지 애매하다면 좁은변수(인스턴스)를 쓰는 것이 안전하다    &lt;br /&gt;
-변수를 내부용으로 정의하고 싶다면 변수 이름을 언더스코어(_)로 시작한다&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>jung</name></author><category term="python" /><summary type="html"></summary></entry><entry><title type="html">0901 TIL</title><link href="https://heejung-gjt.github.io/til37" rel="alternate" type="text/html" title="0901 TIL" /><published>2021-09-01T20:58:00+09:00</published><updated>2021-09-01T20:58:00+09:00</updated><id>https://heejung-gjt.github.io/til37</id><content type="html" xml:base="https://heejung-gjt.github.io/til37">&lt;h2 id=&quot;210901-계획&quot;&gt;210901 계획&lt;/h2&gt;
-
-&lt;h4 id=&quot;am-830-&quot;&gt;AM 8:30 ~&lt;/h4&gt;
-
-&lt;p&gt;어제 프로젝트에 대한 마무리를 끝냈고 2번째 프로젝트에 대한 소셜 로그인을 구현 할 예정이다&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;큐, signly linked list 구현&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;스택, 큐 doubly linked list 구현&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;네트워크 tcp, udp 관련 내용 정리&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;장고 oauth 공부 후 실습&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;oauth 블로그 정리&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;해당 함수들을 사용후 print(combinations(items,2)) 와 같이 출력하면 객체가 출력되기 때문에 알맞게 데이터를 가공해서 사용하면 된다 !&lt;/p&gt;</content><author><name>jung</name></author><category term="python" /><summary type="html"></summary></entry></feed>

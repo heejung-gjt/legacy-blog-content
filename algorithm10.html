@@ -45,28 +45,34 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="개발 공부하는 블로그" />
     <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://heejung-gjt.github.io/tag/network/" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/algorithm10" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Tag Page" />
-    <meta property="og:description" content="개발 공부하는 블로그" />
-    <meta property="og:url" content="https://heejung-gjt.github.io/tag/network/" />
-    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/bg01.png" />
+    <meta property="og:title" content="(프로그래머스 with python) 11722 가장 긴 감소하는 부분 수열" />
+    <meta property="og:description" content="11722 가장 긴 감소하는 부분 수열 n = int(input()) arr = list(map(int, input().split())) dp = [1] * n for i in range(1, n): for j in range(i): if arr[i] &lt; arr[j]: dp[i] = max(dp[i], dp[j] + 1) print(max(dp)) 로직 구현 순서 11055번과 거의 똑같다. 11055번은 값이 증가하는지에 대한 조건을 걸었다면" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/algorithm10" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/algorithm.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-09-10T18:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-09-10T18:00:00+09:00" />
+    <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Tag Page" />
-    <meta name="twitter:description" content="개발 공부하는 블로그" />
+    <meta name="twitter:title" content="(프로그래머스 with python) 11722 가장 긴 감소하는 부분 수열" />
+    <meta name="twitter:description" content="11722 가장 긴 감소하는 부분 수열 n = int(input()) arr = list(map(int, input().split())) dp = [1] * n for i in range(1, n): for j in range(i): if arr[i] &lt; arr[j]: dp[i] = max(dp[i], dp[j] + 1) print(max(dp)) 로직 구현 순서 11055번과 거의 똑같다. 11055번은 값이 증가하는지에 대한 조건을 걸었다면" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
-    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/bg01.png" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/algorithm.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Studying  Develop" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Algorithm" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
-    <meta property="og:image:width" content="2000" />
-    <meta property="og:image:height" content="666" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
 
     <script type="application/ld+json">
 {
@@ -77,18 +83,18 @@
         "name": "Studying  Develop",
         "logo": "https://heejung-gjt.github.io/"
     },
-    "url": "https://heejung-gjt.github.io/tag/network/",
+    "url": "https://heejung-gjt.github.io/algorithm10",
     "image": {
         "@type": "ImageObject",
-        "url": "https://heejung-gjt.github.io/assets/built/images/bg01.png",
+        "url": "https://heejung-gjt.github.io/assets/built/images/algorithm.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://heejung-gjt.github.io/tag/network/"
+        "@id": "https://heejung-gjt.github.io/algorithm10"
     },
-    "description": "개발 공부하는 블로그"
+    "description": "11722 가장 긴 감소하는 부분 수열 n = int(input()) arr = list(map(int, input().split())) dp = [1] * n for i in range(1, n): for j in range(i): if arr[i] &lt; arr[j]: dp[i] = max(dp[i], dp[j] + 1) print(max(dp)) 로직 구현 순서 11055번과 거의 똑같다. 11055번은 값이 증가하는지에 대한 조건을 걸었다면"
 }
     </script>
 
@@ -101,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="Tag Page" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="(프로그래머스 with python) 11722 가장 긴 감소하는 부분 수열" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -113,20 +119,16 @@
     gtag('config', 'G-LESPMGXKR3');
 </script>
 </head>
-<body class="tag-template">
+<body class="post-template">
 
     <div class="site-wrapper">
         <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
         <!-- default -->
-<!-- The tag above means - insert everything in this file into the {body} of the default.hbs template -->
 
-<!-- The big featured header, it uses blog cover image as a BG if available -->
-<!-- #tag -->
-<!-- dynamically loading backgrounds for tags,  descriptions and page titles -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
 
-
-
-<header class="site-header outer " style="background-image: url(/assets/built/images/bg01.png) ">
+<header class="site-header outer">
     <div class="inner">
         <nav class="site-nav">
     <div class="site-nav-left">
@@ -175,187 +177,98 @@
     </div>-->
 </nav>
 
-        <div class="site-header-content">
-            <h1 class="site-title">Network</h1>
-            <h2 class="site-description">
-                
-    			    A collection of 3 posts
-                
-            </h2>
-        </div>
     </div>
 </header>
-<!-- tag -->
 
-<!-- The main content area -->
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
-        <div class="post-feed">
-            <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
+
+        <article class="post-full  tag-algorithm post tag algorithm ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-09-10">2021-09-10</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/algorithm/'>ALGORITHM</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">(프로그래머스 with python) 11722 가장 긴 감소하는 부분 수열</h1>
+            </header>
+
+<!--  
             
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/algorithm.png)">
+            </figure>
+            
+-->
 
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    
+<p><br /></p>
 
-    <article class="post-card tag-template">
+<h2 id="11722-가장-긴-감소하는-부분-수열">11722 가장 긴 감소하는 부분 수열</h2>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/132938885-86509141-0347-4928-9c52-d840931494a9.png" alt="11722 가장 갑소하는 부분수열" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="로직-구현-순서">로직 구현 순서</h3>
+
+<p>11055번과 거의 똑같다. 11055번은 값이 증가하는지에 대한 조건을 걸었다면 이 문제는 값이 감소하는지 비교한 후 그 중 max의 값을 찾아 업데이트 해주면 된다. arr[i]이 이전값인 arr[j]보다 작으면 아래의 로직이 실행된다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+                </div>
+            </section>
         
-            <a class="post-card-image-link" href="/cookie">
-                <div class="post-card-image" style="background-image: url(/assets/built/images/computer03.png)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/cookie">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Network</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">Cookie, Session, Cache</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>
-
-
-
-
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/built/images/favicon.png" alt="jung" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/jung/">jung</a>
-                        </span>
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      3 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card tag-template">
-        
-            <a class="post-card-image-link" href="/web">
-                <div class="post-card-image" style="background-image: url(/assets/built/images/computer03.png)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/web">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Network</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">(네트워크) 웹의 기본 동작 방식(작성중...)</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>
-
-
-
-
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/built/images/favicon.png" alt="jung" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/jung/">jung</a>
-                        </span>
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      1 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
-    <article class="post-card tag-template">
-        
-            <a class="post-card-image-link" href="/https">
-                <div class="post-card-image" style="background-image: url(/assets/built/images/computer03.png)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/https">
-                <header class="post-card-header">
-                    
-                        
-                            
-                                <span class="post-card-tags">Network</span>
-                            
-                        
-                    
-
-                    <h2 class="post-card-title">HTTP 와 HTTPS</h2>
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>
-
-
-
-
-
-</p>
-                    
-                </section>
-            </a>
-            <footer class="post-card-meta">
-                
-                    
-                        
-                        <img class="author-profile-image" src="/assets/built/images/favicon.png" alt="jung" />
-                        
-                        <span class="post-card-author">
-                            <a href="/author/jung/">jung</a>
-                        </span>
-                    
-                
-                <span class="reading-time">
-                    
-                    
-                      4 min read
-                    
-                </span>
-            </footer>
-        </div>
-    </article>
-
+        <div id="post-disqus" class="container">
+            <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://heejung-gjt-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
         </div>
+        
+
+
+
     </div>
 </main>
-
 
         <!-- Previous/next page links - displayed on every page -->
         
@@ -423,7 +336,7 @@
     <!-- Paginator increased to "infinit" in _config.yml -->
     <!-- if paginator.posts  -->
     <!-- <script>
-        var maxPages = parseInt('1');
+        var maxPages = parseInt('');
     </script>
     <script src="/assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
@@ -446,6 +359,71 @@
 
 
     <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
     
 
     <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
