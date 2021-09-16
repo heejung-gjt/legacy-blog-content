@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/python/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-15T03:03:28+09:00</updated>
+  <updated>2021-09-17T00:15:03+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/python/feed.xml</id>
 
   
@@ -30,6 +30,319 @@
   
   
 
+  
+    <entry>
+      <title type="html">(Python) is와 == 의 차이점</title>
+      <link href="https://heejung-gjt.github.io/python13" rel="alternate" type="text/html" title="(Python) is와 == 의 차이점" />
+      <published>2021-09-16T18:20:00+09:00</published>
+      <updated>2021-09-16T18:20:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/python13</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/python13">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 목록 순서 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./python-DataStructure&quot;&gt;Python 강좌(1) - 자료구조&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content01 content&quot;&gt;1. 리스트&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content02 content&quot;&gt;2. 튜플&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content03 content&quot;&gt;3. 딕셔너리&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content04 content&quot;&gt;4. 문자열 리스트로 변환 후 딕셔너리 변환&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Function&quot;&gt;Python 강좌(2) - 함수&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-INOutput&quot;&gt;Python 강좌(3) - 입출력&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Class&quot;&gt;Python 강좌(4) - 클래스&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Exception&quot;&gt;Python 강좌(5) - 예외처리&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;!--&lt;script&gt;--&gt;
+&lt;!--    const content = document.querySelector('.content')--&gt;
+&lt;!--    const lists01 = document.querySelector('.content01');--&gt;
+&lt;!--    const lists02 = document.querySelector('.content02');--&gt;
+&lt;!--    const lists03 = document.querySelector('.content03');--&gt;
+&lt;!--    const lists04 = document.querySelector('.content04');--&gt;
+&lt;!--    lists01.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,850);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists02.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,3500);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists03.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,4700);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists04.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,8300);--&gt;
+&lt;!--    });--&gt;
+
+&lt;!--&lt;/script&gt;--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;a-is-b&quot;&gt;a is b&lt;/h2&gt;
+
+&lt;p&gt;is는 메모리 주소를 비교하는 연산자이다.  아래의 코드를 보면 a와 b 둘다 동일한 값이 할당되었지만 실제 비교가 되는 값은
+100이 아니라 100을 담고 있는 주소의 값이 비교된다. 이때 a와 b는 다른 메모리주소를 가지고 있기 때문에 두개의 주소값은
+동일하지 않다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# False&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;a--b&quot;&gt;a == b&lt;/h2&gt;
+
+&lt;p&gt;==는 두개의 값만을 비교하는 연산자이다. 아래의 코드를 보면 할당된 값은 동일하기 때문에 True가 나온다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# True&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;is는 == 에 비해 약간 빠르다&lt;/strong&gt;  &lt;br /&gt;
+== 는 메모리 주소를 불러온 뒤 그 메모리에 저장되어 있는 값을 비교하고 is는 메모리 주소만을 비교하기 때문이다. 즉 
+==는 한 depth더 비교하기 때문에 연산이 살짝 느린것을 알 수 있다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;변수&lt;/strong&gt;  &lt;br /&gt;
+특정 메모리 주소를 담아서 메모리 주소에 붙이는 라벨과 같다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;파이썬에서는 변수는 값이 아닌 메모리 주소를 담고 있다&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="python" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">(Python) 파이썬 메모리 관리</title>
+      <link href="https://heejung-gjt.github.io/python12" rel="alternate" type="text/html" title="(Python) 파이썬 메모리 관리" />
+      <published>2021-09-16T17:20:00+09:00</published>
+      <updated>2021-09-16T17:20:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/python12</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/python12">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 목록 순서 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./python-DataStructure&quot;&gt;Python 강좌(1) - 자료구조&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content01 content&quot;&gt;1. 리스트&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content02 content&quot;&gt;2. 튜플&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content03 content&quot;&gt;3. 딕셔너리&lt;/li&gt;--&gt;
+&lt;!--    &lt;li class=&quot;content04 content&quot;&gt;4. 문자열 리스트로 변환 후 딕셔너리 변환&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Function&quot;&gt;Python 강좌(2) - 함수&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-INOutput&quot;&gt;Python 강좌(3) - 입출력&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Class&quot;&gt;Python 강좌(4) - 클래스&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Exception&quot;&gt;Python 강좌(5) - 예외처리&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;!--&lt;script&gt;--&gt;
+&lt;!--    const content = document.querySelector('.content')--&gt;
+&lt;!--    const lists01 = document.querySelector('.content01');--&gt;
+&lt;!--    const lists02 = document.querySelector('.content02');--&gt;
+&lt;!--    const lists03 = document.querySelector('.content03');--&gt;
+&lt;!--    const lists04 = document.querySelector('.content04');--&gt;
+&lt;!--    lists01.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,850);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists02.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,3500);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists03.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,4700);--&gt;
+&lt;!--    });--&gt;
+&lt;!--    lists04.addEventListener('click',(event)=&gt;{--&gt;
+&lt;!--        window.scrollTo(0,8300);--&gt;
+&lt;!--    });--&gt;
+
+&lt;!--&lt;/script&gt;--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;파이썬-메모리-관리&quot;&gt;파이썬 메모리 관리&lt;/h2&gt;
+
+&lt;p&gt;파이썬은 메모리를 직접 관리하지 않기 때문에 메모리에 대한 신경을 다른 언어에 비해 덜 쓸 수 있다. 파이썬에서는 &lt;strong&gt;레퍼런스 카운트(Reference Counts)와 가비지 콜렉션(Garbage Collection)에 의해 관리된다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;레퍼런스-카운트&quot;&gt;레퍼런스 카운트&lt;/h2&gt;
+&lt;p&gt;파이썬은 내부적으로 malloc()과 free() 함수를 많이 사용하기 때문에 메모리 누수(동적 할당 되는 메모리의 크기는 런타임 내내 변하기 때문에 사용이 끝난 메모리를 해제하지 않으면 메모리가 부족해지는 현상)의 위험이 있다. 그렇기 때문에 메모리를 관리하기 위해서 사용된다  &lt;br /&gt;
+레퍼런스 카운트는 &lt;strong&gt;파이썬의 모든 객체에 카운트를 포함하고 객체가 참조될때 카운트가 증가, 참조가 삭제될때 카운트를 감소시키는 방식으로 작동된다.&lt;/strong&gt;  객체의 reference count가 0이 되면 객체의 메모리 할당이 해제된다&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;malloc()&lt;/strong&gt;    &lt;br /&gt;
+동적으로 &lt;strong&gt;메모리를 할당하는 함수&lt;/strong&gt; 로 힙 영역에 메모리를 할당하는 함수&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;free()&lt;/strong&gt;      &lt;br /&gt;
+힙 영역에 할당받은 메모리 공간을 다시 os로 반환해주는 함수이다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;특정 메모리 주소를 참조하는 곳의 수가 0이 될 경우 다음 GC때 메모리에서 해제가 된다&lt;/p&gt;
+
+&lt;p&gt;레퍼런스 카운트는 getrefcount()를 통해 파라미터로 전달된 객체의 카운트를 확인할 수 있다  &lt;br /&gt;
+(여기서 처음 출력되는 카운트 값이 1이 아닌 이유는 a의 객체가 getrefcount함수의 인자로 넘어가기 때문에 인자로 넘겨주는 순간 +1 이 된다)&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'count {sys.getrefcount(a)}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'count {sys.getrefcount(a)}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'count {sys.getrefcount(a)}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'count {sys.getrefcount(a)}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+count 2
+count 3
+count 4
+count 3
+&quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;순환참조시-레퍼런스-카운트-문제&quot;&gt;순환참조시 레퍼런스 카운트 문제&lt;/h3&gt;
+
+&lt;p&gt;이때 레퍼런스 카운트에는 문제가 존재한다. 순환참조시 a의 참조횟수는 1이지만 이 객체에는 더이상 접근할 수 없고 레퍼런스 카운트 방식으로는 메모리에서 해제될 수 없다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;del&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;순환참조&lt;/strong&gt;  &lt;br /&gt;
+객체가 자기 자신을 가리키는 것을 말한다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이때 가비지 컬렉션을 사용하면 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;generational-garbage-collector&quot;&gt;Generational Garbage Collector&lt;/h2&gt;
+&lt;p&gt;gc는 내부적으로 &lt;strong&gt;세대&lt;/strong&gt; 와 &lt;strong&gt;임계값&lt;/strong&gt; 을 통해서 가비지 컬렉션 주기와 객체를 관리한다. 
+총 3세대가 있으며 최근에 생성된 객체는 0세대로 들어가고 오랜된 객체는 이전 세대로 이동한다.&lt;/p&gt;
+
+&lt;p&gt;(최근 생성된 객체는 0세대에 들어가고 오래된 객체일수록 2세대로 이동된다. 그 이유는 최근에 만들어진 객체가 오래된 객체보다 해제될 가능성이 훨씬 높다는 가설이 있기 때문이다)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;generation(세대)&lt;/strong&gt; : 가비지 컬렉터는 메모리의 모든 객체를 추적하는데 새로운 객체는 1세대 가비지 수집기에서 수명을 시작한다. 가비지 컬렉션이 실행되고 객체가 남아있으면 해당 객체는 두번째 이전 세대로 올라간다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;threshold(임계값)&lt;/strong&gt; : 각 세대마다 즉 각 제너레이션마다 가비지 커렉터 모듈에는 임계값 개수의 개체가 있다. 객체 수가 임계값을 초과하면 가비지 컬렉션이 실행되고 이 과정에서 살아남은 객체는 이전 세대로 옮겨진다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;가비지 컬렉션을 사용하기 위해서 GC module을 사용한다&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;메모리-할당-내부-동작&quot;&gt;메모리 할당 내부 동작&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;PyObject_GC_MALLOC()&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;collect_generations()&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;gc의 set_threshold()는 가비지 컬렉터의 구성된 임계값을 확인할 수 있다. 만약 아래처럼 임계값이 3인 경우라고 가정하자(각 제너레이션, 즉 각 세대에 들어갈 수 있는 객체의 최대값)&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;gc&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;gc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;값이 할당되면 파이썬 내부적으로 PyObject_GC_Malloc() 함수가 호출되어 hi라는 값은 메모리에 할당되게 된다. 이후 해당 함수는 할당된 메모리 주소를 리턴하게 되고 메모리 주소는 a로 들어가게 된다. 제너레이터(0세대)에는 hi라는 값이 들어가게 된다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hi'&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;PyObject_GC_Malloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;b라는 변수에 how라는 값을 넣었고 마찬가지로 PyObject_GC_Malloc() 함수가 호출되어 how라는 값은 메모리에 할당되게 된다. 이후 how값은 제너레이터(0세대)에 들어가게 된다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'how'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;PyObject_GC_Malloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;c라는 변수에 are라는 값을 넣었고 PyObject_GC_Malloc() 함수가 호출되어 are라는 값은 메모리에 할당되게 된다. 이후 are값은 제너레이터(0세대)에 들어가게 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'you'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;PyObject_GC_Malloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 you라는 값이 함수 호출에 의해 메모리에 할당되는데 제너레이터의 임계값은 3이기 때문에 you가 들어가면 threshold를 초과하게 된다. 
+더이상 0세대에는 변수를 할당할 수 없게 된다. &lt;br /&gt;
+이때는 &lt;strong&gt;PyObject_GC_Malloc()함수에서 collect_generations(–)라는 함수를 호출한다&lt;/strong&gt; collect_generstions은 이전 세대부터 각 객체가 몇개 들어가 있는지 체크한다. 체크한뒤 초과가 된 제너레이션을 찾아 초과가 된 세대에 가비지 컬렉터를 돌리라는 명령을 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;collect함수는 0세대에 있는 모든 값들을 불러온 뒤 값의 레퍼런스 카운트를 체크한다. 레퍼런스 카운트가 0일 경우 값을 메모리에서 지우게 된다. 0이 아닌 경우 해당 값은 위의 제너레이션 즉 1세대로 올리게 된다.  즉 1세대에는 hi, how, are라는 값들이 저장되고 0세대에는 you라는 값이 저장된다.&lt;/p&gt;
+
+&lt;p&gt;가비지 컬렉터는 제너레이션에 값들이 임계값을 초과할 경우 동작해서 레퍼런스 카운트 값이 0일때 해당 값을 지워주고 나머지 값들은 이전 세대로 올리는 역할을 한다&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;reference&quot;&gt;reference&lt;/h5&gt;
+
+&lt;p&gt;두개의 글과 동영상 정리가 잘 되어 있으니 참고해보길 !&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=UwGHc6A0Jq8&amp;amp;t=1613s&quot;&gt;https://www.youtube.com/watch?v=UwGHc6A0Jq8&amp;amp;t=1613s&lt;/a&gt;  &lt;br /&gt;
+&lt;a href=&quot;https://dc7303.github.io/python/2019/08/06/python-memory/&quot;&gt;https://dc7303.github.io/python/2019/08/06/python-memory/&lt;/a&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="python" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">(Python) 순열(permutations)과 조합(combinations)</title>
@@ -1152,422 +1465,6 @@ set을 사용하면 쉽게 가져올 수 있다. 각각의 값에 접근하고 �
   &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'오래 전'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="python" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">(Python) instance method, class method, static method</title>
-      <link href="https://heejung-gjt.github.io/python3" rel="alternate" type="text/html" title="(Python) instance method, class method, static method" />
-      <published>2021-07-06T17:00:00+09:00</published>
-      <updated>2021-07-06T17:00:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/python3</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/python3">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 목록 순서 &lt;/span&gt;--&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./python-DataStructure&quot;&gt;Python 강좌(1) - 자료구조&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content01 content&quot;&gt;1. 리스트&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content02 content&quot;&gt;2. 튜플&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content03 content&quot;&gt;3. 딕셔너리&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content04 content&quot;&gt;4. 문자열 리스트로 변환 후 딕셔너리 변환&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Function&quot;&gt;Python 강좌(2) - 함수&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-INOutput&quot;&gt;Python 강좌(3) - 입출력&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Class&quot;&gt;Python 강좌(4) - 클래스&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Exception&quot;&gt;Python 강좌(5) - 예외처리&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;!--&lt;script&gt;--&gt;
-&lt;!--    const content = document.querySelector('.content')--&gt;
-&lt;!--    const lists01 = document.querySelector('.content01');--&gt;
-&lt;!--    const lists02 = document.querySelector('.content02');--&gt;
-&lt;!--    const lists03 = document.querySelector('.content03');--&gt;
-&lt;!--    const lists04 = document.querySelector('.content04');--&gt;
-&lt;!--    lists01.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,850);--&gt;
-&lt;!--    });--&gt;
-&lt;!--    lists02.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,3500);--&gt;
-&lt;!--    });--&gt;
-&lt;!--    lists03.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,4700);--&gt;
-&lt;!--    });--&gt;
-&lt;!--    lists04.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,8300);--&gt;
-&lt;!--    });--&gt;
-
-&lt;!--&lt;/script&gt;--&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;instance-method&quot;&gt;instance method&lt;/h2&gt;
-&lt;p&gt;가장 흔하게 쓰이는 메서드로 생성된 인스턴스 변수에 접근할 수 있도록 첫번째 인자에 항상 객체 자신을 의미하는 self파라미터를 갖는다.&lt;/p&gt;
-
-&lt;h4 id=&quot;접근방법&quot;&gt;접근방법&lt;/h4&gt;
-&lt;p&gt;클래스 내부에서는 &lt;code class=&quot;highlighter-rouge&quot;&gt;self.메서드명&lt;/code&gt;으로 접근이 가능하고 클래스 밖에서는 &lt;code class=&quot;highlighter-rouge&quot;&gt;객체.메서드명&lt;/code&gt;으로 접근이 가능하다&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;class-method&quot;&gt;class method&lt;/h2&gt;
-&lt;p&gt;클래스 메서드는 인스턴스 없이 호출이 가능하다. 즉 &lt;strong&gt;클래스 변수에 대한 메서드라고 생각하면 된다.
-(클래스변수의 crud가 필요한 경우 사용)&lt;/strong&gt; 첫번째 인자에 항상 클래스를 의미하는 cls 파라미터를 갖는다. 
-cls를 사용하면 클래스 메서드 내부에서 현재 클래스의 인스턴스를 만들수도 있다.&lt;/p&gt;
-
-&lt;h4 id=&quot;접근방법-1&quot;&gt;접근방법&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;@classmethod&lt;/strong&gt; 라는 데코레이터를 붙여 해당 메서드가 클래스 메서드임을 표시한다&lt;/p&gt;
-
-&lt;p&gt;호출방법으로는 &lt;code class=&quot;highlighter-rouge&quot;&gt;클래스명.클래스메서드명&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;객체명.클래스 메서드명&lt;/code&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;static-method&quot;&gt;static method&lt;/h2&gt;
-&lt;p&gt;객체에 영향을 받지 않는 독립적인 메서드이지만 로직상 클래스 내부에 포함되는 메서드이다. 
-self, cls와 같은 파라미터를 가지고 있지 않다. 그렇기 때문에 인스턴스 변수에 접근이 불가능하다. 
-하지만 클래스 변수에는 클래스명,클래스속성명으로 접근이 가능하다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;정적 메서드는 메서드의 실행이 인스턴스 상태에 영향을 끼치지 않을때 사용한다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;접근방법-2&quot;&gt;접근방법&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;@staticmethod&lt;/strong&gt; 라는 데코레이터를 붙여 해당 메서드가 정적 메서드임을 표시한다.&lt;/p&gt;
-
-&lt;p&gt;호출방법으로는 &lt;code class=&quot;highlighter-rouge&quot;&gt;클래스명.정적메서드명&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;객체명.정적메서드명&lt;/code&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;아래의 코드는 지금까지 설명한 내용들을 활용한 실습 코드이다. 방금 본 내용들을 적용시키며 천천히 읽어보자.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;### 3가지 메서드를 활용한 실습 코드&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# class 설명서 __doc__ 로 볼 수 있음&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-    Car class
-    Author: kim
-    Date:2021.07.05
-    Description: class, static, instance method
-    &quot;&quot;&quot;&lt;/span&gt;
-    
-    &lt;span class=&quot;c&quot;&gt;# 클래스 변수(모든 인스턴스가 공유)     &lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;price_per_raise&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;
-    
-    &lt;span class=&quot;c&quot;&gt;# 이곳 안에서 인스턴스 변수 생성됨&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_company&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;company&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_details&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;details&lt;/span&gt;
-    
-    &lt;span class=&quot;c&quot;&gt;# str과 repr&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__str__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'str: {} - {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    
- 
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__repr__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'repr: {} - {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    
-    &lt;span class=&quot;c&quot;&gt;# 인스턴스 메서드&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;detail_info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'current ID : {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'car detail info : {} {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_details&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'price'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-    
-    &lt;span class=&quot;c&quot;&gt;# 인스턴스 메서드&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Before Car Price -&amp;gt; company: {}, price: {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_details&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'price'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    
-    &lt;span class=&quot;c&quot;&gt;# 인스턴스 메서드&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_price_culc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'After Car Price -&amp;gt; company: {}, price: {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_details&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'price'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price_per_raise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    
-    &lt;span class=&quot;c&quot;&gt;# 클래스 메서드 &lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@classmethod&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;raise_price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;per&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;per&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'please enter 1 or more'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-        
-        &lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price_per_raise&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;per&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'succeed! price increased.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        
-    &lt;span class=&quot;c&quot;&gt;# 스태틱 메서드&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# utils형으로 유연하게 사용될때 사용&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@staticmethod&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;is_bmw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inst&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inst&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_company&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Bmw'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ok! this car is {}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inst&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Sorry this car is not Bmw'&lt;/span&gt;
-  
-
-&lt;span class=&quot;n&quot;&gt;car1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Ferrari'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'color'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Silver'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'horsepower'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'price'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;car2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Bmw'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'color'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Black'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'horsepower'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;270&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'price'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 전체 정보&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;car1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detail_info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;car2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detail_info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 가격 정보(직접 접근)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_details&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'price'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 변수값이 변경 될 수 있기 때문에 직접 자기 인스턴스 변수에 접근하는 것은 좋지 못한 방법임&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'price'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 마찬가지로 값이 변경 될 위험이 있기때문에  좋지 못한방법 &lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 보통은 메서드를 만들어서 필요로하는 정보만 반환받게 사용함&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 가격 정보 (인상전)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 가격 인상(클래스 메서드 미사용) -&amp;gt; 직접접근해서 변경하는 것 좋지 못하다. 메서드 만들자&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Car.price_per_raise = 1.4 # 40% 상승 &lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_price_culc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_price_culc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;raise_price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 가격인상(클래스 메서드 사용)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;raise_price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_price_culc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_price_culc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 인스턴스로 호출(스테이틱)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# staticmethod의 매개변수는 비워있다, 유연하고 메서드를 정의할때 좀 공통적으로 만드는데 유연하게 만들고 싶을때 &lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 자동차가 만개있을때 해당 자동차가 bmw에서 나온 자동차인지 확인하는 메서드&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_bmw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_bmw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 클래스로 호출(스테이틱)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 스택틱 메서드는 클래스로도 호출이 가능하다, 공통적으로 클래스로 호출해도 된다&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#클래스와 관련이 있는 기능을 조작하는데 매개변수로 Self나 cls등을 받지 않고도 동작이 가능할때 사용한다&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_bmw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_bmw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;코드-결과값&quot;&gt;코드 결과값&lt;/h4&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;140576165418264&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ferrari&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6000&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;current&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;140576165474712&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;detail&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;info&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bmw&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;
-
-
-&lt;span class=&quot;mi&quot;&gt;6000&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;Before&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ferrari&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6000&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Before&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bmw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;After&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ferrari&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;6000.0&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;After&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bmw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;5000.0&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;please&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;enter&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;more&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;succeed&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;increased&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;After&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ferrari&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;9600.0&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;After&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bmw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;8000.0&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;Sorry&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bmw&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ok&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bmw&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;ok&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bmw&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Sorry&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bmw&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="python" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">(Python) 클래스변수와 인스턴스 변수</title>
-      <link href="https://heejung-gjt.github.io/python2" rel="alternate" type="text/html" title="(Python) 클래스변수와 인스턴스 변수" />
-      <published>2021-07-06T16:00:00+09:00</published>
-      <updated>2021-07-06T16:00:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/python2</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/python2">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 목록 순서 &lt;/span&gt;--&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./python-DataStructure&quot;&gt;Python 강좌(1) - 자료구조&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content01 content&quot;&gt;1. 리스트&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content02 content&quot;&gt;2. 튜플&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content03 content&quot;&gt;3. 딕셔너리&lt;/li&gt;--&gt;
-&lt;!--    &lt;li class=&quot;content04 content&quot;&gt;4. 문자열 리스트로 변환 후 딕셔너리 변환&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Function&quot;&gt;Python 강좌(2) - 함수&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-INOutput&quot;&gt;Python 강좌(3) - 입출력&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Class&quot;&gt;Python 강좌(4) - 클래스&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li &gt;&lt;a href=&quot;./python-Exception&quot;&gt;Python 강좌(5) - 예외처리&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;!--&lt;script&gt;--&gt;
-&lt;!--    const content = document.querySelector('.content')--&gt;
-&lt;!--    const lists01 = document.querySelector('.content01');--&gt;
-&lt;!--    const lists02 = document.querySelector('.content02');--&gt;
-&lt;!--    const lists03 = document.querySelector('.content03');--&gt;
-&lt;!--    const lists04 = document.querySelector('.content04');--&gt;
-&lt;!--    lists01.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,850);--&gt;
-&lt;!--    });--&gt;
-&lt;!--    lists02.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,3500);--&gt;
-&lt;!--    });--&gt;
-&lt;!--    lists03.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,4700);--&gt;
-&lt;!--    });--&gt;
-&lt;!--    lists04.addEventListener('click',(event)=&gt;{--&gt;
-&lt;!--        window.scrollTo(0,8300);--&gt;
-&lt;!--    });--&gt;
-
-&lt;!--&lt;/script&gt;--&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;객체와-클래스&quot;&gt;객체와 클래스&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;클래스&lt;/strong&gt; : 객체를 만들어 내기 위한 설계도, 틀이라고 할 수 있다. 어떤 문제를 해결하기 위한 데이터를 만들기 위해 추상화를 거쳐 집단에 속하는 속성과 행위를 변수와 메서드로 정의한것이다&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;객체(인스턴스)&lt;/strong&gt; : 클래스에 선언된 모양 그대로 생성된 실체이다. 클래스에서 정의한 것을 토대로 실제 메모리상에 할당된 것으로 실제 프로그램에서 사용되는 데이터이다&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;추상화&lt;/strong&gt; : 공통의 속성이나 기능을 묶어 이름을 붙이는것이다&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;인스턴스-변수&quot;&gt;인스턴스 변수&lt;/h3&gt;
-&lt;p&gt;인스턴스 변수는 각각의 인스턴스마다 독립된 변수이다. 클래스는 여러 인스턴스를 생성하지만 각각의 인스턴스 변수는 
-생성된 인스턴스마다 각각의 값을 보존하고 있다.&lt;/p&gt;
-
-&lt;p&gt;인스턴스화 될 때마다 새로운 값이 할당되며 서로 다른 객체 간에는 값을 공유할 수 없는 변수이다   &lt;br /&gt;
--&amp;gt; 객체 단위로 값이 따로 관리되는 변수는 반드시 인스턴스 변수를 사용한다 &lt;br /&gt;
--&amp;gt; 클래스 변수는 객체 이름이 아닌 클래스 이름으로 접근, 되도록 값이 변경되지 않는 경우에 사용하는 것이 안전하다&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;인스턴스-변수-선언과-접근-방법&quot;&gt;인스턴스 변수 선언과 접근 방법&lt;/h3&gt;
-&lt;p&gt;인스턴스 변수 생성은 생성자 클래스 __ init() __ 내부에 작성되고 클래스 내부에서 ‘self.인스턴스 변수’로 접근할 수 있다&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;인스턴스&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;변수&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;인스턴스&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;변수&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;값&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 선언&lt;/span&gt;
-
-&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;인스턴스&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;변수&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 접근&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;self: 인스턴스 메서드는 첫번째의 매개변수로 self가 넘어오게 되어있다. self는 각 고유, 클래스를 기반으로 생성된 인스턴스가 자기 내부의 고유의 값을 저장하기 위한 어떤 예약된 지시어, 예약어이다&lt;/p&gt;
-
-&lt;p&gt;인스턴스 변수와 클래스 변수는 동일한 변수 이름 생성이 가능하다. 실행이 되면 가장 먼저 인스턴스 네임스페이스에서 네임을 찾고 해당 네임이 없는 경우 상위(클래스 변수)에서 검색된다&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;클래스-변수&quot;&gt;클래스 변수&lt;/h3&gt;
-&lt;p&gt;클래스 변수는 모든 인스턴스 사이에서 공유된 값을 가진 변수이다. 여러 인스턴스에서 클래스 변수를 호출해 변경하면 클래스 변수는 공유되기 때문에 값이 유연하기 바뀐다  &lt;br /&gt;
-클래스에 의해 생성된 모든 객체가 인스턴스화되는 시점에 같은 값을 조회할때 사용 하는 변수이다&lt;/p&gt;
-&lt;h3 id=&quot;클래스-변수-선언과-접근-방법&quot;&gt;클래스 변수 선언과 접근 방법&lt;/h3&gt;
-&lt;p&gt;클래스 변수 생성은 self를 붙이지 않고 클래스 내부 바로 아래에 보통 선언한다&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ThisClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;err&quot;&gt;클래스&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;변수&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;값&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 선언&lt;/span&gt;
-
-    &lt;span class=&quot;err&quot;&gt;클래스&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;클래스&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;변수&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 접근&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;클래스 내부에 쓰인 클래스 변수와 인스턴스 변수를 코드로 살펴보자.&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-    Car class
-    Author: kim
-    Date:2021.07.05
-    &quot;&quot;&quot;&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# 클래스 변수&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# 즉, 클래스변수는 모든 인스턴스가 공유하고 있다&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;car_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-
-
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;company&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;# 인스턴스 변수&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_company&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;company&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_details&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;details&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;python-에서-기본적으로-제공해주는-기능들이며-실제로-자주-쓰이는-메소드들이다&quot;&gt;python 에서 기본적으로 제공해주는 기능들이며 실제로 자주 쓰이는 메소드들이다.&lt;/h3&gt;
-
-&lt;p&gt;__ str __ : 클래스 내부에다 상속받고 있는 &lt;strong&gt;str&lt;/strong&gt; 을 정의하면 클래스 인스턴스 내부의 속성 정보를 원하는대로 출력이 가능하다.&lt;/p&gt;
-
-&lt;p&gt;__ repr __ : str과 같은 역할을 하지만 차이점이 존재한다. str은 비공식적인 사용자 입장에서 인스턴스 내부의 속성 정보를 보고 싶을때 출력한다. 즉 사용자 레벨에서 print문으로 정보를 확인할때 str을 사용하고 개발자 입장에서 객체의 엄격한 타입등을 인식할 수 있게 출력하려면 repr을 사용한다. 이때 기본값은 str이기 때문에 둘다 써져있을때는 str이 우선 출력된다.&lt;/p&gt;
-
-&lt;p&gt;__ dict __ : 불필요한 정보를 제외하고 인스턴스 안의 네임스페이스만 보고싶을때 사용한다. 인스턴스 안에 있는 속성 정보 즉 애트리뷰트 값을 볼 수 있다. &lt;code class=&quot;highlighter-rouge&quot;&gt;car1.__dict__&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'_company'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Ferrari'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'_details'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'color'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Silver'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'horsepower'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'price'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;dir() : dir을 쓰게 되면 인스턴스가 가지고 있는 모든 속성 즉, 메타 정보를 볼 수 있다.&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'__class__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__delattr__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__dict__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__dir__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__doc__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__eq__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__format__'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;....&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;__ doc __ : “&quot;”를 이용해 클래스에 대한 코멘트를 달았을 경우 doc를 통해 해당 클래스에 대한 코멘트를 볼 수 있다&lt;/p&gt;</content>
 
       
       
