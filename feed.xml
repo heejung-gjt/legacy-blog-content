@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-09-17T00:15:03+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">0916 TIL</title><link href="https://heejung-gjt.github.io/til48" rel="alternate" type="text/html" title="0916 TIL" /><published>2021-09-16T20:50:00+09:00</published><updated>2021-09-16T20:50:00+09:00</updated><id>https://heejung-gjt.github.io/til48</id><content type="html" xml:base="https://heejung-gjt.github.io/til48">&lt;h2 id=&quot;210916-계획&quot;&gt;210916 계획&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-09-17T10:18:28+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">0916 TIL</title><link href="https://heejung-gjt.github.io/til48" rel="alternate" type="text/html" title="0916 TIL" /><published>2021-09-16T20:50:00+09:00</published><updated>2021-09-16T20:50:00+09:00</updated><id>https://heejung-gjt.github.io/til48</id><content type="html" xml:base="https://heejung-gjt.github.io/til48">&lt;h2 id=&quot;210916-계획&quot;&gt;210916 계획&lt;/h2&gt;
 
 &lt;h4 id=&quot;am-1120-&quot;&gt;AM 11:20 ~&lt;/h4&gt;
 
@@ -305,7 +305,155 @@ count 3
 &lt;hr /&gt;
 
 &lt;p&gt;진행했던 프로젝트의 버전업을 위해 새로운 기능을 추가하고 리팩토링 하는 과정은 정말 쉽지 않다 ㅋㅋㅋ
-그래도 하나씩 수정되어가는 모습을 보니 빨리 계획한 마지막 버전까지 꾸준히 업데이트 시켜보고 싶다 ~~!&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">0913 TIL</title><link href="https://heejung-gjt.github.io/til45" rel="alternate" type="text/html" title="0913 TIL" /><published>2021-09-13T17:50:00+09:00</published><updated>2021-09-13T17:50:00+09:00</updated><id>https://heejung-gjt.github.io/til45</id><content type="html" xml:base="https://heejung-gjt.github.io/til45">&lt;h2 id=&quot;210913-계획&quot;&gt;210913 계획&lt;/h2&gt;
+그래도 하나씩 수정되어가는 모습을 보니 빨리 계획한 마지막 버전까지 꾸준히 업데이트 시켜보고 싶다 ~~!&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">Socket이란, WebSocket이란</title><link href="https://heejung-gjt.github.io/socket" rel="alternate" type="text/html" title="Socket이란, WebSocket이란" /><published>2021-09-14T17:32:00+09:00</published><updated>2021-09-14T17:32:00+09:00</updated><id>https://heejung-gjt.github.io/socket</id><content type="html" xml:base="https://heejung-gjt.github.io/socket">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Network 정리 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;소켓&quot;&gt;소켓&lt;/h2&gt;
+&lt;p&gt;소켓이란 프로그램이 네트워크 상에서 데이터를 송신과 수신을 하기위한 연결부이다. 일반적으로 tcp/ip프로토콜을 사용하거나 웹 소켓을 이용한다&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;프로토콜&lt;/strong&gt;        &lt;br /&gt;
+어떤 시스템이 다른 시스템과 통신을 원활하게 수용하도록 해주는 통신 규약이다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;소켓-통신의-흐름&quot;&gt;소켓 통신의 흐름&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/133592555-52a41f5c-9e58-43a3-9b2c-92ffa326852c.png&quot; alt=&quot;쏘켓&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;소켓의 흐름은 서버소켓과 클라이언트소켓으로 이야기 할 수 있다&lt;/p&gt;
+
+&lt;h4 id=&quot;클라이언트&quot;&gt;클라이언트&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;socket()함수로 소켓을 연다&lt;/li&gt;
+  &lt;li&gt;connect() 함수를 이용해 통신 할 서버의 ip, port번호에 통신을 시도한다&lt;/li&gt;
+  &lt;li&gt;통신을 시도 할때 서버가 accept()함수를 사용해 클라이언트의 socket descriptor를 반환한다&lt;/li&gt;
+  &lt;li&gt;클라이언트와 서버가 서로 read(), writer()를 하며 통신한다(반복)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;서버&quot;&gt;서버&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;socket()함수를 이용하여 소켓을 생성한다&lt;/li&gt;
+  &lt;li&gt;bind()함수로 ip와 port번호를 설정한다&lt;/li&gt;
+  &lt;li&gt;listen()함수로 클라이언트의 접근 요청에 수신 대기열을 만들어서 몇 개의 클라이언트를 대기 시킬지를 결정한다&lt;/li&gt;
+  &lt;li&gt;accept()함수를 사용하여 클라이언트와의 연결을 기다린다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;소켓통신은 http통신과는 다르게 서로 연결을 유지하는 양방향 통신이다. 서버와 클라이언트가 실시간으로 데이터를 주고받는 상황이 필요한 경우에 주로 사용된다&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;웹-소켓&quot;&gt;웹 소켓&lt;/h2&gt;
+&lt;p&gt;웹소켓은 서버와 클라이언트간의 socket connection을 유지해 언제든 양방향 통신이나 데이터 전송이 가능하게 하는 기술이다  &lt;br /&gt;
+즉 http통신의 한계(단방향, 재접속)를 보완하는 기술이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;웹-소켓-이전-비슷한-기술&quot;&gt;웹 소켓 이전 비슷한 기술&lt;/h3&gt;
+
+&lt;h3 id=&quot;polling&quot;&gt;Polling&lt;/h3&gt;
+&lt;p&gt;서버로 일정 주기마다 요청을 송신한다 &lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/133594391-1c7fc979-b632-4a51-90a9-0a3abae7f1ef.png&quot; alt=&quot;polliing&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;real time통신에서는 언제 통신이 발생할지는 예측이 불가능하다. 그렇기에 불필요한 request와 connection이 발생한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;real time = 실시간&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;long-polling&quot;&gt;Long Polling&lt;/h3&gt;
+&lt;p&gt;서버에 요청을 보내고 이벤트가 발생하여 응답을 받을 때까지 연결을 종료하지 않는다. 응답을 받으면 연결을 끊고 다시 재요청을 한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/133594388-498189c6-6de4-482a-99b9-6db4eb994474.png&quot; alt=&quot;longpolling&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;많은 양의 메시지가 전송 될 경우 polling과 똑같다&lt;/p&gt;
+
+&lt;h3 id=&quot;streaming&quot;&gt;Streaming&lt;/h3&gt;
+&lt;p&gt;서버에 요청을 보내고 연결을 유지하며 데어터를 수신한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/133594384-d2b2bf4b-981c-451d-b125-d83ec768a919.png&quot; alt=&quot;스트리밍&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;클라이언트에서 서버로의 데이터 송신이 어렵다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;즉 위의 방법들은 모두 HTTP를 통해 통신하기 때문에 request, response 둘 다 header가 불필요하게 크다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;웹-소켓의-핸드-쉐이크&quot;&gt;웹 소켓의 핸드 쉐이크&lt;/h3&gt;
+
+&lt;p&gt;웹 소켓도 tcp의 핸드 쉐이크처럼 연결을 하는 과정이 존재한다. 이때 웹 소켓의 핸드 쉐이킹은 http(80)나 https(443)의 프로토콜을 통해서 이루어진다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/133595432-4a2d221b-8264-4741-945a-bc4056f4dfc3.png&quot; alt=&quot;웹소켓&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;클라이언트에서 아래와 같은 표준적인 http 요청 header를 보낸다 (이때 http버전은 반드시 1.1 이상이여야하며 get방식이여야 한다 )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;GET /chat HTTP/1.1  &lt;br /&gt;
+Host: example.com:8000 # 웹 소켓의 서버 구조 &lt;br /&gt;
+Upgrade: websocket # 현재 클라이언트. 서버 전송 프로토콜 연결에서 다른 프로토콜로 업그레이드/변경하기 위한 규칙 &lt;br /&gt;
+Connection: Upgrade # upgrade헤더가 명시되어 있는 경우 송신자는 반드시 connection헤더 필드도 함께 전송해야 한다 &lt;br /&gt;
+Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ== # 양쪽 통신자의 신원을 확인하는 키라고 생각하면 된다  &lt;br /&gt;
+Sec-WebSocket-Version: 13&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;서버가 클라이언트에게 웹소켓 프로토콜로 업그레드 하는 것을 승인하면 아래의 헤더를 전송한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;101 Switching Protocols &lt;br /&gt;
+Upgrade: websocket  &lt;br /&gt;
+Connection: Upgrade   &lt;br /&gt;
+Sec-WebSocket-Accept: hsBlbuDTkk24srzEOTBUlZAlC2g=&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;핸드 쉐이킹이 완료되면 http프로토콜은 &lt;strong&gt;ws&lt;/strong&gt; 프로토콜로 변경된다 (wss -&amp;gt; https처럼 데이터 보안을 위해서 ssl을 적용한 프로토콜)
+ 이후 서로 messge를 주고받는다 (message : 여러 프레임이 모여 구성하는 하나의 논리적 메시지 단위)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;프레임(frame)&lt;/strong&gt;    &lt;br /&gt;
+커뮤니케이션에서 가장 작은 단위의 데이터이다 (작은헤더 + payload로 구성)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;페이로드(payload)&lt;/strong&gt;     &lt;br /&gt;
+데이터와 함께 전송되는 데이터중, 헤더와 메타데이터와 같은 데이터는 제외한 전송의 근본적인 목적이 되는 데이터의 일부분이다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;웹-소켓-프로토콜-특징&quot;&gt;웹 소켓 프로토콜 특징&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;최초 접속할때 http 프로토콜 위에서 핸드쉐이킹을 하기 때문에 http header를 사용한다&lt;/li&gt;
+  &lt;li&gt;웹 소켓을 위한 별도의 포트는 없으며 기존포트(80, 443)를 사용한다&lt;/li&gt;
+  &lt;li&gt;프레임으로 구성된 메시지라는 논리적 단위로 송수신된다&lt;/li&gt;
+  &lt;li&gt;메시지에 포함될 수 있는 교환 가능한 메시지는 텍스트와 바이너리이다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;socketio&quot;&gt;socket.io&lt;/h2&gt;
+&lt;p&gt;socket.io란 WebSocket과 같이 클라이언트와 서버의 양방향 통신을 가능하게 해주는 모듈이다. WebSocket은 HTML5이후에 나왔기 때문에 엊ㄴ의 기술로 구현된 서비스에서 WebSocket처럼 사용할 수 있도록 도와주는 기술이다.&lt;/p&gt;
+
+&lt;p&gt;socket.io는 통신을 시작할때 각 브라우저에 대해서 webSocket, streaming등등에서 가장 적절한 방법을 찾아 메시지를 보내준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;reference&quot;&gt;reference&lt;/h5&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://duckdevelope.tistory.com/19&quot;&gt;https://duckdevelope.tistory.com/19&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&quot;https://rubberduck-debug.tistory.com/123&quot;&gt;https://rubberduck-debug.tistory.com/123&lt;/a&gt;   &lt;br /&gt;
+&lt;a href=&quot;https://velog.io/@y1andyu&quot;&gt;https://velog.io/@y1andyu&lt;/a&gt;  &lt;br /&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=MPQHvwPxDUw&quot;&gt;https://www.youtube.com/watch?v=MPQHvwPxDUw&lt;/a&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="network" /><summary type="html"></summary></entry><entry><title type="html">0913 TIL</title><link href="https://heejung-gjt.github.io/til45" rel="alternate" type="text/html" title="0913 TIL" /><published>2021-09-13T17:50:00+09:00</published><updated>2021-09-13T17:50:00+09:00</updated><id>https://heejung-gjt.github.io/til45</id><content type="html" xml:base="https://heejung-gjt.github.io/til45">&lt;h2 id=&quot;210913-계획&quot;&gt;210913 계획&lt;/h2&gt;
 
 &lt;h4 id=&quot;am-1150-&quot;&gt;AM 11:50 ~&lt;/h4&gt;
 
@@ -373,41 +521,4 @@ jwt를 공부하면서 역할 중 하나가 백엔드와 프론트를 정확히 
 &lt;p&gt;11055번과 거의 똑같다. 11055번은 값이 증가하는지에 대한 조건을 걸었다면 이 문제는 값이 감소하는지 비교한 후 그 중 max의 값을 찾아 업데이트 해주면 된다. arr[i]이 이전값인 arr[j]보다 작으면 아래의 로직이 실행된다.&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="algorithm" /><summary type="html"></summary></entry><entry><title type="html">(프로그래머스 with python) 11055 가장 큰 증가 부분 수열</title><link href="https://heejung-gjt.github.io/algorithm9" rel="alternate" type="text/html" title="(프로그래머스 with python) 11055 가장 큰 증가 부분 수열" /><published>2021-09-10T17:00:00+09:00</published><updated>2021-09-10T17:00:00+09:00</updated><id>https://heejung-gjt.github.io/algorithm9</id><content type="html" xml:base="https://heejung-gjt.github.io/algorithm9">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;11055-가장-큰-증가-부분-수열&quot;&gt;11055 가장 큰 증가 부분 수열&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/132938694-c8c766b4-b1fb-4fc9-918f-9d5237726ad9.png&quot; alt=&quot;가장큰증가부분수열&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;dp_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;로직-구현-순서&quot;&gt;로직 구현 순서&lt;/h3&gt;
-
-&lt;p&gt;11053번과 굉장히 유사하다.
-다른점은 이 문제에서는 증가하는 수의 개수를 카운트하는것이 아니고 증가하는 수를 누적해서 더한값을 구하라는 문제이다.&lt;/p&gt;
-
-&lt;p&gt;그렇기 위해서는 수의 값들을 누적해서 구하면된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;dp를 초기화 할때 1이 아닌 입력받은 수들로 초기화 해준다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;1, 2의 수를 가지고 있는 경우&lt;/strong&gt; dp[1] = 2의 값과 dp[0] = 1의 값을 비교한 후 dp[1]의 값이 더 큰 경우 증가하고 있기 때문에 dp[1] = 2 와 dp[0] = 1 + 2를 더한 값 중 max값을 찾아 dp[1]의 값을 업데이트 시켜주면 된다.&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="algorithm" /><summary type="html"></summary></entry></feed>

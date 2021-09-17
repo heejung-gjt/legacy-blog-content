@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/socket" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Studying  Develop" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Socket이란, WebSocket이란" />
+    <meta property="og:description" content="소켓 소켓이란 프로그램이 네트워크 상에서 데이터를 송신과 수신을 하기위한 연결부이다. 일반적으로 tcp/ip프로토콜을 사용하거나 웹 소켓을 이용한다 프로토콜 어떤 시스템이 다른 시스템과 통신을 원활하게 수용하도록 해주는 통신 규약이다 소켓 통신의 흐름 소켓의 흐름은 서버소켓과 클라이언트소켓으로 이야기 할 수 있다 클라이언트 socket()함수로 소켓을 연다 connect() 함수를 이용해 통신 할 서버의 ip, port번호에" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/socket" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/computer03.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-09-14T17:32:00+09:00" />
+    <meta property="article:modified_time" content="2021-09-14T17:32:00+09:00" />
+    <meta property="article:tag" content="Network" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Socket이란, WebSocket이란" />
+    <meta name="twitter:description" content="소켓 소켓이란 프로그램이 네트워크 상에서 데이터를 송신과 수신을 하기위한 연결부이다. 일반적으로 tcp/ip프로토콜을 사용하거나 웹 소켓을 이용한다 프로토콜 어떤 시스템이 다른 시스템과 통신을 원활하게 수용하도록 해주는 통신 규약이다 소켓 통신의 흐름 소켓의 흐름은 서버소켓과 클라이언트소켓으로 이야기 할 수 있다 클라이언트 socket()함수로 소켓을 연다 connect() 함수를 이용해 통신 할 서버의 ip, port번호에" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/computer03.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Studying  Develop" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Network" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Studying  Develop",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/socket",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/computer03.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/socket"
+    },
+    "description": "소켓 소켓이란 프로그램이 네트워크 상에서 데이터를 송신과 수신을 하기위한 연결부이다. 일반적으로 tcp/ip프로토콜을 사용하거나 웹 소켓을 이용한다 프로토콜 어떤 시스템이 다른 시스템과 통신을 원활하게 수용하도록 해주는 통신 규약이다 소켓 통신의 흐름 소켓의 흐름은 서버소켓과 클라이언트소켓으로 이야기 할 수 있다 클라이언트 socket()함수로 소켓을 연다 connect() 함수를 이용해 통신 할 서버의 ip, port번호에"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="Socket이란, WebSocket이란" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">Studying  Develop</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/celery/">Celery</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/rabbitmq/">RabbitMQ</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/oauth/">OAuth</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/jwt/">JWT</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/network/">Network</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/os/">OS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/database/">DataBase</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/aws/">AWS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-network post tag network ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-09-14">2021-09-14</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/network/'>NETWORK</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">Socket이란, WebSocket이란</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/computer03.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <!--<span class="table-of-contents-list">Network 정리 </span>-->
+<!--<ul class="table-of-contents-list">-->
+<!--    <li><a href="./structure">스택과 큐의 특징</a></li>-->
+<!--    <li><a href="./heap">힙의 특징</a></li>-->
+<!--</ul>-->
+
+<p><br /></p>
+
+<h2 id="소켓">소켓</h2>
+<p>소켓이란 프로그램이 네트워크 상에서 데이터를 송신과 수신을 하기위한 연결부이다. 일반적으로 tcp/ip프로토콜을 사용하거나 웹 소켓을 이용한다</p>
+
+<blockquote>
+  <p><strong>프로토콜</strong>        <br />
+어떤 시스템이 다른 시스템과 통신을 원활하게 수용하도록 해주는 통신 규약이다</p>
+</blockquote>
+
+<h3 id="소켓-통신의-흐름">소켓 통신의 흐름</h3>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/133592555-52a41f5c-9e58-43a3-9b2c-92ffa326852c.png" alt="쏘켓" /></p>
+
+<p>소켓의 흐름은 서버소켓과 클라이언트소켓으로 이야기 할 수 있다</p>
+
+<h4 id="클라이언트">클라이언트</h4>
+
+<ol>
+  <li>socket()함수로 소켓을 연다</li>
+  <li>connect() 함수를 이용해 통신 할 서버의 ip, port번호에 통신을 시도한다</li>
+  <li>통신을 시도 할때 서버가 accept()함수를 사용해 클라이언트의 socket descriptor를 반환한다</li>
+  <li>클라이언트와 서버가 서로 read(), writer()를 하며 통신한다(반복)</li>
+</ol>
+
+<h4 id="서버">서버</h4>
+<ol>
+  <li>socket()함수를 이용하여 소켓을 생성한다</li>
+  <li>bind()함수로 ip와 port번호를 설정한다</li>
+  <li>listen()함수로 클라이언트의 접근 요청에 수신 대기열을 만들어서 몇 개의 클라이언트를 대기 시킬지를 결정한다</li>
+  <li>accept()함수를 사용하여 클라이언트와의 연결을 기다린다</li>
+</ol>
+
+<p>소켓통신은 http통신과는 다르게 서로 연결을 유지하는 양방향 통신이다. 서버와 클라이언트가 실시간으로 데이터를 주고받는 상황이 필요한 경우에 주로 사용된다</p>
+
+<hr />
+
+<h2 id="웹-소켓">웹 소켓</h2>
+<p>웹소켓은 서버와 클라이언트간의 socket connection을 유지해 언제든 양방향 통신이나 데이터 전송이 가능하게 하는 기술이다  <br />
+즉 http통신의 한계(단방향, 재접속)를 보완하는 기술이다.</p>
+
+<p><br /></p>
+
+<h3 id="웹-소켓-이전-비슷한-기술">웹 소켓 이전 비슷한 기술</h3>
+
+<h3 id="polling">Polling</h3>
+<p>서버로 일정 주기마다 요청을 송신한다 <br />
+<img src="https://user-images.githubusercontent.com/64240637/133594391-1c7fc979-b632-4a51-90a9-0a3abae7f1ef.png" alt="polliing" /></p>
+
+<p>real time통신에서는 언제 통신이 발생할지는 예측이 불가능하다. 그렇기에 불필요한 request와 connection이 발생한다.</p>
+
+<blockquote>
+  <p><strong>real time = 실시간</strong></p>
+</blockquote>
+
+<h3 id="long-polling">Long Polling</h3>
+<p>서버에 요청을 보내고 이벤트가 발생하여 응답을 받을 때까지 연결을 종료하지 않는다. 응답을 받으면 연결을 끊고 다시 재요청을 한다</p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/133594388-498189c6-6de4-482a-99b9-6db4eb994474.png" alt="longpolling" /></p>
+
+<p>많은 양의 메시지가 전송 될 경우 polling과 똑같다</p>
+
+<h3 id="streaming">Streaming</h3>
+<p>서버에 요청을 보내고 연결을 유지하며 데어터를 수신한다</p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/133594384-d2b2bf4b-981c-451d-b125-d83ec768a919.png" alt="스트리밍" /></p>
+
+<p>클라이언트에서 서버로의 데이터 송신이 어렵다</p>
+
+<p><strong>즉 위의 방법들은 모두 HTTP를 통해 통신하기 때문에 request, response 둘 다 header가 불필요하게 크다</strong></p>
+
+<hr />
+
+<h3 id="웹-소켓의-핸드-쉐이크">웹 소켓의 핸드 쉐이크</h3>
+
+<p>웹 소켓도 tcp의 핸드 쉐이크처럼 연결을 하는 과정이 존재한다. 이때 웹 소켓의 핸드 쉐이킹은 http(80)나 https(443)의 프로토콜을 통해서 이루어진다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/133595432-4a2d221b-8264-4741-945a-bc4056f4dfc3.png" alt="웹소켓" /></p>
+
+<ul>
+  <li>클라이언트에서 아래와 같은 표준적인 http 요청 header를 보낸다 (이때 http버전은 반드시 1.1 이상이여야하며 get방식이여야 한다 )</li>
+</ul>
+
+<blockquote>
+  <p>GET /chat HTTP/1.1  <br />
+Host: example.com:8000 # 웹 소켓의 서버 구조 <br />
+Upgrade: websocket # 현재 클라이언트. 서버 전송 프로토콜 연결에서 다른 프로토콜로 업그레이드/변경하기 위한 규칙 <br />
+Connection: Upgrade # upgrade헤더가 명시되어 있는 경우 송신자는 반드시 connection헤더 필드도 함께 전송해야 한다 <br />
+Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ== # 양쪽 통신자의 신원을 확인하는 키라고 생각하면 된다  <br />
+Sec-WebSocket-Version: 13</p>
+</blockquote>
+
+<ul>
+  <li>서버가 클라이언트에게 웹소켓 프로토콜로 업그레드 하는 것을 승인하면 아래의 헤더를 전송한다</li>
+</ul>
+
+<blockquote>
+  <p>101 Switching Protocols <br />
+Upgrade: websocket  <br />
+Connection: Upgrade   <br />
+Sec-WebSocket-Accept: hsBlbuDTkk24srzEOTBUlZAlC2g=</p>
+</blockquote>
+
+<p>핸드 쉐이킹이 완료되면 http프로토콜은 <strong>ws</strong> 프로토콜로 변경된다 (wss -&gt; https처럼 데이터 보안을 위해서 ssl을 적용한 프로토콜)
+ 이후 서로 messge를 주고받는다 (message : 여러 프레임이 모여 구성하는 하나의 논리적 메시지 단위)</p>
+
+<blockquote>
+  <p><strong>프레임(frame)</strong>    <br />
+커뮤니케이션에서 가장 작은 단위의 데이터이다 (작은헤더 + payload로 구성)</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>페이로드(payload)</strong>     <br />
+데이터와 함께 전송되는 데이터중, 헤더와 메타데이터와 같은 데이터는 제외한 전송의 근본적인 목적이 되는 데이터의 일부분이다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="웹-소켓-프로토콜-특징">웹 소켓 프로토콜 특징</h3>
+<ul>
+  <li>최초 접속할때 http 프로토콜 위에서 핸드쉐이킹을 하기 때문에 http header를 사용한다</li>
+  <li>웹 소켓을 위한 별도의 포트는 없으며 기존포트(80, 443)를 사용한다</li>
+  <li>프레임으로 구성된 메시지라는 논리적 단위로 송수신된다</li>
+  <li>메시지에 포함될 수 있는 교환 가능한 메시지는 텍스트와 바이너리이다</li>
+</ul>
+
+<hr />
+
+<h2 id="socketio">socket.io</h2>
+<p>socket.io란 WebSocket과 같이 클라이언트와 서버의 양방향 통신을 가능하게 해주는 모듈이다. WebSocket은 HTML5이후에 나왔기 때문에 엊ㄴ의 기술로 구현된 서비스에서 WebSocket처럼 사용할 수 있도록 도와주는 기술이다.</p>
+
+<p>socket.io는 통신을 시작할때 각 브라우저에 대해서 webSocket, streaming등등에서 가장 적절한 방법을 찾아 메시지를 보내준다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h5 id="reference">reference</h5>
+
+<p><a href="https://duckdevelope.tistory.com/19">https://duckdevelope.tistory.com/19</a> <br />
+<a href="https://rubberduck-debug.tistory.com/123">https://rubberduck-debug.tistory.com/123</a>   <br />
+<a href="https://velog.io/@y1andyu">https://velog.io/@y1andyu</a>  <br />
+<a href="https://www.youtube.com/watch?v=MPQHvwPxDUw">https://www.youtube.com/watch?v=MPQHvwPxDUw</a></p>
+
+                </div>
+            </section>
+        
+        <div id="post-disqus" class="container">
+            <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://heejung-gjt-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+        
+
+
+
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">Studying  Develop</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Studying  Develop</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+    <script id="dsq-count-scr" src="//heejung-gjt-github-io.disqus.com/count.js" async></script>
+</body>
+</html>
