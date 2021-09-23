@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/author/jung/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-17T10:18:28+09:00</updated>
+  <updated>2021-09-23T11:08:44+09:00</updated>
   <id>https://heejung-gjt.github.io/author/jung/feed.xml</id>
 
   
@@ -32,12 +32,370 @@
 
   
     <entry>
+      <title type="html">0923 TIL</title>
+      <link href="https://heejung-gjt.github.io/til52" rel="alternate" type="text/html" title="0923 TIL" />
+      <published>2021-09-22T20:59:00+09:00</published>
+      <updated>2021-09-22T20:59:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/til52</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til52">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;210923-계획&quot;&gt;210923 계획&lt;/h2&gt;
+
+&lt;h4 id=&quot;am-830-&quot;&gt;AM 8:30 ~&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;D-37&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sql 강의 듣고 정리하기&lt;/li&gt;
+  &lt;li&gt;프로그래머스 sql select 7문제 풀이&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">(MYSQL) DML CRUD - 데이터 생성, 읽기, 갱신, 삭제하기</title>
+      <link href="https://heejung-gjt.github.io/db3" rel="alternate" type="text/html" title="(MYSQL) DML CRUD - 데이터 생성, 읽기, 갱신, 삭제하기" />
+      <published>2021-09-22T20:52:00+09:00</published>
+      <updated>2021-09-22T20:52:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/db3</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/db3">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-데이터-생성&quot;&gt;1. 데이터 생성&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;넣을 데이터는 테이블 필드의 순서에 맞게 넣어주면 된다. 이때 id같이 auto_increment로 지정되어 있는 필드는
+자동으로 값이 카운트 되기 때문에 &lt;strong&gt;직접 넣을 데이터를 정할 수 있다&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;INSERT INTO {테이블명} VALUES(넣을 데이터1, 넣을 데이터2,..);
+
+EX)
+INSERT INTO product VALUES(1, '여자바지', 10000, 8000);
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;넣을 데이터 직접 지정해서 넣기&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;INSERT INTO {테이블명}(지정한 데이터 필드1, 필드2...) VALUES('넣을 데이터1', 2,,,,);
+
+EX)
+INSERT INTO product(product_name, ori_price, sale_price) VALUES('어린이 바지', 20000, 7000);
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2-데이터-전체-읽기&quot;&gt;2. 데이터 전체 읽기&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;SELECT * FROM {테이블명};
+
+SELECT * FROM product;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3-정한-필드로-데이터-읽기&quot;&gt;3. 정한 필드로 데이터 읽기&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;SELECT {필드명} FROM {테이블명};
+
+SELECT name FROM computer_core;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;4-where절로-조건에-맞는-데이터-읽기&quot;&gt;4. WHERE절로 조건에 맞는 데이터 읽기&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;SELECT name FROM computer_core WHERE id  &amp;lt; 2; # computer_core에서 id가 2보다 작은 name 출력
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;5-order-by절로-데이터-정렬하기&quot;&gt;5. ORDER BY절로 데이터 정렬하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;DESC가 내림차순이고 ASC가 오름차순으로 정렬이다. 이때 뒤에 아무것도 쓰지 않으면 디폴트값인 ASC, 즉 오름차순 정렬이 된다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;SELECT name FROM cumputer_core ORDER BY id DESC; # id역순으로 정렬
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;6-like절로-데이터-필터하기&quot;&gt;6. LIKE절로 데이터 필터하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;# comupter_core테이블에 model_type에 Lake가 들어가 있는 데이터의  model_type과 name 출력  
+
+SELECT model_type, name FROM cumputer_core WHERE model_type LIKE '%Lake%';
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;7-limit으로-데이터-개수-제한하기&quot;&gt;7. LIMIT으로 데이터 개수 제한하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;# computer_core테이블에 id와 name을 출력하는데 첫번째 이후 데이터부터 2번째까지의 데이터를 출력 
+즉 id를 기준으로 id =2, 3번이 출력된다    
+
+SELECT id, name FROM computer_core LIMIT 1, 2;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;8-update로-데이터-수정하기&quot;&gt;8. UPDATE로 데이터 수정하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;첫번째 예시를 보면 모든 name이 변경되는 로직이다. 이는 db내에서 잘못 입력한 것으로 간주하여 에러를 발생시킨다. 
+변경할때는 WHERE절을 함께 써서 조건을 정해준다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;UPDATE computer_core SET name = 'i5';  # computer_core 안에 name을 모두 i5로 변경 (에러발생)  
+
+UPDATE computer_core SET name = 'i100' WHERE id = '3'; # compuer_core안에 id가 3인 데이터의 name을 i100으로 변경   
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="database" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">0922 TIL</title>
+      <link href="https://heejung-gjt.github.io/til51" rel="alternate" type="text/html" title="0922 TIL" />
+      <published>2021-09-22T20:40:00+09:00</published>
+      <updated>2021-09-22T20:40:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/til51</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til51">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;210922-계획&quot;&gt;210922 계획&lt;/h2&gt;
+
+&lt;h4 id=&quot;am-1100-&quot;&gt;AM 11:00 ~&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;D-38&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;del&gt;알고리즘 dfs/bfs 2문제&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;장고 user view 리펙토링(진행중..)&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;준비하고 있는 프로그램이 약 한달 남았다.. 점점 수준이 높아져서 코테난이도도 많이 올라간듯 싶다.. 그래도
+해보고 싶은 프로그램이니 남은시간 열심히 준비해보려고 한다 !!&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">0920 TIL</title>
+      <link href="https://heejung-gjt.github.io/til50" rel="alternate" type="text/html" title="0920 TIL" />
+      <published>2021-09-20T20:59:00+09:00</published>
+      <updated>2021-09-20T20:59:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/til50</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til50">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;210920-계획&quot;&gt;210920 계획&lt;/h2&gt;
+
+&lt;h4 id=&quot;am-900-&quot;&gt;AM 9:00 ~&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;D-40&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;del&gt;알고리즘 dfs/bfs (2178, 2146, 1991)&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;SQL 강의 듣기(인프런)&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">0917 TIL</title>
+      <link href="https://heejung-gjt.github.io/til49" rel="alternate" type="text/html" title="0917 TIL" />
+      <published>2021-09-16T20:59:00+09:00</published>
+      <updated>2021-09-16T20:59:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/til49</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/til49">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;210917-계획&quot;&gt;210917 계획&lt;/h2&gt;
+
+&lt;h4 id=&quot;am-900-&quot;&gt;AM 9:00 ~&lt;/h4&gt;
+
+&lt;p&gt;운동대신 공부를 일찍 시작했다 ! (자기합리화…)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;del&gt;네트워크 소켓, 웹서버, was 정리&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="til" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">0916 TIL</title>
       <link href="https://heejung-gjt.github.io/til48" rel="alternate" type="text/html" title="0916 TIL" />
       <published>2021-09-16T20:50:00+09:00</published>
       <updated>2021-09-16T20:50:00+09:00</updated>
       <id>https://heejung-gjt.github.io/til48</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til48">&lt;h2 id=&quot;210916-계획&quot;&gt;210916 계획&lt;/h2&gt;
+      <content type="html" xml:base="https://heejung-gjt.github.io/til48">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;210916-계획&quot;&gt;210916 계획&lt;/h2&gt;
 
 &lt;h4 id=&quot;am-1120-&quot;&gt;AM 11:20 ~&lt;/h4&gt;
 
@@ -498,392 +856,6 @@ count 3
 
       
         <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">Socket이란, WebSocket이란</title>
-      <link href="https://heejung-gjt.github.io/socket" rel="alternate" type="text/html" title="Socket이란, WebSocket이란" />
-      <published>2021-09-14T17:32:00+09:00</published>
-      <updated>2021-09-14T17:32:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/socket</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/socket">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Network 정리 &lt;/span&gt;--&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;소켓&quot;&gt;소켓&lt;/h2&gt;
-&lt;p&gt;소켓이란 프로그램이 네트워크 상에서 데이터를 송신과 수신을 하기위한 연결부이다. 일반적으로 tcp/ip프로토콜을 사용하거나 웹 소켓을 이용한다&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;프로토콜&lt;/strong&gt;        &lt;br /&gt;
-어떤 시스템이 다른 시스템과 통신을 원활하게 수용하도록 해주는 통신 규약이다&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;소켓-통신의-흐름&quot;&gt;소켓 통신의 흐름&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/133592555-52a41f5c-9e58-43a3-9b2c-92ffa326852c.png&quot; alt=&quot;쏘켓&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;소켓의 흐름은 서버소켓과 클라이언트소켓으로 이야기 할 수 있다&lt;/p&gt;
-
-&lt;h4 id=&quot;클라이언트&quot;&gt;클라이언트&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;socket()함수로 소켓을 연다&lt;/li&gt;
-  &lt;li&gt;connect() 함수를 이용해 통신 할 서버의 ip, port번호에 통신을 시도한다&lt;/li&gt;
-  &lt;li&gt;통신을 시도 할때 서버가 accept()함수를 사용해 클라이언트의 socket descriptor를 반환한다&lt;/li&gt;
-  &lt;li&gt;클라이언트와 서버가 서로 read(), writer()를 하며 통신한다(반복)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;서버&quot;&gt;서버&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;socket()함수를 이용하여 소켓을 생성한다&lt;/li&gt;
-  &lt;li&gt;bind()함수로 ip와 port번호를 설정한다&lt;/li&gt;
-  &lt;li&gt;listen()함수로 클라이언트의 접근 요청에 수신 대기열을 만들어서 몇 개의 클라이언트를 대기 시킬지를 결정한다&lt;/li&gt;
-  &lt;li&gt;accept()함수를 사용하여 클라이언트와의 연결을 기다린다&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;소켓통신은 http통신과는 다르게 서로 연결을 유지하는 양방향 통신이다. 서버와 클라이언트가 실시간으로 데이터를 주고받는 상황이 필요한 경우에 주로 사용된다&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;웹-소켓&quot;&gt;웹 소켓&lt;/h2&gt;
-&lt;p&gt;웹소켓은 서버와 클라이언트간의 socket connection을 유지해 언제든 양방향 통신이나 데이터 전송이 가능하게 하는 기술이다  &lt;br /&gt;
-즉 http통신의 한계(단방향, 재접속)를 보완하는 기술이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;웹-소켓-이전-비슷한-기술&quot;&gt;웹 소켓 이전 비슷한 기술&lt;/h3&gt;
-
-&lt;h3 id=&quot;polling&quot;&gt;Polling&lt;/h3&gt;
-&lt;p&gt;서버로 일정 주기마다 요청을 송신한다 &lt;br /&gt;
-&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/133594391-1c7fc979-b632-4a51-90a9-0a3abae7f1ef.png&quot; alt=&quot;polliing&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;real time통신에서는 언제 통신이 발생할지는 예측이 불가능하다. 그렇기에 불필요한 request와 connection이 발생한다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;real time = 실시간&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;long-polling&quot;&gt;Long Polling&lt;/h3&gt;
-&lt;p&gt;서버에 요청을 보내고 이벤트가 발생하여 응답을 받을 때까지 연결을 종료하지 않는다. 응답을 받으면 연결을 끊고 다시 재요청을 한다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/133594388-498189c6-6de4-482a-99b9-6db4eb994474.png&quot; alt=&quot;longpolling&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;많은 양의 메시지가 전송 될 경우 polling과 똑같다&lt;/p&gt;
-
-&lt;h3 id=&quot;streaming&quot;&gt;Streaming&lt;/h3&gt;
-&lt;p&gt;서버에 요청을 보내고 연결을 유지하며 데어터를 수신한다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/133594384-d2b2bf4b-981c-451d-b125-d83ec768a919.png&quot; alt=&quot;스트리밍&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;클라이언트에서 서버로의 데이터 송신이 어렵다&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;즉 위의 방법들은 모두 HTTP를 통해 통신하기 때문에 request, response 둘 다 header가 불필요하게 크다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;웹-소켓의-핸드-쉐이크&quot;&gt;웹 소켓의 핸드 쉐이크&lt;/h3&gt;
-
-&lt;p&gt;웹 소켓도 tcp의 핸드 쉐이크처럼 연결을 하는 과정이 존재한다. 이때 웹 소켓의 핸드 쉐이킹은 http(80)나 https(443)의 프로토콜을 통해서 이루어진다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/133595432-4a2d221b-8264-4741-945a-bc4056f4dfc3.png&quot; alt=&quot;웹소켓&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;클라이언트에서 아래와 같은 표준적인 http 요청 header를 보낸다 (이때 http버전은 반드시 1.1 이상이여야하며 get방식이여야 한다 )&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;GET /chat HTTP/1.1  &lt;br /&gt;
-Host: example.com:8000 # 웹 소켓의 서버 구조 &lt;br /&gt;
-Upgrade: websocket # 현재 클라이언트. 서버 전송 프로토콜 연결에서 다른 프로토콜로 업그레이드/변경하기 위한 규칙 &lt;br /&gt;
-Connection: Upgrade # upgrade헤더가 명시되어 있는 경우 송신자는 반드시 connection헤더 필드도 함께 전송해야 한다 &lt;br /&gt;
-Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ== # 양쪽 통신자의 신원을 확인하는 키라고 생각하면 된다  &lt;br /&gt;
-Sec-WebSocket-Version: 13&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;서버가 클라이언트에게 웹소켓 프로토콜로 업그레드 하는 것을 승인하면 아래의 헤더를 전송한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;101 Switching Protocols &lt;br /&gt;
-Upgrade: websocket  &lt;br /&gt;
-Connection: Upgrade   &lt;br /&gt;
-Sec-WebSocket-Accept: hsBlbuDTkk24srzEOTBUlZAlC2g=&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;핸드 쉐이킹이 완료되면 http프로토콜은 &lt;strong&gt;ws&lt;/strong&gt; 프로토콜로 변경된다 (wss -&amp;gt; https처럼 데이터 보안을 위해서 ssl을 적용한 프로토콜)
- 이후 서로 messge를 주고받는다 (message : 여러 프레임이 모여 구성하는 하나의 논리적 메시지 단위)&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;프레임(frame)&lt;/strong&gt;    &lt;br /&gt;
-커뮤니케이션에서 가장 작은 단위의 데이터이다 (작은헤더 + payload로 구성)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;페이로드(payload)&lt;/strong&gt;     &lt;br /&gt;
-데이터와 함께 전송되는 데이터중, 헤더와 메타데이터와 같은 데이터는 제외한 전송의 근본적인 목적이 되는 데이터의 일부분이다&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;웹-소켓-프로토콜-특징&quot;&gt;웹 소켓 프로토콜 특징&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;최초 접속할때 http 프로토콜 위에서 핸드쉐이킹을 하기 때문에 http header를 사용한다&lt;/li&gt;
-  &lt;li&gt;웹 소켓을 위한 별도의 포트는 없으며 기존포트(80, 443)를 사용한다&lt;/li&gt;
-  &lt;li&gt;프레임으로 구성된 메시지라는 논리적 단위로 송수신된다&lt;/li&gt;
-  &lt;li&gt;메시지에 포함될 수 있는 교환 가능한 메시지는 텍스트와 바이너리이다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;socketio&quot;&gt;socket.io&lt;/h2&gt;
-&lt;p&gt;socket.io란 WebSocket과 같이 클라이언트와 서버의 양방향 통신을 가능하게 해주는 모듈이다. WebSocket은 HTML5이후에 나왔기 때문에 엊ㄴ의 기술로 구현된 서비스에서 WebSocket처럼 사용할 수 있도록 도와주는 기술이다.&lt;/p&gt;
-
-&lt;p&gt;socket.io는 통신을 시작할때 각 브라우저에 대해서 webSocket, streaming등등에서 가장 적절한 방법을 찾아 메시지를 보내준다.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h5 id=&quot;reference&quot;&gt;reference&lt;/h5&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://duckdevelope.tistory.com/19&quot;&gt;https://duckdevelope.tistory.com/19&lt;/a&gt; &lt;br /&gt;
-&lt;a href=&quot;https://rubberduck-debug.tistory.com/123&quot;&gt;https://rubberduck-debug.tistory.com/123&lt;/a&gt;   &lt;br /&gt;
-&lt;a href=&quot;https://velog.io/@y1andyu&quot;&gt;https://velog.io/@y1andyu&lt;/a&gt;  &lt;br /&gt;
-&lt;a href=&quot;https://www.youtube.com/watch?v=MPQHvwPxDUw&quot;&gt;https://www.youtube.com/watch?v=MPQHvwPxDUw&lt;/a&gt;&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="network" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">0913 TIL</title>
-      <link href="https://heejung-gjt.github.io/til45" rel="alternate" type="text/html" title="0913 TIL" />
-      <published>2021-09-13T17:50:00+09:00</published>
-      <updated>2021-09-13T17:50:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/til45</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til45">&lt;h2 id=&quot;210913-계획&quot;&gt;210913 계획&lt;/h2&gt;
-
-&lt;h4 id=&quot;am-1150-&quot;&gt;AM 11:50 ~&lt;/h4&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;알고리즘 백준 1699, 2133, 9461, 2225, 2751 문제 풀기&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;jwt 실습하기&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;알고리즘 문제 풀고 jwt 실습하니 하루가 다 갔다… ^^ &lt;br /&gt;
-jwt를 공부하면서 역할 중 하나가 백엔드와 프론트를 정확히 나눌수 있는 역할을 한다는데 나한테는 생각보다 어려운 개념
-이다… 좀 더 공부를 해야 할 듯 싶다 !&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">0911 TIL</title>
-      <link href="https://heejung-gjt.github.io/til44" rel="alternate" type="text/html" title="0911 TIL" />
-      <published>2021-09-11T17:50:00+09:00</published>
-      <updated>2021-09-11T17:50:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/til44</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til44">&lt;h2 id=&quot;210911-계획&quot;&gt;210911 계획&lt;/h2&gt;
-
-&lt;h4 id=&quot;pm-200-&quot;&gt;PM 2:00 ~&lt;/h4&gt;
-
-&lt;p&gt;풀었던 알고리즘 문제를 블로그에 정리하고 오늘은 꼭 3문제 이상은 풀 예정이다 !! 그리고 JWT 이론은 정리해보자 !!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;DP 알고리즘 다시 풀어보기(2문제)&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;DP 알고리즘 블로그 정리하기(9/10)&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;DP 알고리즘 풀기(3문제)&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;JWT 공부하기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;DP는 너무너무 어려워~~~ 규칙 찾는게 아직도 쉽지가 않다… ^^&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">JWT란 (작성중..)</title>
-      <link href="https://heejung-gjt.github.io/jwt" rel="alternate" type="text/html" title="JWT란 (작성중..)" />
-      <published>2021-09-11T17:45:00+09:00</published>
-      <updated>2021-09-11T17:45:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/jwt</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/jwt">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Network 정리 &lt;/span&gt;--&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;jwt&quot;&gt;JWT&lt;/h2&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="jwt" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">(프로그래머스 with python) 11722 가장 긴 감소하는 부분 수열</title>
-      <link href="https://heejung-gjt.github.io/algorithm10" rel="alternate" type="text/html" title="(프로그래머스 with python) 11722 가장 긴 감소하는 부분 수열" />
-      <published>2021-09-10T18:00:00+09:00</published>
-      <updated>2021-09-10T18:00:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/algorithm10</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/algorithm10">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;11722-가장-긴-감소하는-부분-수열&quot;&gt;11722 가장 긴 감소하는 부분 수열&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/132938885-86509141-0347-4928-9c52-d840931494a9.png&quot; alt=&quot;11722 가장 갑소하는 부분수열&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;로직-구현-순서&quot;&gt;로직 구현 순서&lt;/h3&gt;
-
-&lt;p&gt;11055번과 거의 똑같다. 11055번은 값이 증가하는지에 대한 조건을 걸었다면 이 문제는 값이 감소하는지 비교한 후 그 중 max의 값을 찾아 업데이트 해주면 된다. arr[i]이 이전값인 arr[j]보다 작으면 아래의 로직이 실행된다.&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="algorithm" />
       
 
       

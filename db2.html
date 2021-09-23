@@ -51,17 +51,17 @@
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="(MYSQL) 기본적인 명령어 정리하기" />
+    <meta property="og:title" content="(MYSQL)" />
     <meta property="og:description" content="장고와 mysql을 연동해서 사용할때 나는 ORM을 사용해 DB에 접근하였기 때문에 쿼리문을 알고있지 않아도 큰 문제가 되지 않았지만 최소한의 쿼리문과 명령문을 쓸 줄 알아야 편하게 DB를 조작할 수 있었다. 정말 최소한 알아야 하는 명령문을 정리하였다. database의 명령문은 대문자와 소문자를 구별하지 않지만 대문자를 쓰는 것이 컨벤션이다. 1. CLI를 이용하여 DB에 접속하기 #" />
     <meta property="og:url" content="https://heejung-gjt.github.io/db2" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/mysql.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-07-13T15:09:00+09:00" />
-    <meta property="article:modified_time" content="2021-07-13T15:09:00+09:00" />
+    <meta property="article:published_time" content="2021-07-13T20:47:00+09:00" />
+    <meta property="article:modified_time" content="2021-07-13T20:47:00+09:00" />
     <meta property="article:tag" content="Database" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="(MYSQL) 기본적인 명령어 정리하기" />
+    <meta name="twitter:title" content="(MYSQL)" />
     <meta name="twitter:description" content="장고와 mysql을 연동해서 사용할때 나는 ORM을 사용해 DB에 접근하였기 때문에 쿼리문을 알고있지 않아도 큰 문제가 되지 않았지만 최소한의 쿼리문과 명령문을 쓸 줄 알아야 편하게 DB를 조작할 수 있었다. 정말 최소한 알아야 하는 명령문을 정리하였다. database의 명령문은 대문자와 소문자를 구별하지 않지만 대문자를 쓰는 것이 컨벤션이다. 1. CLI를 이용하여 DB에 접속하기 #" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/mysql.png" />
@@ -107,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="(MYSQL) 기본적인 명령어 정리하기" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="(MYSQL)" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -202,7 +202,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">(MYSQL) 기본적인 명령어 정리하기</h1>
+                <h1 class="post-full-title">(MYSQL)</h1>
             </header>
 
 <!--  
@@ -225,7 +225,7 @@ into the {body} of the default.hbs template -->
 
 <hr />
 
-<h4 id="1-cli를-이용하여-db에-접속하기">1. CLI를 이용하여 DB에 접속하기</h4>
+<h2 id="1-cli를-이용하여-db에-접속하기">1. CLI를 이용하여 DB에 접속하기</h2>
 
 <p><br /></p>
 
@@ -240,7 +240,7 @@ $ mysql -u root -p{password}
 
 <hr />
 
-<h4 id="2-database-생성하기">2. database 생성하기</h4>
+<h2 id="2-database-생성하기">2. database 생성하기</h2>
 
 <p>이곳에 쓰이는 DB이름이 장고 settings  NAME에 작성되는 이름이다</p>
 
@@ -251,7 +251,7 @@ $ mysql -u root -p{password}
 
 <hr />
 
-<h4 id="3-mysql에-접속후-바로-db까지-생성하기">3. mysql에 접속후 바로 db까지 생성하기</h4>
+<h2 id="3-mysql에-접속후-바로-db까지-생성하기">3. mysql에 접속후 바로 db까지 생성하기</h2>
 
 <p><br /></p>
 
@@ -262,7 +262,7 @@ $ mysql -u root -p{password}
 
 <hr />
 
-<h4 id="4-생성한-db-확인하기--현재-계정이-접근할-수-있는-데이터베이스">4. 생성한 db 확인하기 ( 현재 계정이 접근할 수 있는 데이터베이스)</h4>
+<h2 id="4-생성한-db-확인하기--현재-계정이-접근할-수-있는-데이터베이스">4. 생성한 db 확인하기 ( 현재 계정이 접근할 수 있는 데이터베이스)</h2>
 
 <p><br /></p>
 
@@ -273,7 +273,7 @@ $ mysql -u root -p{password}
 
 <hr />
 
-<h4 id="5-사용할-db에-접속하기">5. 사용할 db에 접속하기</h4>
+<h2 id="5-사용할-db에-접속하기">5. 사용할 db에 접속하기</h2>
 
 <p><br /></p>
 
@@ -284,7 +284,7 @@ $ mysql -u root -p{password}
 
 <hr />
 
-<h4 id="6-접속한-db의-테이블-확인하기">6. 접속한 db의 테이블 확인하기</h4>
+<h2 id="6-접속한-db의-테이블-확인하기">6. 접속한 db의 테이블 확인하기</h2>
 
 <p><br /></p>
 
@@ -295,7 +295,7 @@ $ mysql -u root -p{password}
 
 <hr />
 
-<h4 id="7-접속한-db-내부에-있는-필드-확인하기">7. 접속한 db 내부에 있는 필드 확인하기</h4>
+<h2 id="7-접속한-테이블-내부에-있는-필드-확인하기">7. 접속한 테이블 내부에 있는 필드 확인하기</h2>
 
 <p><br /></p>
 
@@ -306,14 +306,13 @@ $ mysql -u root -p{password}
 
 <hr />
 
-<h4 id="8-테이블-필드-추가하기-row추가">8. 테이블 필드 추가하기 (ROW추가)</h4>
+<h2 id="8-테이블-필드-추가하기">8. 테이블 필드 추가하기</h2>
 
 <p><br /></p>
 
 <pre><code class="language-xhtml">sql &gt; ALTER TABLE {table명} ADD {추가할 필드 이름} {추가할 필드 타입};
 
-# EX) student_tb 테이블에 int 타입의 age 필드를 추가한다
-sql &gt; ALTER TABLE student_tb ADD age int;
+sql &gt; ALTER TABLE student_tb ADD age int; # EX) student_tb 테이블에 int 타입의 age 필드를 추가한다
 
 </code></pre>
 
@@ -321,39 +320,49 @@ sql &gt; ALTER TABLE student_tb ADD age int;
 
 <hr />
 
-<h4 id="9-테이블-필드-삭제하기">9. 테이블 필드 삭제하기</h4>
+<h2 id="9-테이블-필드-변경하기">9. 테이블 필드 변경하기</h2>
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; ALTER TABLE {table명} CHANGE {수정할 필드 이름} {새로운 필드 이름} {타입};
+<p>change, modify 2가지로 변경 가능하다</p>
+<pre><code class="language-xhtml">sql &gt; ALTER TABLE {table명} CHANGE COLUMN {수정할 필드 이름} {새로운 필드 이름} {타입}; # ALTER TABLE customer CHANGE COLUMN name modelname varchar(10)
 
-# EX) student_tb 테이블에 tel 필드 이름을 phone 필드이름으로 변경한다
-sql &gt; ALTER TABLE student_tb CHANGE tel phone int;
+</code></pre>
+
+<pre><code class="language-xhtml">sql &gt; ALTER TABLE {table명} MODIFY COLUMN {수정할 필드 이름} {변경할 타입/유형}; # ALTER TABLE customer MODIFY COLUMN name varchar(20) NOT NULL;
 </code></pre>
 
 <p><br /></p>
 
 <hr />
 
-<h4 id="10-테이블-필드-삭제하기row삭제">10. 테이블 필드 삭제하기(ROW삭제)</h4>
+<h2 id="10-테이블-필드-삭제하기row삭제">10. 테이블 필드 삭제하기(ROW삭제)</h2>
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; ALTER TABLE {table명} DROP {삭제할 필드 이름};
+<pre><code class="language-xhtml">sql &gt; ALTER TABLE {table명} DROP COLUMN {삭제할 필드 이름};
 </code></pre>
 
 <p><br /></p>
 
 <hr />
 
-<h4 id="11테이블-생성하기-workbench-사용추천">11.테이블 생성하기 (workbench 사용추천)</h4>
+<h2 id="11테이블-생성하기-workbench-사용추천">11.테이블 생성하기 (workbench 사용추천)</h2>
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; create table {table명}(
+<pre><code class="language-xhtml">sql &gt; CREATE TABLE {table명}(
 			필드명 타입,
 			필드명 타입
 			PRIMARY KEY(필드명)
+);
+
+# 예
+sql &gt; CREATE TABLE student(
+			id int,
+			name char(20),
+            age int,
+			PRIMARY KEY(id)
 );
 </code></pre>
 
@@ -361,7 +370,7 @@ sql &gt; ALTER TABLE student_tb CHANGE tel phone int;
 
 <hr />
 
-<h4 id="12-테이블의-이름-변경하기">12. 테이블의 이름 변경하기</h4>
+<h2 id="12-테이블의-이름-변경하기">12. 테이블의 이름 변경하기</h2>
 
 <p><br /></p>
 
@@ -372,7 +381,7 @@ sql &gt; ALTER TABLE student_tb CHANGE tel phone int;
 
 <hr />
 
-<h4 id="13--테이블-삭제하기">13.  테이블 삭제하기</h4>
+<h2 id="13--테이블-삭제하기">13.  테이블 삭제하기</h2>
 
 <p><br /></p>
 
@@ -383,7 +392,7 @@ sql &gt; ALTER TABLE student_tb CHANGE tel phone int;
 
 <hr />
 
-<h4 id="14-설정했던-db의-password-변경하기">14. 설정했던 db의 password 변경하기</h4>
+<h2 id="14-설정했던-db의-password-변경하기">14. 설정했던 db의 password 변경하기</h2>
 
 <p><br /></p>
 
@@ -394,7 +403,7 @@ sql &gt; ALTER TABLE student_tb CHANGE tel phone int;
 
 <hr />
 
-<h4 id="15-db생성시-주의-사항">15. db생성시 주의 사항</h4>
+<h2 id="15-db생성시-주의-사항">15. db생성시 주의 사항</h2>
 <ul>
   <li>기본 인코딩을 utf8로 설정한다 (그렇지 않으면 한글이 테이블에 들어가지 않는다)</li>
 </ul>
@@ -408,7 +417,7 @@ sql &gt; ALTER TABLE student_tb CHANGE tel phone int;
 
 <hr />
 
-<h4 id="16-이미-생성된-데이터베이스-언어-인코딩-utf8로-변환한다">16. 이미 생성된 데이터베이스 언어 인코딩 utf8로 변환한다</h4>
+<h2 id="16-이미-생성된-데이터베이스-언어-인코딩-utf8로-변환한다">16. 이미 생성된 데이터베이스 언어 인코딩 utf8로 변환한다</h2>
 
 <p><br /></p>
 
@@ -419,7 +428,7 @@ sql &gt; ALTER TABLE student_tb CHANGE tel phone int;
 
 <hr />
 
-<h4 id="17-db의-문자세트-확인하기">17. db의 문자세트 확인하기</h4>
+<h2 id="17-db의-문자세트-확인하기">17. db의 문자세트 확인하기</h2>
 
 <p><br /></p>
 
