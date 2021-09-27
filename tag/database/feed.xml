@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/database/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-27T08:19:08+09:00</updated>
+  <updated>2021-09-27T10:56:30+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/database/feed.xml</id>
 
   
@@ -32,6 +32,191 @@
 
   
     <entry>
+      <title type="html">(MYSQL) DCL(Data Control Language) 실습 - 유저 생성, 변경, 권한</title>
+      <link href="https://heejung-gjt.github.io/db4" rel="alternate" type="text/html" title="(MYSQL) DCL(Data Control Language) 실습 -  유저 생성, 변경, 권한" />
+      <published>2021-09-26T20:57:00+09:00</published>
+      <updated>2021-09-26T20:57:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/db4</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/db4">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-cli를-이용하여-db에-접속하기&quot;&gt;1. CLI를 이용하여 DB에 접속하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;# 비밀번호 입력후 접속
+$ mysql -u root -p
+
+# 비밀번호 함께 입력후 접속
+$ mysql -u root -p{password}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2-mysql-사용자-확인-추가&quot;&gt;2. mysql 사용자 확인, 추가&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql -u root -p
+password: {등록한 pwd}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3-mysql에-접속후-바로-db까지-생성하기&quot;&gt;3. mysql에 접속후 바로 db까지 생성하기&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ mysql -u root -p{password} &amp;lt; {db이름}.sql
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;4-root-사용자-pwd-지정&quot;&gt;4. root 사용자 pwd 지정&lt;/h3&gt;
+
+&lt;p&gt;맨 처음 mysql을 설치했을 경우에는 먼저 사용자와 pwd를 등록해야 한다. root를 사용하고 싶을땐 ALTER로 PWD를 지정해주면 된다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ sudo mysql
+mysql &amp;gt; ALTER user 'root'@localhost IDENTIFIED WITH mysql_native_password BY '비밀번호 입력';
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;5-로컬에서만-접속-가능한-user-생성&quot;&gt;5. 로컬에서만 접속 가능한 user 생성&lt;/h3&gt;
+
+&lt;p&gt;다른 외부 컴퓨터에서는 mysql에 접속하지 못하고 자신의 컴퓨터에서만 접속할 수 있게 user를 생성하고 싶다면 localhost를 입력하면 된다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;CREATE user 'userid'@localhost IDENTIFIED BY '비밀번호';
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;6-모든-호스트에서-접속-가능한-user-생성&quot;&gt;6. 모든 호스트에서 접속 가능한 user 생성&lt;/h3&gt;
+
+&lt;p&gt;외부 컴퓨터에서도 mysql에 접속할 수 있게 user를 생성하고 싶다면 %를 입력하면 된다&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;CREATE user 'userid'@'%' IDENTIFIED BY '비밀번호';
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;7-사용자-패스워드-변경&quot;&gt;7. 사용자 패스워드 변경&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;root'@'%'와 'root'@localhost 중 처음에 user를 생성했을때 입력했던 값을 써야한다. root'@'%' 까지가 하나의 아이디라고 생각하면 편하다&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;SET PASSWORD FOR 'userid'@'%' = '새 패스워드';
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;8-사용자-삭제&quot;&gt;8. 사용자 삭제&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql &amp;gt; use mysql;
+mysql &amp;gt; drop user 'userid'@'%';
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;9-mysql-현재-부여된-권한-확인&quot;&gt;9. mysql 현재 부여된 권한 확인&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql &amp;gt; SHOW GRANTS for id;
+ex)
+SHOW GRANTS for 'root'@localhostlocalhost
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;10-로컬에서만-접속-허용&quot;&gt;10. 로컬에서만 접속 허용&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql &amp;gt; GRANT ALL ON DATABASE.TABLE to 'root'@localhost;
+ex)
+GRANT ALL ON DATABASE.product to 'root'@loaclhost; # 사용자 root에게 product table의 모든 변경 권한을 주었다. 즉 외부에서도 product crud 가능
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;11-특정-권한만-사용&quot;&gt;11. 특정 권한만 사용&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql &amp;gt; GRANT SELECT, UPDATE ON DATABASE.TABLE to 'root'@localhost;
+ex)
+GRANT SELECT, UPDATE ON Market.product to 'root'@localhost; # 사용자 root에게 product table의 읽기,수정의 권한만을 주었다. 즉 삭제와 같은 처리는 할 수 없다
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;12-모든-데이터베이스-권한-설정&quot;&gt;12. 모든 데이터베이스 권한 설정&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;GRANT ALL ON *.* to 'root'@localhost; # 사용자 root는 모든 데이터베이스의 crud가 가능하다
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;13-특정-데이터베이스-내에-있는-모든-테이블에-권한-설정&quot;&gt;13. 특정 데이터베이스 내에 있는 모든 테이블에 권한 설정&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;GRANT ALL ON DATABASE.* to 'root'@localhost;
+ex)
+GRANT ALL ON Market.* to 'root'@localhost; # 사용자 root는 데이터베이스 Market내에 있는 모든 테이블의 crud가 가능하다
+&lt;/code&gt;&lt;/pre&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="database" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">(MYSQL) DML CRUD - 데이터 생성, 읽기, 갱신, 삭제하기</title>
       <link href="https://heejung-gjt.github.io/db3" rel="alternate" type="text/html" title="(MYSQL) DML CRUD - 데이터 생성, 읽기, 갱신, 삭제하기" />
       <published>2021-09-22T20:52:00+09:00</published>
@@ -40,8 +225,6 @@
       <content type="html" xml:base="https://heejung-gjt.github.io/db3">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-데이터-생성&quot;&gt;1. 데이터 생성&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;넣을 데이터는 테이블 필드의 순서에 맞게 넣어주면 된다. 이때 id같이 auto_increment로 지정되어 있는 필드는
 자동으로 값이 카운트 되기 때문에 &lt;strong&gt;직접 넣을 데이터를 정할 수 있다&lt;/strong&gt;&lt;/p&gt;
@@ -103,8 +286,6 @@ SELECT name FROM computer_core;
 
 &lt;h2 id=&quot;5-order-by절로-데이터-정렬하기&quot;&gt;5. ORDER BY절로 데이터 정렬하기&lt;/h2&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;p&gt;DESC가 내림차순이고 ASC가 오름차순으로 정렬이다. 이때 뒤에 아무것도 쓰지 않으면 디폴트값인 ASC, 즉 오름차순 정렬이 된다&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;SELECT name FROM cumputer_core ORDER BY id DESC; # id역순으로 정렬
 &lt;/code&gt;&lt;/pre&gt;
@@ -142,8 +323,6 @@ SELECT id, name FROM computer_core LIMIT 1, 2;
 
 &lt;h2 id=&quot;8-update로-데이터-수정하기&quot;&gt;8. UPDATE로 데이터 수정하기&lt;/h2&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
 &lt;p&gt;첫번째 예시를 보면 모든 name이 변경되는 로직이다. 이는 db내에서 잘못 입력한 것으로 간주하여 에러를 발생시킨다. 
 변경할때는 WHERE절을 함께 써서 조건을 정해준다&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;UPDATE computer_core SET name = 'i5';  # computer_core 안에 name을 모두 i5로 변경 (에러발생)  
@@ -153,7 +332,17 @@ UPDATE computer_core SET name = 'i100' WHERE id = '3'; # compuer_core안에 id�
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;hr /&gt;</content>
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;9-delete로-데이터-삭제하기&quot;&gt;9. DELETE로 데이터 삭제하기&lt;/h2&gt;
+
+&lt;p&gt;보통 WHERE절과 함께 써서 특정한 조건에 맞는 데이터만 삭제하는 경우가 많다&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;DELETE FROM {테이블명} WHERE {특정 컬럼} = '값';
+
+ex)
+DELETE FROM product WHERE id = 1; # product 테이블의 id가 1인 데이터가 삭제된다
+&lt;/code&gt;&lt;/pre&gt;</content>
 
       
       
@@ -197,22 +386,7 @@ UPDATE computer_core SET name = 'i100' WHERE id = '3'; # compuer_core안에 id�
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;1-cli를-이용하여-db에-접속하기&quot;&gt;1. CLI를 이용하여 DB에 접속하기&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;# 비밀번호 입력후 접속
-$ mysql -u root -p
-
-# 비밀번호 함께 입력후 접속
-$ mysql -u root -p{password}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;2-database-생성하기&quot;&gt;2. database 생성하기&lt;/h2&gt;
+&lt;h2 id=&quot;1-database-생성하기&quot;&gt;1. database 생성하기&lt;/h2&gt;
 
 &lt;p&gt;이곳에 쓰이는 DB이름이 장고 settings  NAME에 작성되는 이름이다&lt;/p&gt;
 
@@ -223,18 +397,7 @@ $ mysql -u root -p{password}
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;3-mysql에-접속후-바로-db까지-생성하기&quot;&gt;3. mysql에 접속후 바로 db까지 생성하기&lt;/h2&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ mysql -u root -p{password} &amp;lt; {db이름}.sql
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;4-생성한-db-확인하기--현재-계정이-접근할-수-있는-데이터베이스&quot;&gt;4. 생성한 db 확인하기 ( 현재 계정이 접근할 수 있는 데이터베이스)&lt;/h2&gt;
+&lt;h2 id=&quot;2-생성한-db-확인하기--현재-계정이-접근할-수-있는-데이터베이스&quot;&gt;2. 생성한 db 확인하기 ( 현재 계정이 접근할 수 있는 데이터베이스)&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -245,7 +408,7 @@ $ mysql -u root -p{password}
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;5-사용할-db에-접속하기&quot;&gt;5. 사용할 db에 접속하기&lt;/h2&gt;
+&lt;h2 id=&quot;3-사용할-db에-접속하기&quot;&gt;3. 사용할 db에 접속하기&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -256,7 +419,7 @@ $ mysql -u root -p{password}
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;6-접속한-db의-테이블-확인하기&quot;&gt;6. 접속한 db의 테이블 확인하기&lt;/h2&gt;
+&lt;h2 id=&quot;4-접속한-db의-테이블-확인하기&quot;&gt;4. 접속한 db의 테이블 확인하기&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -267,7 +430,7 @@ $ mysql -u root -p{password}
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;7-접속한-테이블-내부에-있는-필드-확인하기&quot;&gt;7. 접속한 테이블 내부에 있는 필드 확인하기&lt;/h2&gt;
+&lt;h2 id=&quot;5-접속한-테이블-내부에-있는-필드-확인하기&quot;&gt;5. 접속한 테이블 내부에 있는 필드 확인하기&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -278,7 +441,7 @@ $ mysql -u root -p{password}
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;8-테이블-필드-추가하기&quot;&gt;8. 테이블 필드 추가하기&lt;/h2&gt;
+&lt;h2 id=&quot;6-테이블-필드-추가하기&quot;&gt;6. 테이블 필드 추가하기&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -292,7 +455,7 @@ sql &amp;gt; ALTER TABLE student_tb ADD age int; # EX) student_tb 테이블에 i
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;9-테이블-필드-변경하기&quot;&gt;9. 테이블 필드 변경하기&lt;/h2&gt;
+&lt;h2 id=&quot;7-테이블-필드-변경하기&quot;&gt;7. 테이블 필드 변경하기&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -308,7 +471,7 @@ sql &amp;gt; ALTER TABLE student_tb ADD age int; # EX) student_tb 테이블에 i
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;10-테이블-필드-삭제하기row삭제&quot;&gt;10. 테이블 필드 삭제하기(ROW삭제)&lt;/h2&gt;
+&lt;h2 id=&quot;8-테이블-필드-삭제하기row삭제&quot;&gt;8. 테이블 필드 삭제하기(ROW삭제)&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -319,7 +482,7 @@ sql &amp;gt; ALTER TABLE student_tb ADD age int; # EX) student_tb 테이블에 i
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;11테이블-생성하기-workbench-사용추천&quot;&gt;11.테이블 생성하기 (workbench 사용추천)&lt;/h2&gt;
+&lt;h2 id=&quot;9-테이블-생성하기-workbench-사용추천&quot;&gt;9. 테이블 생성하기 (workbench 사용추천)&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -342,7 +505,7 @@ sql &amp;gt; CREATE TABLE student(
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;12-테이블의-이름-변경하기&quot;&gt;12. 테이블의 이름 변경하기&lt;/h2&gt;
+&lt;h2 id=&quot;10-테이블의-이름-변경하기&quot;&gt;10. 테이블의 이름 변경하기&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -353,7 +516,7 @@ sql &amp;gt; CREATE TABLE student(
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;13--테이블-삭제하기&quot;&gt;13.  테이블 삭제하기&lt;/h2&gt;
+&lt;h2 id=&quot;11--테이블-삭제하기&quot;&gt;11.  테이블 삭제하기&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -364,7 +527,7 @@ sql &amp;gt; CREATE TABLE student(
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;14-설정했던-db의-password-변경하기&quot;&gt;14. 설정했던 db의 password 변경하기&lt;/h2&gt;
+&lt;h2 id=&quot;12-설정했던-db의-password-변경하기&quot;&gt;12. 설정했던 db의 password 변경하기&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -375,7 +538,7 @@ sql &amp;gt; CREATE TABLE student(
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;15-db생성시-주의-사항&quot;&gt;15. db생성시 주의 사항&lt;/h2&gt;
+&lt;h2 id=&quot;13-db생성시-주의-사항&quot;&gt;13. db생성시 주의 사항&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;기본 인코딩을 utf8로 설정한다 (그렇지 않으면 한글이 테이블에 들어가지 않는다)&lt;/li&gt;
 &lt;/ul&gt;
@@ -389,7 +552,7 @@ sql &amp;gt; CREATE TABLE student(
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;16-이미-생성된-데이터베이스-언어-인코딩-utf8로-변환한다&quot;&gt;16. 이미 생성된 데이터베이스 언어 인코딩 utf8로 변환한다&lt;/h2&gt;
+&lt;h2 id=&quot;14-이미-생성된-데이터베이스-언어-인코딩-utf8로-변환한다&quot;&gt;14. 이미 생성된 데이터베이스 언어 인코딩 utf8로 변환한다&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -400,7 +563,7 @@ sql &amp;gt; CREATE TABLE student(
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;17-db의-문자세트-확인하기&quot;&gt;17. db의 문자세트 확인하기&lt;/h2&gt;
+&lt;h2 id=&quot;15-db의-문자세트-확인하기&quot;&gt;15. db의 문자세트 확인하기&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 

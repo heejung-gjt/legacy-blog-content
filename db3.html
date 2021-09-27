@@ -219,8 +219,6 @@ into the {body} of the default.hbs template -->
 
 <h2 id="1-데이터-생성">1. 데이터 생성</h2>
 
-<p><br /></p>
-
 <p>넣을 데이터는 테이블 필드의 순서에 맞게 넣어주면 된다. 이때 id같이 auto_increment로 지정되어 있는 필드는
 자동으로 값이 카운트 되기 때문에 <strong>직접 넣을 데이터를 정할 수 있다</strong></p>
 <pre><code class="language-xhtml">INSERT INTO {테이블명} VALUES(넣을 데이터1, 넣을 데이터2,..);
@@ -281,8 +279,6 @@ SELECT name FROM computer_core;
 
 <h2 id="5-order-by절로-데이터-정렬하기">5. ORDER BY절로 데이터 정렬하기</h2>
 
-<p><br /></p>
-
 <p>DESC가 내림차순이고 ASC가 오름차순으로 정렬이다. 이때 뒤에 아무것도 쓰지 않으면 디폴트값인 ASC, 즉 오름차순 정렬이 된다</p>
 <pre><code class="language-xhtml">SELECT name FROM cumputer_core ORDER BY id DESC; # id역순으로 정렬
 </code></pre>
@@ -320,8 +316,6 @@ SELECT id, name FROM computer_core LIMIT 1, 2;
 
 <h2 id="8-update로-데이터-수정하기">8. UPDATE로 데이터 수정하기</h2>
 
-<p><br /></p>
-
 <p>첫번째 예시를 보면 모든 name이 변경되는 로직이다. 이는 db내에서 잘못 입력한 것으로 간주하여 에러를 발생시킨다. 
 변경할때는 WHERE절을 함께 써서 조건을 정해준다</p>
 <pre><code class="language-xhtml">UPDATE computer_core SET name = 'i5';  # computer_core 안에 name을 모두 i5로 변경 (에러발생)  
@@ -332,6 +326,16 @@ UPDATE computer_core SET name = 'i100' WHERE id = '3'; # compuer_core안에 id�
 <p><br /></p>
 
 <hr />
+
+<h2 id="9-delete로-데이터-삭제하기">9. DELETE로 데이터 삭제하기</h2>
+
+<p>보통 WHERE절과 함께 써서 특정한 조건에 맞는 데이터만 삭제하는 경우가 많다</p>
+
+<pre><code class="language-xhtml">DELETE FROM {테이블명} WHERE {특정 컬럼} = '값';
+
+ex)
+DELETE FROM product WHERE id = 1; # product 테이블의 id가 1인 데이터가 삭제된다
+</code></pre>
 
                 </div>
             </section>
