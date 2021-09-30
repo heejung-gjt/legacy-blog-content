@@ -176,6 +176,7 @@
 .highlight {
   color: #ffffff;
   background-color: #272822;
+  border-radius: 5px;
 }
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
@@ -200,6 +201,11 @@
   color: #f92672;
 }
 
-.language-python {
+.language-python,
+.language-html,
+.language-bash,
+.language-sql,
+.language-javascript,
+.language-git {
   width: 100%;
 }
