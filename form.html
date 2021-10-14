@@ -333,31 +333,29 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<blockquote>
-  <p>html</p>
-</blockquote>
+<pre><code class="language-html```">
+장고 템플릿을 사용해 form 레이아웃을 그려준다 
 
-<p>장고 템플릿을 사용해 form 레이아웃을 그려준다</p>
+입력폼 생성 : as_p(), as_table(), as_ul()
 
-<p>입력폼 생성 : as_p(), as_table(), as_ul()</p>
+```python
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="p">{</span><span class="o">%</span> <span class="n">extends</span> <span class="s">'base.html'</span> <span class="o">%</span><span class="p">}</span>
+{% extends 'base.html' %}
 
-<span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="n">content</span> <span class="o">%</span><span class="p">}</span>
-<span class="o">&lt;</span><span class="n">form</span> <span class="n">method</span><span class="o">=</span><span class="s">"post"</span> <span class="n">action</span><span class="o">=</span><span class="s">'{</span><span class="si">% </span><span class="s">url '</span><span class="n">signin</span><span class="s">' </span><span class="si">%</span><span class="s">}'</span><span class="o">&gt;</span>
-	<span class="p">{</span><span class="o">%</span> <span class="n">csrf_token</span> <span class="o">%</span><span class="p">}</span>
-	<span class="p">{{</span> <span class="n">forms</span><span class="o">.</span><span class="n">as_p</span> <span class="p">}}</span>
-<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
-<span class="p">{</span><span class="o">%</span> <span class="n">endblock</span> <span class="n">content</span> <span class="o">%</span><span class="p">}</span>
+{% block content %}
+&lt;form method="post" action='{% url 'signin' %}'&gt;
+	{% csrf_token %}
+	{{ forms.as_p }}
+&lt;/form&gt;
+{% endblock content %}
 
-</code></pre></div></div>
+</code></pre>
 
 <p><br /></p>
 
 <hr />
 
-<h3 id="modelform-처리과정">ModelForm 처리과정</h3>
+<h2 id="modelform-처리과정">ModelForm 처리과정</h2>
 
 <p>views / html은 Form에서 설명한 내용과 똑같은 로직으로 동작된다</p>
 
@@ -417,16 +415,15 @@ into the {body} of the default.hbs template -->
 
 <hr />
 
-<h3 id="정리">정리</h3>
+<h4 id="정리">정리</h4>
 
 <ul>
   <li>
     <p>Form은 모델에 쓰인 필드보다 추가적으로 다른 필드를 추가해야 할때 (ex) 회원가입 password-chk) , 즉 모델과 폼이 다를때 사용하면 편리하다</p>
   </li>
   <li>
-    <p>ModelForm은 모델에 쓰인 필드 그대로 form을 작성해야할때 사용하면 편리하다.</p>
-
-    <p>꼭 ModelForm이라고 모든 필드를 작성해야 하는 건 아니다. fields=[]에다 작성하고 싶은 필드의 네임을 작성하면 해당 필드가 form에 추가된다. 이때 form의 default값으로 들어간 widget이나 label을 변경할 수 있다</p>
+    <p>ModelForm은 모델에 쓰인 필드 그대로 form을 작성해야할때 사용하면 편리하다.
+꼭 ModelForm이라고 모든 필드를 작성해야 하는 건 아니다. fields=[]에다 작성하고 싶은 필드의 네임을 작성하면 해당 필드가 form에 추가된다. 이때 form의 default값으로 들어간 widget이나 label을 변경할 수 있다</p>
   </li>
 </ul>
 

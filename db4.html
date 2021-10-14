@@ -222,12 +222,12 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<pre><code class="language-xhtml"># 비밀번호 입력후 접속
-$ mysql -u root -p
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 비밀번호 입력후 접속</span>
+<span class="nv">$ </span>mysql <span class="nt">-u</span> root <span class="nt">-p</span>
 
-# 비밀번호 함께 입력후 접속
-$ mysql -u root -p{password}
-</code></pre>
+<span class="c"># 비밀번호 함께 입력후 접속</span>
+<span class="nv">$ </span>mysql <span class="nt">-u</span> root <span class="nt">-p</span><span class="o">{</span>password<span class="o">}</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -237,9 +237,9 @@ $ mysql -u root -p{password}
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">mysql -u root -p
-password: {등록한 pwd}
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="nt">-u</span> root <span class="nt">-p</span>
+password: <span class="o">{</span>등록한 <span class="nb">pwd</span><span class="o">}</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -249,125 +249,128 @@ password: {등록한 pwd}
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">$ mysql -u root -p{password} &lt; {db이름}.sql
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mysql <span class="nt">-u</span> root <span class="nt">-p</span><span class="o">{</span>password<span class="o">}</span> &lt; <span class="o">{</span>db이름<span class="o">}</span>.sql
+</code></pre></div></div>
 
 <p><br /></p>
 
 <hr />
 
-<h3 id="4-root-사용자-pwd-지정">4. root 사용자 pwd 지정</h3>
+<h2 id="4-root-사용자-pwd-지정">4. root 사용자 pwd 지정</h2>
 
 <p>맨 처음 mysql을 설치했을 경우에는 먼저 사용자와 pwd를 등록해야 한다. root를 사용하고 싶을땐 ALTER로 PWD를 지정해주면 된다</p>
-<pre><code class="language-xhtml">$ sudo mysql
-mysql &gt; ALTER user 'root'@localhost IDENTIFIED WITH mysql_native_password BY '비밀번호 입력';
-</code></pre>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>mysql
+mysql <span class="o">&gt;</span> ALTER user <span class="s1">'root'</span>@localhost IDENTIFIED WITH mysql_native_password BY <span class="s1">'비밀번호 입력'</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
 <hr />
 
-<h3 id="5-로컬에서만-접속-가능한-user-생성">5. 로컬에서만 접속 가능한 user 생성</h3>
+<h2 id="5-로컬에서만-접속-가능한-user-생성">5. 로컬에서만 접속 가능한 user 생성</h2>
 
 <p>다른 외부 컴퓨터에서는 mysql에 접속하지 못하고 자신의 컴퓨터에서만 접속할 수 있게 user를 생성하고 싶다면 localhost를 입력하면 된다</p>
-<pre><code class="language-xhtml">CREATE user 'userid'@localhost IDENTIFIED BY '비밀번호';
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE user <span class="s1">'userid'</span>@localhost IDENTIFIED BY <span class="s1">'비밀번호'</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
 <hr />
 
-<h3 id="6-모든-호스트에서-접속-가능한-user-생성">6. 모든 호스트에서 접속 가능한 user 생성</h3>
+<h2 id="6-모든-호스트에서-접속-가능한-user-생성">6. 모든 호스트에서 접속 가능한 user 생성</h2>
 
 <p>외부 컴퓨터에서도 mysql에 접속할 수 있게 user를 생성하고 싶다면 %를 입력하면 된다</p>
-<pre><code class="language-xhtml">CREATE user 'userid'@'%' IDENTIFIED BY '비밀번호';
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE user <span class="s1">'userid'</span>@<span class="s1">'%'</span> IDENTIFIED BY <span class="s1">'비밀번호'</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
 <hr />
 
-<h3 id="7-사용자-패스워드-변경">7. 사용자 패스워드 변경</h3>
+<h2 id="7-사용자-패스워드-변경">7. 사용자 패스워드 변경</h2>
 
-<p><code class="highlighter-rouge">root'@'%'와 'root'@localhost 중 처음에 user를 생성했을때 입력했던 값을 써야한다. root'@'%' 까지가 하나의 아이디라고 생각하면 편하다</code></p>
+<blockquote>
+  <p>root’@’%’와 ‘root’@localhost 중 처음에 user를 생성했을때 입력했던 값을 써야한다. root’@’%’ 까지가 하나의 아이디라고 생각하면 편하다</p>
+</blockquote>
 
-<pre><code class="language-xhtml">SET PASSWORD FOR 'userid'@'%' = '새 패스워드';
-</code></pre>
-
-<p><br /></p>
-
-<hr />
-
-<h3 id="8-사용자-삭제">8. 사용자 삭제</h3>
-
-<p><br /></p>
-
-<pre><code class="language-xhtml">mysql &gt; use mysql;
-mysql &gt; drop user 'userid'@'%';
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SET PASSWORD FOR <span class="s1">'userid'</span>@<span class="s1">'%'</span> <span class="o">=</span> <span class="s1">'새 패스워드'</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
 <hr />
 
-<h3 id="9-mysql-현재-부여된-권한-확인">9. mysql 현재 부여된 권한 확인</h3>
+<h2 id="8-사용자-삭제">8. 사용자 삭제</h2>
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">mysql &gt; SHOW GRANTS for id;
-ex)
-SHOW GRANTS for 'root'@localhostlocalhost
-</code></pre>
-
-<p><br /></p>
-
-<hr />
-
-<h3 id="10-로컬에서만-접속-허용">10. 로컬에서만 접속 허용</h3>
-
-<p><br /></p>
-
-<pre><code class="language-xhtml">mysql &gt; GRANT ALL ON DATABASE.TABLE to 'root'@localhost;
-ex)
-GRANT ALL ON DATABASE.product to 'root'@loaclhost; # 사용자 root에게 product table의 모든 변경 권한을 주었다. 즉 외부에서도 product crud 가능
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="o">&gt;</span> use mysql<span class="p">;</span>
+mysql <span class="o">&gt;</span> drop user <span class="s1">'userid'</span>@<span class="s1">'%'</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
 <hr />
 
-<h3 id="11-특정-권한만-사용">11. 특정 권한만 사용</h3>
+<h2 id="9-mysql-현재-부여된-권한-확인">9. mysql 현재 부여된 권한 확인</h2>
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">mysql &gt; GRANT SELECT, UPDATE ON DATABASE.TABLE to 'root'@localhost;
-ex)
-GRANT SELECT, UPDATE ON Market.product to 'root'@localhost; # 사용자 root에게 product table의 읽기,수정의 권한만을 주었다. 즉 삭제와 같은 처리는 할 수 없다
-</code></pre>
-
-<p><br /></p>
-
-<hr />
-
-<h3 id="12-모든-데이터베이스-권한-설정">12. 모든 데이터베이스 권한 설정</h3>
-
-<p><br /></p>
-
-<pre><code class="language-xhtml">GRANT ALL ON *.* to 'root'@localhost; # 사용자 root는 모든 데이터베이스의 crud가 가능하다
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="o">&gt;</span> SHOW GRANTS <span class="k">for </span>id<span class="p">;</span>
+ex<span class="o">)</span>
+SHOW GRANTS <span class="k">for</span> <span class="s1">'root'</span>@localhostlocalhost
+</code></pre></div></div>
 
 <p><br /></p>
 
 <hr />
 
-<h3 id="13-특정-데이터베이스-내에-있는-모든-테이블에-권한-설정">13. 특정 데이터베이스 내에 있는 모든 테이블에 권한 설정</h3>
+<h2 id="10-로컬에서만-접속-허용">10. 로컬에서만 접속 허용</h2>
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">GRANT ALL ON DATABASE.* to 'root'@localhost;
-ex)
-GRANT ALL ON Market.* to 'root'@localhost; # 사용자 root는 데이터베이스 Market내에 있는 모든 테이블의 crud가 가능하다
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="o">&gt;</span> GRANT ALL ON DATABASE.TABLE to <span class="s1">'root'</span>@localhost<span class="p">;</span>
+ex<span class="o">)</span>
+GRANT ALL ON DATABASE.product to <span class="s1">'root'</span>@loaclhost<span class="p">;</span> <span class="c"># 사용자 root에게 product table의 모든 변경 권한을 주었다. 즉 외부에서도 product crud 가능</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="11-특정-권한만-사용">11. 특정 권한만 사용</h2>
+
+<p><br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="o">&gt;</span> GRANT SELECT, UPDATE ON DATABASE.TABLE to <span class="s1">'root'</span>@localhost<span class="p">;</span>
+ex<span class="o">)</span>
+GRANT SELECT, UPDATE ON Market.product to <span class="s1">'root'</span>@localhost<span class="p">;</span> <span class="c"># 사용자 root에게 product table의 읽기,수정의 권한만을 주었다. 즉 삭제와 같은 처리는 할 수 없다</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="12-모든-데이터베이스-권한-설정">12. 모든 데이터베이스 권한 설정</h2>
+
+<p><br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GRANT ALL ON <span class="k">*</span>.<span class="k">*</span> to <span class="s1">'root'</span>@localhost<span class="p">;</span> <span class="c"># 사용자 root는 모든 데이터베이스의 crud가 가능하다</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="13-특정-데이터베이스-내에-있는-모든-테이블에-권한-설정">13. 특정 데이터베이스 내에 있는 모든 테이블에 권한 설정</h2>
+
+<p><br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GRANT ALL ON DATABASE.<span class="k">*</span> to <span class="s1">'root'</span>@localhost<span class="p">;</span>
+ex<span class="o">)</span>
+GRANT ALL ON Market.<span class="k">*</span> to <span class="s1">'root'</span>@localhost<span class="p">;</span> <span class="c"># 사용자 root는 데이터베이스 Market내에 있는 모든 테이블의 crud가 가능하다</span>
+</code></pre></div></div>
 
                 </div>
             </section>

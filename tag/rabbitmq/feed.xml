@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/rabbitmq/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-10-14T14:20:49+09:00</updated>
+  <updated>2021-10-14T23:01:50+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/rabbitmq/feed.xml</id>
 
   
@@ -33,11 +33,11 @@
   
     <entry>
       <title type="html">(RabbitMQ) 알아보기</title>
-      <link href="https://heejung-gjt.github.io/celery" rel="alternate" type="text/html" title="(RabbitMQ) 알아보기" />
+      <link href="https://heejung-gjt.github.io/rabbitmq" rel="alternate" type="text/html" title="(RabbitMQ) 알아보기" />
       <published>2021-08-15T18:50:00+09:00</published>
       <updated>2021-08-15T18:50:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/celery</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/celery">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+      <id>https://heejung-gjt.github.io/rabbitmq</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/rabbitmq">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;rabbitmq&quot;&gt;RabbitMQ&lt;/h2&gt;
 &lt;p&gt;RabbitMQ란 작업 메시지를 생성하고 전달하는 producer에게 메시지를 전달받아 보관하고 있다가 적절한 worker에게 분배해주는 중간다리 역할을 하는 브로커이다.
 AMQP라는 프로토콜을 기반으로 만들어졌다. &lt;strong&gt;AMQP는 클라이언트 어플리케이션과 MIDDLEWARE 브로커와의 메시지를 주고받기 위한 프로토콜(어떤 약속이나 규칙, 규약)이다&lt;/strong&gt;&lt;/p&gt;
@@ -67,7 +67,7 @@ consumer는 메시지를 수신하는 역할을 한다. 큐에 직접 접근하�
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;자세한-동작-흐름&quot;&gt;자세한 동작 흐름&lt;/h3&gt;
+&lt;h2 id=&quot;자세한-동작-흐름&quot;&gt;자세한 동작 흐름&lt;/h2&gt;
 &lt;p&gt;producer가 작업 메시지를 생성해서 전송한다 -&amp;gt; exchange가 어떤 큐에게 보낼지 exchange의 binding이라는 규칙을 통해서 메시지를 큐에 전달한다 -&amp;gt; binding과 연결된 큐에 메시지가 복사된다.
 exchange는 작업메시지를 어떤 큐에게 보낼지에 대해 결정을 하는데 이때 exchange는 규칙을 결정하는 여러 타입이 있다.&lt;/p&gt;
 

@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/aws/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-10-14T14:20:49+09:00</updated>
+  <updated>2021-10-14T23:01:50+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/aws/feed.xml</id>
 
   
@@ -37,12 +37,14 @@
       <published>2021-07-07T18:32:00+09:00</published>
       <updated>2021-07-07T18:32:00+09:00</updated>
       <id>https://heejung-gjt.github.io/aws3</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/aws3">&lt;p&gt;AWS에서 EC2 인스턴스라는 물리적인 서버를 만든 후 이 안에 우분투 OS(메모리, 하드디스크, cpu의 자원을 관리하는 역할)를 설치하고 우분투 안에  MYSQL를 구축하는 과정입니다. 가장 먼저 AWS 사이트에 접속후
+      <content type="html" xml:base="https://heejung-gjt.github.io/aws3">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;AWS에서 EC2 인스턴스라는 물리적인 서버를 만든 후 이 안에 우분투 OS(메모리, 하드디스크, cpu의 자원을 관리하는 역할)를 설치하고 우분투 안에  MYSQL를 구축하는 과정입니다. 가장 먼저 AWS 사이트에 접속후
 검색창에 EC2를 입력한 후 인스턴스 생성하기를 누른다&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;ubuntu 20.4 환경에서 실습 진행&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;ul&gt;
+  &lt;li&gt;ubuntu 20.4 환경에서 실습 진행&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 
@@ -60,7 +62,7 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;1-가장먼저-ami를-선택한다&quot;&gt;1. 가장먼저 AMI를 선택한다&lt;/h3&gt;
+&lt;h2 id=&quot;1-가장먼저-ami를-선택한다&quot;&gt;1. 가장먼저 AMI를 선택한다&lt;/h2&gt;
 &lt;p&gt;AMI는 인스턴스를 시작할때 이 서버에서 필요한 SW 구성이 포함된 템플릿이다. 나는 Ubuntu 18.04 os를 선택하였다. 20.04를 선택해도 상관없다.  &lt;br /&gt;
 AMI의 역할 중 하나는 &lt;strong&gt;EC2 인스턴스를 생성하는 이미지 역할이다.&lt;/strong&gt; 쉽게 말해 컴퓨터에 있는 프로그램들의 이미지와 같은 역할을 한다.   &lt;br /&gt;
 또다른 역할 중 하나는 &lt;strong&gt;다른 계정에 똑같은 AMI를 생성하고 싶을때 해당 AMI를 복사해서 새로운 서버에 다시 올려서 사용되는 역할을 한다.&lt;/strong&gt;&lt;/p&gt;
@@ -71,7 +73,7 @@ AMI의 역할 중 하나는 &lt;strong&gt;EC2 인스턴스를 생성하는 이�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;2-인스턴스-유형을-선택해준다&quot;&gt;2. 인스턴스 유형을 선택해준다.&lt;/h3&gt;
+&lt;h2 id=&quot;2-인스턴스-유형을-선택해준다&quot;&gt;2. 인스턴스 유형을 선택해준다.&lt;/h2&gt;
 &lt;p&gt;이때 &lt;code class=&quot;highlighter-rouge&quot;&gt;프리티어 사용 가능&lt;/code&gt;이라고 써져 있는 인스턴스를 선택해준다
 &lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124610309-5ca4a500-deab-11eb-83dd-83404ce2b6a6.png&quot; alt=&quot;ec2-2&quot; /&gt;&lt;/p&gt;
 
@@ -79,7 +81,7 @@ AMI의 역할 중 하나는 &lt;strong&gt;EC2 인스턴스를 생성하는 이�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;3-35단계는-특별히-설정할게-없어서-건너-띄어주었다-6단계인-보안-그룹-구성에서는-설정해주어야-할-것-들이-여러개-있다&quot;&gt;3. 3~5단계는 특별히 설정할게 없어서 건너 띄어주었다. 6단계인 보안 그룹 구성에서는 설정해주어야 할 것 들이 여러개 있다&lt;/h3&gt;
+&lt;h2 id=&quot;3-35단계는-특별히-설정할게-없어서-건너-띄어주었다-6단계인-보안-그룹-구성에서는-설정해주어야-할-것-들이-여러개-있다&quot;&gt;3. 3~5단계는 특별히 설정할게 없어서 건너 띄어주었다. 6단계인 보안 그룹 구성에서는 설정해주어야 할 것 들이 여러개 있다&lt;/h2&gt;
 &lt;p&gt;이 단계에서는 포트를 설정해주어야 한다. 필수는 아니지만 컨벤션하게 설정되는 포트들을 작성한다. 아래의 이미지처럼 총 6개의 포트를 설정해준다. 이때 보안 그룹 이름/설명은 변경할 수 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -94,7 +96,7 @@ AMI의 역할 중 하나는 &lt;strong&gt;EC2 인스턴스를 생성하는 이�
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;4-7단계-인스턴스-시작-검토에서-시작하기를-누르면-새-키-페어-생성창이-화면처럼-뜨게-된다&quot;&gt;4. 7단계 인스턴스 시작 검토에서 시작하기를 누르면 새 키 페어 생성창이 화면처럼 뜨게 된다.&lt;/h3&gt;
+&lt;h2 id=&quot;4-7단계-인스턴스-시작-검토에서-시작하기를-누르면-새-키-페어-생성창이-화면처럼-뜨게-된다&quot;&gt;4. 7단계 인스턴스 시작 검토에서 시작하기를 누르면 새 키 페어 생성창이 화면처럼 뜨게 된다.&lt;/h2&gt;
 &lt;p&gt;그럼 해당 키 페어의 이름을 작성해주면 된다. 나는 진행할 프로젝트의 앞 단어들을 따서 지어주었다. 이후 키 페어 다운로드를 눌러서 다운받아준다. 이 파일을
 터미널을 통해 방금 만든 서버에 접속할때 키 페어 파일과 로컬에 저장된 위치를 알고 있어야 한다  &lt;br /&gt;
 &lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124610337-60d0c280-deab-11eb-8a2c-835c384485aa.png&quot; alt=&quot;ec2-4&quot; /&gt;&lt;/p&gt;
@@ -103,7 +105,7 @@ AMI의 역할 중 하나는 &lt;strong&gt;EC2 인스턴스를 생성하는 이�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;5-이제-ec2-서버는-구축이-완성되었다-이제-터미널을-열어-방금-만든-서버에-접속해보자&quot;&gt;5. 이제 EC2 서버는 구축이 완성되었다. 이제 터미널을 열어 방금 만든 서버에 접속해보자&lt;/h3&gt;
+&lt;h2 id=&quot;5-이제-ec2-서버는-구축이-완성되었다-이제-터미널을-열어-방금-만든-서버에-접속해보자&quot;&gt;5. 이제 EC2 서버는 구축이 완성되었다. 이제 터미널을 열어 방금 만든 서버에 접속해보자&lt;/h2&gt;
 
 &lt;p&gt;.ssh의 폴더을 만들어준다. 이곳에 이전에 저장해두었던 키페어 파일을 옮겨 준다. 이 과정은 컨벤션이므로 꼭 폴더
 이름을 ssh로 하지 않아도 되지만 따르길 권장한다고 한다. mv 명령어로 키페어 파일을 옮겨주면 된다. 보통 파일은 downloads 디렉터리에
@@ -148,7 +150,7 @@ ec2인스턴스에도 기본적으로 root가 있고 그 밑에 ubuntu 이름(�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;6-이제-접속한-ec2서버에-mysql-서버를-구축해보자&quot;&gt;6. 이제 접속한 ec2서버에 mysql 서버를 구축해보자&lt;/h3&gt;
+&lt;h2 id=&quot;6-이제-접속한-ec2서버에-mysql-서버를-구축해보자&quot;&gt;6. 이제 접속한 ec2서버에 mysql 서버를 구축해보자&lt;/h2&gt;
 &lt;p&gt;가장 먼저 apt-get를 업데이트 해주어야 한다. 뒤에 -y를 붙이는 이유는 모든 질문에 대한 답을 yes로 응답하겠다는 의미이기 때문에
 자동으로 넘어가서 편리하다&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;
@@ -159,7 +161,7 @@ ec2인스턴스에도 기본적으로 root가 있고 그 밑에 ubuntu 이름(�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;7-mysql-서버를-설치한다&quot;&gt;7. mysql 서버를 설치한다&lt;/h3&gt;
+&lt;h2 id=&quot;7-mysql-서버를-설치한다&quot;&gt;7. mysql 서버를 설치한다&lt;/h2&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -167,7 +169,7 @@ ec2인스턴스에도 기본적으로 root가 있고 그 밑에 ubuntu 이름(�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;8-mysql의-패스워드를-설정해준다&quot;&gt;8. mysql의 패스워드를 설정해준다&lt;/h3&gt;
+&lt;h2 id=&quot;8-mysql의-패스워드를-설정해준다&quot;&gt;8. mysql의 패스워드를 설정해준다&lt;/h2&gt;
 &lt;p&gt;이때 비밀번호 설정전 최초로 mysql에 접속할땐 sudo mysql로 들어간다. 이후 비밀번호가 설정되면
 &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql  -u root -p&lt;/code&gt;를 입력후 비밀번호를 입력하고 접속하면 된다.&lt;/p&gt;
 
@@ -192,7 +194,7 @@ ALTER로 비밀번호를 설정한후 SELECT~로 비밀번호가 제대로 설�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;9-mysql의-외부접속을-설정을-변경해준다&quot;&gt;9. mysql의 외부접속을 설정을 변경해준다&lt;/h3&gt;
+&lt;h2 id=&quot;9-mysql의-외부접속을-설정을-변경해준다&quot;&gt;9. mysql의 외부접속을 설정을 변경해준다&lt;/h2&gt;
 &lt;p&gt;bind address를 0.0.0.0으로 변경해준다. 127.0.0.1로 설정되면 로컬 호스트에서만 접근이 가능하기 때문에 외부에서 접속할 수 있도록
 변경해주어야 한다. 이때 외부에서 접속할때 pwd를 설정해주어야 한다&lt;/p&gt;
 
@@ -211,7 +213,7 @@ ALTER로 비밀번호를 설정한후 SELECT~로 비밀번호가 제대로 설�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;10-설정-후-서버-재시작으로-설정-내용을-적용한다&quot;&gt;10. 설정 후 서버 재시작으로 설정 내용을 적용한다&lt;/h3&gt;
+&lt;h2 id=&quot;10-설정-후-서버-재시작으로-설정-내용을-적용한다&quot;&gt;10. 설정 후 서버 재시작으로 설정 내용을 적용한다&lt;/h2&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;systemctl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;restart&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -228,7 +230,7 @@ status는 서버의 상태를 확인하는 명령어이다.(active가 떠있으�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;11-이제-workbench를-설치하여--mysql서버에-접속해보자&quot;&gt;11. 이제 workbench를 설치하여  mysql서버에 접속해보자&lt;/h3&gt;
+&lt;h2 id=&quot;11-이제-workbench를-설치하여--mysql서버에-접속해보자&quot;&gt;11. 이제 workbench를 설치하여  mysql서버에 접속해보자&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;workbench 설치는 8.0.22버전으로 받아주었다.&lt;/strong&gt; 해당 버전으로 해야 workbench에서 서버를 연결할때 에러가 발생하지 않으니
 이점 유의해서 설치하도록 하자 !
 &lt;a href=&quot;https://dev.mysql.com/downloads/workbench/&quot;&gt;https://dev.mysql.com/downloads/workbench/&lt;/a&gt;&lt;/p&gt;
@@ -242,16 +244,16 @@ status는 서버의 상태를 확인하는 명령어이다.(active가 떠있으�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;12-이제-샘플-데이터를-로컬-서버에서-ec2서버로-파일을-보낸후-mysql에서-열어보자&quot;&gt;12. 이제 샘플 데이터를 로컬 서버에서 ec2서버로 파일을 보낸후 mysql에서 열어보자&lt;/h3&gt;
+&lt;h2 id=&quot;12-이제-샘플-데이터를-로컬-서버에서-ec2서버로-파일을-보낸후-mysql에서-열어보자&quot;&gt;12. 이제 샘플 데이터를 로컬 서버에서 ec2서버로 파일을 보낸후 mysql에서 열어보자&lt;/h2&gt;
 &lt;p&gt;이때 workbench에 샘플 데이터를 가져오는 방법은 2가지가 있다. &lt;strong&gt;서버와 연결되어 있는 workbench안에서 직접 다운받는
 방법&lt;/strong&gt; 과 &lt;strong&gt;로컬서버에서 ec2서버로 직접 파일을 보내는 방법이 있다&lt;/strong&gt;  &lt;br /&gt;
 먼저 얘기하자면 로컬서버에서 ec2서버로 직접 파일을 보내는 방법이 훨씬 빠르긴 하지만 좀 더 복잡할 수 있다.&lt;/p&gt;
 
-&lt;h4 id=&quot;1-1-workbench에서-샘플데이터-추가하기&quot;&gt;1-1. workbench에서 샘플데이터 추가하기&lt;/h4&gt;
+&lt;h3 id=&quot;1-1-workbench에서-샘플데이터-추가하기&quot;&gt;1-1. workbench에서 샘플데이터 추가하기&lt;/h3&gt;
 &lt;p&gt;먼저 &lt;a href=&quot;https://dev.mysql.com/doc/index-other.html&quot;&gt;https://dev.mysql.com/doc/index-other.html&lt;/a&gt; 이곳에서 world, sakila 데이터 베이스를
 추가한다.(다른거 추가해도 된다. 주로 사용되는 샘플데이터이다)&lt;/p&gt;
 
-&lt;h4 id=&quot;1-2-workbench의-파일메뉴에서-open-sql-script를-선택한-후-worldsql-파일을-선택한다&quot;&gt;1-2. workbench의 파일메뉴에서 open SQL Script를 선택한 후 world.sql 파일을 선택한다&lt;/h4&gt;
+&lt;h3 id=&quot;1-2-workbench의-파일메뉴에서-open-sql-script를-선택한-후-worldsql-파일을-선택한다&quot;&gt;1-2. workbench의 파일메뉴에서 open SQL Script를 선택한 후 world.sql 파일을 선택한다&lt;/h3&gt;
 &lt;p&gt;world.sql 파일에 있는 쿼리문이 로드되면 쿼리 실행 아이콘(상단 번개표시)을 클릭한다. 이후 좌측 레이아웃에서
 오른쪽 마우스 클릭후 refresh all 메뉴를 선택하면 world 데이터 베이스가 나타난다.&lt;/p&gt;
 
@@ -260,7 +262,7 @@ status는 서버의 상태를 확인하는 명령어이다.(active가 떠있으�
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;2-1-서버에서-데이터베이스-데이터-추가하기&quot;&gt;2-1. 서버에서 데이터베이스 데이터 추가하기&lt;/h4&gt;
+&lt;h3 id=&quot;2-1-서버에서-데이터베이스-데이터-추가하기&quot;&gt;2-1. 서버에서 데이터베이스 데이터 추가하기&lt;/h3&gt;
 &lt;p&gt;먼저 ec2 서버로 sql 파일을 전송한다. 아래의 명령어는 로컬 desktop에 sql폴더에 있는 도모든 파일을 ec2서버를
 보내는 명령어이다&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ssh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Desktop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ubuntu&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ip&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;주소&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;~/&lt;/span&gt;
@@ -268,7 +270,7 @@ status는 서버의 상태를 확인하는 명령어이다.(active가 떠있으�
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;__ 다운받은 .sql 파일들을 sql 폴더를 생성한후 sql폴더에 넣는 명령어이다__&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;다운받은 .sql 파일들을 sql 폴더를 생성한후 sql폴더에 넣는 명령어이다&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/*.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sql&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -331,7 +333,7 @@ status는 서버의 상태를 확인하는 명령어이다.(active가 떠있으�
       <id>https://heejung-gjt.github.io/aws2</id>
       <content type="html" xml:base="https://heejung-gjt.github.io/aws2">&lt;hr /&gt;
 
-&lt;h3 id=&quot;aws-ec2elastic-compute-cloud란&quot;&gt;AWS EC2(Elastic Compute Cloud)란?&lt;/h3&gt;
+&lt;h2 id=&quot;aws-ec2elastic-compute-cloud란&quot;&gt;AWS EC2(Elastic Compute Cloud)란?&lt;/h2&gt;
 &lt;p&gt;EC2는 아마존 웹 서비스의 여러 서비스 중 가장 먼저 생겨난 서비스 중 하나로 독립된 컴퓨터 한대를 임대해서 
 사용할 수 있다는 의미이다. 쉽게 말해 우리가 쓰는 컴퓨터와 같은 역할을 하는 컴퓨터를 한대 빌려주는 것이라고 생각하면 된다. 
 이때 해당 컴퓨터에 사용자가 선호하는 OS를 설치하고 웹 서비스(DB)를 위한 프로그램을 설치하면 된다.&lt;/p&gt;
@@ -346,23 +348,23 @@ status는 서버의 상태를 확인하는 명령어이다.(active가 떠있으�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;클라우드-서비스-유형에는-무엇이-있는가&quot;&gt;클라우드 서비스 유형에는 무엇이 있는가?&lt;/h3&gt;
+&lt;h2 id=&quot;클라우드-서비스-유형에는-무엇이-있는가&quot;&gt;클라우드 서비스 유형에는 무엇이 있는가?&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
     &lt;h4 id=&quot;iaas인프라-서비스--데이터-저장공간--서버&quot;&gt;IaaS(인프라 서비스) = 데이터 저장공간 + 서버&lt;/h4&gt;
     &lt;p&gt;서버와 스토리지, 네트워크 장비등의 it 인프라 장비를 빌려주는 서비스로 이용자가 직접 데이터센터를 구축할 필요없이 클라우드 환경에서 필요한 인프라를 빌려와 운영체제를 설치하고 애플리케이션을 설치한 다음 원하는 서비스를 운영한다.예를 들자면 넷플릭스는 aws의 iaas 서비스를 이용하여 운영하는 서비스이다.
-  ex) amazon web service, microsoft azure, google compute engine&lt;/p&gt;
+ex) amazon web service, microsoft azure, google compute engine&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;h4 id=&quot;paas플랫폼-서비스--데이터-저장공간--서버--플랫폼&quot;&gt;PaaS(플랫폼 서비스) = 데이터 저장공간 + 서버 + 플랫폼&lt;/h4&gt;
     &lt;p&gt;소프트웨어 서비스를 개발할 때 필요한 플랫폼을 제공하는 서비스로 사용자는 필요한 서비스를 선택해 애플리케이션을 개발한다. 개발자가 소프트웨어를 개발할때 필요한 API를 제공하여 개발자가 좀 더 편하게 앱을 개발 할 수 있게 돕는다.
-  ex) google app engine&lt;/p&gt;
+ex) google app engine&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;h4 id=&quot;saas소프트웨어-서비스--데이터-저장공간--서버--소프트웨어&quot;&gt;Saas(소프트웨어 서비스) = 데이터 저장공간 + 서버 + 소프트웨어&lt;/h4&gt;
     &lt;p&gt;지메일이나 드롭박스 ,네이버 클라우드처럼 소프트웨어를 웹에서 쓸 수 있는 서비스로 지메일을 예를 들어본다면 이메일을 보내고 받는 과정에서 따로 소프트웨어를 설치하지 않고 웹사이트에 들어가 주소를 입력하고 보내면 끝난다. 이처럼 모든 서비스가 클라우드에서 이루어져 pc에 따로 설치하지 않아도 웹에서 소프트웨어를 빌려 쓸 수 있다.
-  ex) google app, dropbox&lt;/p&gt;
+ex) google app, dropbox&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -404,7 +406,7 @@ status는 서버의 상태를 확인하는 명령어이다.(active가 떠있으�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;클라우드-서비스란&quot;&gt;클라우드 서비스란?&lt;/h3&gt;
+&lt;h2 id=&quot;클라우드-서비스란&quot;&gt;클라우드 서비스란?&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;어디에나 존재하는 인터넷이라는 의미로 사용자의 문서나, 이미지, 영상등 다양한 데이터를 서버에 저장한뒤 PC나 스마트폰등으로 접속하여 해당 데이터를 이용하거나 편집하게 도와주는 서비스이다.&lt;/li&gt;
   &lt;li&gt;과거에는 유저들이 사용하는 데이터를 USB등에 담아 보관해 사용했었다면 현재는 클라우드를 통해 다른 플랫폼에서도 저장해놓은 동일한 데이터를 사용할 수 있게 되었다.&lt;/li&gt;
@@ -412,7 +414,7 @@ status는 서버의 상태를 확인하는 명령어이다.(active가 떠있으�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;클라우드-서비스-유형에는-무엇이-있는가&quot;&gt;클라우드 서비스 유형에는 무엇이 있는가?&lt;/h3&gt;
+&lt;h2 id=&quot;클라우드-서비스-유형에는-무엇이-있는가&quot;&gt;클라우드 서비스 유형에는 무엇이 있는가?&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -434,50 +436,41 @@ status는 서버의 상태를 확인하는 명령어이다.(active가 떠있으�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;클라우드-컴퓨팅이란&quot;&gt;클라우드 컴퓨팅이란?&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;사용자의 직접적인 활발한 관리 없이 데이터 스토리지와 시스템 리소스를 필요시 바로 제공하는 것을 말한다. 데이터 정보를 자신의 컴퓨터가 아닌 클라우드에 연결된 다른 컴퓨터(휴대폰, TV, 노트북 등등)로 처리하는 기술을 말한다.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&quot;클라우드-컴퓨팅이란&quot;&gt;클라우드 컴퓨팅이란?&lt;/h2&gt;
+&lt;p&gt;사용자의 직접적인 활발한 관리 없이 데이터 스토리지와 시스템 리소스를 필요시 바로 제공하는 것을 말한다. 데이터 정보를 자신의 컴퓨터가 아닌 클라우드에 연결된 다른 컴퓨터(휴대폰, TV, 노트북 등등)로 처리하는 기술을 말한다.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;awsamazon-web-service란&quot;&gt;AWS(Amazon Web Service)란&lt;/h3&gt;
+&lt;h2 id=&quot;awsamazon-web-service란&quot;&gt;AWS(Amazon Web Service)란&lt;/h2&gt;
 &lt;p&gt;AWS는 아마존에서 개발한 클라우드 컴퓨팅 플랫폼으로 클라우드 컴퓨팅을 통해 웹사이트를 관리하는데 필요한 많은 기능을 제공해준다. 웹사이트를 운영하는데 필요한 서버나 DB, 스토리지등을 제공하는 등 개발자가 사용 가능한 기능을 제공하는 플랫폼을 제공하며 PaaS이다.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;iamidentity-and-access-management이란&quot;&gt;IAM(Identity and Access Management)이란&lt;/h3&gt;
+&lt;h2 id=&quot;iamidentity-and-access-management이란&quot;&gt;IAM(Identity and Access Management)이란&lt;/h2&gt;
 &lt;p&gt;AWS 리소스에 대한 안전한 접근제어를 제공하는 서비스로 IAM을 사용하여 리소스를 사용하도록 인증 및 권한 부여된 대상을 제어한다.&lt;/p&gt;
 
-&lt;h3 id=&quot;s3simple-storage-service란&quot;&gt;S3(Simple Storage Service)란&lt;/h3&gt;
+&lt;h2 id=&quot;s3simple-storage-service란&quot;&gt;S3(Simple Storage Service)란&lt;/h2&gt;
 &lt;p&gt;인터넷 스토리지 서비스로 웹에서 언제 어디서나 원하는 양의 데이터를 저장하고 검색할 수 있다.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;객체(Object)
-s3에 데이터(이미지, 동영상, 파일)가 저장되는 기본 단위는 객체로 파일과 메타데이터로 이루어져 있다.&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;blockquote&gt;
-  &lt;h4 id=&quot;객체의-구성요소&quot;&gt;객체의 구성요소&lt;/h4&gt;
-
-  &lt;ul&gt;
-    &lt;li&gt;key : 파일명&lt;/li&gt;
-    &lt;li&gt;value : 파일에 대한 데이터&lt;/li&gt;
-    &lt;li&gt;메타데이터 : 데이터의 데이터라는 뜻이며 언제 파일이 업로드 되었는지, owner, 수정등에 대한 데이터이다&lt;/li&gt;
-    &lt;li&gt;cors: 리전을 무시하고 한 버킷의 파일을 다른 버킷에서 접근할 수 있도록 한다&lt;/li&gt;
-  &lt;/ul&gt;
+  &lt;p&gt;&lt;strong&gt;객체(Object)&lt;/strong&gt;     &lt;br /&gt;
+s3에 데이터(이미지, 동영상, 파일)가 저장되는 기본 단위는 객체로 파일과 메타데이터로 이루어져 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;버킷(Bucket)  &lt;br /&gt;
-s3에서 생성할 수 있는 최상위 디렉토리의 개념으로 버킷의 이름은 유일해야 하며 계정별로 100개까지 생성이 가능하고 버킷에 저장할 수 있는 객체의 수는 무제한이다. 버킷별로 접근제어 설정이 가능하다.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;객체의 구성요소&lt;/strong&gt;&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt; : 파일명&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt; : 파일에 대한 데이터&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;메타데이터&lt;/code&gt; : 데이터의 데이터라는 뜻이며 언제 파일이 업로드 되었는지, owner, 수정등에 대한 데이터이다&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;cors&lt;/code&gt; : 리전을 무시하고 한 버킷의 파일을 다른 버킷에서 접근할 수 있도록 한다&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;Key : 버킷 내에서 객체를 찾기 위해 사용되는 고유 식별자이다. 보통 디렉터리+파일명으로 이름이 지어진다. 업로드 할 이미지의 네임이 동일할 수 있음을 고려하여 date를 추가해 네임을 지을 수 도 있다.&lt;/li&gt;
-    &lt;li&gt;Region : 버킷 생성시 버킷의 위치를 지정할 수 있다. 버킷의 위치를 어디에 지정하느냐에 따라서 지연 시간의 최적화나 비용의 최소화등이 결정된다.&lt;/li&gt;
-  &lt;/ul&gt;
+  &lt;p&gt;&lt;strong&gt;버킷(Bucket)&lt;/strong&gt;    &lt;br /&gt;
+s3에서 생성할 수 있는 최상위 디렉토리의 개념으로 버킷의 이름은 유일해야 하며 계정별로 100개까지 생성이 가능하고 버킷에 저장할 수 있는 객체의 수는 무제한이다. 버킷별로 접근제어 설정이 가능하다.&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Key&lt;/code&gt; : 버킷 내에서 객체를 찾기 위해 사용되는 고유 식별자이다. 보통 디렉터리+파일명으로 이름이 지어진다. 업로드 할 이미지의 네임이 동일할 수 있음을 고려하여 date를 추가해 네임을 지을 수 도 있다.&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Region&lt;/code&gt; : 버킷 생성시 버킷의 위치를 지정할 수 있다. 버킷의 위치를 어디에 지정하느냐에 따라서 지연 시간의 최적화나 비용의 최소화등이 결정된다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -528,7 +521,7 @@ s3에서 생성할 수 있는 최상위 디렉토리의 개념으로 버킷의 �
 
 &lt;h4 id=&quot;5-이제-사전-설정은-끝이-났다-이제-장고에서-이미지를-업로드-했을때-서버에-저장될-수-있도록-설정해주면-된다&quot;&gt;5. 이제 사전 설정은 끝이 났다. 이제 장고에서 이미지를 업로드 했을때 서버에 저장될 수 있도록 설정해주면 된다.&lt;/h4&gt;
 
-&lt;h4 id=&quot;장고-설정&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;장고 설정&lt;/code&gt;&lt;/h4&gt;
+&lt;h3 id=&quot;장고-설정&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;장고 설정&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;4단계정도로 나누어 설정을 해주었다.&lt;/p&gt;
 
 &lt;ul&gt;

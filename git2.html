@@ -232,7 +232,7 @@ into the {body} of the default.hbs template -->
 
 <hr />
 
-<h4 id="stash-목록-확인하기">stash 목록 확인하기</h4>
+<h2 id="stash-목록-확인하기">stash 목록 확인하기</h2>
 
 <p><br /></p>
 
@@ -243,61 +243,61 @@ into the {body} of the default.hbs template -->
 
 <hr />
 
-<h4 id="stash-적용하기">stash 적용하기</h4>
+<h2 id="stash-적용하기">stash 적용하기</h2>
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">$ git stash apply # 가장 최근의 stash한 목록을 가져온다
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash apply <span class="c"># 가장 최근의 stash한 목록을 가져온다</span>
 
-$ git stash apply {stash 이름}
-</code></pre>
-
-<p><br /></p>
-
-<hr />
-
-<h4 id="stash-삭제하기">stash 삭제하기</h4>
-
-<p><br /></p>
-
-<pre><code class="language-xhtml">$ git stash drop # 가장 최근의 stash를 제거한다
-
-$ git stash drop {stash 이름}
-</code></pre>
+<span class="nv">$ </span>git stash apply <span class="o">{</span>stash 이름<span class="o">}</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
 <hr />
 
-<h4 id="적용과-동시에-스택에서-stash-제거하기">적용과 동시에 스택에서 stash 제거하기</h4>
+<h2 id="stash-삭제하기">stash 삭제하기</h2>
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">$ git stash pop
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash drop <span class="c"># 가장 최근의 stash를 제거한다</span>
 
-<p><br /></p>
-
-<hr />
-
-<h4 id="stash-되돌리기">stash 되돌리기</h4>
-
-<p><br /></p>
-
-<pre><code class="language-xhtml">$ git stash show -p | git apply -R 
-</code></pre>
+<span class="nv">$ </span>git stash drop <span class="o">{</span>stash 이름<span class="o">}</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
 <hr />
 
-<h4 id="develop-변경으로-해당-브랜치의-변경사항을-pull-받아올때-내-로컬에-있는-develop의-변경때문에-pull-되지-않을-경우">develop 변경으로 해당 브랜치의 변경사항을 pull 받아올때 내 로컬에 있는 develop의 변경때문에 pull 되지 않을 경우</h4>
+<h2 id="적용과-동시에-스택에서-stash-제거하기">적용과 동시에 스택에서 stash 제거하기</h2>
 
-<pre><code class="language-xhtml"># 내 로컬
-&gt; git stash
-&gt; git pull origin develop
-&gt; git stash pop
-</code></pre>
+<p><br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash pop
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="stash-되돌리기">stash 되돌리기</h2>
+
+<p><br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git stash show <span class="nt">-p</span> | git apply <span class="nt">-R</span> 
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="develop-변경으로-해당-브랜치의-변경사항을-pull-받아올때-내-로컬에-있는-develop의-변경때문에-pull-되지-않을-경우">develop 변경으로 해당 브랜치의 변경사항을 pull 받아올때 내 로컬에 있는 develop의 변경때문에 pull 되지 않을 경우</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 내 로컬</span>
+<span class="o">&gt;</span> git stash
+<span class="o">&gt;</span> git pull origin develop
+<span class="o">&gt;</span> git stash pop
+</code></pre></div></div>
 
 <p><br /></p>
 

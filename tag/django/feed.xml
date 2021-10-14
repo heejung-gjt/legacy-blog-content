@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/django/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-10-14T14:20:49+09:00</updated>
+  <updated>2021-10-14T23:01:50+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/django/feed.xml</id>
 
   
@@ -48,7 +48,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;ajax로-요청-보내기-위해-submit태그에-onclick를-추가한다&quot;&gt;ajax로 요청 보내기 위해 submit태그에 onclick를 추가한다&lt;/h3&gt;
+&lt;h2 id=&quot;ajax로-요청-보내기-위해-submit태그에-onclick를-추가한다&quot;&gt;ajax로 요청 보내기 위해 submit태그에 onclick를 추가한다&lt;/h2&gt;
 
 &lt;p&gt;form안에 있는 submit 버튼에 onclick함수를 추가해준다. 이때 해당 cateogry의 pk를 인수로 넣어 보낸다&lt;/p&gt;
 
@@ -57,7 +57,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;자바스크립트에서-ajax를-통해-필요한-데이터를-post요청으로-보낸다&quot;&gt;자바스크립트에서 Ajax를 통해 필요한 데이터를 post요청으로 보낸다&lt;/h3&gt;
+&lt;h2 id=&quot;자바스크립트에서-ajax를-통해-필요한-데이터를-post요청으로-보낸다&quot;&gt;자바스크립트에서 Ajax를 통해 필요한 데이터를 post요청으로 보낸다&lt;/h2&gt;
 
 &lt;p&gt;나는 항상 ajax를 사용할때 아래와 같은 틀로 사용한다. 바닐라 자바스크립트를 이용해 ajax를 사용하는 방법을 알고 싶다면 자바스크립트 부분을 확인해보면 된다. 간단하게 순서를 적어보자 &lt;code class=&quot;highlighter-rouge&quot;&gt;1. view에서 필요한 데이터를 param에 딕셔너리 형태로 넣어준다&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;2. body에다 param데이터를 JSON.stringfy를 사용하여 담아준다&lt;/code&gt;  &lt;code class=&quot;highlighter-rouge&quot;&gt;3. 요청을 보낼 url을 fetch에 작성해준다&lt;/code&gt;&lt;/p&gt;
 
@@ -101,7 +101,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;view에서-받은-데이터를-가지고-알맞게-가공한다&quot;&gt;View에서 받은 데이터를 가지고 알맞게 가공한다&lt;/h3&gt;
+&lt;h2 id=&quot;view에서-받은-데이터를-가지고-알맞게-가공한다&quot;&gt;View에서 받은 데이터를 가지고 알맞게 가공한다&lt;/h2&gt;
 
 &lt;p&gt;post 메서드에서 request.is_ajax()를 사용하여 ajax데이터를 받아온다. json.loads(request.body)를 사용하면 자바스크립트에서 body안에 넣었던 param데이터를 받아올수 있고 이를 get(‘data name’)으로 불러올 수 있다.
 코드의 리팩토링이 필요해 보이지만 아래의 코드를 짜는데 굉장히 많은 시간을 들였다..^^&lt;/p&gt;
@@ -152,7 +152,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;가격-filter&quot;&gt;가격 filter&lt;/h3&gt;
+&lt;h2 id=&quot;가격-filter&quot;&gt;가격 filter&lt;/h2&gt;
 
 &lt;p&gt;Q라는 기능을 import받아 쓰면 생각보다 아주아주 간단하게 내가 필요한 범위를 지정해서 그 안에 해당하는 제품들을 가져올 수 있다(난 저 기능을 쓰고 감동이였다.. ㅠㅠ)&lt;/p&gt;
 
@@ -227,7 +227,7 @@
 
 &lt;p&gt;Article 모델안에는 comment라는 필드가 존재하지 않지만 Article를 Comment가 comment라는 related_name으로 참조하고 있기 때문에 값을 구할 수 있다&lt;/p&gt;
 
-&lt;h3 id=&quot;댓글순-filter하기&quot;&gt;댓글순 filter하기&lt;/h3&gt;
+&lt;h2 id=&quot;댓글순-filter하기&quot;&gt;댓글순 filter하기&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -243,7 +243,7 @@
 
 &lt;p&gt;하지만 like에서는 Article을 참조하고 있는 필드가 OneToOneField로 묶여 있기 때문에 Like안에 있는 users의 개수를 세어주어야 한다. &lt;code class=&quot;highlighter-rouge&quot;&gt;like__users&lt;/code&gt; 를 이용해서 article를 참조하고 있는 related_name인 like의 users에 접근을 하여 합계를 구해주었다&lt;/p&gt;
 
-&lt;h3 id=&quot;좋아요순-filter하기&quot;&gt;좋아요순 filter하기&lt;/h3&gt;
+&lt;h2 id=&quot;좋아요순-filter하기&quot;&gt;좋아요순 filter하기&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -284,7 +284,7 @@
       <id>https://heejung-gjt.github.io/django4</id>
       <content type="html" xml:base="https://heejung-gjt.github.io/django4">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;q&quot;&gt;Q()&lt;/h3&gt;
+&lt;h2 id=&quot;q&quot;&gt;Q()&lt;/h2&gt;
 
 &lt;p&gt;Q는 장고의 model orm으로 where절에 or문을 추가하고 싶을때 사용된다
 Article 데이터의 name이 article이거나 category가 category인 데이터를 필터한다&lt;/p&gt;
@@ -304,7 +304,7 @@ Article 데이터의 name이 article이거나 category가 category인 데이터�
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;__in&quot;&gt;__in&lt;/h3&gt;
+&lt;h2 id=&quot;__-in&quot;&gt;__ in&lt;/h2&gt;
 
 &lt;p&gt;이때 필터해야 하는 데이터가 리스트 형태로 되어 있다면 __ in 을 사용하여 리스트안에 담긴 데이터에 해당하는 모든 값들을 찾을 수 있다&lt;/p&gt;
 
@@ -607,7 +607,8 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;h4 id=&quot;로직을-작성하기-전-이메일-연결이-잘되었는지-확인하기-위해-테스트를-진행한다&quot;&gt;로직을 작성하기 전 이메일 연결이 잘되었는지 확인하기 위해 테스트를 진행한다&lt;/h4&gt;
+
+&lt;h3 id=&quot;로직을-작성하기-전-이메일-연결이-잘되었는지-확인하기-위해-테스트를-진행한다&quot;&gt;로직을 작성하기 전 이메일 연결이 잘되었는지 확인하기 위해 테스트를 진행한다&lt;/h3&gt;
 &lt;p&gt;python shell에서 진행해도 되지만 장고쉘에서 테스트를 진행하는것이 더 간편하다&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 장고 쉘 열기&lt;/span&gt;
@@ -633,7 +634,7 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
   &lt;p&gt;forms.Form과 View를 사용하여 회원가입 로직을 작성했다는 가정하에 시작하겠다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&quot;먼저-유저들의-이메일에-보내질-메시지를-생성하는-textpy를-만든다&quot;&gt;먼저 유저들의 이메일에 보내질 메시지를 생성하는 text.py를 만든다&lt;/h4&gt;
+&lt;h3 id=&quot;먼저-유저들의-이메일에-보내질-메시지를-생성하는-textpy를-만든다&quot;&gt;먼저 유저들의 이메일에 보내질 메시지를 생성하는 text.py를 만든다&lt;/h3&gt;
 
 &lt;p&gt;아래 링크를 클릭하면 해당 url로 리다이렉트 되는데 이때 uib64나 token안에는 주요 정보가 들어가 있기 때문에 해당 데이터들은 암호화해준 상태이다. view에서 해당 messge 메서드를 호출할 예정이다&lt;/p&gt;
 
@@ -645,7 +646,7 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;views에서-is_valid-로직에-이메일로-전송할-로직을-작성한다&quot;&gt;views에서 is_valid 로직에 이메일로 전송할 로직을 작성한다&lt;/h4&gt;
+&lt;h3 id=&quot;views에서-is_valid-로직에-이메일로-전송할-로직을-작성한다&quot;&gt;views에서 is_valid 로직에 이메일로 전송할 로직을 작성한다&lt;/h3&gt;
 
 &lt;p&gt;유저의 회원가입 데이터의 유효성 검증이 성공하면 해당 현재 site의 도메인 주소와 user의 pk를 암호화한 uidb64, token을 생성한뒤 만들어놓았던 messge 메서드에 매개변수로 보내준다. 
 유저에게 보내질 msg title을 입력하고, 유저가 입력한 메일을 변수에 저장한뒤 EmailMeaage를 통해 유저에게 보내질 데이터를 담은 뒤 send()를 사용하여 보내준다.&lt;/p&gt;
@@ -672,7 +673,7 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;이후-유저가-링크를-선택했을때-넘어올-url을-작성한다&quot;&gt;이후 유저가 링크를 선택했을때 넘어올 url을 작성한다.&lt;/h4&gt;
+&lt;h3 id=&quot;이후-유저가-링크를-선택했을때-넘어올-url을-작성한다&quot;&gt;이후 유저가 링크를 선택했을때 넘어올 url을 작성한다.&lt;/h3&gt;
 
 &lt;p&gt;이때 message메서드에서 작성한 url과 동일하게 만들어주어야 한다.&lt;/p&gt;
 
@@ -683,7 +684,7 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;인증에-성공하면-is_active를-true로-변경해주는-로직을-작성한다&quot;&gt;인증에 성공하면 is_active를 True로 변경해주는 로직을 작성한다&lt;/h4&gt;
+&lt;h3 id=&quot;인증에-성공하면-is_active를-true로-변경해주는-로직을-작성한다&quot;&gt;인증에 성공하면 is_active를 True로 변경해주는 로직을 작성한다&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -705,7 +706,7 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;verify_user_active--메서드&quot;&gt;verify_user_active  메서드&lt;/h4&gt;
+&lt;h3 id=&quot;verify_user_active--메서드&quot;&gt;verify_user_active  메서드&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -763,7 +764,7 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
 
 &lt;p&gt;AWS EC2에 구축된 MYSQL로 장고와 연동시키는 과정이다&lt;/p&gt;
 
-&lt;h3 id=&quot;1-mysqlclient를-장고에-설치한다&quot;&gt;1. mysqlclient를 장고에 설치한다&lt;/h3&gt;
+&lt;h2 id=&quot;1-mysqlclient를-장고에-설치한다&quot;&gt;1. mysqlclient를 장고에 설치한다&lt;/h2&gt;
 
 &lt;p&gt;파이썬에서 mysql서버와 통신을 할 수 있게 해주는 파이썬용 “데이터베이서 커넥터(mysqlclient)”를 설치한다.&lt;/p&gt;
 
@@ -780,7 +781,7 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;2-settingspt-설정변경&quot;&gt;2. settings.pt 설정변경&lt;/h3&gt;
+&lt;h2 id=&quot;2-settingspt-설정변경&quot;&gt;2. settings.pt 설정변경&lt;/h2&gt;
 
 &lt;p&gt;장고의 settings에서 db에 관련된 항목을 mysql과의 연동을 위해 변경해주면 된다. 이때 나는 AWS EC2에 생성한 mysql과 연동을 하였다. (aws ec2로 db연동하는 방법은 여기를 참고해보자). 2번은 db의 이름, 3번은 mysql의 계정, 4번은 mysql의 비밀번호로 자신이 설정한 비밀번호를 여기다 작성하면 된다.&lt;/p&gt;
 
@@ -807,7 +808,7 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;1-my_settingspy-를-config-안에-생성한다&quot;&gt;1. my_settings.py 를 config 안에 생성한다.&lt;/h4&gt;
+&lt;h2 id=&quot;1-my_settingspy-를-config-안에-생성한다&quot;&gt;1. my_settings.py 를 config 안에 생성한다.&lt;/h2&gt;
 
 &lt;p&gt;이곳에서 DATABASES를 dict형태로 정의한후 .gitginore에 해당 파일을 넣어준다&lt;/p&gt;
 
@@ -837,7 +838,7 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;2-env파일을-생성하여-env로-값이-저장되어-있는-변수명을-가져와-사용한다&quot;&gt;2. .env파일을 생성하여 env로 값이 저장되어 있는 변수명을 가져와 사용한다.&lt;/h4&gt;
+&lt;h2 id=&quot;2-env파일을-생성하여-env로-값이-저장되어-있는-변수명을-가져와-사용한다&quot;&gt;2. .env파일을 생성하여 env로 값이 저장되어 있는 변수명을 가져와 사용한다.&lt;/h2&gt;
 
 &lt;p&gt;이때 env의 명령어를 사용하기 위해  pip install django-environ을 설치한다&lt;/p&gt;
 
@@ -870,7 +871,7 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;3-나는-aws-ec2에-mysql을-생성하여-해당-db와-연결하여-썼는데-이때-더욱-간단하게-연결할-수-있다&quot;&gt;3. 나는 AWS EC2에 Mysql을 생성하여 해당 db와 연결하여 썼는데 이때 더욱 간단하게 연결할 수 있다&lt;/h4&gt;
+&lt;h2 id=&quot;3-나는-aws-ec2에-mysql을-생성하여-해당-db와-연결하여-썼는데-이때-더욱-간단하게-연결할-수-있다&quot;&gt;3. 나는 AWS EC2에 Mysql을 생성하여 해당 db와 연결하여 썼는데 이때 더욱 간단하게 연결할 수 있다&lt;/h2&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# .env&lt;/span&gt;
 
@@ -1035,31 +1036,29 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;html&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html```&quot;&gt;
+장고 템플릿을 사용해 form 레이아웃을 그려준다 
 
-&lt;p&gt;장고 템플릿을 사용해 form 레이아웃을 그려준다&lt;/p&gt;
+입력폼 생성 : as_p(), as_table(), as_ul()
 
-&lt;p&gt;입력폼 생성 : as_p(), as_table(), as_ul()&lt;/p&gt;
+```python
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'base.html'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+{% extends 'base.html' %}
 
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;form&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'{&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;% &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;url '&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;signin&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;}'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;csrf_token&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;forms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endblock&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+{% block content %}
+&amp;lt;form method=&quot;post&quot; action='{% url 'signin' %}'&amp;gt;
+	{% csrf_token %}
+	{{ forms.as_p }}
+&amp;lt;/form&amp;gt;
+{% endblock content %}
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;modelform-처리과정&quot;&gt;ModelForm 처리과정&lt;/h3&gt;
+&lt;h2 id=&quot;modelform-처리과정&quot;&gt;ModelForm 처리과정&lt;/h2&gt;
 
 &lt;p&gt;views / html은 Form에서 설명한 내용과 똑같은 로직으로 동작된다&lt;/p&gt;
 
@@ -1119,16 +1118,15 @@ https://blog.crois.net/2019/02/06/centos7-lets-encrypt-%EC%84%A4%EC%A0%95-%EB%B0
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;정리&quot;&gt;정리&lt;/h3&gt;
+&lt;h4 id=&quot;정리&quot;&gt;정리&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;Form은 모델에 쓰인 필드보다 추가적으로 다른 필드를 추가해야 할때 (ex) 회원가입 password-chk) , 즉 모델과 폼이 다를때 사용하면 편리하다&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;ModelForm은 모델에 쓰인 필드 그대로 form을 작성해야할때 사용하면 편리하다.&lt;/p&gt;
-
-    &lt;p&gt;꼭 ModelForm이라고 모든 필드를 작성해야 하는 건 아니다. fields=[]에다 작성하고 싶은 필드의 네임을 작성하면 해당 필드가 form에 추가된다. 이때 form의 default값으로 들어간 widget이나 label을 변경할 수 있다&lt;/p&gt;
+    &lt;p&gt;ModelForm은 모델에 쓰인 필드 그대로 form을 작성해야할때 사용하면 편리하다.
+꼭 ModelForm이라고 모든 필드를 작성해야 하는 건 아니다. fields=[]에다 작성하고 싶은 필드의 네임을 작성하면 해당 필드가 form에 추가된다. 이때 form의 default값으로 들어간 widget이나 label을 변경할 수 있다&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content>
 
@@ -1180,8 +1178,8 @@ BaseUserManager를 상속하는 UserManager를 함께 정의하여 일반유저�
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;내가-구현할-user모델의-요구사항&quot;&gt;내가 구현할 User모델의 요구사항&lt;/h2&gt;
-&lt;blockquote&gt;
 
+&lt;blockquote&gt;
   &lt;p&gt;사용자의 아이디를 이메일로 받아 후에 이메일 인증을 구현한다&lt;/p&gt;
 
   &lt;p&gt;사용자의 닉네임과 이미지의 부가 정보를 받는다&lt;/p&gt;
@@ -1212,7 +1210,7 @@ BaseUserManager를 상속하는 UserManager를 함께 정의하여 일반유저�
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;코드로-이해해보자&quot;&gt;코드로 이해해보자&lt;/h3&gt;
+&lt;h2 id=&quot;코드로-이해해보자&quot;&gt;코드로 이해해보자&lt;/h2&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UserManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BaseUserManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;

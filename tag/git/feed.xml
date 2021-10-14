@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/git/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-10-14T14:20:49+09:00</updated>
+  <updated>2021-10-14T23:01:50+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/git/feed.xml</id>
 
   
@@ -53,7 +53,7 @@
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;stash-목록-확인하기&quot;&gt;stash 목록 확인하기&lt;/h4&gt;
+&lt;h2 id=&quot;stash-목록-확인하기&quot;&gt;stash 목록 확인하기&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -64,61 +64,61 @@
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;stash-적용하기&quot;&gt;stash 적용하기&lt;/h4&gt;
+&lt;h2 id=&quot;stash-적용하기&quot;&gt;stash 적용하기&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ git stash apply # 가장 최근의 stash한 목록을 가져온다
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash apply &lt;span class=&quot;c&quot;&gt;# 가장 최근의 stash한 목록을 가져온다&lt;/span&gt;
 
-$ git stash apply {stash 이름}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;stash-삭제하기&quot;&gt;stash 삭제하기&lt;/h4&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ git stash drop # 가장 최근의 stash를 제거한다
-
-$ git stash drop {stash 이름}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash apply &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;stash 이름&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;적용과-동시에-스택에서-stash-제거하기&quot;&gt;적용과 동시에 스택에서 stash 제거하기&lt;/h4&gt;
+&lt;h2 id=&quot;stash-삭제하기&quot;&gt;stash 삭제하기&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ git stash pop
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash drop &lt;span class=&quot;c&quot;&gt;# 가장 최근의 stash를 제거한다&lt;/span&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;stash-되돌리기&quot;&gt;stash 되돌리기&lt;/h4&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ git stash show -p | git apply -R 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash drop &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;stash 이름&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;develop-변경으로-해당-브랜치의-변경사항을-pull-받아올때-내-로컬에-있는-develop의-변경때문에-pull-되지-않을-경우&quot;&gt;develop 변경으로 해당 브랜치의 변경사항을 pull 받아올때 내 로컬에 있는 develop의 변경때문에 pull 되지 않을 경우&lt;/h4&gt;
+&lt;h2 id=&quot;적용과-동시에-스택에서-stash-제거하기&quot;&gt;적용과 동시에 스택에서 stash 제거하기&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;# 내 로컬
-&amp;gt; git stash
-&amp;gt; git pull origin develop
-&amp;gt; git stash pop
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash pop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;stash-되돌리기&quot;&gt;stash 되돌리기&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git stash show &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; | git apply &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;develop-변경으로-해당-브랜치의-변경사항을-pull-받아올때-내-로컬에-있는-develop의-변경때문에-pull-되지-않을-경우&quot;&gt;develop 변경으로 해당 브랜치의 변경사항을 pull 받아올때 내 로컬에 있는 develop의 변경때문에 pull 되지 않을 경우&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 내 로컬&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; git stash
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; git pull origin develop
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; git stash pop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -164,17 +164,17 @@ $ git stash drop {stash 이름}
 
 &lt;!--&lt;/ul&gt;--&gt;
 
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
 &lt;p&gt;git을 통해 프로젝트를 진행하다보면 보안문제로 인해 올리지 말아야 할 것을 실수로 올려 push까지 해버리는 경우가 있다. 
 이럴때마다 일일이 구글링하면 해결하다보니 오랜 시간이 걸리는 것은 물론이고 진짜 돌이킬수 없는 강을 건너버리는 경우도 종종 있다.   &lt;br /&gt;
 제대로 정리해서 깔끔하게 되돌리기를 성공해보자&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;git-add-commit-push-되돌리기&quot;&gt;git add, commit, push 되돌리기&lt;/h3&gt;
-
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;1-git-add-되돌리기&quot;&gt;1. git add 되돌리기&lt;/h4&gt;
+&lt;h2 id=&quot;git-add-되돌리기&quot;&gt;git add 되돌리기&lt;/h2&gt;
 
 &lt;p&gt;add하기 전으로 돌아가고 싶다면 reset명령어를 쓰면 된다&lt;/p&gt;
 
@@ -188,13 +188,15 @@ $ git stash drop {stash 이름}
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;특정-파일의-add-되돌리는-명령어&quot;&gt;특정 파일의 add 되돌리는 명령어&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;특정-파일의-add-되돌리는-명령어&quot;&gt;특정 파일의 add 되돌리는 명령어&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt; git reset HEAD ex1
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;add된-파일-모두-되돌리는-명령어&quot;&gt;add된 파일 모두 되돌리는 명령어&lt;/h3&gt;
+&lt;h2 id=&quot;add된-파일-모두-되돌리는-명령어&quot;&gt;add된 파일 모두 되돌리는 명령어&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -202,7 +204,7 @@ $ git stash drop {stash 이름}
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;2-git-commit-되돌리기&quot;&gt;2. git commit 되돌리기&lt;/h4&gt;
+&lt;h2 id=&quot;2-git-commit-되돌리기&quot;&gt;2. git commit 되돌리기&lt;/h2&gt;
 
 &lt;p&gt;commit을 취소하기 위해서는 git log를 통해서 취소할 commit을 정확히 확인해준다&lt;/p&gt;
 
@@ -212,7 +214,7 @@ $ git stash drop {stash 이름}
 &lt;p&gt;이때 커밋 메세지만 변경할 예정이기 때문에 reset의 &lt;code class=&quot;highlighter-rouge&quot;&gt;--soft&lt;/code&gt;명령어를 사용하여 add만 한 상태로 되돌린다.
 &lt;img src=&quot;https://user-images.githubusercontent.com/64240637/124351247-3fb26c80-dc34-11eb-85cf-e21c6468eaa9.PNG&quot; alt=&quot;reset&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;commit된-파일을-add된-상태로-되돌리는-명령어&quot;&gt;commit된 파일을 add된 상태로 되돌리는 명령어&lt;/h3&gt;
+&lt;h2 id=&quot;commit된-파일을-add된-상태로-되돌리는-명령어&quot;&gt;commit된 파일을 add된 상태로 되돌리는 명령어&lt;/h2&gt;
 &lt;p&gt;한단계만 되돌리면 되기때문에 HEAD뒤에 ^을 붙여준다. 이때 왜그런지는 모르겠으나 More?이라는 질문이 뜨는데 이때 그냥 바로 전 단계라는 의미로
 ^을 입력해주면 된다&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset --soft HEAD^
@@ -220,7 +222,7 @@ $ git stash drop {stash 이름}
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;commit된-파일을-unstaged된-상태로-되돌리는-명렁어&quot;&gt;commit된 파일을 unstaged된 상태로 되돌리는 명렁어&lt;/h3&gt;
+&lt;h2 id=&quot;commit된-파일을-unstaged된-상태로-되돌리는-명렁어&quot;&gt;commit된 파일을 unstaged된 상태로 되돌리는 명렁어&lt;/h2&gt;
 &lt;p&gt;그러니까 commit된 파일을 add도 되지 않은 맨 처음 상태로 되돌리는 명령어이다. 그리고 해당명령어는 디폴트 명령어이기 때무에
 &lt;code class=&quot;highlighter-rouge&quot;&gt;git reset HEAD^&lt;/code&gt;명령어와 똑같다&lt;/p&gt;
 
@@ -229,14 +231,14 @@ $ git stash drop {stash 이름}
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;commit-된-파일을-n-단계로-되돌리고-싶을때-사용하는-명령어&quot;&gt;commit 된 파일을 n 단계로 되돌리고 싶을때 사용하는 명령어&lt;/h3&gt;
+&lt;h2 id=&quot;commit-된-파일을-n-단계로-되돌리고-싶을때-사용하는-명령어&quot;&gt;commit 된 파일을 n 단계로 되돌리고 싶을때 사용하는 명령어&lt;/h2&gt;
 &lt;p&gt;만약 2단계전으로 돌리고 싶다면 HEAD뒤에 ~2를 붙여주면 된다&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset HEAD~2
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;commit된-파일을-아예-unstaged-상태로-디렉터리에서-삭제할때-사용하는-명령어&quot;&gt;commit된 파일을 아예 unstaged 상태로 디렉터리에서 삭제할때 사용하는 명령어&lt;/h3&gt;
+&lt;h2 id=&quot;commit된-파일을-아예-unstaged-상태로-디렉터리에서-삭제할때-사용하는-명령어&quot;&gt;commit된 파일을 아예 unstaged 상태로 디렉터리에서 삭제할때 사용하는 명령어&lt;/h2&gt;
 &lt;p&gt;만약 git에서 main 브랜치로 이동하고 싶은데 unstaged에 변경된 파일이 있으면 브랜치로 이동할 수 없다. 이럴땐 stash 명령어 아니면
 아래의 명령어를 써주자&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git --hard HEAD^
@@ -245,7 +247,7 @@ $ git stash drop {stash 이름}
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;push된-파일-되돌리기&quot;&gt;push된 파일 되돌리기&lt;/h3&gt;
+&lt;h2 id=&quot;push된-파일-되돌리기&quot;&gt;push된 파일 되돌리기&lt;/h2&gt;
 &lt;p&gt;가장 고생했던 부분이다. 실제로 장고 시크릿키가 올라가서 되돌리기를 쓰다가 명령어 하나의 잘못으로 레포를 다시 판 기억이 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;이 명령어는 내 local에 있는 파일의 내용들을 remote에 강제로 덮어쓰기 하는 명령어이기 때문에 주의해서 remote가 덮어쓰기 되어져도
@@ -253,12 +255,14 @@ $ git stash drop {stash 이름}
 
 &lt;p&gt;나는 commit id를 쓰는것을 선호한다. git log나 나의 리모트에 있는 commit id를 가져와서 입력하면 해당 commit이 된 시점으로 되돌아간다.
 그렇기 때문에 이후에 commit된 내용들은 remote와 local 두군데에서 전부 사라지게 된다.&lt;/p&gt;
+
 &lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git reset [commit id]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;이후 되돌려지기 되었다면 remote에서 commit의 기록을 지우기 위해 commit을 다시 해준 후 git push origin &lt;branch name=&quot;&quot;&gt; -f로 강제 덮어쓰기 해준다&lt;/branch&gt;&lt;/p&gt;
+
 &lt;pre&gt;&lt;code class=&quot;language-git&quot;&gt;git push origin &amp;lt;branch name&amp;gt; -f 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;이때 진짜 주의해야 할 것은 &lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt;명령어이다. 이 명령어는 강제로 실행해주기 때문에 이후에는 돌이킬수 없다. 차라리 안전하게 코드를 백업시키고 써주자&lt;/p&gt;</content>

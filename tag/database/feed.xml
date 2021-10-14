@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/database/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-10-14T14:20:49+09:00</updated>
+  <updated>2021-10-14T23:01:50+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/database/feed.xml</id>
 
   
@@ -44,7 +44,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;외래키-예제&quot;&gt;외래키 예제&lt;/h3&gt;
+&lt;h2 id=&quot;외래키-예제&quot;&gt;외래키 예제&lt;/h2&gt;
 &lt;p&gt;먼저 예제를 보면서 이해를 해보자. blog라는 데이터베이스가 존재한다. 이 안에는 user와 article이라는 테이블이 존재하고
 article 과 user가 n:1의 관계를 갖는다고 해보자. 즉 여러개의 article이 하나의 user를 참조하는 것이다&lt;/p&gt;
 
@@ -99,21 +99,25 @@ article 과 user가 n:1의 관계를 갖는다고 해보자. 즉 여러개의 ar
       <published>2021-09-28T20:57:00+09:00</published>
       <updated>2021-09-28T20:57:00+09:00</updated>
       <id>https://heejung-gjt.github.io/db6</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/db6">&lt;p&gt;mysql을 ec2 서버에서 사용한다는 가정하에 작성하였습니다. 😀&lt;/p&gt;
+      <content type="html" xml:base="https://heejung-gjt.github.io/db6">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;mysql을 ec2 서버에서 사용한다는 가정하에 작성하였습니다. 😀&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;DB를 사용할때 sql파일을 따로 불러와 SQL을 실행시켜야 할 때가 있다. workbench를 이용해서 
 sql파일을 불러올 수도 있고 ec2서버로 sql파일을 불러올 경우엔 scp 명령어를 사용하여 보다 빠르게 sql 파일을 가져올 수 있다&lt;/p&gt;
 
-&lt;h3 id=&quot;1-workbench-이용하기&quot;&gt;1. workbench 이용하기&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1-workbench-이용하기&quot;&gt;1. workbench 이용하기&lt;/h2&gt;
 
 &lt;p&gt;workbench를 사용하는 건 굉장히 간단하다. 하지만 .sql파일의 용량이 크면 클수록 업로드 되는 시간이 오래걸리는 단점이 있다 &lt;br /&gt;
 &lt;strong&gt;File -&amp;gt; Open SQL Script -&amp;gt; .sql파일&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;2-scp명령어를-통해-서버에-sql파일-업로드-하기&quot;&gt;2. scp명령어를 통해 서버에 .sql파일 업로드 하기&lt;/h3&gt;
+&lt;h2 id=&quot;2-scp명령어를-통해-서버에-sql파일-업로드-하기&quot;&gt;2. scp명령어를 통해 서버에 .sql파일 업로드 하기&lt;/h2&gt;
 
 &lt;p&gt;localhost에서 MySQL 서버가 있는 ec2로 sql 파일을 전송하는 방법으로 서버에서 서버로 데이터를 보내기 때문에 속도가 1번의
 방법보다 훨씬 빠르다&lt;/p&gt;
@@ -171,7 +175,7 @@ scp - i ~/.ssh/pem명.pem ~/Downloads/SQL/*.sql ubuntu@퍼블릭주소:~/
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;1-pymysql-import&quot;&gt;1. pymysql import&lt;/h3&gt;
+&lt;h2 id=&quot;1-pymysql-import&quot;&gt;1. pymysql import&lt;/h2&gt;
 &lt;p&gt;pymysql.connect()를 사용하여 mysql에 연결 할 수 있다.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pymysql&lt;/span&gt;
@@ -179,7 +183,7 @@ scp - i ~/.ssh/pem명.pem ~/Downloads/SQL/*.sql ubuntu@퍼블릭주소:~/
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;2-pymysqlconnect&quot;&gt;2. pymysql.connect()&lt;/h3&gt;
+&lt;h2 id=&quot;2-pymysqlconnect&quot;&gt;2. pymysql.connect()&lt;/h2&gt;
 
 &lt;p&gt;host에는 workbench를 사용하고 있다면 workbench에 연결한 주소를 써주면 된다. &lt;strong&gt;나는 ec2로 연결해서 사용했기 때문에 ec2의 퍼블릭 주소를 작성해주었다&lt;/strong&gt;    &lt;br /&gt;
 ec2로 연결해 사용 할 경우 port 3306을 열어주었는지 확인하자 !&lt;/p&gt;
@@ -202,7 +206,7 @@ ec2로 연결해 사용 할 경우 port 3306을 열어주었는지 확인하자 
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;3-cursor-메서드-호출해-cursor객체의-execute메서드-사용&quot;&gt;3. cursor() 메서드 호출해 Cursor객체의 execute()메서드 사용&lt;/h3&gt;
+&lt;h2 id=&quot;3-cursor-메서드-호출해-cursor객체의-execute메서드-사용&quot;&gt;3. cursor() 메서드 호출해 Cursor객체의 execute()메서드 사용&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -234,15 +238,23 @@ ec2로 연결해 사용 할 경우 port 3306을 열어주었는지 확인하자 
 &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;①. cursor()메서드를 호출한다&lt;/p&gt;
-
-&lt;p&gt;②. sql 쿼리문을 작성한다&lt;/p&gt;
-
-&lt;p&gt;③. execute() 메서드를 이용해 작성한 쿼리문을 db 서버에 보낸다&lt;/p&gt;
-
-&lt;p&gt;④. 삽입/갱신/삭제 등이 끝나면 Connection 객체의 commit() 메서드를 이용해 데이터를 commit한다&lt;/p&gt;
-
-&lt;p&gt;⑤. Connection 객체의 close() 메서드를 이용해 db연결을 close한다&lt;/p&gt;</content>
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;cursor()메서드를 호출한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;sql 쿼리문을 작성한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;execute() 메서드를 이용해 작성한 쿼리문을 db 서버에 보낸다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;삽입/갱신/삭제 등이 끝나면 Connection 객체의 commit() 메서드를 이용해 데이터를 commit한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Connection 객체의 close() 메서드를 이용해 db연결을 close한다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content>
 
       
       
@@ -282,12 +294,12 @@ ec2로 연결해 사용 할 경우 port 3306을 열어주었는지 확인하자 
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;# 비밀번호 입력후 접속
-$ mysql -u root -p
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 비밀번호 입력후 접속&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; root &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;
 
-# 비밀번호 함께 입력후 접속
-$ mysql -u root -p{password}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;c&quot;&gt;# 비밀번호 함께 입력후 접속&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; root &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;password&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -297,9 +309,9 @@ $ mysql -u root -p{password}
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql -u root -p
-password: {등록한 pwd}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; root &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;
+password: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;등록한 &lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -309,125 +321,128 @@ password: {등록한 pwd}
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ mysql -u root -p{password} &amp;lt; {db이름}.sql
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; root &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;password&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &amp;lt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;db이름&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;.sql
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;4-root-사용자-pwd-지정&quot;&gt;4. root 사용자 pwd 지정&lt;/h3&gt;
+&lt;h2 id=&quot;4-root-사용자-pwd-지정&quot;&gt;4. root 사용자 pwd 지정&lt;/h2&gt;
 
 &lt;p&gt;맨 처음 mysql을 설치했을 경우에는 먼저 사용자와 pwd를 등록해야 한다. root를 사용하고 싶을땐 ALTER로 PWD를 지정해주면 된다&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;$ sudo mysql
-mysql &amp;gt; ALTER user 'root'@localhost IDENTIFIED WITH mysql_native_password BY '비밀번호 입력';
-&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mysql
+mysql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ALTER user &lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt;@localhost IDENTIFIED WITH mysql_native_password BY &lt;span class=&quot;s1&quot;&gt;'비밀번호 입력'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;5-로컬에서만-접속-가능한-user-생성&quot;&gt;5. 로컬에서만 접속 가능한 user 생성&lt;/h3&gt;
+&lt;h2 id=&quot;5-로컬에서만-접속-가능한-user-생성&quot;&gt;5. 로컬에서만 접속 가능한 user 생성&lt;/h2&gt;
 
 &lt;p&gt;다른 외부 컴퓨터에서는 mysql에 접속하지 못하고 자신의 컴퓨터에서만 접속할 수 있게 user를 생성하고 싶다면 localhost를 입력하면 된다&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;CREATE user 'userid'@localhost IDENTIFIED BY '비밀번호';
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE user &lt;span class=&quot;s1&quot;&gt;'userid'&lt;/span&gt;@localhost IDENTIFIED BY &lt;span class=&quot;s1&quot;&gt;'비밀번호'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;6-모든-호스트에서-접속-가능한-user-생성&quot;&gt;6. 모든 호스트에서 접속 가능한 user 생성&lt;/h3&gt;
+&lt;h2 id=&quot;6-모든-호스트에서-접속-가능한-user-생성&quot;&gt;6. 모든 호스트에서 접속 가능한 user 생성&lt;/h2&gt;
 
 &lt;p&gt;외부 컴퓨터에서도 mysql에 접속할 수 있게 user를 생성하고 싶다면 %를 입력하면 된다&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;CREATE user 'userid'@'%' IDENTIFIED BY '비밀번호';
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE user &lt;span class=&quot;s1&quot;&gt;'userid'&lt;/span&gt;@&lt;span class=&quot;s1&quot;&gt;'%'&lt;/span&gt; IDENTIFIED BY &lt;span class=&quot;s1&quot;&gt;'비밀번호'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;7-사용자-패스워드-변경&quot;&gt;7. 사용자 패스워드 변경&lt;/h3&gt;
+&lt;h2 id=&quot;7-사용자-패스워드-변경&quot;&gt;7. 사용자 패스워드 변경&lt;/h2&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;root'@'%'와 'root'@localhost 중 처음에 user를 생성했을때 입력했던 값을 써야한다. root'@'%' 까지가 하나의 아이디라고 생각하면 편하다&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;root’@’%’와 ‘root’@localhost 중 처음에 user를 생성했을때 입력했던 값을 써야한다. root’@’%’ 까지가 하나의 아이디라고 생각하면 편하다&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;SET PASSWORD FOR 'userid'@'%' = '새 패스워드';
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;8-사용자-삭제&quot;&gt;8. 사용자 삭제&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql &amp;gt; use mysql;
-mysql &amp;gt; drop user 'userid'@'%';
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SET PASSWORD FOR &lt;span class=&quot;s1&quot;&gt;'userid'&lt;/span&gt;@&lt;span class=&quot;s1&quot;&gt;'%'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'새 패스워드'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;9-mysql-현재-부여된-권한-확인&quot;&gt;9. mysql 현재 부여된 권한 확인&lt;/h3&gt;
+&lt;h2 id=&quot;8-사용자-삭제&quot;&gt;8. 사용자 삭제&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql &amp;gt; SHOW GRANTS for id;
-ex)
-SHOW GRANTS for 'root'@localhostlocalhost
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;10-로컬에서만-접속-허용&quot;&gt;10. 로컬에서만 접속 허용&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql &amp;gt; GRANT ALL ON DATABASE.TABLE to 'root'@localhost;
-ex)
-GRANT ALL ON DATABASE.product to 'root'@loaclhost; # 사용자 root에게 product table의 모든 변경 권한을 주었다. 즉 외부에서도 product crud 가능
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; use mysql&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+mysql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; drop user &lt;span class=&quot;s1&quot;&gt;'userid'&lt;/span&gt;@&lt;span class=&quot;s1&quot;&gt;'%'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;11-특정-권한만-사용&quot;&gt;11. 특정 권한만 사용&lt;/h3&gt;
+&lt;h2 id=&quot;9-mysql-현재-부여된-권한-확인&quot;&gt;9. mysql 현재 부여된 권한 확인&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql &amp;gt; GRANT SELECT, UPDATE ON DATABASE.TABLE to 'root'@localhost;
-ex)
-GRANT SELECT, UPDATE ON Market.product to 'root'@localhost; # 사용자 root에게 product table의 읽기,수정의 권한만을 주었다. 즉 삭제와 같은 처리는 할 수 없다
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;12-모든-데이터베이스-권한-설정&quot;&gt;12. 모든 데이터베이스 권한 설정&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;GRANT ALL ON *.* to 'root'@localhost; # 사용자 root는 모든 데이터베이스의 crud가 가능하다
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; SHOW GRANTS &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;id&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ex&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+SHOW GRANTS &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt;@localhostlocalhost
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;13-특정-데이터베이스-내에-있는-모든-테이블에-권한-설정&quot;&gt;13. 특정 데이터베이스 내에 있는 모든 테이블에 권한 설정&lt;/h3&gt;
+&lt;h2 id=&quot;10-로컬에서만-접속-허용&quot;&gt;10. 로컬에서만 접속 허용&lt;/h2&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;GRANT ALL ON DATABASE.* to 'root'@localhost;
-ex)
-GRANT ALL ON Market.* to 'root'@localhost; # 사용자 root는 데이터베이스 Market내에 있는 모든 테이블의 crud가 가능하다
-&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; GRANT ALL ON DATABASE.TABLE to &lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt;@localhost&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ex&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+GRANT ALL ON DATABASE.product to &lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt;@loaclhost&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 사용자 root에게 product table의 모든 변경 권한을 주었다. 즉 외부에서도 product crud 가능&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;11-특정-권한만-사용&quot;&gt;11. 특정 권한만 사용&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; GRANT SELECT, UPDATE ON DATABASE.TABLE to &lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt;@localhost&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ex&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+GRANT SELECT, UPDATE ON Market.product to &lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt;@localhost&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 사용자 root에게 product table의 읽기,수정의 권한만을 주었다. 즉 삭제와 같은 처리는 할 수 없다&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;12-모든-데이터베이스-권한-설정&quot;&gt;12. 모든 데이터베이스 권한 설정&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GRANT ALL ON &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; to &lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt;@localhost&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 사용자 root는 모든 데이터베이스의 crud가 가능하다&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;13-특정-데이터베이스-내에-있는-모든-테이블에-권한-설정&quot;&gt;13. 특정 데이터베이스 내에 있는 모든 테이블에 권한 설정&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GRANT ALL ON DATABASE.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; to &lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt;@localhost&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ex&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+GRANT ALL ON Market.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; to &lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt;@localhost&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 사용자 root는 데이터베이스 Market내에 있는 모든 테이블의 crud가 가능하다&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
 
       
       
@@ -467,20 +482,22 @@ GRANT ALL ON Market.* to 'root'@localhost; # 사용자 root는 데이터베이�
 
 &lt;p&gt;넣을 데이터는 테이블 필드의 순서에 맞게 넣어주면 된다. 이때 id같이 auto_increment로 지정되어 있는 필드는
 자동으로 값이 카운트 되기 때문에 &lt;strong&gt;직접 넣을 데이터를 정할 수 있다&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;INSERT INTO {테이블명} VALUES(넣을 데이터1, 넣을 데이터2,..);
 
-EX)
-INSERT INTO product VALUES(1, '여자바지', 10000, 8000);
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INSERT INTO &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;테이블명&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; VALUES&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;넣을 데이터1, 넣을 데이터2,..&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+EX&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+INSERT INTO product VALUES&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1, &lt;span class=&quot;s1&quot;&gt;'여자바지'&lt;/span&gt;, 10000, 8000&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;넣을 데이터 직접 지정해서 넣기&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;INSERT INTO {테이블명}(지정한 데이터 필드1, 필드2...) VALUES('넣을 데이터1', 2,,,,);
 
-EX)
-INSERT INTO product(product_name, ori_price, sale_price) VALUES('어린이 바지', 20000, 7000);
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;INSERT INTO &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;테이블명&lt;span class=&quot;o&quot;&gt;}(&lt;/span&gt;지정한 데이터 필드1, 필드2...&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; VALUES&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'넣을 데이터1'&lt;/span&gt;, 2,,,,&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+EX&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+INSERT INTO product&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;product_name, ori_price, sale_price&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; VALUES&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'어린이 바지'&lt;/span&gt;, 20000, 7000&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -490,10 +507,10 @@ INSERT INTO product(product_name, ori_price, sale_price) VALUES('어린이 바�
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;SELECT * FROM {테이블명};
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; FROM &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;테이블명&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-SELECT * FROM product;
-&lt;/code&gt;&lt;/pre&gt;
+SELECT &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; FROM product&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -503,10 +520,10 @@ SELECT * FROM product;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;SELECT {필드명} FROM {테이블명};
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;필드명&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; FROM &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;테이블명&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-SELECT name FROM computer_core;
-&lt;/code&gt;&lt;/pre&gt;
+SELECT name FROM computer_core&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -516,8 +533,8 @@ SELECT name FROM computer_core;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;SELECT name FROM computer_core WHERE id  &amp;lt; 2; # computer_core에서 id가 2보다 작은 name 출력
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SELECT name FROM computer_core WHERE id  &amp;lt; 2&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# computer_core에서 id가 2보다 작은 name 출력&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -537,10 +554,10 @@ SELECT name FROM computer_core;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;# comupter_core테이블에 model_type에 Lake가 들어가 있는 데이터의  model_type과 name 출력  
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# comupter_core테이블에 model_type에 Lake가 들어가 있는 데이터의  model_type과 name 출력  &lt;/span&gt;
 
-SELECT model_type, name FROM cumputer_core WHERE model_type LIKE '%Lake%';
-&lt;/code&gt;&lt;/pre&gt;
+SELECT model_type, name FROM cumputer_core WHERE model_type LIKE &lt;span class=&quot;s1&quot;&gt;'%Lake%'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -550,11 +567,11 @@ SELECT model_type, name FROM cumputer_core WHERE model_type LIKE '%Lake%';
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;# computer_core테이블에 id와 name을 출력하는데 첫번째 이후 데이터부터 2번째까지의 데이터를 출력 
-즉 id를 기준으로 id =2, 3번이 출력된다    
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# computer_core테이블에 id와 name을 출력하는데 첫번째 이후 데이터부터 2번째까지의 데이터를 출력 &lt;/span&gt;
+즉 id를 기준으로 id &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2, 3번이 출력된다    
 
-SELECT id, name FROM computer_core LIMIT 1, 2;
-&lt;/code&gt;&lt;/pre&gt;
+SELECT id, name FROM computer_core LIMIT 1, 2&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -564,10 +581,11 @@ SELECT id, name FROM computer_core LIMIT 1, 2;
 
 &lt;p&gt;첫번째 예시를 보면 모든 name이 변경되는 로직이다. 이는 db내에서 잘못 입력한 것으로 간주하여 에러를 발생시킨다. 
 변경할때는 WHERE절을 함께 써서 조건을 정해준다&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;UPDATE computer_core SET name = 'i5';  # computer_core 안에 name을 모두 i5로 변경 (에러발생)  
 
-UPDATE computer_core SET name = 'i100' WHERE id = '3'; # compuer_core안에 id가 3인 데이터의 name을 i100으로 변경   
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;UPDATE computer_core SET name &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'i5'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# computer_core 안에 name을 모두 i5로 변경 (에러발생)  &lt;/span&gt;
+
+UPDATE computer_core SET name &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'i100'&lt;/span&gt; WHERE id &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# compuer_core안에 id가 3인 데이터의 name을 i100으로 변경   &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -577,11 +595,11 @@ UPDATE computer_core SET name = 'i100' WHERE id = '3'; # compuer_core안에 id�
 
 &lt;p&gt;보통 WHERE절과 함께 써서 특정한 조건에 맞는 데이터만 삭제하는 경우가 많다&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;DELETE FROM {테이블명} WHERE {특정 컬럼} = '값';
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DELETE FROM &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;테이블명&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; WHERE &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;특정 컬럼&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'값'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-ex)
-DELETE FROM product WHERE id = 1; # product 테이블의 id가 1인 데이터가 삭제된다
-&lt;/code&gt;&lt;/pre&gt;</content>
+ex&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+DELETE FROM product WHERE id &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# product 테이블의 id가 1인 데이터가 삭제된다&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
 
       
       
@@ -629,8 +647,8 @@ DELETE FROM product WHERE id = 1; # product 테이블의 id가 1인 데이터가
 
 &lt;p&gt;이곳에 쓰이는 DB이름이 장고 settings  NAME에 작성되는 이름이다&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql&amp;gt; CREATE DATABASE {db이름};
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql&amp;gt; CREATE DATABASE &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;db이름&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -640,8 +658,8 @@ DELETE FROM product WHERE id = 1; # product 테이블의 id가 1인 데이터가
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; SHOW DATABASES;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; SHOW DATABASES&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -651,8 +669,8 @@ DELETE FROM product WHERE id = 1; # product 테이블의 id가 1인 데이터가
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; USE {db이름};
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; USE &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;db이름&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -662,8 +680,8 @@ DELETE FROM product WHERE id = 1; # product 테이블의 id가 1인 데이터가
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; SHOW TABLES;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; SHOW TABLES&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -673,8 +691,8 @@ DELETE FROM product WHERE id = 1; # product 테이블의 id가 1인 데이터가
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; DESC {테이블명};
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; DESC &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;테이블명&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -684,11 +702,11 @@ DELETE FROM product WHERE id = 1; # product 테이블의 id가 1인 데이터가
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER TABLE {table명} ADD {추가할 필드 이름} {추가할 필드 타입};
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ALTER TABLE &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;table명&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; ADD &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;추가할 필드 이름&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;추가할 필드 타입&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-sql &amp;gt; ALTER TABLE student_tb ADD age int; # EX) student_tb 테이블에 int 타입의 age 필드를 추가한다
+sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ALTER TABLE student_tb ADD age int&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# EX) student_tb 테이블에 int 타입의 age 필드를 추가한다&lt;/span&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -699,12 +717,13 @@ sql &amp;gt; ALTER TABLE student_tb ADD age int; # EX) student_tb 테이블에 i
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;change, modify 2가지로 변경 가능하다&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER TABLE {table명} CHANGE COLUMN {수정할 필드 이름} {새로운 필드 이름} {타입}; # ALTER TABLE customer CHANGE COLUMN name modelname varchar(10)
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ALTER TABLE &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;table명&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; CHANGE COLUMN &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;수정할 필드 이름&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;새로운 필드 이름&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;타입&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# ALTER TABLE customer CHANGE COLUMN name modelname varchar(10)&lt;/span&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER TABLE {table명} MODIFY COLUMN {수정할 필드 이름} {변경할 타입/유형}; # ALTER TABLE customer MODIFY COLUMN name varchar(20) NOT NULL;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ALTER TABLE &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;table명&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; MODIFY COLUMN &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;수정할 필드 이름&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;변경할 타입/유형&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# ALTER TABLE customer MODIFY COLUMN name varchar(20) NOT NULL;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -714,8 +733,8 @@ sql &amp;gt; ALTER TABLE student_tb ADD age int; # EX) student_tb 테이블에 i
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER TABLE {table명} DROP COLUMN {삭제할 필드 이름};
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ALTER TABLE &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;table명&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; DROP COLUMN &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;삭제할 필드 이름&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -725,20 +744,20 @@ sql &amp;gt; ALTER TABLE student_tb ADD age int; # EX) student_tb 테이블에 i
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; CREATE TABLE {table명}(
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; CREATE TABLE &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;table명&lt;span class=&quot;o&quot;&gt;}(&lt;/span&gt;
 			필드명 타입,
 			필드명 타입
-			PRIMARY KEY(필드명)
-);
+			PRIMARY KEY&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;필드명&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-# 예
-sql &amp;gt; CREATE TABLE student(
+&lt;span class=&quot;c&quot;&gt;# 예&lt;/span&gt;
+sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; CREATE TABLE student&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
 			id int,
-			name char(20),
+			name char&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;20&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;,
             age int,
-			PRIMARY KEY(id)
-);
-&lt;/code&gt;&lt;/pre&gt;
+			PRIMARY KEY&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -748,8 +767,8 @@ sql &amp;gt; CREATE TABLE student(
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER TABLE student_tb RENAME teacher_tb;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ALTER TABLE student_tb RENAME teacher_tb&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -759,8 +778,8 @@ sql &amp;gt; CREATE TABLE student(
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; DROP TABLE student_tb;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; DROP TABLE student_tb&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -770,8 +789,8 @@ sql &amp;gt; CREATE TABLE student(
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER USER 'root@loaclhost' IDENTIFIED BY '{변경할 password}';
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ALTER USER &lt;span class=&quot;s1&quot;&gt;'root@loaclhost'&lt;/span&gt; IDENTIFIED BY &lt;span class=&quot;s1&quot;&gt;'{변경할 password}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -784,8 +803,8 @@ sql &amp;gt; CREATE TABLE student(
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; CREATE DATABASE {db이름} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; CREATE DATABASE &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;db이름&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -795,8 +814,8 @@ sql &amp;gt; CREATE TABLE student(
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;sql &amp;gt; ALTER DATABASE {db이름} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ALTER DATABASE &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;db이름&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -806,8 +825,8 @@ sql &amp;gt; CREATE TABLE student(
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-xhtml&quot;&gt;mysql &amp;gt; SHOW VARIABLES LIKE 'character_set%';
-&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mysql &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; SHOW VARIABLES LIKE &lt;span class=&quot;s1&quot;&gt;'character_set%'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
 
       
       

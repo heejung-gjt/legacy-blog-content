@@ -216,6 +216,8 @@ into the {body} of the default.hbs template -->
             <section class="post-full-content">
                 <div class="kg-card-markdown">
                     
+<p><br /></p>
+
 <p>mysql을 ec2 서버에서 사용한다는 가정하에 작성하였습니다. 😀</p>
 
 <p><br /></p>
@@ -223,14 +225,16 @@ into the {body} of the default.hbs template -->
 <p>DB를 사용할때 sql파일을 따로 불러와 SQL을 실행시켜야 할 때가 있다. workbench를 이용해서 
 sql파일을 불러올 수도 있고 ec2서버로 sql파일을 불러올 경우엔 scp 명령어를 사용하여 보다 빠르게 sql 파일을 가져올 수 있다</p>
 
-<h3 id="1-workbench-이용하기">1. workbench 이용하기</h3>
+<hr />
+
+<h2 id="1-workbench-이용하기">1. workbench 이용하기</h2>
 
 <p>workbench를 사용하는 건 굉장히 간단하다. 하지만 .sql파일의 용량이 크면 클수록 업로드 되는 시간이 오래걸리는 단점이 있다 <br />
 <strong>File -&gt; Open SQL Script -&gt; .sql파일</strong></p>
 
 <p><br /></p>
 
-<h3 id="2-scp명령어를-통해-서버에-sql파일-업로드-하기">2. scp명령어를 통해 서버에 .sql파일 업로드 하기</h3>
+<h2 id="2-scp명령어를-통해-서버에-sql파일-업로드-하기">2. scp명령어를 통해 서버에 .sql파일 업로드 하기</h2>
 
 <p>localhost에서 MySQL 서버가 있는 ec2로 sql 파일을 전송하는 방법으로 서버에서 서버로 데이터를 보내기 때문에 속도가 1번의
 방법보다 훨씬 빠르다</p>

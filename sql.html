@@ -220,7 +220,7 @@ into the {body} of the default.hbs template -->
 
 <p>AWS EC2에 구축된 MYSQL로 장고와 연동시키는 과정이다</p>
 
-<h3 id="1-mysqlclient를-장고에-설치한다">1. mysqlclient를 장고에 설치한다</h3>
+<h2 id="1-mysqlclient를-장고에-설치한다">1. mysqlclient를 장고에 설치한다</h2>
 
 <p>파이썬에서 mysql서버와 통신을 할 수 있게 해주는 파이썬용 “데이터베이서 커넥터(mysqlclient)”를 설치한다.</p>
 
@@ -237,7 +237,7 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<h3 id="2-settingspt-설정변경">2. settings.pt 설정변경</h3>
+<h2 id="2-settingspt-설정변경">2. settings.pt 설정변경</h2>
 
 <p>장고의 settings에서 db에 관련된 항목을 mysql과의 연동을 위해 변경해주면 된다. 이때 나는 AWS EC2에 생성한 mysql과 연동을 하였다. (aws ec2로 db연동하는 방법은 여기를 참고해보자). 2번은 db의 이름, 3번은 mysql의 계정, 4번은 mysql의 비밀번호로 자신이 설정한 비밀번호를 여기다 작성하면 된다.</p>
 
@@ -264,7 +264,7 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<h4 id="1-my_settingspy-를-config-안에-생성한다">1. my_settings.py 를 config 안에 생성한다.</h4>
+<h2 id="1-my_settingspy-를-config-안에-생성한다">1. my_settings.py 를 config 안에 생성한다.</h2>
 
 <p>이곳에서 DATABASES를 dict형태로 정의한후 .gitginore에 해당 파일을 넣어준다</p>
 
@@ -294,7 +294,7 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<h4 id="2-env파일을-생성하여-env로-값이-저장되어-있는-변수명을-가져와-사용한다">2. .env파일을 생성하여 env로 값이 저장되어 있는 변수명을 가져와 사용한다.</h4>
+<h2 id="2-env파일을-생성하여-env로-값이-저장되어-있는-변수명을-가져와-사용한다">2. .env파일을 생성하여 env로 값이 저장되어 있는 변수명을 가져와 사용한다.</h2>
 
 <p>이때 env의 명령어를 사용하기 위해  pip install django-environ을 설치한다</p>
 
@@ -327,7 +327,7 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<h4 id="3-나는-aws-ec2에-mysql을-생성하여-해당-db와-연결하여-썼는데-이때-더욱-간단하게-연결할-수-있다">3. 나는 AWS EC2에 Mysql을 생성하여 해당 db와 연결하여 썼는데 이때 더욱 간단하게 연결할 수 있다</h4>
+<h2 id="3-나는-aws-ec2에-mysql을-생성하여-해당-db와-연결하여-썼는데-이때-더욱-간단하게-연결할-수-있다">3. 나는 AWS EC2에 Mysql을 생성하여 해당 db와 연결하여 썼는데 이때 더욱 간단하게 연결할 수 있다</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .env</span>
 

@@ -222,20 +222,22 @@ into the {body} of the default.hbs template -->
 
 <p>넣을 데이터는 테이블 필드의 순서에 맞게 넣어주면 된다. 이때 id같이 auto_increment로 지정되어 있는 필드는
 자동으로 값이 카운트 되기 때문에 <strong>직접 넣을 데이터를 정할 수 있다</strong></p>
-<pre><code class="language-xhtml">INSERT INTO {테이블명} VALUES(넣을 데이터1, 넣을 데이터2,..);
 
-EX)
-INSERT INTO product VALUES(1, '여자바지', 10000, 8000);
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INSERT INTO <span class="o">{</span>테이블명<span class="o">}</span> VALUES<span class="o">(</span>넣을 데이터1, 넣을 데이터2,..<span class="o">)</span><span class="p">;</span>
 
-</code></pre>
+EX<span class="o">)</span>
+INSERT INTO product VALUES<span class="o">(</span>1, <span class="s1">'여자바지'</span>, 10000, 8000<span class="o">)</span><span class="p">;</span>
+
+</code></pre></div></div>
 
 <p><strong>넣을 데이터 직접 지정해서 넣기</strong></p>
-<pre><code class="language-xhtml">INSERT INTO {테이블명}(지정한 데이터 필드1, 필드2...) VALUES('넣을 데이터1', 2,,,,);
 
-EX)
-INSERT INTO product(product_name, ori_price, sale_price) VALUES('어린이 바지', 20000, 7000);
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INSERT INTO <span class="o">{</span>테이블명<span class="o">}(</span>지정한 데이터 필드1, 필드2...<span class="o">)</span> VALUES<span class="o">(</span><span class="s1">'넣을 데이터1'</span>, 2,,,,<span class="o">)</span><span class="p">;</span>
 
-</code></pre>
+EX<span class="o">)</span>
+INSERT INTO product<span class="o">(</span>product_name, ori_price, sale_price<span class="o">)</span> VALUES<span class="o">(</span><span class="s1">'어린이 바지'</span>, 20000, 7000<span class="o">)</span><span class="p">;</span>
+
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -245,10 +247,10 @@ INSERT INTO product(product_name, ori_price, sale_price) VALUES('어린이 바�
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">SELECT * FROM {테이블명};
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT <span class="k">*</span> FROM <span class="o">{</span>테이블명<span class="o">}</span><span class="p">;</span>
 
-SELECT * FROM product;
-</code></pre>
+SELECT <span class="k">*</span> FROM product<span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -258,10 +260,10 @@ SELECT * FROM product;
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">SELECT {필드명} FROM {테이블명};
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT <span class="o">{</span>필드명<span class="o">}</span> FROM <span class="o">{</span>테이블명<span class="o">}</span><span class="p">;</span>
 
-SELECT name FROM computer_core;
-</code></pre>
+SELECT name FROM computer_core<span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -271,8 +273,8 @@ SELECT name FROM computer_core;
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">SELECT name FROM computer_core WHERE id  &lt; 2; # computer_core에서 id가 2보다 작은 name 출력
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT name FROM computer_core WHERE id  &lt; 2<span class="p">;</span> <span class="c"># computer_core에서 id가 2보다 작은 name 출력</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -292,10 +294,10 @@ SELECT name FROM computer_core;
 
 <p><br /></p>
 
-<pre><code class="language-xhtml"># comupter_core테이블에 model_type에 Lake가 들어가 있는 데이터의  model_type과 name 출력  
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># comupter_core테이블에 model_type에 Lake가 들어가 있는 데이터의  model_type과 name 출력  </span>
 
-SELECT model_type, name FROM cumputer_core WHERE model_type LIKE '%Lake%';
-</code></pre>
+SELECT model_type, name FROM cumputer_core WHERE model_type LIKE <span class="s1">'%Lake%'</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -305,11 +307,11 @@ SELECT model_type, name FROM cumputer_core WHERE model_type LIKE '%Lake%';
 
 <p><br /></p>
 
-<pre><code class="language-xhtml"># computer_core테이블에 id와 name을 출력하는데 첫번째 이후 데이터부터 2번째까지의 데이터를 출력 
-즉 id를 기준으로 id =2, 3번이 출력된다    
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># computer_core테이블에 id와 name을 출력하는데 첫번째 이후 데이터부터 2번째까지의 데이터를 출력 </span>
+즉 id를 기준으로 id <span class="o">=</span>2, 3번이 출력된다    
 
-SELECT id, name FROM computer_core LIMIT 1, 2;
-</code></pre>
+SELECT id, name FROM computer_core LIMIT 1, 2<span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -319,10 +321,11 @@ SELECT id, name FROM computer_core LIMIT 1, 2;
 
 <p>첫번째 예시를 보면 모든 name이 변경되는 로직이다. 이는 db내에서 잘못 입력한 것으로 간주하여 에러를 발생시킨다. 
 변경할때는 WHERE절을 함께 써서 조건을 정해준다</p>
-<pre><code class="language-xhtml">UPDATE computer_core SET name = 'i5';  # computer_core 안에 name을 모두 i5로 변경 (에러발생)  
 
-UPDATE computer_core SET name = 'i100' WHERE id = '3'; # compuer_core안에 id가 3인 데이터의 name을 i100으로 변경   
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UPDATE computer_core SET name <span class="o">=</span> <span class="s1">'i5'</span><span class="p">;</span>  <span class="c"># computer_core 안에 name을 모두 i5로 변경 (에러발생)  </span>
+
+UPDATE computer_core SET name <span class="o">=</span> <span class="s1">'i100'</span> WHERE id <span class="o">=</span> <span class="s1">'3'</span><span class="p">;</span> <span class="c"># compuer_core안에 id가 3인 데이터의 name을 i100으로 변경   </span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -332,11 +335,11 @@ UPDATE computer_core SET name = 'i100' WHERE id = '3'; # compuer_core안에 id�
 
 <p>보통 WHERE절과 함께 써서 특정한 조건에 맞는 데이터만 삭제하는 경우가 많다</p>
 
-<pre><code class="language-xhtml">DELETE FROM {테이블명} WHERE {특정 컬럼} = '값';
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE FROM <span class="o">{</span>테이블명<span class="o">}</span> WHERE <span class="o">{</span>특정 컬럼<span class="o">}</span> <span class="o">=</span> <span class="s1">'값'</span><span class="p">;</span>
 
-ex)
-DELETE FROM product WHERE id = 1; # product 테이블의 id가 1인 데이터가 삭제된다
-</code></pre>
+ex<span class="o">)</span>
+DELETE FROM product WHERE id <span class="o">=</span> 1<span class="p">;</span> <span class="c"># product 테이블의 id가 1인 데이터가 삭제된다</span>
+</code></pre></div></div>
 
                 </div>
             </section>

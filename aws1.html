@@ -220,7 +220,7 @@ into the {body} of the default.hbs template -->
 
 <hr />
 
-<h3 id="클라우드-서비스란">클라우드 서비스란?</h3>
+<h2 id="클라우드-서비스란">클라우드 서비스란?</h2>
 <ul>
   <li>어디에나 존재하는 인터넷이라는 의미로 사용자의 문서나, 이미지, 영상등 다양한 데이터를 서버에 저장한뒤 PC나 스마트폰등으로 접속하여 해당 데이터를 이용하거나 편집하게 도와주는 서비스이다.</li>
   <li>과거에는 유저들이 사용하는 데이터를 USB등에 담아 보관해 사용했었다면 현재는 클라우드를 통해 다른 플랫폼에서도 저장해놓은 동일한 데이터를 사용할 수 있게 되었다.</li>
@@ -228,7 +228,7 @@ into the {body} of the default.hbs template -->
 
 <hr />
 
-<h3 id="클라우드-서비스-유형에는-무엇이-있는가">클라우드 서비스 유형에는 무엇이 있는가?</h3>
+<h2 id="클라우드-서비스-유형에는-무엇이-있는가">클라우드 서비스 유형에는 무엇이 있는가?</h2>
 
 <ul>
   <li>
@@ -250,50 +250,41 @@ into the {body} of the default.hbs template -->
 
 <hr />
 
-<h3 id="클라우드-컴퓨팅이란">클라우드 컴퓨팅이란?</h3>
-<ul>
-  <li>사용자의 직접적인 활발한 관리 없이 데이터 스토리지와 시스템 리소스를 필요시 바로 제공하는 것을 말한다. 데이터 정보를 자신의 컴퓨터가 아닌 클라우드에 연결된 다른 컴퓨터(휴대폰, TV, 노트북 등등)로 처리하는 기술을 말한다.</li>
-</ul>
+<h2 id="클라우드-컴퓨팅이란">클라우드 컴퓨팅이란?</h2>
+<p>사용자의 직접적인 활발한 관리 없이 데이터 스토리지와 시스템 리소스를 필요시 바로 제공하는 것을 말한다. 데이터 정보를 자신의 컴퓨터가 아닌 클라우드에 연결된 다른 컴퓨터(휴대폰, TV, 노트북 등등)로 처리하는 기술을 말한다.</p>
 
 <hr />
 
-<h3 id="awsamazon-web-service란">AWS(Amazon Web Service)란</h3>
+<h2 id="awsamazon-web-service란">AWS(Amazon Web Service)란</h2>
 <p>AWS는 아마존에서 개발한 클라우드 컴퓨팅 플랫폼으로 클라우드 컴퓨팅을 통해 웹사이트를 관리하는데 필요한 많은 기능을 제공해준다. 웹사이트를 운영하는데 필요한 서버나 DB, 스토리지등을 제공하는 등 개발자가 사용 가능한 기능을 제공하는 플랫폼을 제공하며 PaaS이다.</p>
 
 <hr />
 
-<h3 id="iamidentity-and-access-management이란">IAM(Identity and Access Management)이란</h3>
+<h2 id="iamidentity-and-access-management이란">IAM(Identity and Access Management)이란</h2>
 <p>AWS 리소스에 대한 안전한 접근제어를 제공하는 서비스로 IAM을 사용하여 리소스를 사용하도록 인증 및 권한 부여된 대상을 제어한다.</p>
 
-<h3 id="s3simple-storage-service란">S3(Simple Storage Service)란</h3>
+<h2 id="s3simple-storage-service란">S3(Simple Storage Service)란</h2>
 <p>인터넷 스토리지 서비스로 웹에서 언제 어디서나 원하는 양의 데이터를 저장하고 검색할 수 있다.</p>
 
-<ul>
-  <li>객체(Object)
-s3에 데이터(이미지, 동영상, 파일)가 저장되는 기본 단위는 객체로 파일과 메타데이터로 이루어져 있다.</li>
-</ul>
-
 <blockquote>
-  <h4 id="객체의-구성요소">객체의 구성요소</h4>
-
-  <ul>
-    <li>key : 파일명</li>
-    <li>value : 파일에 대한 데이터</li>
-    <li>메타데이터 : 데이터의 데이터라는 뜻이며 언제 파일이 업로드 되었는지, owner, 수정등에 대한 데이터이다</li>
-    <li>cors: 리전을 무시하고 한 버킷의 파일을 다른 버킷에서 접근할 수 있도록 한다</li>
-  </ul>
+  <p><strong>객체(Object)</strong>     <br />
+s3에 데이터(이미지, 동영상, 파일)가 저장되는 기본 단위는 객체로 파일과 메타데이터로 이루어져 있다.</p>
 </blockquote>
 
-<ul>
-  <li>버킷(Bucket)  <br />
-s3에서 생성할 수 있는 최상위 디렉토리의 개념으로 버킷의 이름은 유일해야 하며 계정별로 100개까지 생성이 가능하고 버킷에 저장할 수 있는 객체의 수는 무제한이다. 버킷별로 접근제어 설정이 가능하다.</li>
-</ul>
+<blockquote>
+  <p><strong>객체의 구성요소</strong><br />
+<code class="highlighter-rouge">key</code> : 파일명<br />
+<code class="highlighter-rouge">value</code> : 파일에 대한 데이터<br />
+<code class="highlighter-rouge">메타데이터</code> : 데이터의 데이터라는 뜻이며 언제 파일이 업로드 되었는지, owner, 수정등에 대한 데이터이다<br />
+<code class="highlighter-rouge">cors</code> : 리전을 무시하고 한 버킷의 파일을 다른 버킷에서 접근할 수 있도록 한다</p>
+</blockquote>
 
 <blockquote>
-  <ul>
-    <li>Key : 버킷 내에서 객체를 찾기 위해 사용되는 고유 식별자이다. 보통 디렉터리+파일명으로 이름이 지어진다. 업로드 할 이미지의 네임이 동일할 수 있음을 고려하여 date를 추가해 네임을 지을 수 도 있다.</li>
-    <li>Region : 버킷 생성시 버킷의 위치를 지정할 수 있다. 버킷의 위치를 어디에 지정하느냐에 따라서 지연 시간의 최적화나 비용의 최소화등이 결정된다.</li>
-  </ul>
+  <p><strong>버킷(Bucket)</strong>    <br />
+s3에서 생성할 수 있는 최상위 디렉토리의 개념으로 버킷의 이름은 유일해야 하며 계정별로 100개까지 생성이 가능하고 버킷에 저장할 수 있는 객체의 수는 무제한이다. 버킷별로 접근제어 설정이 가능하다.</p>
+
+  <p><code class="highlighter-rouge">Key</code> : 버킷 내에서 객체를 찾기 위해 사용되는 고유 식별자이다. 보통 디렉터리+파일명으로 이름이 지어진다. 업로드 할 이미지의 네임이 동일할 수 있음을 고려하여 date를 추가해 네임을 지을 수 도 있다.<br />
+<code class="highlighter-rouge">Region</code> : 버킷 생성시 버킷의 위치를 지정할 수 있다. 버킷의 위치를 어디에 지정하느냐에 따라서 지연 시간의 최적화나 비용의 최소화등이 결정된다.</p>
 </blockquote>
 
 <p><br /></p>
@@ -344,7 +335,7 @@ s3에서 생성할 수 있는 최상위 디렉토리의 개념으로 버킷의 �
 
 <h4 id="5-이제-사전-설정은-끝이-났다-이제-장고에서-이미지를-업로드-했을때-서버에-저장될-수-있도록-설정해주면-된다">5. 이제 사전 설정은 끝이 났다. 이제 장고에서 이미지를 업로드 했을때 서버에 저장될 수 있도록 설정해주면 된다.</h4>
 
-<h4 id="장고-설정"><code class="highlighter-rouge">장고 설정</code></h4>
+<h3 id="장고-설정"><code class="highlighter-rouge">장고 설정</code></h3>
 <p>4단계정도로 나누어 설정을 해주었다.</p>
 
 <ul>

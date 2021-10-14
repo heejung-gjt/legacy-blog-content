@@ -223,7 +223,7 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<h3 id="1-pymysql-import">1. pymysql import</h3>
+<h2 id="1-pymysql-import">1. pymysql import</h2>
 <p>pymysql.connect()를 사용하여 mysql에 연결 할 수 있다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pymysql</span>
@@ -231,7 +231,7 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<h3 id="2-pymysqlconnect">2. pymysql.connect()</h3>
+<h2 id="2-pymysqlconnect">2. pymysql.connect()</h2>
 
 <p>host에는 workbench를 사용하고 있다면 workbench에 연결한 주소를 써주면 된다. <strong>나는 ec2로 연결해서 사용했기 때문에 ec2의 퍼블릭 주소를 작성해주었다</strong>    <br />
 ec2로 연결해 사용 할 경우 port 3306을 열어주었는지 확인하자 !</p>
@@ -254,7 +254,7 @@ ec2로 연결해 사용 할 경우 port 3306을 열어주었는지 확인하자 
 
 <p><br /></p>
 
-<h3 id="3-cursor-메서드-호출해-cursor객체의-execute메서드-사용">3. cursor() 메서드 호출해 Cursor객체의 execute()메서드 사용</h3>
+<h2 id="3-cursor-메서드-호출해-cursor객체의-execute메서드-사용">3. cursor() 메서드 호출해 Cursor객체의 execute()메서드 사용</h2>
 
 <p><br /></p>
 
@@ -286,15 +286,23 @@ ec2로 연결해 사용 할 경우 port 3306을 열어주었는지 확인하자 
 <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>         <span class="o">-</span> <span class="mi">5</span>
 </code></pre></div></div>
 
-<p>①. cursor()메서드를 호출한다</p>
-
-<p>②. sql 쿼리문을 작성한다</p>
-
-<p>③. execute() 메서드를 이용해 작성한 쿼리문을 db 서버에 보낸다</p>
-
-<p>④. 삽입/갱신/삭제 등이 끝나면 Connection 객체의 commit() 메서드를 이용해 데이터를 commit한다</p>
-
-<p>⑤. Connection 객체의 close() 메서드를 이용해 db연결을 close한다</p>
+<ol>
+  <li>
+    <p>cursor()메서드를 호출한다</p>
+  </li>
+  <li>
+    <p>sql 쿼리문을 작성한다</p>
+  </li>
+  <li>
+    <p>execute() 메서드를 이용해 작성한 쿼리문을 db 서버에 보낸다</p>
+  </li>
+  <li>
+    <p>삽입/갱신/삭제 등이 끝나면 Connection 객체의 commit() 메서드를 이용해 데이터를 commit한다</p>
+  </li>
+  <li>
+    <p>Connection 객체의 close() 메서드를 이용해 db연결을 close한다</p>
+  </li>
+</ol>
 
                 </div>
             </section>

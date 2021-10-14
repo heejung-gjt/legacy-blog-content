@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/celery/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-10-14T14:20:49+09:00</updated>
+  <updated>2021-10-14T23:01:50+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/celery/feed.xml</id>
 
   
@@ -47,17 +47,21 @@
 
 &lt;p&gt;이때 작업을 메시지 큐에 순차적으로 등록을 시켜야 작업 충돌을 방지할 수 있다. 이때 큐에 작업을 전달해주는 시스템을 브로커라고 부른다. 대표적으로 &lt;strong&gt;redis, rabbitMQ&lt;/strong&gt;등이 존재한다&lt;/p&gt;
 
-&lt;h3 id=&quot;celery&quot;&gt;celery&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;h3 id=&quot;celery&quot;&gt;celery&lt;/h3&gt;
 
-&lt;p&gt;비동기처리가 필요한 작업을 Celery가 브로커(redis)에게 전달하면 하나 이상의 worker가 이를 처리해준다&lt;/p&gt;
+  &lt;p&gt;비동기처리가 필요한 작업을 Celery가 브로커(redis)에게 전달하면 하나 이상의 worker가 이를 처리해준다&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h3 id=&quot;worker&quot;&gt;worker&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;h3 id=&quot;worker&quot;&gt;worker&lt;/h3&gt;
+  &lt;p&gt;비동기 작업을 할 수 있도록 도와주는 파이썬 프레임워크로 worker라고 불린다&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;비동기 작업을 할 수 있도록 도와주는 파이썬 프레임워크로 worker라고 불린다&lt;/p&gt;
-
-&lt;h3 id=&quot;브로커redis&quot;&gt;브로커(Redis)&lt;/h3&gt;
-
-&lt;p&gt;celery 작업을 하기 위해서는 브로커를 설정해야 한다. 브로커는 worker인 Celery를 사용하기 위해서 작업 요청을 받는 큐라고 할 수 있다. 이때 이곳에서 요청을 받아 Worker에게 적절히 분배하는 작업을 수행한다&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h3 id=&quot;브로커redis&quot;&gt;브로커(Redis)&lt;/h3&gt;
+  &lt;p&gt;celery 작업을 하기 위해서는 브로커를 설정해야 한다. 브로커는 worker인 Celery를 사용하기 위해서 작업 요청을 받는 큐라고 할 수 있다. 이때 이곳에서 요청을 받아 Worker에게 적절히 분배하는 작업을 수행한다&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/126358229-bc3a3f37-b4a3-4b85-acf9-2f90357a5d19.png&quot; alt=&quot;celery (1)&quot; /&gt;&lt;/p&gt;
 
@@ -201,7 +205,7 @@ redis 1013  0.2  0.0  49788  4596 ? Ssl  09:06   0:44 /usr/bin/redis-server 127.
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;redis-server-외부접속-허용하기&quot;&gt;redis-server 외부접속 허용하기&lt;/h4&gt;
+&lt;h3 id=&quot;redis-server-외부접속-허용하기&quot;&gt;redis-server 외부접속 허용하기&lt;/h3&gt;
 
 &lt;p&gt;redis-server도 로컬 접속만 허용되어 있기 때문에 외부 서버에서 접속할 수 있게 해주어야 한다. 해당 파일을 열어 bind를 찾아 127.0.0.1을 주석처리하거나 지운 후 0.0.0.0을 추가한다. 이는 로컬에서만 가능한 접속을 외부에도 열어주는 설정이다.&lt;/p&gt;
 
@@ -211,6 +215,8 @@ redis 1013  0.2  0.0  49788  4596 ? Ssl  09:06   0:44 /usr/bin/redis-server 127.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;celery와-beat&quot;&gt;celery와 beat&lt;/h2&gt;
 
@@ -256,7 +262,7 @@ redis 1013  0.2  0.0  49788  4596 ? Ssl  09:06   0:44 /usr/bin/redis-server 127.
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;crontab&lt;/strong&gt;을 이용&lt;/p&gt;
+&lt;h3 id=&quot;crontab-을-이용&quot;&gt;crontab 을 이용&lt;/h3&gt;
 
 &lt;p&gt;크론탭은 특정 시간뿐만 아니라 특정한 요일같이 다양하게 시간을 정하여 작업을 배치시킬 수 있다.  timedelta와 비슷하다. schedule에 crontab을 작성하여 사용하면 된다&lt;/p&gt;
 
@@ -409,7 +415,7 @@ redis 1013  0.2  0.0  49788  4596 ? Ssl  09:06   0:44 /usr/bin/redis-server 127.
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;더-알아봐야-하는-내용들&quot;&gt;더 알아봐야 하는 내용들&lt;/h2&gt;
+&lt;h3 id=&quot;더-알아봐야-하는-내용들&quot;&gt;더 알아봐야 하는 내용들&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;데몬으로 celery 실행시키기&lt;/li&gt;

@@ -230,8 +230,8 @@ into the {body} of the default.hbs template -->
 
 <p>이곳에 쓰이는 DB이름이 장고 settings  NAME에 작성되는 이름이다</p>
 
-<pre><code class="language-xhtml">sql&gt; CREATE DATABASE {db이름};
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql&gt; CREATE DATABASE <span class="o">{</span>db이름<span class="o">}</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -241,8 +241,8 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; SHOW DATABASES;
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> SHOW DATABASES<span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -252,8 +252,8 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; USE {db이름};
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> USE <span class="o">{</span>db이름<span class="o">}</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -263,8 +263,8 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; SHOW TABLES;
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> SHOW TABLES<span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -274,8 +274,8 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; DESC {테이블명};
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> DESC <span class="o">{</span>테이블명<span class="o">}</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -285,11 +285,11 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; ALTER TABLE {table명} ADD {추가할 필드 이름} {추가할 필드 타입};
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> ALTER TABLE <span class="o">{</span>table명<span class="o">}</span> ADD <span class="o">{</span>추가할 필드 이름<span class="o">}</span> <span class="o">{</span>추가할 필드 타입<span class="o">}</span><span class="p">;</span>
 
-sql &gt; ALTER TABLE student_tb ADD age int; # EX) student_tb 테이블에 int 타입의 age 필드를 추가한다
+sql <span class="o">&gt;</span> ALTER TABLE student_tb ADD age int<span class="p">;</span> <span class="c"># EX) student_tb 테이블에 int 타입의 age 필드를 추가한다</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -300,12 +300,13 @@ sql &gt; ALTER TABLE student_tb ADD age int; # EX) student_tb 테이블에 int �
 <p><br /></p>
 
 <p>change, modify 2가지로 변경 가능하다</p>
-<pre><code class="language-xhtml">sql &gt; ALTER TABLE {table명} CHANGE COLUMN {수정할 필드 이름} {새로운 필드 이름} {타입}; # ALTER TABLE customer CHANGE COLUMN name modelname varchar(10)
 
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> ALTER TABLE <span class="o">{</span>table명<span class="o">}</span> CHANGE COLUMN <span class="o">{</span>수정할 필드 이름<span class="o">}</span> <span class="o">{</span>새로운 필드 이름<span class="o">}</span> <span class="o">{</span>타입<span class="o">}</span><span class="p">;</span> <span class="c"># ALTER TABLE customer CHANGE COLUMN name modelname varchar(10)</span>
 
-<pre><code class="language-xhtml">sql &gt; ALTER TABLE {table명} MODIFY COLUMN {수정할 필드 이름} {변경할 타입/유형}; # ALTER TABLE customer MODIFY COLUMN name varchar(20) NOT NULL;
-</code></pre>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> ALTER TABLE <span class="o">{</span>table명<span class="o">}</span> MODIFY COLUMN <span class="o">{</span>수정할 필드 이름<span class="o">}</span> <span class="o">{</span>변경할 타입/유형<span class="o">}</span><span class="p">;</span> <span class="c"># ALTER TABLE customer MODIFY COLUMN name varchar(20) NOT NULL;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -315,8 +316,8 @@ sql &gt; ALTER TABLE student_tb ADD age int; # EX) student_tb 테이블에 int �
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; ALTER TABLE {table명} DROP COLUMN {삭제할 필드 이름};
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> ALTER TABLE <span class="o">{</span>table명<span class="o">}</span> DROP COLUMN <span class="o">{</span>삭제할 필드 이름<span class="o">}</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -326,20 +327,20 @@ sql &gt; ALTER TABLE student_tb ADD age int; # EX) student_tb 테이블에 int �
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; CREATE TABLE {table명}(
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> CREATE TABLE <span class="o">{</span>table명<span class="o">}(</span>
 			필드명 타입,
 			필드명 타입
-			PRIMARY KEY(필드명)
-);
+			PRIMARY KEY<span class="o">(</span>필드명<span class="o">)</span>
+<span class="o">)</span><span class="p">;</span>
 
-# 예
-sql &gt; CREATE TABLE student(
+<span class="c"># 예</span>
+sql <span class="o">&gt;</span> CREATE TABLE student<span class="o">(</span>
 			id int,
-			name char(20),
+			name char<span class="o">(</span>20<span class="o">)</span>,
             age int,
-			PRIMARY KEY(id)
-);
-</code></pre>
+			PRIMARY KEY<span class="o">(</span>id<span class="o">)</span>
+<span class="o">)</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -349,8 +350,8 @@ sql &gt; CREATE TABLE student(
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; ALTER TABLE student_tb RENAME teacher_tb;
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> ALTER TABLE student_tb RENAME teacher_tb<span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -360,8 +361,8 @@ sql &gt; CREATE TABLE student(
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; DROP TABLE student_tb;
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> DROP TABLE student_tb<span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -371,8 +372,8 @@ sql &gt; CREATE TABLE student(
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; ALTER USER 'root@loaclhost' IDENTIFIED BY '{변경할 password}';
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> ALTER USER <span class="s1">'root@loaclhost'</span> IDENTIFIED BY <span class="s1">'{변경할 password}'</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -385,8 +386,8 @@ sql &gt; CREATE TABLE student(
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; CREATE DATABASE {db이름} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> CREATE DATABASE <span class="o">{</span>db이름<span class="o">}</span> DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci<span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -396,8 +397,8 @@ sql &gt; CREATE TABLE student(
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">sql &gt; ALTER DATABASE {db이름} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql <span class="o">&gt;</span> ALTER DATABASE <span class="o">{</span>db이름<span class="o">}</span> DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci<span class="p">;</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
@@ -407,8 +408,8 @@ sql &gt; CREATE TABLE student(
 
 <p><br /></p>
 
-<pre><code class="language-xhtml">mysql &gt; SHOW VARIABLES LIKE 'character_set%';
-</code></pre>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql <span class="o">&gt;</span> SHOW VARIABLES LIKE <span class="s1">'character_set%'</span><span class="p">;</span>
+</code></pre></div></div>
 
                 </div>
             </section>
