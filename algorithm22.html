@@ -45,30 +45,74 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="개발 공부하는 블로그" />
     <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://heejung-gjt.github.io/til58" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/algorithm22" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="Studying  Develop" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="1007 TIL" />
-    <meta property="og:description" content="211007 계획 AM 9:00 ~ D-24 해야 할 일 너뉴스 wiki작성 konlpy 공부하기 월간 챌린지 코딩 테스트 보기 꽤 오랜만에 til을 작성하러 들어왔다. 습관적으로 기록을 남기는게 생각보다 쉽지 않다.. ㅠㅠ 최소한 내가 오늘 뭐를 배웠고 공부했는지는 빠뜨리지 않고 작성하도록 하자 알고리즘 문제 맞히는거 너무 짜릿하다.. 뭔가 매력있어.. 난 왜 더" />
-    <meta property="og:url" content="https://heejung-gjt.github.io/til58" />
-    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/til.png" />
+    <meta property="og:title" content="(codility with python) CyclicRotation" />
+    <meta property="og:description" content="
+
+
+lesson2 - CyclicRotation
+
+https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/
+
+
+
+def solution(A, K):
+    
+    if not A:
+        return []
+    
+    for i in range(K):
+        A.insert(0, A[len(A) - 1])
+        A.pop()
+    return A
+            
+    
+solution([], 1)
+
+" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/algorithm22" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/algorithm.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-10-07T19:56:00+09:00" />
-    <meta property="article:modified_time" content="2021-10-07T19:56:00+09:00" />
-    <meta property="article:tag" content="Til" />
+    <meta property="article:published_time" content="2021-10-10T15:50:00+09:00" />
+    <meta property="article:modified_time" content="2021-10-10T15:50:00+09:00" />
+    <meta property="article:tag" content="Algorithm" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="1007 TIL" />
-    <meta name="twitter:description" content="211007 계획 AM 9:00 ~ D-24 해야 할 일 너뉴스 wiki작성 konlpy 공부하기 월간 챌린지 코딩 테스트 보기 꽤 오랜만에 til을 작성하러 들어왔다. 습관적으로 기록을 남기는게 생각보다 쉽지 않다.. ㅠㅠ 최소한 내가 오늘 뭐를 배웠고 공부했는지는 빠뜨리지 않고 작성하도록 하자 알고리즘 문제 맞히는거 너무 짜릿하다.. 뭔가 매력있어.. 난 왜 더" />
+    <meta name="twitter:title" content="(codility with python) CyclicRotation" />
+    <meta name="twitter:description" content="
+
+
+lesson2 - CyclicRotation
+
+https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/
+
+
+
+def solution(A, K):
+    
+    if not A:
+        return []
+    
+    for i in range(K):
+        A.insert(0, A[len(A) - 1])
+        A.pop()
+    return A
+            
+    
+solution([], 1)
+
+" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
-    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/til.png" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/algorithm.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Studying  Develop" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Til" />
+    <meta name="twitter:data2" content="Algorithm" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -83,18 +127,40 @@
         "name": "Studying  Develop",
         "logo": "https://heejung-gjt.github.io/"
     },
-    "url": "https://heejung-gjt.github.io/til58",
+    "url": "https://heejung-gjt.github.io/algorithm22",
     "image": {
         "@type": "ImageObject",
-        "url": "https://heejung-gjt.github.io/assets/built/images/til.png",
+        "url": "https://heejung-gjt.github.io/assets/built/images/algorithm.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://heejung-gjt.github.io/til58"
+        "@id": "https://heejung-gjt.github.io/algorithm22"
     },
-    "description": "211007 계획 AM 9:00 ~ D-24 해야 할 일 너뉴스 wiki작성 konlpy 공부하기 월간 챌린지 코딩 테스트 보기 꽤 오랜만에 til을 작성하러 들어왔다. 습관적으로 기록을 남기는게 생각보다 쉽지 않다.. ㅠㅠ 최소한 내가 오늘 뭐를 배웠고 공부했는지는 빠뜨리지 않고 작성하도록 하자 알고리즘 문제 맞히는거 너무 짜릿하다.. 뭔가 매력있어.. 난 왜 더"
+    "description": "
+
+
+lesson2 - CyclicRotation
+
+https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/
+
+
+
+def solution(A, K):
+    
+    if not A:
+        return []
+    
+    for i in range(K):
+        A.insert(0, A[len(A) - 1])
+        A.pop()
+    return A
+            
+    
+solution([], 1)
+
+"
 }
     </script>
 
@@ -107,7 +173,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="1007 TIL" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="(codility with python) CyclicRotation" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -188,27 +254,27 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-til post tag til ">
+        <article class="post-full  tag-algorithm post tag algorithm ">
 
             <header class="post-full-header">
 
               <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="2021-10-07">2021-10-07</time>
+                    <time class="post-full-meta-date" datetime="2021-10-10">2021-10-10</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/til/'>TIL</a>
+                               <a href='/tag/algorithm/'>ALGORITHM</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">1007 TIL</h1>
+                <h1 class="post-full-title">(codility with python) CyclicRotation</h1>
             </header>
 
 <!--  
             
-            <figure class="post-full-image" style="background-image: url(/assets/built/images/til.png)">
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/algorithm.png)">
             </figure>
             
 -->
@@ -218,28 +284,25 @@ into the {body} of the default.hbs template -->
                     
 <p><br /></p>
 
-<h2 id="211007-계획">211007 계획</h2>
+<h2 id="lesson2---cyclicrotation">lesson2 - CyclicRotation</h2>
 
-<h4 id="am-900-">AM 9:00 ~</h4>
-
-<p><strong>D-24</strong></p>
+<p><a href="https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/">https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/</a></p>
 
 <hr />
 
-<h2 id="해야-할-일">해야 할 일</h2>
-
-<ul>
-  <li><del>너뉴스 wiki작성</del></li>
-  <li><del>konlpy 공부하기</del></li>
-  <li><del>월간 챌린지 코딩 테스트 보기</del></li>
-</ul>
-
-<hr />
-
-<p>꽤 오랜만에 til을 작성하러 들어왔다. 습관적으로 기록을 남기는게 생각보다 쉽지 않다.. ㅠㅠ 최소한 내가
-오늘 뭐를 배웠고 공부했는지는 빠뜨리지 않고 작성하도록 하자</p>
-
-<p>알고리즘 문제 맞히는거 너무 짜릿하다.. 뭔가 매력있어.. 난 왜 더 빨리 알고리즘 공부를 시작하지 않았을까 후회가 된다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">A</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+        <span class="n">A</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">A</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">A</span>
+            
+    
+<span class="n">solution</span><span class="p">([],</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
 
                 </div>
             </section>

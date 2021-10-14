@@ -337,7 +337,7 @@ ul,
 ol,
 dl,
 blockquote {
-    margin: 20px 0 10px 0;
+    margin: 10px 0 10px 0;
 }
 
 /*코딩한 내용 패딩*/
@@ -356,16 +356,21 @@ ol ul {
 
 ul {
     list-style: disc;
+    padding: 0px 0px 0px 25px;
+    font-size: 1em;
 }
 
 ol {
     list-style: decimal;
+    padding: 0px 0px 0px 15px;
+    font-weight: 530;
 }
 
 li {
     margin: 0.5em 0;
     padding-left: 0.3em;
     line-height: 1.6em;
+
 }
 
 dt {
