@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/django/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-10-16T19:45:07+09:00</updated>
+  <updated>2021-10-19T00:24:30+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/django/feed.xml</id>
 
   
@@ -30,6 +30,110 @@
   
   
 
+  
+    <entry>
+      <title type="html">(Django) select_related()와 prefetch_related()</title>
+      <link href="https://heejung-gjt.github.io/django6" rel="alternate" type="text/html" title="(Django) select_related()와 prefetch_related()" />
+      <published>2021-10-18T17:40:00+09:00</published>
+      <updated>2021-10-18T17:40:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/django6</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/django6">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;select_related와-prefetch_related&quot;&gt;select_related()와 prefetch_related()&lt;/h2&gt;
+
+&lt;p&gt;프로젝트를 진행하면서 화면 로딩이 느린 문제가 발생했다. 이를 해결하기 위해 django-debug-toolbar를 설치하였다. 이를 통해 페이지가 로딩되면서 발생하는 쿼리를 확인해 보았다. 그 결과 3개의 데이터를 조회하는데 중복과 비슷한 쿼리가 굉장히 많이 발생하는 것을 볼 수 있었다. 쿼리의 중복을 없애고 쿼리를 최소화 할 수 있는 방법으로 위 2개의 메소드를 사용하는 것이였다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/137748777-0da2d831-81d9-4832-a09e-8a5f0ecb0eea.png&quot; alt=&quot;marketsqltoolbar&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;select_related&quot;&gt;select_related()&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;정참조 ForeignKey, OneToOneField 관계와 역참조 OneToOneField에서 활용한다.&lt;/li&gt;
+  &lt;li&gt;데이터베이스단에서 inner join으로 쿼리가 수행된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;어떻게 활용하는가&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;toolbar를 읽어보면 어디부분에서 쿼리가 중복으로 발생했는지 볼 수 있다. 템플릿을 보면 article인스턴스가 1:n 관계인 user의 writer 필드에 접근하기 때문에 articles의 개수만큼 쿼리가 중복으로 발생한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+ {% for article in articles %}
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;strong&amp;gt;&lt;/span&gt;{{article.writer.nickname}}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Article 객체를 쿼리로 반환하는 과정에서 Article객체에서 1:n으로 물고있는 User 모델의 writer 속성을 미리 로딩하여 캐싱하게 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;article_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Article&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_deleted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_related&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'writer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;단순 쿼리와의 차이점&lt;/code&gt; &lt;br /&gt;
+단순쿼리의 경우 , 아래와 같이 작성하게 된다면 article 객체만 쿼리하기 때문에 각각 writer와 category를 얻기 위해서 다시 쿼리에 접근한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Article&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;writer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;article&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;writer&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;article&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;select_related를 사용하게 되면 article 객체만 쿼리를 해도 sql에서 미리 category와 writer를 join하여 캐싱한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;article_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Article&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_deleted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_related&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'writer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'category'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;prefetch_related&quot;&gt;prefetch_related()&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;정참조 ManyToMany, 역참조 ForeignKey, ManyToMany에서 활용한다.&lt;/li&gt;
+  &lt;li&gt;select_related()와 역할은 비슷하지만 방식이 좀 다르다&lt;/li&gt;
+  &lt;li&gt;sql문에서 join이 되지 않고 각 관계별로 데이터베이스 쿼리를 수행하고 파이썬단에서 join을 수행한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;comment는 article에서 역참조를 하고 있는 테이블이다. 해당 속성들을 미리 로딩하기 위해 prefetch_related를 사용한다&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;social&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;social-comment&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;댓글 + &lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;article_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Article&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_deleted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prefetch_related&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'comment'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 로직을 수행한 결과 10개의 쿼리로 줄어들었으며 중복이 제거 된 것을 볼 수 있다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/137749383-c3e9414d-0b61-4c87-8370-df577b1be9d3.png&quot; alt=&quot;gorf&quot; /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="django" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">(Django) 제품 filters 기능 구현하기</title>
@@ -1314,63 +1418,6 @@ User가 AbstractBaseUser를 상속받기 때문에 필드에 작성하지 않아
 
       
         <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">(Django) 프로젝트(3) - 4. 백엔드 구현하기(진행중..)</title>
-      <link href="https://heejung-gjt.github.io/pro4" rel="alternate" type="text/html" title="(Django) 프로젝트(3) - 4. 백엔드 구현하기(진행중..)" />
-      <published>2021-07-09T16:05:00+09:00</published>
-      <updated>2021-07-09T16:05:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/pro4</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/pro4">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Django Project -3 &lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./pro1&quot;&gt;개발과정 기록&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./pro2&quot;&gt;프론트 - 구현&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./pro3&quot;&gt;모델링 - MySQL 연동&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./pro4&quot;&gt;백엔드 - 구현&lt;/a&gt;&lt;/li&gt;
-
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;210709--백엔드-구현&quot;&gt;210709 ~ 백엔드 구현&lt;/h3&gt;
-
-&lt;h4 id=&quot;진행-과정&quot;&gt;진행 과정&lt;/h4&gt;
-&lt;p&gt;팀원과 백엔드를 함께 진행하면서 생길 수 있는 갈등과 오류를 최소화하기 위해 일주일에 두번씩 회의를 진행하고 있음.
-이후에 슬랙으로 계속해서 소통을 하며 진행사항을 공유함. 새로운 기술적용을 이해와 함께 학습하며 진행하기로 하였기에 새로운 기능등을
-공부하는 시간이 따로 필요하여 예상보다는 속도가 더딤. 하지만 확실하게 이해하고 넘어갈 수 있어서 좋음&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;노션으로 요구사항과 새로운 기술에 대한 내용을 정리하여 서로 공유하고 있음. git의 project와 issue를 최대한 활용해 
-서로의 진행상황과 발생한 이슈에 대한 내용을 공유하고 해결책을 제시하고 있음. git flow를 사용해 feature를 따서 기능을 개발하고 있음&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/126063672-c7f6859e-ad74-4156-b1b0-23cbea7dc888.png&quot; alt=&quot;스크린샷(17)&quot; /&gt;&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="django" />
-      
-
-      
-        <summary type="html">Django Project -3 개발과정 기록 프론트 - 구현 모델링 - MySQL 연동 백엔드 - 구현</summary>
       
 
       
