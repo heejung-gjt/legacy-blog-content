@@ -1,4 +1,167 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-10-22T17:56:13+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">JWT 토큰을 이용한 로그인 실습</title><link href="https://heejung-gjt.github.io/jwt2" rel="alternate" type="text/html" title="JWT 토큰을 이용한 로그인 실습" /><published>2021-10-21T12:45:00+09:00</published><updated>2021-10-21T12:45:00+09:00</updated><id>https://heejung-gjt.github.io/jwt2</id><content type="html" xml:base="https://heejung-gjt.github.io/jwt2">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-10-27T22:58:46+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">SOP와 CORS란</title><link href="https://heejung-gjt.github.io/cors1" rel="alternate" type="text/html" title="SOP와 CORS란" /><published>2021-10-27T14:30:00+09:00</published><updated>2021-10-27T14:30:00+09:00</updated><id>https://heejung-gjt.github.io/cors1</id><content type="html" xml:base="https://heejung-gjt.github.io/cors1">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sopsame-origin-policy-동일-출처-정책란&quot;&gt;SOP(Same Origin Policy, 동일 출처 정책)란&lt;/h2&gt;
+&lt;p&gt;다른 출처의 리소스를 사용하는 것을 제한하는 보안 방식이다. 다시말해 출처가 동일해야 리소스에 대한 상호작용이 가능하다   &lt;br /&gt;
+예를 들어보자. https://example1.com에서 https://example2.com에게 필요한 리소스를 요청할때 example2에서 요청을 한 곳의 출처를 확인한다. 
+SOP에 위반하기 때문에 요청을 반환한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;출처란 &lt;br /&gt;
+출처는 URL의 Protocol, Host, Port를 통해 같은 출처인지 다른 출처인지 판단한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;url-구조&quot;&gt;url 구조&lt;/h3&gt;
+&lt;p&gt;출처를 판단하기 위해서는 url를 살펴봐야 한다. 3가지를 보고 출처를 판단하게 되는데 &lt;code class=&quot;highlighter-rouge&quot;&gt;1. protocol&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;2. host(도메인)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;3. port(생략가능)&lt;/code&gt; 이렇게 3가지를 보고 판단한다.&lt;/p&gt;
+
+&lt;p&gt;3개중에 하나라도 다르다면 SOP에 위반하여 요청이 반환된다. 그렇다면 위에서는 host 즉 도메인이 달라 다른 출처로 판단이 내려져 요청이 반환된 것을 알것이다. &lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/139057285-5a348d9d-8b68-4f54-80c3-19dec0a5dfcb.PNG&quot; width=&quot;500&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(IE는 SOP에 포트를 포함하지 않기 때문에 포트가 달라도 같은 출처로 인식될 수 있다)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;corscross-origin-resource-sharing-교차-출처-리소스-공유란&quot;&gt;CORS(Cross Origin Resource Sharing, 교차 출처 리소스 공유)란&lt;/h2&gt;
+&lt;p&gt;그렇다면 다른 출처의 리소스가 필요하다면 어떻게 해야할까 ? 교차 출처의 접근을 허용하는 CORS를 사용해야 한다. CORS는
+어떤 출처의 리소스에 다른 출처가 접근할 수 있도록 한다.  즉 https://example1.com에서 https://example2.com에게 필요한 리소스를 요청하여 요청을 받을 수 있게 해준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;cors-동작-원리&quot;&gt;CORS 동작 원리&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;브라우저가 리소스를 서버에 요청할때 요청 헤더에 정보(자신의 출처, 요청할 메소드)를 담아 전송한다.&lt;/li&gt;
+  &lt;li&gt;서버에서는 응답 헤더에 &lt;strong&gt;Access-Control-Allow-Origin&lt;/strong&gt; 이라는 값을 담아서 응답한다.&lt;/li&gt;
+  &lt;li&gt;브라우저에서는 서버가 보낸 헤더를 보고 자신이 보낸 요청의 출처와 서버가 보낸 응답의 &lt;strong&gt;Access-Control-Allow-Origin&lt;/strong&gt; 을 비교한 후 요청이 가능하면 리소스 전송을 허용하고 아니라면 에러를 발생시킨다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;cors의 동작 방식은 단순요청 방식과 예비요청 방식 2가지가 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;simple request (단순 요청)&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;단순 요청은 서버에 API를 요청하고 서버는 Access-Control-Allow-Origin을 헤더에 포함하여 응답한다. 브라우저는 Access-Control-Allow-Origin 헤더를 확인해서 CORS 동작을 수행할지 판단한다&lt;/p&gt;
+
+  &lt;p&gt;서버에게 바로 요청을 보내는 방법으로 &lt;strong&gt;3가지의 조건이 모두 만족되는 경우&lt;/strong&gt; 사전 요청없이 요청을 보낼 수 있다&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;GET/HEAD/POST 중 한가지 메소드를 사용해야 한다&lt;/li&gt;
+    &lt;li&gt;Accept, Accept-Language, Content-Language, Content-Type, DPR, Downlink, Save-Data, Viewport-Width, Width를 제외한 헤더를 사용하면 안된다&lt;/li&gt;
+    &lt;li&gt;application/x-www-form-urlencoded, multipart/form-data, text/plain 중에서만 Content type을 지정해야 한다&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;p&gt;(대부분 3가지를 전부 지킬 수 없다. API로 데이터를 전송시 주로 application/json을 사용한다)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/139077082-a12f09c9-3bff-433b-9add-7d01ef0c0d8d.PNG&quot; alt=&quot;SIMPLE&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;preflight request(예비 요청)&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;예비요청은 서버에 예비요청을 보내서 안전한지 판단 한 후 요청을 보낸다. 실제 리소스를 요청하기 전에 &lt;strong&gt;OPTIONS&lt;/strong&gt; 라는 메소드를 통해 실제 요청을 전송할지를 판단한다&lt;/p&gt;
+
+  &lt;p&gt;서버에서는 이 요청에 대한 응답으로 &lt;strong&gt;Access-Control-Allow-Origin&lt;/strong&gt; 헤더를 포함한 응답을 브라우저에 보낸다.&lt;/p&gt;
+
+  &lt;p&gt;브라우저에서는 &lt;strong&gt;Access-Control-Allow-Origin&lt;/strong&gt; 헤더를 확인하여 CORS 동작을 수행할지를 판단한다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/139076856-d824c1ad-7801-4739-8a78-3765a4377e5e.PNG&quot; alt=&quot;PREFLIGHT&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이때 서버등의 헤더에 리소스에 대한 접근을 허락하는 내용이 없으면 cors 문제가 발생한다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;django에서-cors-해결&quot;&gt;django에서 cors 해결&lt;/h2&gt;
+
+&lt;p&gt;장고에서는 관련 패키지를 설치해 보다 쉽게 cors를 설정할 수 있다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;우선 패키지를 설치한다&lt;/strong&gt;    &lt;br /&gt;
+cors에 필요한 서버의 헤더를 조작하기 위한 패키지이다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;pip&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;django&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# settings.py&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;INSTALLED_APPS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'corsheaders'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;settings에서 cors관련 설정을 추가한다&lt;/strong&gt;    &lt;br /&gt;
+서버의 응답에 cors 헤더를 추가하기 위해서 corsheaders를 installed apps목록에 추가한다. &lt;br /&gt;
+middlewqre class도 추가한다. 이때 가장 높게 위치시켜야 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# settings.py&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;INSTALLED_APPS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'corsheaders'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;MIDDLEWARE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'corsheaders.middleware.CorsMiddleware'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;settings에서 CORS_ORIGIN_WHITELIST는 cross site요청을 허용하는 호스트들을 직접 추가할 수 있다&lt;/strong&gt;  &lt;br /&gt;
+모든 호스트를 허용하고 싶다면 CORS_ORIGIN_ALLOW_ALL을 True로 설정하면 된다. 이렇게 된다면 모든 출처에서의 요청이 허용된다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;CORS_ORIGIN_ALLOW_ALL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+
+&lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;CORS_ORIGIN_WHITELIST&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;허용하려는&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HOST&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; ajax로 쿼리스트링으로 데이터를 담아 get요청을 보낼때 위의 방식대로 설정을 했지만 cors관련 에러가 발생했었다. 아래 2개의 url 차이가 뭐길래 cors에러가 나는걸까..&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:8000/post?id&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3 &lt;span class=&quot;c&quot;&gt;# cors 관련 에러 발생&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:8000/post?id&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3&amp;amp; &lt;span class=&quot;c&quot;&gt;# 정상 작동&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="cors" /><summary type="html"></summary></entry><entry><title type="html">1027 TIL</title><link href="https://heejung-gjt.github.io/til66" rel="alternate" type="text/html" title="1027 TIL" /><published>2021-10-27T10:00:00+09:00</published><updated>2021-10-27T10:00:00+09:00</updated><id>https://heejung-gjt.github.io/til66</id><content type="html" xml:base="https://heejung-gjt.github.io/til66">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;211027-계획&quot;&gt;211027 계획&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;오늘-한-일&quot;&gt;오늘 한 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;del&gt;프로젝트 정리&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;oauth 정리&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;api 프로젝트 진행 완료&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;오랜만에 작성하는 til이다. 10월말까지 계획했던 만큼 프로젝트 진행을 하지 못했지만 api에 대해 이해하고 직접 설계를 해봤다는 것에 의의를 두어야 겠다. :-)   &lt;br /&gt;
+어제는 편두통이 너무 심하게 와서 오늘 아침까지도 영향이 있었다.. 일찍 약먹을껄 ㅠㅠ 약먹으니까 낮에는 괜찮아져서 진행했던 프로젝트를 정리했다. cs부분도 이제 다시 진행 해야하는데.. 
+할게 산더미이지만 즐겁게 하고 싶다.. 그리고 일단 !! 운동을 시작해야 한다. 3키로가 쪘다… 세상에…. &lt;br /&gt;
+이제 곧 2021년이 끝나는데 기분좋게 마무리 짓고 싶다….!!!&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">JWT 토큰을 이용한 로그인 실습</title><link href="https://heejung-gjt.github.io/jwt2" rel="alternate" type="text/html" title="JWT 토큰을 이용한 로그인 실습" /><published>2021-10-21T12:45:00+09:00</published><updated>2021-10-21T12:45:00+09:00</updated><id>https://heejung-gjt.github.io/jwt2</id><content type="html" xml:base="https://heejung-gjt.github.io/jwt2">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -156,11 +319,11 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;h2 id=&quot;인증authentication과-인가authorization&quot;&gt;인증(Authentication)과 인가(Authorization)&lt;/h2&gt;
 
 &lt;p&gt;jwt를 사용하기 전 두개의 뜻을 정확하게 이해해보자.&lt;/p&gt;
-
-&lt;hr /&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;인증&lt;/strong&gt;&lt;/p&gt;
@@ -499,34 +662,4 @@ i = 4일때 now라는 단어의 차례를 구하기 위해서 now인덱스를 �
   &lt;li&gt;&lt;del&gt;select_related, prefetch_related 작성&lt;/del&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">1016 TIL</title><link href="https://heejung-gjt.github.io/til61" rel="alternate" type="text/html" title="1016 TIL" /><published>2021-10-16T16:00:00+09:00</published><updated>2021-10-16T16:00:00+09:00</updated><id>https://heejung-gjt.github.io/til61</id><content type="html" xml:base="https://heejung-gjt.github.io/til61">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;211016-계획&quot;&gt;211016 계획&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;D-15&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;해야-할-일&quot;&gt;해야 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;프로그래머스 dev-matching 시험&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;… 너무 어려웠다… 내 실력이 어느정도인지 체감하는 순간이였다.. 핳…&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">2021 Dev-Matching 백엔드 하반기 후기</title><link href="https://heejung-gjt.github.io/coding2" rel="alternate" type="text/html" title="2021 Dev-Matching 백엔드 하반기 후기" /><published>2021-10-16T13:50:00+09:00</published><updated>2021-10-16T13:50:00+09:00</updated><id>https://heejung-gjt.github.io/coding2</id><content type="html" xml:base="https://heejung-gjt.github.io/coding2">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;정말 쓸까 말까 고민했다… 나중에 내가 보고 웃으며 이날을 기억하길 바라며 후기를 작성해본다..&lt;/p&gt;
-
-&lt;p&gt;일단 결과는 아주아주 처참했다…. 1번문제부터 막혔다.. 문제의 조건대로 식을 세워 구현했지만 시간초과로 4문제가 통과되지 않았다..&lt;br /&gt;
-문제는 어디에서 시간초과를 해결해야 할지 아예 몰랐다..&lt;/p&gt;
-
-&lt;p&gt;일단 상대적으로 쉬울것 같은 sql로 넘어와 풀었지만 이것도 쉽지 않았다… 2,3번을 풀기에는 1번이 너무 아른거려서 결국 손도 대지 못하고
-제출을 하게되었다.. 너무너무 창피하고 허탈했다…&lt;/p&gt;
-
-&lt;p&gt;목표는 2솔이였지만 처참히 실패.. 이번년도 안에 알고리즘으로 웃는날 꼭 만든다 내가…. !&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;알고리즘 문제는 추후에 정리해 볼 예정이다…&lt;/p&gt;</content><author><name>jung</name></author><category term="coding" /><summary type="html"></summary></entry></feed>
+&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry></feed>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/cors1" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Studying  Develop" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SOP와 CORS란" />
+    <meta property="og:description" content="SOP(Same Origin Policy, 동일 출처 정책)란 다른 출처의 리소스를 사용하는 것을 제한하는 보안 방식이다. 다시말해 출처가 동일해야 리소스에 대한 상호작용이 가능하다 예를 들어보자. https://example1.com에서 https://example2.com에게 필요한 리소스를 요청할때 example2에서 요청을 한 곳의 출처를 확인한다. SOP에 위반하기 때문에 요청을 반환한다. 출처란 출처는 URL의 Protocol, Host, Port를 통해 같은 출처인지 다른 출처인지" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/cors1" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/cors.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-10-27T14:30:00+09:00" />
+    <meta property="article:modified_time" content="2021-10-27T14:30:00+09:00" />
+    <meta property="article:tag" content="Cors" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SOP와 CORS란" />
+    <meta name="twitter:description" content="SOP(Same Origin Policy, 동일 출처 정책)란 다른 출처의 리소스를 사용하는 것을 제한하는 보안 방식이다. 다시말해 출처가 동일해야 리소스에 대한 상호작용이 가능하다 예를 들어보자. https://example1.com에서 https://example2.com에게 필요한 리소스를 요청할때 example2에서 요청을 한 곳의 출처를 확인한다. SOP에 위반하기 때문에 요청을 반환한다. 출처란 출처는 URL의 Protocol, Host, Port를 통해 같은 출처인지 다른 출처인지" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/cors.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Studying  Develop" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Cors" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Studying  Develop",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/cors1",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/cors.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/cors1"
+    },
+    "description": "SOP(Same Origin Policy, 동일 출처 정책)란 다른 출처의 리소스를 사용하는 것을 제한하는 보안 방식이다. 다시말해 출처가 동일해야 리소스에 대한 상호작용이 가능하다 예를 들어보자. https://example1.com에서 https://example2.com에게 필요한 리소스를 요청할때 example2에서 요청을 한 곳의 출처를 확인한다. SOP에 위반하기 때문에 요청을 반환한다. 출처란 출처는 URL의 Protocol, Host, Port를 통해 같은 출처인지 다른 출처인지"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="SOP와 CORS란" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">Studying  Develop</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/celery/">Celery</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/rabbitmq/">RabbitMQ</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/oauth/">OAuth</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/jwt/">JWT</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/cors/">CORS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/coding/">코테</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/network/">Network</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/os/">OS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/database/">DataBase</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/aws/">AWS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-cors post tag cors ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-10-27">2021-10-27</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/cors/'>CORS</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">SOP와 CORS란</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/cors.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    
+<p><br /></p>
+
+<h2 id="sopsame-origin-policy-동일-출처-정책란">SOP(Same Origin Policy, 동일 출처 정책)란</h2>
+<p>다른 출처의 리소스를 사용하는 것을 제한하는 보안 방식이다. 다시말해 출처가 동일해야 리소스에 대한 상호작용이 가능하다   <br />
+예를 들어보자. https://example1.com에서 https://example2.com에게 필요한 리소스를 요청할때 example2에서 요청을 한 곳의 출처를 확인한다. 
+SOP에 위반하기 때문에 요청을 반환한다.</p>
+
+<blockquote>
+  <p>출처란 <br />
+출처는 URL의 Protocol, Host, Port를 통해 같은 출처인지 다른 출처인지 판단한다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="url-구조">url 구조</h3>
+<p>출처를 판단하기 위해서는 url를 살펴봐야 한다. 3가지를 보고 출처를 판단하게 되는데 <code class="highlighter-rouge">1. protocol</code>, <code class="highlighter-rouge">2. host(도메인)</code>, <code class="highlighter-rouge">3. port(생략가능)</code> 이렇게 3가지를 보고 판단한다.</p>
+
+<p>3개중에 하나라도 다르다면 SOP에 위반하여 요청이 반환된다. 그렇다면 위에서는 host 즉 도메인이 달라 다른 출처로 판단이 내려져 요청이 반환된 것을 알것이다. <br />
+<img src="https://user-images.githubusercontent.com/64240637/139057285-5a348d9d-8b68-4f54-80c3-19dec0a5dfcb.PNG" width="500" height="200" /></p>
+
+<p>(IE는 SOP에 포트를 포함하지 않기 때문에 포트가 달라도 같은 출처로 인식될 수 있다)</p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="corscross-origin-resource-sharing-교차-출처-리소스-공유란">CORS(Cross Origin Resource Sharing, 교차 출처 리소스 공유)란</h2>
+<p>그렇다면 다른 출처의 리소스가 필요하다면 어떻게 해야할까 ? 교차 출처의 접근을 허용하는 CORS를 사용해야 한다. CORS는
+어떤 출처의 리소스에 다른 출처가 접근할 수 있도록 한다.  즉 https://example1.com에서 https://example2.com에게 필요한 리소스를 요청하여 요청을 받을 수 있게 해준다.</p>
+
+<p><br /></p>
+
+<h2 id="cors-동작-원리">CORS 동작 원리</h2>
+<ul>
+  <li>브라우저가 리소스를 서버에 요청할때 요청 헤더에 정보(자신의 출처, 요청할 메소드)를 담아 전송한다.</li>
+  <li>서버에서는 응답 헤더에 <strong>Access-Control-Allow-Origin</strong> 이라는 값을 담아서 응답한다.</li>
+  <li>브라우저에서는 서버가 보낸 헤더를 보고 자신이 보낸 요청의 출처와 서버가 보낸 응답의 <strong>Access-Control-Allow-Origin</strong> 을 비교한 후 요청이 가능하면 리소스 전송을 허용하고 아니라면 에러를 발생시킨다.</li>
+</ul>
+
+<p>cors의 동작 방식은 단순요청 방식과 예비요청 방식 2가지가 있다.</p>
+
+<blockquote>
+  <p><strong>simple request (단순 요청)</strong></p>
+
+  <p>단순 요청은 서버에 API를 요청하고 서버는 Access-Control-Allow-Origin을 헤더에 포함하여 응답한다. 브라우저는 Access-Control-Allow-Origin 헤더를 확인해서 CORS 동작을 수행할지 판단한다</p>
+
+  <p>서버에게 바로 요청을 보내는 방법으로 <strong>3가지의 조건이 모두 만족되는 경우</strong> 사전 요청없이 요청을 보낼 수 있다</p>
+  <ol>
+    <li>GET/HEAD/POST 중 한가지 메소드를 사용해야 한다</li>
+    <li>Accept, Accept-Language, Content-Language, Content-Type, DPR, Downlink, Save-Data, Viewport-Width, Width를 제외한 헤더를 사용하면 안된다</li>
+    <li>application/x-www-form-urlencoded, multipart/form-data, text/plain 중에서만 Content type을 지정해야 한다</li>
+  </ol>
+
+  <p>(대부분 3가지를 전부 지킬 수 없다. API로 데이터를 전송시 주로 application/json을 사용한다)</p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/139077082-a12f09c9-3bff-433b-9add-7d01ef0c0d8d.PNG" alt="SIMPLE" /></p>
+
+<p><br /></p>
+
+<blockquote>
+  <p><strong>preflight request(예비 요청)</strong></p>
+
+  <p>예비요청은 서버에 예비요청을 보내서 안전한지 판단 한 후 요청을 보낸다. 실제 리소스를 요청하기 전에 <strong>OPTIONS</strong> 라는 메소드를 통해 실제 요청을 전송할지를 판단한다</p>
+
+  <p>서버에서는 이 요청에 대한 응답으로 <strong>Access-Control-Allow-Origin</strong> 헤더를 포함한 응답을 브라우저에 보낸다.</p>
+
+  <p>브라우저에서는 <strong>Access-Control-Allow-Origin</strong> 헤더를 확인하여 CORS 동작을 수행할지를 판단한다</p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/139076856-d824c1ad-7801-4739-8a78-3765a4377e5e.PNG" alt="PREFLIGHT" /></p>
+
+<p><br /></p>
+
+<p>이때 서버등의 헤더에 리소스에 대한 접근을 허락하는 내용이 없으면 cors 문제가 발생한다.</p>
+
+<hr />
+
+<h2 id="django에서-cors-해결">django에서 cors 해결</h2>
+
+<p>장고에서는 관련 패키지를 설치해 보다 쉽게 cors를 설정할 수 있다</p>
+
+<ul>
+  <li><strong>우선 패키지를 설치한다</strong>    <br />
+cors에 필요한 서버의 헤더를 조작하기 위한 패키지이다</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pip</span> <span class="n">install</span> <span class="n">django</span><span class="o">-</span><span class="n">cors</span><span class="o">-</span><span class="n">headers</span>
+
+<span class="c"># settings.py</span>
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">..</span>
+    <span class="o">..</span><span class="p">,</span>
+    <span class="s">'corsheaders'</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>settings에서 cors관련 설정을 추가한다</strong>    <br />
+서버의 응답에 cors 헤더를 추가하기 위해서 corsheaders를 installed apps목록에 추가한다. <br />
+middlewqre class도 추가한다. 이때 가장 높게 위치시켜야 한다</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># settings.py</span>
+
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="s">'corsheaders'</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="s">'corsheaders.middleware.CorsMiddleware'</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>settings에서 CORS_ORIGIN_WHITELIST는 cross site요청을 허용하는 호스트들을 직접 추가할 수 있다</strong>  <br />
+모든 호스트를 허용하고 싶다면 CORS_ORIGIN_ALLOW_ALL을 True로 설정하면 된다. 이렇게 된다면 모든 출처에서의 요청이 허용된다</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CORS_ORIGIN_ALLOW_ALL</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="ow">or</span>
+
+<span class="n">CORS_ORIGIN_WHITELIST</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="err">허용하려는</span> <span class="n">HOST</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>Q.</strong> ajax로 쿼리스트링으로 데이터를 담아 get요청을 보낼때 위의 방식대로 설정을 했지만 cors관련 에러가 발생했었다. 아래 2개의 url 차이가 뭐길래 cors에러가 나는걸까..</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://127.0.0.1:8000/post?id<span class="o">=</span>3 <span class="c"># cors 관련 에러 발생</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://127.0.0.1:8000/post?id<span class="o">=</span>3&amp; <span class="c"># 정상 작동</span>
+</code></pre></div></div>
+
+                </div>
+            </section>
+        
+        <div id="post-disqus" class="container">
+            <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://heejung-gjt-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+        
+
+
+
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">Studying  Develop</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Studying  Develop</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+    <script id="dsq-count-scr" src="//heejung-gjt-github-io.disqus.com/count.js" async></script>
+</body>
+</html>
