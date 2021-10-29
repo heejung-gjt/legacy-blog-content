@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-10-29T19:31:51+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">1029 TIL</title><link href="https://heejung-gjt.github.io/til67" rel="alternate" type="text/html" title="1029 TIL" /><published>2021-10-29T15:00:00+09:00</published><updated>2021-10-29T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/til67</id><content type="html" xml:base="https://heejung-gjt.github.io/til67">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-10-29T22:58:51+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">Studying  Develop</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">1029 TIL</title><link href="https://heejung-gjt.github.io/til67" rel="alternate" type="text/html" title="1029 TIL" /><published>2021-10-29T19:00:00+09:00</published><updated>2021-10-29T19:00:00+09:00</updated><id>https://heejung-gjt.github.io/til67</id><content type="html" xml:base="https://heejung-gjt.github.io/til67">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;211027-계획&quot;&gt;211027 계획&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;오늘-한-일&quot;&gt;오늘 한 일&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;del&gt;jwt 인증 기반 방식으로 crud api 구현&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;프리온보딩이라는 프로그램에 합격해서 월요일부터 시작하게 되었다. 나에게는 좋은 경험이 될거라고 믿고 있지만 
 한편으로 불안한 마음도 있다… 한달뒤에 웃을수 있기를 …!&lt;/p&gt;
@@ -146,13 +158,22 @@ middlewqre class도 추가한다. 이때 가장 높게 위치시켜야 한다&lt
 
 &lt;hr /&gt;
 
+&lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Access to fetch at 'http://127.0.0.1:8000/' from origin 'http://127.0.0.1:5501' has been blocked by CORS policy: Request header field authorization is not allowed by Access-Control-Allow-Headers in preflight response.&lt;/code&gt; 에러가 발생하는 이유는 ?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; 장고에 세팅즈 CORS_ALLOW_HEADERS에 request header에 담긴 데이터의 값을 똑같이 넣어주어야 한다. 나는 이거때문에 하루를 까먹었다….
+에러 메시지를 읽어보면 충분히 예측할 수 있는 문제였는데… 영어 공부 해야겠다 진짜…&lt;/p&gt;
+
+&lt;hr /&gt;
+
 &lt;p&gt;&lt;strong&gt;Q.&lt;/strong&gt; ajax로 쿼리스트링으로 데이터를 담아 get요청을 보낼때 위의 방식대로 설정을 했지만 cors관련 에러가 발생했었다. 아래 2개의 url 차이가 뭐길래 cors에러가 나는걸까..&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:8000/post?id&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3 &lt;span class=&quot;c&quot;&gt;# cors 관련 에러 발생&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:8000/post?id&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3&amp;amp; &lt;span class=&quot;c&quot;&gt;# 정상 작동&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>jung</name></author><category term="cors" /><summary type="html"></summary></entry><entry><title type="html">1027 TIL</title><link href="https://heejung-gjt.github.io/til66" rel="alternate" type="text/html" title="1027 TIL" /><published>2021-10-27T10:00:00+09:00</published><updated>2021-10-27T10:00:00+09:00</updated><id>https://heejung-gjt.github.io/til66</id><content type="html" xml:base="https://heejung-gjt.github.io/til66">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="cors" /><summary type="html"></summary></entry><entry><title type="html">1027 TIL</title><link href="https://heejung-gjt.github.io/til66" rel="alternate" type="text/html" title="1027 TIL" /><published>2021-10-27T10:00:00+09:00</published><updated>2021-10-27T10:00:00+09:00</updated><id>https://heejung-gjt.github.io/til66</id><content type="html" xml:base="https://heejung-gjt.github.io/til66">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;211027-계획&quot;&gt;211027 계획&lt;/h2&gt;
 

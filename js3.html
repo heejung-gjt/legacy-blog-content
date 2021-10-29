@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/js3" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Studying  Develop" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="(자바스크립트) Ajax에서 페이지 이동 후 서버에 요청보내기" />
+    <meta property="og:description" content="구현하고 싶은 목표 Ajax를 통해 서버와 연동하는 과정에서 로그인 후 로그인 한 유저의 데이터만을 메인 화면에 뿌려주고 싶었다. 로그인 위해 아이디와 패스워드를 ajax로 body안에 담아 post요청 서버에서는 DB에서 유저 정보 확인 후 jwt 토큰을 생성하여 클라이언트에 전송 클라이언트는 받은 jwt를 localstorage에 저장 window.location.replace("http://127.0.0.1:5501/"); 로 메인 화면 이동 이때 메인화면에 로그인" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/js3" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/js-cover.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-08-30T16:30:00+09:00" />
+    <meta property="article:modified_time" content="2021-08-30T16:30:00+09:00" />
+    <meta property="article:tag" content="Js" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="(자바스크립트) Ajax에서 페이지 이동 후 서버에 요청보내기" />
+    <meta name="twitter:description" content="구현하고 싶은 목표 Ajax를 통해 서버와 연동하는 과정에서 로그인 후 로그인 한 유저의 데이터만을 메인 화면에 뿌려주고 싶었다. 로그인 위해 아이디와 패스워드를 ajax로 body안에 담아 post요청 서버에서는 DB에서 유저 정보 확인 후 jwt 토큰을 생성하여 클라이언트에 전송 클라이언트는 받은 jwt를 localstorage에 저장 window.location.replace("http://127.0.0.1:5501/"); 로 메인 화면 이동 이때 메인화면에 로그인" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/js-cover.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Studying  Develop" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Js" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Studying  Develop",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/js3",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/js-cover.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/js3"
+    },
+    "description": "구현하고 싶은 목표 Ajax를 통해 서버와 연동하는 과정에서 로그인 후 로그인 한 유저의 데이터만을 메인 화면에 뿌려주고 싶었다. 로그인 위해 아이디와 패스워드를 ajax로 body안에 담아 post요청 서버에서는 DB에서 유저 정보 확인 후 jwt 토큰을 생성하여 클라이언트에 전송 클라이언트는 받은 jwt를 localstorage에 저장 window.location.replace("http://127.0.0.1:5501/"); 로 메인 화면 이동 이때 메인화면에 로그인"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="(자바스크립트) Ajax에서 페이지 이동 후 서버에 요청보내기" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">Studying  Develop</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/html/">HTML&CSS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/celery/">Celery</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/rabbitmq/">RabbitMQ</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/oauth/">OAuth</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/jwt/">JWT</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/cors/">CORS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/coding/">코테</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/network/">Network</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/os/">OS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/database/">DataBase</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/aws/">AWS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+
+
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-js post tag js ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-08-30">2021-08-30</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/js/'>JS</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">(자바스크립트) Ajax에서 페이지 이동 후 서버에 요청보내기</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/js-cover.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <!--<span class="table-of-contents-list">Network 정리 </span>-->
+<!--<ul class="table-of-contents-list">-->
+<!--    <li><a href="./structure">스택과 큐의 특징</a></li>-->
+<!--    <li><a href="./heap">힙의 특징</a></li>-->
+<!--</ul>-->
+
+<p><br /></p>
+
+<h2 id="구현하고-싶은-목표">구현하고 싶은 목표</h2>
+
+<p><strong>Ajax를 통해 서버와 연동하는 과정에서 로그인 후 로그인 한 유저의 데이터만을 메인 화면에 뿌려주고 싶었다.</strong></p>
+<ul>
+  <li>로그인 위해 아이디와 패스워드를 ajax로 body안에 담아 post요청</li>
+  <li>서버에서는 DB에서 유저 정보 확인 후 jwt 토큰을 생성하여 클라이언트에 전송</li>
+  <li>클라이언트는 받은 jwt를 localstorage에 저장</li>
+  <li><code class="highlighter-rouge">window.location.replace("http://127.0.0.1:5501/");</code> 로 메인 화면 이동</li>
+  <li>이때 메인화면에 로그인 한 유저의 글만 보이게 하기 위해서는 ?</li>
+</ul>
+
+<p>해결방법은 생각보다 간단했다. 나는 .js파일을 따로 분리해주었다. login에 관련된 js파일을 따로 만들어서 login.html페이지에 해당 js파일만을 넣어주었다. <br />
+이렇게 되면 메인화면으로 렌더링 되어도 실행되는 js파일이 main.js로 login과 분리되어 있기 때문에 서버에 메인 화면에 대한 정보를 요청할 수 있다</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">Login</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+   <span class="nx">$username</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'.username'</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+   <span class="nx">$password</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'.password'</span><span class="p">).</span><span class="nx">value</span><span class="p">;</span>
+   <span class="nx">param</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="s1">'username'</span><span class="p">:</span> <span class="nx">$username</span><span class="p">,</span>
+     <span class="s1">'password'</span><span class="p">:</span> <span class="nx">$password</span>
+   <span class="p">}</span>
+     <span class="nx">fetch</span><span class="p">(</span><span class="s2">"http://127.0.0.1:8000/user/login/"</span><span class="p">,</span> <span class="p">{</span>
+       <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+       <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">param</span><span class="p">)</span>
+     <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+     <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+       <span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'access_token'</span><span class="p">,</span><span class="nx">data</span><span class="p">[</span><span class="s1">'token'</span><span class="p">])</span>
+       <span class="c1">// getTodos();</span>
+       <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">"http://127.0.0.1:5501/"</span><span class="p">);</span> <span class="err">#</span> <span class="err">메인</span> <span class="err">화면으로</span> <span class="err">이동된다</span>
+       <span class="k">return</span> <span class="nx">data</span>
+     <span class="p">}).</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+     <span class="p">})</span>
+   <span class="p">}</span>
+
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><strong>메인화면 main.js</strong></p>
+
+<p>메인화면으로 이동시 <code class="highlighter-rouge">document.addEventListener("DOMContentLoaded", getTodos);</code> 가 먼저 실행되기 때문에 getTodos의 함수를 바로 실행시킬 수 있다. getTodos안에는 서버에 token에 해당하는 유저의 데이터를
+요청하는 ajax가 있다.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">getTodos</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">'access_token'</span><span class="p">)</span> <span class="o">==</span>  <span class="kc">null</span><span class="p">){</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">"http://127.0.0.1:5501/login.html"</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">Authorization</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">'access_token'</span><span class="p">)</span>
+  <span class="nx">fetch</span><span class="p">(</span><span class="s2">"http://127.0.0.1:8000/"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+      
+      <span class="s2">"authorization"</span><span class="p">:</span><span class="nx">Authorization</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+  <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="s1">'user'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'userid'</span><span class="p">])</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'.main-user-infor'</span><span class="p">).</span><span class="nx">innerText</span> <span class="o">=</span> <span class="s2">`환영해요 ! </span><span class="p">${</span><span class="nx">data</span><span class="p">[</span><span class="s1">'user'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">'userid'</span><span class="p">]}</span><span class="s2">님`</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">data</span><span class="p">[</span><span class="s1">'articles'</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">create_date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="s1">'articles'</span><span class="p">][</span><span class="nx">i</span><span class="p">][</span><span class="s1">'created_at'</span><span class="p">])</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
+      <span class="nx">create_date</span> <span class="o">=</span> <span class="nx">create_date</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="p">(</span><span class="nx">create_date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="nx">create_date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="s1">'articles'</span><span class="p">][</span><span class="nx">i</span><span class="p">][</span><span class="s1">'id'</span><span class="p">])</span>
+      <span class="nx">$mainItems</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+=</span>
+        <span class="s2">`&lt;li class="li-item li-item</span><span class="p">${</span><span class="nx">data</span><span class="p">[</span><span class="s1">'articles'</span><span class="p">][</span><span class="nx">i</span><span class="p">][</span><span class="s1">'id'</span><span class="p">]}</span><span class="s2">"&gt;
+      &lt;img src="</span><span class="p">${</span><span class="nx">data</span><span class="p">[</span><span class="s1">'articles'</span><span class="p">][</span><span class="nx">i</span><span class="p">][</span><span class="s1">'image'</span><span class="p">]}</span><span class="s2">" alt="item이미지" class="img"&gt;
+      &lt;span class="far fa-times-circle item-close" onclick = deleteItem('</span><span class="p">${</span><span class="nx">data</span><span class="p">[</span><span class="s1">'articles'</span><span class="p">][</span><span class="nx">i</span><span class="p">][</span><span class="s1">'id'</span><span class="p">]}</span><span class="s2">')&gt;&lt;/span&gt;
+      &lt;span class="li-date"&gt;</span><span class="p">${</span><span class="nx">create_date</span><span class="p">}</span><span class="s2">&lt;/span&gt;
+      &lt;span class="li-title"&gt;</span><span class="p">${</span><span class="nx">data</span><span class="p">[</span><span class="s1">'articles'</span><span class="p">][</span><span class="nx">i</span><span class="p">][</span><span class="s1">'title'</span><span class="p">]}</span><span class="s2">&lt;/span&gt;
+    &lt;/li&gt;`</span>
+    <span class="p">}</span>
+  <span class="p">}).</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"DOMContentLoaded"</span><span class="p">,</span> <span class="nx">getTodos</span><span class="p">);</span> <span class="c1">// 화면 로딩되면 가장 먼저 getTodos 함수 실행시키기</span>
+
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>내가 해결한 방법은 이렇게 js파일을 따로 분리하여 js파일이 실행될때 가장 먼저 실행되어야 하는 함수를 실행시키는 방법이였다. 
+더 좋은 방법이 있겠지만 현재 나는 이렇게 해결했다</p>
+
+                </div>
+            </section>
+        
+        <div id="post-disqus" class="container">
+            <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://heejung-gjt-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+        
+
+
+
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">Studying  Develop</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Studying  Develop</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+    <script id="dsq-count-scr" src="//heejung-gjt-github-io.disqus.com/count.js" async></script>
+</body>
+</html>

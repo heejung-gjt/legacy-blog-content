@@ -355,6 +355,13 @@ middlewqre class도 추가한다. 이때 가장 높게 위치시켜야 한다</l
 
 <hr />
 
+<p><strong>Q.</strong> <code class="highlighter-rouge">Access to fetch at 'http://127.0.0.1:8000/' from origin 'http://127.0.0.1:5501' has been blocked by CORS policy: Request header field authorization is not allowed by Access-Control-Allow-Headers in preflight response.</code> 에러가 발생하는 이유는 ?</p>
+
+<p><strong>A.</strong> 장고에 세팅즈 CORS_ALLOW_HEADERS에 request header에 담긴 데이터의 값을 똑같이 넣어주어야 한다. 나는 이거때문에 하루를 까먹었다….
+에러 메시지를 읽어보면 충분히 예측할 수 있는 문제였는데… 영어 공부 해야겠다 진짜…</p>
+
+<hr />
+
 <p><strong>Q.</strong> ajax로 쿼리스트링으로 데이터를 담아 get요청을 보낼때 위의 방식대로 설정을 했지만 cors관련 에러가 발생했었다. 아래 2개의 url 차이가 뭐길래 cors에러가 나는걸까..</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://127.0.0.1:8000/post?id<span class="o">=</span>3 <span class="c"># cors 관련 에러 발생</span>
@@ -362,6 +369,8 @@ middlewqre class도 추가한다. 이때 가장 높게 위치시켜야 한다</l
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://127.0.0.1:8000/post?id<span class="o">=</span>3&amp; <span class="c"># 정상 작동</span>
 </code></pre></div></div>
+
+<p><br /></p>
 
                 </div>
             </section>
