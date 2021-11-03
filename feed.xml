@@ -1,4 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-10-31T15:36:40+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">studying developer</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">1031 TIL</title><link href="https://heejung-gjt.github.io/til69" rel="alternate" type="text/html" title="1031 TIL" /><published>2021-10-31T10:00:00+09:00</published><updated>2021-10-31T10:00:00+09:00</updated><id>https://heejung-gjt.github.io/til69</id><content type="html" xml:base="https://heejung-gjt.github.io/til69">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-11-03T17:43:17+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">studying developer</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">백엔드 프리온보딩 2일차 - TIL</title><link href="https://heejung-gjt.github.io/project1" rel="alternate" type="text/html" title="백엔드 프리온보딩 2일차 - TIL" /><published>2021-11-03T12:00:00+09:00</published><updated>2021-11-03T12:00:00+09:00</updated><id>https://heejung-gjt.github.io/project1</id><content type="html" xml:base="https://heejung-gjt.github.io/project1">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;원티드-1주차-aimmo-기업과제&quot;&gt;원티드 1주차 Aimmo 기업과제&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;진행기간&quot;&gt;진행기간&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;21.11.01 ~ 21.11.03&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;구현해야-하는-기능&quot;&gt;구현해야 하는 기능&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;게시글 카테고리&lt;/li&gt;
+  &lt;li&gt;댓글/대댓글&lt;/li&gt;
+  &lt;li&gt;게시글 조회수 중복 방지&lt;/li&gt;
+  &lt;li&gt;AWS 배포&lt;/li&gt;
+  &lt;li&gt;postman / swagger를 사용한 API 명세&lt;/li&gt;
+  &lt;li&gt;몽고DB 연동하기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;구현된-기능&quot;&gt;구현된 기능&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;게시글 카테고리&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;댓글/대댓글 Create&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;게시글 조회수 중복 방지&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;AWS 배포&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;배운내용&quot;&gt;배운내용&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;몽고 DB란&lt;/li&gt;
+  &lt;li&gt;REST API란&lt;/li&gt;
+  &lt;li&gt;git rebase와 squash&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;나의-역할&quot;&gt;나의 역할&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;게시글 조회수 기능 구현&lt;/li&gt;
+  &lt;li&gt;README.md 작성&lt;/li&gt;
+  &lt;li&gt;헤로쿠 배포하기(실패)&lt;/li&gt;
+  &lt;li&gt;의견 제시하기(네비게이터)&lt;/li&gt;
+  &lt;li&gt;좌절..맛보기.. 2번 3번 맛보기..&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;프로젝트-회고&quot;&gt;프로젝트 회고&lt;/h3&gt;
+
+&lt;p&gt;기존에 선발과제였던 게시판 CRUD API에서 업그레이드 된 API를 구현해내야 하는 문제였다. 나에게 주어진 시간은 3일이였다. 몽고DB를 처음 사용해 본 나로써는 굉장히 두려웠다. 막막했지만 몽고DB를 써본 팀원이 있었다. 덕분에 몽고DB 연동은 생각보다 쉽게 해결했다. 
+과제에서는 API 테스트를 Swagger나 Postman로 하기를 요구했다. PostMan은 써보았지만 Swagger는 처음 들었다. Swagger를 써본 팀원이 존재했기에 그분의 설명을 들으며 
+Swagger를 적용시켰다.&lt;/p&gt;
+
+&lt;p&gt;API를 최근에 접해본 나로써는 REST API를 Django에서 DRF없이 구현할 수 있다는 것을 처음 알았다. 장고 공부를 시작한지 꽤 되었지만 정작 백엔드가 필요로 하는 기능들은 제대로 
+공부하지 않았던것을 깨달았다.&lt;/p&gt;
+
+&lt;p&gt;팀원들과 함께 프로젝트를 진행하며 깨달은 것 &lt;code class=&quot;highlighter-rouge&quot;&gt;협업&lt;/code&gt; , &lt;code class=&quot;highlighter-rouge&quot;&gt;커뮤니케이션&lt;/code&gt; 항상 글로만 보고 들었던 백엔드 개발자가 가져야 할 중요한 능력,, 팀프로젝트 한지 이틀만에 몸으로 깨달아버렸다. 
+일단 용어를 알아야 의사소통이 된다는것.. 혼자 공부하는 시간이 많았던 나로써는 머리에 있는 내용을 개발자스럽게 꺼내기란 너무너무 힘들었다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;진행한-소감&quot;&gt;진행한 소감&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/140023944-ed781e8e-ceda-43d8-a705-00bbd87a1212.jpg&quot; alt=&quot;우울2&quot; /&gt;
+진짜 이틀만에 2키로가 빠졌다.. 멋지게 과제를 해내고 싶었지만 그러지 못한 것. 피곤함이 의욕을 이긴것. 객관적으로 내 실력을 바라보니 우물안 개구리였다는 생각.
+꼼꼼하지 못한 성격이 너무나 큰 단점으로 돌아온 것. 진짜 첫번째 과제를 하면서 나 자신을 계속해서 자책했던 것 같다. 나만 이렇게 어려운가 ? 나만 이렇게 못하나 ? 이 생각을
+ 혼자서 계속 되뇌었던 것 같다. 그러다 원티드 멘토 예리님의 15분 강의를 들었다. 원래 이런 강의를 들으며 위로 받는 편이 아닌데 뭔가 위로가 되었다.  그리고 생각을 조금 바꿔보기로 결심했다. 
+ 내가 못한다는 거 인정하기. 꼼꼼해지려고 노력하기. 말할때 2번은 아니 3번은 더 생각하고 찾아보고 말하기.&lt;/p&gt;
+
+&lt;p&gt;무엇보다 협업이 왜 중요한지 진짜 너무 잘 알아가고 있는중이다. 부디 빨리 내가 적응 할 수 있기를 바란다.&lt;/p&gt;</content><author><name>jung</name></author><category term="project" /><summary type="html"></summary></entry><entry><title type="html">원티드 프리온보딩 시작</title><link href="https://heejung-gjt.github.io/wanted1" rel="alternate" type="text/html" title="원티드 프리온보딩 시작" /><published>2021-11-02T17:00:00+09:00</published><updated>2021-11-02T17:00:00+09:00</updated><id>https://heejung-gjt.github.io/wanted1</id><content type="html" xml:base="https://heejung-gjt.github.io/wanted1">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;개발자가-되기로-결심한-계기와-과정&quot;&gt;개발자가 되기로 결심한 계기와 과정&lt;/h3&gt;
+&lt;p&gt;처음으로 앱 개발로 대학교에서 상을 받은 기억이 난다. 이게 계기가 되었다. 내가 열심히 만든 앱을 누군가 보고 사용한다는 
+그 기분이 좋았다. 그렇게 개발자의 길을 걷고 싶었다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;내가-위코드-x-원티드-프리온보딩에-참여하게-된-동기이유&quot;&gt;내가 위코드 x 원티드 프리온보딩에 참여하게 된 동기/이유&lt;/h3&gt;
+&lt;p&gt;가장 큰 이유는 협업이였다. 항상 다른사람과 함께 개발을 해보고 싶은 욕구가 컸다. 짧은 시간동안 여러개의 기업과제를 해결해야 한다는
+프로그램이 마음에 들었다. 또 다른 이유로는 실제 기업에서 어떤 과제를 내며 어떤걸 중요하게 생각하는지 미리 겪어볼 수 있는 기회여서 참여하게 되었다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;나는-앞으로-어떤-개발자가-되고-싶은가&quot;&gt;나는 앞으로 어떤 개발자가 되고 싶은가&lt;/h3&gt;
+&lt;p&gt;1주차 첫번째 과제를 하면서 평소 나의 단점이 그대로 드러났다. 내가 직접 느끼게 되니 굉장히 스트레스였다. 
+개발자라는 직업은 자신이 왜 그렇게 짰는지 왜 이렇게 짜야하는지 자신의 의견을 명확하게 말 할 수 있어야 하고 함께 하는 사람에게
+ 신뢰를 주어야 한다. 그리고 책임을 져야한다. 나는 신뢰할 수 있는 개발자, 내가 짠 코드를 설명할 수 있는 개발자가 되고 싶다.&lt;/p&gt;</content><author><name>jung</name></author><category term="wanted" /><summary type="html"></summary></entry><entry><title type="html">1031 TIL</title><link href="https://heejung-gjt.github.io/til69" rel="alternate" type="text/html" title="1031 TIL" /><published>2021-10-31T10:00:00+09:00</published><updated>2021-10-31T10:00:00+09:00</updated><id>https://heejung-gjt.github.io/til69</id><content type="html" xml:base="https://heejung-gjt.github.io/til69">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;211031-계획&quot;&gt;211031 계획&lt;/h2&gt;
 
@@ -554,49 +655,4 @@ middlewqre class도 추가한다. 이때 가장 높게 위치시켜야 한다&lt
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# {'user_id': 12}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;그럼 이제 JWT로 토큰을 발급받아 유저를 인가받는 실습을 해보자&lt;/p&gt;</content><author><name>jung</name></author><category term="jwt" /><summary type="html"></summary></entry><entry><title type="html">1021 TIL</title><link href="https://heejung-gjt.github.io/til65" rel="alternate" type="text/html" title="1021 TIL" /><published>2021-10-21T10:00:00+09:00</published><updated>2021-10-21T10:00:00+09:00</updated><id>https://heejung-gjt.github.io/til65</id><content type="html" xml:base="https://heejung-gjt.github.io/til65">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;211021-계획&quot;&gt;211021 계획&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;D-10&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;오늘 드디어 두루뭉실하게 이해했던 jwt에 대한 글을 작성해보는 날이다.. 후후
-실습을 하며 이론으로만 이해하고 있는 것과 실습으로 이해하는 것은 그 깊이부터 다르다는 것을 다시 한번 깨닫게 되었다.
-몇주동안 작성중..이라고만 써져 있던 jwt의 글을 쓸 수 있게 되어서 기분이 좋다 😁&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;오늘-할-일&quot;&gt;오늘 할 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;level2 2문제 풀이 + 블로그에 정리&lt;/li&gt;
-  &lt;li&gt;django 블로그 정리&lt;/li&gt;
-  &lt;li&gt;os 강의 듣기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry><entry><title type="html">1020 TIL</title><link href="https://heejung-gjt.github.io/til64" rel="alternate" type="text/html" title="1020 TIL" /><published>2021-10-20T20:00:00+09:00</published><updated>2021-10-20T20:00:00+09:00</updated><id>https://heejung-gjt.github.io/til64</id><content type="html" xml:base="https://heejung-gjt.github.io/til64">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;211020-계획&quot;&gt;211020 계획&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;D-11&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;오늘 매우 빡셀 예정이닷..!  api 기다려라,,, ^^&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;오늘-한-일&quot;&gt;오늘 한 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;bfs/dfs 1문제&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;api 실습 실습&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;unit test 실습&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;jwt로 유저 인증/인가 실습&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;사람은 목표가 생기면 확실히 의지부터 달라지는 것 같다.  물론 취업이라는 목표를 가지고 있지만
-아직은 나에게 너무 먼 목표라는 생각을 가지고 있어서 그런지 불타오르다가 식어버리는 장작같았다… &lt;br /&gt;
-아무튼 오늘은 못할 것 같은 jwt기반 인증방식으로 api 구현에 성공했기에 기분이 매우 좋았다 히히 
-모르고 있을때 방향을 못잡겠을때는 누군가에게 도움을 요청하는 연습을 좀 하자… (혼자서 끙끙거리다 okky와 강의를 들었던 강사님들에게 질문을 하였고 어느정도 
-방향을 잡을 수 있게되었다..^^)&lt;/p&gt;</content><author><name>jung</name></author><category term="til" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;그럼 이제 JWT로 토큰을 발급받아 유저를 인가받는 실습을 해보자&lt;/p&gt;</content><author><name>jung</name></author><category term="jwt" /><summary type="html"></summary></entry></feed>
