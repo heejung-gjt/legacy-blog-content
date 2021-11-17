@@ -87,3 +87,20 @@ const list01 = document.querySelector('.list01');
 lists01.addEventListener('click',(event)=>{
     list01.scrollIntoView({behavior:'smooth', block:'center'});
 });
+
+
+$("[data-tag]").click((e) => {
+    currentTag = e.target.dataset.tag;
+    filterByTagName(currentTag);
+})
+
+function filterByTagName(tagName) {
+    $('.hidden').removeClass('hidden');
+    $('.post-wrapper').each((index, elem) => {
+        if (!elem.hasAttribute(`data-${tagName}`)) {
+            $(elem).addClass('hidden');
+        }
+    });
+    $(`.tag`).removeClass('selected');
+    $(`.tag[data-tag=${tagName}]`).addClass('selected');
+}
