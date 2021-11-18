@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/8/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-11-17T22:36:55+09:00</updated>
+  <updated>2021-11-18T11:07:59+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/8/feed.xml</id>
 
   
@@ -32,8 +32,8 @@
 
   
     <entry>
-      <title type="html">백엔드 프리온보딩 2주차 두번째 과제(작성중..)</title>
-      <link href="https://heejung-gjt.github.io/project4" rel="alternate" type="text/html" title="백엔드 프리온보딩 2주차 두번째 과제(작성중..)" />
+      <title type="html">백엔드 프리온보딩 2주차 두번째 과제</title>
+      <link href="https://heejung-gjt.github.io/project4" rel="alternate" type="text/html" title="백엔드 프리온보딩 2주차 두번째 과제" />
       <published>2021-11-14T15:00:00+09:00</published>
       <updated>2021-11-14T15:00:00+09:00</updated>
       <id>https://heejung-gjt.github.io/project4</id>
@@ -53,25 +53,90 @@
 
 &lt;h3 id=&quot;구현해야-하는-기능&quot;&gt;구현해야 하는 기능&lt;/h3&gt;
 
-&lt;p&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;배운내용&quot;&gt;배운내용&lt;/h3&gt;
-
-&lt;p&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;거래내역 조회 API&lt;/li&gt;
+  &lt;li&gt;입금 API&lt;/li&gt;
+  &lt;li&gt;출금 API&lt;/li&gt;
+  &lt;li&gt;계좌의 잔액을 별도로 관리해야 하며, 계좌의 잔액과 거래내역의 잔액의 무결성이 보장&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;나의-역할&quot;&gt;나의 역할&lt;/h3&gt;
 
-&lt;p&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;입금 API 구현&lt;/li&gt;
+  &lt;li&gt;README.md 작성&lt;/li&gt;
+  &lt;li&gt;EC2 배포&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;배운내용&quot;&gt;배운내용&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;gunicorn을 이용한 서버 배포&lt;/li&gt;
+  &lt;li&gt;트랜잭션 기능&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;프로젝트-회고&quot;&gt;프로젝트 회고&lt;/h3&gt;
 
-&lt;p&gt;.&lt;/p&gt;
+&lt;p&gt;8퍼센트가 p2p서비스를 제공하는 금융기업이라 그런지 돈에 관련된 API를 구현해야 했다. 여기서 내가 맡은 기능은 입금 API였다. 지금까지 했던 API에 비해서는 나한테 좀 새로웠다. 그러면서 트랜잭션 기능을 새롭게 알게 되었다.&lt;/p&gt;
+
+&lt;p&gt;모델링 설계시 우리 팀은 user의 테이블과 각 user의 deposit정보를 가지고 있는 테이블을 1:1로 묶어서 user가 소유한 금액, 은행, 계좌번호등을 넣어주었다. 
+이후 유저가 입출금을 할 시에 transactions라는 테이블이 새롭게 create되면서 유저가 입/출금한 시간, 금액, 거래 후 잔액등이 새롭게 갱신될 수 있게 처리했다.&lt;/p&gt;
+
+&lt;p&gt;이번에는 로직을 작성전에 필수적으로 필요한 에러처리와 조건처리에 대해 먼저 생각해보았다. 입금 기능을 구현하기 위해서는 아래의 확인이 필수로 필요했다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;계좌의 소유주만 요청 가능해야 한다&lt;/li&gt;
+  &lt;li&gt;잔액의 무결성이 보장되어야 한다&lt;/li&gt;
+  &lt;li&gt;잔액의 타입이 integer외의 것일 경우 에러를 반환한다&lt;/li&gt;
+  &lt;li&gt;입금하려는 금액이 0보다 작으면 에러를 반환한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이 중에서 가장 중요한것은 잔액의 무결성인 듯 했다. 찾아보니 장고에서 제공해주는 트랜잭션 기능이 있었다. &lt;code class=&quot;highlighter-rouge&quot;&gt;@transaction.atomic&lt;/code&gt; 이라는 데코레이터를 
+붙여 아주 간단하게 무결성에 대한 보장을 처리해줄 수 있었다. 이중에서 나는 입금 전체의 메소드가 아닌 일부분만 트랜잭션으로 묶어주기 위해
+with명령어를 이용해서 트랜잭션을 사용했다&lt;/p&gt;
+
+&lt;p&gt;당연히 잔액의 변경과 새로운 거래 테이블이 생성될 때 중간에 다른 예외가 발생해서 에러가 나면 변경이나 create가
+되면 안되는 상황이다. 그렇기 때문에 transaction.atomic()을 붙여 무결성을 보장시켜주었다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transaction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;atomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Transaction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;type_id&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TransactionType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEPOSIT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;information&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;information&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;amounts&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;amounts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;balance&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deposit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;balance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;amounts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;deposit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;balance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;amounts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;deposit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이후 팀원들과의 회의에서 integer타입이 아닌 경우 에러를 반환해주는 방향이 좀 더 자연스러울 것 같다는 의견이 있었다. 
+소수점으로 금액을 보내는 경우가 흔하지 않다고 판단했고 정수 타입일 경우만 입/출금이 될 수 있게 코드를 추가해주었다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;amounts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;INVALID_INPUT_FORMAT&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;gunicorn을-이용한-ec2-서버-배포&quot;&gt;gunicorn을 이용한 EC2 서버 배포&lt;/h4&gt;
+&lt;p&gt;장고로 풀스택 프로젝트를 진행했을 당시 uwsgi를 사용했었다. 또한 css등 정적인 파일도 배포하기 위해 nginx도 설치해 사용했다.
+이번에 배포를 진행하면서 신기했던건 단순히 서버 배포를 하는 것은 굉장히 간단하다는 것이였다. 감사하게도 gunicorn으로 ec2배포하는 글을 포스팅한 팀원이 있었다. 
+해당 팀원의 글을 보며 배포를 진행했고 서버 배포가 생각보다 간단해서 즐거웠다 ^^&lt;/p&gt;
+
+&lt;p&gt;굳이 서비스 등록을 하지 않아도 nohup이라는 명령어로 서버를 실행 시킬 수 있었다.
+아래 명령어 한줄이면 서버가 자동으로 실행된다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nohup gunicorn &lt;span class=&quot;nt&quot;&gt;--bind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0.0.0.0:8000 app_name.wsgi &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;시간이 좀 더 날때 gunicorn에 대해 더 자세하게 알아보고 싶다. 서비스 등록을 한 것과 무슨 차이가 있는 걸까 단순히 서비스 등록을 하면
+서버를 실행시키는 명령어가 짧아지는게 좋은걸까 ? 이부분은 더 알아봐야 할 것 같다. (그래도 단순하게 서버를 실행시킬수 있는 방법을 알려준 팀원에게 너무 감사했다 ㅠㅠ)&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -79,7 +144,20 @@
 
 &lt;h3 id=&quot;진행한-소감&quot;&gt;진행한 소감&lt;/h3&gt;
 
-&lt;p&gt;.&lt;/p&gt;</content>
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/142335744-7dcf629a-1a28-40e9-8eb8-d9d74fffd631.jpg&quot; width=&quot;550&quot; height=&quot;350&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;프로젝트를 시작한지 2주차.. ! 4번째 과제에 드디어 !! 밤 12시를 넘기지 않고 정확히 11시58분에 프로젝트를 완성했다.. 😂 진짜 짜릿해.. 최고야…  한동안 밤을 새다가 금요일에 밤에 이렇게 완벽하게 마무리되다니.. 이래서 사람들 개발하나..? 크크크&lt;/p&gt;
+
+&lt;p&gt;확실히 이번 프로젝트를 하면서 rebase사용에도 익숙해지고 컨벤션 따르는 것도 익숙해졌다. 무엇보다 내 스스로 rebase를 사용해 로직을 수정할 수 있다는 것 !
+rebase 도중에 충돌을 해결 할 수 있다는 것 ! 하하하&lt;/p&gt;
+
+&lt;p&gt;무엇보다 모든 팀원이 열심히 하는 모습을 보면서 동시에 시너지를 얻게 되었다. 특히 새벽에 몇몇의 팀원들과 줌을 통해 이해가 가지 않았던 모델링 설계에 대해서
+ 함께 의논했던 시간이 기억난다. 모른체로 그냥 넘어가는게 아니라 이해하기 위해서 함께 노력하는 모습이 아름다웠달까.. ㅎㅎ 그 새벽에 열정적으로 토론에 임하는 팀원들의 모습에서 배울점이 참 많았다.&lt;/p&gt;
+
+&lt;p&gt;아침형 인간으로써 새벽에 거의 깨어있지 못했던 나로써는 프로젝트를 시작하게 되면서 새벽은 물론 밤을 꼴딱 새는 내 자신의 한계와 부딪히는 경험도 하게 되었다. 함께 했을때 한계를 뛰어넘는 내 자신을 보며 신기했다. 
+놀때도 밤을 못새는 나였는데.. 아주 칭찬한다 내자신아&lt;/p&gt;
+
+&lt;p&gt;12시를 넘기지 않았다는 이 쾌감은 잊혀지지가 않는다.. 끝난뒤에 먹는 치맥이라.. 알 사람은 알거다 🥴&lt;/p&gt;</content>
 
       
       

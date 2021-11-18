@@ -315,6 +315,10 @@ into the {body} of the default.hbs template -->
     <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"MENU_NOT_FOUND"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">404</span><span class="p">)</span>
 </code></pre></div></div>
 
+<p><br /></p>
+
+<h4 id="listview-기능-구현">ListView 기능 구현</h4>
+
 <p>그 다음으로 적절한 조건처리가 되지 않아 배포후에 발생하는 에러가 ListView에서 나왔다.. 밤을 새고 있었기에 팀원들에게 굉장히 미안했다..<br />
 아래 로직에서 badge 부분의 적절한 조건 처리를 해주지 않아 실제 badge에 들어가는 데이터가 없으면 에러가 발생했다. 
 badge는 해당 제품이 신상품인지 best 상품인지 이런 데이터가 들어가야 하는 부분이다. 실제로 아무런 데이터가 들어가지 않을 수 있으니
@@ -350,13 +354,17 @@ badge는 해당 제품이 신상품인지 best 상품인지 이런 데이터가 
         
 </code></pre></div></div>
 
+<p><br /></p>
+
+<h4 id="unit-test">unit test</h4>
+
 <p>그 다음으로 고민이였던 부분은 unit test였다. 사실 unit test작성에 미숙하였기에 정해놓았던 시간안에 unit test를 전부
 작성하지 못했다. (이것도 새벽에 일어난 일이라 나 대신 unit test를 도와 작성해주신 팀원에게 감사하다..) unit test에 대한
- 로직 작성을 제대로 이해하지 못하고 view에서 해주는 일까지 unit test에 작성하게 되면서 더 꼬여버렸다. test를 위해서 필요한 필드는 모두 create해주어야 한다.</p>
+ 로직 작성을 제대로 이해하지 못하고 view에서 해주는 일까지 unit test에 작성하게 되면서 더 꼬여버렸다. test를 위해서 필요한 테이블은 모두 create해주어야 한다.</p>
 
 <ul>
-  <li>필요한 필드는 create한다. 이때 id는 직접 지정해주어야 한다</li>
-  <li>생성한 필드는 test이후에 모두 삭제되어야 한다. 이때 참조되어 있는 순으로 먼저 삭제해주어야 에러가 나지 않는다</li>
+  <li>필요한 테이블은 create한다. 이때 id는 직접 지정해주어야 한다</li>
+  <li>생성한 테이블은 test이후에 모두 삭제되어야 한다. 이때 참조되어 있는 순으로 먼저 삭제해주어야 에러가 나지 않는다</li>
   <li>성공 케이스의 경우 성공할 수 밖에 없는 데이터를 넣어서 요청만 하면 된다. 나머지는 view의 로직들이 해결해 줄 것이다</li>
   <li>실패 케이스의 경우 view에서 작성한 에러의 경우를 생각해서 이에 맞게 실패하는 케이스를 만들어주면 된다. 마찬가지로 view에서 상황에 맞게
  실패 메시지와 status를 반환해 줄 것이기 때문에 이에 맞는 메시지와 status만 잘 작성해주면 된다.</li>
