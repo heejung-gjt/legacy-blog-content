@@ -45,28 +45,64 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="개발 공부하는 블로그" />
     <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://heejung-gjt.github.io/tag/linux/" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/git3" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="studying developer" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Tag Page" />
-    <meta property="og:description" content="개발 공부하는 블로그" />
-    <meta property="og:url" content="https://heejung-gjt.github.io/tag/linux/" />
-    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/bg01.png" />
+    <meta property="og:title" content="(git) rebase와 squash" />
+    <meta property="og:description" content="
+
+
+
+
+
+
+
+
+rebase란
+
+
+
+squash란
+
+" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/git3" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/git.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-11-13T14:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-11-13T14:00:00+09:00" />
+    <meta property="article:tag" content="Git" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Tag Page" />
-    <meta name="twitter:description" content="개발 공부하는 블로그" />
+    <meta name="twitter:title" content="(git) rebase와 squash" />
+    <meta name="twitter:description" content="
+
+
+
+
+
+
+
+
+rebase란
+
+
+
+squash란
+
+" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
-    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/bg01.png" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/git.png" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="studying developer" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Git" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
-    <meta property="og:image:width" content="2000" />
-    <meta property="og:image:height" content="666" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
 
     <script type="application/ld+json">
 {
@@ -77,18 +113,33 @@
         "name": "studying developer",
         "logo": "https://heejung-gjt.github.io/"
     },
-    "url": "https://heejung-gjt.github.io/tag/linux/",
+    "url": "https://heejung-gjt.github.io/git3",
     "image": {
         "@type": "ImageObject",
-        "url": "https://heejung-gjt.github.io/assets/built/images/bg01.png",
+        "url": "https://heejung-gjt.github.io/assets/built/images/git.png",
         "width": 2000,
         "height": 666
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://heejung-gjt.github.io/tag/linux/"
+        "@id": "https://heejung-gjt.github.io/git3"
     },
-    "description": "개발 공부하는 블로그"
+    "description": "
+
+
+
+
+
+
+
+
+rebase란
+
+
+
+squash란
+
+"
 }
     </script>
 
@@ -101,7 +152,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="Tag Page" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="(git) rebase와 squash" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -113,20 +164,16 @@
     gtag('config', 'G-LESPMGXKR3');
 </script>
 </head>
-<body class="tag-template">
+<body class="post-template">
 
     <div class="site-wrapper">
         <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
         <!-- default -->
-<!-- The tag above means - insert everything in this file into the {body} of the default.hbs template -->
 
-<!-- The big featured header, it uses blog cover image as a BG if available -->
-<!-- #tag -->
-<!-- dynamically loading backgrounds for tags,  descriptions and page titles -->
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
 
-
-
-<header class="site-header outer " style="background-image: url(/assets/built/images/bg01.png) ">
+<header class="site-header outer">
     <div class="inner">
         <nav class="site-nav">
     <div class="site-nav-left">
@@ -180,133 +227,94 @@
     </div>-->
 </nav>
 
-        <div class="site-header-content">
-            <h1 class="site-title">Linux</h1>
-            <h2 class="site-description">
-                
-    			    A collection of 2 posts
-                
-            </h2>
-        </div>
     </div>
 </header>
-<!-- tag -->
 
-<!-- The main content area -->
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
-        <div class="post-feed">
-            <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
+
+        <article class="post-full  tag-git post tag git ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-11-13">2021-11-13</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/git/'>GIT</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">(git) rebase와 squash</h1>
+            </header>
+
+<!--  
             
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/git.png)">
+            </figure>
+            
+-->
 
+            <section class="post-full-content">
 
-    <article class="post-card tag-template">
-        
-            <a class="post-card-image-link" href="/linux2">
-                <div class="post-card-image" style="background-image: url(/assets/built/images/linuxs.png)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/linux2">
-                <header class="post-card-header">
-                    <h2 class="post-card-title">Ubuntu 20.04 clean, files, blocks 문제 해결하기 (grud 검은화면)</h2>
+                <div class="kg-card-markdown">
+
                     
-                    <div class="post-card-div">
-                        
-                            
+<!--<span class="table-of-contents-list">git 강좌 순서 </span>-->
+<!--<ul class="table-of-contents-list">-->
+<!--    <li><a href="./git-01">git(1) - Git Tutorial</a></li>-->
 
-                                <span class="post-card-tags">Linux</span>
-                            
-                        
-                    
-                    </div>
+<!--</ul>-->
+
+<p><br /></p>
+
+<h2 id="rebase란">rebase란</h2>
+
+<hr />
+
+<h2 id="squash란">squash란</h2>
 
 
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>
-</p>
-                    
-                </section>
-            </a>
-<!--            <footer class="post-card-meta">-->
+                </div>
 <!--                -->
-<!--                    -->
-<!--                        -->
-<!--                        <img class="author-profile-image" src="/assets/built/images/favicon.png" alt="jung" />-->
-<!--                        -->
-<!--                        <span class="post-card-author">-->
-<!--                            <a href="/author/jung/">jung</a>-->
-<!--                        </span>-->
-<!--                    -->
 <!--                -->
-<!--                <span class="reading-time">-->
-<!--                    -->
-<!--                    -->
-<!--                      3 min read-->
-<!--                    -->
-<!--                </span>-->
-<!--            </footer>-->
-        </div>
-    </article>
-
-    <article class="post-card tag-template">
+<!--                <span class="tag">git</span>-->
+<!--                -->
+<!--                -->
+            </section>
         
-            <a class="post-card-image-link" href="/linux1">
-                <div class="post-card-image" style="background-image: url(/assets/built/images/linuxs.png)"></div>
-            </a>
-        
-        <div class="post-card-content">
-            <a class="post-card-content-link" href="/linux1">
-                <header class="post-card-header">
-                    <h2 class="post-card-title">(Linux) 리눅스 쉘 명령어</h2>
-                    
-                    <div class="post-card-div">
-                        
-                            
-
-                                <span class="post-card-tags">Linux</span>
-                            
-                        
-                    
-                    </div>
-
-
-                </header>
-                <section class="post-card-excerpt">
-                    
-                        <p>
-</p>
-                    
-                </section>
-            </a>
-<!--            <footer class="post-card-meta">-->
-<!--                -->
-<!--                    -->
-<!--                        -->
-<!--                        <img class="author-profile-image" src="/assets/built/images/favicon.png" alt="jung" />-->
-<!--                        -->
-<!--                        <span class="post-card-author">-->
-<!--                            <a href="/author/jung/">jung</a>-->
-<!--                        </span>-->
-<!--                    -->
-<!--                -->
-<!--                <span class="reading-time">-->
-<!--                    -->
-<!--                    -->
-<!--                      1 min read-->
-<!--                    -->
-<!--                </span>-->
-<!--            </footer>-->
-        </div>
-    </article>
-
+        <div id="post-disqus" class="container">
+            <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://heejung-gjt-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
         </div>
+        
+
+
+
     </div>
 </main>
-
 
         <!-- Previous/next page links - displayed on every page -->
         
@@ -374,7 +382,7 @@
     <!-- Paginator increased to "infinit" in _config.yml -->
     <!-- if paginator.posts  -->
     <!-- <script>
-        var maxPages = parseInt('1');
+        var maxPages = parseInt('');
     </script>
     <script src="/assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
@@ -397,6 +405,71 @@
 
 
     <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
     
 
     <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->

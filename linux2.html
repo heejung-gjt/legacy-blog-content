@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/linux2" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="studying developer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ubuntu 20.04 clean, files, blocks 문제 해결하기 (grud 검은화면)" />
+    <meta property="og:description" content="내 노트북은 우분투 os를 멀티부팅으로 설치하여 windows와 함께 쓰고 있었다. 우분투 20.04 버전으로 설치되어 있으며 Rufus를 사용해 Ubuntu 설치용 USB 메모리를 만들어 설치했었다. 굉장히 고생을 했었던 기억이 있다.. ^^ 근데 이번에 갑자기 우분투에 알 수 없는(?) 에러가 발생했다. 아래와 같이 화면이 뜨더니 익숙한 보라색 화면으로 넘어가지 않았다.. 황당한건 불과 1시간전까지만" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/linux2" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/linuxs.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-11-20T14:59:00+09:00" />
+    <meta property="article:modified_time" content="2021-11-20T14:59:00+09:00" />
+    <meta property="article:tag" content="Linux" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ubuntu 20.04 clean, files, blocks 문제 해결하기 (grud 검은화면)" />
+    <meta name="twitter:description" content="내 노트북은 우분투 os를 멀티부팅으로 설치하여 windows와 함께 쓰고 있었다. 우분투 20.04 버전으로 설치되어 있으며 Rufus를 사용해 Ubuntu 설치용 USB 메모리를 만들어 설치했었다. 굉장히 고생을 했었던 기억이 있다.. ^^ 근데 이번에 갑자기 우분투에 알 수 없는(?) 에러가 발생했다. 아래와 같이 화면이 뜨더니 익숙한 보라색 화면으로 넘어가지 않았다.. 황당한건 불과 1시간전까지만" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/linuxs.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="studying developer" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Linux" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "studying developer",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/linux2",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/linuxs.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/linux2"
+    },
+    "description": "내 노트북은 우분투 os를 멀티부팅으로 설치하여 windows와 함께 쓰고 있었다. 우분투 20.04 버전으로 설치되어 있으며 Rufus를 사용해 Ubuntu 설치용 USB 메모리를 만들어 설치했었다. 굉장히 고생을 했었던 기억이 있다.. ^^ 근데 이번에 갑자기 우분투에 알 수 없는(?) 에러가 발생했다. 아래와 같이 화면이 뜨더니 익숙한 보라색 화면으로 넘어가지 않았다.. 황당한건 불과 1시간전까지만"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="Ubuntu 20.04 clean, files, blocks 문제 해결하기 (grud 검은화면)" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">studying developer</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/wanted/">원티드</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/project/">프로젝트TIL</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/celery/">Celery</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/rabbitmq/">RabbitMQ</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/oauth/">OAuth</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/jwt/">JWT</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/cors/">CORS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/network/">Network</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/os/">OS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/database/">DataBase</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/aws/">AWS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+    <li class="nav-jekyll" role="menuitem" style="display: none" ><a href="/tag/wecode/">위코드</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/coding/">코테</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/interview/">면접</a></li>
+<!--    <li class="nav-jekyll" role="menuitem" style="display: none" ><a href="/tag/aimmo/">에이모</a></li>-->
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-linux post tag linux ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-11-20">2021-11-20</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/linux/'>LINUX</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">Ubuntu 20.04 clean, files, blocks 문제 해결하기 (grud 검은화면)</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/linuxs.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+
+                <div class="kg-card-markdown">
+
+                    
+<p><br /></p>
+
+<p>내 노트북은 우분투 os를 멀티부팅으로 설치하여 windows와 함께 쓰고 있었다. <code class="highlighter-rouge">우분투 20.04</code> 버전으로 설치되어 있으며
+Rufus를 사용해 Ubuntu 설치용 USB 메모리를 만들어 설치했었다.</p>
+
+<p>굉장히 고생을 했었던 기억이 있다.. ^^ 근데 이번에 갑자기 우분투에 알 수 없는(?) 에러가 발생했다. 아래와 같이
+화면이 뜨더니 익숙한 보라색 화면으로 넘어가지 않았다.. 황당한건 불과 1시간전까지만 해도 잘 쓰고 있었는데 이런 에러가 떴다는 거다.. (나한테 왜이랭…)</p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/144413586-2090d4d5-3649-4dd7-a303-a55767e753ca.PNG" alt="검은화면" /></p>
+
+<p>일단 아주 최악의 상황만 아니면 된다..! (지우고 다시 깔아야 하는 끔찍한 상황,, 😂) 내가 할 수 있는건 구글링이였고 참 여러번의 삽집을 하였다.  ^^ 
+뭐 그 과정에서 우분투 파티션 즉 용량을 늘릴수 있는 방법을 알게되서 나름 소득 있는 시간이였다… :-)</p>
+
+<hr />
+
+<h3 id="1-우분투-부팅-usb로-할당되어-있는-파티션-확인하기">1. 우분투 부팅 USB로 할당되어 있는 파티션 확인하기</h3>
+<p>일단 나는 과거에 윈도우를 업데이트 시키다 grud를 날린적이 있기 때문에 grud를 복구하기 위한 부팅 usb를 만들어 놓았던 적이 있다. 진짜
+이게 아아주 큰 도움이 되었다. (근본적인 해결이 되지는 않았다 ㅎㅎ)</p>
+
+<p>구글링 하는 과정에서 한 유튜버가 해결방법으로 부팅 USB로 들어가서 해결하는 방법을 보았다.<br />
+일단 내가 알아야 하는것은 <code class="highlighter-rouge">LG그램의 바이오스 진입</code> 은 어떻게 하는가였다. 전원을 켤때 F2를 연속으로 쳐주면 바이오스에 진입할 수 있다.</p>
+
+<p>그럼 아래와 같은 화면이 나오는데 여기서 boot 카테고리를 선택하면 된다. 이곳에서 내가 넣은 USB를 맨 상단으로 올려서 <strong>(Shift 와 +/-로 조작)</strong> 저장하면 된다. (나 같은 경우엔 USB SandDisk ~~ 로 되어 있었다)</p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/144415703-e0a7fe47-ece8-4c39-8095-932815fc1b6a.PNG" alt="MAIN" /></p>
+
+<p>이후에 좀 기다리면 첫번째 ubuntu를 선택해서 들어가면 된다. 그럼 아래와 같은 화면이 나오게 되고 여기서 Try Ubuntu를 눌러주면 된다. try ubuntu는 설치없이 맛보기(?) 할 수 있는? 그런 역할인 듯 하다. 우분투가 이미 
+설치되어 있기 때문에 이곳에서 기존에 설치된 우분투의 파티션 크기를 조정할 수 있었다.  <br />
+<img src="https://user-images.githubusercontent.com/64240637/144416453-1cbc65f9-ff93-49d0-9817-62f7273bcfe3.PNG" alt="우분투" /></p>
+
+<p>메뉴에 들어가서 <strong>GParted</strong> 를 누른다. 이곳에서 우분투의 용량을 변경할 수 있다. (항상 우분투 용량 부족에 시달렸던 나로써는 좋은 기회였다 ^^) <br />
+아래의 블로그를 보면서 디스크 공간을 추가해주었다. 용량 부족일수도 있겠다는 생각을 했기에 용량을 5기가 정도 늘려주었다. (실제로 확인해보니 우분투에 남은 용량이 2%였다)    <br />
+<a href="https://velog.io/@tkdfo93/ubuntu-20.04-issues-%EB%A9%80%ED%8B%B0%EB%B6%80%ED%8C%85-%EC%9A%B0%EB%B6%84%ED%88%AC%EC%97%90-%EB%94%94%EC%8A%A4%ED%81%AC-%EA%B3%B5%EA%B0%84-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0">우분투에 디스크 공간 추가하기</a></p>
+
+<p>시간은 한 10분 내외로 걸린듯 했다. 제발 해결이 되었기를 기도하며 다시 우분투로 접속해보았다. 그리고 결과는.. 변함없었다… :(</p>
+
+<hr />
+
+<h3 id="2-msr의-문제-">2. MSR의 문제 ..?</h3>
+
+<p>용량의 문제가 아니였다.. 이때 내 눈에 보인건 GParted라는 곳에서 파티션에 할당되어 있는 것 중 Microsoft reserved partition에 빨간색 !가 떠있는 부분이였다.
+관련 에러부분을 구글링 해보니 <a href="https://askubuntu.com/questions/1304630/how-do-a-resolve-the-error-where-microsoft-reserved-partition-isnt-detected">비슷한 에러 관련 질문</a>을 한 글이 있었고 이때부터 MSR에 꽂혀서 
+이부분을 찾아보기 시작했다.</p>
+
+<p>몇시간 구글링 끝에 나온 결론은 <code class="highlighter-rouge">1. MSR은 우분투와 전혀 상관이 없다.</code> <code class="highlighter-rouge">2. MSR은 윈도우가 설치될 때 만들어지는 예약된 파티션으로 사용자 데이터를 저장할 수 없다.</code>  <code class="highlighter-rouge">3. 우분투에서 해당 파티션을 지우면 윈도우에 접속할 수 없다.</code> 즉 이부분에 빨간색 !가 뜨는건 그냥 무시하면 되는 듯 했다..</p>
+
+<hr />
+
+<h3 id="3-boot-repair">3. boot-repair</h3>
+<p>이 명령어는 리눅스의 부트로더인 grud가 날라갔을때 (윈도우 업데이트시 내가 겪은 상황이다) USB로 부팅 후 이곳 터미널에서 
+해당 명령어를 입력해 grud를 복구하는 방법이다. 일단 이것도 시도해볼 가치는 있다고 생각했다.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>add-apt-repository ppa:yannubuntu/boot-repair
+
+<span class="nv">$ </span><span class="nb">sudo </span>apt-get update
+
+<span class="nv">$ </span><span class="nb">sudo </span>apt-get install boot-repair
+
+<span class="nv">$ </span><span class="nb">sudo </span>boot-repair
+</code></pre></div></div>
+<p>이후 추천 복구 방식(Recommended Repair)을 선택해서 grud를 복구시켜준다. 이 과정에서 우분투에 저장용량이 부족할때 잘못하면 또다른 문제를 발생시킬 수 있다.
+이점을 주의해야 했다.. 다행히 복구는 성공적으로 시켜졌고 다시 우분투를 실행 시켜보았다. (이때부터 두손으로 기도를 드린것 같다..)  <br />
+하지만 결과는 실패였다… 아놔…</p>
+
+<hr />
+
+<h3 id="4-recovery-mode-접속하기">4. Recovery Mode 접속하기</h3>
+
+<p>이제 방법은 정말 삭제후 재설치 방법 밖에 없는 것인가… 반나절을 찾다가 검은 화면에 뜬 내용을 중심으로 구글링 해보기로 했다. 
+그 결과 <a href="https://yskim0.github.io/troubleshooting/2021/01/26/Ubuntu-clean-files-blocks-trouble/">Ubuntu 18.04 clean, <strong><em>/</em></strong> files, <strong><em>/</em></strong> blocks 문제해결</a> 이 블로그를
+찾게 되었고 해결할 수 있게 되었다… 😂😂😂</p>
+
+<p>진짜 너무너무 고마운 분이였다.. grud에서 <code class="highlighter-rouge">Advanced options for Ubuntu</code>로 들어가 두번째 recovery mode를 눌러주었다. 그리고 그 뒤부터는 똑같이 root를 선택해 아래의
+명령어를 입력했다</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get purge nvidia<span class="k">*</span>
+</code></pre></div></div>
+<p>이때 블로그분과 같은 에러는 뜨지 않았지만 autoremove를 입력하라는 문구가 나왔다.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get autoremove
+</code></pre></div></div>
+
+<p>이후 꽤 많은 패키지가 삭제가 되었다(한 60개정도..?) 그리고 나서 다시 맨 위의 명령어를 입력했다.<br />
+이후 <strong>reboot</strong> 로 재부팅 해주었고 그 결과 !! 너무나도 보고싶었던 보라색 화면이 뜨게 되었다.. 진짜 
+기뻐서 손을 번쩍 들어올렸다 ㅋㅋㅋㅋ (카페였다.. ^^)</p>
+
+<p>나에게는 너무나도 힘든 순간이였고 또 같은 에러가 발생했을때를 대비해서 빠르게 블로그를 찾게되었다..ㅋㅋㅋㅋ <br />
+일단 저 글을 써준 블로거님에게 너무너무 감사했다.. 하트라도 누르고 싶었지만 누르는 곳이 없었다.. :)</p>
+
+<p>과거에 부팅 USB를 만들어놓고 잘 보관해놓은 내자신도 칭찬해주고 싶다 ^^  다른 누군가에게도 도움이 되길 바라며…</p>
+
+
+                </div>
+<!--                -->
+<!--                -->
+<!--                <span class="tag">linux</span>-->
+<!--                -->
+<!--                -->
+            </section>
+        
+        <div id="post-disqus" class="container">
+            <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://heejung-gjt-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+        
+
+
+
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">studying developer</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to studying developer</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+    <script id="dsq-count-scr" src="//heejung-gjt-github-io.disqus.com/count.js" async></script>
+</body>
+</html>

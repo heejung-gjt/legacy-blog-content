@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/author/jung/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-11-18T11:07:59+09:00</updated>
+  <updated>2021-12-02T22:02:10+09:00</updated>
   <id>https://heejung-gjt.github.io/author/jung/feed.xml</id>
 
   
@@ -30,6 +30,126 @@
   
   
 
+  
+    <entry>
+      <title type="html">Ubuntu 20.04 clean, files, blocks 문제 해결하기 (grud 검은화면)</title>
+      <link href="https://heejung-gjt.github.io/linux2" rel="alternate" type="text/html" title="Ubuntu 20.04 clean, files, blocks 문제 해결하기 (grud 검은화면)" />
+      <published>2021-11-20T14:59:00+09:00</published>
+      <updated>2021-11-20T14:59:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/linux2</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/linux2">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;내 노트북은 우분투 os를 멀티부팅으로 설치하여 windows와 함께 쓰고 있었다. &lt;code class=&quot;highlighter-rouge&quot;&gt;우분투 20.04&lt;/code&gt; 버전으로 설치되어 있으며
+Rufus를 사용해 Ubuntu 설치용 USB 메모리를 만들어 설치했었다.&lt;/p&gt;
+
+&lt;p&gt;굉장히 고생을 했었던 기억이 있다.. ^^ 근데 이번에 갑자기 우분투에 알 수 없는(?) 에러가 발생했다. 아래와 같이
+화면이 뜨더니 익숙한 보라색 화면으로 넘어가지 않았다.. 황당한건 불과 1시간전까지만 해도 잘 쓰고 있었는데 이런 에러가 떴다는 거다.. (나한테 왜이랭…)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/144413586-2090d4d5-3649-4dd7-a303-a55767e753ca.PNG&quot; alt=&quot;검은화면&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;일단 아주 최악의 상황만 아니면 된다..! (지우고 다시 깔아야 하는 끔찍한 상황,, 😂) 내가 할 수 있는건 구글링이였고 참 여러번의 삽집을 하였다.  ^^ 
+뭐 그 과정에서 우분투 파티션 즉 용량을 늘릴수 있는 방법을 알게되서 나름 소득 있는 시간이였다… :-)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;1-우분투-부팅-usb로-할당되어-있는-파티션-확인하기&quot;&gt;1. 우분투 부팅 USB로 할당되어 있는 파티션 확인하기&lt;/h3&gt;
+&lt;p&gt;일단 나는 과거에 윈도우를 업데이트 시키다 grud를 날린적이 있기 때문에 grud를 복구하기 위한 부팅 usb를 만들어 놓았던 적이 있다. 진짜
+이게 아아주 큰 도움이 되었다. (근본적인 해결이 되지는 않았다 ㅎㅎ)&lt;/p&gt;
+
+&lt;p&gt;구글링 하는 과정에서 한 유튜버가 해결방법으로 부팅 USB로 들어가서 해결하는 방법을 보았다.&lt;br /&gt;
+일단 내가 알아야 하는것은 &lt;code class=&quot;highlighter-rouge&quot;&gt;LG그램의 바이오스 진입&lt;/code&gt; 은 어떻게 하는가였다. 전원을 켤때 F2를 연속으로 쳐주면 바이오스에 진입할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;그럼 아래와 같은 화면이 나오는데 여기서 boot 카테고리를 선택하면 된다. 이곳에서 내가 넣은 USB를 맨 상단으로 올려서 &lt;strong&gt;(Shift 와 +/-로 조작)&lt;/strong&gt; 저장하면 된다. (나 같은 경우엔 USB SandDisk ~~ 로 되어 있었다)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/144415703-e0a7fe47-ece8-4c39-8095-932815fc1b6a.PNG&quot; alt=&quot;MAIN&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후에 좀 기다리면 첫번째 ubuntu를 선택해서 들어가면 된다. 그럼 아래와 같은 화면이 나오게 되고 여기서 Try Ubuntu를 눌러주면 된다. try ubuntu는 설치없이 맛보기(?) 할 수 있는? 그런 역할인 듯 하다. 우분투가 이미 
+설치되어 있기 때문에 이곳에서 기존에 설치된 우분투의 파티션 크기를 조정할 수 있었다.  &lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/144416453-1cbc65f9-ff93-49d0-9817-62f7273bcfe3.PNG&quot; alt=&quot;우분투&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;메뉴에 들어가서 &lt;strong&gt;GParted&lt;/strong&gt; 를 누른다. 이곳에서 우분투의 용량을 변경할 수 있다. (항상 우분투 용량 부족에 시달렸던 나로써는 좋은 기회였다 ^^) &lt;br /&gt;
+아래의 블로그를 보면서 디스크 공간을 추가해주었다. 용량 부족일수도 있겠다는 생각을 했기에 용량을 5기가 정도 늘려주었다. (실제로 확인해보니 우분투에 남은 용량이 2%였다)    &lt;br /&gt;
+&lt;a href=&quot;https://velog.io/@tkdfo93/ubuntu-20.04-issues-%EB%A9%80%ED%8B%B0%EB%B6%80%ED%8C%85-%EC%9A%B0%EB%B6%84%ED%88%AC%EC%97%90-%EB%94%94%EC%8A%A4%ED%81%AC-%EA%B3%B5%EA%B0%84-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0&quot;&gt;우분투에 디스크 공간 추가하기&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;시간은 한 10분 내외로 걸린듯 했다. 제발 해결이 되었기를 기도하며 다시 우분투로 접속해보았다. 그리고 결과는.. 변함없었다… :(&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;2-msr의-문제-&quot;&gt;2. MSR의 문제 ..?&lt;/h3&gt;
+
+&lt;p&gt;용량의 문제가 아니였다.. 이때 내 눈에 보인건 GParted라는 곳에서 파티션에 할당되어 있는 것 중 Microsoft reserved partition에 빨간색 !가 떠있는 부분이였다.
+관련 에러부분을 구글링 해보니 &lt;a href=&quot;https://askubuntu.com/questions/1304630/how-do-a-resolve-the-error-where-microsoft-reserved-partition-isnt-detected&quot;&gt;비슷한 에러 관련 질문&lt;/a&gt;을 한 글이 있었고 이때부터 MSR에 꽂혀서 
+이부분을 찾아보기 시작했다.&lt;/p&gt;
+
+&lt;p&gt;몇시간 구글링 끝에 나온 결론은 &lt;code class=&quot;highlighter-rouge&quot;&gt;1. MSR은 우분투와 전혀 상관이 없다.&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;2. MSR은 윈도우가 설치될 때 만들어지는 예약된 파티션으로 사용자 데이터를 저장할 수 없다.&lt;/code&gt;  &lt;code class=&quot;highlighter-rouge&quot;&gt;3. 우분투에서 해당 파티션을 지우면 윈도우에 접속할 수 없다.&lt;/code&gt; 즉 이부분에 빨간색 !가 뜨는건 그냥 무시하면 되는 듯 했다..&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;3-boot-repair&quot;&gt;3. boot-repair&lt;/h3&gt;
+&lt;p&gt;이 명령어는 리눅스의 부트로더인 grud가 날라갔을때 (윈도우 업데이트시 내가 겪은 상황이다) USB로 부팅 후 이곳 터미널에서 
+해당 명령어를 입력해 grud를 복구하는 방법이다. 일단 이것도 시도해볼 가치는 있다고 생각했다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;add-apt-repository ppa:yannubuntu/boot-repair
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get install boot-repair
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;boot-repair
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이후 추천 복구 방식(Recommended Repair)을 선택해서 grud를 복구시켜준다. 이 과정에서 우분투에 저장용량이 부족할때 잘못하면 또다른 문제를 발생시킬 수 있다.
+이점을 주의해야 했다.. 다행히 복구는 성공적으로 시켜졌고 다시 우분투를 실행 시켜보았다. (이때부터 두손으로 기도를 드린것 같다..)  &lt;br /&gt;
+하지만 결과는 실패였다… 아놔…&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;4-recovery-mode-접속하기&quot;&gt;4. Recovery Mode 접속하기&lt;/h3&gt;
+
+&lt;p&gt;이제 방법은 정말 삭제후 재설치 방법 밖에 없는 것인가… 반나절을 찾다가 검은 화면에 뜬 내용을 중심으로 구글링 해보기로 했다. 
+그 결과 &lt;a href=&quot;https://yskim0.github.io/troubleshooting/2021/01/26/Ubuntu-clean-files-blocks-trouble/&quot;&gt;Ubuntu 18.04 clean, &lt;strong&gt;&lt;em&gt;/&lt;/em&gt;&lt;/strong&gt; files, &lt;strong&gt;&lt;em&gt;/&lt;/em&gt;&lt;/strong&gt; blocks 문제해결&lt;/a&gt; 이 블로그를
+찾게 되었고 해결할 수 있게 되었다… 😂😂😂&lt;/p&gt;
+
+&lt;p&gt;진짜 너무너무 고마운 분이였다.. grud에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;Advanced options for Ubuntu&lt;/code&gt;로 들어가 두번째 recovery mode를 눌러주었다. 그리고 그 뒤부터는 똑같이 root를 선택해 아래의
+명령어를 입력했다&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get purge nvidia&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이때 블로그분과 같은 에러는 뜨지 않았지만 autoremove를 입력하라는 문구가 나왔다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get autoremove
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이후 꽤 많은 패키지가 삭제가 되었다(한 60개정도..?) 그리고 나서 다시 맨 위의 명령어를 입력했다.&lt;br /&gt;
+이후 &lt;strong&gt;reboot&lt;/strong&gt; 로 재부팅 해주었고 그 결과 !! 너무나도 보고싶었던 보라색 화면이 뜨게 되었다.. 진짜 
+기뻐서 손을 번쩍 들어올렸다 ㅋㅋㅋㅋ (카페였다.. ^^)&lt;/p&gt;
+
+&lt;p&gt;나에게는 너무나도 힘든 순간이였고 또 같은 에러가 발생했을때를 대비해서 빠르게 블로그를 찾게되었다..ㅋㅋㅋㅋ &lt;br /&gt;
+일단 저 글을 써준 블로거님에게 너무너무 감사했다.. 하트라도 누르고 싶었지만 누르는 곳이 없었다.. :)&lt;/p&gt;
+
+&lt;p&gt;과거에 부팅 USB를 만들어놓고 잘 보관해놓은 내자신도 칭찬해주고 싶다 ^^  다른 누군가에게도 도움이 되길 바라며…&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="linux" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">나의 첫번째 면접 후기</title>
@@ -256,6 +376,52 @@ rebase 도중에 충돌을 해결 할 수 있다는 것 ! 하하하&lt;/p&gt;
         <category term="wecode" />
       
         <category term="wanted" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">(git) rebase와 squash</title>
+      <link href="https://heejung-gjt.github.io/git3" rel="alternate" type="text/html" title="(git) rebase와 squash" />
+      <published>2021-11-13T14:00:00+09:00</published>
+      <updated>2021-11-13T14:00:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/git3</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/git3">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;git 강좌 순서 &lt;/span&gt;--&gt;
+&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
+&lt;!--    &lt;li&gt;&lt;a href=&quot;./git-01&quot;&gt;git(1) - Git Tutorial&lt;/a&gt;&lt;/li&gt;--&gt;
+
+&lt;!--&lt;/ul&gt;--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;rebase란&quot;&gt;rebase란&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;squash란&quot;&gt;squash란&lt;/h2&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="git" />
       
 
       
@@ -947,192 +1113,6 @@ Elastic Beanstalk를 써보고 싶었기 때문에 한번 도전해 보기로 �
 
       
         <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">1029 TIL</title>
-      <link href="https://heejung-gjt.github.io/til67" rel="alternate" type="text/html" title="1029 TIL" />
-      <published>2021-10-29T19:00:00+09:00</published>
-      <updated>2021-10-29T19:00:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/til67</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/til67">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;211029-계획&quot;&gt;211029 계획&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;오늘-한-일&quot;&gt;오늘 한 일&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;jwt 인증 기반 방식으로 crud api 구현&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;프리온보딩이라는 프로그램에 합격해서 월요일부터 시작하게 되었다. 나에게는 좋은 경험이 될거라고 믿고 있지만 
-한편으로 불안한 마음도 있다… 한달뒤에 웃을수 있기를 …!&lt;/p&gt;
-
-&lt;p&gt;알고리즘 공부도 일주일정도 손을 놓았더니 안그래도 못하는데 다 까먹은 느낌이다… 휴 코딩테스트 20일정도 남았으니까
- 다시 열심히 풀어야 되는데 과연 병행 할 수 있을까 …? 최선을 다해야겠다. 좋은 결과 얻고 싶다…! 원한다..!! 
-오늘 다시 계획 세워야겠다(나는 계획녀니까…!!)&lt;/p&gt;
-
-&lt;p&gt;그래도 프로젝트 정리 어느정도 해놓아서 마음은 편하다 ..! python 공부도 하고 싶은데.. 시간이 없다.. 벌써 11월이라니.. !! 가장 중요한건
- 내가 후회를 하지 않는거다. 후회하지 않게 열심히 하자 !&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html"></summary>
-      
-
-      
-      
-    </entry>
-  
-    <entry>
-      <title type="html">(자바스크립트) Ajax에서 페이지 이동 후 서버에 요청보내기</title>
-      <link href="https://heejung-gjt.github.io/js3" rel="alternate" type="text/html" title="(자바스크립트) Ajax에서 페이지 이동 후 서버에 요청보내기" />
-      <published>2021-10-29T16:30:00+09:00</published>
-      <updated>2021-10-29T16:30:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/js3</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/js3">&lt;!--&lt;span class=&quot;table-of-contents-list&quot;&gt;Network 정리 &lt;/span&gt;--&gt;
-&lt;!--&lt;ul class=&quot;table-of-contents-list&quot;&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./structure&quot;&gt;스택과 큐의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--    &lt;li&gt;&lt;a href=&quot;./heap&quot;&gt;힙의 특징&lt;/a&gt;&lt;/li&gt;--&gt;
-&lt;!--&lt;/ul&gt;--&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;구현하고-싶은-목표&quot;&gt;구현하고 싶은 목표&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Ajax를 통해 서버와 연동하는 과정에서 로그인 후 로그인 한 유저의 데이터만을 메인 화면에 뿌려주고 싶었다.&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;로그인 위해 아이디와 패스워드를 ajax로 body안에 담아 post요청&lt;/li&gt;
-  &lt;li&gt;서버에서는 DB에서 유저 정보 확인 후 jwt 토큰을 생성하여 클라이언트에 전송&lt;/li&gt;
-  &lt;li&gt;클라이언트는 받은 jwt를 localstorage에 저장&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;window.location.replace(&quot;http://127.0.0.1:5501/&quot;);&lt;/code&gt; 로 메인 화면 이동&lt;/li&gt;
-  &lt;li&gt;이때 메인화면에 로그인 한 유저의 글만 보이게 하기 위해서는 ?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;해결방법은 생각보다 간단했다. 나는 .js파일을 따로 분리해주었다. login에 관련된 js파일을 따로 만들어서 login.html페이지에 해당 js파일만을 넣어주었다. &lt;br /&gt;
-이렇게 되면 메인화면으로 렌더링 되어도 실행되는 js파일이 main.js로 login과 분리되어 있기 때문에 서버에 메인 화면에 대한 정보를 요청할 수 있다&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Login&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;nx&quot;&gt;$username&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.username'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-   &lt;span class=&quot;nx&quot;&gt;$password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-   &lt;span class=&quot;nx&quot;&gt;param&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-     &lt;span class=&quot;s1&quot;&gt;'username'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-     &lt;span class=&quot;s1&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$password&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-     &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://127.0.0.1:8000/user/login/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-       &lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'POST'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-       &lt;span class=&quot;na&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-       &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-       &lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'access_token'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'token'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-       &lt;span class=&quot;c1&quot;&gt;// getTodos();&lt;/span&gt;
-       &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://127.0.0.1:5501/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;메인&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;화면으로&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이동된다&lt;/span&gt;
-       &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-       &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'error'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-     &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;메인화면 main.js&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;메인화면으로 이동시 &lt;code class=&quot;highlighter-rouge&quot;&gt;document.addEventListener(&quot;DOMContentLoaded&quot;, getTodos);&lt;/code&gt; 가 먼저 실행되기 때문에 getTodos의 함수를 바로 실행시킬 수 있다. getTodos안에는 서버에 token에 해당하는 유저의 데이터를
-요청하는 ajax가 있다.&lt;/p&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getTodos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'access_token'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;  &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://127.0.0.1:5501/login.html&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;Authorization&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'access_token'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://127.0.0.1:8000/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'GET'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      
-      &lt;span class=&quot;s2&quot;&gt;&quot;authorization&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Authorization&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'user'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'userid'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.main-user-infor'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerText&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`환영해요 ! &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'user'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'userid'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;님`&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'articles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;create_date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;parseInt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'articles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'created_at'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;create_date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;create_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getFullYear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;create_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getMonth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;create_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getDate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'articles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;$mainItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;`&amp;lt;li class=&quot;li-item li-item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'articles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;
-      &amp;lt;img src=&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'articles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'image'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; alt=&quot;item이미지&quot; class=&quot;img&quot;&amp;gt;
-      &amp;lt;span class=&quot;far fa-times-circle item-close&quot; onclick = deleteItem('&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'articles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;')&amp;gt;&amp;lt;/span&amp;gt;
-      &amp;lt;span class=&quot;li-date&quot;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;create_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;lt;/span&amp;gt;
-      &amp;lt;span class=&quot;li-title&quot;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'articles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'title'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;lt;/span&amp;gt;
-    &amp;lt;/li&amp;gt;`&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'error'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;DOMContentLoaded&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getTodos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 화면 로딩되면 가장 먼저 getTodos 함수 실행시키기&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;내가 해결한 방법은 이렇게 js파일을 따로 분리하여 js파일이 실행될때 가장 먼저 실행되어야 하는 함수를 실행시키는 방법이였다. 
-더 좋은 방법이 있겠지만 현재 나는 이렇게 해결했다&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>jung</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="js" />
       
 
       
