@@ -45,24 +45,24 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="개발 공부하는 블로그" />
     <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://heejung-gjt.github.io/django6" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/django7" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="studying developer" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="(Django) 중고 쇼핑몰 프로젝트 회고 및 리팩토링 후기(작성중..)" />
-    <meta property="og:description" content="6월에 시작한 프로젝트로 개인으로 진행한 첫번째 프로젝트였다. 꾸준히 기능적인 부분을 업데이트 시켜왔었지만 정작 짜왔던 코드를 스스로 리뷰해보는 시간을 가져보지 못했다. 이런 생각이 든 후 과거에 짜왔던 로직을 다시한번 보게 되었고 깜짝 놀라게 되었다. 😂😂 아니 로직이 이게 뭐지..? 왜 이렇게 가독성이 안좋지..? 이건 왜이렇게 짰지..? 진짜 내가 짠 로직이지만 의문투성이에" />
-    <meta property="og:url" content="https://heejung-gjt.github.io/django6" />
+    <meta property="og:title" content="(Django) select_related()와 prefetch_related()" />
+    <meta property="og:description" content="select_related()와 prefetch_related() 프로젝트를 진행하면서 화면 로딩이 느린 문제가 발생했다. 이를 해결하기 위해 django-debug-toolbar를 설치하였다. 이를 통해 페이지가 로딩되면서 발생하는 쿼리를 확인해 보았다. 그 결과 3개의 데이터를 조회하는데 중복과 비슷한 쿼리가 굉장히 많이 발생하는 것을 볼 수 있었다. 쿼리의 중복을 없애고 쿼리를 최소화 할 수 있는 방법으로 위 2개의 메소드를 사용하는" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/django7" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-09-15T17:40:00+09:00" />
-    <meta property="article:modified_time" content="2021-09-15T17:40:00+09:00" />
+    <meta property="article:published_time" content="2021-10-18T17:40:00+09:00" />
+    <meta property="article:modified_time" content="2021-10-18T17:40:00+09:00" />
     <meta property="article:tag" content="Django" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="(Django) 중고 쇼핑몰 프로젝트 회고 및 리팩토링 후기(작성중..)" />
-    <meta name="twitter:description" content="6월에 시작한 프로젝트로 개인으로 진행한 첫번째 프로젝트였다. 꾸준히 기능적인 부분을 업데이트 시켜왔었지만 정작 짜왔던 코드를 스스로 리뷰해보는 시간을 가져보지 못했다. 이런 생각이 든 후 과거에 짜왔던 로직을 다시한번 보게 되었고 깜짝 놀라게 되었다. 😂😂 아니 로직이 이게 뭐지..? 왜 이렇게 가독성이 안좋지..? 이건 왜이렇게 짰지..? 진짜 내가 짠 로직이지만 의문투성이에" />
+    <meta name="twitter:title" content="(Django) select_related()와 prefetch_related()" />
+    <meta name="twitter:description" content="select_related()와 prefetch_related() 프로젝트를 진행하면서 화면 로딩이 느린 문제가 발생했다. 이를 해결하기 위해 django-debug-toolbar를 설치하였다. 이를 통해 페이지가 로딩되면서 발생하는 쿼리를 확인해 보았다. 그 결과 3개의 데이터를 조회하는데 중복과 비슷한 쿼리가 굉장히 많이 발생하는 것을 볼 수 있었다. 쿼리의 중복을 없애고 쿼리를 최소화 할 수 있는 방법으로 위 2개의 메소드를 사용하는" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -83,7 +83,7 @@
         "name": "studying developer",
         "logo": "https://heejung-gjt.github.io/"
     },
-    "url": "https://heejung-gjt.github.io/django6",
+    "url": "https://heejung-gjt.github.io/django7",
     "image": {
         "@type": "ImageObject",
         "url": "https://heejung-gjt.github.io/assets/built/images/django.png",
@@ -92,9 +92,9 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://heejung-gjt.github.io/django6"
+        "@id": "https://heejung-gjt.github.io/django7"
     },
-    "description": "6월에 시작한 프로젝트로 개인으로 진행한 첫번째 프로젝트였다. 꾸준히 기능적인 부분을 업데이트 시켜왔었지만 정작 짜왔던 코드를 스스로 리뷰해보는 시간을 가져보지 못했다. 이런 생각이 든 후 과거에 짜왔던 로직을 다시한번 보게 되었고 깜짝 놀라게 되었다. 😂😂 아니 로직이 이게 뭐지..? 왜 이렇게 가독성이 안좋지..? 이건 왜이렇게 짰지..? 진짜 내가 짠 로직이지만 의문투성이에"
+    "description": "select_related()와 prefetch_related() 프로젝트를 진행하면서 화면 로딩이 느린 문제가 발생했다. 이를 해결하기 위해 django-debug-toolbar를 설치하였다. 이를 통해 페이지가 로딩되면서 발생하는 쿼리를 확인해 보았다. 그 결과 3개의 데이터를 조회하는데 중복과 비슷한 쿼리가 굉장히 많이 발생하는 것을 볼 수 있었다. 쿼리의 중복을 없애고 쿼리를 최소화 할 수 있는 방법으로 위 2개의 메소드를 사용하는"
 }
     </script>
 
@@ -107,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="(Django) 중고 쇼핑몰 프로젝트 회고 및 리팩토링 후기(작성중..)" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="(Django) select_related()와 prefetch_related()" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -191,26 +191,22 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-django tag-refactoring post tag django ">
+        <article class="post-full  tag-django post tag django ">
 
             <header class="post-full-header">
 
               <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="2021-09-15">2021-09-15</time>
+                    <time class="post-full-meta-date" datetime="2021-10-18">2021-10-18</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/django/'>DJANGO</a>,
-                            
-                        
-                            
-                               <a href='/tag/refactoring/'>REFACTORING</a>
+                               <a href='/tag/django/'>DJANGO</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">(Django) 중고 쇼핑몰 프로젝트 회고 및 리팩토링 후기(작성중..)</h1>
+                <h1 class="post-full-title">(Django) select_related()와 prefetch_related()</h1>
             </header>
 
 <!--  
@@ -227,54 +223,80 @@ into the {body} of the default.hbs template -->
                     
 <p><br /></p>
 
-<p>6월에 시작한 프로젝트로 개인으로 진행한 첫번째 프로젝트였다. 꾸준히 기능적인 부분을 업데이트 시켜왔었지만 정작 짜왔던 코드를 스스로 리뷰해보는
- 시간을 가져보지 못했다. 이런 생각이 든 후 과거에 짜왔던 로직을 다시한번 보게 되었고 깜짝 놀라게 되었다. 😂😂</p>
+<h2 id="select_related와-prefetch_related">select_related()와 prefetch_related()</h2>
 
-<p>아니 로직이 이게 뭐지..? 왜 이렇게 가독성이 안좋지..? 이건 왜이렇게 짰지..? 진짜 내가 짠 로직이지만 의문투성이에 낯설기까지 했다..ㅋㅋㅋ 개발자의 중요한 역량 중 하나가 주어진 기간안에 목표했던 기능을 구현 해내는 것이라고 생각을 했다. 나에게 있어 가독성이나 코드의 효율성은 이후의 문제라고 생각했다.</p>
+<p>프로젝트를 진행하면서 화면 로딩이 느린 문제가 발생했다. 이를 해결하기 위해 django-debug-toolbar를 설치하였다. 이를 통해 페이지가 로딩되면서 발생하는 쿼리를 확인해 보았다. 그 결과 3개의 데이터를 조회하는데 중복과 비슷한 쿼리가 굉장히 많이 발생하는 것을 볼 수 있었다. 쿼리의 중복을 없애고 쿼리를 최소화 할 수 있는 방법으로 위 2개의 메소드를 사용하는 것이였다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/137748777-0da2d831-81d9-4832-a09e-8a5f0ecb0eea.png" alt="marketsqltoolbar" /></p>
+
+<h2 id="select_related">select_related()</h2>
+
+<ul>
+  <li>정참조 ForeignKey, OneToOneField 관계와 역참조 OneToOneField에서 활용한다.</li>
+  <li>데이터베이스단에서 inner join으로 쿼리가 수행된다.</li>
+</ul>
+
+<p><code class="highlighter-rouge">어떻게 활용하는가</code></p>
+
+<p>toolbar를 읽어보면 어디부분에서 쿼리가 중복으로 발생했는지 볼 수 있다. 템플릿을 보면 article인스턴스가 1:n 관계인 user의 writer 필드에 접근하기 때문에 articles의 개수만큼 쿼리가 중복으로 발생한다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ {% for article in articles %}
+ <span class="nt">&lt;strong&gt;</span>{{article.writer.nickname}}<span class="nt">&lt;/strong&gt;&lt;/span&gt;</span>
+
+
+</code></pre></div></div>
+<p><br /></p>
+
+<p>Article 객체를 쿼리로 반환하는 과정에서 Article객체에서 1:n으로 물고있는 User 모델의 writer 속성을 미리 로딩하여 캐싱하게 된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">article_list</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_deleted</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s">'writer'</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
-<hr />
+<p><code class="highlighter-rouge">단순 쿼리와의 차이점</code> <br />
+단순쿼리의 경우 , 아래와 같이 작성하게 된다면 article 객체만 쿼리하기 때문에 각각 writer와 category를 얻기 위해서 다시 쿼리에 접근한다.</p>
 
-<hr />
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">article</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">writer</span>
+<span class="n">category</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">category</span>
+</code></pre></div></div>
+
+<p>select_related를 사용하게 되면 article 객체만 쿼리를 해도 sql에서 미리 category와 writer를 join하여 캐싱한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">article_list</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_deleted</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s">'writer'</span><span class="p">,</span> <span class="s">'category'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="prefetch_related">prefetch_related()</h2>
 
 <ul>
-  <li><strong>filter 기능 -&gt; get요청</strong></li>
+  <li>정참조 ManyToMany, 역참조 ForeignKey, ManyToMany에서 활용한다.</li>
+  <li>select_related()와 역할은 비슷하지만 방식이 좀 다르다</li>
+  <li>sql문에서 join이 되지 않고 각 관계별로 데이터베이스 쿼리를 수행하고 파이썬단에서 join을 수행한다</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ProductView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
-  <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">articles</span> <span class="o">=</span> <span class="n">ProductFilterService</span><span class="o">.</span><span class="n">find_by_not_deleted_article</span><span class="p">()</span>
-    <span class="n">comment_cnt</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">like_cnt</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">main_img</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">writer_profile</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
-      <span class="n">comment_cnt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">comment</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
-      <span class="n">like_cnt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">like</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
-      <span class="n">writer_profile</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">article</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">image</span><span class="p">,</span> <span class="n">article</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">nickname</span><span class="p">])</span>
-      <span class="n">photo</span> <span class="o">=</span> <span class="n">Photo</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">article__pk</span><span class="o">=</span><span class="n">article</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
-      <span class="n">main_img</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">photo</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="s">'name'</span><span class="p">])</span>
-    <span class="n">articles</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">articles</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">'image'</span><span class="p">:</span><span class="n">main_img</span><span class="p">,</span> <span class="s">'articles'</span><span class="p">:</span><span class="n">articles</span><span class="p">,</span> <span class="s">'comment_cnt'</span><span class="p">:</span><span class="n">comment_cnt</span><span class="p">,</span><span class="s">'like_cnt'</span><span class="p">:</span><span class="n">like_cnt</span><span class="p">,</span><span class="s">'writer_image'</span><span class="p">:</span><span class="n">writer_profile</span><span class="p">}</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">context</span><span class="p">[</span><span class="s">'category_list'</span><span class="p">]</span> <span class="o">=</span> <span class="n">ProductFilterService</span><span class="o">.</span><span class="n">find_by_all_category</span><span class="p">()</span>
-    <span class="n">article_list</span> <span class="o">=</span> <span class="n">ProductFilterService</span><span class="o">.</span><span class="n">find_by_not_deleted_article</span><span class="p">()</span>
-    <span class="c"># context['article_list'] = article_list</span>
-    <span class="n">page</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'page'</span><span class="p">,</span> <span class="s">'1'</span><span class="p">)</span>
-    <span class="n">articles</span><span class="p">,</span> <span class="n">page_range</span> <span class="o">=</span> <span class="n">paginator</span><span class="p">(</span><span class="n">article_list</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-    <span class="n">context</span><span class="p">[</span><span class="s">'article_list'</span><span class="p">]</span> <span class="o">=</span> <span class="n">articles</span>
-    <span class="n">context</span><span class="p">[</span><span class="s">'page_range'</span><span class="p">]</span> <span class="o">=</span> <span class="n">page_range</span>
-    <span class="n">context</span><span class="p">[</span><span class="s">'is_page'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'article.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+<p>comment는 article에서 역참조를 하고 있는 테이블이다. 해당 속성들을 미리 로딩하기 위해 prefetch_related를 사용한다</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"social"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"social-comment"</span><span class="nt">&gt;</span>댓글 + <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">article_list</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">is_deleted</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">prefetch_related</span><span class="p">(</span><span class="s">'comment'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>위의 로직을 수행한 결과 10개의 쿼리로 줄어들었으며 중복이 제거 된 것을 볼 수 있다</p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/137749383-c3e9414d-0b61-4c87-8370-df577b1be9d3.png" alt="gorf" /></p>
 
                 </div>
 <!--                -->
 <!--                -->
 <!--                <span class="tag">django</span>-->
-<!--                -->
-<!--                <span class="tag">refactoring</span>-->
 <!--                -->
 <!--                -->
             </section>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/django8" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="studying developer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="(Django) 기사 스크래핑 프로젝트 회고 및 리팩토링 후기(작성중..)" />
+    <meta property="og:description" content="프로젝트가 끝난지 한달 반 정도 되었다. 처음으로 동료와 협업하여 기획부터 설계, 모델링, 배포까지 진행한 프로젝트였다. 기획 당시 나는 스크래핑에 관심이 있었으며 스크래핑을 활용해 장고 프로젝트를 진행해보면 재밌을 것 같다는 생각을 했다. 동료는 OAuth를 이용한 소셜 로그인과 대댓글의 기능을 구현해보고 싶다는 의견이 있었다. 이를 토대로 주제는 기사 스크래핑을 통해 회원이 원하는" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/django8" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-10-26T17:40:00+09:00" />
+    <meta property="article:modified_time" content="2021-10-26T17:40:00+09:00" />
+    <meta property="article:tag" content="Django" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="(Django) 기사 스크래핑 프로젝트 회고 및 리팩토링 후기(작성중..)" />
+    <meta name="twitter:description" content="프로젝트가 끝난지 한달 반 정도 되었다. 처음으로 동료와 협업하여 기획부터 설계, 모델링, 배포까지 진행한 프로젝트였다. 기획 당시 나는 스크래핑에 관심이 있었으며 스크래핑을 활용해 장고 프로젝트를 진행해보면 재밌을 것 같다는 생각을 했다. 동료는 OAuth를 이용한 소셜 로그인과 대댓글의 기능을 구현해보고 싶다는 의견이 있었다. 이를 토대로 주제는 기사 스크래핑을 통해 회원이 원하는" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="studying developer" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Django" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "studying developer",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/django8",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/django.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/django8"
+    },
+    "description": "프로젝트가 끝난지 한달 반 정도 되었다. 처음으로 동료와 협업하여 기획부터 설계, 모델링, 배포까지 진행한 프로젝트였다. 기획 당시 나는 스크래핑에 관심이 있었으며 스크래핑을 활용해 장고 프로젝트를 진행해보면 재밌을 것 같다는 생각을 했다. 동료는 OAuth를 이용한 소셜 로그인과 대댓글의 기능을 구현해보고 싶다는 의견이 있었다. 이를 토대로 주제는 기사 스크래핑을 통해 회원이 원하는"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="(Django) 기사 스크래핑 프로젝트 회고 및 리팩토링 후기(작성중..)" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">studying developer</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/wanted/">원티드</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/project/">프로젝트TIL</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/celery/">Celery</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/rabbitmq/">RabbitMQ</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/oauth/">OAuth</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/jwt/">JWT</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/cors/">CORS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/network/">Network</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/os/">OS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/database/">DataBase</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/aws/">AWS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+    <li class="nav-jekyll" role="menuitem" style="display: none" ><a href="/tag/wecode/">위코드</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/coding/">코테</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/interview/">면접</a></li>
+<!--    <li class="nav-jekyll" role="menuitem" style="display: none" ><a href="/tag/aimmo/">에이모</a></li>-->
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-django tag-refactoring post tag django ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-10-26">2021-10-26</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/django/'>DJANGO</a>,
+                            
+                        
+                            
+                               <a href='/tag/refactoring/'>REFACTORING</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">(Django) 기사 스크래핑 프로젝트 회고 및 리팩토링 후기(작성중..)</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/django.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+
+                <div class="kg-card-markdown">
+
+                    
+<p><br /></p>
+
+<p>프로젝트가 끝난지 한달 반 정도 되었다. 처음으로 동료와 협업하여 기획부터 설계, 모델링, 배포까지 진행한 프로젝트였다. 기획 당시 나는 스크래핑에 관심이 있었으며 스크래핑을 활용해 장고 프로젝트를 진행해보면 재밌을 것 같다는 생각을 했다. 동료는 OAuth를 이용한 소셜 로그인과 대댓글의 기능을 구현해보고 싶다는 의견이 있었다. 이를 토대로
+ 주제는 기사 스크래핑을 통해 회원이 원하는 기사를 제공해 줄 수 있는 사이트를 기획하게 되었다.</p>
+
+<p>목표했던 기능은 대부분 구현했지만 더 깊게 생각하지 못한 부분들로 인해 아쉽게 마무리 된 기능이 2개정도 생겼다. 기능을 업데이트 하기 전에 해야 할 일은 내가 구현한 코드를 정리하는 것이였다.</p>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>기능 구현에만 집중되었던 과거</strong></li>
+</ul>
+
+<p>정해진 기간이 있었고 기간안에 최대한 기능을 구현하고 싶었다. 그래서 코드의 중복이나 흐름을 생각하지 않고 기능 구현에만 초점을 맞추어 진행하게 되었다. 그 결과 내가 짠 코드임에도 불구하고 알아보기 쉽지 않았다.
+하나의 view안에서 모든 비즈니스 로직이 구현되어 있어 view자체가 너무 무거워진 느낌이 들었고 해당 로직이 어떤 역할을 하는지 한번에 알아보기 어려웠다. 초반에 비즈니스 로직을 어떻게 다룰지에 대한 고민이 있었다면 훨씬 일관성 있는 로직으로 작성 할 수 있었겠다라는 아쉬움이 
+남았다.</p>
+
+<hr />
+
+<ul>
+  <li><strong>유추할 수 없는 네이밍</strong></li>
+</ul>
+
+<p>기능이 많아질수록 함수나 클래스의 네이밍을 생각해내는게 생각보다 많이 힘들었다. 개발자가 어려워하는 업무 베스트 중에 작명이 왜 들어가 있는지 이번 프로젝트를 통해서 몸소 깨닫게 되었다..😂
+특히 CRUD의 경우 REST API 설계를 통해 url을 최대한 활용할 수 있지만 이번 프로젝트의 경우에는 Get과 Post만으로 프로젝틀 진행했기 때문에 url도 전부 따로 만들어주어야 했다. 동시에 네이밍의 작업도 배로 늘어나게 되었다.<br />
+네이밍이 잘 되어 있으면 대충 로직을 이해할 수 있다. 이게 굉장히 중요했다. 네이밍을 보고 유추되지 않으면 해당 로직을 하나하나 다시 둘러봐야 한다. 이게 생각보다 아주 많은 시간이 걸린다.. 이번 프로젝트가 그랬다.. ^^ 
+진짜 앞으로는 머리에 쥐가나도 최대한 기능을 유추할 수 있게 네이밍을 짓겠다는 다짐을 했다.. :)</p>
+
+<hr />
+
+<ul>
+  <li><strong>아쉬운 협업 방향</strong></li>
+</ul>
+
+<p>프로젝트를 진행하면서 동료와 굉장히 적극적으로 커뮤니케이션을 했다. 노션과 git project를 굉장히 잘 활용했다. 서로 도움이 될 만한 내용은 슬랙을 통해
+공유하면서 진행했다. 하지만 초반에 고려하지 못한 부분이 뒤로 갈수록 문제가 됐다. 우리만의 코드 컨벤션과 깃 컨벤션을 정하지 못했다. 그리고 서로의 코드에 대한 
+리뷰를 하는 시간도 갖지 못했다. 그러다 보니 하나의 프로젝트이지만 각자의 스타일대로 코드를 짜다보니 코드에 일관성이 없었다. 누가봐도 다른 사람이 짠 느낌이 강했다.</p>
+
+<p>협업을 진행하면서 기대했던 목표 중 하나는 git을 통한 협업을 하는것이였다. pull request를 올리면 다른 팀원이 코드를 보고 확인하는 시간이 최소한이라도 필요했지만 이번 프로젝트는
+pull request올리고 바로 main에 merge해버렸다. 그리고 충돌을 최대한 피하기 위해서 merge를 하면 슬랙으로 merge했다고 서로 알려주었다.. :-)  git을 사용했지만 협업을 
+위한 git사용은 아니였던 것이 참 아쉬웠다. 충돌을 두려워해서 충돌을 해결하는 쪽보다는 충돌을 최대한 피하는 쪽을 선택했다.</p>
+
+<hr />
+
+<h3 id="리팩토링을-진행">리팩토링을 진행</h3>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>비즈니스 로직을 어떻게 관리할것인가</strong></li>
+</ul>
+
+<p>코드가 길어지고 많아질수록 체계적으로 일관성 있게 로직을 관리하고 싶었다. 그래서 나는 service layer 방식을 택했다. view는 요청에 맞게 데이터를 가공해서 전송하는 역할을 한다. 나는 view에서는 <code class="highlighter-rouge">요청이 들어온 데이터를 받아</code> 요청에 맞게 데이터를 가공해주는 
+service로 ㄴ데이터를 보낸후 <code class="highlighter-rouge">가공된 데이터를 전달 받아 반환하는 역할</code> 만을 할 수 있게 수정하고 싶었다. <br />
+그래서 4단계로 나누어 로직을 분리했다</p>
+
+<ol>
+  <li>view에서 받은 데이터는 dto라는 곳에서 데이터의 타입을 정해 놓는다</li>
+  <li>view에서 비즈니스 로직을 service라는 곳으로 옮긴다</li>
+  <li>view에서 dto를 통해 데이터를 받은 후 요청에 맞게 데이터를 가공할 수 있도록 해당 데이터를 service로 전달한다</li>
+  <li>service에서 가공된 데이터를 받아 반환해준다</li>
+</ol>
+
+<hr />
+
+<p>프로젝트의 기능 중 유저가 선택한 언론사와 선택하지 않은 언론사를 불러와 해당 데이터를 프론트에 보내주는 기능이 있다.</p>
+
+<p>view안에서 직접 모든 데이터를 가공하고 있었고 페이징처리에 대한 로직도 함께 들어가 있었다. 당연히 가독성은 좋지 못했다. 네이밍도 press_list, press와 같이 각 변수명이
+무엇을 뜻하는지 로직을 읽어보지 않는 이상 유추하기 힘들었다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 유저가 선택한 언론사 보여주는 view</span>
+
+<span class="k">class</span> <span class="nc">NewsInforEditView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">View</span><span class="p">):</span>
+    <span class="n">login_url</span> <span class="o">=</span> <span class="s">'user/login/'</span>
+    <span class="n">redirect_field_name</span><span class="o">=</span><span class="s">'/'</span>
+    
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">userpress</span> <span class="o">=</span> <span class="n">UserPress</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">user__pk</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+        <span class="n">press_list</span> <span class="o">=</span> <span class="n">Press</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">'name'</span><span class="p">)</span>
+        <span class="n">non_press</span> <span class="o">=</span> <span class="n">userpress</span><span class="o">.</span><span class="n">non_press</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>
+        <span class="n">press</span> <span class="o">=</span> <span class="n">userpress</span><span class="o">.</span><span class="n">press</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">non_press</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+          <span class="n">non_press</span> <span class="o">=</span> <span class="n">userpress</span><span class="o">.</span><span class="n">non_press</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>
+          <span class="n">press</span> <span class="o">=</span> <span class="n">userpress</span><span class="o">.</span><span class="n">press</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">press</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">press</span> <span class="o">=</span> <span class="n">userpress</span><span class="o">.</span><span class="n">press</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>가장 먼저 네이밍을 좀 더 의미있게 나타내기 위해 몇몇개의 변수를 수정했다. press_list -&gt; presses, press -&gt; presses_in_userpress 네이밍을 보고도 
+이전보다는 어느정도 유추가 가능해졌다.</p>
+
+<p>DB에 접근해야 되는 로직은 serivces.py에서 메서드로 불러와 가공되어진 데이터를 받아왔다. <code class="highlighter-rouge">non_presses = PressService.get_non_presses(userpress)</code> 이렇게
+함수로 작성하는 경우 다른곳에서도 해당 함수를 필요할때마다 불러와 사용할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">NewsInforEditPressView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">View</span><span class="p">):</span>
+    <span class="n">login_url</span> <span class="o">=</span> <span class="s">'user/login/'</span>
+    <span class="n">redirect_field_name</span><span class="o">=</span><span class="s">'/'</span>
+    
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_article_pk</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+
+        <span class="n">presses</span> <span class="o">=</span> <span class="n">PressService</span><span class="o">.</span><span class="n">get_presses</span><span class="p">()</span>
+        <span class="n">non_presses</span> <span class="o">=</span> <span class="n">PressService</span><span class="o">.</span><span class="n">get_non_presses</span><span class="p">(</span><span class="n">userpress</span><span class="p">)</span>
+        <span class="n">userpress</span> <span class="o">=</span> <span class="n">UserPressService</span><span class="o">.</span><span class="n">get_userpress</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+        <span class="n">presses_in_userpress</span> <span class="o">=</span> <span class="n">PressService</span><span class="o">.</span><span class="n">get_presses_in_userpress</span><span class="p">(</span><span class="n">userpress</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_build_article_pk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ArticlePkDto</span><span class="p">(</span>
+            <span class="n">pk</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">pk</span>
+        <span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>페이징 처리에 대한 로직은 사실 다른 view에서도 필요한 로직이였기 때문에 코드가 중복되는 상황이였다. 아래와 같은
+로직이 페이징이 필요한 view마다 존재하고 있었다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">page</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'page'</span><span class="p">,</span><span class="s">'1'</span><span class="p">)</span>
+        <span class="n">paginator</span> <span class="o">=</span> <span class="n">Paginator</span><span class="p">(</span><span class="n">press_list</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="n">press_obj</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">press_obj</span><span class="o">.</span><span class="n">number</span>
+        <span class="n">max_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">paginator</span><span class="o">.</span><span class="n">page_range</span><span class="p">)</span>
+        <span class="n">page_size</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">current_page</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="k">if</span> <span class="n">index</span> <span class="k">else</span> <span class="mi">1</span>
+        <span class="n">start_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">current_page</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">page_size</span><span class="p">)</span> <span class="o">*</span> <span class="n">page_size</span>
+        <span class="n">end_index</span> <span class="o">=</span> <span class="n">start_index</span> <span class="o">+</span> <span class="n">page_size</span>
+        <span class="k">if</span> <span class="n">end_index</span> <span class="o">&gt;=</span> <span class="n">max_index</span><span class="p">:</span>
+            <span class="n">end_index</span> <span class="o">=</span> <span class="n">max_index</span>
+        <span class="n">page_range</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">page_range</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">end_index</span><span class="p">]</span>
+        
+        <span class="n">context</span> <span class="o">=</span> <span class="n">context_infor</span><span class="p">(</span><span class="n">press_list</span><span class="o">=</span><span class="n">press_obj</span><span class="p">,</span> 
+                                <span class="n">page_range</span><span class="o">=</span><span class="n">page_range</span><span class="p">,</span>
+                                <span class="n">in_press</span><span class="o">=</span><span class="n">press</span><span class="p">,</span>
+                                <span class="n">non_press</span><span class="o">=</span><span class="n">non_press</span><span class="p">,</span>
+                                <span class="p">)</span>    
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'infor-edit.html'</span><span class="p">,</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>페이징처리에 대한 로직을 utils라는 곳에 따로 함수로 작성하여 view마다 필요할때 해당 함수를 호출해 사용할 수 있게 처리하여 중복을 최소화 해주었다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="n">page_range</span><span class="p">,</span> <span class="n">press_obj</span> <span class="o">=</span> <span class="n">paging</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'page'</span><span class="p">,</span><span class="s">'1'</span><span class="p">),</span> <span class="n">presses</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    
+    <span class="n">context</span> <span class="o">=</span> <span class="n">context_infor</span><span class="p">(</span><span class="n">presses</span><span class="o">=</span><span class="n">press_obj</span><span class="p">,</span> 
+                            <span class="n">page_range</span><span class="o">=</span><span class="n">page_range</span><span class="p">,</span>
+                            <span class="n">in_press</span><span class="o">=</span><span class="n">presses_in_userpress</span><span class="p">,</span>
+                            <span class="n">non_press</span><span class="o">=</span><span class="n">non_presses</span><span class="p">,</span>
+                            <span class="p">)</span>    
+        
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'infor-edit.html'</span><span class="p">,</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>대부분 view의 로직을 위와 같은 형식으로 수정했다. 시간이 꽤 많이 걸렸지만 기존의 코드보다는 확실히 가독성이 좋아진것에 만족스러웠다. 동시에
+로직 자체에 대한 효율성을 생각해보게 되었다. 장고에서 제공해주는 페이지네이션을 사용하여 장고 템플릿을 이용해 화면의 페이징 처리를 구현했다. 찾아보니
+페이징 처리 방법이 꽤 여러개 존재했다. 이후에 더 좋은 방법을 고려해 로직을 수정해보고 싶다는 생각을 했다</p>
+
+<hr />
+
+<ul>
+  <li><strong>회원가입시 이메일 인증과 재인증 로직에 대한  mixin class 활용</strong></li>
+</ul>
+
+<p>초반에 기능을 구현할때 Mixin을 이용해 상속받아 사용함으로써 이메일 인증과 이메일 재인증 로직의 중복을 최소화 시키는게 목표였다. 그리고 내가
+생각한 Mixin의 기능은 아래와 같았다. 인자로 재인증인지 인증인지를 new, again이라는 단어로 구별을 했다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">VerifyEmailMixin</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">send_verify_email</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">dto</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">email</span> <span class="o">==</span> <span class="s">'new'</span><span class="p">:</span>
+                        <span class="n">user</span> <span class="o">=</span> <span class="n">UserService</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">dto</span><span class="p">)</span>
+                        <span class="n">mail</span> <span class="o">=</span> <span class="n">dto</span><span class="o">.</span><span class="n">email</span>
+
+                <span class="k">elif</span> <span class="n">email</span> <span class="o">==</span> <span class="s">'again'</span><span class="p">:</span>      
+                    <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">dto</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+                    <span class="n">resend_email_user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">dto</span><span class="o">.</span><span class="n">resend_email</span><span class="p">)</span>
+                    
+                    <span class="k">if</span> <span class="n">user</span> <span class="o">!=</span> <span class="n">resend_email_user</span><span class="p">:</span>
+                        <span class="n">context</span> <span class="o">=</span> <span class="n">context_info</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="s">'이메일을 확인해주세요 !'</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+                        
+                        <span class="k">return</span> <span class="n">context</span>
+
+                    <span class="n">user</span> <span class="o">=</span> <span class="n">UserService</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dto</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="n">dto</span><span class="o">.</span><span class="n">resend_email</span><span class="p">)</span>
+                    <span class="n">mail</span> <span class="o">=</span> <span class="n">dto</span><span class="o">.</span><span class="n">resend_email</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>이후 에러가 존재할 경우 에러메시지를 반환해주었고 에러가 없을 경우 인증/재인증 링크를 이메일로 전송하는 로직을 작성했다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">error</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">non_field_errors</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">error</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+
+    <span class="n">context</span> <span class="o">=</span> <span class="n">context_info</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">error</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">context</span>
+
+<span class="n">mail_title</span><span class="p">,</span> <span class="n">message_data</span><span class="p">,</span> <span class="n">mail_to</span> <span class="o">=</span> <span class="n">UserEmailVerifyService</span><span class="o">.</span><span class="n">verify_email_user</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">user</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span> <span class="n">mail</span><span class="p">)</span>
+
+<span class="n">send_email</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="n">mail_title</span><span class="p">,</span> <span class="n">message_data</span><span class="p">,</span> <span class="n">mail_to</span><span class="p">)</span>
+
+
+<span class="n">context</span> <span class="o">=</span> <span class="n">context_info</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="s">'이메일을 인증해 회원가입을 완료하세요!'</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="k">return</span> <span class="n">context</span>
+
+<span class="k">except</span> <span class="n">User</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+<span class="n">context</span> <span class="o">=</span> <span class="n">context_info</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="s">'회원가입부터 해주세요'</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            
+<span class="k">return</span> <span class="n">context</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>구현 후 동작에는 문제가 없었지만 이게 mixin이라는 기능을 잘 활용 한 것인가 라는 의문이 강하게 들었다. 이런 생각이 든 후 mixin의 개념에
+ 대해 찾아보았다. mixin은 중복을 최소화하고 클래스를 활용해 확장성을 극대화 시켜주는 역할을 한다. 하지만 내가 짠 로직은 그냥 하나의 함수에 불과해보였다.
+구현한 VerifyEmailMixin class를 사용하게 되면 특정 조건을 무조건 거쳐가게 된다. 조건을 거친후에 조건에 해당되는 로직이 동작된다.</p>
+
+<p>mixin에 대한 이해를 제대로 하지 않은 상태로 로직을 구현했구나 라는 생각을 하게 되었다. 지나가듯이 봤었던 기능이였기에 제대로 알아보지 않고 사용한 것 같아 
+아쉬웠다. 그래서 mixin에 대한 공부를 진행 후 해당 로직을 수정해보기로 결정했다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+</code></pre></div></div>
+
+                </div>
+<!--                -->
+<!--                -->
+<!--                <span class="tag">django</span>-->
+<!--                -->
+<!--                <span class="tag">refactoring</span>-->
+<!--                -->
+<!--                -->
+            </section>
+        
+        <div id="post-disqus" class="container">
+            <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://heejung-gjt-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+        
+
+
+
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">studying developer</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to studying developer</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+    <script id="dsq-count-scr" src="//heejung-gjt-github-io.disqus.com/count.js" async></script>
+</body>
+</html>
