@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/refactoring/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-12-06T14:14:33+09:00</updated>
+  <updated>2021-12-06T16:44:05+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/refactoring/feed.xml</id>
 
   
@@ -32,12 +32,48 @@
 
   
     <entry>
-      <title type="html">(Django) 기사 스크래핑 프로젝트 회고 및 리팩토링 후기(작성중..)</title>
-      <link href="https://heejung-gjt.github.io/django8" rel="alternate" type="text/html" title="(Django) 기사 스크래핑 프로젝트 회고 및 리팩토링 후기(작성중..)" />
+      <title type="html">일기장 프로젝트 회고 및 리팩토링 후기(작성중..)</title>
+      <link href="https://heejung-gjt.github.io/django-project3" rel="alternate" type="text/html" title="일기장 프로젝트 회고 및 리팩토링 후기(작성중..)" />
+      <published>2021-11-27T11:40:00+09:00</published>
+      <updated>2021-11-27T11:40:00+09:00</updated>
+      <id>https://heejung-gjt.github.io/django-project3</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/django-project3">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>jung</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="project" />
+      
+        <category term="refactoring" />
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">기사 스크래핑 프로젝트 회고 및 리팩토링 후기(작성중..)</title>
+      <link href="https://heejung-gjt.github.io/django-project2" rel="alternate" type="text/html" title="기사 스크래핑 프로젝트 회고 및 리팩토링 후기(작성중..)" />
       <published>2021-10-26T17:40:00+09:00</published>
       <updated>2021-10-26T17:40:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/django8</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/django8">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+      <id>https://heejung-gjt.github.io/django-project2</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/django-project2">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;프로젝트가 끝난지 한달 반 정도 되었다. 처음으로 동료와 협업하여 기획부터 설계, 모델링, 배포까지 진행한 프로젝트였다. 기획 당시 나는 스크래핑에 관심이 있었으며 스크래핑을 활용해 장고 프로젝트를 진행해보면 재밌을 것 같다는 생각을 했다. 동료는 OAuth를 이용한 소셜 로그인과 대댓글의 기능을 구현해보고 싶다는 의견이 있었다. 이를 토대로
  주제는 기사 스크래핑을 통해 회원이 원하는 기사를 제공해 줄 수 있는 사이트를 기획하게 되었다.&lt;/p&gt;
@@ -285,7 +321,7 @@ service로 ㄴ데이터를 보낸후 &lt;code class=&quot;highlighter-rouge&quot
       
 
       
-        <category term="django" />
+        <category term="project" />
       
         <category term="refactoring" />
       
@@ -299,12 +335,12 @@ service로 ㄴ데이터를 보낸후 &lt;code class=&quot;highlighter-rouge&quot
     </entry>
   
     <entry>
-      <title type="html">(Django) 중고 쇼핑몰 프로젝트 회고 및 리팩토링 후기(작성중..)</title>
-      <link href="https://heejung-gjt.github.io/django6" rel="alternate" type="text/html" title="(Django) 중고 쇼핑몰 프로젝트 회고 및 리팩토링 후기(작성중..)" />
+      <title type="html">중고 쇼핑몰 프로젝트 회고 및 리팩토링 후기(작성중..)</title>
+      <link href="https://heejung-gjt.github.io/django-project1" rel="alternate" type="text/html" title="중고 쇼핑몰 프로젝트 회고 및 리팩토링 후기(작성중..)" />
       <published>2021-09-15T17:40:00+09:00</published>
       <updated>2021-09-15T17:40:00+09:00</updated>
-      <id>https://heejung-gjt.github.io/django6</id>
-      <content type="html" xml:base="https://heejung-gjt.github.io/django6">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+      <id>https://heejung-gjt.github.io/django-project1</id>
+      <content type="html" xml:base="https://heejung-gjt.github.io/django-project1">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;6월에 시작한 프로젝트로 개인으로 진행한 첫번째 프로젝트였다. 꾸준히 기능적인 부분을 업데이트 시켜왔었지만 정작 짜왔던 코드를 스스로 리뷰해보는
  시간을 가져보지 못했다. 이런 생각이 든 후 과거에 짜왔던 로직을 다시한번 보게 되었고 깜짝 놀라게 되었다. 😂😂&lt;/p&gt;
@@ -363,7 +399,7 @@ service로 ㄴ데이터를 보낸후 &lt;code class=&quot;highlighter-rouge&quot
       
 
       
-        <category term="django" />
+        <category term="project" />
       
         <category term="refactoring" />
       

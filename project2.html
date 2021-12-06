@@ -51,7 +51,7 @@
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="studying developer" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="백엔드 프리온보딩 1주차 두번째 과제" />
+    <meta property="og:title" content="백엔드 프리온보딩 1주차 두번째 프로젝트 회고" />
     <meta property="og:description" content="원티드 1주차 프레시코드 기업과제 진행기간 21.11.04 ~ 21.11.06 구현해야 하는 기능 로그인 기능 사용자 인증을 통해 상품 관리를 할 수 있어야 한다 JWT 인증 방식을 이용한다 상품 추가/수정/삭제는 admin권한을 가지 사용자만 이용할 수 있다 상품 관리 기능 상품 조회는 하나 또는 전체 목록을 조회할 수 있으며 전체 목록은 페이징 기능이" />
     <meta property="og:url" content="https://heejung-gjt.github.io/project2" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/today.png" />
@@ -61,7 +61,7 @@
     <meta property="article:modified_time" content="2021-11-07T12:00:00+09:00" />
     <meta property="article:tag" content="Project" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="백엔드 프리온보딩 1주차 두번째 과제" />
+    <meta name="twitter:title" content="백엔드 프리온보딩 1주차 두번째 프로젝트 회고" />
     <meta name="twitter:description" content="원티드 1주차 프레시코드 기업과제 진행기간 21.11.04 ~ 21.11.06 구현해야 하는 기능 로그인 기능 사용자 인증을 통해 상품 관리를 할 수 있어야 한다 JWT 인증 방식을 이용한다 상품 추가/수정/삭제는 admin권한을 가지 사용자만 이용할 수 있다 상품 관리 기능 상품 조회는 하나 또는 전체 목록을 조회할 수 있으며 전체 목록은 페이징 기능이" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/today.png" />
@@ -107,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="백엔드 프리온보딩 1주차 두번째 과제" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="백엔드 프리온보딩 1주차 두번째 프로젝트 회고" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -218,7 +218,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">백엔드 프리온보딩 1주차 두번째 과제</h1>
+                <h1 class="post-full-title">백엔드 프리온보딩 1주차 두번째 프로젝트 회고</h1>
             </header>
 
 <!--  
@@ -354,7 +354,7 @@ badge는 해당 제품이 신상품인지 best 상품인지 이런 데이터가 
         
 </code></pre></div></div>
 
-<p><br /></p>
+<hr />
 
 <h4 id="unit-test">unit test</h4>
 
@@ -374,7 +374,124 @@ badge는 해당 제품이 신상품인지 best 상품인지 이런 데이터가 
 
 <hr />
 
+<h3 id="리펙토링-후-코드">리펙토링 후 코드</h3>
+
+<p>코드 리뷰 후 <strong>리펙토링</strong> 하는 시간을 가졌다</p>
+
+<p>제품을 수정하는 과정에서 아래와 같이 각 제품이 가지고 있는 여러 아이템이 존재하고 있었다</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>menus: <span class="o">[</span>
+    <span class="o">{</span>
+      id: 245,
+      category: <span class="s2">"SALAD"</span>,
+      name: <span class="s2">"깔라마리 달래 샐러드"</span>,
+      description: <span class="s2">"해산물 샐러드"</span>,
+      isSold: <span class="nb">false</span>,
+      badge: <span class="s2">"NEW"</span>,
+          items: <span class="o">[</span>
+            <span class="o">{</span>
+              id: 1,
+              menuId: 245,
+              name: <span class="s2">"미디움"</span>,
+              size: <span class="s2">"M"</span>,
+              price: 8000,
+              isSold: <span class="nb">false</span>,
+            <span class="o">}</span>,
+            <span class="o">{</span>
+              id: 2,
+              menuId: 245,
+              name: <span class="s2">"라지"</span>,
+              size: <span class="s2">"L"</span>,
+              price: 10000,
+              isSold: <span class="nb">false</span>,
+            <span class="o">}</span>,
+          <span class="o">]</span>,
+    <span class="o">}</span>
+</code></pre></div></div>
+
 <p><br /></p>
+
+<ul>
+  <li>초반에는 MenuDetailView라는 class에서 put메소드에서 menu의 데이터와 items를 한번에 수정하는 로직을 작성했다</li>
+  <li>기능구현이 끝난 후 코드를 바라보니 하나의 view에 너무 많은 if-else문이 사용되고 있었고 menu와 item에 대한 view를 따로 구현을 하는게 가독성면과 효율성면에서 더 좋을 것 같다는 생각이 들었고 팀원들과 상의 후 로직을 수정했다</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 메뉴 수정 view</span>
+
+<span class="k">class</span> <span class="nc">MenuDetailView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+	<span class="nd">@authorizer</span>
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">menu_id</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">role_id</span> <span class="o">!=</span> <span class="n">Role</span><span class="o">.</span><span class="n">Type</span><span class="o">.</span><span class="n">ADMIN</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"UNAUTHORIZED"</span><span class="p">},</span> <span class="n">status</span> <span class="o">=</span> <span class="mi">401</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">Menu</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">menu_id</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="n">f</span><span class="s">"POSTING_{menu_id}_NOT_FOUND"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">404</span><span class="p">)</span>
+            
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span> <span class="ow">or</span> <span class="n">data</span><span class="p">[</span><span class="s">"description"</span><span class="p">]):</span>
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"No input"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">404</span><span class="p">)</span>
+
+            <span class="n">menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">menu_id</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s">"name"</span><span class="p">]:</span>
+                <span class="n">menu</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span>
+            
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s">"description"</span><span class="p">]:</span>
+                <span class="n">menu</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"description"</span><span class="p">]</span>
+
+            <span class="n">menu</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"menu name"</span><span class="p">:</span> <span class="n">menu</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s">"menu desc"</span><span class="p">:</span> <span class="n">menu</span><span class="o">.</span><span class="n">description</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"KEY_ERROR"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 아이템 수정 view</span>
+
+<span class="k">class</span> <span class="nc">MenuItemsView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="nd">@authorizer</span>
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">item_id</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">role_id</span> <span class="o">!=</span> <span class="n">Role</span><span class="o">.</span><span class="n">Type</span><span class="o">.</span><span class="n">ADMIN</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"UNAUTHORIZED"</span><span class="p">},</span> <span class="n">status</span> <span class="o">=</span> <span class="mi">401</span><span class="p">)</span>
+
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+            
+            <span class="n">item</span> <span class="o">=</span> <span class="n">Item</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">item_id</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">"price"</span><span class="p">]</span> <span class="ow">or</span> <span class="n">data</span><span class="p">[</span><span class="s">"size"</span><span class="p">]):</span>
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"NO_INPUT"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">404</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s">"price"</span><span class="p">]:</span>
+                <span class="n">item</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"price"</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s">"size"</span><span class="p">]:</span>
+                <span class="n">item</span><span class="o">.</span><span class="n">size_id</span> <span class="o">=</span> <span class="n">Size</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s">"size"</span><span class="p">])</span><span class="o">.</span><span class="nb">id</span>
+
+            <span class="n">item</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"item price"</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">price</span><span class="p">,</span> <span class="s">"item size"</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">name</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"KEY_ERROR"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"VALUE_ERROR"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">404</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="n">Item</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"ITEMS_NOT_FOUND"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">404</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="n">Size</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"SIZE_NOT_FOUND"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">404</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>로직을 중간에 수정하려고 하다보니 생각보다 많은 시간이 걸렸지만 코드의 효율성면을 따졌을땐 코드 수정은 잘 한 선택같았다 ! ㅎㅎㅎ 물론 시간이 배로 걸렸지만 내 의견을 존중해주고 더 나은 쪽을 흔쾌히 선택해주었던 팀원들에게 고마웠다 ! 
+코드를 수정하며 들었던 생각은 코드를 짤때는 잘 모른다는 것이다. 다 짜고 난 뒤에야 고쳐야 할 부분들, 비효율적인 코드 로직들이 보인다</p>
+
+<hr />
 
 <h3 id="진행한-소감">진행한 소감</h3>
 

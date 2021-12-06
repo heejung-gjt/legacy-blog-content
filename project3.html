@@ -51,7 +51,7 @@
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="studying developer" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="백엔드 프리온보딩 2주차 첫번째 과제" />
+    <meta property="og:title" content="백엔드 프리온보딩 2주차 첫번째 프로젝트 회고" />
     <meta property="og:description" content="원티드 2주차 원티드 기업과제 진행기간 21.11.08 ~ 21.11.10 구현해야 하는 기능 회사명 자동 완성 회사명의 일부만 들어가도 검색이 되어야 한다 회사 이름으로 회사 검색 새로운 회사 추가 나의 역할 회사 추가 기능 언어별로 추가되는 회사, 태그 추가하기 unit test 구현 README.md 작성 배운내용 flask 다대다 참조시 중계 테이블 생성 리펙토링의" />
     <meta property="og:url" content="https://heejung-gjt.github.io/project3" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/today.png" />
@@ -61,7 +61,7 @@
     <meta property="article:modified_time" content="2021-11-10T14:00:00+09:00" />
     <meta property="article:tag" content="Project" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="백엔드 프리온보딩 2주차 첫번째 과제" />
+    <meta name="twitter:title" content="백엔드 프리온보딩 2주차 첫번째 프로젝트 회고" />
     <meta name="twitter:description" content="원티드 2주차 원티드 기업과제 진행기간 21.11.08 ~ 21.11.10 구현해야 하는 기능 회사명 자동 완성 회사명의 일부만 들어가도 검색이 되어야 한다 회사 이름으로 회사 검색 새로운 회사 추가 나의 역할 회사 추가 기능 언어별로 추가되는 회사, 태그 추가하기 unit test 구현 README.md 작성 배운내용 flask 다대다 참조시 중계 테이블 생성 리펙토링의" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/today.png" />
@@ -107,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="백엔드 프리온보딩 2주차 첫번째 과제" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="백엔드 프리온보딩 2주차 첫번째 프로젝트 회고" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -214,7 +214,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">백엔드 프리온보딩 2주차 첫번째 과제</h1>
+                <h1 class="post-full-title">백엔드 프리온보딩 2주차 첫번째 프로젝트 회고</h1>
             </header>
 
 <!--  
@@ -333,17 +333,37 @@ into the {body} of the default.hbs template -->
 
 <p><br /></p>
 
+<hr />
+
+<h4 id="flask의-사용">flask의 사용</h4>
+<p>원티드 기업에서 권장하는 프레임워크가 flask였고 flask의 경험이 대부분 없었지만 이번 프로젝트에는 flask를 사용해보기로 했다. 
+생각보다 장고와 다른점이 꽤 있었다</p>
+<ul>
+  <li>장고처럼 필요한 파일(models.py, urls.py…)을 자동으로 생성해주지 않는다</li>
+  <li>모델 설계시 문법이 꽤 다르다</li>
+  <li>ORM문법 또한 장고와 다른 부분이 있다</li>
+  <li>url 파일이 따로 없어 view에서 url을 작성한다</li>
+</ul>
+
+<p>flask의 restful을 사용해서 기능 개발을 하기로 결정했고 필요한 파일들은 직접 만들기로 했다. 이때 MVC의 패턴에 따라 controller라는 폴더를 생성해 이곳에서 view를 작성했다.</p>
+
+<p>모델링 설계할땐 모든 팀원이 진짜 머리를 맞대고 함께 방법을 찾아냈다. 같이 하면서 정말 좋았던 점은 혼자서는 이렇게 짧은 시간안에 못했을 것을 
+짧은 시간안에 구현해낼 수 있다는 것이다.</p>
+
+<p>데이터베이스에 대한 접근은 SQLAlchemy를 사용해 ORM으로 사용했다. (짧은 시간안에 DB를 다루기 위해서는 ORM이 진짜 좋은 것 같다..^^)</p>
+
+<hr />
+
+<h3 id="리펙토링-후-코드">리펙토링 후 코드</h3>
+
 <p>이후 팀원의 피드백을 받아 코드를 전체적으로 <strong>리펙토링</strong> 하는 시간을 가졌다. 함께해서 좋은 점은 내 코드에 대한 피드백을 주고 받을 수 있다는 것이다.</p>
 
 <ul>
   <li>코드의 가독성에 더 많은 신경을 쓰게 된다</li>
   <li>코드를 왜 그렇게 짰는지에 대한 이유를 생각하게 된다</li>
-  <li>더 개선된 로직을 짤 수 있게 된다</li>
-</ul>
-
-<h4 id="리펙토링-후-코드">리펙토링 후 코드</h4>
-
-<ul>
+  <li>
+    <p>더 개선된 로직을 짤 수 있게 된다</p>
+  </li>
   <li>회사정보를 가져올때 인덱스를 이용해야 하기 때문에 0,1로 나타내기 보다는 상수로 정해서 어떤 종류의 인덱스로 가져오는지 알 수 있게 설정한다</li>
 </ul>
 
@@ -372,23 +392,6 @@ into the {body} of the default.hbs template -->
 </code></pre></div></div>
 
 <p><br /></p>
-
-<h4 id="flask의-사용">flask의 사용</h4>
-<p>원티드 기업에서 권장하는 프레임워크가 flask였고 flask의 경험이 대부분 없었지만 이번 프로젝트에는 flask를 사용해보기로 했다. 
-생각보다 장고와 다른점이 꽤 있었다</p>
-<ul>
-  <li>장고처럼 필요한 파일(models.py, urls.py…)을 자동으로 생성해주지 않는다</li>
-  <li>모델 설계시 문법이 꽤 다르다</li>
-  <li>ORM문법 또한 장고와 다른 부분이 있다</li>
-  <li>url 파일이 따로 없어 view에서 url을 작성한다</li>
-</ul>
-
-<p>flask의 restful을 사용해서 기능 개발을 하기로 결정했고 필요한 파일들은 직접 만들기로 했다. 이때 MVC의 패턴에 따라 controller라는 폴더를 생성해 이곳에서 view를 작성했다.</p>
-
-<p>모델링 설계할땐 모든 팀원이 진짜 머리를 맞대고 함께 방법을 찾아냈다. 같이 하면서 정말 좋았던 점은 혼자서는 이렇게 짧은 시간안에 못했을 것을 
-짧은 시간안에 구현해낼 수 있다는 것이다.</p>
-
-<p>데이터베이스에 대한 접근은 SQLAlchemy를 사용해 ORM으로 사용했다. (짧은 시간안에 DB를 다루기 위해서는 ORM이 진짜 좋은 것 같다..^^)</p>
 
 <hr />
 

@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://heejung-gjt.github.io/tag/wanted/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-12-06T14:14:33+09:00</updated>
+  <updated>2021-12-06T16:44:05+09:00</updated>
   <id>https://heejung-gjt.github.io/tag/wanted/feed.xml</id>
 
   
@@ -32,8 +32,8 @@
 
   
     <entry>
-      <title type="html">백엔드 프리온보딩 4주차 첫번째 과제</title>
-      <link href="https://heejung-gjt.github.io/project6" rel="alternate" type="text/html" title="백엔드 프리온보딩 4주차 첫번째 과제" />
+      <title type="html">백엔드 프리온보딩 4주차 첫번째 프로젝트 회고</title>
+      <link href="https://heejung-gjt.github.io/project6" rel="alternate" type="text/html" title="백엔드 프리온보딩 4주차 첫번째 프로젝트 회고" />
       <published>2021-11-27T15:00:00+09:00</published>
       <updated>2021-11-27T15:00:00+09:00</updated>
       <id>https://heejung-gjt.github.io/project6</id>
@@ -119,8 +119,8 @@
     </entry>
   
     <entry>
-      <title type="html">백엔드 프리온보딩 3주차 두번째 과제</title>
-      <link href="https://heejung-gjt.github.io/project5" rel="alternate" type="text/html" title="백엔드 프리온보딩 3주차 두번째 과제" />
+      <title type="html">백엔드 프리온보딩 3주차 두번째 프로젝트 회고</title>
+      <link href="https://heejung-gjt.github.io/project5" rel="alternate" type="text/html" title="백엔드 프리온보딩 3주차 두번째 프로젝트 회고" />
       <published>2021-11-22T15:00:00+09:00</published>
       <updated>2021-11-22T15:00:00+09:00</updated>
       <id>https://heejung-gjt.github.io/project5</id>
@@ -365,8 +365,8 @@ haversine 라이브러리를 이용하여 WGS84 좌표계 시스템으로 되어
     </entry>
   
     <entry>
-      <title type="html">백엔드 프리온보딩 2주차 두번째 과제</title>
-      <link href="https://heejung-gjt.github.io/project4" rel="alternate" type="text/html" title="백엔드 프리온보딩 2주차 두번째 과제" />
+      <title type="html">백엔드 프리온보딩 2주차 두번째 프로젝트 회고</title>
+      <link href="https://heejung-gjt.github.io/project4" rel="alternate" type="text/html" title="백엔드 프리온보딩 2주차 두번째 프로젝트 회고" />
       <published>2021-11-14T15:00:00+09:00</published>
       <updated>2021-11-14T15:00:00+09:00</updated>
       <id>https://heejung-gjt.github.io/project4</id>
@@ -525,8 +525,8 @@ rebase 도중에 충돌을 해결 할 수 있다는 것 ! 하하하&lt;/p&gt;
     </entry>
   
     <entry>
-      <title type="html">백엔드 프리온보딩 2주차 첫번째 과제</title>
-      <link href="https://heejung-gjt.github.io/project3" rel="alternate" type="text/html" title="백엔드 프리온보딩 2주차 첫번째 과제" />
+      <title type="html">백엔드 프리온보딩 2주차 첫번째 프로젝트 회고</title>
+      <link href="https://heejung-gjt.github.io/project3" rel="alternate" type="text/html" title="백엔드 프리온보딩 2주차 첫번째 프로젝트 회고" />
       <published>2021-11-10T14:00:00+09:00</published>
       <updated>2021-11-10T14:00:00+09:00</updated>
       <id>https://heejung-gjt.github.io/project3</id>
@@ -634,17 +634,37 @@ rebase 도중에 충돌을 해결 할 수 있다는 것 ! 하하하&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;flask의-사용&quot;&gt;flask의 사용&lt;/h4&gt;
+&lt;p&gt;원티드 기업에서 권장하는 프레임워크가 flask였고 flask의 경험이 대부분 없었지만 이번 프로젝트에는 flask를 사용해보기로 했다. 
+생각보다 장고와 다른점이 꽤 있었다&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;장고처럼 필요한 파일(models.py, urls.py…)을 자동으로 생성해주지 않는다&lt;/li&gt;
+  &lt;li&gt;모델 설계시 문법이 꽤 다르다&lt;/li&gt;
+  &lt;li&gt;ORM문법 또한 장고와 다른 부분이 있다&lt;/li&gt;
+  &lt;li&gt;url 파일이 따로 없어 view에서 url을 작성한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;flask의 restful을 사용해서 기능 개발을 하기로 결정했고 필요한 파일들은 직접 만들기로 했다. 이때 MVC의 패턴에 따라 controller라는 폴더를 생성해 이곳에서 view를 작성했다.&lt;/p&gt;
+
+&lt;p&gt;모델링 설계할땐 모든 팀원이 진짜 머리를 맞대고 함께 방법을 찾아냈다. 같이 하면서 정말 좋았던 점은 혼자서는 이렇게 짧은 시간안에 못했을 것을 
+짧은 시간안에 구현해낼 수 있다는 것이다.&lt;/p&gt;
+
+&lt;p&gt;데이터베이스에 대한 접근은 SQLAlchemy를 사용해 ORM으로 사용했다. (짧은 시간안에 DB를 다루기 위해서는 ORM이 진짜 좋은 것 같다..^^)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;리펙토링-후-코드&quot;&gt;리펙토링 후 코드&lt;/h3&gt;
+
 &lt;p&gt;이후 팀원의 피드백을 받아 코드를 전체적으로 &lt;strong&gt;리펙토링&lt;/strong&gt; 하는 시간을 가졌다. 함께해서 좋은 점은 내 코드에 대한 피드백을 주고 받을 수 있다는 것이다.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;코드의 가독성에 더 많은 신경을 쓰게 된다&lt;/li&gt;
   &lt;li&gt;코드를 왜 그렇게 짰는지에 대한 이유를 생각하게 된다&lt;/li&gt;
-  &lt;li&gt;더 개선된 로직을 짤 수 있게 된다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;리펙토링-후-코드&quot;&gt;리펙토링 후 코드&lt;/h4&gt;
-
-&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;더 개선된 로직을 짤 수 있게 된다&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;회사정보를 가져올때 인덱스를 이용해야 하기 때문에 0,1로 나타내기 보다는 상수로 정해서 어떤 종류의 인덱스로 가져오는지 알 수 있게 설정한다&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -673,23 +693,6 @@ rebase 도중에 충돌을 해결 할 수 있다는 것 ! 하하하&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;flask의-사용&quot;&gt;flask의 사용&lt;/h4&gt;
-&lt;p&gt;원티드 기업에서 권장하는 프레임워크가 flask였고 flask의 경험이 대부분 없었지만 이번 프로젝트에는 flask를 사용해보기로 했다. 
-생각보다 장고와 다른점이 꽤 있었다&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;장고처럼 필요한 파일(models.py, urls.py…)을 자동으로 생성해주지 않는다&lt;/li&gt;
-  &lt;li&gt;모델 설계시 문법이 꽤 다르다&lt;/li&gt;
-  &lt;li&gt;ORM문법 또한 장고와 다른 부분이 있다&lt;/li&gt;
-  &lt;li&gt;url 파일이 따로 없어 view에서 url을 작성한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;flask의 restful을 사용해서 기능 개발을 하기로 결정했고 필요한 파일들은 직접 만들기로 했다. 이때 MVC의 패턴에 따라 controller라는 폴더를 생성해 이곳에서 view를 작성했다.&lt;/p&gt;
-
-&lt;p&gt;모델링 설계할땐 모든 팀원이 진짜 머리를 맞대고 함께 방법을 찾아냈다. 같이 하면서 정말 좋았던 점은 혼자서는 이렇게 짧은 시간안에 못했을 것을 
-짧은 시간안에 구현해낼 수 있다는 것이다.&lt;/p&gt;
-
-&lt;p&gt;데이터베이스에 대한 접근은 SQLAlchemy를 사용해 ORM으로 사용했다. (짧은 시간안에 DB를 다루기 위해서는 ORM이 진짜 좋은 것 같다..^^)&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -752,8 +755,8 @@ rebase 도중에 충돌을 해결 할 수 있다는 것 ! 하하하&lt;/p&gt;
     </entry>
   
     <entry>
-      <title type="html">백엔드 프리온보딩 1주차 두번째 과제</title>
-      <link href="https://heejung-gjt.github.io/project2" rel="alternate" type="text/html" title="백엔드 프리온보딩 1주차 두번째 과제" />
+      <title type="html">백엔드 프리온보딩 1주차 두번째 프로젝트 회고</title>
+      <link href="https://heejung-gjt.github.io/project2" rel="alternate" type="text/html" title="백엔드 프리온보딩 1주차 두번째 프로젝트 회고" />
       <published>2021-11-07T12:00:00+09:00</published>
       <updated>2021-11-07T12:00:00+09:00</updated>
       <id>https://heejung-gjt.github.io/project2</id>
@@ -878,7 +881,7 @@ badge는 해당 제품이 신상품인지 best 상품인지 이런 데이터가 
         
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
 
 &lt;h4 id=&quot;unit-test&quot;&gt;unit test&lt;/h4&gt;
 
@@ -898,7 +901,124 @@ badge는 해당 제품이 신상품인지 best 상품인지 이런 데이터가 
 
 &lt;hr /&gt;
 
+&lt;h3 id=&quot;리펙토링-후-코드&quot;&gt;리펙토링 후 코드&lt;/h3&gt;
+
+&lt;p&gt;코드 리뷰 후 &lt;strong&gt;리펙토링&lt;/strong&gt; 하는 시간을 가졌다&lt;/p&gt;
+
+&lt;p&gt;제품을 수정하는 과정에서 아래와 같이 각 제품이 가지고 있는 여러 아이템이 존재하고 있었다&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;menus: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      id: 245,
+      category: &lt;span class=&quot;s2&quot;&gt;&quot;SALAD&quot;&lt;/span&gt;,
+      name: &lt;span class=&quot;s2&quot;&gt;&quot;깔라마리 달래 샐러드&quot;&lt;/span&gt;,
+      description: &lt;span class=&quot;s2&quot;&gt;&quot;해산물 샐러드&quot;&lt;/span&gt;,
+      isSold: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;,
+      badge: &lt;span class=&quot;s2&quot;&gt;&quot;NEW&quot;&lt;/span&gt;,
+          items: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+              id: 1,
+              menuId: 245,
+              name: &lt;span class=&quot;s2&quot;&gt;&quot;미디움&quot;&lt;/span&gt;,
+              size: &lt;span class=&quot;s2&quot;&gt;&quot;M&quot;&lt;/span&gt;,
+              price: 8000,
+              isSold: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;,
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;,
+            &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+              id: 2,
+              menuId: 245,
+              name: &lt;span class=&quot;s2&quot;&gt;&quot;라지&quot;&lt;/span&gt;,
+              size: &lt;span class=&quot;s2&quot;&gt;&quot;L&quot;&lt;/span&gt;,
+              price: 10000,
+              isSold: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;,
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;,
+          &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;,
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;초반에는 MenuDetailView라는 class에서 put메소드에서 menu의 데이터와 items를 한번에 수정하는 로직을 작성했다&lt;/li&gt;
+  &lt;li&gt;기능구현이 끝난 후 코드를 바라보니 하나의 view에 너무 많은 if-else문이 사용되고 있었고 menu와 item에 대한 view를 따로 구현을 하는게 가독성면과 효율성면에서 더 좋을 것 같다는 생각이 들었고 팀원들과 상의 후 로직을 수정했다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 메뉴 수정 view&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MenuDetailView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;APIView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	&lt;span class=&quot;nd&quot;&gt;@authorizer&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;menu_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;role_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Role&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ADMIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;UNAUTHORIZED&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;401&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;menu_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;POSTING_{menu_id}_NOT_FOUND&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            
+            &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;No input&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+            &lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;menu_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;description&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+            &lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;menu name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;menu desc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;KeyError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;KEY_ERROR&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 아이템 수정 view&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MenuItemsView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;APIView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@authorizer&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;role_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Role&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ADMIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;UNAUTHORIZED&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;401&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+            &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            
+            &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;price&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;NO_INPUT&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;price&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;price&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;
+
+            &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item price&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;item size&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;KeyError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;KEY_ERROR&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ValueError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;VALUE_ERROR&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DoesNotExist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ITEMS_NOT_FOUND&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DoesNotExist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JsonResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;SIZE_NOT_FOUND&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;404&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;로직을 중간에 수정하려고 하다보니 생각보다 많은 시간이 걸렸지만 코드의 효율성면을 따졌을땐 코드 수정은 잘 한 선택같았다 ! ㅎㅎㅎ 물론 시간이 배로 걸렸지만 내 의견을 존중해주고 더 나은 쪽을 흔쾌히 선택해주었던 팀원들에게 고마웠다 ! 
+코드를 수정하며 들었던 생각은 코드를 짤때는 잘 모른다는 것이다. 다 짜고 난 뒤에야 고쳐야 할 부분들, 비효율적인 코드 로직들이 보인다&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h3 id=&quot;진행한-소감&quot;&gt;진행한 소감&lt;/h3&gt;
 
@@ -949,8 +1069,8 @@ badge는 해당 제품이 신상품인지 best 상품인지 이런 데이터가 
     </entry>
   
     <entry>
-      <title type="html">백엔드 프리온보딩 1주차 첫번째 과제</title>
-      <link href="https://heejung-gjt.github.io/project1" rel="alternate" type="text/html" title="백엔드 프리온보딩 1주차 첫번째 과제" />
+      <title type="html">백엔드 프리온보딩 1주차 첫번째 프로젝트 회고</title>
+      <link href="https://heejung-gjt.github.io/project1" rel="alternate" type="text/html" title="백엔드 프리온보딩 1주차 첫번째 프로젝트 회고" />
       <published>2021-11-03T12:00:00+09:00</published>
       <updated>2021-11-03T12:00:00+09:00</updated>
       <id>https://heejung-gjt.github.io/project1</id>

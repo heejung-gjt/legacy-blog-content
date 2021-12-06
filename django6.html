@@ -51,18 +51,22 @@
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="studying developer" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="(Django) 중고 쇼핑몰 프로젝트 회고 및 리팩토링 후기(작성중..)" />
-    <meta property="og:description" content="6월에 시작한 프로젝트로 개인으로 진행한 첫번째 프로젝트였다. 꾸준히 기능적인 부분을 업데이트 시켜왔었지만 정작 짜왔던 코드를 스스로 리뷰해보는 시간을 가져보지 못했다. 이런 생각이 든 후 과거에 짜왔던 로직을 다시한번 보게 되었고 깜짝 놀라게 되었다. 😂😂 아니 로직이 이게 뭐지..? 왜 이렇게 가독성이 안좋지..? 이건 왜이렇게 짰지..? 진짜 내가 짠 로직이지만 의문투성이에" />
+    <meta property="og:title" content="(Django) QueryString이용해 필터링 구현하기(작성중)" />
+    <meta property="og:description" content="
+
+" />
     <meta property="og:url" content="https://heejung-gjt.github.io/django6" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
     <meta property="article:author" content="https://www.facebook.com/" />
-    <meta property="article:published_time" content="2021-09-15T17:40:00+09:00" />
-    <meta property="article:modified_time" content="2021-09-15T17:40:00+09:00" />
+    <meta property="article:published_time" content="2021-09-23T17:40:00+09:00" />
+    <meta property="article:modified_time" content="2021-09-23T17:40:00+09:00" />
     <meta property="article:tag" content="Django" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="(Django) 중고 쇼핑몰 프로젝트 회고 및 리팩토링 후기(작성중..)" />
-    <meta name="twitter:description" content="6월에 시작한 프로젝트로 개인으로 진행한 첫번째 프로젝트였다. 꾸준히 기능적인 부분을 업데이트 시켜왔었지만 정작 짜왔던 코드를 스스로 리뷰해보는 시간을 가져보지 못했다. 이런 생각이 든 후 과거에 짜왔던 로직을 다시한번 보게 되었고 깜짝 놀라게 되었다. 😂😂 아니 로직이 이게 뭐지..? 왜 이렇게 가독성이 안좋지..? 이건 왜이렇게 짰지..? 진짜 내가 짠 로직이지만 의문투성이에" />
+    <meta name="twitter:title" content="(Django) QueryString이용해 필터링 구현하기(작성중)" />
+    <meta name="twitter:description" content="
+
+" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/django.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -94,7 +98,9 @@
         "@type": "WebPage",
         "@id": "https://heejung-gjt.github.io/django6"
     },
-    "description": "6월에 시작한 프로젝트로 개인으로 진행한 첫번째 프로젝트였다. 꾸준히 기능적인 부분을 업데이트 시켜왔었지만 정작 짜왔던 코드를 스스로 리뷰해보는 시간을 가져보지 못했다. 이런 생각이 든 후 과거에 짜왔던 로직을 다시한번 보게 되었고 깜짝 놀라게 되었다. 😂😂 아니 로직이 이게 뭐지..? 왜 이렇게 가독성이 안좋지..? 이건 왜이렇게 짰지..? 진짜 내가 짠 로직이지만 의문투성이에"
+    "description": "
+
+"
 }
     </script>
 
@@ -107,7 +113,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="(Django) 중고 쇼핑몰 프로젝트 회고 및 리팩토링 후기(작성중..)" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="(Django) QueryString이용해 필터링 구현하기(작성중)" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -191,26 +197,22 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-django tag-refactoring post tag django ">
+        <article class="post-full  tag-django post tag django ">
 
             <header class="post-full-header">
 
               <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="2021-09-15">2021-09-15</time>
+                    <time class="post-full-meta-date" datetime="2021-09-23">2021-09-23</time>
                     
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/django/'>DJANGO</a>,
-                            
-                        
-                            
-                               <a href='/tag/refactoring/'>REFACTORING</a>
+                               <a href='/tag/django/'>DJANGO</a>
                             
                         
                     
                 </section>
-                <h1 class="post-full-title">(Django) 중고 쇼핑몰 프로젝트 회고 및 리팩토링 후기(작성중..)</h1>
+                <h1 class="post-full-title">(Django) QueryString이용해 필터링 구현하기(작성중)</h1>
             </header>
 
 <!--  
@@ -227,54 +229,10 @@ into the {body} of the default.hbs template -->
                     
 <p><br /></p>
 
-<p>6월에 시작한 프로젝트로 개인으로 진행한 첫번째 프로젝트였다. 꾸준히 기능적인 부분을 업데이트 시켜왔었지만 정작 짜왔던 코드를 스스로 리뷰해보는
- 시간을 가져보지 못했다. 이런 생각이 든 후 과거에 짜왔던 로직을 다시한번 보게 되었고 깜짝 놀라게 되었다. 😂😂</p>
-
-<p>아니 로직이 이게 뭐지..? 왜 이렇게 가독성이 안좋지..? 이건 왜이렇게 짰지..? 진짜 내가 짠 로직이지만 의문투성이에 낯설기까지 했다..ㅋㅋㅋ 개발자의 중요한 역량 중 하나가 주어진 기간안에 목표했던 기능을 구현 해내는 것이라고 생각을 했다. 나에게 있어 가독성이나 코드의 효율성은 이후의 문제라고 생각했다.</p>
-
-<p><br /></p>
-
-<hr />
-
-<hr />
-
-<ul>
-  <li><strong>filter 기능 -&gt; get요청</strong></li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ProductView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
-  <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="n">articles</span> <span class="o">=</span> <span class="n">ProductFilterService</span><span class="o">.</span><span class="n">find_by_not_deleted_article</span><span class="p">()</span>
-    <span class="n">comment_cnt</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">like_cnt</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">main_img</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">writer_profile</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
-      <span class="n">comment_cnt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">comment</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
-      <span class="n">like_cnt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">like</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
-      <span class="n">writer_profile</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">article</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">image</span><span class="p">,</span> <span class="n">article</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">nickname</span><span class="p">])</span>
-      <span class="n">photo</span> <span class="o">=</span> <span class="n">Photo</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">article__pk</span><span class="o">=</span><span class="n">article</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
-      <span class="n">main_img</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">photo</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="s">'name'</span><span class="p">])</span>
-    <span class="n">articles</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">articles</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s">'image'</span><span class="p">:</span><span class="n">main_img</span><span class="p">,</span> <span class="s">'articles'</span><span class="p">:</span><span class="n">articles</span><span class="p">,</span> <span class="s">'comment_cnt'</span><span class="p">:</span><span class="n">comment_cnt</span><span class="p">,</span><span class="s">'like_cnt'</span><span class="p">:</span><span class="n">like_cnt</span><span class="p">,</span><span class="s">'writer_image'</span><span class="p">:</span><span class="n">writer_profile</span><span class="p">}</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">context</span><span class="p">[</span><span class="s">'category_list'</span><span class="p">]</span> <span class="o">=</span> <span class="n">ProductFilterService</span><span class="o">.</span><span class="n">find_by_all_category</span><span class="p">()</span>
-    <span class="n">article_list</span> <span class="o">=</span> <span class="n">ProductFilterService</span><span class="o">.</span><span class="n">find_by_not_deleted_article</span><span class="p">()</span>
-    <span class="c"># context['article_list'] = article_list</span>
-    <span class="n">page</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'page'</span><span class="p">,</span> <span class="s">'1'</span><span class="p">)</span>
-    <span class="n">articles</span><span class="p">,</span> <span class="n">page_range</span> <span class="o">=</span> <span class="n">paginator</span><span class="p">(</span><span class="n">article_list</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-    <span class="n">context</span><span class="p">[</span><span class="s">'article_list'</span><span class="p">]</span> <span class="o">=</span> <span class="n">articles</span>
-    <span class="n">context</span><span class="p">[</span><span class="s">'page_range'</span><span class="p">]</span> <span class="o">=</span> <span class="n">page_range</span>
-    <span class="n">context</span><span class="p">[</span><span class="s">'is_page'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'article.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
-</code></pre></div></div>
-
                 </div>
 <!--                -->
 <!--                -->
 <!--                <span class="tag">django</span>-->
-<!--                -->
-<!--                <span class="tag">refactoring</span>-->
 <!--                -->
 <!--                -->
             </section>
