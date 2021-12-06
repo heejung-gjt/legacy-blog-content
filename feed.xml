@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-12-06T16:44:05+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">studying developer</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">백엔드 프리온보딩 4주차 첫번째 프로젝트 회고</title><link href="https://heejung-gjt.github.io/project6" rel="alternate" type="text/html" title="백엔드 프리온보딩 4주차 첫번째 프로젝트 회고" /><published>2021-11-27T15:00:00+09:00</published><updated>2021-11-27T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/project6</id><content type="html" xml:base="https://heejung-gjt.github.io/project6">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-12-06T23:39:35+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">studying developer</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">백엔드 프리온보딩 4주차 첫번째 프로젝트 회고</title><link href="https://heejung-gjt.github.io/project6" rel="alternate" type="text/html" title="백엔드 프리온보딩 4주차 첫번째 프로젝트 회고" /><published>2021-11-27T15:00:00+09:00</published><updated>2021-11-27T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/project6</id><content type="html" xml:base="https://heejung-gjt.github.io/project6">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;원티드-4주차-카닥-기업과제&quot;&gt;원티드 4주차 카닥 기업과제&lt;/h2&gt;
 
@@ -45,7 +45,160 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;진행한-소감&quot;&gt;진행한 소감&lt;/h3&gt;</content><author><name>jung</name></author><category term="project" /><category term="Cardoc" /><category term="wecode" /><category term="wanted" /><summary type="html"></summary></entry><entry><title type="html">일기장 프로젝트 회고 및 리팩토링 후기(작성중..)</title><link href="https://heejung-gjt.github.io/django-project3" rel="alternate" type="text/html" title="일기장 프로젝트 회고 및 리팩토링 후기(작성중..)" /><published>2021-11-27T11:40:00+09:00</published><updated>2021-11-27T11:40:00+09:00</updated><id>https://heejung-gjt.github.io/django-project3</id><content type="html" xml:base="https://heejung-gjt.github.io/django-project3">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="project" /><category term="refactoring" /><summary type="html"></summary></entry><entry><title type="html">백엔드 프리온보딩 3주차 두번째 프로젝트 회고</title><link href="https://heejung-gjt.github.io/project5" rel="alternate" type="text/html" title="백엔드 프리온보딩 3주차 두번째 프로젝트 회고" /><published>2021-11-22T15:00:00+09:00</published><updated>2021-11-22T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/project5</id><content type="html" xml:base="https://heejung-gjt.github.io/project5">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;진행한-소감&quot;&gt;진행한 소감&lt;/h3&gt;</content><author><name>jung</name></author><category term="project" /><category term="Cardoc" /><category term="wecode" /><category term="wanted" /><summary type="html"></summary></entry><entry><title type="html">일기장 프로젝트 회고 및 리팩토링 후기(작성중..)</title><link href="https://heejung-gjt.github.io/django-project3" rel="alternate" type="text/html" title="일기장 프로젝트 회고 및 리팩토링 후기(작성중..)" /><published>2021-11-27T11:40:00+09:00</published><updated>2021-11-27T11:40:00+09:00</updated><id>https://heejung-gjt.github.io/django-project3</id><content type="html" xml:base="https://heejung-gjt.github.io/django-project3">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 프로젝트는 4월에 바닐라 자바스크립트로 만들어진 프로젝트였다.(&lt;a href=&quot;https://github.com/heejung-gjt/Toy-Project&quot;&gt;초반 프로젝트 Repo&lt;/a&gt;) 기존에 배웠던 자바스크립트 내용을 응용해서 유저가 업로드 할 수 있는 이미지와 
+글을 올리고 수정, 삭제 할 수 있는 프로젝트를 개발하는 것이 목표였다. 동료 한 명과 함께 약 2주간 프로젝트를 진행했으며 구현된 기능은 아래와 같다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;👉 사진 업로드(미리보기, 재업로드 가능)&lt;/p&gt;
+
+  &lt;p&gt;👉 search기능(등록한 날짜나 키워드-제목 기준으로 필터가능)&lt;/p&gt;
+
+  &lt;p&gt;👉 했던 일 제목과 내용 작성, 수정&lt;/p&gt;
+
+  &lt;p&gt;👉 등록한 내용 미리보기(업로드한 이미지와 제목 표시, 삭제가능)&lt;/p&gt;
+
+  &lt;p&gt;👉 세부 내용 보기(내용 수정 가능)&lt;/p&gt;
+
+  &lt;p&gt;👉 등록 날짜 기록,수정 시 수정 날짜 기록&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;다른 프레임워크 없이 순수하게 자바스크립트로만 구현하려니 쉽지 않았다. 프로젝트를 끝낸 후 아쉬웠던 점은
+ 업로드 된 이미지와 글이 데이터베이스에 저장되는게 아닌 localstorage에 저장되었던 점, 로그인/회원가입 기능이 없는 점이 아쉬웠다.&lt;/p&gt;
+
+&lt;p&gt;이후 장고라는 프레임워크를 공부하게 되었고 꽤 다양한 토이 프로젝트를 진행했었다. 그러면서 자연스럽게 API 설계에 대한 관심이 커졌다. 사실 진행해왔던 프로젝트들이 
+모두 장고 풀스택으로 구현된 프로젝트였기 때문에 API서버 구현을 직접 해보고 싶었다.&lt;/p&gt;
+
+&lt;p&gt;그 과정에서 과거에 진행했던 이 프로젝트가 눈에 띄었다. Html, css, js로 만들어진 프로젝트였기 때문에 프론트엔드 단으로 쓰기에 적절해보였다.(또 다시 프론트를 만들 시간이 없었다.. 근데 프론트가 있기를 바랬다..^^) 
+사실 꼭 프론트가 있어야 API서버를 구축할 수 있는건 아니였지만 최대한 프론트와 어떤식으로 연결되고 데이터를 주고받는지 가깝게 경험해보고 싶었다. 그래서 해당 프로젝트를 develop하기로 결정했다&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;프론트엔드와-백엔드의-분리&quot;&gt;프론트엔드와 백엔드의 분리&lt;/h3&gt;
+&lt;p&gt;나는 프론트와 백엔드가 완벽하게 분리되길 바랬다. 그래서 가장 먼저 했던 일은 프론트와 백엔드를 각각의 프로젝트로 분리시켰다.&lt;br /&gt;
+완벽한 분리가 되기 위해서는 django에서 url과 view를 알맞게 세팅해주어야 한다. C.R.U.D에 대한 view를 각각 만들어주었다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;urlpatterns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'create/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArticleCreateView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'create'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'delete/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArticleDeleteView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'delete'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'detail/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArticleDetailView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'detail'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'update/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArticleUpdateView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'detail'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;👉 &lt;a href=&quot;https://github.com/heejung-gjt/diary-frontend&quot;&gt;프론트엔드 Repo&lt;/a&gt;  &lt;br /&gt;
+👉 &lt;a href=&quot;https://github.com/heejung-gjt/diary-backend&quot;&gt;백엔드 Repo&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이 과정에서 코드가 완전히 분리될때 어떻게 통신하는지 알 수 없었다. 그래서 구글링을 통해 프론트와 백엔드가 통신하는 방법에 대해 찾아보았다. 보통 서버는 클라이언트에서 요청이 들어오면
+가장 먼저 URLconf로 들어가 요청된 url이 존재하는지를 확인한 후 url에 맞는 view에 데이터를 요청한다. 즉 프론트에서 먼저 서버의 url에 대한 요청이 있어야 했다. 요청할 수 있는 방법은 2가지 정도 존재했다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;postman : GUI를 통해 데이터 요청 보낼 수 있음&lt;/li&gt;
+  &lt;li&gt;httpie  : CLI를 통해 데이터 요청 보낼 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;위의 2가지를 이용할 수 있었다. 우선 나는 데이터가 요청되는지에 대한 확인이 빠르게 필요했기 때문에 httpie를 이용했다. 프론트엔드 프로젝트의 cli에서 (꼭 프론트엔드 터미널 일 필요는 없다)
+요청을 보내보았다.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; GET 127.0.0.1:8000/article
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이런식으로 메소드와 url을 올바르게 입력하면 잘 보내지는게 확인된다&lt;/p&gt;
+
+&lt;p&gt;이런식으로 프론트에서 서버 url을 호출해야 하는데 나는 프론트엔드 프레임워크를 잘 모르는 관계로 Ajax를 이용해 백엔드 서버와 통신하기로 결정했다 &lt;br /&gt;
+아래의 코드와 같이 데이터 요청이 필요할 경우 ajax로 통신했다. fetch()로 호출할 서버의 url을 입력했고 이때 필요한 데이터는 param이라는 변수에 json 타입으로 
+담아서 body에 넣어 함께 보내주었다.&lt;/p&gt;
+
+&lt;p&gt;이후 반환된 값은 then(function (data) 에서 data에 담겨져서 반환되기 때문에 해당 data에서 적절히 데이터를 꺼내 로직을 구현했다&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Login&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.username'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;param&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'username'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://127.0.0.1:8000/user/login/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'POST'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;localStorage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'access_token'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'token'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getTodos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://127.0.0.1:8000&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'error'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이때 postman이나 httpie에서는 발생하지 않는 문제점이 발생하는데 바로 &lt;a href=&quot;https://heejung-gjt.github.io/cors1&quot;&gt;cors&lt;/a&gt; 문제였다 😂 
+다행히 장고에서는 cors-headers라는 패키지를 install하면 간단히 해결 할 수 있는 문제였다&lt;/p&gt;
+
+&lt;p&gt;이렇게해서 프론트와 백엔드가 완벽하게 분리 될 수 있었고 프론트와 백엔드 작업을 독립적으로 진행 할 수 있게 되었다 :-)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;rest-api-설계&quot;&gt;REST API 설계&lt;/h3&gt;
+&lt;p&gt;위의 URL 코드를 봐서 알겠지만 초반에 나는 C.R.U.D에 대한 url을 각각 만들었고 이에 해당되는 class view또한 각각 만들어주었다.&lt;/p&gt;
+
+&lt;p&gt;아래와 같이 말이다. 이럴 경우 코드의 낭비가 심해질 수 있다. 한개의 API가 프론트엔드에서 딱 하나의 페이지에서 이용되기 때문에 코드가 많아질수록
+POST와 GET 메소드만의 사용은 매우 비효율적이다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ArticleCreateView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_build_article_infor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ArticleDetailView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;장고에서는 put과 delete와 같은 메소드를 사용할 수 있다&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;unit-test-코드-작성&quot;&gt;Unit Test 코드 작성&lt;/h3&gt;
+
+&lt;p&gt;사실 unit test의 중요성, 필요성에 대해서 제대로 생각해보지 않았었다. 백엔드 프리온보딩 프로그램에 참여하게 되면서 unit test의 중요성과 필요성에 대해서 명확히 느끼게 되었고 
+실제로 작성하는게 그리 어렵지 않았다. 시간이 조금 걸릴뿐 .. ^^&lt;/p&gt;
+
+&lt;p&gt;unit test를 초반에 작성하고 나면 좋은점은 로직을 수정한 후 테스트를 돌릴때 불필요한 더미 데이터가 데이터베이스에 저장되지 않는게 좋았다. 또
+수정된 로직에 문제가 있으면 unit test에서 한번에 잡아주기 때문에 내가 일일히 서버 url에 요청을 보낼 필요가 없어진다. 그만큼 시간을 굉장히 단축시켜준다&lt;/p&gt;
+
+&lt;p&gt;하지만 unit test의 작성이 잘못되면,,  큰 낭패다,, 실제로 유닛테스트에서 성공해서 서버에 배포했던 프로젝트에서 404에러가 떴던 경험이 있다. 그만큼 꼼꼼하게 실패케이스를 
+작성해야 한다 !&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;project-introduction&quot;&gt;Project Introduction&lt;/h3&gt;
+
+&lt;p&gt;이 프로젝트는 유저가 자신의 사진과 글을 올려 기록 할 수 있게 한 프로젝트로 바닐라 자바스크립트로 개발된 프로젝트를 프론트와 백엔드로 분리해 REST API 설계로 리팩토링 한 프로젝트입니다. 
+유저의 로그인/회원가입 API, 글과 이미지 C.R.U.D를 구현했습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;초기 프로젝트 진행 인원 수 : 2명  &lt;br /&gt;
+개발 기간 : v1.0 2021.04.05 ~ 2021.04.16&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;후기 리팩토링 프로젝트 진행 : 개인  &lt;br /&gt;
+개발 기간 : v2.0 2021.10.19 - 2021.11.01    &lt;br /&gt;
+추가된 기능 : 회원가입/로그인 API, REST API서버 구현, Unit Test 구현&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;GitHub Respository  &lt;br /&gt;
+   Github BackEnd Repo. &lt;a href=&quot;https://github.com/heejung-gjt/diary-backend&quot;&gt;refactoring repo&lt;/a&gt;  &lt;br /&gt;
+   Github frontEnd Repo. &lt;a href=&quot;https://github.com/heejung-gjt/diary-frontend&quot;&gt;repo&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>jung</name></author><category term="project" /><category term="refactoring" /><summary type="html"></summary></entry><entry><title type="html">백엔드 프리온보딩 3주차 두번째 프로젝트 회고</title><link href="https://heejung-gjt.github.io/project5" rel="alternate" type="text/html" title="백엔드 프리온보딩 3주차 두번째 프로젝트 회고" /><published>2021-11-22T15:00:00+09:00</published><updated>2021-11-22T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/project5</id><content type="html" xml:base="https://heejung-gjt.github.io/project5">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;원티드-3주차-디어코퍼레이션-기업과제&quot;&gt;원티드 3주차 디어코퍼레이션 기업과제&lt;/h2&gt;
 

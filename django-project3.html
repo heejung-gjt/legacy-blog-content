@@ -52,10 +52,7 @@
     <meta property="og:site_name" content="studying developer" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="일기장 프로젝트 회고 및 리팩토링 후기(작성중..)" />
-    <meta property="og:description" content="
-
-
-" />
+    <meta property="og:description" content="이 프로젝트는 4월에 바닐라 자바스크립트로 만들어진 프로젝트였다.(초반 프로젝트 Repo) 기존에 배웠던 자바스크립트 내용을 응용해서 유저가 업로드 할 수 있는 이미지와 글을 올리고 수정, 삭제 할 수 있는 프로젝트를 개발하는 것이 목표였다. 동료 한 명과 함께 약 2주간 프로젝트를 진행했으며 구현된 기능은 아래와 같다. 👉 사진 업로드(미리보기, 재업로드 가능) 👉 search기능(등록한" />
     <meta property="og:url" content="https://heejung-gjt.github.io/django-project3" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/today.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -65,10 +62,7 @@
     <meta property="article:tag" content="Project" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="일기장 프로젝트 회고 및 리팩토링 후기(작성중..)" />
-    <meta name="twitter:description" content="
-
-
-" />
+    <meta name="twitter:description" content="이 프로젝트는 4월에 바닐라 자바스크립트로 만들어진 프로젝트였다.(초반 프로젝트 Repo) 기존에 배웠던 자바스크립트 내용을 응용해서 유저가 업로드 할 수 있는 이미지와 글을 올리고 수정, 삭제 할 수 있는 프로젝트를 개발하는 것이 목표였다. 동료 한 명과 함께 약 2주간 프로젝트를 진행했으며 구현된 기능은 아래와 같다. 👉 사진 업로드(미리보기, 재업로드 가능) 👉 search기능(등록한" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/today.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -100,10 +94,7 @@
         "@type": "WebPage",
         "@id": "https://heejung-gjt.github.io/django-project3"
     },
-    "description": "
-
-
-"
+    "description": "이 프로젝트는 4월에 바닐라 자바스크립트로 만들어진 프로젝트였다.(초반 프로젝트 Repo) 기존에 배웠던 자바스크립트 내용을 응용해서 유저가 업로드 할 수 있는 이미지와 글을 올리고 수정, 삭제 할 수 있는 프로젝트를 개발하는 것이 목표였다. 동료 한 명과 함께 약 2주간 프로젝트를 진행했으며 구현된 기능은 아래와 같다. 👉 사진 업로드(미리보기, 재업로드 가능) 👉 search기능(등록한"
 }
     </script>
 
@@ -236,6 +227,158 @@ into the {body} of the default.hbs template -->
                     
 <p><br /></p>
 
+<p>이 프로젝트는 4월에 바닐라 자바스크립트로 만들어진 프로젝트였다.(<a href="https://github.com/heejung-gjt/Toy-Project">초반 프로젝트 Repo</a>) 기존에 배웠던 자바스크립트 내용을 응용해서 유저가 업로드 할 수 있는 이미지와 
+글을 올리고 수정, 삭제 할 수 있는 프로젝트를 개발하는 것이 목표였다. 동료 한 명과 함께 약 2주간 프로젝트를 진행했으며 구현된 기능은 아래와 같다.</p>
+
+<blockquote>
+  <p>👉 사진 업로드(미리보기, 재업로드 가능)</p>
+
+  <p>👉 search기능(등록한 날짜나 키워드-제목 기준으로 필터가능)</p>
+
+  <p>👉 했던 일 제목과 내용 작성, 수정</p>
+
+  <p>👉 등록한 내용 미리보기(업로드한 이미지와 제목 표시, 삭제가능)</p>
+
+  <p>👉 세부 내용 보기(내용 수정 가능)</p>
+
+  <p>👉 등록 날짜 기록,수정 시 수정 날짜 기록</p>
+</blockquote>
+
+<p>다른 프레임워크 없이 순수하게 자바스크립트로만 구현하려니 쉽지 않았다. 프로젝트를 끝낸 후 아쉬웠던 점은
+ 업로드 된 이미지와 글이 데이터베이스에 저장되는게 아닌 localstorage에 저장되었던 점, 로그인/회원가입 기능이 없는 점이 아쉬웠다.</p>
+
+<p>이후 장고라는 프레임워크를 공부하게 되었고 꽤 다양한 토이 프로젝트를 진행했었다. 그러면서 자연스럽게 API 설계에 대한 관심이 커졌다. 사실 진행해왔던 프로젝트들이 
+모두 장고 풀스택으로 구현된 프로젝트였기 때문에 API서버 구현을 직접 해보고 싶었다.</p>
+
+<p>그 과정에서 과거에 진행했던 이 프로젝트가 눈에 띄었다. Html, css, js로 만들어진 프로젝트였기 때문에 프론트엔드 단으로 쓰기에 적절해보였다.(또 다시 프론트를 만들 시간이 없었다.. 근데 프론트가 있기를 바랬다..^^) 
+사실 꼭 프론트가 있어야 API서버를 구축할 수 있는건 아니였지만 최대한 프론트와 어떤식으로 연결되고 데이터를 주고받는지 가깝게 경험해보고 싶었다. 그래서 해당 프로젝트를 develop하기로 결정했다</p>
+
+<hr />
+
+<h3 id="프론트엔드와-백엔드의-분리">프론트엔드와 백엔드의 분리</h3>
+<p>나는 프론트와 백엔드가 완벽하게 분리되길 바랬다. 그래서 가장 먼저 했던 일은 프론트와 백엔드를 각각의 프로젝트로 분리시켰다.<br />
+완벽한 분리가 되기 위해서는 django에서 url과 view를 알맞게 세팅해주어야 한다. C.R.U.D에 대한 view를 각각 만들어주었다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'create/'</span><span class="p">,</span> <span class="n">ArticleCreateView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s">'create'</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'delete/'</span><span class="p">,</span> <span class="n">ArticleDeleteView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s">'delete'</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'detail/'</span><span class="p">,</span> <span class="n">ArticleDetailView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s">'detail'</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'update/'</span><span class="p">,</span> <span class="n">ArticleUpdateView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s">'detail'</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>👉 <a href="https://github.com/heejung-gjt/diary-frontend">프론트엔드 Repo</a>  <br />
+👉 <a href="https://github.com/heejung-gjt/diary-backend">백엔드 Repo</a></p>
+</blockquote>
+
+<p>이 과정에서 코드가 완전히 분리될때 어떻게 통신하는지 알 수 없었다. 그래서 구글링을 통해 프론트와 백엔드가 통신하는 방법에 대해 찾아보았다. 보통 서버는 클라이언트에서 요청이 들어오면
+가장 먼저 URLconf로 들어가 요청된 url이 존재하는지를 확인한 후 url에 맞는 view에 데이터를 요청한다. 즉 프론트에서 먼저 서버의 url에 대한 요청이 있어야 했다. 요청할 수 있는 방법은 2가지 정도 존재했다</p>
+
+<ul>
+  <li>postman : GUI를 통해 데이터 요청 보낼 수 있음</li>
+  <li>httpie  : CLI를 통해 데이터 요청 보낼 수 있음</li>
+</ul>
+
+<p>위의 2가지를 이용할 수 있었다. 우선 나는 데이터가 요청되는지에 대한 확인이 빠르게 필요했기 때문에 httpie를 이용했다. 프론트엔드 프로젝트의 cli에서 (꼭 프론트엔드 터미널 일 필요는 없다)
+요청을 보내보았다.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http <span class="nt">-v</span> GET 127.0.0.1:8000/article
+</code></pre></div></div>
+<p>이런식으로 메소드와 url을 올바르게 입력하면 잘 보내지는게 확인된다</p>
+
+<p>이런식으로 프론트에서 서버 url을 호출해야 하는데 나는 프론트엔드 프레임워크를 잘 모르는 관계로 Ajax를 이용해 백엔드 서버와 통신하기로 결정했다 <br />
+아래의 코드와 같이 데이터 요청이 필요할 경우 ajax로 통신했다. fetch()로 호출할 서버의 url을 입력했고 이때 필요한 데이터는 param이라는 변수에 json 타입으로 
+담아서 body에 넣어 함께 보내주었다.</p>
+
+<p>이후 반환된 값은 then(function (data) 에서 data에 담겨져서 반환되기 때문에 해당 data에서 적절히 데이터를 꺼내 로직을 구현했다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">const</span> <span class="n">Login</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="err">$</span><span class="n">username</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s">'.username'</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">;</span>
+  <span class="err">$</span><span class="n">password</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s">'.password'</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">;</span>
+  <span class="n">param</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'username'</span><span class="p">:</span> <span class="err">$</span><span class="n">username</span><span class="p">,</span>
+    <span class="s">'password'</span><span class="p">:</span> <span class="err">$</span><span class="n">password</span>
+  <span class="p">}</span>
+    <span class="n">fetch</span><span class="p">(</span><span class="s">"http://127.0.0.1:8000/user/login/"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="n">method</span><span class="p">:</span> <span class="s">'POST'</span><span class="p">,</span>
+      <span class="n">body</span><span class="p">:</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">localStorage</span><span class="o">.</span><span class="n">setItem</span><span class="p">(</span><span class="s">'access_token'</span><span class="p">,</span><span class="n">data</span><span class="p">[</span><span class="s">'token'</span><span class="p">])</span>
+      <span class="o">//</span> <span class="n">getTodos</span><span class="p">();</span>
+      <span class="n">window</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"http://127.0.0.1:8000"</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">data</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">catch</span><span class="p">((</span><span class="n">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s">'error'</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>이때 postman이나 httpie에서는 발생하지 않는 문제점이 발생하는데 바로 <a href="https://heejung-gjt.github.io/cors1">cors</a> 문제였다 😂 
+다행히 장고에서는 cors-headers라는 패키지를 install하면 간단히 해결 할 수 있는 문제였다</p>
+
+<p>이렇게해서 프론트와 백엔드가 완벽하게 분리 될 수 있었고 프론트와 백엔드 작업을 독립적으로 진행 할 수 있게 되었다 :-)</p>
+
+<hr />
+
+<h3 id="rest-api-설계">REST API 설계</h3>
+<p>위의 URL 코드를 봐서 알겠지만 초반에 나는 C.R.U.D에 대한 url을 각각 만들었고 이에 해당되는 class view또한 각각 만들어주었다.</p>
+
+<p>아래와 같이 말이다. 이럴 경우 코드의 낭비가 심해질 수 있다. 한개의 API가 프론트엔드에서 딱 하나의 페이지에서 이용되기 때문에 코드가 많아질수록
+POST와 GET 메소드만의 사용은 매우 비효율적이다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ArticleCreateView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_article_infor</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="o">.</span>
+        <span class="o">.</span>
+
+
+<span class="k">class</span> <span class="nc">ArticleDetailView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="o">.</span>
+        <span class="o">.</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>장고에서는 put과 delete와 같은 메소드를 사용할 수 있다</p>
+
+<hr />
+
+<h3 id="unit-test-코드-작성">Unit Test 코드 작성</h3>
+
+<p>사실 unit test의 중요성, 필요성에 대해서 제대로 생각해보지 않았었다. 백엔드 프리온보딩 프로그램에 참여하게 되면서 unit test의 중요성과 필요성에 대해서 명확히 느끼게 되었고 
+실제로 작성하는게 그리 어렵지 않았다. 시간이 조금 걸릴뿐 .. ^^</p>
+
+<p>unit test를 초반에 작성하고 나면 좋은점은 로직을 수정한 후 테스트를 돌릴때 불필요한 더미 데이터가 데이터베이스에 저장되지 않는게 좋았다. 또
+수정된 로직에 문제가 있으면 unit test에서 한번에 잡아주기 때문에 내가 일일히 서버 url에 요청을 보낼 필요가 없어진다. 그만큼 시간을 굉장히 단축시켜준다</p>
+
+<p>하지만 unit test의 작성이 잘못되면,,  큰 낭패다,, 실제로 유닛테스트에서 성공해서 서버에 배포했던 프로젝트에서 404에러가 떴던 경험이 있다. 그만큼 꼼꼼하게 실패케이스를 
+작성해야 한다 !</p>
+
+<hr />
+
+<h3 id="project-introduction">Project Introduction</h3>
+
+<p>이 프로젝트는 유저가 자신의 사진과 글을 올려 기록 할 수 있게 한 프로젝트로 바닐라 자바스크립트로 개발된 프로젝트를 프론트와 백엔드로 분리해 REST API 설계로 리팩토링 한 프로젝트입니다. 
+유저의 로그인/회원가입 API, 글과 이미지 C.R.U.D를 구현했습니다.</p>
+
+<blockquote>
+  <p>초기 프로젝트 진행 인원 수 : 2명  <br />
+개발 기간 : v1.0 2021.04.05 ~ 2021.04.16</p>
+</blockquote>
+
+<blockquote>
+  <p>후기 리팩토링 프로젝트 진행 : 개인  <br />
+개발 기간 : v2.0 2021.10.19 - 2021.11.01    <br />
+추가된 기능 : 회원가입/로그인 API, REST API서버 구현, Unit Test 구현</p>
+</blockquote>
+
+<blockquote>
+  <p>GitHub Respository  <br />
+   Github BackEnd Repo. <a href="https://github.com/heejung-gjt/diary-backend">refactoring repo</a>  <br />
+   Github frontEnd Repo. <a href="https://github.com/heejung-gjt/diary-frontend">repo</a></p>
+</blockquote>
 
                 </div>
 <!--                -->
