@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!-- Document Settings -->
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+
+    <!--syntax.css 추가-->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="개발 공부하는 블로그" />
+    <link rel="shortcut icon" href="https://heejung-gjt.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://heejung-gjt.github.io/project5" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="studying developer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="백엔드 프리온보딩 3주차 두번째 과제" />
+    <meta property="og:description" content="원티드 3주차 디어코퍼레이션 기업과제 진행기간 21.11.18 ~ 21.11.21 구현해야 하는 기능 유저 Auth 회원가입 API 로그인 API 할인 / 벌금 CRUD 할인 조건 추가 API 벌금 조건 추가 API 할인 조건 변경 API 벌금 조건 변경 API 킥보드 대여 및 반납 킥보드 대여 API 킥보드 반납 요금 정책에 따른 요금" />
+    <meta property="og:url" content="https://heejung-gjt.github.io/project5" />
+    <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/today.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-11-22T15:00:00+09:00" />
+    <meta property="article:modified_time" content="2021-11-22T15:00:00+09:00" />
+    <meta property="article:tag" content="Project" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="백엔드 프리온보딩 3주차 두번째 과제" />
+    <meta name="twitter:description" content="원티드 3주차 디어코퍼레이션 기업과제 진행기간 21.11.18 ~ 21.11.21 구현해야 하는 기능 유저 Auth 회원가입 API 로그인 API 할인 / 벌금 CRUD 할인 조건 추가 API 벌금 조건 추가 API 할인 조건 변경 API 벌금 조건 변경 API 킥보드 대여 및 반납 킥보드 대여 API 킥보드 반납 요금 정책에 따른 요금" />
+    <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
+    <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/today.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="studying developer" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Project" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "studying developer",
+        "logo": "https://heejung-gjt.github.io/"
+    },
+    "url": "https://heejung-gjt.github.io/project5",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://heejung-gjt.github.io/assets/built/images/today.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://heejung-gjt.github.io/project5"
+    },
+    "description": "원티드 3주차 디어코퍼레이션 기업과제 진행기간 21.11.18 ~ 21.11.21 구현해야 하는 기능 유저 Auth 회원가입 API 로그인 API 할인 / 벌금 CRUD 할인 조건 추가 API 벌금 조건 추가 API 할인 조건 변경 API 벌금 조건 변경 API 킥보드 대여 및 반납 킥보드 대여 API 킥보드 반납 요금 정책에 따른 요금"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="백엔드 프리온보딩 3주차 두번째 과제" href="/feed.xml" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LESPMGXKR3');
+</script>
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://heejung-gjt.github.io/">studying developer</a>
+            
+        
+        
+            
+<ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- <li class="nav-about" role="menuitem"><a href="/about/">About</a></li> -->
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/wanted/">원티드</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/project/">프로젝트TIL</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/js/">JavaScript</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/django/">Django</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/celery/">Celery</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/rabbitmq/">RabbitMQ</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/oauth/">OAuth</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/jwt/">JWT</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/cors/">CORS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/linux/">linux</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/algorithm/">algorithm</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/network/">Network</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/os/">OS</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/database/">DataBase</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/aws/">AWS</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/git/">Git</a></li>
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/til/">TIL</a></li>
+    <li class="nav-jekyll" role="menuitem" style="display: none" ><a href="/tag/wecode/">위코드</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/coding/">코테</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/interview/">면접</a></li>
+<!--    <li class="nav-jekyll" role="menuitem" style="display: none" ><a href="/tag/aimmo/">에이모</a></li>-->
+<!--    <li class="nav-archive" role="menuitem">-->
+<!--        <a href="_includes/archive.html">All Posts</a>-->
+<!--    </li>-->
+</ul>
+        
+    </div>
+    <!-- subscribe 안함
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>-->
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-project tag- tag-wecode tag-wanted post tag project ">
+
+            <header class="post-full-header">
+
+              <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2021-11-22">2021-11-22</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/project/'>PROJECT</a>,
+                            
+                        
+                            
+                               <a href='/tag//'>디어코퍼레이션</a>,
+                            
+                        
+                            
+                               <a href='/tag/wecode/'>WECODE</a>,
+                            
+                        
+                            
+                               <a href='/tag/wanted/'>WANTED</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">백엔드 프리온보딩 3주차 두번째 과제</h1>
+            </header>
+
+<!--  
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/today.png)">
+            </figure>
+            
+-->
+
+            <section class="post-full-content">
+
+                <div class="kg-card-markdown">
+
+                    
+<p><br /></p>
+
+<h2 id="원티드-3주차-디어코퍼레이션-기업과제">원티드 3주차 디어코퍼레이션 기업과제</h2>
+
+<hr />
+
+<h3 id="진행기간">진행기간</h3>
+
+<blockquote>
+  <p>21.11.18 ~ 21.11.21</p>
+</blockquote>
+
+<hr />
+
+<h3 id="구현해야-하는-기능">구현해야 하는 기능</h3>
+
+<ul>
+  <li>
+    <p>유저 Auth</p>
+
+    <ul>
+      <li>회원가입 API</li>
+      <li>로그인 API</li>
+      <li>할인 / 벌금 CRUD</li>
+    </ul>
+  </li>
+  <li>할인 조건 추가 API</li>
+  <li>벌금 조건 추가 API</li>
+  <li>할인 조건 변경 API</li>
+  <li>
+    <p>벌금 조건 변경 API</p>
+  </li>
+  <li>킥보드 대여 및 반납
+    <ul>
+      <li>킥보드 대여 API</li>
+      <li>킥보드 반납 요금 정책에 따른 요금 계산 API</li>
+    </ul>
+  </li>
+  <li>위치 정보 CRUD
+    <ul>
+      <li>서비스 지역 생성 API</li>
+      <li>지역에 추가되는 할인 / 벌금 추가 API</li>
+      <li>지역에 추가되는 할인 / 벌금 삭제 API</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="나의-역할">나의 역할</h3>
+
+<ul>
+  <li>할인/벌금 추가 API</li>
+  <li>지역에 추가되는 할인/벌금 추가 API</li>
+  <li>Unit Test 코드 작성</li>
+  <li>README.md 작성</li>
+  <li>EC2 배포</li>
+</ul>
+
+<hr />
+
+<h3 id="프로젝트-회고">프로젝트 회고</h3>
+
+<p>개인적으로 지금까지 진행했던 프로젝트 중에 가장 쉽지 않은 과제였던 것 같다. 서비스 지역마다 할인/벌금/주차구역 등 적용해야 하는 
+조건이 달랐기 때문에 어떻게 이 조건들을 지역에 맞게 적용시켜야 하는지 처음에는 감도 잘 오지 않았다. 과제가 주어지고 이후 팀원들과 가장 오랜시간동안 
+회의를 진행했었다.</p>
+
+<p>다행히 과제 기한이 다른 과제보다는 길었기 때문에 시간적 압박은 덜했다. :-)
+첫번째 회의에서는 <code class="highlighter-rouge">지역의 위도와 경도는 어떻게 얻을것인가</code>, <code class="highlighter-rouge">모델링 설계는 어떻게 진행해야 하는가</code> 이 2가지를 중심으로 
+진행했다. 다행히 모델링 설계는 과제 조건에 기본적으로 나와 있어서 이를 토대로 설계를 진행했다.</p>
+
+<p>사용자가 이용하는 킥보드 모델, 킥보드 모델, 서비스 지역 모델, 피킹존 모델, 반납금지 구역 모델이 기본적으로 나와있었기 때문에 아래를 토대로 
+모델링 설계를 진행했다.</p>
+
+<h4 id="모델링-설계">[모델링 설계]</h4>
+
+<ul>
+  <li>킥보드가 사용 될 때마다 usages 즉 킥보드 사용 내역에 정보가 저장된다 (1:N 관계)</li>
+  <li>킥보드는 여러 서비스 지역에서 사용된다 (1:N관계)</li>
+</ul>
+
+<pre><code class="language-textmate">&gt; vehicle 모델 (사용자가 이용하는 킥보드 모델)
+
+deer_name (킥보드의 이름으로 고유한 값)
+deer_area_id (킥보드가 현재 위치한 지역의 아이디)
+</code></pre>
+
+<p><br /></p>
+
+<ul>
+  <li>한명의 유저는 여러 킥보드 사용내역을 가질 수 있다(1:N관계)</li>
+</ul>
+
+<pre><code class="language-textmate">&gt; usages 모델 (사용자 킥보드 사용 내역 모델)   
+
+use_deer_name (사용자가 이용한 킥보드의 이름)
+use_end_lat, use_end_lng (사용자가 이용을 종료할 때 위도 경도)
+use_start_at, use_end_at (사용자가 이용을 시작하고 종료한 시간)
+</code></pre>
+
+<p><br /></p>
+
+<ul>
+  <li>서비스 지역마다 여러 할인/벌금 조건이 추가/수정된다 (1:N관계)</li>
+  <li>서비스 지역마다 여러 주차지역/반남금지 구역이 존재한다 (1:N관계)</li>
+</ul>
+
+<pre><code class="language-textmate">&gt; service_area모델(서비스 지역 모델)   
+
+area_id (지역 아이디로 고유한 값)
+area_bounday (지역을 표시하는 MySQL spatial data로 POLYGON)
+area_center (지역의 중심점)
+area_coords (지역의 경계를 표시하는 위도, 경도로 이루어진 점의 리스트)
+</code></pre>
+
+<pre><code class="language-textmate">&gt; parking_areas(주차 지역 모델)
+
+parkingzone_id (파킹존 아이디로 고유한 값)
+parkingzone_center_lat, parkingzone_center_lng (파킹존 중심 위도, 경도)
+parkingzone_radius (파킹존의 반지름)
+</code></pre>
+
+<pre><code class="language-textmate">&gt; forbidden_areas(반납 금지 구역 모델)
+
+forbidden_area_id (반납금지구역 아이디로 고유한 값)
+forbidden_area_boundary (반납금지구역을 표시하는 MySQL spatial data로 POLYGON)
+forbidden_area_coords (반납금지구역의 경계를 표시하는 위도, 경도로 이루어진 점의 리스트)
+</code></pre>
+
+<p><br /></p>
+
+<p>팀원들과 회의를 하며 추가한 모델은 아래와 같았다.</p>
+
+<ul>
+  <li>
+    <p><strong>user 모델</strong>       <br />
+유저의 정보가 저장되어야 해당 유저에게 벌금/할인을 부과하고 해당 킥보드를 어떤 유저가 사용하고 있는지에 대한 정보가 필요했기 때문에 유저 모델을 추가했다</p>
+  </li>
+  <li>
+    <p><strong>roles 모델</strong>     <br />
+확장성을 고려해 role이라는 모델을 생성했다. 후에 유저를 나이대별로 나누어 사용 금액을 따로 부과할 수 도 있기 때문에 유저에 role을 부과하기 위해 모델을 추가했다</p>
+  </li>
+  <li>
+    <p><strong>types 모델</strong>      <br />
+할인과 벌금에 대한 조건을 추가하는 모델을 discount_or_penalties라는 모델 하나로 진행하기 위해 할인/벌금에 대한 타입을 부과했다</p>
+  </li>
+  <li>
+    <p><strong>unit 모델</strong>     <br />
+할인과 벌금이 원이라는 금액으로 추가될 수 있지만 거리에 비례하여 %로 추가할 수 있기 때문에 이를 고려해 unit이라는 모델을 추가했다</p>
+  </li>
+  <li>
+    <p><strong>service_area_discount_or_penalties 모델</strong> <br />
+네이밍 짓는게 너무 힘들었다. 최대한 어떤 역할을 하는 모델인지를 추측할 수 있게 길더라도 풀어서 쓰자는 결론이 나왔고 위와 같은 네임이 나오게 되었다. <br />
+여러 서비스 지역마다 여러 할인/벌금 조건이 추가되고 삭제될 수 있기 때문에 M:M의 관계로 구축하게 되었다.</p>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/144787091-df3d2686-14c8-45c2-9674-b15d64687111.PNG" alt="디어erd" /></p>
+
+<p><br /></p>
+
+<h4 id="모델링-설계-중-생겼던-문제해결">[모델링 설계 중 생겼던 문제해결]</h4>
+<p>모델링 설계가 끝난 뒤 프로젝트의 모델링 초기 세팅을 위해서 작성하는 도중에 PolygonField와 같이 geo 관련 필드에서 에러가 발생했다. 
+찾아본 결과 geo 관련 (폴리곤, 포인트 등) 필드 사용할 때 django.contrib.gis.db에서 models 임포트하여 사용해야 했다(기존 방식대로 models.Model 임포트하여 사용하면 안된다)</p>
+
+<p>팀원들의 os환경이 우분투와 맥으로 나뉘었었고 우분투 기준으로 아래와 같이 해결했었다</p>
+
+<ul>
+  <li>우분투 기준 sudo apt-get install gdal-bin, sudo apt-get install libgdal-dev 명령어 사용<a href="https://gis.stackexchange.com/questions/370736/installing-gdal-on-ubuntu-20-04-unmet-dependencies">install 관련 블로그 참고</a></li>
+  <li>INSTALLED_APP에 “django.contrib.gis” 추가 후 데이터베이스 ENGINE을 django.contrib.gis.db.backends.mysql로 변경<a href="https://stackoverflow.com/questions/12538510/getting-databaseoperations-object-has-no-attribute-geo-db-type-error-when-do">stackoverflow 참고</a></li>
+</ul>
+
+<p>이후 gdal 문제는 간단하게 <code class="highlighter-rouge">conda install gdal</code> 설치로 해결할 수 있다는 것을 알게되었다 :-)</p>
+
+<hr />
+
+<h4 id="gdal-사용">[GDAL 사용]</h4>
+<p>이 프로젝트에서 가장 큰 관건은 바로 “지역의 위도와 경도는 어떻게 얻을것인가” 였다. 이 부분은 각자 충분히 찾아보고 
+회의를 진행하기로 하여서 1-2시간의 시간을 가지고 다시 만나 회의를 진행했다. 팀원 중 한명이 지역의 커서를 찍으면 찍은 
+지역의 필요한 데이터인 POLYGON 정보를 받을 수 있게되었다 !</p>
+
+<p><strong>geojson을 이용하여 GEOSGeometry 객체 저장하기</strong></p>
+
+<p>geojson.io 에서 원하는 지역에 도형(polygon) 및 점(point)을 생성하여 geojson 형식의 파일을 생성하고 unit test에서 geojson 파일을 읽어서 각 feature를 생성하였다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/144789568-d34f85ce-412c-4a67-bf71-6476bbe086a3.PNG" alt="gdal" /></p>
+
+<p><strong>두 feature 사이의 거리 계산</strong>  <br />
+haversine 라이브러리를 이용하여 WGS84 좌표계 시스템으로 되어있는 두 좌표간 거리를 계산해 주었고, 지역을 벗어난 킥보드가 해당 지역으로부터 얼마나 떨어져 있는지 계산하기 위해 epsg 5174 좌표로 변환한뒤 킥보드 반납 지점(Point)과 지역(Polygon)의 거리를 계산해 주었다.</p>
+
+<hr />
+
+<h3 id="진행한-소감">진행한 소감</h3>
+
+<p>생각해야 할 게 많은 프로젝트였다.. ^^ 기능 구현하는 시간보다 오히려 초반에 더 많이 헤매고 찾아봤던 기억이 난다. polygon이 무슨 역할을 하는지
+장고에서 제공되는지도 잘 몰랐기에 polygon을 이해하는데 오랜 시간이 걸렸다. 사실 아직도 조금 헷갈리는 개념이긴 한 것 같다. 다행히 팀원 한분이 커서를 찍으면 이에 맞는 위도, 경도등을 
+자동으로 계산해서 출력해주는 사이트를 찾게 되어서 다행이 데이터를 세팅 할 수 있었다.</p>
+
+<p>이번 프로젝트는 migrations 파일을 관리하는 팀원을 한명 두어 최대한 마이그레이트 하는 과정에서 문제가 생기지 않게 했다. 화면공유를 통해 다같이 데이터를 세팅하는 과정에 참여했다. 기능구현도 물론 쉽지 않았지만 
+이번 과제는 초기 모델링 설계 ~ 초기세팅부터 기능 구현후의 데이터 세팅이 더 어려웠던 것 같다. 모델링 설계에 많은 시간을 들여 모든 팀원이 완벽히 이해한 후 진행한게 기능 구현에 가장 큰 도움이 되었다.
+진짜 모델링 너무 중요한 것 같다..!</p>
+
+<p>이번 프로젝트는 PR을 적극적으로 활용했던 것 같다 :-) 팀원의 리뷰를 통해 코드가 더욱 나아질 수 있고 다른 방향으로도 생각을 할 수 있게 해주는 시간이였던 것 같아 
+개인적으로 좋았다(다한증이 생긴건 비밀이다.. ^^)</p>
+
+<p><img src="https://user-images.githubusercontent.com/64240637/144790671-c335cb2a-494b-4e6f-b430-e6d03acefb14.PNG" alt="PR2" /> <br />
+<img src="https://user-images.githubusercontent.com/64240637/144790674-5cd55a1e-37fb-4f17-807d-702fe9152303.PNG" alt="PR1" /></p>
+
+                </div>
+<!--                -->
+<!--                -->
+<!--                <span class="tag">project</span>-->
+<!--                -->
+<!--                <span class="tag">디어코퍼레이션</span>-->
+<!--                -->
+<!--                <span class="tag">wecode</span>-->
+<!--                -->
+<!--                <span class="tag">wanted</span>-->
+<!--                -->
+<!--                -->
+            </section>
+        
+        <div id="post-disqus" class="container">
+            <div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://heejung-gjt-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+        
+
+
+
+    </div>
+</main>
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://heejung-gjt.github.io/">studying developer</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://github.com/heejung-gjt" target="_blank" rel="noopener">heejung's GitHub Pages</a>
+<!--                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener"></a>-->
+                </section>
+                <nav class="site-footer-nav">
+<!--                    <a href="/">Latest Posts</a>-->
+                    
+                    
+                    <a href="https://heejung-gjt.github.io" target="_blank" rel="noopener">github blog</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to studying developer</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+<!--                <!--
+<form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+-->-->
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-LESPMGXKR3', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+    <script id="dsq-count-scr" src="//heejung-gjt-github-io.disqus.com/count.js" async></script>
+</body>
+</html>
