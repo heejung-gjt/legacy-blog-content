@@ -51,7 +51,7 @@
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="studying developer" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="기사 스크래핑 프로젝트 회고 및 리팩토링 후기(작성중..)" />
+    <meta property="og:title" content="기사 스크래핑 프로젝트 회고 및 리팩토링 후기" />
     <meta property="og:description" content="프로젝트가 끝난지 한달 반 정도 되었다. 처음으로 동료와 협업하여 기획부터 설계, 모델링, 배포까지 진행한 프로젝트였다. 기획 당시 나는 스크래핑에 관심이 있었으며 스크래핑을 활용해 장고 프로젝트를 진행해보면 재밌을 것 같다는 생각을 했다. 동료는 OAuth를 이용한 소셜 로그인과 대댓글의 기능을 구현해보고 싶다는 의견이 있었다. 이를 토대로 주제는 기사 스크래핑을 통해 회원이 원하는" />
     <meta property="og:url" content="https://heejung-gjt.github.io/django-project2" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/today.png" />
@@ -61,7 +61,7 @@
     <meta property="article:modified_time" content="2021-10-26T17:40:00+09:00" />
     <meta property="article:tag" content="Project" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="기사 스크래핑 프로젝트 회고 및 리팩토링 후기(작성중..)" />
+    <meta name="twitter:title" content="기사 스크래핑 프로젝트 회고 및 리팩토링 후기" />
     <meta name="twitter:description" content="프로젝트가 끝난지 한달 반 정도 되었다. 처음으로 동료와 협업하여 기획부터 설계, 모델링, 배포까지 진행한 프로젝트였다. 기획 당시 나는 스크래핑에 관심이 있었으며 스크래핑을 활용해 장고 프로젝트를 진행해보면 재밌을 것 같다는 생각을 했다. 동료는 OAuth를 이용한 소셜 로그인과 대댓글의 기능을 구현해보고 싶다는 의견이 있었다. 이를 토대로 주제는 기사 스크래핑을 통해 회원이 원하는" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/today.png" />
@@ -107,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="기사 스크래핑 프로젝트 회고 및 리팩토링 후기(작성중..)" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="기사 스크래핑 프로젝트 회고 및 리팩토링 후기" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -210,7 +210,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">기사 스크래핑 프로젝트 회고 및 리팩토링 후기(작성중..)</h1>
+                <h1 class="post-full-title">기사 스크래핑 프로젝트 회고 및 리팩토링 후기</h1>
             </header>
 
 <!--  
@@ -455,8 +455,80 @@ service로 ㄴ데이터를 보낸후 <code class="highlighter-rouge">가공된 �
 <p>mixin에 대한 이해를 제대로 하지 않은 상태로 로직을 구현했구나 라는 생각을 하게 되었다. 지나가듯이 봤었던 기능이였기에 제대로 알아보지 않고 사용한 것 같아 
 아쉬웠다. 그래서 mixin에 대한 공부를 진행 후 해당 로직을 수정해보기로 결정했다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<p>mixin class에 4개의 메서드로 로직을 분리했다. 회원가입의 경우 장고에서 제공해주는 form을 사용했다. form의 유효성 검증은 이메일 인증과 이메일 재인증 두개 다
+필요하기 때문에 form의 유효성을 검증하는 verify_form 메서드를 생성했다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">VerifyEmailMixin</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">verify_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="n">context_info</span><span class="p">(</span><span class="n">error</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">context</span>
+        
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">error</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">non_field_errors</span><span class="p">()</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="n">context_info</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">error</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">context</span>
 </code></pre></div></div>
+
+<p><br /></p>
+
+<p><strong>email = new</strong> 로 인자를 받아서 이메일 인증을 판단하지 않고 이메일 인증의 유효성 검증을 해주는 <strong>verify_email</strong> 메서드를 추가해주었다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">verify_email</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dto</span><span class="p">:</span><span class="n">SignupDto</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="n">UserService</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">dto</span><span class="p">)</span>
+            <span class="n">mail</span> <span class="o">=</span> <span class="n">dto</span><span class="o">.</span><span class="n">email</span>
+
+            <span class="k">return</span> <span class="p">{</span><span class="s">"user"</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span> <span class="s">"mail"</span><span class="p">:</span> <span class="n">mail</span><span class="p">}</span>
+
+        <span class="k">except</span> <span class="n">User</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="n">context_info</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="s">'회원가입부터 해주세요'</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>이메일 인증과 마찬가지로 이메일 재인증의 유효성을 검증해주는 <strong>verify_resend_email</strong> 메서드를 추가해주었다. 이렇게 각각의 메서드로 만들게 되면 해당 메서드만 호출하면 되기 때문에 
+훨씬 효율적이다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">verify_resend_email</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dto</span><span class="p">:</span><span class="n">ResendDto</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">dto</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+            <span class="n">resend_email_user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">dto</span><span class="o">.</span><span class="n">resend_email</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">user</span> <span class="o">!=</span> <span class="n">resend_email_user</span><span class="p">:</span>
+                <span class="n">context</span> <span class="o">=</span> <span class="n">context_info</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="s">'이메일을 확인해주세요 !'</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+            
+            <span class="n">user</span> <span class="o">=</span> <span class="n">UserService</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dto</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="n">dto</span><span class="o">.</span><span class="n">resend_email</span><span class="p">)</span>
+            <span class="n">mail</span> <span class="o">=</span> <span class="n">dto</span><span class="o">.</span><span class="n">resend_email</span>
+
+            <span class="k">return</span> <span class="p">{</span><span class="s">"user"</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span> <span class="s">"mail"</span><span class="p">:</span> <span class="n">mail</span><span class="p">,</span> <span class="s">"error"</span><span class="p">:</span><span class="bp">False</span><span class="p">}</span>
+
+        <span class="k">except</span> <span class="n">User</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="n">context_info</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="s">"회원가입부터 해주세요"</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">context</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p><strong>send_user_email</strong> 은 유저의 이메일로 인증링크를 전송해주는 메서드이다. 이 메서드는 이메일 인증과 재인증 둘다 필요한 로직이기 때문에 각각의 view에서 
+해당 메서드를 호출해서 사용하면 된다</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">send_user_email</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">mail_info</span><span class="p">):</span>
+        <span class="n">mail_title</span><span class="p">,</span> <span class="n">message_data</span><span class="p">,</span> <span class="n">mail_to</span> <span class="o">=</span> <span class="n">UserEmailVerifyService</span><span class="o">.</span><span class="n">user_email</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">mail_info</span><span class="p">[</span><span class="s">"user"</span><span class="p">]</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span> <span class="n">mail_info</span><span class="p">[</span><span class="s">"mail"</span><span class="p">])</span>
+        
+        <span class="n">send_email</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="n">mail_title</span><span class="p">,</span> <span class="n">message_data</span><span class="p">,</span> <span class="n">mail_to</span><span class="p">)</span>
+    
+        <span class="n">context</span> <span class="o">=</span> <span class="n">context_info</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="s">'이메일을 인증해 회원가입을 완료하세요!'</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">context</span>
+</code></pre></div></div>
+
+<p>이제 이메일 인증과 재인증에 기능이 추가되면 mixin class에 메서드를 추가해주면 간단하게 해결된다 :-) 확실히 view에서 사용하기 편해졌다. 필요한 메서드를 호출만
+하면 되기 때문에 훨씬 효율적인다</p>
 
 <hr />
 
@@ -464,20 +536,29 @@ service로 ㄴ데이터를 보낸후 <code class="highlighter-rouge">가공된 �
 
 <p>매일매일 쏟아지는 뉴스 기사 속에서 내가 원하는 기사의 카테고리를 직접 선택하고 관심 키워드를 직접 입력하여 오로지 기사만을 볼 수 있는 나만의 뉴스공간의 웹/앱사이트 프로젝트입니다</p>
 
-<blockquote>
-  <p>초기 프로젝트 진행 인원 수 : 2명  <br />
-개발 기간 : v1.0 2021.07.01 ~ 2021.08.08</p>
-</blockquote>
+<h4 id="초기-프로젝트-진행-인원-수--2명">초기 프로젝트 진행 인원 수 : 2명</h4>
 
 <blockquote>
-  <p>후기 리팩토링 프로젝트 진행 : 개인  <br />
-개발 기간 : v2.0 2021.10.26  <br />
+  <p>개발 기간 : v1.0 2021.07.01 ~ 2021.08.08</p>
+</blockquote>
+
+<p><br /></p>
+
+<h4 id="후기-리팩토링-프로젝트-진행--개인">후기 리팩토링 프로젝트 진행 : 개인</h4>
+
+<blockquote>
+  <p>개발 기간 : v2.0 2021.10.26  <br />
 리팩토링 된 기능 : 서비스 레이어 로직으로 변경</p>
 </blockquote>
 
 <blockquote>
   <p>개발 기간 : v2.1 2021.11.30   <br />
 리팩토링 된 기능 : 이메일 인증/재인증, 비밀번호 찾기 로직</p>
+</blockquote>
+
+<blockquote>
+  <p>개발 기간 : v2.1 2021.12.07   <br />
+리팩토링 된 기능 : 이메일 인증/재인증 mixin class</p>
 </blockquote>
 
 <blockquote>

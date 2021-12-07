@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-12-06T23:39:35+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">studying developer</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">백엔드 프리온보딩 4주차 첫번째 프로젝트 회고</title><link href="https://heejung-gjt.github.io/project6" rel="alternate" type="text/html" title="백엔드 프리온보딩 4주차 첫번째 프로젝트 회고" /><published>2021-11-27T15:00:00+09:00</published><updated>2021-11-27T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/project6</id><content type="html" xml:base="https://heejung-gjt.github.io/project6">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-12-08T00:22:09+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">studying developer</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">백엔드 프리온보딩 4주차 첫번째 프로젝트 회고</title><link href="https://heejung-gjt.github.io/project6" rel="alternate" type="text/html" title="백엔드 프리온보딩 4주차 첫번째 프로젝트 회고" /><published>2021-11-27T15:00:00+09:00</published><updated>2021-11-27T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/project6</id><content type="html" xml:base="https://heejung-gjt.github.io/project6">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;원티드-4주차-카닥-기업과제&quot;&gt;원티드 4주차 카닥 기업과제&lt;/h2&gt;
 
@@ -45,7 +45,7 @@
 
 &lt;hr /&gt;
 
-&lt;h3 id=&quot;진행한-소감&quot;&gt;진행한 소감&lt;/h3&gt;</content><author><name>jung</name></author><category term="project" /><category term="Cardoc" /><category term="wecode" /><category term="wanted" /><summary type="html"></summary></entry><entry><title type="html">일기장 프로젝트 회고 및 리팩토링 후기(작성중..)</title><link href="https://heejung-gjt.github.io/django-project3" rel="alternate" type="text/html" title="일기장 프로젝트 회고 및 리팩토링 후기(작성중..)" /><published>2021-11-27T11:40:00+09:00</published><updated>2021-11-27T11:40:00+09:00</updated><id>https://heejung-gjt.github.io/django-project3</id><content type="html" xml:base="https://heejung-gjt.github.io/django-project3">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;진행한-소감&quot;&gt;진행한 소감&lt;/h3&gt;</content><author><name>jung</name></author><category term="project" /><category term="Cardoc" /><category term="wecode" /><category term="wanted" /><summary type="html"></summary></entry><entry><title type="html">일기장 프로젝트 회고 및 리팩토링 후기</title><link href="https://heejung-gjt.github.io/django-project3" rel="alternate" type="text/html" title="일기장 프로젝트 회고 및 리팩토링 후기" /><published>2021-11-27T11:40:00+09:00</published><updated>2021-11-27T11:40:00+09:00</updated><id>https://heejung-gjt.github.io/django-project3</id><content type="html" xml:base="https://heejung-gjt.github.io/django-project3">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;이 프로젝트는 4월에 바닐라 자바스크립트로 만들어진 프로젝트였다.(&lt;a href=&quot;https://github.com/heejung-gjt/Toy-Project&quot;&gt;초반 프로젝트 Repo&lt;/a&gt;) 기존에 배웠던 자바스크립트 내용을 응용해서 유저가 업로드 할 수 있는 이미지와 
 글을 올리고 수정, 삭제 할 수 있는 프로젝트를 개발하는 것이 목표였다. 동료 한 명과 함께 약 2주간 프로젝트를 진행했으며 구현된 기능은 아래와 같다.&lt;/p&gt;
@@ -142,7 +142,7 @@
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;rest-api-설계&quot;&gt;REST API 설계&lt;/h3&gt;
-&lt;p&gt;위의 URL 코드를 봐서 알겠지만 초반에 나는 C.R.U.D에 대한 url을 각각 만들었고 이에 해당되는 class view또한 각각 만들어주었다.&lt;/p&gt;
+&lt;p&gt;위의 URL 코드를 봐서 알겠지만 초반에 나는 C.R.U.D에 대한 view를 각각 만들어주었다.&lt;/p&gt;
 
 &lt;p&gt;아래와 같이 말이다. 이럴 경우 코드의 낭비가 심해질 수 있다. 한개의 API가 프론트엔드에서 딱 하나의 페이지에서 이용되기 때문에 코드가 많아질수록
 POST와 GET 메소드만의 사용은 매우 비효율적이다.&lt;/p&gt;
@@ -161,7 +161,36 @@ POST와 GET 메소드만의 사용은 매우 비효율적이다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;장고에서는 put과 delete와 같은 메소드를 사용할 수 있다&lt;/p&gt;
+&lt;p&gt;REST API 설계로 수정을 하는게 훨씬 효율적이라고 판단했다. 수정은 PUT메소드로 삭제는 DELETE메소드로 수정 할 목표로 리팩토링을 진행했다. 일단 결과는
+DELETE메소드는 정상적으로 삭제가 되지만 PUT메소드에 문제가 있었다.&lt;/p&gt;
+
+&lt;p&gt;PUT메소드로 수정하니 유저의 데이터가 담긴 form data를 view에서 인식하지 못했다.. 우선 장고는 put,delete 요청을 아래와 같이 처리하지 못한다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;PUT&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;someparam&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PUT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;찾아보니 주로 매개변수를 가져오기 위해서는 QueryDict를 사용하여 문제를 해결한다고 한다. 하지만 단점도 여럿 존재해 보였다. (dict안에 있는 값을 가져오는데 꽤 까다롭다고 한다) 나는 delete의 경우 id는 쿼리 스트링으로 가져오기 때문에 다른 매개변수가 
+필요없었다. 그래서 put만 post 메소드를 사용해 수정하기로 결정했다.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.http&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QueryDict&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;put&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QueryDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'title'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;수정 후 url의 모습이다. 수정 전과 비교했을때 view의 재활용도가 훨씬 높아진 것을 볼 수 있다. :-)&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;urlpatterns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArticleView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/detail&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArticleDetailView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;detail&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&amp;lt;id&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArticleDetailView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;update&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/delete/&amp;lt;id&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArticleDetailView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;as_view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;delete&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;hr /&gt;
 
@@ -183,15 +212,24 @@ POST와 GET 메소드만의 사용은 매우 비효율적이다.&lt;/p&gt;
 &lt;p&gt;이 프로젝트는 유저가 자신의 사진과 글을 올려 기록 할 수 있게 한 프로젝트로 바닐라 자바스크립트로 개발된 프로젝트를 프론트와 백엔드로 분리해 REST API 설계로 리팩토링 한 프로젝트입니다. 
 유저의 로그인/회원가입 API, 글과 이미지 C.R.U.D를 구현했습니다.&lt;/p&gt;
 
+&lt;h4 id=&quot;초기-프로젝트-진행-인원-수--2명&quot;&gt;초기 프로젝트 진행 인원 수 : 2명&lt;/h4&gt;
+
 &lt;blockquote&gt;
-  &lt;p&gt;초기 프로젝트 진행 인원 수 : 2명  &lt;br /&gt;
-개발 기간 : v1.0 2021.04.05 ~ 2021.04.16&lt;/p&gt;
+  &lt;p&gt;개발 기간 : v1.0 2021.04.05 ~ 2021.04.16&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;후기-리팩토링-프로젝트-진행--개인&quot;&gt;후기 리팩토링 프로젝트 진행 : 개인&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;개발 기간 : v2.0 2021.10.19 - 2021.11.01    &lt;br /&gt;
+추가된 기능 : 회원가입/로그인 API, Unit Test 구현&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;후기 리팩토링 프로젝트 진행 : 개인  &lt;br /&gt;
-개발 기간 : v2.0 2021.10.19 - 2021.11.01    &lt;br /&gt;
-추가된 기능 : 회원가입/로그인 API, REST API서버 구현, Unit Test 구현&lt;/p&gt;
+  &lt;p&gt;개발 기간 : v2.0 2021.11.27 ~ 2021.12.07   &lt;br /&gt;
+추가된 기능 : REST API서버 구현&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;blockquote&gt;

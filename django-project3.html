@@ -51,7 +51,7 @@
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="studying developer" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="일기장 프로젝트 회고 및 리팩토링 후기(작성중..)" />
+    <meta property="og:title" content="일기장 프로젝트 회고 및 리팩토링 후기" />
     <meta property="og:description" content="이 프로젝트는 4월에 바닐라 자바스크립트로 만들어진 프로젝트였다.(초반 프로젝트 Repo) 기존에 배웠던 자바스크립트 내용을 응용해서 유저가 업로드 할 수 있는 이미지와 글을 올리고 수정, 삭제 할 수 있는 프로젝트를 개발하는 것이 목표였다. 동료 한 명과 함께 약 2주간 프로젝트를 진행했으며 구현된 기능은 아래와 같다. 👉 사진 업로드(미리보기, 재업로드 가능) 👉 search기능(등록한" />
     <meta property="og:url" content="https://heejung-gjt.github.io/django-project3" />
     <meta property="og:image" content="https://heejung-gjt.github.io/assets/built/images/today.png" />
@@ -61,7 +61,7 @@
     <meta property="article:modified_time" content="2021-11-27T11:40:00+09:00" />
     <meta property="article:tag" content="Project" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="일기장 프로젝트 회고 및 리팩토링 후기(작성중..)" />
+    <meta name="twitter:title" content="일기장 프로젝트 회고 및 리팩토링 후기" />
     <meta name="twitter:description" content="이 프로젝트는 4월에 바닐라 자바스크립트로 만들어진 프로젝트였다.(초반 프로젝트 Repo) 기존에 배웠던 자바스크립트 내용을 응용해서 유저가 업로드 할 수 있는 이미지와 글을 올리고 수정, 삭제 할 수 있는 프로젝트를 개발하는 것이 목표였다. 동료 한 명과 함께 약 2주간 프로젝트를 진행했으며 구현된 기능은 아래와 같다. 👉 사진 업로드(미리보기, 재업로드 가능) 👉 search기능(등록한" />
     <meta name="twitter:url" content="https://heejung-gjt.github.io/" />
     <meta name="twitter:image" content="https://heejung-gjt.github.io/assets/built/images/today.png" />
@@ -107,7 +107,7 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="일기장 프로젝트 회고 및 리팩토링 후기(작성중..)" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="일기장 프로젝트 회고 및 리팩토링 후기" href="/feed.xml" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LESPMGXKR3"></script>
@@ -210,7 +210,7 @@ into the {body} of the default.hbs template -->
                         
                     
                 </section>
-                <h1 class="post-full-title">일기장 프로젝트 회고 및 리팩토링 후기(작성중..)</h1>
+                <h1 class="post-full-title">일기장 프로젝트 회고 및 리팩토링 후기</h1>
             </header>
 
 <!--  
@@ -322,7 +322,7 @@ into the {body} of the default.hbs template -->
 <hr />
 
 <h3 id="rest-api-설계">REST API 설계</h3>
-<p>위의 URL 코드를 봐서 알겠지만 초반에 나는 C.R.U.D에 대한 url을 각각 만들었고 이에 해당되는 class view또한 각각 만들어주었다.</p>
+<p>위의 URL 코드를 봐서 알겠지만 초반에 나는 C.R.U.D에 대한 view를 각각 만들어주었다.</p>
 
 <p>아래와 같이 말이다. 이럴 경우 코드의 낭비가 심해질 수 있다. 한개의 API가 프론트엔드에서 딱 하나의 페이지에서 이용되기 때문에 코드가 많아질수록
 POST와 GET 메소드만의 사용은 매우 비효율적이다.</p>
@@ -341,7 +341,36 @@ POST와 GET 메소드만의 사용은 매우 비효율적이다.</p>
 
 <p><br /></p>
 
-<p>장고에서는 put과 delete와 같은 메소드를 사용할 수 있다</p>
+<p>REST API 설계로 수정을 하는게 훨씬 효율적이라고 판단했다. 수정은 PUT메소드로 삭제는 DELETE메소드로 수정 할 목표로 리팩토링을 진행했다. 일단 결과는
+DELETE메소드는 정상적으로 삭제가 되지만 PUT메소드에 문제가 있었다.</p>
+
+<p>PUT메소드로 수정하니 유저의 데이터가 담긴 form data를 view에서 인식하지 못했다.. 우선 장고는 put,delete 요청을 아래와 같이 처리하지 못한다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">"PUT"</span><span class="p">:</span>
+        <span class="n">someparam</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">PUT</span><span class="p">[</span><span class="s">"title"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>찾아보니 주로 매개변수를 가져오기 위해서는 QueryDict를 사용하여 문제를 해결한다고 한다. 하지만 단점도 여럿 존재해 보였다. (dict안에 있는 값을 가져오는데 꽤 까다롭다고 한다) 나는 delete의 경우 id는 쿼리 스트링으로 가져오기 때문에 다른 매개변수가 
+필요없었다. 그래서 put만 post 메소드를 사용해 수정하기로 결정했다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">QueryDict</span>
+
+<span class="n">put</span> <span class="o">=</span> <span class="n">QueryDict</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+<span class="n">title</span> <span class="o">=</span> <span class="n">put</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'title'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>수정 후 url의 모습이다. 수정 전과 비교했을때 view의 재활용도가 훨씬 높아진 것을 볼 수 있다. :-)</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="n">ArticleView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">"/detail"</span><span class="p">,</span> <span class="n">ArticleDetailView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s">"detail"</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">"/&lt;id&gt;"</span><span class="p">,</span> <span class="n">ArticleDetailView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s">"update"</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">"/delete/&lt;id&gt;"</span><span class="p">,</span> <span class="n">ArticleDetailView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s">"delete"</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div></div>
 
 <hr />
 
@@ -363,15 +392,24 @@ POST와 GET 메소드만의 사용은 매우 비효율적이다.</p>
 <p>이 프로젝트는 유저가 자신의 사진과 글을 올려 기록 할 수 있게 한 프로젝트로 바닐라 자바스크립트로 개발된 프로젝트를 프론트와 백엔드로 분리해 REST API 설계로 리팩토링 한 프로젝트입니다. 
 유저의 로그인/회원가입 API, 글과 이미지 C.R.U.D를 구현했습니다.</p>
 
+<h4 id="초기-프로젝트-진행-인원-수--2명">초기 프로젝트 진행 인원 수 : 2명</h4>
+
 <blockquote>
-  <p>초기 프로젝트 진행 인원 수 : 2명  <br />
-개발 기간 : v1.0 2021.04.05 ~ 2021.04.16</p>
+  <p>개발 기간 : v1.0 2021.04.05 ~ 2021.04.16</p>
+</blockquote>
+
+<p><br /></p>
+
+<h4 id="후기-리팩토링-프로젝트-진행--개인">후기 리팩토링 프로젝트 진행 : 개인</h4>
+
+<blockquote>
+  <p>개발 기간 : v2.0 2021.10.19 - 2021.11.01    <br />
+추가된 기능 : 회원가입/로그인 API, Unit Test 구현</p>
 </blockquote>
 
 <blockquote>
-  <p>후기 리팩토링 프로젝트 진행 : 개인  <br />
-개발 기간 : v2.0 2021.10.19 - 2021.11.01    <br />
-추가된 기능 : 회원가입/로그인 API, REST API서버 구현, Unit Test 구현</p>
+  <p>개발 기간 : v2.0 2021.11.27 ~ 2021.12.07   <br />
+추가된 기능 : REST API서버 구현</p>
 </blockquote>
 
 <blockquote>
