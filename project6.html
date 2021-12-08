@@ -278,10 +278,185 @@ into the {body} of the default.hbs template -->
 
 <h3 id="프로젝트-회고">프로젝트 회고</h3>
 
+<p>프리온보딩의 마지막 프로젝트였다. 벌써 시간이 이렇게 지났다니.. 😥 이번 프로젝트는 카닥이라는 기업의 과제였다. 개인 과제로 프로젝트를 마무리 하게 되었다  <br />
+카닥에서는 타이어 정보 API를 제공해주었고 이 API에서 제공해주는 데이터를 가지고 타이어의 정보를 데이터베이스에 저장해야 하는 과제였다. 이 부분만 제외하면 지금까지 해왔던 과제들과 
+크게 다르지 않을 것 같았다.</p>
+
+<p>역시나 시작은 모델링 설계,, 항상 팀원들과 함께 진행하다 혼자 하려니 허전했다.. ㅎㅎㅎ 주어진 타이어 정보 API에는 자동차에 대한
+정보들이 굉장히 세세하게 나와있었다. 어디까지 저장하라는 조건이 없었기에 스스로 생각해서 데이터 정보를 어디까지 저장할지 결정해야 했다.</p>
+
+<p>나는 해당과제는 유저가 소유한 자동차의 타이어 정보를 저장하고 조회하는 과제인만큼 타이어 정보에 초점을 맞추기로 했다.</p>
+
+<h3 id="requests의-사용">requests의 사용</h3>
+
+<p>타이어 정보를 저장하는 body request는 아래와 같이 최대 5명의 유저들의 정보에 대한 요청을 할 수 있다. trimId가 https://dev.mycar.cardoc.co.kr/v1/trim/{id} 의 url에 파라미터로 담겨
+ 해당되는 자동차의 정보가 출력된다. 이때 필요한 데이터를 가져오기 위해서 requests를 사용했다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">"id"</span><span class="p">:</span> <span class="s">"test1"</span><span class="p">,</span>
+        <span class="s">"trimId"</span><span class="p">:</span> <span class="mi">72</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s">"id"</span><span class="p">:</span> <span class="s">"test2"</span><span class="p">,</span>
+        <span class="s">"trimId"</span><span class="p">:</span> <span class="mi">7000</span>
+    <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="s">"id"</span><span class="p">:</span> <span class="s">"test3"</span><span class="p">,</span>
+        <span class="s">"trimId"</span><span class="p">:</span> <span class="mi">30</span>
+    <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="s">"id"</span><span class="p">:</span> <span class="s">"test4"</span><span class="p">,</span>
+        <span class="s">"trimId"</span><span class="p">:</span> <span class="mi">9000</span>
+    <span class="p">}</span>
+        <span class="p">{</span>
+        <span class="s">"id"</span><span class="p">:</span> <span class="s">"test5"</span><span class="p">,</span>
+        <span class="s">"trimId"</span><span class="p">:</span> <span class="mi">12000</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>과제 조건에 써져있는 것처럼 <code class="highlighter-rouge">spec → driving → frontTire/rearTire -&gt; 타이어 정보</code> frontTire와 rearTire의 값인 value를 
+{폭}/{편평비}R{18}의 포맷에 맞게 각각 나누어 폭, 편평비, 휠사이즈로 각각 데이터베이스에 저장해주어야 했다</p>
+
+<p>즉 자동차마다 각각의 자동차 스팩을 가지고 있었고 스팩 중 하나가 자동차 타이어에 대한 정보였다. 그래서 나는 자동차의 기본정보를 가지고 있는 테이블과 자동차의 스펙을 스펙 테이블로 나누어 1:1로 연결해주었다.
+그리고 스펙 테이블에서는 타이어의 스펙이 같은 자동차가 존재할거라고 생각했기 때문에 타이어 테이블과 스펙 테이블을 1:n으로 연결시켜주었다.</p>
+
+<p>설계 과정에서 가장 고민이였던게 바로 타이어가 앞/뒤 타이어로 정보가 나뉘는데 각각의 테이블로 나누어 저장할지 하나의 타이어 테이블을 만들어 저장할지 고민이였다. 
+고민 끝에 해당 과제는 타이어의 정보가 중요했기에 앞 타이어와 뒤 타이어에 대한 테이블을 나누어 설계하기로 결정했다.</p>
+
+<ul>
+  <li>requests이용한 타이어 정보 가져오기</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">car_info</span>   <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">f</span><span class="s">"https://dev.mycar.cardoc.co.kr/v1/trim/{trim_id}"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">front_tire</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"[P/R]"</span><span class="p">,</span><span class="n">car_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"spec"</span><span class="p">)[</span><span class="s">"driving"</span><span class="p">][</span><span class="s">"frontTire"</span><span class="p">][</span><span class="s">"value"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">" "</span><span class="p">,</span> <span class="s">""</span><span class="p">))</span>
+<span class="n">rear_tire</span>  <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"[P/R]"</span><span class="p">,</span> <span class="n">car_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"spec"</span><span class="p">)[</span><span class="s">"driving"</span><span class="p">][</span><span class="s">"rearTire"</span><span class="p">][</span><span class="s">"value"</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">" "</span><span class="p">,</span> <span class="s">""</span><span class="p">))</span>
+
+<span class="n">info_dic</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"trim_id"</span>   <span class="p">:</span> <span class="n">trim_id</span><span class="p">,</span>
+    <span class="s">"car_brand"</span> <span class="p">:</span> <span class="n">car_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"brandName"</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
+    <span class="s">"year_type"</span> <span class="p">:</span> <span class="n">car_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"yearType"</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
+    <span class="s">"car_name"</span>  <span class="p">:</span> <span class="n">car_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"submodelGroupName"</span><span class="p">,</span> <span class="bp">None</span><span class="p">),</span>
+    <span class="s">"front_tire"</span><span class="p">:</span> <span class="n">front_tire</span><span class="p">,</span>
+    <span class="s">"rear_tire"</span> <span class="p">:</span> <span class="n">rear_tire</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>타이어 정보를 가져올때 과제에 정해진 타이어 정보 포맷이 있었다. 포맷이 지켜지지 않으면 데이터베이스에 저장할 수 없었다. 그래서 
+정규표현식을 이용해 정해진 포맷이 아닐 경우 빈 리스트를 가져오게 구현했다. 그리고 빈 리스트일 경우 except문으로 빠져나가 <code class="highlighter-rouge">unsaved_tire_list.append(data["id"])</code> 의 로직으로 인해
+저장되지 않은 리스트에 해당 유저가 담긴다</p>
+
+<p>view에서 for문을 돌면서 중간에 에러가 나도 그 다음부터는 정상적으로 저장되게 구현하고 싶었기 때문에 에러가 난 유저의 자동차 정보부터 스펙 정보 ~ 타이어 정보까지 전부 저장되지 않게 구현했다 (여기서 원자성을 고려했다 !)</p>
+
+<hr />
+
+<h3 id="리팩토링-진행">리팩토링 진행</h3>
+
+<ul>
+  <li><strong>금액 단위 request body에 추가</strong></li>
+</ul>
+
+<p>초반에 팀끼리 회의를 통해 할인금액은 %로 단위를 정하고 벌금금액은 원으로 단위를 정했다. 과제 조건에 벌금금액은 원단위로 나와 있었기 때문에 각각의 view에서
+단위를 아예 고정시켜서 구현했다. 코드 구현이 끝난 후 팀원들과 간단한 코드 피드백을 주고 받았는데 그 과정에서 원과 %를 각각의 view에서 고정시킨 부분이 아쉽다는 의견이 나왔다.</p>
+
+<p>벌금금액의 경우 거리에 비례하여 %로 금액을 청구하는 로직을 제대로 사용할 수 없어서 아쉬웠다. 프로젝트가 끝난 후 이 부분이 생각이 났고 unit 데이터를 request body를 통해
+받는걸로 변경하기로 결정했다. :-)</p>
+
+<p>우리 데이터베이스에는 %와 원만 존재하기 때문에 그 외의 값을 받았을 경우 에러를 처리하는 로직을 추가했다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">valid_unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_unit</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">"unit"</span><span class="p">])</span>
+
+<span class="k">if</span> <span class="n">valid_unit</span><span class="p">[</span><span class="s">"error"</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"UNIT_NOT_EXIST"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">404</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<ul>
+  <li><strong>할인/벌금 조건 추가 기능 Mixin 구현</strong></li>
+</ul>
+
+<p>해당 API를 구현할때 할인과 벌금 로직이 코드 타입이 D, P인것과 type이 DISOUNT, PENALTY인 부분 정도만
+다르고 나머지는 거의 똑같았다. view를 할인과 벌금을 나누어 구현했지만 대부분의 코드가 중복되고 있었다.</p>
+
+<p>중복을 최대한 줄이고 후에 확장성을 고려했을때 mixin class를 구현하면 괜찮을 것 같다는 판단을 하게되었다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">valid_admin</span> <span class="o">=</span> <span class="n">check_admin</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">role_id</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">valid_admin</span><span class="p">[</span><span class="s">"error"</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"UNAUTHORIZED"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">401</span><span class="p">)</span>
+
+            <span class="n">data</span>   <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+            <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">"number"</span><span class="p">])</span>
+
+            <span class="n">valid_code</span> <span class="o">=</span>  <span class="bp">self</span><span class="o">.</span><span class="n">valid_code</span><span class="p">(</span><span class="s">"D"</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s">"code"</span><span class="p">])</span>
+            
+            <span class="k">if</span> <span class="n">valid_code</span><span class="p">[</span><span class="s">"error"</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"INVALID_CODE_FORMAT"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">401</span><span class="p">)</span>
+
+            <span class="n">valid_unit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_unit</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">"unit"</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="n">valid_unit</span><span class="p">[</span><span class="s">"error"</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s">"message"</span><span class="p">:</span> <span class="s">"UNIT_NOT_EXIST"</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">404</span><span class="p">)</span>
+            
+            <span class="nb">type</span>   <span class="o">=</span> <span class="n">Type</span><span class="o">.</span><span class="n">Type</span><span class="o">.</span><span class="n">DISCOUNT</span><span class="o">.</span><span class="n">value</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_dp</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>아래와 같이 중복되는 로직을 각각 메소드로 분리하여 작성했다. 할인과 벌금 조건시 필요한 기능이 <code class="highlighter-rouge">1.관리자인지 확인</code>, <code class="highlighter-rouge">2.unit타입이 올바른지 확인</code>,
+<code class="highlighter-rouge">3. 할인/벌금 조건 추가</code>, <code class="highlighter-rouge">4.code타입</code> 로 4가지였다. 관리자인지 확인하는 메서드는 다른 view에서도 필요한 기능이 될 수 있기 때문에 validator.py에 작성해주었다.  <br />
+나머지 3가지의 기능은 각각 메서드로 분리해 작성하는 방향으로 결정했다. 확장성을 고려했을때 다른 기능이 추가되거나 삭제될때 해당되는 메서드만 추가/삭제하면 되기 때문에 이전보다 효율적이라고 판단했다.</p>
+
+<ul>
+  <li>core/mixin.py</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DPMixin</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">valid_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">code_validator</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s">"error"</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+        
+        <span class="k">return</span> <span class="p">{</span><span class="s">"error"</span><span class="p">:</span> <span class="bp">False</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">valid_unit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">Unit</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="nb">type</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s">"error"</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+        
+        <span class="k">return</span> <span class="p">{</span><span class="s">"error"</span><span class="p">:</span> <span class="bp">False</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">create_dp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+        <span class="n">DiscountOrPenalties</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+                <span class="nb">id</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s">"code"</span><span class="p">],</span>
+                <span class="n">number</span><span class="o">=</span><span class="n">number</span><span class="p">,</span>
+                <span class="n">description</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s">"description"</span><span class="p">],</span>
+                <span class="n">unit</span><span class="o">=</span><span class="n">Unit</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s">"unit"</span><span class="p">]),</span>
+                <span class="n">type_id</span><span class="o">=</span><span class="nb">type</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">"error"</span><span class="p">:</span> <span class="bp">False</span><span class="p">}</span>
+</code></pre></div></div>
+
 <hr />
 
 <h3 id="진행한-소감">진행한 소감</h3>
 
+<p>벌써 마지막 프로젝트라니 .. 할 때는 너무 힘들었는데 마지막이라고 하니까 뭔가 아쉽다.. 처음 만난 팀원들과 첫 날부터 쉬지 않고 지금까지 함께 달려왔고 완주했다는 것에 만족스럽다. 다들 열심히 하는 모습에 자극도 많이 받고 배운점도 너무 많은 것 같다.. :-) 무엇보다 함께하니 절대 못할 것 같은 것도 해내게 되는 과정이 나름 짜릿하다.. 물론 초반에는 밤도 밥 먹듯이 새고.. (진짜 아예 새버렸다.. 저녁 8시에 시작했는데 다음날 7시 넘어서 끝났다.. 😂😂😂)</p>
+
+<p>그럼에도 누구하나 포기하지 않고 탓하지 않고 열심히 하려는 팀원들에게 고마웠다. 물론 어려웠던 상황도 꽤 있었지만 우리만의 나름의 소통(?)을 통해서 자기자신을 다시 바라보고 고치려고 하는 모습과 배려하려는 모습이 보였기 때문에 
+웃으며 이겨낼 수 있었다. ^^</p>
+
+<p>왜 협업이 중요한지에 대해 말하는건 입이 아플 정도다. 혼자서 잘한다고 절대 멋진 결과물을 만들어 낼 수 없다.. 적극적인 커뮤니케이션이 우리 팀이 처음부터 끝까지 포기하지 않고 다함께 프로젝트를 마무리 할 수 있었던 이유였던 것 같다</p>
+
+<p>난 덕분에 git rebase와 squash에 익숙해질 수 있었다.. :-) 그리고 적극적인 코드리뷰 덕분에 코드를 바라보는 시각을 넓힐 수 있었다.. (코드리뷰 시간만큼은 마치 사수와 함께하는 기분이 들었다..^-^)</p>
+
+<p>열심히 해준 팀원들도 고마웠고 나 자신 또한 자랑스러웠다 후후</p>
 
                 </div>
 <!--                -->
