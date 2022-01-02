@@ -1,4 +1,101 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2021-12-12T21:06:10+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">studying developer</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">백엔드 프리온보딩 4주차 첫번째 프로젝트 회고</title><link href="https://heejung-gjt.github.io/project6" rel="alternate" type="text/html" title="백엔드 프리온보딩 4주차 첫번째 프로젝트 회고" /><published>2021-11-27T15:00:00+09:00</published><updated>2021-11-27T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/project6</id><content type="html" xml:base="https://heejung-gjt.github.io/project6">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://heejung-gjt.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://heejung-gjt.github.io/" rel="alternate" type="text/html" /><updated>2022-01-02T22:54:07+09:00</updated><id>https://heejung-gjt.github.io/</id><title type="html">studying developer</title><subtitle>개발 공부하는 블로그</subtitle><entry><title type="html">Django에 PostgreSQL 연동하기</title><link href="https://heejung-gjt.github.io/db8" rel="alternate" type="text/html" title="Django에 PostgreSQL 연동하기" /><published>2022-01-02T18:00:00+09:00</published><updated>2022-01-02T18:00:00+09:00</updated><id>https://heejung-gjt.github.io/db8</id><content type="html" xml:base="https://heejung-gjt.github.io/db8">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;windows-환경에서-설치&quot;&gt;(windows 환경에서 설치)&lt;/h5&gt;
+
+&lt;p&gt;장고에서 postgresql을 연동시키기 위해서는 가장먼저 postgreSQL을 설치한다 &lt;br /&gt;
+&lt;a href=&quot;https://www.postgresql.org/&quot;&gt;공식사이트 👉 https://www.postgresql.org/&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Download 클릭 후 설치한다&lt;/li&gt;
+  &lt;li&gt;pwd를 입력한다 (나중에 써야하기 때문에 기억해야 한다)&lt;/li&gt;
+  &lt;li&gt;주로 5432의 포트번호를 사용하니 포트를 5432로 설정한다&lt;/li&gt;
+  &lt;li&gt;stack bulider 설치여부는 체크를 해제한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;설치가 끝나면 설치된 경로(C:\ProgramData\Microsoft\Windows\Start Menu\Programs\PostgreSQL 14)에 &lt;code class=&quot;highlighter-rouge&quot;&gt;pgAdmin4&lt;/code&gt; 와
+&lt;code class=&quot;highlighter-rouge&quot;&gt;SQL Shell&lt;/code&gt;로 데이터베이스를 create할 수 있다&lt;/p&gt;
+
+&lt;p&gt;shell로 db를 생성해보면,&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;shell로 접속한다 &lt;br /&gt;
+pwd를 제외하고 enter를 친다(default값으로 설정)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;erver &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;localhost]:
+Database &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;postgres]:
+Port &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;5432]:
+Username &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;postgres]:
+postgres 사용자의 암호: 암호입력
+psql &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;14.1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;db를 생성한다  &lt;br /&gt;
+\l로 생성한 db를 확인한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# CREATE DATABASE database_name;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;# \l&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;user와 pwd를 지정하고 권한을 부여한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; CREATE USER user_id WITH PASSWORD &lt;span class=&quot;s2&quot;&gt;&quot;password&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ALTER ROLE user_id SET client_encoding TO &lt;span class=&quot;s1&quot;&gt;'utf8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ALTER ROLE user_id SET default_transaction_isolation TO &lt;span class=&quot;s1&quot;&gt;'read committed'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ALTER ROLE user_id SET timezone TO &lt;span class=&quot;s1&quot;&gt;'UTC'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 권한주기&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; GRANT ALL PRIVILEGES ON DATABASE database_name TO user_id&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; alter user scott with superuser&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; alter user scott with createdb&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; alter user scott with createrole&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; alter user scott with replication&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; alter user scott with bypassrls&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 부여된 권한 확인&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\d&lt;/span&gt;u
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이후 장고에 DB에 생성한 database를 연동시킨다 &lt;br /&gt;
+이때 연동시키기 위해서는 psycopg2 패키지를 설치해야 한다. 이때 &lt;code class=&quot;highlighter-rouge&quot;&gt;pip install psycopg2&lt;/code&gt;는 windows에서는 error가 발생한다 &lt;br /&gt;
+이를 해결하기 위해서는 &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get install libpq-dev python-dev&lt;/code&gt; 를 먼저 설치한 후 설치하면 된다&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;DATABASES&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;default&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;ENGINE&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;django.db.backends.postgresql&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;NAME&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;partner&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;USER&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;admin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;PASSWORD&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;PASSWORD&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;HOST&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;localhost&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;PORT&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;5432&quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이후에도 계속 &lt;code class=&quot;highlighter-rouge&quot;&gt;django.db.utils.OperationalError&lt;/code&gt; 에러가 발생했다. 근데 이문제는 NAME과 USER를 env로 값을 받아오지 않고 값을 그대로 써주면
+해결되었다. 왜 그런지는 아직 잘모르겠다 😂&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;reference&quot;&gt;reference&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&quot;https://doorbw.tistory.com/179?category=711158&quot;&gt;https://doorbw.tistory.com/179?category=711158&lt;/a&gt;  &lt;br /&gt;
+&lt;a href=&quot;https://doorbw.tistory.com/183&quot;&gt;https://doorbw.tistory.com/183&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&quot;https://initstory.tistory.com/19&quot;&gt;postgre GUI로 설정 -https://initstory.tistory.com/19&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&quot;https://seulcode.tistory.com/111&quot;&gt;https://seulcode.tistory.com/111&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&quot;http://web.archive.org/web/20140615091953/http://goshawknest.wordpress.com/2011/02/16/how-to-install-psycopg2-under-virtualenv/&quot;&gt;http://web.archive.org/web/20140615091953/http://goshawknest.wordpress.com/2011/02/16/how-to-install-psycopg2-under-virtualenv/&lt;/a&gt;&lt;/p&gt;</content><author><name>jung</name></author><category term="database" /><summary type="html"></summary></entry><entry><title type="html">백엔드 프리온보딩 4주차 첫번째 프로젝트 회고</title><link href="https://heejung-gjt.github.io/project6" rel="alternate" type="text/html" title="백엔드 프리온보딩 4주차 첫번째 프로젝트 회고" /><published>2021-11-27T15:00:00+09:00</published><updated>2021-11-27T15:00:00+09:00</updated><id>https://heejung-gjt.github.io/project6</id><content type="html" xml:base="https://heejung-gjt.github.io/project6">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;원티드-4주차-카닥-기업과제&quot;&gt;원티드 4주차 카닥 기업과제&lt;/h2&gt;
 
@@ -1343,76 +1440,4 @@ badge는 해당 제품이 신상품인지 best 상품인지 이런 데이터가 
 &lt;p&gt;혼자 프로젝트를 진행하는것과 다른점은 내가 하는 작은 실수가 큰 실수가 된다는것이다.&lt;/p&gt;
 
 &lt;p&gt;다음 프로젝트부터는 이런 부분을 신경쓰고 진행 할 것이다. 똑같은 실수를 하지 않기 위해서 ! &lt;br /&gt;
-처음의 실수는 누구나 할 수 있다고 생각한다. 하지만 똑같은 실수를 되풀이 한다는 것은 있어서는 안된다 !!&lt;/p&gt;</content><author><name>jung</name></author><category term="project" /><category term="프레시코드" /><category term="wecode" /><category term="wanted" /><summary type="html"></summary></entry><entry><title type="html">백엔드 프리온보딩 1주차 첫번째 프로젝트 회고</title><link href="https://heejung-gjt.github.io/project1" rel="alternate" type="text/html" title="백엔드 프리온보딩 1주차 첫번째 프로젝트 회고" /><published>2021-11-03T12:00:00+09:00</published><updated>2021-11-03T12:00:00+09:00</updated><id>https://heejung-gjt.github.io/project1</id><content type="html" xml:base="https://heejung-gjt.github.io/project1">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;원티드-1주차-aimmo-기업과제&quot;&gt;원티드 1주차 Aimmo 기업과제&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;진행기간&quot;&gt;진행기간&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;21.11.01 ~ 21.11.03&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;구현해야-하는-기능&quot;&gt;구현해야 하는 기능&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;게시글 카테고리&lt;/li&gt;
-  &lt;li&gt;댓글/대댓글&lt;/li&gt;
-  &lt;li&gt;게시글 조회수 중복 방지&lt;/li&gt;
-  &lt;li&gt;AWS 배포&lt;/li&gt;
-  &lt;li&gt;postman / swagger를 사용한 API 명세&lt;/li&gt;
-  &lt;li&gt;몽고DB 연동하기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;배운내용&quot;&gt;배운내용&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;몽고 DB란&lt;/li&gt;
-  &lt;li&gt;REST API란&lt;/li&gt;
-  &lt;li&gt;git rebase와 squash&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;나의-역할&quot;&gt;나의 역할&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;게시글 조회수 기능 구현&lt;/li&gt;
-  &lt;li&gt;README.md 작성&lt;/li&gt;
-  &lt;li&gt;헤로쿠 배포하기(실패)&lt;/li&gt;
-  &lt;li&gt;의견 제시하기(네비게이터)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;프로젝트-회고&quot;&gt;프로젝트 회고&lt;/h3&gt;
-
-&lt;p&gt;기존에 선발과제였던 게시판 CRUD API에서 업그레이드 된 API를 구현해내야 하는 문제였다. 나에게 주어진 시간은 3일이였다. 몽고DB를 처음 사용해 본 나로써는 굉장히 두려웠다. 막막했지만 몽고DB를 써본 팀원이 있었다. 덕분에 몽고DB 연동은 생각보다 쉽게 해결했다. 
-과제에서는 API 테스트를 Swagger나 Postman로 하기를 요구했다. PostMan은 써보았지만 Swagger는 처음 들었다. Swagger를 써본 팀원이 존재했기에 그분의 설명을 들으며 
-Swagger를 적용시켰다.&lt;/p&gt;
-
-&lt;p&gt;API를 최근에 접해본 나로써는 REST API를 Django에서 DRF없이 구현할 수 있다는 것을 처음 알았다. 장고 공부를 시작한지 꽤 되었지만 정작 백엔드가 필요로 하는 기능들은 제대로 
-공부하지 않았던것을 깨달았다.&lt;/p&gt;
-
-&lt;p&gt;팀원들과 함께 프로젝트를 진행하며 깨달은 것 &lt;code class=&quot;highlighter-rouge&quot;&gt;협업&lt;/code&gt; , &lt;code class=&quot;highlighter-rouge&quot;&gt;커뮤니케이션&lt;/code&gt; 항상 글로만 보고 들었던 백엔드 개발자가 가져야 할 중요한 능력,, 팀프로젝트 한지 이틀만에 몸으로 깨달아버렸다. 
-일단 용어를 알아야 의사소통이 된다는것.. 혼자 공부하는 시간이 많았던 나로써는 머리에 있는 내용을 개발자스럽게 꺼내기란 너무너무 힘들었다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;진행한-소감&quot;&gt;진행한 소감&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/64240637/140023944-ed781e8e-ceda-43d8-a705-00bbd87a1212.jpg&quot; alt=&quot;우울2&quot; /&gt;
-진짜 이틀만에 2키로가 빠졌다.. 멋지게 과제를 해내고 싶었지만 그러지 못한 것. 피곤함이 의욕을 이긴것. 객관적으로 내 실력을 바라보니 우물안 개구리였다는 생각.
-꼼꼼하지 못한 성격이 너무나 큰 단점으로 돌아온 것. 진짜 첫번째 과제를 하면서 나 자신을 계속해서 자책했던 것 같다. 나만 이렇게 어려운가 ? 나만 이렇게 못하나 ? 이 생각을
-혼자서 계속 되뇌었던 것 같다. 그러다 원티드 멘토 예리님의 15분 강의를 들었다. 원래 이런 강의를 들으며 위로 받는 편이 아닌데 뭔가 위로가 되었다.  그리고 생각을 조금 바꿔보기로 결심했다. 
-꼼꼼해지려고 노력하기. 말할때 2번은 아니 3번은 더 생각하고 찾아보고 말하기.&lt;/p&gt;
-
-&lt;p&gt;무엇보다 협업이 왜 중요한지 진짜 너무 잘 알아가고 있는중이다. 부디 빨리 내가 적응 할 수 있기를 바란다.&lt;/p&gt;</content><author><name>jung</name></author><category term="project" /><category term="에이모" /><category term="wecode" /><category term="wanted" /><summary type="html"></summary></entry></feed>
+처음의 실수는 누구나 할 수 있다고 생각한다. 하지만 똑같은 실수를 되풀이 한다는 것은 있어서는 안된다 !!&lt;/p&gt;</content><author><name>jung</name></author><category term="project" /><category term="프레시코드" /><category term="wecode" /><category term="wanted" /><summary type="html"></summary></entry></feed>
